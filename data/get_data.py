@@ -8,7 +8,7 @@ kevin_Obote_few_shot = "kevin_Obote_few_shots"
 zero_shot_experiment = "zero-shot experiment"
 
 def making_df(jsonl_list):
-    pattern = r"\*\*Input\*\*:\n(.*?)\n\n\*\*Output\*\*:"
+    pattern = r"Now, please translate the following proverb:\n\n\*\*Input\*\*:\n(.*?)\n\n\*\*Output\*\*:"
 
     df = []
     for file_path in jsonl_list:
@@ -21,22 +21,26 @@ def making_df(jsonl_list):
 
     final_df = pd.concat(df, ignore_index=True)
 
-    labels = final_df["label"]
-
     final_df["african_proverb"] = final_df["prompt"].str.extract(pattern, flags=re.DOTALL, expand=False)
     final_df["african_proverb"] = final_df["african_proverb"].str.strip()
 
-    return labels, final_df
+    return final_df[["african_proverb", "label"]]
 
 
 def Get_Data():
     kevin = script_dir / kevin_Obote_few_shot
     kevin_jsonl = list(kevin.rglob("*.jsonl"))
-    kevin_labels, kevin_df = making_df(kevin_jsonl)
+    kevin_df = making_df(kevin_jsonl)
 
     zero = script_dir / zero_shot_experiment
     zero_jsonl = list(zero.rglob("*.jsonl"))
-    zero_labels, zero_df = making_df(zero_jsonl)
+    zero_df = making_df(zero_jsonl)
+
+    data_df = pd.concat([kevin_df, zero_df], ignore_index=True)
+
+    data_df.to_csv("Prompt_and_label.csv", sep='\t')
+
+    return data_df
 
 if __name__ == "__main__":
     Get_Data()
