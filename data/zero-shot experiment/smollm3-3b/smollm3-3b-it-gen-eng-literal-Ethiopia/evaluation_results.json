@@ -1,0 +1,32 @@
+[
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Ethiopia",
+        "language": "borana",
+        "results": {
+            "test_model_preparation_time": 0.0064,
+            "test_bleu": 6.437165,
+            "test_chrf": 13.219759,
+            "test_chrf++": 11.188245,
+            "test_comet": 0.339537,
+            "test_runtime": 121.6645,
+            "test_samples_per_second": 0.822,
+            "test_steps_per_second": 0.822
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Ethiopia",
+        "language": "burji",
+        "results": {
+            "test_model_preparation_time": 0.0064,
+            "test_bleu": 7.768563,
+            "test_chrf": 12.063285,
+            "test_chrf++": 10.129239,
+            "test_comet": 0.340725,
+            "test_runtime": 116.5019,
+            "test_samples_per_second": 0.858,
+            "test_steps_per_second": 0.858
+        }
+    }
+]

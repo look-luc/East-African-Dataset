@@ -1,0 +1,101 @@
+[
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "kwele",
+        "results": {
+            "bleu": 4.77602,
+            "chrf": 13.869169,
+            "chrf++": 12.075038,
+            "comet": 0.350713
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "tetela",
+        "results": {
+            "bleu": 11.044796,
+            "chrf": 15.270843,
+            "chrf++": 12.445252,
+            "comet": 0.37834
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "bangubangu",
+        "results": {
+            "bleu": 10.986407,
+            "chrf": 16.524319,
+            "chrf++": 14.682034,
+            "comet": 0.382125
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "hema",
+        "results": {
+            "bleu": 17.286039,
+            "chrf": 23.506703,
+            "chrf++": 21.334108,
+            "comet": 0.47506
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "hemba",
+        "results": {
+            "bleu": 12.605968,
+            "chrf": 14.644012,
+            "chrf++": 12.646575,
+            "comet": 0.361249
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "holoholo",
+        "results": {
+            "bleu": 10.682175,
+            "chrf": 13.481581,
+            "chrf++": 10.975455,
+            "comet": 0.373204
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "nande",
+        "results": {
+            "bleu": 5.993031,
+            "chrf": 18.384471,
+            "chrf++": 16.416998,
+            "comet": 0.40241
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "taabwa",
+        "results": {
+            "bleu": 8.737168,
+            "chrf": 17.638176,
+            "chrf++": 16.253536,
+            "comet": 0.410587
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "tshiluba",
+        "results": {
+            "bleu": 20.149416,
+            "chrf": 18.617448,
+            "chrf++": 17.125346,
+            "comet": 0.419469
+        }
+    }
+]

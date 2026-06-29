@@ -1,0 +1,90 @@
+[
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Tanzania",
+        "language": "gweno",
+        "results": {
+            "bleu": 13.067646,
+            "chrf": 11.700672,
+            "chrf++": 9.85583,
+            "comet": 0.474936
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Tanzania",
+        "language": "kihangaza",
+        "results": {
+            "bleu": 9.103526,
+            "chrf": 21.001558,
+            "chrf++": 18.319959,
+            "comet": 0.555341
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Tanzania",
+        "language": "kihara",
+        "results": {
+            "bleu": 6.096046,
+            "chrf": 17.691868,
+            "chrf++": 15.087225,
+            "comet": 0.528549
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Tanzania",
+        "language": "makonde",
+        "results": {
+            "bleu": 10.390302,
+            "chrf": 19.538641,
+            "chrf++": 16.764994,
+            "comet": 0.551959
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Tanzania",
+        "language": "nyaturu",
+        "results": {
+            "bleu": 12.223076,
+            "chrf": 14.846291,
+            "chrf++": 12.492843,
+            "comet": 0.505406
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Tanzania",
+        "language": "pare",
+        "results": {
+            "bleu": 9.263986,
+            "chrf": 14.781103,
+            "chrf++": 12.367996,
+            "comet": 0.493329
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Tanzania",
+        "language": "sukuma",
+        "results": {
+            "bleu": 5.623281,
+            "chrf": 17.540964,
+            "chrf++": 14.037795,
+            "comet": 0.525006
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Tanzania",
+        "language": "zigula",
+        "results": {
+            "bleu": 7.80985,
+            "chrf": 18.707965,
+            "chrf++": 16.350551,
+            "comet": 0.544658
+        }
+    }
+]

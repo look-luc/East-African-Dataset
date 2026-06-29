@@ -1,0 +1,137 @@
+[
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "kwele",
+        "results": {
+            "test_model_preparation_time": 0.004,
+            "test_bleu": 6.567275,
+            "test_chrf": 12.712859,
+            "test_chrf++": 10.604246,
+            "test_comet": 0.340903,
+            "test_runtime": 115.3839,
+            "test_samples_per_second": 0.867,
+            "test_steps_per_second": 0.867
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "tetela",
+        "results": {
+            "test_model_preparation_time": 0.004,
+            "test_bleu": 0.0,
+            "test_chrf": 13.821066,
+            "test_chrf++": 11.146751,
+            "test_comet": 0.362603,
+            "test_runtime": 112.3037,
+            "test_samples_per_second": 0.89,
+            "test_steps_per_second": 0.89
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "bangubangu",
+        "results": {
+            "test_model_preparation_time": 0.004,
+            "test_bleu": 9.699407,
+            "test_chrf": 14.279817,
+            "test_chrf++": 12.442551,
+            "test_comet": 0.362093,
+            "test_runtime": 113.2559,
+            "test_samples_per_second": 0.865,
+            "test_steps_per_second": 0.865
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "hema",
+        "results": {
+            "test_model_preparation_time": 0.004,
+            "test_bleu": 7.347053,
+            "test_chrf": 14.843371,
+            "test_chrf++": 12.540147,
+            "test_comet": 0.384786,
+            "test_runtime": 115.6097,
+            "test_samples_per_second": 0.865,
+            "test_steps_per_second": 0.865
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "hemba",
+        "results": {
+            "test_model_preparation_time": 0.004,
+            "test_bleu": 11.478744,
+            "test_chrf": 13.571561,
+            "test_chrf++": 11.487817,
+            "test_comet": 0.368371,
+            "test_runtime": 113.5134,
+            "test_samples_per_second": 0.881,
+            "test_steps_per_second": 0.881
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "holoholo",
+        "results": {
+            "test_model_preparation_time": 0.004,
+            "test_bleu": 6.150343,
+            "test_chrf": 14.824573,
+            "test_chrf++": 12.246769,
+            "test_comet": 0.380606,
+            "test_runtime": 118.8498,
+            "test_samples_per_second": 0.841,
+            "test_steps_per_second": 0.841
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "nande",
+        "results": {
+            "test_model_preparation_time": 0.004,
+            "test_bleu": 5.669791,
+            "test_chrf": 14.75769,
+            "test_chrf++": 12.063243,
+            "test_comet": 0.366759,
+            "test_runtime": 119.3084,
+            "test_samples_per_second": 0.838,
+            "test_steps_per_second": 0.838
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "taabwa",
+        "results": {
+            "test_model_preparation_time": 0.004,
+            "test_bleu": 12.673719,
+            "test_chrf": 12.89683,
+            "test_chrf++": 11.129049,
+            "test_comet": 0.365815,
+            "test_runtime": 114.1466,
+            "test_samples_per_second": 0.876,
+            "test_steps_per_second": 0.876
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "DRC",
+        "language": "tshiluba",
+        "results": {
+            "test_model_preparation_time": 0.004,
+            "test_bleu": 5.669791,
+            "test_chrf": 14.361019,
+            "test_chrf++": 12.179432,
+            "test_comet": 0.376897,
+            "test_runtime": 124.4135,
+            "test_samples_per_second": 0.884,
+            "test_steps_per_second": 0.884
+        }
+    }
+]

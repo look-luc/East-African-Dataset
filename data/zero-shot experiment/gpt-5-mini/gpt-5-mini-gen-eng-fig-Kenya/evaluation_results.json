@@ -1,0 +1,200 @@
+[
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "digo",
+        "results": {
+            "bleu": 14.694106,
+            "chrf": 17.645086,
+            "chrf++": 15.683655,
+            "comet": 0.530112
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "ekegusii",
+        "results": {
+            "bleu": 13.912312,
+            "chrf": 19.542746,
+            "chrf++": 17.239343,
+            "comet": 0.555891
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "gikuyu",
+        "results": {
+            "bleu": 4.551763,
+            "chrf": 19.491996,
+            "chrf++": 17.26089,
+            "comet": 0.545222
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "kamba",
+        "results": {
+            "bleu": 9.864703,
+            "chrf": 16.41536,
+            "chrf++": 14.641947,
+            "comet": 0.523891
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "luo",
+        "results": {
+            "bleu": 10.700802,
+            "chrf": 18.30178,
+            "chrf++": 16.117941,
+            "comet": 0.52457
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "maasai",
+        "results": {
+            "bleu": 5.604233,
+            "chrf": 17.454114,
+            "chrf++": 15.100958,
+            "comet": 0.524709
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "meru",
+        "results": {
+            "bleu": 17.194656,
+            "chrf": 18.204117,
+            "chrf++": 15.717404,
+            "comet": 0.521457
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "nandi",
+        "results": {
+            "bleu": 8.737168,
+            "chrf": 16.30933,
+            "chrf++": 13.646337,
+            "comet": 0.497537
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "nubian_2",
+        "results": {
+            "bleu": 10.629422,
+            "chrf": 17.304191,
+            "chrf++": 14.630682,
+            "comet": 0.514486
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "nubian",
+        "results": {
+            "bleu": 13.065113,
+            "chrf": 16.976908,
+            "chrf++": 14.450293,
+            "comet": 0.532045
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "nyala",
+        "results": {
+            "bleu": 17.395797,
+            "chrf": 15.737899,
+            "chrf++": 13.156917,
+            "comet": 0.490831
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "olusamia",
+        "results": {
+            "bleu": 18.962137,
+            "chrf": 12.979023,
+            "chrf++": 10.799682,
+            "comet": 0.488164
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "orma",
+        "results": {
+            "bleu": 10.100053,
+            "chrf": 18.115613,
+            "chrf++": 15.326077,
+            "comet": 0.501447
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "rendille",
+        "results": {
+            "bleu": 11.25133,
+            "chrf": 16.607615,
+            "chrf++": 13.612961,
+            "comet": 0.494101
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "samburu",
+        "results": {
+            "bleu": 8.032277,
+            "chrf": 17.541168,
+            "chrf++": 13.581455,
+            "comet": 0.529427
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "teso",
+        "results": {
+            "bleu": 4.834633,
+            "chrf": 17.268804,
+            "chrf++": 15.059434,
+            "comet": 0.513806
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "tugen",
+        "results": {
+            "bleu": 10.825978,
+            "chrf": 16.711162,
+            "chrf++": 13.974541,
+            "comet": 0.499747
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "turkana",
+        "results": {
+            "bleu": 3.71991,
+            "chrf": 18.297817,
+            "chrf++": 14.399567,
+            "comet": 0.538249
+        }
+    }
+]

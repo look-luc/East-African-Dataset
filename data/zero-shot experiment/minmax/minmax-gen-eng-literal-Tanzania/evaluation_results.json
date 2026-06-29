@@ -1,0 +1,90 @@
+[
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Tanzania",
+        "language": "gweno",
+        "results": {
+            "bleu": 5.195151,
+            "chrf": 19.14459,
+            "chrf++": 17.385318,
+            "comet": 0.423831
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Tanzania",
+        "language": "kihangaza",
+        "results": {
+            "bleu": 13.134549,
+            "chrf": 14.087721,
+            "chrf++": 13.25656,
+            "comet": 0.411814
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Tanzania",
+        "language": "kihara",
+        "results": {
+            "bleu": 11.044796,
+            "chrf": 19.610723,
+            "chrf++": 18.526124,
+            "comet": 0.422999
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Tanzania",
+        "language": "makonde",
+        "results": {
+            "bleu": 8.998266,
+            "chrf": 23.922219,
+            "chrf++": 22.299272,
+            "comet": 0.451275
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Tanzania",
+        "language": "nyaturu",
+        "results": {
+            "bleu": 11.478744,
+            "chrf": 16.317265,
+            "chrf++": 13.76787,
+            "comet": 0.414256
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Tanzania",
+        "language": "pare",
+        "results": {
+            "bleu": 17.965206,
+            "chrf": 14.778832,
+            "chrf++": 12.446651,
+            "comet": 0.399483
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Tanzania",
+        "language": "sukuma",
+        "results": {
+            "bleu": 15.510081,
+            "chrf": 19.04504,
+            "chrf++": 17.083339,
+            "comet": 0.439436
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Tanzania",
+        "language": "zigula",
+        "results": {
+            "bleu": 11.478744,
+            "chrf": 21.353032,
+            "chrf++": 19.718871,
+            "comet": 0.467582
+        }
+    }
+]

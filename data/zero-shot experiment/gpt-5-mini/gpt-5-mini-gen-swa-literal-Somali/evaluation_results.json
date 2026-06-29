@@ -1,0 +1,13 @@
+[
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Somali",
+        "language": "somali",
+        "results": {
+            "bleu": 0.0,
+            "chrf": 36.62428,
+            "chrf++": 34.173527,
+            "comet": 0.656265
+        }
+    }
+]

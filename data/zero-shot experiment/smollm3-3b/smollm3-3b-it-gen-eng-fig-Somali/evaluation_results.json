@@ -1,0 +1,16 @@
+[
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Somali",
+        "language": "somali",
+        "results": {
+            "test_model_preparation_time": 0.0041,
+            "test_bleu": 5.993031,
+            "test_chrf": 13.175017,
+            "test_chrf++": 11.55493,
+            "test_runtime": 406.7589,
+            "test_samples_per_second": 1.229,
+            "test_steps_per_second": 1.229
+        }
+    }
+]

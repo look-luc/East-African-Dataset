@@ -1,0 +1,17 @@
+[
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Somali",
+        "language": "somali",
+        "results": {
+            "test_model_preparation_time": 0.0062,
+            "test_bleu": 0.0,
+            "test_chrf": 11.124356,
+            "test_chrf++": 9.738214,
+            "test_comet": 0.503133,
+            "test_runtime": 532.7762,
+            "test_samples_per_second": 0.938,
+            "test_steps_per_second": 0.938
+        }
+    }
+]

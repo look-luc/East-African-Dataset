@@ -1,0 +1,128 @@
+[
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "kwele",
+        "results": {
+            "test_model_preparation_time": 0.0091,
+            "test_bleu": 7.129385,
+            "test_chrf": 11.931929,
+            "test_chrf++": 10.234806,
+            "test_runtime": 49.5138,
+            "test_samples_per_second": 2.02,
+            "test_steps_per_second": 1.01
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "tetela",
+        "results": {
+            "test_model_preparation_time": 0.0091,
+            "test_bleu": 6.742556,
+            "test_chrf": 14.188984,
+            "test_chrf++": 10.90737,
+            "test_runtime": 56.695,
+            "test_samples_per_second": 1.764,
+            "test_steps_per_second": 0.882
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "bangubangu",
+        "results": {
+            "test_model_preparation_time": 0.0091,
+            "test_bleu": 17.965206,
+            "test_chrf": 16.265792,
+            "test_chrf++": 14.215108,
+            "test_runtime": 63.2319,
+            "test_samples_per_second": 1.55,
+            "test_steps_per_second": 0.775
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "hema",
+        "results": {
+            "test_model_preparation_time": 0.0091,
+            "test_bleu": 8.64302,
+            "test_chrf": 15.500816,
+            "test_chrf++": 12.575777,
+            "test_runtime": 66.9134,
+            "test_samples_per_second": 1.494,
+            "test_steps_per_second": 0.747
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "hemba",
+        "results": {
+            "test_model_preparation_time": 0.0091,
+            "test_bleu": 6.988198,
+            "test_chrf": 14.397025,
+            "test_chrf++": 12.167676,
+            "test_runtime": 63.8439,
+            "test_samples_per_second": 1.566,
+            "test_steps_per_second": 0.783
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "holoholo",
+        "results": {
+            "test_model_preparation_time": 0.0091,
+            "test_bleu": 16.515822,
+            "test_chrf": 11.416128,
+            "test_chrf++": 9.775455,
+            "test_runtime": 64.8716,
+            "test_samples_per_second": 1.542,
+            "test_steps_per_second": 0.771
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "nande",
+        "results": {
+            "test_model_preparation_time": 0.0091,
+            "test_bleu": 10.55267,
+            "test_chrf": 14.547467,
+            "test_chrf++": 12.673599,
+            "test_runtime": 66.3041,
+            "test_samples_per_second": 1.508,
+            "test_steps_per_second": 0.754
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "taabwa",
+        "results": {
+            "test_model_preparation_time": 0.0091,
+            "test_bleu": 7.056996,
+            "test_chrf": 9.891737,
+            "test_chrf++": 8.291241,
+            "test_runtime": 65.6092,
+            "test_samples_per_second": 1.524,
+            "test_steps_per_second": 0.762
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "tshiluba",
+        "results": {
+            "test_model_preparation_time": 0.0091,
+            "test_bleu": 6.200503,
+            "test_chrf": 15.586911,
+            "test_chrf++": 13.400393,
+            "test_runtime": 69.6365,
+            "test_samples_per_second": 1.58,
+            "test_steps_per_second": 0.79
+        }
+    }
+]

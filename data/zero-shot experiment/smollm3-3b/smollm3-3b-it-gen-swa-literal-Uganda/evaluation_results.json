@@ -1,0 +1,107 @@
+[
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Uganda",
+        "language": "alur",
+        "results": {
+            "test_model_preparation_time": 0.0054,
+            "test_bleu": 15.973578,
+            "test_chrf": 9.162454,
+            "test_chrf++": 9.000784,
+            "test_comet": 0.46754,
+            "test_runtime": 82.9308,
+            "test_samples_per_second": 1.206,
+            "test_steps_per_second": 1.206
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Uganda",
+        "language": "chiga",
+        "results": {
+            "test_model_preparation_time": 0.0054,
+            "test_bleu": 0.0,
+            "test_chrf": 14.030816,
+            "test_chrf++": 10.801394,
+            "test_comet": 0.467102,
+            "test_runtime": 120.6253,
+            "test_samples_per_second": 0.829,
+            "test_steps_per_second": 0.829
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Uganda",
+        "language": "ganda",
+        "results": {
+            "test_model_preparation_time": 0.0054,
+            "test_bleu": 5.522398,
+            "test_chrf": 8.480319,
+            "test_chrf++": 7.516775,
+            "test_comet": 0.28125,
+            "test_runtime": 97.5441,
+            "test_samples_per_second": 1.025,
+            "test_steps_per_second": 1.025
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Uganda",
+        "language": "rufumbira",
+        "results": {
+            "test_model_preparation_time": 0.0054,
+            "test_bleu": 4.368584,
+            "test_chrf": 12.468199,
+            "test_chrf++": 9.700434,
+            "test_comet": 0.482237,
+            "test_runtime": 108.3662,
+            "test_samples_per_second": 0.923,
+            "test_steps_per_second": 0.923
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Uganda",
+        "language": "runyoro",
+        "results": {
+            "test_model_preparation_time": 0.0054,
+            "test_bleu": 5.522398,
+            "test_chrf": 14.033378,
+            "test_chrf++": 10.815559,
+            "test_comet": 0.476469,
+            "test_runtime": 113.7722,
+            "test_samples_per_second": 0.879,
+            "test_steps_per_second": 0.879
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Uganda",
+        "language": "soga",
+        "results": {
+            "test_model_preparation_time": 0.0054,
+            "test_bleu": 8.116698,
+            "test_chrf": 13.378462,
+            "test_chrf++": 11.628531,
+            "test_comet": 0.511391,
+            "test_runtime": 103.7382,
+            "test_samples_per_second": 0.964,
+            "test_steps_per_second": 0.964
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Uganda",
+        "language": "tooro",
+        "results": {
+            "test_model_preparation_time": 0.0054,
+            "test_bleu": 0.0,
+            "test_chrf": 14.454711,
+            "test_chrf++": 11.461751,
+            "test_comet": 0.459918,
+            "test_runtime": 115.4708,
+            "test_samples_per_second": 0.866,
+            "test_steps_per_second": 0.866
+        }
+    }
+]

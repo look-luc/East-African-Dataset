@@ -1,0 +1,24 @@
+[
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Ethiopia",
+        "language": "borana",
+        "results": {
+            "bleu": 14.535768,
+            "chrf": 17.459374,
+            "chrf++": 14.755684,
+            "comet": 0.517516
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Ethiopia",
+        "language": "burji",
+        "results": {
+            "bleu": 9.578464,
+            "chrf": 17.46891,
+            "chrf++": 14.750901,
+            "comet": 0.503736
+        }
+    }
+]

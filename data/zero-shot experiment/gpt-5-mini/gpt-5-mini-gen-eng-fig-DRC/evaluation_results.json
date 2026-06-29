@@ -1,0 +1,101 @@
+[
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "kwele",
+        "results": {
+            "bleu": 8.493099,
+            "chrf": 17.366008,
+            "chrf++": 14.506973,
+            "comet": 0.493421
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "tetela",
+        "results": {
+            "bleu": 9.42516,
+            "chrf": 16.703621,
+            "chrf++": 12.939892,
+            "comet": 0.478563
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "bangubangu",
+        "results": {
+            "bleu": 6.614764,
+            "chrf": 18.261305,
+            "chrf++": 15.779376,
+            "comet": 0.517253
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "hema",
+        "results": {
+            "bleu": 8.913766,
+            "chrf": 18.43081,
+            "chrf++": 14.885818,
+            "comet": 0.533499
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "hemba",
+        "results": {
+            "bleu": 7.461865,
+            "chrf": 18.271049,
+            "chrf++": 15.386569,
+            "comet": 0.512058
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "holoholo",
+        "results": {
+            "bleu": 12.298833,
+            "chrf": 14.787391,
+            "chrf++": 12.322662,
+            "comet": 0.489502
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "nande",
+        "results": {
+            "bleu": 9.103526,
+            "chrf": 18.422326,
+            "chrf++": 15.68053,
+            "comet": 0.507645
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "taabwa",
+        "results": {
+            "bleu": 8.450311,
+            "chrf": 13.07846,
+            "chrf++": 10.96905,
+            "comet": 0.490744
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "DRC",
+        "language": "tshiluba",
+        "results": {
+            "bleu": 14.535768,
+            "chrf": 18.966267,
+            "chrf++": 16.220067,
+            "comet": 0.533136
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Somali",
+        "language": "somali",
+        "results": {
+            "bleu": 19.640733,
+            "chrf": 20.727078,
+            "chrf++": 18.047046,
+            "comet": 0.568016
+        }
+    }
+]

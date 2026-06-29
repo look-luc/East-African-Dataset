@@ -1,0 +1,79 @@
+[
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Uganda",
+        "language": "alur",
+        "results": {
+            "bleu": 25.406637,
+            "chrf": 13.240913,
+            "chrf++": 12.52725,
+            "comet": 0.399374
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Uganda",
+        "language": "chiga",
+        "results": {
+            "bleu": 19.960199,
+            "chrf": 28.637273,
+            "chrf++": 26.324411,
+            "comet": 0.483704
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Uganda",
+        "language": "ganda",
+        "results": {
+            "bleu": 5.816635,
+            "chrf": 9.560858,
+            "chrf++": 8.789627,
+            "comet": 0.354941
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Uganda",
+        "language": "rufumbira",
+        "results": {
+            "bleu": 48.549177,
+            "chrf": 23.466679,
+            "chrf++": 21.324893,
+            "comet": 0.479811
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Uganda",
+        "language": "runyoro",
+        "results": {
+            "bleu": 5.934203,
+            "chrf": 25.359914,
+            "chrf++": 23.431719,
+            "comet": 0.465684
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Uganda",
+        "language": "soga",
+        "results": {
+            "bleu": 14.535768,
+            "chrf": 20.38487,
+            "chrf++": 19.012559,
+            "comet": 0.421673
+        }
+    },
+    {
+        "task_type": "gen_eng_literal",
+        "location": "Uganda",
+        "language": "tooro",
+        "results": {
+            "bleu": 24.941747,
+            "chrf": 28.189797,
+            "chrf++": 26.506238,
+            "comet": 0.491056
+        }
+    }
+]

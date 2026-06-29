@@ -1,0 +1,254 @@
+[
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "digo",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 9.571879,
+            "test_chrf": 16.460855,
+            "test_chrf++": 14.49129,
+            "test_runtime": 267.4433,
+            "test_samples_per_second": 1.455,
+            "test_steps_per_second": 0.729
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "ekegusii",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 9.23843,
+            "test_chrf": 18.195651,
+            "test_chrf++": 15.776681,
+            "test_runtime": 333.0951,
+            "test_samples_per_second": 1.543,
+            "test_steps_per_second": 0.772
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "gikuyu",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 8.907637,
+            "test_chrf": 16.930438,
+            "test_chrf++": 14.776282,
+            "test_runtime": 395.6329,
+            "test_samples_per_second": 1.4,
+            "test_steps_per_second": 0.7
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "kamba",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 11.044796,
+            "test_chrf": 16.224736,
+            "test_chrf++": 14.237357,
+            "test_runtime": 220.5656,
+            "test_samples_per_second": 1.374,
+            "test_steps_per_second": 0.689
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "luo",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 10.986407,
+            "test_chrf": 18.120295,
+            "test_chrf++": 15.656437,
+            "test_runtime": 334.3893,
+            "test_samples_per_second": 1.552,
+            "test_steps_per_second": 0.778
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "maasai",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 9.578464,
+            "test_chrf": 16.401216,
+            "test_chrf++": 14.353405,
+            "test_runtime": 124.2633,
+            "test_samples_per_second": 1.65,
+            "test_steps_per_second": 0.829
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "meru",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 12.451643,
+            "test_chrf": 18.453014,
+            "test_chrf++": 15.714658,
+            "test_runtime": 340.7121,
+            "test_samples_per_second": 1.526,
+            "test_steps_per_second": 0.763
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "nandi",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 8.737168,
+            "test_chrf": 16.826076,
+            "test_chrf++": 14.304592,
+            "test_runtime": 67.807,
+            "test_samples_per_second": 1.475,
+            "test_steps_per_second": 0.737
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "nubian_2",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 9.103526,
+            "test_chrf": 17.414197,
+            "test_chrf++": 14.774048,
+            "test_runtime": 343.1221,
+            "test_samples_per_second": 1.457,
+            "test_steps_per_second": 0.729
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "nubian",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 9.864703,
+            "test_chrf": 17.1012,
+            "test_chrf++": 14.612604,
+            "test_runtime": 319.4771,
+            "test_samples_per_second": 1.565,
+            "test_steps_per_second": 0.783
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "nyala",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 9.993744,
+            "test_chrf": 15.975847,
+            "test_chrf++": 13.543762,
+            "test_runtime": 74.4048,
+            "test_samples_per_second": 1.344,
+            "test_steps_per_second": 0.672
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "olusamia",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 7.595456,
+            "test_chrf": 14.592356,
+            "test_chrf++": 12.393862,
+            "test_runtime": 67.2707,
+            "test_samples_per_second": 1.487,
+            "test_steps_per_second": 0.743
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "orma",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 10.252286,
+            "test_chrf": 16.32043,
+            "test_chrf++": 13.928595,
+            "test_runtime": 66.2487,
+            "test_samples_per_second": 1.509,
+            "test_steps_per_second": 0.755
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "rendille",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 8.685079,
+            "test_chrf": 17.162905,
+            "test_chrf++": 14.185372,
+            "test_runtime": 68.5825,
+            "test_samples_per_second": 1.458,
+            "test_steps_per_second": 0.729
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "samburu",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 3.929719,
+            "test_chrf": 18.546239,
+            "test_chrf++": 14.633936,
+            "test_runtime": 74.4827,
+            "test_samples_per_second": 1.343,
+            "test_steps_per_second": 0.671
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "teso",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 10.55267,
+            "test_chrf": 17.130295,
+            "test_chrf++": 14.901586,
+            "test_runtime": 74.6685,
+            "test_samples_per_second": 1.339,
+            "test_steps_per_second": 0.67
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "tugen",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 8.913766,
+            "test_chrf": 16.195126,
+            "test_chrf++": 13.718108,
+            "test_runtime": 70.425,
+            "test_samples_per_second": 1.42,
+            "test_steps_per_second": 0.71
+        }
+    },
+    {
+        "task_type": "gen_eng_fig",
+        "location": "Kenya",
+        "language": "turkana",
+        "results": {
+            "test_model_preparation_time": 0.0046,
+            "test_bleu": 6.274655,
+            "test_chrf": 18.097271,
+            "test_chrf++": 14.128859,
+            "test_runtime": 70.2984,
+            "test_samples_per_second": 1.423,
+            "test_steps_per_second": 0.711
+        }
+    }
+]

@@ -1,0 +1,122 @@
+[
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Tanzania",
+        "language": "gweno",
+        "results": {
+            "test_model_preparation_time": 0.0068,
+            "test_bleu": 7.80985,
+            "test_chrf": 16.606503,
+            "test_chrf++": 14.528659,
+            "test_comet": 0.534845,
+            "test_runtime": 84.2771,
+            "test_samples_per_second": 1.187,
+            "test_steps_per_second": 0.593
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Tanzania",
+        "language": "kihangaza",
+        "results": {
+            "test_model_preparation_time": 0.0068,
+            "test_bleu": 10.682175,
+            "test_chrf": 14.625515,
+            "test_chrf++": 13.069123,
+            "test_comet": 0.530612,
+            "test_runtime": 76.3277,
+            "test_samples_per_second": 1.336,
+            "test_steps_per_second": 0.668
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Tanzania",
+        "language": "kihara",
+        "results": {
+            "test_model_preparation_time": 0.0068,
+            "test_bleu": 8.64302,
+            "test_chrf": 15.484435,
+            "test_chrf++": 13.898033,
+            "test_comet": 0.528811,
+            "test_runtime": 73.5004,
+            "test_samples_per_second": 1.374,
+            "test_steps_per_second": 0.694
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Tanzania",
+        "language": "makonde",
+        "results": {
+            "test_model_preparation_time": 0.0068,
+            "test_bleu": 6.567275,
+            "test_chrf": 22.750093,
+            "test_chrf++": 20.082879,
+            "test_comet": 0.564845,
+            "test_runtime": 87.0983,
+            "test_samples_per_second": 1.148,
+            "test_steps_per_second": 0.574
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Tanzania",
+        "language": "nyaturu",
+        "results": {
+            "test_model_preparation_time": 0.0068,
+            "test_bleu": 0.0,
+            "test_chrf": 18.584035,
+            "test_chrf++": 15.055518,
+            "test_comet": 0.632735,
+            "test_runtime": 76.8788,
+            "test_samples_per_second": 1.301,
+            "test_steps_per_second": 0.65
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Tanzania",
+        "language": "pare",
+        "results": {
+            "test_model_preparation_time": 0.0068,
+            "test_bleu": 10.682175,
+            "test_chrf": 18.656668,
+            "test_chrf++": 15.103215,
+            "test_comet": 0.62519,
+            "test_runtime": 72.0666,
+            "test_samples_per_second": 1.388,
+            "test_steps_per_second": 0.694
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Tanzania",
+        "language": "sukuma",
+        "results": {
+            "test_model_preparation_time": 0.0068,
+            "test_bleu": 9.652435,
+            "test_chrf": 15.941883,
+            "test_chrf++": 13.004595,
+            "test_comet": 0.571022,
+            "test_runtime": 346.7372,
+            "test_samples_per_second": 1.442,
+            "test_steps_per_second": 0.721
+        }
+    },
+    {
+        "task_type": "gen_swa_literal",
+        "location": "Tanzania",
+        "language": "zigula",
+        "results": {
+            "test_model_preparation_time": 0.0068,
+            "test_bleu": 18.995892,
+            "test_chrf": 27.221329,
+            "test_chrf++": 23.704797,
+            "test_comet": 0.635669,
+            "test_runtime": 79.2255,
+            "test_samples_per_second": 1.262,
+            "test_steps_per_second": 0.631
+        }
+    }
+]
