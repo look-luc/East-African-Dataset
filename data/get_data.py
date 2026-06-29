@@ -8,6 +8,7 @@ kevin_Obote_few_shot = "kevin_Obote_few_shots"
 zero_shot_experiment = "zero-shot experiment"
 
 def making_df(jsonl_list):
+    lang_pattern = r"\*\*Input\*\*:\nA proverb in (.*?)\n\n\*\*Output\*\*:"
     pattern = r"Now, please translate the following proverb:\n\n\*\*Input\*\*:\n(.*?)\n\n\*\*Output\*\*:"
 
     df = []
@@ -21,10 +22,11 @@ def making_df(jsonl_list):
 
     final_df = pd.concat(df, ignore_index=True)
 
+    final_df["language"] = final_df["prompt"].str.extract(lang_pattern, flags=re.DOTALL, expand=False)
     final_df["african_proverb"] = final_df["prompt"].str.extract(pattern, flags=re.DOTALL, expand=False)
     final_df["african_proverb"] = final_df["african_proverb"].str.strip()
 
-    return final_df[["african_proverb", "label"]]
+    return final_df[["language", "african_proverb", "label"]]
 
 
 def Get_Data():
@@ -37,8 +39,6 @@ def Get_Data():
     zero_df = making_df(zero_jsonl)
 
     data_df = pd.concat([kevin_df, zero_df], ignore_index=True)
-
-    data_df.to_csv("Prompt_and_label.csv", sep='\t')
 
     return data_df
 
