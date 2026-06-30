@@ -16,7 +16,7 @@ def main():
     data: pd.DataFrame = Get_Data()
 
     print("Generating rough morpheme breaks...")
-    data["morpheme_breaks"] = md.segment(df=data, threshold=3)
+    data["morpheme_breaks"] = md.segment(df=data)
 
     print(data[["language", "african_proverb", "morpheme_breaks"]].head(10))
 
