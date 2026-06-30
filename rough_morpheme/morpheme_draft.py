@@ -35,7 +35,16 @@ def prep_dual(text: pd.Series):
 
     return forward_trie, backward_trie
 
-def segment(df: DataFrame, min_word_len=4, product_threshold=15):
+def clean_segments(segmented_word: str):
+    # Bantu prefixes are typically V or CV, never standalone single obstruents
+    segmented_word = re.sub(r'\b([bcdfghjklmnpqrstvwxyz])-', r'\1', segmented_word)
+
+    # Nasal+Consonant complexes like nt, nd, mp, mb act as single phonological units.
+    segmented_word = re.sub(r'-([nt|nd|mp|mb|ng|nj])', r'\1', segmented_word)
+
+    return segmented_word
+
+def segment(df: DataFrame, min_word_len=4, product_threshold=15, ratio=0.35):
     """
     Segments words using the product of forward and backward variety scores,
     filtering out noise using an adjustable baseline threshold floor.
@@ -73,13 +82,16 @@ def segment(df: DataFrame, min_word_len=4, product_threshold=15):
                 BACKWARD_COUNT.append(len(backward_trie.get(suffix_rev, set())))
 
             scores = [FORWARD_COUNT[k] * BACKWARD_COUNT[k] for k in range(num_boundaries)]
+            max_word_peak = max(scores) if scores else 0
+            dynamic_threshold = max(product_threshold, max_word_peak * ratio)
+
             cut_positions = set()
 
             for k in range(num_boundaries):
                 left_val = scores[k-1] if k > 0 else -1
                 right_val = scores[k+1] if k < num_boundaries - 1 else -1
 
-                if scores[k] > left_val and scores[k] > right_val and scores[k] >= product_threshold:
+                if scores[k] > left_val and scores[k] > right_val and scores[k] >= dynamic_threshold:
                     cut_positions.add(k)
 
             segments = []
@@ -90,7 +102,9 @@ def segment(df: DataFrame, min_word_len=4, product_threshold=15):
                     start_idx = k + 1
             segments.append(word[start_idx:])
 
-            segmented_words.append("-".join(segments))
+            raw_segmented = "-".join(segments)
+            final_segmented = clean_segments(raw_segmented)
+            segmented_words.append(final_segmented)
 
         morph.append(" ".join(segmented_words))
 
