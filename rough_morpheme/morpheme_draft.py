@@ -19,38 +19,39 @@ def prep(text:pd.Series):
 
     return trie
 
-def segment(df:DataFrame, threshold=3):
+def segment(df: DataFrame, threshold=12): # Raised threshold to minimize early cuts
     bantu_mask = df['language_family'] == 'bantu'
     global_trie = prep(df.loc[bantu_mask, "african_proverb"])
 
     morph = []
     for idx, row in df.iterrows():
-        lang_family_str = str(row["language_family"]).lower()
-        proverb_val = row["african_proverb"]
+        proverb = row["african_proverb"]
+        lang_family = str(row["language_family"]).lower()
 
-        # If it's not a Bantu language, or if the text is empty, skip it safely
-        if lang_family_str != 'bantu' or not isinstance(proverb_val, str) or proverb_val.strip() == "":
+        if lang_family != 'bantu' or not isinstance(proverb, str) or proverb.strip() == "":
             morph.append("")
             continue
 
-        words = re.findall(r'\b\w+\b', str(proverb_val).lower())
+        words = re.findall(r'\b\w+\b', proverb.lower())
         segmented_words = []
 
         for word in words:
             segments = []
-            current_chunk = ""
+            current_segment = ""
+            prefix = ""
 
             for i in range(len(word)):
-                current_chunk += word[i]
+                prefix += word[i]
+                current_segment += word[i]
 
-                next_choices_count = len(global_trie.get(current_chunk, set()))
+                next_choices_count = len(global_trie.get(prefix, set()))
 
                 if next_choices_count >= threshold and i < len(word) - 1:
-                    segments.append(current_chunk)
-                    current_chunk = ""
+                    segments.append(current_segment)
+                    current_segment = ""
 
-            if current_chunk:
-                segments.append(current_chunk)
+            if current_segment:
+                segments.append(current_segment)
             segmented_words.append("-".join(segments))
 
         morph.append(" ".join(segmented_words))
