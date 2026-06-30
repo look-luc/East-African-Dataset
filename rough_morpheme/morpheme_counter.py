@@ -10,7 +10,7 @@ root_dir = Path(__file__).resolve().parents[1]
 if str(root_dir) not in sys.path:
     sys.path.append(str(root_dir))
 
-def morph_count(df_path:str, output_file:str="bantu_grammar_lookup.csv", top_n_threshold=30):
+def morph_count(df_path:str, output_file:str="bantu_grammar_lookup.csv", top_n_threshold=1000000):
     df = pd.read_csv(df_path, sep='\t')
 
     print(f"Reading dataset: {df_path}...")

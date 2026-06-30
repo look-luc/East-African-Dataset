@@ -3,7 +3,6 @@ import pandas as pd
 import rough_morpheme.morpheme_counter as m_count
 import rough_morpheme.morpheme_draft as md
 from data.get_data import Get_Data
-from morph_translate.morpheme_trans import assemble_bantubvd_lexicon
 
 
 def main(path, task:str):
