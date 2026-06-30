@@ -7,6 +7,27 @@ script_dir = Path(__file__).resolve().parent
 kevin_Obote_few_shot = "kevin_Obote_few_shots"
 zero_shot_experiment = "zero-shot experiment"
 
+bantu_langs = [
+    "meru",
+    "bangubangu",
+    "sukuma",
+    "tshiluba",
+    "digo",
+    "gikuyu",
+    "olusamia",
+    "ekegusii",
+    "kamba",
+]
+
+nilotic_langs = [
+    "luo",
+    "nandi",
+    "samburu",
+    "maasai"
+]
+
+cushitic_lang = ["somali"]
+
 def making_df(jsonl_list):
     lang_pattern = r"\*\*Input\*\*:\nA proverb in (.*?)\n\n\*\*Output\*\*:"
     pattern = r"Now, please translate the following proverb:\n\n\*\*Input\*\*:\n(.*?)\n\n\*\*Output\*\*:"
