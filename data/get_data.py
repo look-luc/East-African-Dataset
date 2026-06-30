@@ -112,7 +112,7 @@ def Get_Data():
     zero_jsonl = list(zero.rglob("*.jsonl"))
     zero_df = making_df(zero_jsonl)
 
-    data_df = pd.concat([kevin_df, zero_df], ignore_index=True)
+    data_df = pd.DataFrame(pd.concat([kevin_df, zero_df], ignore_index=True))
 
     return data_df
 
