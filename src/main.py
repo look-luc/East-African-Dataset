@@ -1,24 +1,22 @@
-import sys
-from pathlib import Path
-
 import pandas as pd
 
-root_dir = Path(__file__).resolve().parents[3]
-if str(root_dir) not in sys.path:
-    sys.path.append(str(root_dir))
-
+import rough_morpheme.morpheme_counter as m_count
 import rough_morpheme.morpheme_draft as md
 from data.get_data import Get_Data
 
 
-def main():
+def main(path):
     print("Loading datasets...")
     data: pd.DataFrame = Get_Data()
 
     print("Generating rough morpheme breaks...")
     data["morpheme_breaks"] = md.segment(df=data, product_threshold=25)
 
-    print(data[["language", "african_proverb", "morpheme_breaks"]].head(10))
-
     data.to_csv("data.csv", sep='\t')
     print("gathered data into data.csv")
+
+    print("\nCounting Morphemes")
+
+    morph_counter = m_count.morph_count(str(path / "data.csv"))
+
+    print("finished counting morphemes")
