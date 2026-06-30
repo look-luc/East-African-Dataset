@@ -11,7 +11,8 @@ from data.get_data import Get_Data
 
 
 def main():
-    Get_Data().to_csv("data.csv", sep='\t')
     data = Get_Data()
 
+
+    data.to_csv("data.csv", sep='\t')
     print("gathered data into data.csv")
