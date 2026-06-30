@@ -1,6 +1,7 @@
 import re
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 script_dir = Path(__file__).resolve().parent
@@ -8,25 +9,61 @@ kevin_Obote_few_shot = "kevin_Obote_few_shots"
 zero_shot_experiment = "zero-shot experiment"
 
 bantu_langs = [
-    "meru",
     "bangubangu",
-    "sukuma",
-    "tshiluba",
+    "chiga",
     "digo",
-    "gikuyu",
-    "olusamia",
     "ekegusii",
+    "ganda",
+    "gikuyu",
+    "gweno",
+    "hema",
+    "hemba",
+    "holoholo",
     "kamba",
+    "kihangaza",
+    "kihara",
+    "kwele",
+    "makonde",
+    "meru",
+    "nande",
+    "nyala",
+    "nyaturu",
+    "olusamia",
+    "pare",
+    "rufumbira",
+    "runyoro",
+    "soga",
+    "sukuma",
+    "taabwa",
+    "tetela",
+    "tooro",
+    "tshiluba",
+    "zigula",
 ]
 
 nilotic_langs = [
+    "alur",
     "luo",
-    "nandi",
+    "maasai",
     "samburu",
-    "maasai"
+    "teso",
+    "turkana",
+    "nandi",
+    "tugen",
 ]
 
-cushitic_lang = ["somali"]
+nubian_lang = [
+    "nubian",
+    "nubian_2",
+]
+
+cushitic_lang = [
+    "somali",
+    "borana",
+    "burji",
+    "orma",
+    "rendille",
+]
 
 def making_df(jsonl_list):
     lang_pattern = r"\*\*Input\*\*:\nA proverb in (.*?)\n\n\*\*Output\*\*:"
@@ -44,10 +81,26 @@ def making_df(jsonl_list):
     final_df = pd.concat(df, ignore_index=True)
 
     final_df["language"] = final_df["prompt"].str.extract(lang_pattern, flags=re.DOTALL, expand=False)
+
+    conditions = [
+        final_df["language"].str.lower().isin(bantu_langs),
+        final_df["language"].str.lower().isin(nilotic_langs),
+        final_df["language"].str.lower().isin(cushitic_lang),
+        final_df["language"].str.lower().isin(nubian_lang)
+    ]
+    choices = [
+        "bantu",
+        "nilotic",
+        "nubian",
+        "cushitic",
+    ]
+
+    final_df["language_family"] = np.select(conditions, choices, default="Unknown")
+
     final_df["african_proverb"] = final_df["prompt"].str.extract(pattern, flags=re.DOTALL, expand=False)
     final_df["african_proverb"] = final_df["african_proverb"].str.strip()
 
-    return final_df[["language", "african_proverb", "label"]]
+    return final_df[["language", "language_family", "african_proverb", "label"]]
 
 
 def Get_Data():
