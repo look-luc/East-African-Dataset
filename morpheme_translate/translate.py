@@ -48,15 +48,41 @@ def get_lang_data(lang:str):
     return panlex_df
 
 def translation(file_name:str, lang:str):
+    iso_code = bantu_iso_map.get(lang.lower())
+    if not iso_code:
+        print(f"Error: {lang} mapping not found.")
+        return
+
     data_df = pd.read_csv(str(script_dir / "data.csv"), sep='\t')
     lang_data_df = pd.read_csv(str(script_dir / f"{file_name}.csv"), sep='\t')
 
     bantu_grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
-    bantu_grammar_df = bantu_grammar_df[bantu_grammar_df['language']==lang]
+    # Filter grammar lookup for the target language
+    bantu_grammar_lang_df = bantu_grammar_df[bantu_grammar_df['language'] == lang].copy()
 
-    roots = data_df['morpheme_breaks'].apply(root_extract)[data_df["language"]==lang]
+    # Define target column names
+    lang_txt_col = f"txt_{iso_code}"
 
-    for root in roots:
-        if root in lang_data_df[f"langvar_uid_{bantu_iso_map.get(lang.lower())}"].to_list():
-            bantu_grammar_df.at[root, "proposed_leipzig_gloss"] = lang_data_df.loc[lang_data_df[f'langvar_uid_{bantu_iso_map.get(lang.lower())}'] == lang,\
-                'langvar_uid_eng'].values[0]
+    # Create a fast lookup dictionary: {bantu_word: english_word}
+    translation_map = dict(zip(lang_data_df[lang_txt_col], lang_data_df['txt_eng']))
+
+    # Filter data rows matching the language and run root extraction
+    lang_rows = data_df[data_df["language"] == lang]
+
+    # Initialize the target gloss column if it doesn't exist
+    if "proposed_leipzig_gloss" not in bantu_grammar_lang_df.columns:
+        bantu_grammar_lang_df["proposed_leipzig_gloss"] = None
+
+    for idx, row in lang_rows.iterrows():
+        roots = root_extract(row['morpheme_breaks'])
+        for root in roots:
+            if root in translation_map:
+                # Assign the matched English translation using a scalar index
+                # (Assuming you match by index or a valid identifier column in your schema)
+                if idx in bantu_grammar_lang_df.index:
+                    bantu_grammar_lang_df.at[idx, "proposed_leipzig_gloss"] = translation_map[root]
+
+    # Save the modifications back to a file
+    output_path = script_dir / f"{file_name}_translated.csv"
+    bantu_grammar_lang_df.to_csv(output_path, index=False)
+    print(f"Saved translations to {output_path}")
