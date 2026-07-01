@@ -56,8 +56,12 @@ def translation(file_name:str, lang:str):
     data_df = pd.read_csv(str(script_dir / "data.csv"), sep='\t')
     lang_data_df = pd.read_csv(str(script_dir / f"{file_name}.csv"), sep='\t')
 
+
+    '''
+        Get rid of bantu_grammar_df, look at the root translation loop at bottom for context
+    '''
     bantu_grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
-    bantu_grammar_lang_df = bantu_grammar_df[bantu_grammar_df['language'] == lang].copy()
+    bantu_grammar_lang_df = bantu_grammar_df[bantu_grammar_df['language'].str.lower() == lang.lower()].copy()
 
     lang_txt_col = f"txt_{iso_code}"
 
@@ -68,11 +72,15 @@ def translation(file_name:str, lang:str):
     if "proposed_leipzig_gloss" not in bantu_grammar_lang_df.columns:
         bantu_grammar_lang_df["proposed_leipzig_gloss"] = None
 
+    roots = data_df['extracted_roots']
+    print(type(roots))
     for idx, row in lang_rows.iterrows():
-        roots = row['extracted_roots']
         for root in roots:
             if root in translation_map:
                 if idx in bantu_grammar_lang_df.index:
+                    '''
+                        Make a new csv for just the roots so that you (me in future) don't need to figure out how to extract roots from bantu_grammar_lang_csv
+                    '''
                     bantu_grammar_lang_df.at[idx, "proposed_leipzig_gloss"] = translation_map[root]
 
     output_path = script_dir / f"{file_name}_translated.csv"
