@@ -1,4 +1,7 @@
+import os
+
 import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
 
 import rough_morpheme.morpheme_counter as m_count
 import rough_morpheme.morpheme_draft as md
@@ -18,4 +21,5 @@ def main(path, task:str):
     elif task =="count_morphemes":
         print("Counting Morphemes")
         morph_counter = m_count.morph_count(str(path / "data.csv"))
+
         print("finished counting morphemes")
