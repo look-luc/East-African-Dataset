@@ -16,7 +16,7 @@ def root_extract(morpheme_string: str):
     roots = []
 
     for word in words:
-        if '-' in word
+        if '-' in word:
             segments = word.replace('-', ' - ').split()
 
             for segment in segments:
