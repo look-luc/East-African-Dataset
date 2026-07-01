@@ -26,4 +26,4 @@ def main(path, task:str):
 
         print("finished counting morphemes")
     elif task=="morpheme_translate":
-        print(get_lang_data("pare").head())
+        print(get_lang_data("Ganda").head())
