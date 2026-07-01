@@ -8,19 +8,19 @@ from morpheme_translate.extraction import root_extract
 
 script_dir = Path(__file__).resolve().parent.parent
 
+bantu_iso_map = {
+    'nyaturu': 'rim', 'bangubangu': 'bby', 'kwele': 'kwl', 'kihangaza': 'han',
+    'soga': 'xog', 'pare': 'asa', 'olusamia': 'lsm', 'taabwa': 'tap',
+    'nande': 'nnb', 'hemba': 'hem', 'tshiluba': 'lua', 'tooro': 'ttj',
+    'hema': 'hea', 'holoholo': 'hoo', 'meru': 'mer', 'runyoro': 'nyo',
+    'zigula': 'ziw', 'makonde': 'kde', 'kamba': 'kam', 'digo': 'dig',
+    'kihara': 'haq', 'nyala': 'nle', 'gikuyu': 'kik', 'tetela': 'tll',
+    'rufumbira': 'kin', 'sukuma': 'suk', 'ganda': 'lug', 'gweno': 'gwe',
+    'chiga': 'cgg', 'ekegusii': 'guz'
+}
 
 @lru_cache(maxsize=64)
 def get_lang_data(lang:str):
-    bantu_iso_map = {
-        'nyaturu': 'rim', 'bangubangu': 'bby', 'kwele': 'kwl', 'kihangaza': 'han',
-        'soga': 'xog', 'pare': 'asa', 'olusamia': 'lsm', 'taabwa': 'tap',
-        'nande': 'nnb', 'hemba': 'hem', 'tshiluba': 'lua', 'tooro': 'ttj',
-        'hema': 'hea', 'holoholo': 'hoo', 'meru': 'mer', 'runyoro': 'nyo',
-        'zigula': 'ziw', 'makonde': 'kde', 'kamba': 'kam', 'digo': 'dig',
-        'kihara': 'haq', 'nyala': 'nle', 'gikuyu': 'kik', 'tetela': 'tll',
-        'rufumbira': 'kin', 'sukuma': 'suk', 'ganda': 'lug', 'gweno': 'gwe',
-        'chiga': 'cgg', 'ekegusii': 'guz'
-    }
     iso_code = bantu_iso_map.get(lang.lower())
 
     if not iso_code:
@@ -47,9 +47,16 @@ def get_lang_data(lang:str):
     panlex_df = panlex_df[panlex_df['langvar_uid_eng'] == 'eng-000']
     return panlex_df
 
-def translation():
+def translation(file_name:str, lang:str):
     data_df = pd.read_csv(str(script_dir / "data.csv"), sep='\t')
+    lang_data_df = pd.read_csv(str(script_dir / f"{file_name}.csv"), sep='\t')
 
-    data_df['extracted_roots'] = data_df['morpheme_breaks'].apply(root_extract)
+    bantu_grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
+    bantu_grammar_df = bantu_grammar_df[bantu_grammar_df['language']==lang]
 
-    data_df.to_csv("data.csv", sep='\t')
+    roots = data_df['morpheme_breaks'].apply(root_extract)[data_df["language"]==lang]
+
+    for root in roots:
+        if root in lang_data_df[f"langvar_uid_{bantu_iso_map.get(lang.lower())}"].to_list():
+            bantu_grammar_df.at[root, "proposed_leipzig_gloss"] = lang_data_df.loc[lang_data_df[f'langvar_uid_{bantu_iso_map.get(lang.lower())}'] == lang,\
+                'langvar_uid_eng'].values[0]
