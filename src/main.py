@@ -27,4 +27,4 @@ def main(path, task:str):
         print("finished counting morphemes")
     elif task=="morpheme_translate":
         get_lang_data("Ganda").to_csv("ganda.csv", sep="\t")
-        translation()
+        translation("ganda", "ganda")

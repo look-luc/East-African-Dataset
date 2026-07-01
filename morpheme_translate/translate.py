@@ -69,7 +69,7 @@ def translation(file_name:str, lang:str):
         bantu_grammar_lang_df["proposed_leipzig_gloss"] = None
 
     for idx, row in lang_rows.iterrows():
-        roots = root_extract(row['morpheme_breaks'])
+        roots = row['extracted_roots']
         for root in roots:
             if root in translation_map:
                 if idx in bantu_grammar_lang_df.index:
