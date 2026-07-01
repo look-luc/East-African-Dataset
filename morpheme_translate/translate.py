@@ -26,10 +26,12 @@ def get_lang_data(lang:str):
         eng_data, on='meaning', suffixes=(f'_{iso_code}', '_eng')
     ).drop_duplicates(subset=[f'txt_{iso_code}', 'txt_eng'])
 
-    panlex_df = panlex_df[~panlex_df['txt_eng'].str.contains(r':', na=False)]
-
-    noise_words = ['dollar', 'pound', 'shilling', 'republic', 'ocean', 'sea', 'continent', 'st.']
-    noise_regex = '|'.join(noise_words)
+    noise = ['dollar', 'pound', 'shilling', 'republic', 'ocean', 'sea', 'continent', 'st.', 'saudi', 'papua', 'zimbabwe', 'sudanese']
+    noise_regex = '|'.join(noise)
     panlex_df = panlex_df[~panlex_df['txt_eng'].str.contains(noise_regex, case=False, na=False)]
 
+    panlex_df = panlex_df[~panlex_df['txt_eng'].str.contains(r':|/', na=False)]
+
+    panlex_df = panlex_df[panlex_df['txt_eng'].str.len() < 20]
+    panlex_df = panlex_df[panlex_df['langvar_uid_eng'] == 'eng-000']
     return panlex_df
