@@ -6,7 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import rough_morpheme.morpheme_counter as m_count
 import rough_morpheme.morpheme_draft as md
 from data.get_data import Get_Data
-from morpheme_translate.translate import get_lang_data
+from morpheme_translate.translate import get_lang_data, translation
 
 
 def main(path, task:str):
@@ -26,4 +26,5 @@ def main(path, task:str):
 
         print("finished counting morphemes")
     elif task=="morpheme_translate":
-        print(get_lang_data("Ganda").head())
+        get_lang_data("Ganda").to_csv("ganda.csv", sep="\t")
+        translation()
