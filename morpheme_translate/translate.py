@@ -67,7 +67,7 @@ def translation(file_name:str, lang:str):
         f'{lang.capitalize()} root': [],
         'English translation': []
     }
-    roots = data_df['extracted_roots']
+    roots = lang_rows['extracted_roots']
     for root in roots:
         root_list = []
         if isinstance(root, str):
@@ -86,6 +86,6 @@ def translation(file_name:str, lang:str):
                 map['English translation'].append(translation_map[root_item])
 
     output_path = script_dir / f"{file_name}_translated.csv"
-    df = pd.DataFrame(map)
+    df = pd.DataFrame(map).drop_duplicates()
     df.to_csv(output_path, index=False)
     print(f"Saved translations to {output_path}")
