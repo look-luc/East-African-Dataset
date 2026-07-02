@@ -5,8 +5,6 @@ from pathlib import Path
 import pandas as pd
 from datasets import load_dataset
 
-from morpheme_translate.extraction import root_extract
-
 script_dir = Path(__file__).resolve().parent.parent
 
 bantu_iso_map = {
@@ -48,7 +46,7 @@ def get_lang_data(lang:str):
     panlex_df = panlex_df[panlex_df['langvar_uid_eng'] == 'eng-000']
     return panlex_df
 
-def translation(file_name:str, lang:str):
+def translation(file_name: str, lang: str):
     iso_code = bantu_iso_map.get(lang.lower())
     if not iso_code:
         print(f"Error: {lang} mapping not found.")
@@ -59,14 +57,22 @@ def translation(file_name:str, lang:str):
 
     lang_txt_col = f"txt_{iso_code}"
 
-    translation_map = dict(zip(lang_data_df[lang_txt_col], lang_data_df['txt_eng']))
+    # Build a normalized list of dictionary pairs
+    dict_entries = []
+    for _, row in lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).iterrows():
+        clean_key = str(row[lang_txt_col]).strip().lower().strip('-')
+        dict_entries.append((clean_key, row['txt_eng']))
 
-    lang_rows = data_df[data_df["language"] == lang]
+    # Convert to dictionary for O(1) exact lookups
+    exact_translation_map = dict(dict_entries)
 
-    map = {
+    lang_rows = data_df[data_df["language"].str.lower() == lang.lower()]
+
+    output_data = {
         f'{lang.capitalize()} root': [],
         'English translation': []
     }
+
     roots = lang_rows['extracted_roots']
     for root in roots:
         root_list = []
@@ -80,12 +86,31 @@ def translation(file_name:str, lang:str):
                 root_list = [root]
         elif isinstance(root, list):
             root_list = root
-        for root_item in root_list:
-            if root_item in translation_map:
-                map[f'{lang.capitalize()} root'].append(root_item)
-                map['English translation'].append(translation_map[root_item])
 
-    output_path = script_dir / f"{file_name}_translated.csv"
-    df = pd.DataFrame(map).drop_duplicates()
-    df.to_csv(output_path, index=False)
-    print(f"Saved translations to {output_path}")
+        for root_item in root_list:
+            clean_root = str(root_item).strip().lower().strip('-')
+            if not clean_root:
+                continue
+
+            if clean_root in exact_translation_map:
+                if clean_root == 'bal' and exact_translation_map[clean_root] == 'Mon':
+                    pass
+                else:
+                    output_data[f'{lang.capitalize()} root'].append(root_item)
+                    output_data['English translation'].append(exact_translation_map[clean_root])
+                    continue
+
+            if len(clean_root) > 3:
+                match_found = False
+                for dict_word, eng_trans in dict_entries:
+                    if dict_word.startswith(clean_root) and len(dict_word) <= len(clean_root) + 3:
+                        output_data[f'{lang.capitalize()} root'].append(root_item)
+                        output_data['English translation'].append(eng_trans)
+                        match_found = True
+                        break
+                if match_found:
+                    continue
+
+    df_out = pd.DataFrame(output_data).drop_duplicates().reset_index(drop=True)
+    df_out.to_csv(f"{lang.lower()}_translated.csv", index=False)
+    print(f"Saved hybrid translations to {lang.lower()}_translated.csv with {len(df_out)} unique entries.")

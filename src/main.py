@@ -1,8 +1,3 @@
-import os
-
-import pandas as pd
-from sklearn.metrics.pairwise import cosine_similarity
-
 import rough_morpheme.morpheme_counter as m_count
 import rough_morpheme.morpheme_draft as md
 from data.get_data import Get_Data
