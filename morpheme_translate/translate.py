@@ -18,6 +18,25 @@ bantu_iso_map = {
     'chiga': 'cgg', 'ekegusii': 'guz'
 }
 
+def affix_translate(segments):
+    grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
+
+    ganda_grammar = grammar_df[grammar_df['language'] == 'ganda']
+    grammar_map = dict(zip(ganda_grammar['morpheme_segment'], ganda_grammar['proposed_leipzig_gloss']))
+
+    glossed_parts = []
+
+    glossed_parts = []
+    for seg in segments:
+        clean_seg = seg.lower().strip('-')
+
+        if clean_seg in grammar_map:
+            glossed_parts.append(str(grammar_map[clean_seg]))
+        else:
+            glossed_parts.append(str(clean_seg))
+
+    return "-".join(glossed_parts)
+
 @lru_cache(maxsize=64)
 def get_lang_data(lang:str):
     iso_code = bantu_iso_map.get(lang.lower())
@@ -92,7 +111,8 @@ def translation(file_name: str, lang: str):
     output_data = {
         'Surface Word': [],
         f'{lang.capitalize()} Lemma': [],
-        'English translation': []
+        'English translation': [],
+        'Glossing': []
     }
 
     for _, row in model_df.iterrows():
@@ -104,6 +124,9 @@ def translation(file_name: str, lang: str):
             if not isinstance(lemma_list, list) or not lemma_list:
                 continue
             model_lemma = str(lemma_list[0])
+
+            segments = ast.literal_eval(row['segmentation'])
+            affix = affix_translate(segments)
         except (ValueError, SyntaxError, IndexError):
             continue
 
@@ -113,18 +136,16 @@ def translation(file_name: str, lang: str):
             output_data['Surface Word'].append(surface_word)
             output_data[f'{lang.capitalize()} Lemma'].append(normalized_lemma)
             output_data['English translation'].append(exact_translation_map[normalized_lemma])
+            output_data['Glossing'].append(affix)
 
         elif len(normalized_lemma) > 3:
-            matched_fallback = False
             for dict_word, eng_trans in exact_translation_map.items():
                 if dict_word.startswith(normalized_lemma) and len(dict_word) <= len(normalized_lemma) + 3:
                     output_data['Surface Word'].append(surface_word)
                     output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
                     output_data['English translation'].append(eng_trans)
-                    matched_fallback = True
+                    output_data['Glossing'].append(affix)
                     break
-            if matched_fallback:
-                continue
 
     df_out = pd.DataFrame(output_data).drop_duplicates().reset_index(drop=True)
     df_out.to_csv(f"{lang.lower()}_translated.csv", index=False)
