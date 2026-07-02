@@ -1,6 +1,7 @@
 import rough_morpheme.morpheme_counter as m_count
 import rough_morpheme.morpheme_draft as md
 from data.get_data import Get_Data
+from morpheme_translate.model_segment import model_extract
 from morpheme_translate.translate import get_lang_data, translation
 
 
@@ -23,3 +24,5 @@ def main(path, task:str):
     elif task=="morpheme_translate":
         get_lang_data("Ganda").to_csv("ganda.csv", sep="\t")
         translation("ganda", "ganda")
+    elif task == "model_segment":
+        model_extract("data.csv", "Ganda")
