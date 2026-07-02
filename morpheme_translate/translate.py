@@ -66,12 +66,11 @@ def translation(file_name: str, lang: str):
         print(f"Error: {lang} mapping not found.")
         return
 
-    data_df = pd.read_csv(str(script_dir / "data.csv"), sep='\t')
-    lang_data_df = pd.read_csv(str(script_dir / f"{file_name}.csv"), sep='\t')
+    lang_data_df = get_lang_data(lang)
 
     lang_txt_col = f"txt_{iso_code}"
 
-    model_path = script_dir / f"{file_name}.csv"
+    model_path = script_dir / f"{file_name}"
     if not model_path.exists():
         model_path = script_dir / f"{lang.lower()}_model_lem_seg.csv"
 
@@ -84,8 +83,6 @@ def translation(file_name: str, lang: str):
 
     exact_translation_map = dict(dict_entries)
 
-    lang_rows = data_df[data_df["language"].str.lower() == lang.lower()]
-
     if model_df.columns[0] == 'Unnamed: 0':
         model_df.rename(columns={'Unnamed: 0': 'surface_word'}, inplace=True)
     else:
@@ -93,7 +90,7 @@ def translation(file_name: str, lang: str):
         model_df = model_df.reset_index()
 
     output_data = {
-        f'{lang.capitalize()} root': [],
+        'Surface Word': [],
         f'{lang.capitalize()} Lemma': [],
         'English translation': []
     }
@@ -102,7 +99,6 @@ def translation(file_name: str, lang: str):
         surface_word = str(row['surface_word'])
         raw_lemmas = row['lemmatization']
 
-        # Safely parse the literal string representation of the Python list
         try:
             lemma_list = ast.literal_eval(raw_lemmas)
             if not isinstance(lemma_list, list) or not lemma_list:
