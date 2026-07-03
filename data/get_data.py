@@ -65,7 +65,7 @@ cushitic_lang = [
     "rendille",
 ]
 
-def making_df(jsonl_list, output_type:str):
+def making_df(jsonl_list):
     lang_pattern = r"\*\*Input\*\*:\nA proverb in (.*?)\n\n\*\*Output\*\*:"
     pattern = r"Now, please translate the following proverb:\n\n\*\*Input\*\*:\n(.*?)\n\n\*\*Output\*\*:"
 
@@ -81,8 +81,19 @@ def making_df(jsonl_list, output_type:str):
     temp = pd.concat(df, ignore_index=True)
     final_df = pd.concat(df, ignore_index=True)
 
+    output_conditions = [
+        final_df["source_file"].str.contains("_literal_", na=False),
+        final_df["source_file"].str.contains("_fig_", na=False)
+    ]
+
+    output_choices = [
+        "leteral_translate",
+        "figurative_translate"
+    ]
+
+    final_df["Output Type"] = np.select(output_conditions, output_choices, default="unknown")
+
     final_df["language"] = final_df["prompt"].str.extract(lang_pattern, flags=re.DOTALL, expand=False)
-    final_df["Output Type"] = output_type
 
     conditions = [
         final_df["language"].str.lower().isin(bantu_langs),
@@ -102,17 +113,17 @@ def making_df(jsonl_list, output_type:str):
     final_df["african_proverb"] = final_df["prompt"].str.extract(pattern, flags=re.DOTALL, expand=False)
     final_df["african_proverb"] = final_df["african_proverb"].str.strip()
 
-    return final_df[["language", "language_family", "african_proverb", "label"]],temp
+    return final_df[["language", "language_family", "african_proverb", "label", "Output Type"]],temp
 
 
 def Get_Data():
     kevin = script_dir / kevin_Obote_few_shot
     kevin_jsonl = list(kevin.rglob("*.jsonl"))
-    kevin_df, temp = making_df(kevin_jsonl, "leteral_translate")
+    kevin_df, temp = making_df(kevin_jsonl)
 
     zero = script_dir / zero_shot_experiment
     zero_jsonl = list(zero.rglob("*.jsonl"))
-    zero_df, temp_zero = making_df(zero_jsonl, "figurative_translate")
+    zero_df, temp_zero = making_df(zero_jsonl)
 
     full_data = pd.DataFrame(pd.concat([temp, temp_zero], ignore_index=True))
     data_df = pd.DataFrame(pd.concat([kevin_df, zero_df], ignore_index=True))
