@@ -82,8 +82,8 @@ def making_df(jsonl_list):
     final_df = pd.concat(df, ignore_index=True)
 
     output_conditions = [
-        final_df["source_file"].str.contains("_literal_", na=False),
-        final_df["source_file"].str.contains("_fig_", na=False)
+        final_df["experiment_config"].str.contains("literal", na=False),
+        final_df["experiment_config"].str.contains("fig", na=False)
     ]
 
     output_choices = [
@@ -113,7 +113,7 @@ def making_df(jsonl_list):
     final_df["african_proverb"] = final_df["prompt"].str.extract(pattern, flags=re.DOTALL, expand=False)
     final_df["african_proverb"] = final_df["african_proverb"].str.strip()
 
-    return final_df[["language", "language_family", "african_proverb", "label", "Output Type"]],temp
+    return final_df[["experiment_config", "language", "language_family", "african_proverb", "label", "Output Type"]],temp
 
 
 def Get_Data():
