@@ -1,4 +1,4 @@
-import os
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -9,6 +9,25 @@ import pandas as pd
 root_dir = Path(__file__).resolve().parents[1]
 if str(root_dir) not in sys.path:
     sys.path.append(str(root_dir))
+
+def parse_morphemes(word):
+    parts = re.split(r'(-)', word)
+
+    if len(parts) == 1:
+        return [word]
+
+    morphemes = []
+    for i in range(len(parts)):
+        if parts[i] == '-':
+            continue
+
+        if i + 1 < len(parts) and parts[i+1] == '-':
+            morphemes.append(parts[i] + '-')
+
+        if i - 1 >= 0 and parts[i-1] == '-':
+            morphemes.append('-' + parts[i])
+
+    return morphemes
 
 def morph_count(df_path:str, output_file:str="bantu_grammar_lookup.csv", top_n_threshold=1000000):
     df = pd.read_csv(df_path, sep='\t')
@@ -27,10 +46,9 @@ def morph_count(df_path:str, output_file:str="bantu_grammar_lookup.csv", top_n_t
 
         for string in lang_df['morpheme_breaks'].dropna():
             for word in str(string).split():
-                if "-" in word:
-                    all_morpheme.extend(word.split('-'))
-                else:
-                    all_morpheme.append(word)
+                morphemes = parse_morphemes(word)
+                all_morpheme.extend(morphemes)
+
         morpheme_count:Counter = Counter(all_morpheme)
         total_tokens_counted:int = len(all_morpheme)
 
