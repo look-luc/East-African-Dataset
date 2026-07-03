@@ -22,7 +22,7 @@ def query_bantumorph(word: str, tasks: list[str] | None = None):
     Tasks available: 'segmentation', 'lemmatization', 'noun class prediction'
     """
     if tasks is None:
-        tasks = ["lemmatization", "segmentation"]
+        tasks = ["lemmatization", "segmentation", "noun class prediction"]
 
     # Uses dictionary comprehension to avoid the shared mutable object bug
     output = {word: {task: [] for task in tasks}}
