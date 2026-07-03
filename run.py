@@ -5,5 +5,8 @@ from src.main import main
 script_parent = Path(__file__).resolve().parent
 
 if __name__ == "__main__":
-    main(script_parent, "model_segment")
+    tasks = ["get_data", "model_segment" , "morpheme_translate"]
+
+    for task in tasks:
+        main(script_parent, task)
     print("Ran")
