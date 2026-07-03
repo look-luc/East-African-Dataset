@@ -8,5 +8,5 @@ if __name__ == "__main__":
     tasks = ["get_data", "model_segment" , "morpheme_translate"]
 
     for task in tasks:
-        main(script_parent, "get_data")
+        main(script_parent, task)
     print("Ran")

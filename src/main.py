@@ -22,7 +22,6 @@ def main(path, task:str):
 
     #     print("finished counting morphemes")
     elif task=="morpheme_translate":
-        get_lang_data("Ganda").to_csv("ganda.csv", sep="\t")
         translation("ganda", "ganda")
     elif task == "model_segment":
         model_extract("data.csv", "Ganda")

@@ -18,29 +18,23 @@ bantu_iso_map = {
     'chiga': 'cgg', 'ekegusii': 'guz'
 }
 
-def affix_translate(segments):
+def affix_translate(segments, language):
     grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
-
-    ganda_grammar = grammar_df[grammar_df['language'] == 'ganda']
-    grammar_map = dict(zip(ganda_grammar['morpheme_segment'], ganda_grammar['proposed_leipzig_gloss']))
-
-    glossed_parts = []
+    grammar = grammar_df[grammar_df['language'] == str(language).lower()]
+    grammar_map = dict(zip(grammar['morpheme_segment'], grammar['proposed_leipzig_gloss']))
 
     glossed_parts = []
     for seg in segments:
         clean_seg = seg.lower().strip('-')
-
         if clean_seg in grammar_map:
             glossed_parts.append(str(grammar_map[clean_seg]))
         else:
             glossed_parts.append(str(clean_seg))
-
     return "-".join(glossed_parts)
 
 @lru_cache(maxsize=64)
 def get_lang_data(lang:str):
     iso_code = bantu_iso_map.get(lang.lower())
-
     if not iso_code:
         print(f"Warning: {lang} is not in the target Bantu dictionary.")
         return pd.DataFrame()
@@ -58,16 +52,13 @@ def get_lang_data(lang:str):
     noise = ['dollar', 'pound', 'shilling', 'republic', 'ocean', 'sea', 'continent', 'st.', 'saudi', 'papua', 'zimbabwe', 'sudanese']
     noise_regex = '|'.join(noise)
     panlex_df = panlex_df[~panlex_df['txt_eng'].str.contains(noise_regex, case=False, na=False)]
-
     panlex_df = panlex_df[~panlex_df['txt_eng'].str.contains(r':|/', na=False)]
-
     panlex_df = panlex_df[panlex_df['txt_eng'].str.len() < 100]
     panlex_df = panlex_df[panlex_df['langvar_uid_eng'] == 'eng-000']
     return panlex_df
 
 def normalize_ortho(lemma: str):
     lemma = lemma.strip().lower().strip('-')
-
     if lemma.startswith('um'):
         lemma = 'om' + lemma[2:]
     elif lemma.startswith('un'):
@@ -76,8 +67,24 @@ def normalize_ortho(lemma: str):
         lemma = 'en' + lemma[2:]
     elif lemma.startswith('im'):
         lemma = 'em' + lemma[2:]
-
     return lemma
+
+def strip_bantu_prefixes(word: str) -> str:
+    """
+    Strips common Luganda nominal augments, noun class prefixes,
+    and verbal infinitive markers to expose the core stem for matching.
+    """
+    word = word.strip().lower().strip('-')
+
+    prefixes = [
+        'omw', 'aba', 'amy', 'emi', 'eri', 'ama', 'eki', 'ebi', 'eji', 'aka', 'otu', 'olu', 'ens', 'obu', 'oku', 'ogu', 'egi',
+        'omu', 'umu', 'aba', 'imi', 'iki', 'ibi', 'aka', 'ulu', 'ubu', 'uku',
+        'mu', 'ba', 'mi', 'li', 'ma', 'ki', 'bi', 'ka', 'tu', 'lu', 'bu', 'ku', 'gu', 'gi', 'n', 'm'
+    ]
+    for p in sorted(prefixes, key=len, reverse=True):
+        if word.startswith(p) and len(word) > len(p):
+            return word[len(p):]
+    return word
 
 def translation(file_name: str, lang: str):
     iso_code = bantu_iso_map.get(lang.lower())
@@ -86,7 +93,6 @@ def translation(file_name: str, lang: str):
         return
 
     lang_data_df = get_lang_data(lang)
-
     lang_txt_col = f"txt_{iso_code}"
 
     model_path = script_dir / f"{file_name}"
@@ -95,12 +101,20 @@ def translation(file_name: str, lang: str):
 
     model_df = pd.read_csv(str(model_path), sep='\t')
 
-    dict_entries = {}
+    # Build primary dictionary map and secondary stem-optimized map
+    exact_translation_map = {}
+    stem_translation_map = {}
+
     for _, row in lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).iterrows():
         clean_dict_key = str(row[lang_txt_col]).strip().lower().strip('-')
-        dict_entries[clean_dict_key] = row['txt_eng']
+        translation_val = str(row['txt_eng'])
 
-    exact_translation_map = dict(dict_entries)
+        exact_translation_map[clean_dict_key] = translation_val
+
+        # Populate stem map for cross-prefix fallback
+        dict_stem = strip_bantu_prefixes(clean_dict_key)
+        if len(dict_stem) >= 2 and dict_stem not in stem_translation_map:
+            stem_translation_map[dict_stem] = (clean_dict_key, translation_val)
 
     if model_df.columns[0] == 'Unnamed: 0':
         model_df.rename(columns={'Unnamed: 0': 'surface_word'}, inplace=True)
@@ -126,26 +140,56 @@ def translation(file_name: str, lang: str):
             model_lemma = str(lemma_list[0])
 
             segments = ast.literal_eval(row['segmentation'])
-            affix = affix_translate(segments)
+            affix = affix_translate(segments, lang)
         except (ValueError, SyntaxError, IndexError):
             continue
 
         normalized_lemma = normalize_ortho(model_lemma)
+        matched = False
 
+        # Tier 1: Exact Match
         if normalized_lemma in exact_translation_map:
             output_data['Surface Word'].append(surface_word)
             output_data[f'{lang.capitalize()} Lemma'].append(normalized_lemma)
             output_data['English translation'].append(exact_translation_map[normalized_lemma])
             output_data['Glossing'].append(affix)
+            matched = True
 
-        elif len(normalized_lemma) > 3:
+        # Tier 2: Stem-to-Stem Match (Matches variations of noun prefixes)
+        if not matched:
+            lemma_stem = strip_bantu_prefixes(normalized_lemma)
+            if lemma_stem in stem_translation_map:
+                dict_word, eng_trans = stem_translation_map[lemma_stem]
+                output_data['Surface Word'].append(surface_word)
+                output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
+                output_data['English translation'].append(eng_trans)
+                output_data['Glossing'].append(affix)
+                matched = True
+
+        # Tier 3: Verbal/Infinitive Fallback Check (.endswith)
+        if not matched and len(normalized_lemma) > 2:
             for dict_word, eng_trans in exact_translation_map.items():
-                if dict_word.startswith(normalized_lemma) and len(dict_word) <= len(normalized_lemma) + 3:
+                if dict_word.endswith(normalized_lemma) and len(dict_word) <= len(normalized_lemma) + 3:
                     output_data['Surface Word'].append(surface_word)
                     output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
                     output_data['English translation'].append(eng_trans)
                     output_data['Glossing'].append(affix)
+                    matched = True
                     break
+                elif normalized_lemma.endswith(dict_word) and len(normalized_lemma) <= len(dict_word) + 3:
+                    output_data['Surface Word'].append(surface_word)
+                    output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
+                    output_data['English translation'].append(eng_trans)
+                    output_data['Glossing'].append(affix)
+                    matched = True
+                    break
+
+        # Tier 4: Glossing Preservation Fallback (Crucial for manual lookup workflows)
+        if not matched:
+            output_data['Surface Word'].append(surface_word)
+            output_data[f'{lang.capitalize()} Lemma'].append(model_lemma)
+            output_data['English translation'].append('[UNKNOWN]') # Keeps row intact for manual annotation
+            output_data['Glossing'].append(affix)
 
     df_out = pd.DataFrame(output_data).drop_duplicates().reset_index(drop=True)
     df_out.to_csv(f"{lang.lower()}_translated.csv", index=False)
