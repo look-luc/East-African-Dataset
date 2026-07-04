@@ -59,19 +59,38 @@ def flores_bantu(iso_code:str):
 
     return flores_words_map
 
-
+grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
 def affix_translate(segments, language):
-    grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
     grammar = grammar_df[grammar_df['language'] == str(language).lower()]
     grammar_map = dict(zip(grammar['morpheme_segment'], grammar['proposed_leipzig_gloss']))
 
     glossed_parts = []
     for seg in segments:
-        clean_seg = seg.lower().strip('-')
-        if clean_seg in grammar_map:
-            glossed_parts.append(str(grammar_map[clean_seg]))
+        clean_seg = seg.lower()
+        if "-" in clean_seg and clean_seg not in grammar_map:
+            sub_parts = clean_seg.split("-")
+            sub_glossed = []
+
+            for i, part in enumerate(sub_parts):
+                if not part:
+                    continue
+
+                prefix_candidate = part + '-'
+                suffix_candidate = '-' + part
+
+                if prefix_candidate in grammar_map:
+                    sub_glossed.append(str(grammar_map[prefix_candidate]))
+                elif suffix_candidate in grammar_map:
+                    sub_glossed.append(str(grammar_map[suffix_candidate]))
+                elif part in grammar_map:
+                    sub_glossed.append(str(grammar_map[part]))
+                else:
+                    sub_glossed.append(part)
         else:
-            glossed_parts.append(str(clean_seg))
+            if clean_seg in grammar_map:
+                glossed_parts.append(str(grammar_map[clean_seg]))
+            else:
+                glossed_parts.append(str(clean_seg))
     return "-".join(glossed_parts)
 
 @lru_cache(maxsize=64)
@@ -124,9 +143,7 @@ def strip_bantu_prefixes(word: str) -> str:
     word = word.strip().lower().strip('-')
 
     prefixes = [
-        'omw', 'aba', 'amy', 'emi', 'eri', 'ama', 'eki', 'ebi', 'eji', 'aka', 'otu', 'olu', 'ens', 'obu', 'oku', 'ogu', 'egi',
-        'omu', 'umu', 'aba', 'imi', 'iki', 'ibi', 'aka', 'ulu', 'ubu', 'uku',
-        'mu', 'ba', 'mi', 'li', 'ma', 'ki', 'bi', 'ka', 'tu', 'lu', 'bu', 'ku', 'gu', 'gi', 'n', 'm'
+        "umu", "um"
     ]
     for p in sorted(prefixes, key=len, reverse=True):
         if word.startswith(p) and len(word) > len(p):
