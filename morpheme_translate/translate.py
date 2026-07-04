@@ -1,4 +1,5 @@
 import ast
+from difflib import get_close_matches
 from functools import lru_cache
 from pathlib import Path
 
@@ -249,9 +250,11 @@ def translation(file_name: str, lang: str):
 
         # Tier 4: Glossing Preservation Fallback (Crucial for manual lookup workflows)
         if not matched:
+            matches = get_close_matches(normalized_lemma, exact_translation_map.keys(), n=1, cutoff=0.8)
+
             output_data['Surface Word'].append(surface_word)
             output_data[f'{lang.capitalize()} Lemma'].append(model_lemma)
-            output_data['English translation'].append('[UNKNOWN]') # Keeps row intact for manual annotation
+            output_data['English translation'].append(exact_translation_map[best_match])
             output_data['Glossing'].append(affix)
 
     df_out = pd.DataFrame(output_data).drop_duplicates().reset_index(drop=True)
