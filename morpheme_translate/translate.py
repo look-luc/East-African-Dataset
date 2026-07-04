@@ -12,56 +12,79 @@ script_dir = Path(__file__).resolve().parent.parent
 load_dotenv()
 TOKEN = os.getenv("HF_TOKEN")
 
-bantu_iso_map = {
-    'nyaturu': 'rim', 'bangubangu': 'bby', 'kwele': 'kwl', 'kihangaza': 'han',
-    'soga': 'xog', 'pare': 'asa', 'olusamia': 'lsm', 'taabwa': 'tap',
-    'nande': 'nnb', 'hemba': 'hem', 'tshiluba': 'lua', 'tooro': 'ttj',
-    'hema': 'hea', 'holoholo': 'hoo', 'meru': 'mer', 'runyoro': 'nyo',
-    'zigula': 'ziw', 'makonde': 'kde', 'kamba': 'kam', 'digo': 'dig',
-    'kihara': 'haq', 'nyala': 'nle', 'gikuyu': 'kik', 'tetela': 'tll',
-    'rufumbira': 'kin', 'sukuma': 'suk', 'ganda': 'lug', 'gweno': 'gwe',
-    'chiga': 'cgg', 'ekegusii': 'guz'
+# Map languages to their specialized Hugging Face corpus configurations and text schemas
+BANTU_CORPUS_MAP = {
+    'ganda': {
+        'path': "African-Languages-Lab/multi-open",
+        'name': "english-luganda",
+        'split': "train",
+        'extract_fn': lambda row: (row['luganda'].lower(), row['english'])
+    },
+    'gikuyu': {
+        'path': "African-Languages-Lab/multi-open",
+        'name': "english-kikuyu",
+        'split': "train",
+        'extract_fn': lambda row: (row['kikuyu'].lower(), row['english'])
+    },
+    'tshiluba': {
+        'path': "African-Languages-Lab/multi-open",
+        'name': "english-tshiluba",
+        'split': "train",
+        'extract_fn': lambda row: (row['tshiluba'].lower(), row['english'])
+    },
+    'chiga': {
+        'path': "michsethowusu/Code-170k-kiga",
+        'name': None,
+        'split': "train",
+        'extract_fn': lambda row: (row['conversations']['from'], row['conversations']['value'])
+    },
+    'kamba': {
+        'path': "JonathanAI23/kamba_prompts_full",
+        'name': None,
+        'split': "train",
+        'extract_fn': lambda row: (str(row['prompt']).lower(), row['completion'])
+    }
 }
 
-flores_code = {
-    'lug': 'lug_Latn', 'kik': 'kik_Latn', 'kam': 'kam_Latn',
-    'suk': 'suk_Latn', 'lua': 'lua_Latn', 'kin': 'kin_Latn', 'mer': 'mer_Latn',
-
-    'xog': 'lug_Latn',
-    'nyo': 'nyo_Latn',
-    'ttj': 'nyo_Latn',
-    'cgg': 'nyo_Latn',
-    'lsm': 'luy_Latn',
-    'nle': 'luy_Latn',
-
-    'asa': 'swh_Latn',
-    'gwe': 'swh_Latn',
-    'dig': 'swh_Latn',
-    'ziw': 'swh_Latn',
-}
-
-def flores_bantu(iso_code:str):
-    target_iso = flores_code.get(iso_code, iso_code)
-    flores_words_map = {}
-
-    try:
-        flores_ds = load_dataset("openlanguagedata/flores_plus", name=target_iso, split="dev").to_pandas()
-        eng_flores = load_dataset("openlanguagedata/flores_plus", name="eng_Latn", split="dev").to_pandas()
-
-        for idx, row in flores_ds.iterrows():
-            target_sentence = str(row['text']).lower()
-            eng_sentence = str(eng_flores.iloc[idx]['text']).strip()
-
-            for word in target_sentence.split():
-                clean_word = word.strip(".,;:!?()\"'-")
-                if clean_word and clean_word not in flores_words_map:
-                    # Map the isolated token to its parallel translation context
-                    flores_words_map[clean_word] = f"[FLORES Context] {eng_sentence}"
-    except Exception as e:
-        print(f"Notice: FLORES mapping skipped for config '{target_iso}'. Reason: {e}")
+def load_hf_corpus_context(lang: str) -> dict:
+    """
+    Loads specialized Hugging Face parallel text or instruction data for a given
+    Bantu language and parses it into a word-to-sentence translation map.
+    """
+    cfg = BANTU_CORPUS_MAP.get(lang.lower())
+    if not cfg:
         return {}
 
-    return flores_words_map
+    corpus_words_map = {}
+    try:
+        print(f"Loading fallback context corpus for {lang} via {cfg['path']}...")
+        # Handle configurations seamlessly whether 'name' is required or None
+        if cfg['name']:
+            ds = load_dataset(cfg['path'], name=cfg['name'], split=cfg['split']).to_pandas()
+        else:
+            ds = load_dataset(cfg['path'], split=cfg['split']).to_pandas()
+
+        for _, row in ds.iterrows():
+            try:
+                bantu_sentence, eng_context = cfg['extract_fn'](row)
+                if pd.isna(bantu_sentence) or pd.isna(eng_context):
+                    continue
+
+                # Split the sentence to capture isolated words for matching tiers
+                for word in str(bantu_sentence).split():
+                    clean_word = word.strip(".,;:!?()\"'-")
+                    if clean_word and clean_word not in corpus_words_map:
+                        # Clean context string text boundaries
+                        clean_eng = str(eng_context).strip()
+                        # Explicitly flag the data source in the translation text
+                        corpus_words_map[clean_word] = f"[{cfg['path'].split('/')[-1]} Context] {clean_eng}"
+            except Exception:
+                continue
+    except Exception as e:
+        print(f"Notice: Specialized HF mapping skipped for '{lang}'. Reason: {e}")
+        return {}
+
+    return corpus_words_map
 
 grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
 def affix_translate(segments, language):
@@ -158,14 +181,14 @@ def strip_bantu_prefixes(word: str) -> str:
 
 def translation(file_name: str, lang: str):
     iso_code = bantu_iso_map.get(lang.lower())
-    flores_map = flores_bantu(iso_code)
-
     if not iso_code:
         print(f"Error: {lang} mapping not found.")
         return
 
     lang_data_df = get_lang_data(lang)
     lang_txt_col = f"txt_{iso_code}"
+
+    hf_corpus_map = load_hf_corpus_context(lang)
 
     model_path = script_dir / f"{file_name}"
     if not model_path.exists():
@@ -175,7 +198,6 @@ def translation(file_name: str, lang: str):
 
     exact_translation_map = {}
     stem_translation_map = {}
-
     for _, row in lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).iterrows():
         clean_dict_key = str(row[lang_txt_col]).strip().lower().strip('-')
 
@@ -208,7 +230,8 @@ def translation(file_name: str, lang: str):
 
     for _, row in model_df.iterrows():
         surface_word = str(row['surface_word'])
-        raw_lemmas = row['lemmatization']
+        normalized_lemma = normalize_ortho(str(ast.literal_eval(row['lemmatization'])[0]))
+        affix = affix_translate(ast.literal_eval(row['segmentation']), lang)
 
         try:
             lemma_list = ast.literal_eval(raw_lemmas)
@@ -260,17 +283,17 @@ def translation(file_name: str, lang: str):
                     output_data['Glossing'].append(affix)
                     matched = True
                     break
-            # FLORES logic
-            if not matched and flores_map:
-                if normalized_lemma in flores_map:
-                    output_data['Surface Word'].append(surface_word)
-                    output_data[f'{lang.capitalize()} Lemma'].append(normalized_lemma)
-                    output_data['English translation'].append(flores_map[normalized_lemma])
-                    output_data['Glossing'].append(affix)
-                    matched = True
-                    continue
 
-        # Tier 4: Glossing Preservation Fallback (Crucial for manual lookup workflows)
+        # Tier 4: Specialized Hugging Face Corpus Context Fallback
+        if not matched and hf_corpus_map:
+            if normalized_lemma in hf_corpus_map:
+                output_data['Surface Word'].append(surface_word)
+                output_data[f'{lang.capitalize()} Lemma'].append(normalized_lemma)
+                output_data['English translation'].append(hf_corpus_map[normalized_lemma])
+                output_data['Glossing'].append(affix)
+                matched = True
+
+        # Tier 5: Glossing Preservation Fallback (Fuzzy String Match)
         if not matched:
             matches = get_close_matches(normalized_lemma, exact_translation_map.keys(), n=1, cutoff=0.8)
 
@@ -283,5 +306,5 @@ def translation(file_name: str, lang: str):
                 matched = True
 
     df_out = pd.DataFrame(output_data).drop_duplicates(subset=['Surface Word']).reset_index(drop=True)
-    df_out.to_csv(f"{lang.lower()}_translated.csv", index=False)
-    print(f"Successfully processed model data. Saved entries to {lang.lower()}_translated.csv with {len(df_out)} unique pairs.")
+    df_out.to_csv(f"{lang.lower()}_translated_2.csv", index=False)
+    print(f"Successfully processed model data. Saved entries to {lang.lower()}_translated_2.csv with {len(df_out)} unique pairs.")

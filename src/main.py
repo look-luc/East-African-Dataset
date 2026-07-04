@@ -15,11 +15,11 @@ def main(path, task:str):
 
         data.to_csv("data.csv", sep='\t')
         print("gathered data into data.csv")
-    # elif task =="count_morphemes":
-    #     print("Counting Morphemes")
-    #     morph_counter = m_count.morph_count(str(path / "data.csv"))
+    elif task =="count_morphemes":
+        print("Counting Morphemes")
+        morph_counter = m_count.morph_count(str(path / "data.csv"))
 
-    #     print("finished counting morphemes")
+        print("finished counting morphemes")
     elif task=="morpheme_translate":
         translation("ganda", "ganda")
     elif task == "model_segment":
