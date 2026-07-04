@@ -5,7 +5,7 @@ from morpheme_translate.model_segment import model_extract
 from morpheme_translate.translate import get_lang_data, translation
 
 
-def main(path, task:str):
+def main(path, task:str, lang:str):
     if task == "get_data":
         print("Loading datasets...")
         data = Get_Data()
@@ -21,6 +21,6 @@ def main(path, task:str):
 
         print("finished counting morphemes")
     elif task=="morpheme_translate":
-        translation("ganda", "ganda")
+        translation(lang, lang)
     elif task == "model_segment":
-        model_extract("data.csv", "Ganda")
+        model_extract("data.csv", lang)
