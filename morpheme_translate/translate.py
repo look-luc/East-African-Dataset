@@ -86,11 +86,13 @@ def affix_translate(segments, language):
                     sub_glossed.append(str(grammar_map[part]))
                 else:
                     sub_glossed.append(part)
+            if sub_glossed:
+                glossed_parts.append("-".join(sub_glossed))
         else:
             if clean_seg in grammar_map:
                 glossed_parts.append(str(grammar_map[clean_seg]))
             else:
-                glossed_parts.append(str(clean_seg))
+                glossed_parts.append(str(glossed_parts))
     return "-".join(glossed_parts)
 
 @lru_cache(maxsize=64)
@@ -238,7 +240,7 @@ def translation(file_name: str, lang: str):
                 matched = True
 
         # Tier 3: Verbal/Infinitive Fallback Check (.endswith)
-        if not matched and len(normalized_lemma) > 2:
+        if not matched and len(normalized_lemma) > 3:
             for dict_word, eng_trans in exact_translation_map.items():
                 if dict_word.endswith(normalized_lemma) and len(dict_word) <= len(normalized_lemma) + 3:
                     output_data['Surface Word'].append(surface_word)
@@ -277,6 +279,6 @@ def translation(file_name: str, lang: str):
                 output_data['Glossing'].append(affix)
                 matched = True
 
-    df_out = pd.DataFrame(output_data).drop_duplicates().reset_index(drop=True)
+    df_out = pd.DataFrame(output_data).drop_duplicates(subset=['Surface Word'], keep='first').reset_index(drop=True)
     df_out.to_csv(f"{lang.lower()}_translated.csv", index=False)
     print(f"Successfully processed model data. Saved entries to {lang.lower()}_translated.csv with {len(df_out)} unique pairs.")

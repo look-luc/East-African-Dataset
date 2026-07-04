@@ -5,16 +5,14 @@ kyomuti,muti,tree (Context: large woody plant),kyomuti
 Ababi,mubi,ugly (Context: ugly (be)),ababi
 abalungi,lungi,I’m fine (Context: response),abalungi
 Abakazi,omukazi,woman (Context: adult female human being),abakazi
-abangi,lungi,I’m fine (Context: response),nan
 okwogera,era,and (Context: used to string together sentences or sentence fragments in chronological order),ogera
-Aboluganda,oluganda,Luganda (Context: language),aboluganda
-nga,miga,egg (Context: body housing an embryo),nan
+Aboluganda,ganda,fellow-tribesman,aboluganda
+nga,noga,be flavoured (Context: be (properly) flavoured),nan
 kwata,kwota,warm oneself (Context: bask (in the sun)),nan
-olime,kima,"monkey (Context: monkey (small, dark-coloured))",olime
 tatawaana,na,"and (Context: used to connect two similar words, phrases, et cetera)",tatawaana
 yanoonya,noonya,look for (Context: hand around (to get something)),onya
 wa,kwa,tick (Context: (cattle or dog) tick),nan
-mugga,omugga,river (Context: large stream which drains a landmass),mu-gga
+mugga,omugga,river (Context: large stream which drains a landmass),
 Akanyonyi,ekinyonyi,bird (Context: animal),akanyonyi
 oya,goya,mix (Context: mix (by stirring)),nan
 okuzimba,simba,genet (Context: genet (kind of speckled civet cat)),okuzimba
@@ -26,16 +24,15 @@ akinyumya,nyumba,house (Context: human abode),nyumya
 Amaka,amaka,"family (Context: immediate family, e.g. parents and their children)",amaka
 nte,ne,"and (Context: used to connect two similar words, phrases, et cetera)",nan
 Akwaagala,zaala,give birth (Context: give birth (to a child)),agala
-Akwaagula,ggula,open a door (Context: open (set ajar) a door),a-kwaagula
+Akwaagula,ggula,open a door (Context: open (set ajar) a door),
 Akwata,kwota,warm oneself (Context: bask (in the sun)),akwata
 wala,wala,virgin (Context: virgin (bride)),wala
-kibuga,miga,egg (Context: body housing an embryo),ki-buga
 amalungi,lungi,I’m fine (Context: response),amalungi
-gakola,koola,leaf (Context: leaf (of tree)),ga-kola
-gagendera,ganda,fellow-tribesman,ga-gendera
+gakola,koola,leaf (Context: leaf (of tree)),
+gagendera,ganda,fellow-tribesman,
 si,si,land (Context: (dry) land),nan
 Amazzi,muyizzi,hunter (Context: (professional) hunter),amazzi
-Atalimba,bumba,mould (Context: mould (pottery)),limba
+Atalimba,simba,genet (Context: genet (kind of speckled civet cat)),limba
 Atambula,kambula,plunder (Context: plunder (a town)),tambula
 Atanatambula,kambula,plunder (Context: plunder (a town)),tambula
 nyina,annyina,brother (Context: (her) brother),nyina
@@ -49,13 +46,13 @@ Bazaala,zaala,give birth (Context: give birth (to a child)),bantu2
 mubiri,mubi,ugly (Context: ugly (be)),nan
 tebazaala,zaala,give birth (Context: give birth (to a child)),tebazaala
 mpisa,sa,grind (Context: grind (grain with a millstone)),mpisa
-tosobota,ota,warm oneself (Context: bask (in the sun)),to-sobota
+tosobota,ota,warm oneself (Context: bask (in the sun)),
 olibeera,era,and (Context: used to string together sentences or sentence fragments in chronological order),beera
 mulungi,lungi,I’m fine (Context: response),mulungi
 otuliidde,ntaulira,honey badger (Context: ''Mellivora capensis''),tuliira
 kya,kya2,Q2,nan
 enju,enjuki,bee (Context: insect),enju
-telifuna,na,"and (Context: used to connect two similar words, phrases, et cetera)",teli-funa
+telifuna,na,"and (Context: used to connect two similar words, phrases, et cetera)",
 ekikolimire,kima,"monkey (Context: monkey (small, dark-coloured))",ekikolimire
 abakazi,omukazi,woman (Context: adult female human being),abakazi
 na,na,"and (Context: used to connect two similar words, phrases, et cetera)",nan
@@ -68,7 +65,6 @@ Endiga,ndiga,sheependiima,endiga
 mwaana,omwana,baby (Context: infaneto),mwaana
 mbuzi,embuzi,goat (Context: animal),mbuzi
 Enkima,kima,"monkey (Context: monkey (small, dark-coloured))",enkima
-nti,muti,tree (Context: large woody plant),nan
 Enkuba,enkuba,rain (Context: condensed water from a cloud),enkuba
 ensa,sa,grind (Context: grind (grain with a millstone)),ensa
 yamala,muwala,virgin (Context: virgin (bride)),nan
@@ -79,25 +75,25 @@ nungi,lungi,I’m fine (Context: response),nan
 omunya,omunnya,wizard (Context: male witch),omunya
 era,era,and (Context: used to string together sentences or sentence fragments in chronological order),nan
 afuna,na,"and (Context: used to connect two similar words, phrases, et cetera)",funa
-muganda,ganda,fellow-tribesman,mu-ganda
+muganda,ganda,fellow-tribesman,
 ta,ota,warm oneself (Context: bask (in the sun)),nan
 kulilwa,buulila,tell (Context: say (to)),lilwa
-bakinkole,kikoola,leaf (Context: leaf (of tree)),ba-kinkole
+bakinkole,kikoola,leaf (Context: leaf (of tree)),
 Lubaale,zaala,give birth (Context: give birth (to a child)),lubaale
 mbeera,era,and (Context: used to string together sentences or sentence fragments in chronological order),mbeera
 mbiro,bbumbiro,potter shop,mbiro
 kwotadde,ota,warm oneself (Context: bask (in the sun)),kwotadde
-Mama,kima,"monkey (Context: monkey (small, dark-coloured))",nan
+Mama,maama,"mother (Context: female (human) who parents a child, gives birth to a baby, or is pregnant)",nan
 emugga,omugga,river (Context: large stream which drains a landmass),emugga
 Mulungi,lungi,I’m fine (Context: response),mulungi
-mubi,mubi,ugly (Context: ugly (be)),mubi
+mubi,bbi,feaces,mubi
 Omukazi,omukazi,woman (Context: adult female human being),umukazi
-ufuna,na,"and (Context: used to connect two similar words, phrases, et cetera)",u-funa
+ufuna,na,"and (Context: used to connect two similar words, phrases, et cetera)",
 Ne,ne,"and (Context: used to connect two similar words, phrases, et cetera)",nan
 ennyo,erinnyo,tooth (Context: biological tooth),nan
-ekidaala,zaala,give birth (Context: give birth (to a child)),eki-daala
+ekidaala,zaala,give birth (Context: give birth (to a child)),
 ate,ate,"and (Context: used to connect two similar words, phrases, et cetera)",nan
-masanda,sande,Sunday (Context: day of the week),ma-sanda
+masanda,sande,Sunday (Context: day of the week),
 ogenda,ganda,fellow-tribesman,ogenda
 Omwana,omwana,baby (Context: infaneto),omwana
 omubi,mubi,ugly (Context: ugly (be)),omubi
@@ -105,7 +101,6 @@ owa,kwa,tick (Context: (cattle or dog) tick),nan
 okuwasa,sa,grind (Context: grind (grain with a millstone)),okuwasa
 omukadde,zadde,parent (Context: parent (he who begets)),omukadde
 ssi,si,land (Context: (dry) land),nan
-buti,muti,tree (Context: large woody plant),nan
 ensanafu,nsanafu,ant (Context: (reddish-brown biting) ant),ensanafu
 etambula,kambula,plunder (Context: plunder (a town)),etambula
 Olinye,na,"and (Context: used to connect two similar words, phrases, et cetera)",olinya
@@ -119,30 +114,27 @@ aweesa,sa,grind (Context: grind (grain with a millstone)),weesa
 Omukwaano,omukwaano,love (Context: strong affection),umukwaano
 ye,yee,yes (Context: word used to indicate agreement or acceptance),nan
 bwabeera,era,and (Context: used to string together sentences or sentence fragments in chronological order),beera
-kabaka,amaka,"family (Context: immediate family, e.g. parents and their children)",ka-baka
 kusiba,simba,genet (Context: genet (kind of speckled civet cat)),siba
 alina,na,"and (Context: used to connect two similar words, phrases, et cetera)",alina
-Aleesa,sa,grind (Context: grind (grain with a millstone)),a-leesa
-Omuwala,muwala,girl (Context: virgin (bride)),omuwala
+Aleesa,sa,grind (Context: grind (grain with a millstone)),
+Omuwala,muwala,virgin (Context: virgin (bride)),omuwala
 maka,amaka,"family (Context: immediate family, e.g. parents and their children)",nan
 Omuyizzi,muyizzi,hunter (Context: (professional) hunter),umuyizzi
 tatekera,era,and (Context: used to string together sentences or sentence fragments in chronological order),tatekera
-bunyonyi,ekinyonyi,bird (Context: animal),nan
-gutambula,kambula,plunder (Context: plunder (a town)),gu-tambula
-mpota,ota,warm oneself (Context: bask (in the sun)),m-pota
-ekibuga,miga,egg (Context: body housing an embryo),eki-buga
+gutambula,kambula,plunder (Context: plunder (a town)),
+mpota,ota,warm oneself (Context: bask (in the sun)),
 Sente,sena,draw (Context: draw (water from well)),nan
-bubisi,nsi,country (Context: (our) country),bubisi
+bubisi,si,land (Context: (dry) land),bubisi
 Tokungula,kuggula,open a door (Context: open (set ajar) a door),tokungula
 kyotasimba,simba,genet (Context: genet (kind of speckled civet cat)),kyotasimba
 Toyonoona,na,"and (Context: used to connect two similar words, phrases, et cetera)",toyonoona
-muzinga,ekizinga,island (Context: area of land completely surrounded by water),mu-zinga
+muzinga,ekizinga,island (Context: area of land completely surrounded by water),
 njuki,enjuki,bee (Context: insect),njuki
 emu,emu,one (Context: cardinal number 1),nan
 njuba,njuba,sun (Context: the star around which the Earth revolves),njuba
 gonna,na,"and (Context: used to connect two similar words, phrases, et cetera)",nan
-okusooka,somoka,cross (Context: cross (a river)),oku-sooka
-bibi,mubi,ugly (Context: ugly (be)),bibi
+okusooka,somoka,cross (Context: cross (a river)),
+bibi,bbi,feaces,bibi
 nomala,muwala,virgin (Context: virgin (bride)),nomala
 Nnene,ne,"and (Context: used to connect two similar words, phrases, et cetera)",nan
 muti,muti,tree (Context: large woody plant),muti
