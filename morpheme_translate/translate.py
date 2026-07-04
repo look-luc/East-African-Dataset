@@ -85,8 +85,8 @@ def get_lang_data(lang:str):
     eng_data = load_dataset("cointegrated/panlex-meanings", name='eng', split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
     eng_data = eng_data[eng_data['langvar_uid'] == 'eng-000']
 
-    ds_eng_word = load_dataset('cointegrated/panlex-definitions', name='eng', split='train').select_columns(["meaning", "text", "langvar_uid"]).to_pandas()
-    ds_eng_word = ds_eng_word[ds_eng_word['langvar_uid'] == 'eng-000'].rename(columns={'text': 'definition_text'})
+    ds_eng_word = load_dataset('cointegrated/panlex-definitions', name='eng', split='train').select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
+    ds_eng_word = ds_eng_word[ds_eng_word['langvar_uid'] == 'eng-000'].rename(columns={'txt': 'definition_text'})
 
     df_eng = eng_data.merge(ds_eng_word, on='meaning', how='left')
     df_eng = df_eng.drop_duplicates(subset=['txt', 'definition_text'])
