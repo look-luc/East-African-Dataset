@@ -14,7 +14,6 @@ def main(path, task:str):
         data["morpheme_breaks"] = md.segment(df=data, product_threshold=25)
 
         data.to_csv("data.csv", sep='\t')
-        full_data.to_csv("full_data.csv", sep='\t')
         print("gathered data into data.csv")
     # elif task =="count_morphemes":
     #     print("Counting Morphemes")

@@ -78,7 +78,6 @@ def making_df(jsonl_list):
 
         df.append(temp_df)
 
-    temp = pd.concat(df, ignore_index=True)
     final_df = pd.concat(df, ignore_index=True)
 
     output_conditions = [
@@ -113,22 +112,21 @@ def making_df(jsonl_list):
     final_df["african_proverb"] = final_df["prompt"].str.extract(pattern, flags=re.DOTALL, expand=False)
     final_df["african_proverb"] = final_df["african_proverb"].str.strip()
 
-    return final_df[["experiment_config", "language", "language_family", "african_proverb", "label", "Output Type"]],temp
+    return final_df[["experiment_config", "language", "language_family", "african_proverb", "label", "Output Type"]]
 
 
 def Get_Data():
     kevin = script_dir / kevin_Obote_few_shot
     kevin_jsonl = list(kevin.rglob("*.jsonl"))
-    kevin_df, temp = making_df(kevin_jsonl)
+    kevin_df = making_df(kevin_jsonl)
 
     zero = script_dir / zero_shot_experiment
     zero_jsonl = list(zero.rglob("*.jsonl"))
-    zero_df, temp_zero = making_df(zero_jsonl)
+    zero_df = making_df(zero_jsonl)
 
-    full_data = pd.DataFrame(pd.concat([temp, temp_zero], ignore_index=True))
     data_df = pd.DataFrame(pd.concat([kevin_df, zero_df], ignore_index=True))
 
-    return data_df, full_data
+    return data_df
 
 if __name__ == "__main__":
     Get_Data()
