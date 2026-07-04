@@ -5,7 +5,7 @@ from src.main import main
 script_parent = Path(__file__).resolve().parent
 
 if __name__ == "__main__":
-    tasks = ["get_data", "model_segment" , "morpheme_translate"]
+    tasks = ["model_segment" , "morpheme_translate"]
 
     for task in tasks:
         main(script_parent, task)
