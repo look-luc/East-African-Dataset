@@ -12,37 +12,52 @@ script_dir = Path(__file__).resolve().parent.parent
 load_dotenv()
 TOKEN = os.getenv("HF_TOKEN")
 
-# Map languages to their specialized Hugging Face corpus configurations and text schemas
 BANTU_CORPUS_MAP = {
     'ganda': {
-        'path': "African-Languages-Lab/multi-open",
-        'name': "english-luganda",
+        'path': "michsethowusu/english-ganda_sentence-pairs",
+        'name': None,
         'split': "train",
-        'extract_fn': lambda row: (row['luganda'].lower(), row['english'])
+        'extract_fn': lambda row: (str(row['Ganda']).lower(), str(row['English']))
     },
     'gikuyu': {
-        'path': "African-Languages-Lab/multi-open",
-        'name': "english-kikuyu",
+        'path': "michsethowusu/english-kikuyu_sentence-pairs",
+        'name': None,
         'split': "train",
-        'extract_fn': lambda row: (row['kikuyu'].lower(), row['english'])
+        'extract_fn': lambda row: (str(row['Kikuyu']).lower(), str(row['English']))
     },
     'tshiluba': {
-        'path': "African-Languages-Lab/multi-open",
-        'name': "english-tshiluba",
+        'path': "michsethowusu/english-tshiluba_sentence-pairs",
+        'name': None,
         'split': "train",
-        'extract_fn': lambda row: (row['tshiluba'].lower(), row['english'])
+        'extract_fn': lambda row: (str(row['Tshiluba']).lower(), str(row['English']))
     },
     'chiga': {
         'path': "michsethowusu/Code-170k-kiga",
         'name': None,
         'split': "train",
-        'extract_fn': lambda row: (row['conversations']['from'], row['conversations']['value'])
+        'extract_fn': lambda row: (
+            str(row['conversations'][0]['value']).lower() if isinstance(row['conversations'], list)
+            else str(row['kiga_text']).lower(),
+            str(row['english_translation'])
+        )
     },
-    'kamba': {
-        'path': "JonathanAI23/kamba_prompts_full",
+    'tooro': {
+        'path': "michsethowusu/english-tooro_sentence-pairs",
         'name': None,
         'split': "train",
-        'extract_fn': lambda row: (str(row['prompt']).lower(), row['completion'])
+        'extract_fn': lambda row: (str(row['Tooro']).lower(), str(row['English']))
+    },
+    'runyoro': {
+        'path': "michsethowusu/english-nyoro_sentence-pairs",
+        'name': None,
+        'split': "train",
+        'extract_fn': lambda row: (str(row['Nyoro']).lower(), str(row['English']))
+    },
+    'kamba': {
+        'path': "michsethowusu/english-kamba_sentence-pairs",
+        'name': None,
+        'split': "train",
+        'extract_fn': lambda row: (str(row['Kamba']).lower(), str(row['English']))
     }
 }
 
@@ -179,7 +194,13 @@ def translation(file_name: str, lang: str):
     if not model_path.exists():
         model_path = script_dir / f"{lang.lower()}_model_lem_seg.csv"
 
-    model_df = pd.read_csv(str(model_path), sep='\\t')
+    model_df = pd.read_csv(str(model_path), sep='\t')
+
+    if 'surface_word' not in model_df.columns and len(model_df.columns) > 0:
+        if 'Unnamed: 0' in model_df.columns:
+            model_df.rename(columns={'Unnamed: 0': 'surface_word'}, inplace=True)
+        else:
+            model_df.rename(columns={model_df.columns[0]: 'surface_word'}, inplace=True)
 
     exact_translation_map = {}
     if not lang_data_df.empty:
