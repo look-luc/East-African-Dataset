@@ -8,7 +8,7 @@ from morpheme_translate.translate import get_lang_data, translation
 def main(path, task:str):
     if task == "get_data":
         print("Loading datasets...")
-        data, full_data = Get_Data()
+        data = Get_Data()
 
         print("Generating rough morpheme breaks...")
         data["morpheme_breaks"] = md.segment(df=data, product_threshold=25)

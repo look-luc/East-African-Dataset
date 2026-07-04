@@ -8,62 +8,7 @@ script_dir = Path(__file__).resolve().parent
 kevin_Obote_few_shot = "kevin_Obote_few_shots"
 zero_shot_experiment = "zero-shot experiment"
 
-bantu_langs = [
-    "bangubangu",
-    "chiga",
-    "digo",
-    "ekegusii",
-    "ganda",
-    "gikuyu",
-    "gweno",
-    "hema",
-    "hemba",
-    "holoholo",
-    "kamba",
-    "kihangaza",
-    "kihara",
-    "kwele",
-    "makonde",
-    "meru",
-    "nande",
-    "nyala",
-    "nyaturu",
-    "olusamia",
-    "pare",
-    "rufumbira",
-    "runyoro",
-    "soga",
-    "sukuma",
-    "taabwa",
-    "tetela",
-    "tooro",
-    "tshiluba",
-    "zigula",
-]
-
-nilotic_langs = [
-    "alur",
-    "luo",
-    "maasai",
-    "samburu",
-    "teso",
-    "turkana",
-    "nandi",
-    "tugen",
-]
-
-nubian_lang = [
-    "nubian",
-    "nubian_2",
-]
-
-cushitic_lang = [
-    "somali",
-    "borana",
-    "burji",
-    "orma",
-    "rendille",
-]
+bantu_langs = ["ganda", "gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamba"]
 
 def making_df(jsonl_list):
     lang_pattern = r"\*\*Input\*\*:\nA proverb in (.*?)\n\n\*\*Output\*\*:"
@@ -96,15 +41,9 @@ def making_df(jsonl_list):
 
     conditions = [
         final_df["language"].str.lower().isin(bantu_langs),
-        final_df["language"].str.lower().isin(nilotic_langs),
-        final_df["language"].str.lower().isin(cushitic_lang),
-        final_df["language"].str.lower().isin(nubian_lang)
     ]
     choices = [
         "bantu",
-        "nilotic",
-        "nubian",
-        "cushitic",
     ]
 
     final_df["language_family"] = np.select(conditions, choices, default="Unknown")
@@ -118,13 +57,15 @@ def making_df(jsonl_list):
 def Get_Data():
     kevin = script_dir / kevin_Obote_few_shot
     kevin_jsonl = list(kevin.rglob("*.jsonl"))
-    kevin_df = making_df(kevin_jsonl)
+    kevin_df = pd.DataFrame(making_df(kevin_jsonl)).dropna()
 
     zero = script_dir / zero_shot_experiment
     zero_jsonl = list(zero.rglob("*.jsonl"))
-    zero_df = making_df(zero_jsonl)
+    zero_df = pd.DataFrame(making_df(zero_jsonl)).dropna()
 
     data_df = pd.DataFrame(pd.concat([kevin_df, zero_df], ignore_index=True))
+
+    data_df = data_df[data_df['language_family'] != 'Unknown']
 
     return data_df
 
