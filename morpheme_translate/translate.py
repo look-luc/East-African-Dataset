@@ -172,12 +172,12 @@ def translation(file_name: str, lang: str):
         return
 
     lang_data_df = get_lang_data(lang)
-    lang_txt_col = f\"txt_{iso_code}\"
+    lang_txt_col = f"txt_{iso_code}"
     hf_corpus_map = load_hf_corpus_context(lang)
 
-    model_path = script_dir / f\"{file_name}\"
+    model_path = script_dir / f"{file_name}"
     if not model_path.exists():
-        model_path = script_dir / f\"{lang.lower()}_model_lem_seg.csv\"
+        model_path = script_dir / f"{lang.lower()}_model_lem_seg.csv"
 
     model_df = pd.read_csv(str(model_path), sep='\\t')
 
