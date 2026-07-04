@@ -1,12 +1,16 @@
 import ast
+import os
 from difflib import get_close_matches
 from functools import lru_cache
 from pathlib import Path
 
 import pandas as pd
 from datasets import load_dataset
+from dotenv import load_dotenv
 
 script_dir = Path(__file__).resolve().parent.parent
+load_dotenv()
+TOKEN = os.getenv("HF_TOKEN")
 
 bantu_iso_map = {
     'nyaturu': 'rim', 'bangubangu': 'bby', 'kwele': 'kwl', 'kihangaza': 'han',
@@ -41,12 +45,12 @@ def flores_bantu(iso_code:str):
     flores_words_map = {}
 
     try:
-        flores_ds = load_dataset("facebook/flores", name=target_iso, split="dev").to_pandas()
-        eng_flores = load_dataset("facebook/flores", name="eng_Latn", split="dev").to_pandas()
+        flores_ds = load_dataset("openlanguagedata/flores_plus", name=target_iso, split="dev").to_pandas()
+        eng_flores = load_dataset("openlanguagedata/flores_plus", name="eng_Latn", split="dev").to_pandas()
 
         for idx, row in flores_ds.iterrows():
-            target_sentence = str(row['sentence']).lower()
-            eng_sentence = str(eng_flores.iloc[idx]['sentence']).strip()
+            target_sentence = str(row['text']).lower()
+            eng_sentence = str(eng_flores.iloc[idx]['text']).strip()
 
             for word in target_sentence.split():
                 clean_word = word.strip(".,;:!?()\"'-")
