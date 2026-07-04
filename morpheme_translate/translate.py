@@ -268,8 +268,7 @@ def translation(file_name: str, lang: str):
                     output_data['English translation'].append(flores_map[normalized_lemma])
                     output_data['Glossing'].append(affix)
                     matched = True
-                    break
-
+                    continue
 
         # Tier 4: Glossing Preservation Fallback (Crucial for manual lookup workflows)
         if not matched:
