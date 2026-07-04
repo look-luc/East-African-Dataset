@@ -53,7 +53,7 @@ def flores_bantu(iso_code:str):
                     # Map the isolated token to its parallel translation context
                     flores_words_map[clean_word] = f"[FLORES Context] {eng_sentence}"
     except Exception as e:
-        print(f"Notice: FLORES mapping skipped for config '{flores_config}'. Reason: {e}")
+        print(f"Notice: FLORES mapping skipped for config '{target_iso}'. Reason: {e}")
         return {}
 
     return flores_words_map
@@ -134,6 +134,8 @@ def strip_bantu_prefixes(word: str) -> str:
 
 def translation(file_name: str, lang: str):
     iso_code = bantu_iso_map.get(lang.lower())
+    flores_map = flores_bantu(iso_code)
+
     if not iso_code:
         print(f"Error: {lang} mapping not found.")
         return
@@ -234,6 +236,16 @@ def translation(file_name: str, lang: str):
                     output_data['Glossing'].append(affix)
                     matched = True
                     break
+                # FLORES logic
+                if not matched and flores_map:
+                    if normalized_lemma in flores_map:
+                        output_data['Surface Word'].append(surface_word)
+                        output_data[f'{lang.capitalize()} Lemma'].append(normalized_lemma)
+                        output_data['English translation'].append(flores_map[normalized_lemma])
+                        output_data['Glossing'].append(affix)
+                        matched = True
+                        break
+
 
         # Tier 4: Glossing Preservation Fallback (Crucial for manual lookup workflows)
         if not matched:
