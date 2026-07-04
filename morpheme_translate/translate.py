@@ -18,6 +18,47 @@ bantu_iso_map = {
     'chiga': 'cgg', 'ekegusii': 'guz'
 }
 
+flores_code = {
+    'lug': 'lug_Latn', 'kik': 'kik_Latn', 'kam': 'kam_Latn',
+    'suk': 'suk_Latn', 'lua': 'lua_Latn', 'kin': 'kin_Latn', 'mer': 'mer_Latn',
+
+    'xog': 'lug_Latn',
+    'nyo': 'nyo_Latn',
+    'ttj': 'nyo_Latn',
+    'cgg': 'nyo_Latn',
+    'lsm': 'luy_Latn',
+    'nle': 'luy_Latn',
+
+    'asa': 'swh_Latn',
+    'gwe': 'swh_Latn',
+    'dig': 'swh_Latn',
+    'ziw': 'swh_Latn',
+}
+
+def flores_bantu(iso_code:str):
+    target_iso = flores_code.get(iso_code, iso_code)
+    flores_words_map = {}
+
+    try:
+        flores_ds = load_dataset("facebook/flores", name=target_iso, split="dev").to_pandas()
+        eng_flores = load_dataset("facebook/flores", name="eng_Latn", split="dev").to_pandas()
+
+        for idx, row in flores_ds.iterrows():
+            target_sentence = str(row['sentence']).lower()
+            eng_sentence = str(eng_flores.iloc[idx]['sentence']).strip()
+
+            for word in target_sentence.split():
+                clean_word = word.strip(".,;:!?()\"'-")
+                if clean_word and clean_word not in flores_words_map:
+                    # Map the isolated token to its parallel translation context
+                    flores_words_map[clean_word] = f"[FLORES Context] {eng_sentence}"
+    except Exception as e:
+        print(f"Notice: FLORES mapping skipped for config '{flores_config}'. Reason: {e}")
+        return {}
+
+    return flores_words_map
+
+
 def affix_translate(segments, language):
     grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
     grammar = grammar_df[grammar_df['language'] == str(language).lower()]
@@ -39,14 +80,19 @@ def get_lang_data(lang:str):
         print(f"Warning: {lang} is not in the target Bantu dictionary.")
         return pd.DataFrame()
 
-    panlex_data = load_dataset("cointegrated/panlex-meanings", name=iso_code, split="train") \
-        .select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
+    panlex_data = load_dataset("cointegrated/panlex-meanings", name=iso_code, split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
 
-    eng_data = load_dataset("cointegrated/panlex-meanings", name='eng', split="train") \
-        .select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
+    eng_data = load_dataset("cointegrated/panlex-meanings", name='eng', split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
+    eng_data = eng_data[eng_data['langvar_uid'] == 'eng-000']
+
+    ds_eng_word = load_dataset('cointegrated/panlex-definitions', name='eng', split='train').select_columns(["meaning", "text", "langvar_uid"]).to_pandas()
+    ds_eng_word = ds_eng_word[ds_eng_word['langvar_uid'] == 'eng-000'].rename(columns={'text': 'definition_text'})
+
+    df_eng = eng_data.merge(ds_eng_word, on='meaning', how='left')
+    df_eng = df_eng.drop_duplicates(subset=['txt', 'definition_text'])
 
     panlex_df = panlex_data.merge(
-        eng_data, on='meaning', how='left', suffixes=(f'_{iso_code}', '_eng')
+        df_eng, on='meaning', how='left', suffixes=(f'_{iso_code}', '_eng')
     ).drop_duplicates(subset=[f'txt_{iso_code}', 'txt_eng'])
 
     noise = ['dollar', 'pound', 'shilling', 'republic', 'ocean', 'sea', 'continent', 'st.', 'saudi', 'papua', 'zimbabwe', 'sudanese']
@@ -54,7 +100,7 @@ def get_lang_data(lang:str):
     panlex_df = panlex_df[~panlex_df['txt_eng'].str.contains(noise_regex, case=False, na=False)]
     panlex_df = panlex_df[~panlex_df['txt_eng'].str.contains(r':|/', na=False)]
     panlex_df = panlex_df[panlex_df['txt_eng'].str.len() < 100]
-    panlex_df = panlex_df[panlex_df['langvar_uid_eng'] == 'eng-000']
+
     return panlex_df
 
 def normalize_ortho(lemma: str):
@@ -101,17 +147,22 @@ def translation(file_name: str, lang: str):
 
     model_df = pd.read_csv(str(model_path), sep='\t')
 
-    # Build primary dictionary map and secondary stem-optimized map
     exact_translation_map = {}
     stem_translation_map = {}
 
     for _, row in lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).iterrows():
         clean_dict_key = str(row[lang_txt_col]).strip().lower().strip('-')
-        translation_val = str(row['txt_eng'])
+
+        eng_word = str(row['txt_eng']).strip()
+        def_text = str(row['definition_text']).strip() if pd.notna(row['definition_text']) else ""
+
+        if def_text and def_text.lower() != 'none':
+            translation_val = f"{eng_word} (Context: {def_text})"
+        else:
+            translation_val = eng_word
 
         exact_translation_map[clean_dict_key] = translation_val
 
-        # Populate stem map for cross-prefix fallback
         dict_stem = strip_bantu_prefixes(clean_dict_key)
         if len(dict_stem) >= 2 and dict_stem not in stem_translation_map:
             stem_translation_map[dict_stem] = (clean_dict_key, translation_val)
