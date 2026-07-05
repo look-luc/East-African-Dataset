@@ -127,16 +127,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
     exact_translation_map = dict(zip(panlex_words, panlex_translations))
 
-    # Optional: Load local proverbs context mapping if a local source path is provided
-    local_proverb_sentences = []
-    if local_proverbs_title:
-        proverbs_path = script_dir / local_proverbs_title
-        if proverbs_path.exists():
-            prov_df = pd.read_csv(str(proverbs_path), sep='\t')
-            if 'language' in prov_df.columns and 'african_proverb' in prov_df.columns:
-                lang_prov_df = prov_df[prov_df["language"].str.lower() == lang.lower()]
-                local_proverb_sentences = lang_prov_df["african_proverb"].dropna().tolist()
-
     output_data = {
         'Surface Word': [],
         f'{lang.capitalize()} Lemma': [],

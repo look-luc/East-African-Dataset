@@ -21,6 +21,6 @@ def main(path, task:str, lang:str):
 
         print("finished counting morphemes")
     elif task=="morpheme_translate":
-        translation(lang, lang, "data.csv")
+        translation(lang, lang)
     elif task == "model_segment":
         model_extract("data.csv", lang)
