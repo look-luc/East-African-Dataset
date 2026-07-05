@@ -17,7 +17,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained(model_id, token=TOKEN)
 
 script_dir = Path(__file__).resolve().parent.parent
 
-encoder = model.encoder()
+encoder = model.get_encoder()
 encoder.eval()
 
 def get_embeddings(word: str):
@@ -25,7 +25,12 @@ def get_embeddings(word: str):
 
     with torch.no_grad():
         outputs = model.generate(**inputs)
-        hidden_states = outputs.last_hidden_state
+        if hasattr(outputs, "last_hidden_state"):
+            hidden_states = outputs.last_hidden_state
+        elif isinstance(outputs, tuple):
+            hidden_states = outputs[0]
+        else:
+            hidden_states = outputs
 
         mean_pooled = torch.mean(hidden_states, dim=1).squeeze(0)
     return mean_pooled.tolist()
