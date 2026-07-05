@@ -4,8 +4,11 @@ from functools import lru_cache
 from pathlib import Path
 
 import pandas as pd
+import torch
 from datasets import load_dataset
 from dotenv import load_dotenv
+
+from morpheme_translate.model_segment import get_embeddings
 
 script_dir = Path(__file__).resolve().parent.parent
 load_dotenv()
@@ -103,9 +106,6 @@ def translation(file_name: str, lang: str):
         else:
             model_df.rename(columns={model_df.columns[0]: 'surface_word'}, inplace=True)
 
-    # --- VECTOR PREPARATION FOR PANLEX DICTIONARY ---
-    from model_segment import get_word_embedding
-
     panlex_words = []
     panlex_translations = []
     panlex_vectors = []
@@ -119,7 +119,7 @@ def translation(file_name: str, lang: str):
 
             panlex_words.append(dict_word)
             panlex_translations.append(eng_trans)
-            panlex_vectors.append(get_word_embedding(dict_word))
+            panlex_vectors.append(get_embeddings(dict_word))
 
     if panlex_vectors:
         panlex_tensor = torch.tensor(panlex_vectors) # Shape: [Num_PanLex_Words, Dimension]

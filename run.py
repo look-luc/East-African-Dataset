@@ -11,7 +11,7 @@ if __name__ == "__main__":
     #     print(f"Doing {task}...")
     #     main(script_parent, task, lang)
 
-    tasks = ["model_segment", "morpheme_translate"]
+    tasks = ["morpheme_translate"]
     for task in tasks:
         print(f"Doing {task}...")
         main(script_parent, task, "ganda")
