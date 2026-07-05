@@ -1,43 +1,29 @@
 Surface Word,Ganda Lemma,English translation,Glossing,Match Type
-bali,bali,Abakadde bali mu gandaalo mu kisikiziz kyomuti.,bali,Local Proverb Context Match
 mu,okussa omukka,breathe,nan,Substring Overlap
 gandaalo,ganda,fellow-tribesman,nan,Substring Overlap
 kyomuti,muti,tree,kyomuti,Substring Overlap
 Ababi,mubi,ugly,nan,Substring Overlap
-okulya,lya,"Bwosalawo okulya embwa, lya ensava.",nan-nan,Local Proverb Context Match
 abalungi,lungi,I’m fine,abalungi,Substring Overlap
 abangi,lungi,I’m fine,abangi,Substring Overlap
 musajja,byʼokubajja,capentry,nan-sa-jja,Substring Overlap
-waabwe,waabwe,Abakazi abangi bafuula musajja waabwe okwogera,waabwe,Local Proverb Context Match
 okwogera,era,and,ogera,Substring Overlap
 Aboluganda,ganda,fellow-tribesman,aboluganda,Substring Overlap
-bita,bita,Aboluganda bita.,nan,Local Proverb Context Match
 nga,nga busasaana,dawn,nan,Substring Overlap
 kwata,kwa,tick,nan,Substring Overlap
 yanoonya,kunoonya,hand around,onya,Substring Overlap
 Akaami,kwenyamira,depressed,akaami,Substring Overlap
-mitala,mitala,Akaami akatono okagayira mitala wa mugga.,mi-tala,Local Proverb Context Match
 wa,buta mwesigwa,unfaithful,nan,Substring Overlap
 mugga,omugga,river,nan-gga,Substring Overlap
 mbegelaako,mbe,knife,nan,Substring Overlap
 Akanyonyi,ekinyonyi,bird,akanyonyi,Substring Overlap
 byo,butasalawo,indecisive,nan,Substring Overlap
 oya,goya,mix,nan,Substring Overlap
-birara,birara,Akanyonyi kakozesa byo oya birara okuzimba ekisu kyaako.,nan-rara,Local Proverb Context Match
-okuzimba,zimba,"Zimba Nnene, takutelaako muti.",okuzimba,Local Proverb Context Match
 ekisu,ekisumuluzo,key,ekisu,Substring Overlap
 liiso,liiso,eye,nan,PanLex Exact Match
-gyombi,gyombi,"Akozesa emikono gyombi, talemwa kulya.",gyombi,Local Proverb Context Match
-kulya,lya,"Bwosalawo okulya embwa, lya ensava.",nan,Local Proverb Context Match
-lyali,lyali,"Akussuka lyali nalyo, taba mutti.",lyali,Local Proverb Context Match
-taba,taba,"Akussuka lyali nalyo, taba mutti.",nan,Local Proverb Context Match
-mutti,mutti,"Akussuka lyali nalyo, taba mutti.",mutti,Local Proverb Context Match
 Alaba,tetugalaba,I’m fine,laba,Substring Overlap
 ekilungi,lungi,I’m fine,ekilungi,Substring Overlap
 Amaka,amaka,family,amaka,PanLex Exact Match
 muchaara,faranga ey’egini,Guinean Syli,nan-chaara,Substring Overlap
-galinga,galinga,Amaka omutali muchaara galinga ekisibo omutali nte.,galinga,Local Proverb Context Match
-nte,nte,Amaka omutali muchaara galinga ekisibo omutali nte.,nan,Local Proverb Context Match
 Akwaagala,kwagala okumanya,curious,agala,Substring Overlap
 Akwaagula,ggula,open a door,nan-kwaagula,Substring Overlap
 no,kunoga,be flavoured,nan,Substring Overlap
@@ -47,12 +33,9 @@ wala,wala,girl,wala,PanLex Exact Match
 kibuga,obugazi,width,ki-buga,Substring Overlap
 amalungi,lungi,I’m fine,amalungi,PanLex Exact Match
 gakola,kukola akajanja,finicky,ga-kola,Substring Overlap
-Amatu,amatu,Amatu agatawulira kubulirirwa gagendera wamu nomutwe.,amatu,Local Proverb Context Match
 wamu,lwamukaaga,Saturday,nan,Substring Overlap
 si,si,country,nan,PanLex Exact Match
 Amazzi,muyizzi,hunter,amazzi,Substring Overlap
-tegamala,tegamala,Amazzi amasabe tegamala nyonta.,tegamala,Local Proverb Context Match
-nyonta,nyonta,Amazzi amasabe tegamala nyonta.,nyonta,Local Proverb Context Match
 takula,amatala agokukubo,robot,takula,Substring Overlap
 ekilo,ekilooto,dream,ekilo,Substring Overlap
 nyina,annyina,brother,nyina,Substring Overlap
@@ -65,13 +48,9 @@ kimu,kimuli,flower,kimu,Substring Overlap
 Bazaala,zaala,give birth,bantu2,PanLex Exact Match
 mubiri,mubi,ugly,nan,Substring Overlap
 tebazaala,zaala,give birth,tebazaala,PanLex Exact Match
-mpisa,mpisa,Bazaala mubiri tebazaala mpisa.,mpisa,Local Proverb Context Match
-ssimuliro,ssimuliro,"Bugubugu, ssimuliro.",nan,Local Proverb Context Match
 Bwoba,kusooba,slow,nan,Substring Overlap
 tosobota,ota,bask,to-sobota,Substring Overlap
-mumaaso,mumaaso,"Bwoba tosobota kutunula mumaaso, olibeera mabega.",nan,Local Proverb Context Match
 olibeera,era,and,beera,Substring Overlap
-oli,oli,"Bwoba oli mulungi, nelwolifa entaanayo elyagalwa.",nan,Local Proverb Context Match
 mulungi,lungi,I’m fine,mulungi,Substring Overlap
 nelwolifa,faranga ey’egini,Guinean Syli,nelwolifa,Substring Overlap
 mukulu,mukulukusa,October,mukulu,Substring Overlap
@@ -79,96 +58,59 @@ oba,kusooba,slow,nan,Substring Overlap
 kya,ekyangwe,sponge,nan,Substring Overlap
 enju,enjuki,bee,enju,Substring Overlap
 omukka,okussa omukka,breathe,omukka,Substring Overlap
-embwa,embwa,"Bwosalawo okulya embwa, lya ensava.",embwa,Local Proverb Context Match
-lya,lya,"Bwosalawo okulya embwa, lya ensava.",nan,Local Proverb Context Match
 Bwosekerera,era,and,bwosekerera,Substring Overlap
 ekibya,dalasi ey’egambya,Gambian Dalasi,nan-bya,Substring Overlap
 osekerera,era,and,sekerera,Substring Overlap
-Ebbeere,ebbeere,Ebbeere lya nyabo telifuna Bigenge.,ebbeere,Local Proverb Context Match
-nyabo,nyabo,Ebbeere lya nyabo telifuna Bigenge.,nyabo,Local Proverb Context Match
 na,na,and,nan,PanLex Exact Match
-mafumu,mafumu,"Ecika ekikolimire, mwemuva abakazi abalwaana na mafumu.",mafumu,Local Proverb Context Match
-koowa,koowa,Ekilabo ekitono koowa munno.,koowa,Local Proverb Context Match
-munno,munno,Ekilabo ekitono koowa munno.,nan,Local Proverb Context Match
 Ekiri,kiri,it,ekiri,Substring Overlap
 muttu,wakati muttumbi,midnight,nan,Substring Overlap
-nyini,nyini,Ekiri muttu kimanywa nyini kyo.,nyini,Local Proverb Context Match
 kyo,butasalawo,indecisive,nan,Substring Overlap
-amangu,amangu,"Ekyengela amangu, kivunda mangu.",amangu,Local Proverb Context Match
-mangu,mangu,"Ekyengela amangu, kivunda mangu.",nan,Local Proverb Context Match
-Embwa,embwa,"Bwosalawo okulya embwa, lya ensava.",embwa,Local Proverb Context Match
-kamwa,kamwa,Embwa elina eggumba mu kamwa teluma.,nan,Local Proverb Context Match
-teluma,teluma,Embwa elina eggumba mu kamwa teluma.,teluma,Local Proverb Context Match
-telya,telya,Empungu telya bire.,telya,Local Proverb Context Match
 bire,buta mwesigwa,unfaithful,bire,Substring Overlap
 Endiga,endiga,sheep,endiga,PanLex Exact Match
-mwaana,mwaana,Endiga tekabiira mwaana gwa mbuzi effudde.,mwaana,Local Proverb Context Match
 gwa,buta mwesigwa,unfaithful,nan,Substring Overlap
 mbuzi,embuzi,goat,mbuzi,Substring Overlap
 ebbiri,bbi,feaces,ebbiri,Substring Overlap
 lisesetera,era,and,nan-sesetera,Substring Overlap
-telemelerwa,telemelerwa,Enjovu telemelerwa sanga lyaayo.,telemelerwa,Local Proverb Context Match
-sanga,sanga,Enjovu telemelerwa sanga lyaayo.,nan,Local Proverb Context Match
-lyaayo,lyaayo,Enjovu telemelerwa sanga lyaayo.,lyaayo,Local Proverb Context Match
 Enkima,kima,monkey,enkima,PanLex Exact Match
-bwelemerelwa,bwelemerelwa,"Enkima bwelemerelwa okutuukirira elyenvu, nti ago tegengedde.",bwelemerelwa,Local Proverb Context Match
 okutuukirira,kiri,it,tuukirira,Substring Overlap
 nti,antigwa ne barabuda,Antigua & Barbuda,nan,Substring Overlap
 tegengedde,era,and,tegengera,Substring Overlap
 Enkuba,enkuba,rain,enkuba,PanLex Exact Match
 tetonyera,era,and,tetonyera,Substring Overlap
 omu,okussa omukka,breathe,nan,Substring Overlap
-ensa,ensa,Engalo ensa zigwanira nyini zo.,ensa,Local Proverb Context Match
 zo,butasalawo,indecisive,nan,Substring Overlap
 tesekerera,era,and,tesekerera,Substring Overlap
-nkunku,nkunku,Enyana tesekerera nkunku.,nkunku,Local Proverb Context Match
 yamala,faranga ey’emalagase,Malagasy Ariary,yamala,Substring Overlap
 amazzi,muyizzi,hunter,amazzi,Substring Overlap
-mulwendo,mulwendo,Entalowooza yamala amazzi mulwendo.,nan,Local Proverb Context Match
-nazo,nazo,"Ensuwa entono nazo, zirina amatu.",nazo,Local Proverb Context Match
-zirina,zirina,"Ensuwa entono nazo, zirina amatu.",zirina,Local Proverb Context Match
 enyumba,nyumba,house,enyumba,PanLex Exact Match
 ne,ne,and,nan,PanLex Exact Match
-nungi,nungi,"Essubi elyokya enyumba embii, iyelyokya ne nungi.",nungi,Local Proverb Context Match
 Eyali,walisi ne futuna,Wallis & Futuna,eyali,Substring Overlap
 omusota,ota,bask,omusota,Substring Overlap
 bwalaba,tetugalaba,I’m fine,laba,Substring Overlap
 era,era,and,nan,PanLex Exact Match
-bisiki,bisiki,Ezenkanankana ne bisiki tezaaka.,bisiki,Local Proverb Context Match
-tezaaka,tezaaka,Ezenkanankana ne bisiki tezaaka.,tezaaka,Local Proverb Context Match
-Kamu,kamu,Kamu kamu gwe muganda.,nan,Local Proverb Context Match
-kamu,kamu,Kamu kamu gwe muganda.,nan,Local Proverb Context Match
 gwe,ekyangwe,sponge,nan,Substring Overlap
 muganda,ganda,fellow-tribesman,nan-ganda,PanLex Exact Match
 Kakulu,mukulukusa,October,kakulu,Substring Overlap
 ta,takisi,cab,nan,Substring Overlap
 kulilwa,buulila,say,lilwa,Substring Overlap
 Kyenkola,kukola akajanja,finicky,enkola,Substring Overlap
-sagala,sagala,Kyenkola banange sagala bakinkole.,sagala,Local Proverb Context Match
 mbeera,era,and,mbeera,Substring Overlap
 mbiro,bbumbiro,potter shop,mbiro,Substring Overlap
 kwotadde,ota,bask,kwotadde,PanLex Exact Match
-Mama,mama,“Mama yasinga okuweeka”,nan,Local Proverb Context Match
-mpola,mpola,Mpola mpola yatuuka emugga.,mpola,Local Proverb Context Match
 emugga,omugga,river,emugga,Substring Overlap
 Mulungi,lungi,I’m fine,mulungi,PanLex Exact Match
 mubi,mubi,ugly,nan,PanLex Exact Match
 Omukazi,omukazi,woman,umukazi,PanLex Exact Match
 nyo,ekinyonyi,bird,nan,Substring Overlap
 Ne,ne,and,nan,PanLex Exact Match
-ssanja,ssanja,Ne ssanja lyaaliko olulagala.,ssanja,Local Proverb Context Match
-lyaaliko,lyaaliko,Ne ssanja lyaaliko olulagala.,nan,Local Proverb Context Match
 olulagala,gambalagala,mountain,lagala,Substring Overlap
 ennyo,ekinyonyi,bird,nan,Substring Overlap
 alekulira,ntaulira,honey badger,lira,Substring Overlap
 kisikiriize,kiri,it,ki-sikiriiza,Substring Overlap
-ria,ria,"Obulamu bulinga kisikiriize ria na mukka, buyita mangu ate tebudda.",nan,Local Proverb Context Match
 mukka,okussa omukka,breathe,mukka,Substring Overlap
 ate,ate,and,nan,PanLex Exact Match
-tebudda,tebudda,"Obulamu bulinga kisikiriize ria na mukka, buyita mangu ate tebudda.",tebudda,Local Proverb Context Match
 bwoseleera,era,and,bwoseleera,Substring Overlap
 okugwa,buta mwesigwa,unfaithful,nan,Substring Overlap
-bunafu,bunafu,Okugezaako oba okugwa si bunafu.,bunafu,Local Proverb Context Match
 Omwana,omwana,babe,omwana,PanLex Exact Match
 omubi,mubi,ugly,omubi,Substring Overlap
 ewaka,wakati muttumbi,midnight,ewaka,Substring Overlap
@@ -177,30 +119,20 @@ ansingira,nsi,country,nan-nsingira,Substring Overlap
 omulungii,lungi,I’m fine,omulungii,Substring Overlap
 owa,buta mwesigwa,unfaithful,nan,Substring Overlap
 okuwasa,kwasama,open the mouth,okuwasa,Substring Overlap
-ssi,ssi,"Okwelinda ssi buti, ensanafu etambula egaludde.",nan,Local Proverb Context Match
 buti,faranga ey’ejjibuti,Djiboutian Franc,nan,Substring Overlap
 ensanafu,nsanafu,ant,ensanafu,PanLex Exact Match
-guba,guba,Okudizza guba mwoyo.,nan,Local Proverb Context Match
-mwoyo,mwoyo,Okudizza guba mwoyo.,mwoyo,Local Proverb Context Match
 Okufa,faranga ey’egini,Guinean Syli,ukufa,Substring Overlap
-nkovu,nkovu,Okufa nkovu etalisimuuka.,nkovu,Local Proverb Context Match
 Olubuto,kubeera lubuto,pregnant,ubuto,Substring Overlap
-lwo,lwo,Olubuto lwo bwoluwa emmere embi lujja kukubira engoma ozine.,nan,Local Proverb Context Match
 embi,embizzi,pig,embi,Substring Overlap
 lujja,byʼokubajja,capentry,lu-jja,Substring Overlap
 kukubira,kujjumbira,keen,kubira,Substring Overlap
 Oluliimi,ekisumuluzo,key,uliimi,Substring Overlap
 lwa,kusalwa,cut,nan,Substring Overlap
 lukaawa,kaawa,coffee,lukaawa,PanLex Exact Match
-olumu,olumu,"Olunaku olumu, teluvunza nyama.",olumu,Local Proverb Context Match
-nyama,nyama,"Olunaku olumu, teluvunza nyama.",nyama,Local Proverb Context Match
 Omukulu,mukulukusa,October,umukulu,Substring Overlap
 ebikere,era,and,ebikere,Substring Overlap
 Omuze,muzadde,parent,omuze,Substring Overlap
 gwo,butasalawo,indecisive,nan,Substring Overlap
-muntu,muntu,Omuze gwo muntu gumalwa ntaana.,nan,Local Proverb Context Match
-gumalwa,gumalwa,Omuze gwo muntu gumalwa ntaana.,gumalwa,Local Proverb Context Match
-ntaana,ntaana,Omuze gwo muntu gumalwa ntaana.,ntaana,Local Proverb Context Match
 Omukwaano,omukwaano,love,umukwaano,PanLex Exact Match
 ye,kkanisa ya yeso eyannamaddala,True Jesus Church,nan,Substring Overlap
 mulabe,tetugalaba,I’m fine,nan-labe,Substring Overlap
@@ -214,31 +146,17 @@ maka,makansi,scissors,maka,Substring Overlap
 Omuyizzi,yizzi,hunter,umuyizzi,PanLex Exact Match
 awondera,era,and,wondera,Substring Overlap
 tatekera,era,and,tatekera,Substring Overlap
-bunyonyi,bunyonyi,"Omuyizzi awondera enjovu, tatekera kukasukira bunyonyi mayinja.",bunyonyi,Local Proverb Context Match
 mpota,ota,bask,m-pota,Substring Overlap
 naye,ekyangwe,sponge,naye,Substring Overlap
-gubuuka,gubuuka,"Omwezi gutambula mpota, naye gubuuka ekibuga.",gubuuka,Local Proverb Context Match
 ekibuga,obugazi,width,nan-buga,Substring Overlap
-esala,esala,Sente esala okusinga ejjambiya.,esala,Local Proverb Context Match
-Sotta,sotta,Sotta abudongo nga bukyaali bubisi.,sotta,Local Proverb Context Match
-bukyaali,bukyaali,Sotta abudongo nga bukyaali bubisi.,bukyaali,Local Proverb Context Match
-Taata,taata,Taata ye ngabo ya maka.,taata,Local Proverb Context Match
-ngabo,ngabo,Taata ye ngabo ya maka.,ngabo,Local Proverb Context Match
 ya,ekyangwe,sponge,nan,Substring Overlap
-Teli,teli,Teli azaalwa na bumanyirivu.,teli,Local Proverb Context Match
 azaalwa,kusalwa,cut,zaalwa,Substring Overlap
 kyotasimba,ota,bask,kyotasimba,Substring Overlap
-musiru,musiru,Towakananga na musiru.,musiru,Local Proverb Context Match
 muzinga,ekizinga,island,nan-zinga,Substring Overlap
 njuki,enjuki,bee,nan,Substring Overlap
 emu,emu,one,nan,PanLex Exact Match
 njuba,njuba,sun,nan,PanLex Exact Match
-naka,naka,Tukozesa njuba emu naye si naka gonna.,nan,Local Proverb Context Match
-gonna,gonna,Tukozesa njuba emu naye si naka gonna.,gonna,Local Proverb Context Match
-Wakili,wakili,Wakili okusooka ne bibi nomala nebirungi.,wakili,Local Proverb Context Match
 bibi,akabina,buttock,nan,Substring Overlap
 nomala,faranga ey’emalagase,Malagasy Ariary,nomala,Substring Overlap
-nebirungi,nebirungi,Wakili okusooka ne bibi nomala nebirungi.,nebirungi,Local Proverb Context Match
 Zimba,kasimba,genet,zimba,Substring Overlap
-Nnene,nnene,"Zimba Nnene, takutelaako muti.",nan,Local Proverb Context Match
 muti,muti,tree,muti,PanLex Exact Match

@@ -127,6 +127,16 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
     exact_translation_map = dict(zip(panlex_words, panlex_translations))
 
+    # Optional: Load local proverbs context mapping if a local source path is provided
+    local_proverb_sentences = []
+    if local_proverbs_title:
+        proverbs_path = script_dir / local_proverbs_title
+        if proverbs_path.exists():
+            prov_df = pd.read_csv(str(proverbs_path), sep='\t')
+            if 'language' in prov_df.columns and 'african_proverb' in prov_df.columns:
+                lang_prov_df = prov_df[prov_df["language"].str.lower() == lang.lower()]
+                local_proverb_sentences = lang_prov_df["african_proverb"].dropna().tolist()
+
     output_data = {
         'Surface Word': [],
         f'{lang.capitalize()} Lemma': [],
@@ -159,7 +169,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         # Tier 2: Substring Stem Overlap (Lexicon Containment Gate)
         if not matched:
             for dict_word, eng_trans in exact_translation_map.items():
-                if len(dict_word) > 2 and (dict_word in normalized_lemma or normalized_lemma in dict_word):
+                if len(dict_word) > 3 and (dict_word in normalized_lemma or normalized_lemma in dict_word):
                     output_data['Surface Word'].append(surface_word)
                     output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
                     output_data['English translation'].append(eng_trans)
