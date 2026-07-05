@@ -163,16 +163,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         affix = affix_translate(ast.literal_eval(segmentation_str), lang)
 
         matched = False
-        noun_class = None
-
-        # Safely parse noun class string and extract class tag
-        raw_nc = ast.literal_eval(row['noun class prediction'])
-        if raw_nc:
-            nc_string = str(raw_nc[0])  # Fixed Indexing Bug (changed i to 0)
-            features = nc_string.split()
-            if len(features) > 1:
-                tags = features[1].split(';')  # ['N', 'PL', 'BANTU2']
-                noun_class = tags[-1]          # "BANTU2"
 
         # Tier 1: Exact Match (PanLex Lexicon Gate)
         for lookup_key in [normalized_lemma, predicted_lemma, surface_word.lower()]:
@@ -191,7 +181,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
             morpheme_segments = []
 
         has_affix = False
-        for segment in morpheme_segment:
+        for segment in morpheme_segments:
             clean_segment = str(segment).lower().replace('-', '').strip()
 
             if clean_segment in known_affixes:
@@ -209,8 +199,27 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                     output_data['Match Type'].append('Substring Overlap')
                     matched = True
                     break
-        if not matched and (normalized_lemma in known_affixes and predicted_lemma in known_affixes):
 
+        if not matched and has_affix:
+            for affix in known_affixes:
+                if affix in model_path["lemmatization"]:
+                    noun_class = None
+
+                    # Safely parse noun class string and extract class tag
+                    raw_nc = ast.literal_eval(row['noun class prediction'])
+                    if raw_nc:
+                        nc_string = str(raw_nc[0])  # Fixed Indexing Bug (changed i to 0)
+                        features = nc_string.split()
+                        if len(features) > 1:
+                            tags = features[1].split(';')  # ['N', 'PL', 'BANTU2']
+                            noun_class = tags[-1]          # "BANTU2"
+                    output_data['Surface Word'].append(surface_word)
+                    output_data[f'{lang.capitalize()} Lemma'].append(f"(-){surface_word}(-)")
+                    output_data['English translation'].append(noun_class)
+                    output_data['Glossing'].append(affix)
+                    output_data['Match Type'].append('Substring Overlap')
+                    matched = True
+                    break
 
         # Tier 3: Isolated Local Root Evaluation (Leveraging local grammar strip rules)
         if not matched:

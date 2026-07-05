@@ -5,7 +5,6 @@ musajja,byʼokubajja,capentry,nan-sa-jja,Substring Overlap
 Aboluganda,ganda,fellow-tribesman,aboluganda,Substring Overlap
 yanoonya,kunoonya,hand around,onya,Substring Overlap
 Akaami,kwenyamira,depressed,akaami,Substring Overlap
-mugga,omugga,river,nan-gga,Substring Overlap
 Akanyonyi,ekinyonyi,bird,akanyonyi,Substring Overlap
 ekisu,ekisumuluzo,key,ekisu,Substring Overlap
 liiso,liiso,eye,nan,PanLex Exact Match
@@ -21,10 +20,12 @@ amalungi,lungi,I’m fine,amalungi,PanLex Exact Match
 gakola,kukola akajanja,finicky,ga-kola,Substring Overlap
 si,si,country,nan,PanLex Exact Match
 Amazzi,muyizzi,hunter,amazzi,Substring Overlap
+takula,amatala agokukubo,robot,takula,Substring Overlap
 ekilo,ekilooto,dream,ekilo,Substring Overlap
 nyina,annyina,brother,nyina,Substring Overlap
 Atya,osiibe otyanno,good day,tya,Substring Overlap
 enjuba,njuba,sun,enjuba,PanLex Exact Match
+taliba,baketi,bucket,taliba,Substring Overlap
 gombolola,ggombolola,sub-county,gombolola,Substring Overlap
 Bassa,okussa omukka,breathe,bantu2,Substring Overlap
 kimu,kimuli,flower,kimu,Substring Overlap
@@ -38,6 +39,7 @@ enju,enjuki,bee,enju,Substring Overlap
 omukka,okussa omukka,breathe,omukka,Substring Overlap
 ekibya,dalasi ey’egambya,Gambian Dalasi,nan-bya,Substring Overlap
 na,na,and,nan,PanLex Exact Match
+bire,buta mwesigwa,unfaithful,bire,Substring Overlap
 Endiga,endiga,sheep,endiga,PanLex Exact Match
 mbuzi,embuzi,goat,mbuzi,Substring Overlap
 Enkima,kima,monkey,enkima,PanLex Exact Match
@@ -50,6 +52,7 @@ Eyali,walisi ne futuna,Wallis & Futuna,eyali,Substring Overlap
 bwalaba,tetugalaba,I’m fine,laba,Substring Overlap
 era,era,and,nan,PanLex Exact Match
 muganda,ganda,fellow-tribesman,nan-ganda,PanLex Exact Match
+Kakulu,mukulukusa,October,kakulu,Substring Overlap
 kulilwa,buulila,say,lilwa,Substring Overlap
 Kyenkola,kukola akajanja,finicky,enkola,Substring Overlap
 mbiro,bbumbiro,potter shop,mbiro,Substring Overlap
@@ -76,6 +79,7 @@ lujja,byʼokubajja,capentry,lu-jja,Substring Overlap
 kukubira,kujjumbira,keen,kubira,Substring Overlap
 Oluliimi,ekisumuluzo,key,uliimi,Substring Overlap
 lukaawa,kaawa,coffee,lukaawa,PanLex Exact Match
+Omukulu,mukulukusa,October,umukulu,Substring Overlap
 Omuze,muzadde,parent,omuze,Substring Overlap
 Omukwaano,omukwaano,love,umukwaano,PanLex Exact Match
 mulabe,tetugalaba,I’m fine,nan-labe,Substring Overlap
@@ -85,7 +89,9 @@ obwoomu,ekisumuluzo,key,obwoomu,Substring Overlap
 Omuwala,wala,girl,omuwala,PanLex Exact Match
 maka,makansi,scissors,maka,Substring Overlap
 Omuyizzi,yizzi,hunter,umuyizzi,PanLex Exact Match
+naye,ekyangwe,sponge,naye,Substring Overlap
 ekibuga,obugazi,width,nan-buga,Substring Overlap
+azaalwa,kusalwa,cut,zaalwa,Substring Overlap
 kyotasimba,simba,genet,kyotasimba,Substring Overlap
 muzinga,ekizinga,island,nan-zinga,Substring Overlap
 emu,emu,one,nan,PanLex Exact Match
