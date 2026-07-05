@@ -169,7 +169,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         # Tier 2: Substring Stem Overlap (Lexicon Containment Gate)
         if not matched:
             for dict_word, eng_trans in exact_translation_map.items():
-                if len(dict_word) > 3 and (dict_word in normalized_lemma or normalized_lemma in dict_word):
+                if len(dict_word) > 4 and (dict_word in normalized_lemma or normalized_lemma in dict_word):
                     output_data['Surface Word'].append(surface_word)
                     output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
                     output_data['English translation'].append(eng_trans)
