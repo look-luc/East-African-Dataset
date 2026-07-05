@@ -4,6 +4,10 @@ from collections import defaultdict
 import pandas as pd
 from pandas import DataFrame
 
+HAS_AUGMENT = {
+    'ganda': True, 'chiga': True, 'tooro': True, 'runyoro': True,
+    'gikuyu': False, 'kamba': False, 'tshiluba': False
+}
 
 def prep_dual(text: pd.Series):
     """
@@ -37,12 +41,11 @@ def prep_dual(text: pd.Series):
 
 def clean_segments(segmented_word: str):
     # Bantu prefixes are typically V or CV, never standalone single obstruents
-    segmented_word = re.sub(r'\b([bcdfghjklmnpqrstvwxyz])-', r'\1', segmented_word)
+    segmented_word = re.sub(r'\b([aeioubcdfghjklmnpqrstvwxyz])-', r'\1', segmented_word)
 
     # Nasal+Consonant complexes like nt, nd, mp, mb act as single phonological units.
     segmented_word = re.sub(r'-([nt|nd|mp|mb|ng|nj])', r'\1', segmented_word)
 
-    return segmented_word
 
 def segment(df: DataFrame, min_word_len=4, product_threshold=15, ratio=0.35):
     """

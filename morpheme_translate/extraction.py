@@ -4,10 +4,11 @@ import pandas as pd
 
 script_dir = Path(__file__).resolve().parent
 
-def root_extract(morpheme_string: str):
+def root_extract(morpheme_string: str, language: str):
     grammar_df = pd.read_csv('bantu_grammar_lookup.csv')
 
-    known_affixes = set(grammar_df['morpheme_segment'].tolist())
+    lang_grammar = grammar_df[grammar_df['language'] == str(language).lower()]
+    known_affixes = set(lang_grammar['morpheme_segment'].tolist())
 
     if pd.isna(morpheme_string):
         return []
@@ -18,9 +19,8 @@ def root_extract(morpheme_string: str):
     for word in words:
         if '-' in word:
             segments = word.replace('-', ' - ').split()
-
             for segment in segments:
-                clean_seg = segment.replace('-', '')
+                clean_seg = segment.replace('-', '').strip()
 
                 if clean_seg not in known_affixes and clean_seg != '':
                     roots.append(clean_seg)
