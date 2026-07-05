@@ -1,90 +1,90 @@
 Surface Word,Ganda Lemma,English translation,Glossing,Match Type
-gandaalo,ganda,fellow-tribesman,gandaalo,Substring Overlap
-abalungi,lungi,I’m fine,abalungi,Substring Overlap
-musajja,sa,grind,mu-sa-jja,Isolated Root Exact Match
-Aboluganda,ganda,fellow-tribesman,aboluganda,Substring Overlap
-yanoonya,kunoonya,hand around,onya,Substring Overlap
-Akanyonyi,ekinyonyi,bird,akanyonyi,Substring Overlap
-ekisu,ekisumuluzo,key,ekisu,Substring Overlap
-liiso,liiso,eye,liiso,PanLex Exact Match
-Alaba,tetugalaba,I’m fine,laba,Substring Overlap
-ekilungi,lungi,I’m fine,ekilungi,Substring Overlap
-Amaka,amaka,family,amaka,PanLex Exact Match
-Akwaagala,kwagala okumanya,curious,agala,Substring Overlap
-Akwaagula,ggula,open a door,a-kwaagula,Substring Overlap
-wala,wala,girl,wala,PanLex Exact Match
-kibuga,obugazi,width,ki-buga,Substring Overlap
-amalungi,lungi,I’m fine,amalungi,PanLex Exact Match
-gakola,kukola akajanja,finicky,ga-kola,Substring Overlap
-wamu,lwamukaaga,Saturday,wamu,Substring Overlap
-si,si,country,si,PanLex Exact Match
-Amazzi,muyizzi,hunter,amazzi,Substring Overlap
-ekilo,ekilooto,dream,ekilo,Substring Overlap
-nyina,annyina,brother,nyina,Substring Overlap
-enjuba,njuba,sun,enjuba,PanLex Exact Match
-gombolola,ggombolola,sub-county,gombolola,Substring Overlap
-kimu,kimuli,flower,kimu,Substring Overlap
-Bazaala,zaala,give birth,bantu2,PanLex Exact Match
-mubiri,mubi,ugly,mubiri,Substring Overlap
-tebazaala,zaala,give birth,tebazaala,PanLex Exact Match
-olibeera,kubeera lubuto,pregnant,beera,Substring Overlap
-mulungi,lungi,I’m fine,mulungi,Substring Overlap
-mukulu,mukulukusa,October,mukulu,Substring Overlap
-na,na,and,na,PanLex Exact Match
-muttu,wakati muttumbi,midnight,muttu,Substring Overlap
-Endiga,endiga,sheep,endiga,PanLex Exact Match
-mbuzi,embuzi,goat,mbuzi,Substring Overlap
-Enkima,kima,monkey,enkima,PanLex Exact Match
-okutuukirira,kiri,it,tuukirira,Substring Overlap
-Enkuba,enkuba,rain,enkuba,PanLex Exact Match
-ensa,sa,grind,ensa,PanLex Exact Match
-yamala,faranga ey’emalagase,Malagasy Ariary,yamala,Substring Overlap
-amazzi,muyizzi,hunter,amazzi,Substring Overlap
-enyumba,nyumba,house,enyumba,PanLex Exact Match
-ne,ne,and,ne,PanLex Exact Match
-Eyali,walisi ne futuna,Wallis & Futuna,eyali,Substring Overlap
-bwalaba,tetugalaba,I’m fine,laba,Substring Overlap
-era,era,and,era,PanLex Exact Match
-muganda,ganda,fellow-tribesman,mu-ganda,PanLex Exact Match
-Kakulu,mukulukusa,October,kakulu,Substring Overlap
-kulilwa,buulila,say,lilwa,Substring Overlap
-Kyenkola,kukola akajanja,finicky,enkola,Substring Overlap
-mbiro,bbumbiro,potter shop,mbiro,Substring Overlap
-kwotadde,ota,bask,kwotadde,PanLex Exact Match
-Mulungi,lungi,I’m fine,mulungi,PanLex Exact Match
-mubi,mubi,ugly,mubi,PanLex Exact Match
-Omukazi,omukazi,woman,umukazi,PanLex Exact Match
-Ne,ne,and,ne,PanLex Exact Match
-olulagala,gambalagala,mountain,lagala,Substring Overlap
-alekulira,ntaulira,honey badger,lira,Substring Overlap
-kisikiriize,kiri,it,ki-sikiriiza,Substring Overlap
-mukka,okussa omukka,breathe,mukka,Substring Overlap
-ate,ate,and,ate,PanLex Exact Match
-Omwana,omwana,babe,omwana,PanLex Exact Match
-ewaka,wakati muttumbi,midnight,ewaka,Substring Overlap
-Wange,jjajja wange,great aunt,wange,Substring Overlap
-omulungii,lungi,I’m fine,omulungii,Substring Overlap
-okuwasa,kwasama,open the mouth,okuwasa,Substring Overlap
-buti,faranga ey’ejjibuti,Djiboutian Franc,buti,Substring Overlap
-ensanafu,nsanafu,ant,ensanafu,PanLex Exact Match
-Olubuto,kubeera lubuto,pregnant,ubuto,Substring Overlap
-embi,embizzi,pig,embi,Substring Overlap
-kukubira,kujjumbira,keen,kubira,Substring Overlap
-lukaawa,kaawa,coffee,lukaawa,PanLex Exact Match
-Omukulu,mukulukusa,October,umukulu,Substring Overlap
-Omuze,muzadde,parent,omuze,Substring Overlap
-Omukwaano,omukwaano,love,umukwaano,PanLex Exact Match
-mulabe,tetugalaba,I’m fine,mu-labe,Substring Overlap
-bwabeera,kubeera lubuto,pregnant,beera,Substring Overlap
-Omuwala,wala,girl,omuwala,PanLex Exact Match
-maka,makansi,scissors,maka,Substring Overlap
-Omuyizzi,yizzi,hunter,umuyizzi,PanLex Exact Match
-ekibuga,obugazi,width,eki-buga,Substring Overlap
-kyotasimba,simba,genet,kyotasimba,Substring Overlap
-muzinga,ekizinga,island,mu-zinga,Substring Overlap
-njuki,enjuki,bee,njuki,Substring Overlap
-emu,emu,one,emu,PanLex Exact Match
-njuba,njuba,sun,njuba,PanLex Exact Match
-nomala,faranga ey’emalagase,Malagasy Ariary,nomala,Substring Overlap
-Zimba,kasimba,genet,zimba,Substring Overlap
-muti,muti,tree,muti,PanLex Exact Match
+gandaalo,ganda,fellow-tribesman,[gandaalo],Substring Overlap
+abalungi,lungi,I’m fine,[abalungi],Substring Overlap
+musajja,sa,grind,[mu]-[sa]-[jja],Isolated Root Exact Match
+Aboluganda,ganda,fellow-tribesman,[aboluganda],Substring Overlap
+yanoonya,kunoonya,hand around,[onya],Substring Overlap
+Akanyonyi,ekinyonyi,bird,[akanyonyi],Substring Overlap
+ekisu,ekisumuluzo,key,[ekisu],Substring Overlap
+liiso,liiso,eye,[liiso],PanLex Exact Match
+Alaba,tetugalaba,I’m fine,[laba],Substring Overlap
+ekilungi,lungi,I’m fine,[ekilungi],Substring Overlap
+Amaka,amaka,family,[amaka],PanLex Exact Match
+Akwaagala,kwagala okumanya,curious,[agala],Substring Overlap
+Akwaagula,ggula,open a door,[a]-[kwaagula],Substring Overlap
+wala,wala,girl,[wala],PanLex Exact Match
+kibuga,obugazi,width,[ki]-[buga],Substring Overlap
+amalungi,lungi,I’m fine,[amalungi],PanLex Exact Match
+gakola,kukola akajanja,finicky,[ga]-[kola],Substring Overlap
+wamu,lwamukaaga,Saturday,[wamu],Substring Overlap
+si,si,country,[si],PanLex Exact Match
+Amazzi,muyizzi,hunter,[amazzi],Substring Overlap
+ekilo,ekilooto,dream,[ekilo],Substring Overlap
+nyina,annyina,brother,[nyina],Substring Overlap
+enjuba,njuba,sun,[enjuba],PanLex Exact Match
+gombolola,ggombolola,sub-county,[gombolola],Substring Overlap
+kimu,kimuli,flower,[kimu],Substring Overlap
+Bazaala,zaala,give birth,[bantu2],PanLex Exact Match
+mubiri,mubi,ugly,[mubiri],Substring Overlap
+tebazaala,zaala,give birth,[tebazaala],PanLex Exact Match
+olibeera,kubeera lubuto,pregnant,[beera],Substring Overlap
+mulungi,lungi,I’m fine,[mulungi],Substring Overlap
+mukulu,mukulukusa,October,[mukulu],Substring Overlap
+na,na,and,[na],PanLex Exact Match
+muttu,wakati muttumbi,midnight,[muttu],Substring Overlap
+Endiga,endiga,sheep,[endiga],PanLex Exact Match
+mbuzi,embuzi,goat,[mbuzi],Substring Overlap
+Enkima,kima,monkey,[enkima],PanLex Exact Match
+okutuukirira,kiri,it,[tuukirira],Substring Overlap
+Enkuba,enkuba,rain,[enkuba],PanLex Exact Match
+ensa,sa,grind,[ensa],PanLex Exact Match
+yamala,faranga ey’emalagase,Malagasy Ariary,[yamala],Substring Overlap
+amazzi,muyizzi,hunter,[amazzi],Substring Overlap
+enyumba,nyumba,house,[enyumba],PanLex Exact Match
+ne,ne,and,[ne],PanLex Exact Match
+Eyali,walisi ne futuna,Wallis & Futuna,[eyali],Substring Overlap
+bwalaba,tetugalaba,I’m fine,[laba],Substring Overlap
+era,era,and,[era],PanLex Exact Match
+muganda,ganda,fellow-tribesman,[mu]-[ganda],PanLex Exact Match
+Kakulu,mukulukusa,October,[kakulu],Substring Overlap
+kulilwa,buulila,say,[lilwa],Substring Overlap
+Kyenkola,kukola akajanja,finicky,[enkola],Substring Overlap
+mbiro,bbumbiro,potter shop,[mbiro],Substring Overlap
+kwotadde,ota,bask,[kwotadde],PanLex Exact Match
+Mulungi,lungi,I’m fine,[mulungi],PanLex Exact Match
+mubi,mubi,ugly,[mubi],PanLex Exact Match
+Omukazi,omukazi,woman,[umukazi],PanLex Exact Match
+Ne,ne,and,[ne],PanLex Exact Match
+olulagala,gambalagala,mountain,[lagala],Substring Overlap
+alekulira,ntaulira,honey badger,[lira],Substring Overlap
+kisikiriize,kiri,it,[ki]-[sikiriiza],Substring Overlap
+mukka,okussa omukka,breathe,[mukka],Substring Overlap
+ate,ate,and,[ate],PanLex Exact Match
+Omwana,omwana,babe,[omwana],PanLex Exact Match
+ewaka,wakati muttumbi,midnight,[ewaka],Substring Overlap
+Wange,jjajja wange,great aunt,[wange],Substring Overlap
+omulungii,lungi,I’m fine,[omulungii],Substring Overlap
+okuwasa,kwasama,open the mouth,[okuwasa],Substring Overlap
+buti,faranga ey’ejjibuti,Djiboutian Franc,[buti],Substring Overlap
+ensanafu,nsanafu,ant,[ensanafu],PanLex Exact Match
+Olubuto,kubeera lubuto,pregnant,[ubuto],Substring Overlap
+embi,embizzi,pig,[embi],Substring Overlap
+kukubira,kujjumbira,keen,[kubira],Substring Overlap
+lukaawa,kaawa,coffee,[lukaawa],PanLex Exact Match
+Omukulu,mukulukusa,October,[umukulu],Substring Overlap
+Omuze,muzadde,parent,[omuze],Substring Overlap
+Omukwaano,omukwaano,love,[umukwaano],PanLex Exact Match
+mulabe,tetugalaba,I’m fine,[mu]-[labe],Substring Overlap
+bwabeera,kubeera lubuto,pregnant,[beera],Substring Overlap
+Omuwala,wala,girl,[omuwala],PanLex Exact Match
+maka,makansi,scissors,[maka],Substring Overlap
+Omuyizzi,yizzi,hunter,[umuyizzi],PanLex Exact Match
+ekibuga,obugazi,width,[eki]-[buga],Substring Overlap
+kyotasimba,simba,genet,[kyotasimba],Substring Overlap
+muzinga,ekizinga,island,[mu]-[zinga],Substring Overlap
+njuki,enjuki,bee,[njuki],Substring Overlap
+emu,emu,one,[emu],PanLex Exact Match
+njuba,njuba,sun,[njuba],PanLex Exact Match
+nomala,faranga ey’emalagase,Malagasy Ariary,[nomala],Substring Overlap
+Zimba,kasimba,genet,[zimba],Substring Overlap
+muti,muti,tree,[muti],PanLex Exact Match

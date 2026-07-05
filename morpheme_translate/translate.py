@@ -19,51 +19,53 @@ bantu_iso_map = {
     'chiga': 'cgg', 'tooro': 'ttj', 'runyoro': 'nyo', 'kamba': 'kam'
 }
 
+def build_model_glossary(lang:str):
+    df = pd.read_csv(f"{lang.lower().capitalize()}_model_lem_seg.csv", sep="\t")
+    """Parses the model file to create a segment-to-gloss dictionary."""
+    model_map = {}
+    for _, row in df.iterrows():
+        try:
+            # Safely convert string representation of list to actual list
+            segments = ast.literal_eval(row['segmentation'])
+            glosses = ast.literal_eval(row['noun class prediction'])
+
+            for seg, gloss in zip(segments, glosses):
+                model_map[str(seg).lower().strip()] = str(gloss).strip()
+        except (ValueError, SyntaxError, TypeError):
+            continue
+    return model_map
+
 grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
 
-def affix_translate(segments, language):
-    # Filter the grammar lookup for the specific language
+def affix_translate(segments, language, model_glossary):
     grammar = grammar_df[grammar_df['language'] == str(language).lower()]
-
-    # Create the map with stripping to ensure no hidden whitespace issues
-    grammar_map = {
+    manual_map = {
         str(k).strip().lower(): str(v).strip()
         for k, v in zip(grammar['morpheme_segment'], grammar['proposed_leipzig_gloss'])
         if pd.notna(k) and pd.notna(v)
     }
+
+    master_map = {**model_glossary, **manual_map}
 
     glossed_parts = []
 
     for seg in segments:
         clean_seg = str(seg).lower().strip()
 
-        # If it's a segmented string (e.g., 'mu-labe')
-        if "-" in clean_seg:
+        if clean_seg in master_map:
+            glossed_parts.append(master_map[clean_seg])
+        elif "-" in clean_seg:
             sub_parts = clean_seg.split("-")
             sub_glossed = []
-
             for part in sub_parts:
-                part = part.strip()
-                if not part:
-                    continue
-
-                if (part + "-") in grammar_map:
-                    sub_glossed.append(grammar_map[part + "-"])
-                elif ("-" + part) in grammar_map:
-                    sub_glossed.append(grammar_map["-" + part])
-                elif part in grammar_map:
-                    sub_glossed.append(grammar_map[part])
+                p = part.strip()
+                if p in master_map:
+                    sub_glossed.append(master_map[p])
                 else:
-                    print(f"DEBUG: Missing grammar entry for segment: '{part}'")
-                    sub_glossed.append(f"[{part}]")
-
+                    sub_glossed.append(f"[{p}]")
             glossed_parts.append("-".join(sub_glossed))
         else:
-            if clean_seg in grammar_map:
-                glossed_parts.append(grammar_map[clean_seg])
-            else:
-                print(f"DEBUG: Missing grammar entry for whole segment: '{clean_seg}'")
-                glossed_parts.append(f"[{clean_seg}]")
+            glossed_parts.append(f"[{clean_seg}]")
 
     return "-".join(glossed_parts)
 
@@ -168,13 +170,14 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         'Match Type': []
     }
 
+    model_glossary = build_model_glossary(lang)
     for _, row in model_df.iterrows():
         surface_word = str(row['surface_word'])
         raw_lemmas = ast.literal_eval(row['lemmatization'])
         predicted_lemma = str(raw_lemmas[0]).lower().strip() if raw_lemmas else surface_word.lower()
         normalized_lemma = normalize_ortho(predicted_lemma)
         segmentation_str = row['segmentation']
-        affix = affix_translate(ast.literal_eval(segmentation_str), lang)
+        affix = affix_translate(ast.literal_eval(segmentation_str), lang, model_glossary)
 
         matched = False
 
