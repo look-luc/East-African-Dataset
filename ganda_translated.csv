@@ -1,8 +1,6 @@
 Surface Word,Ganda Lemma,English translation,Glossing,Match Type
 mu,okussa omukka,breathe,nan,Substring Overlap
 gandaalo,ganda,fellow-tribesman,nan,Substring Overlap
-kyomuti,muti,tree,kyomuti,Substring Overlap
-Ababi,mubi,ugly,nan,Substring Overlap
 abalungi,lungi,I’m fine,abalungi,Substring Overlap
 abangi,lungi,I’m fine,abangi,Substring Overlap
 musajja,byʼokubajja,capentry,nan-sa-jja,Substring Overlap
@@ -14,7 +12,7 @@ wa,buta mwesigwa,unfaithful,nan,Substring Overlap
 mugga,omugga,river,nan-gga,Substring Overlap
 Akanyonyi,ekinyonyi,bird,akanyonyi,Substring Overlap
 byo,butasalawo,indecisive,nan,Substring Overlap
-oya,goya,mix,nan,Substring Overlap
+oya,kugoya,mix,nan,Substring Overlap
 ekisu,ekisumuluzo,key,ekisu,Substring Overlap
 liiso,liiso,eye,nan,PanLex Exact Match
 Alaba,tetugalaba,I’m fine,laba,Substring Overlap
@@ -42,7 +40,6 @@ gombolola,ggombolola,sub-county,gombolola,Substring Overlap
 Bassa,okussa omukka,breathe,bantu2,Substring Overlap
 kimu,kimuli,flower,kimu,Substring Overlap
 Bazaala,zaala,give birth,bantu2,PanLex Exact Match
-mubiri,mubi,ugly,nan,Substring Overlap
 tebazaala,zaala,give birth,tebazaala,PanLex Exact Match
 Bwoba,kusooba,slow,nan,Substring Overlap
 olibeera,kubeera lubuto,pregnant,beera,Substring Overlap
@@ -55,7 +52,6 @@ enju,enjuki,bee,enju,Substring Overlap
 omukka,okussa omukka,breathe,omukka,Substring Overlap
 ekibya,dalasi ey’egambya,Gambian Dalasi,nan-bya,Substring Overlap
 na,na,and,nan,PanLex Exact Match
-Ekiri,kiri,it,ekiri,Substring Overlap
 muttu,wakati muttumbi,midnight,nan,Substring Overlap
 kyo,butasalawo,indecisive,nan,Substring Overlap
 bire,buta mwesigwa,unfaithful,bire,Substring Overlap
@@ -63,7 +59,6 @@ Endiga,endiga,sheep,endiga,PanLex Exact Match
 gwa,buta mwesigwa,unfaithful,nan,Substring Overlap
 mbuzi,embuzi,goat,mbuzi,Substring Overlap
 Enkima,kima,monkey,enkima,PanLex Exact Match
-okutuukirira,kiri,it,tuukirira,Substring Overlap
 nti,antigwa ne barabuda,Antigua & Barbuda,nan,Substring Overlap
 Enkuba,enkuba,rain,enkuba,PanLex Exact Match
 omu,okussa omukka,breathe,nan,Substring Overlap
@@ -92,12 +87,10 @@ Ne,ne,and,nan,PanLex Exact Match
 olulagala,gambalagala,mountain,lagala,Substring Overlap
 ennyo,ekinyonyi,bird,nan,Substring Overlap
 alekulira,ntaulira,honey badger,lira,Substring Overlap
-kisikiriize,kiri,it,ki-sikiriiza,Substring Overlap
 mukka,okussa omukka,breathe,mukka,Substring Overlap
 ate,ate,and,nan,PanLex Exact Match
 okugwa,buta mwesigwa,unfaithful,nan,Substring Overlap
 Omwana,omwana,babe,omwana,PanLex Exact Match
-omubi,mubi,ugly,omubi,Substring Overlap
 ewaka,wakati muttumbi,midnight,ewaka,Substring Overlap
 Wange,jjajja wange,great aunt,wange,Substring Overlap
 omulungii,lungi,I’m fine,omulungii,Substring Overlap

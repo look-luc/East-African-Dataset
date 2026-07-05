@@ -36,8 +36,7 @@ def affix_translate(segments, language):
                 if not part:
                     continue
 
-                prefix_candidate = part + '-'
-                suffix_candidate = '-' + part
+                prefix_candidate = part + '-'\n                suffix_candidate = '-' + part
 
                 if prefix_candidate in grammar_map:
                     sub_glossed.append(str(grammar_map[prefix_candidate]))
@@ -114,6 +113,15 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         else:
             model_df.rename(columns={model_df.columns[0]: 'surface_word'}, inplace=True)
 
+    # Side A Grammar Guard Setup: Extract and clean known functional affixes to protect Tier 2
+    lang_grammar = grammar_df[grammar_df['language'] == str(lang).lower()]
+    known_affixes = set(
+        lang_grammar['morpheme_segment']
+        .str.replace('-', '', regex=False)
+        .str.lower()
+        .dropna()
+    )
+
     panlex_words = []
     panlex_translations = []
 
@@ -145,7 +153,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         'Match Type': []
     }
 
-    for _, row in model_df.iterrows():
+    for i, row in model_df.iterrows():
         surface_word = str(row['surface_word'])
         raw_lemmas = ast.literal_eval(row['lemmatization'])
         predicted_lemma = str(raw_lemmas[0]).lower().strip() if raw_lemmas else surface_word.lower()
@@ -154,6 +162,16 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         affix = affix_translate(ast.literal_eval(segmentation_str), lang)
 
         matched = False
+        noun_class = None
+
+        # Safely parse noun class string and extract class tag
+        raw_nc = ast.literal_eval(row['noun class prediction'])
+        if raw_nc:
+            nc_string = str(raw_nc[0])  # Fixed Indexing Bug (changed i to 0)
+            features = nc_string.split()
+            if len(features) > 1:
+                tags = features[1].split(';')  # ['N', 'PL', 'BANTU2']
+                noun_class = tags[-1]          # "BANTU2"
 
         # Tier 1: Exact Match (PanLex Lexicon Gate)
         for lookup_key in [normalized_lemma, predicted_lemma, surface_word.lower()]:
@@ -167,7 +185,8 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                 break
 
         # Tier 2: Substring Stem Overlap (Lexicon Containment Gate)
-        if not matched:
+        # SIDE A FILTER: Only execute if the target forms are not recognized functional affixes
+        if not matched and (normalized_lemma not in known_affixes and predicted_lemma not in known_affixes):
             for dict_word, eng_trans in exact_translation_map.items():
                 if len(dict_word) > 4 and (dict_word in normalized_lemma or normalized_lemma in dict_word):
                     output_data['Surface Word'].append(surface_word)
