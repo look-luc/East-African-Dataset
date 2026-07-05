@@ -23,7 +23,11 @@ grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
 
 def affix_translate(segments, language):
     grammar = grammar_df[grammar_df['language'] == str(language).lower()]
-    grammar_map = dict(zip(grammar['morpheme_segment'], grammar['proposed_leipzig_gloss']))
+    grammar_map = {
+        str(k).lower(): str(v)
+        for k, v in zip(grammar['morpheme_segment'], grammar['proposed_leipzig_gloss'])
+        if pd.notna(k) and pd.notna(v)
+    }
 
     glossed_parts = []
     for seg in segments:
@@ -60,7 +64,8 @@ def normalize_ortho(word: str) -> str:
     w = str(word).lower().strip("[]'\\\" ")
     prefixes = ['umu', 'aba', 'oki', 'oku', 'emi', 'eki', 'aka', 'omu', 'en']
     for p in prefixes:
-        if w.startswith(p) and len(w) > len(p) + 2:
+        # Change operator from > to >= to accommodate high-frequency 2-character roots
+        if w.startswith(p) and len(w) >= len(p) + 2:
             return w[len(p):]
     return w
 
@@ -116,8 +121,10 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
     # Side A Grammar Guard Setup: Extract and clean known functional affixes to protect Tier 2
     lang_grammar = grammar_df[grammar_df['language'] == str(lang).lower()]
+    valid_grammar = lang_grammar.dropna(subset=['proposed_leipzig_gloss'])
+
     known_affixes = set(
-        lang_grammar['morpheme_segment']
+        valid_grammar['morpheme_segment']
         .str.replace('-', '', regex=False)
         .str.lower()
         .dropna()
@@ -175,21 +182,11 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                 matched = True
                 break
 
-        try:
-            morpheme_segments = ast.literal_eval(str(row['segmentation']))  # e.g., ['aba-', 'kadde']
-        except (ValueError, SyntaxError):
-            morpheme_segments = []
-
-        has_affix = False
-        for segment in morpheme_segments:
-            clean_segment = str(segment).lower().replace('-', '').strip()
-
-            if clean_segment in known_affixes:
-                has_affix = True
-                break
+        clean_lemma_token = normalized_lemma.lower().replace('-', '').strip()
+        is_standalone_grammar = clean_lemma_token in known_affixes
 
         # Tier 2: Substring Stem Overlap (Lexicon Containment Gate)
-        if not matched and not has_affix:
+        if not matched and not is_standalone_grammar:
             for dict_word, eng_trans in exact_translation_map.items():
                 if len(dict_word) > 4 and (dict_word in normalized_lemma or normalized_lemma in dict_word):
                     output_data['Surface Word'].append(surface_word)
@@ -200,33 +197,27 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                     matched = True
                     break
 
-        if not matched and has_affix:
-            lemmatization_str = str(row['lemmatization']).lower()
+        # Tier 2 Fallback: Only traps actual standalone grammatical tokens with a valid noun class prediction
+        if not matched and is_standalone_grammar:
+            noun_class = None
+            raw_nc = ast.literal_eval(row['noun class prediction'])
+            if raw_nc:
+                nc_string = str(raw_nc[0])
+                features = nc_string.split()
+                if len(features) > 1:
+                    tags = features[1].split(';')
+                    predicted_tag = tags[-1]
 
-            for structural_affix in known_affixes:
-                if structural_affix in lemmatization_str:
-                    noun_class = None
+                    if "BANTU" in predicted_tag or "NC" in predicted_tag:
+                        noun_class = predicted_tag
 
-                    raw_nc = ast.literal_eval(row['noun class prediction'])
-                    if raw_nc:
-                        nc_string = str(raw_nc[0])
-                        features = nc_string.split()
-                        if len(features) > 1:
-                            tags = features[1].split(';')
-                            predicted_tag = tags[-1]
-
-                            if "BANTU" in predicted_tag or "NC" in predicted_tag:
-                                noun_class = predicted_tag
-
-                    # Only consume the row if a genuine noun class fallback is verified
-                    if noun_class:
-                        output_data['Surface Word'].append(surface_word)
-                        output_data[f'{lang.capitalize()} Lemma'].append(f"(-){surface_word}(-)")
-                        output_data['English translation'].append(noun_class)
-                        output_data['Glossing'].append(affix)
-                        output_data['Match Type'].append('Grammar Guard Fallback')
-                        matched = True
-                        break
+            if noun_class:
+                output_data['Surface Word'].append(surface_word)
+                output_data[f'{lang.capitalize()} Lemma'].append(f"(-){surface_word}(-)")
+                output_data['English translation'].append(noun_class)
+                output_data['Glossing'].append(affix)
+                output_data['Match Type'].append('Grammar Guard Fallback')
+                matched = True
 
         # Tier 3: Isolated Local Root Evaluation (Leveraging local grammar strip rules)
         if not matched:
