@@ -22,9 +22,12 @@ bantu_iso_map = {
 grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
 
 def affix_translate(segments, language):
+    # Filter the grammar lookup for the specific language
     grammar = grammar_df[grammar_df['language'] == str(language).lower()]
+
+    # Create the map with stripping to ensure no hidden whitespace issues
     grammar_map = {
-        str(k).lower(): str(v)
+        str(k).strip().lower(): str(v).strip()
         for k, v in zip(grammar['morpheme_segment'], grammar['proposed_leipzig_gloss'])
         if pd.notna(k) and pd.notna(v)
     }
@@ -32,12 +35,15 @@ def affix_translate(segments, language):
     glossed_parts = []
 
     for seg in segments:
-        clean_seg = seg.lower()
+        clean_seg = str(seg).lower().strip()
+
+        # If it's a segmented string (e.g., 'mu-labe')
         if "-" in clean_seg:
             sub_parts = clean_seg.split("-")
             sub_glossed = []
 
             for part in sub_parts:
+                part = part.strip()
                 if not part:
                     continue
 
@@ -48,14 +54,16 @@ def affix_translate(segments, language):
                 elif part in grammar_map:
                     sub_glossed.append(grammar_map[part])
                 else:
-                    sub_glossed.append(part)
+                    print(f"DEBUG: Missing grammar entry for segment: '{part}'")
+                    sub_glossed.append(f"[{part}]")
 
             glossed_parts.append("-".join(sub_glossed))
         else:
             if clean_seg in grammar_map:
                 glossed_parts.append(grammar_map[clean_seg])
             else:
-                glossed_parts.append(clean_seg)
+                print(f"DEBUG: Missing grammar entry for whole segment: '{clean_seg}'")
+                glossed_parts.append(f"[{clean_seg}]")
 
     return "-".join(glossed_parts)
 
