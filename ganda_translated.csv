@@ -1,428 +1,162 @@
 Surface Word,Ganda Lemma,English translation,Glossing,Match Type
-Abakadde,budaaki,Netherlands,abakadde,Vector Search (Score: 0.77)
-bali,wala,girl,bali,Vector Search (Score: 0.82)
 mu,okussa omukka,breathe,nan,Substring Overlap
 gandaalo,ganda,fellow-tribesman,nan,Substring Overlap
-kisikiziz,kugumikiriza,patient,ki-sikiziz,Vector Search (Score: 0.80)
 kyomuti,muti,tree,kyomuti,Substring Overlap
 Ababi,mubi,ugly,nan,Substring Overlap
-okulya,okuloota,dream,nan-nan,Vector Search (Score: 0.86)
 abalungi,lungi,I’m fine,abalungi,Substring Overlap
-emilimo,omulambo,corpse,nan,Vector Search (Score: 0.85)
-Abakazi,obugazi,width,abakazi,Vector Search (Score: 0.79)
 abangi,lungi,I’m fine,abangi,Substring Overlap
-bafuula,buulila,say,fuula,Vector Search (Score: 0.87)
 musajja,byʼokubajja,capentry,nan-sa-jja,Substring Overlap
-waabwe,kaawa,coffee,waabwe,Vector Search (Score: 0.85)
 okwogera,era,and,ogera,Substring Overlap
 Aboluganda,ganda,fellow-tribesman,aboluganda,Substring Overlap
-bita,simba,genet,nan,Vector Search (Score: 0.82)
 nga,nga busasaana,dawn,nan,Substring Overlap
-bayombye,obuyambi,humanitarian,yomba,Vector Search (Score: 0.86)
 kwata,kwa,tick,nan,Substring Overlap
-enkumbi,enkuba,rain,enkumbi,Vector Search (Score: 0.89)
-olime,lumonde,potato,olime,Vector Search (Score: 0.84)
-Abuliira,buulila,say,buliira,Vector Search (Score: 0.87)
-omugezi,omukazi,woman,omugezi,Vector Search (Score: 0.91)
-tatawaana,talatala,mirror,tatawaana,Vector Search (Score: 0.81)
-Addukana,kujaganya,merry,addukana,Vector Search (Score: 0.80)
 yanoonya,kunoonya,hand around,onya,Substring Overlap
-akuyu,kukkuta,be satiated,akuyu,Vector Search (Score: 0.83)
 Akaami,kwenyamira,depressed,akaami,Substring Overlap
-akatono,ekitabo,book,nan-tono,Vector Search (Score: 0.81)
-okagayira,kujaganya,merry,oka-gayira,Vector Search (Score: 0.87)
-mitala,kampala,Kampala,mi-tala,Vector Search (Score: 0.82)
 wa,buta mwesigwa,unfaithful,nan,Substring Overlap
 mugga,omugga,river,nan-gga,Substring Overlap
-Akako,ekikoola,leaf,akako,Vector Search (Score: 0.75)
-kakila,kampala,Kampala,kakila,Vector Search (Score: 0.88)
 mbegelaako,mbe,knife,nan,Substring Overlap
 Akanyonyi,ekinyonyi,bird,akanyonyi,Substring Overlap
-kakozesa,kukoboza,defiant,kakozesa,Vector Search (Score: 0.85)
 byo,butasalawo,indecisive,nan,Substring Overlap
 oya,goya,mix,nan,Substring Overlap
-birara,girimane,Germany,nan-rara,Vector Search (Score: 0.79)
-okuzimba,ekizinga,island,okuzimba,Vector Search (Score: 0.84)
 ekisu,ekisumuluzo,key,ekisu,Substring Overlap
-kyaako,yaayu,tomcat,kyaako,Vector Search (Score: 0.83)
-Akatono,okuloota,dream,nan,Vector Search (Score: 0.76)
-kazila,kuzaala,give birth,kazila,Vector Search (Score: 0.89)
-liiso,liiso,eye,nan,Exact Match
-Akozesa,kukoboza,defiant,kozesa,Vector Search (Score: 0.84)
-emikono,embogo,American bison,nan,Vector Search (Score: 0.84)
-gyombi,embogo,American bison,gyombi,Vector Search (Score: 0.85)
-talemwa,kwetamwa,fed up,talemwa,Vector Search (Score: 0.83)
-kulya,kugoya,mix,nan,Vector Search (Score: 0.84)
-Akussuka,kusanyuka,happy,ssuka,Vector Search (Score: 0.88)
-lyali,nyala,banana,lyali,Vector Search (Score: 0.88)
-nalyo,nyala,banana,nalyo,Vector Search (Score: 0.82)
-taba,tamba,make offerings,nan,Vector Search (Score: 0.90)
-mutti,muti,tree,mutti,Vector Search (Score: 0.95)
+liiso,liiso,eye,nan,PanLex Exact Match
 Alaba,tetugalaba,I’m fine,laba,Substring Overlap
 ekilungi,lungi,I’m fine,ekilungi,Substring Overlap
-akinyumya,ekinyonyi,bird,nyumya,Vector Search (Score: 0.86)
-Amaka,amaka,family,amaka,Exact Match
-omutali,omulambo,corpse,omutali,Vector Search (Score: 0.89)
+Amaka,amaka,family,amaka,PanLex Exact Match
 muchaara,faranga ey’egini,Guinean Syli,nan-chaara,Substring Overlap
-galinga,kwagalana,love,galinga,Vector Search (Score: 0.85)
-ekisibo,ekisambi,thigh,nan,Vector Search (Score: 0.91)
-nte,ate,and,nan,Vector Search (Score: 0.90)
 Akwaagala,kwagala okumanya,curious,agala,Substring Overlap
 Akwaagula,ggula,open a door,nan-kwaagula,Substring Overlap
 no,kunoga,be flavoured,nan,Substring Overlap
-bujama,lubbama,Myanmar Language,bujama,Vector Search (Score: 0.88)
 bwo,butasalawo,indecisive,nan,Substring Overlap
 Akwata,kwa,tick,akwata,Substring Overlap
-empoya,emwaanyi,coffee,empoya,Vector Search (Score: 0.83)
-atuuka,kutamba,make offerings,tuuka,Vector Search (Score: 0.82)
-wala,wala,girl,wala,Exact Match
-Nawolovu,kwewojjoola,bashful,nan-wolovu,Vector Search (Score: 0.81)
-yatuuka,lwamukaaga,Saturday,tuuka,Vector Search (Score: 0.81)
+wala,wala,girl,wala,PanLex Exact Match
 kibuga,obugazi,width,ki-buga,Substring Overlap
-amalungi,lungi,I’m fine,amalungi,Exact Match
+amalungi,lungi,I’m fine,amalungi,PanLex Exact Match
 gakola,kukola akajanja,finicky,ga-kola,Substring Overlap
-ekibanja,ekisambi,thigh,nan-banja,Vector Search (Score: 0.87)
-ekiningi,ekinyonyi,bird,ekiningi,Vector Search (Score: 0.86)
-Amatu,maama,mother,amatu,Vector Search (Score: 0.80)
-agatawulira,kwagalana,love,agatawulira,Vector Search (Score: 0.87)
-kubulirirwa,kubuulila,say,bulirirwa,Vector Search (Score: 0.90)
-gagendera,geraageranya,juxtapose,ga-gendera,Vector Search (Score: 0.88)
 wamu,lwamukaaga,Saturday,nan,Substring Overlap
-nomutwe,lumonde,potato,nomutwe,Vector Search (Score: 0.85)
-Amambuka,embuyaga,wind,amambuka,Vector Search (Score: 0.82)
-si,si,country,nan,Exact Match
-maserengeta,masedoniya,Macedonia (FYROM),nan-serengeta,Vector Search (Score: 0.86)
+si,si,country,nan,PanLex Exact Match
 Amazzi,muyizzi,hunter,amazzi,Substring Overlap
-amasabe,asama,open the mouth,amasabe,Vector Search (Score: 0.88)
-tegamala,tetugalaba,I’m fine,tegamala,Vector Search (Score: 0.89)
-nyonta,ennyondo,hammer,nyonta,Vector Search (Score: 0.87)
-Atalimba,ntaulira,honey badger,limba,Vector Search (Score: 0.81)
 takula,amatala agokukubo,robot,takula,Substring Overlap
-Atambula,kutamba,make offerings,tambula,Vector Search (Score: 0.86)
 ekilo,ekilooto,dream,ekilo,Substring Overlap
-Atanatambula,butasalawo,indecisive,tambula,Vector Search (Score: 0.81)
-yatenda,masedoniya,Macedonia (FYROM),tenda,Vector Search (Score: 0.82)
 nyina,annyina,brother,nyina,Substring Overlap
-okufumba,kubumba,mould,okufumba,Vector Search (Score: 0.88)
 Atya,osiibe otyanno,good day,tya,Substring Overlap
-enjuba,njuba,sun,enjuba,Exact Match
+enjuba,njuba,sun,enjuba,PanLex Exact Match
 taliba,baketi,bucket,taliba,Substring Overlap
 gombolola,ggombolola,sub-county,gombolola,Substring Overlap
 Bassa,okussa omukka,breathe,bantu2,Substring Overlap
 kimu,kimuli,flower,kimu,Substring Overlap
-nkuyege,ekyangwe,sponge,nkuyege,Vector Search (Score: 0.87)
-Bazaala,zaala,give birth,bantu2,Exact Match
+Bazaala,zaala,give birth,bantu2,PanLex Exact Match
 mubiri,mubi,ugly,nan,Substring Overlap
-tebazaala,zaala,give birth,tebazaala,Exact Match
-mpisa,nkima,monkey,mpisa,Vector Search (Score: 0.84)
-Bugubugu,kabuvubuka,adolescence,bantu14,Vector Search (Score: 0.82)
-ssimuliro,isilandi,Iceland,nan,Vector Search (Score: 0.83)
+tebazaala,zaala,give birth,tebazaala,PanLex Exact Match
 Bwoba,kusooba,slow,nan,Substring Overlap
 tosobota,ota,bask,to-sobota,Substring Overlap
-kutunula,kubuulila,say,tunula,Vector Search (Score: 0.87)
-mumaaso,omukwaano,love,nan,Vector Search (Score: 0.86)
 olibeera,era,and,beera,Substring Overlap
-mabega,abaganda,Ganda,nan-bega,Vector Search (Score: 0.86)
-oli,si,country,nan,Vector Search (Score: 0.77)
 mulungi,lungi,I’m fine,mulungi,Substring Overlap
 nelwolifa,faranga ey’egini,Guinean Syli,nelwolifa,Substring Overlap
-entaanayo,janyaalo,bean,nan,Vector Search (Score: 0.82)
-elyagalwa,kwagalana,love,agalwa,Vector Search (Score: 0.85)
-onywanye,nsonyiwa,sorry,nywana,Vector Search (Score: 0.87)
 mukulu,mukulukusa,October,mukulu,Substring Overlap
 oba,kusooba,slow,nan,Substring Overlap
-otuliidde,muzadde,parent,tuliira,Vector Search (Score: 0.78)
-muguwa,muwala,girl,muguwa,Vector Search (Score: 0.86)
-Bwoyo,bbo,basket,bantu14,Vector Search (Score: 0.81)
 kya,ekyangwe,sponge,nan,Substring Overlap
 enju,enjuki,bee,enju,Substring Overlap
-oyinza,nsonyiwa,sorry,yinza,Vector Search (Score: 0.82)
-okusazamu,okusesema,Ralph,okusazamu,Vector Search (Score: 0.89)
 omukka,okussa omukka,breathe,omukka,Substring Overlap
-Bwosalawo,butasalawo,indecisive,bantu14,Vector Search (Score: 0.90)
-embwa,bumba,mould,embwa,Vector Search (Score: 0.86)
-lya,nyala,banana,nan,Vector Search (Score: 0.86)
-ensava,nsanafu,ant,ensava,Vector Search (Score: 0.85)
 Bwosekerera,era,and,bwosekerera,Substring Overlap
 ekibya,dalasi ey’egambya,Gambian Dalasi,nan-bya,Substring Overlap
 osekerera,era,and,sekerera,Substring Overlap
-mubumbii,bbumbiro,potter shop,mubumbii,Vector Search (Score: 0.90)
-Ebbeere,webale,thanks,ebbeere,Vector Search (Score: 0.86)
-nyabo,nyala,banana,nyabo,Vector Search (Score: 0.84)
-telifuna,televison,TV set,teli-funa,Vector Search (Score: 0.80)
-Bigenge,muganda,fellow-tribesman,genga,Vector Search (Score: 0.79)
-ekikolimire,ekikoola,leaf,ekikolimire,Vector Search (Score: 0.88)
-mwemuva,kuwemula,vulgar,mwemuva,Vector Search (Score: 0.84)
-abakazi,mubazzi,carpenter,abakazi,Vector Search (Score: 0.86)
-abalwaana,bbalaza,Monday,abalwaana,Vector Search (Score: 0.90)
-na,na,and,nan,Exact Match
-mafumu,muzimu,spirit,mafumu,Vector Search (Score: 0.83)
-Ekilabo,ekitabo,book,nan,Vector Search (Score: 0.83)
-ekitono,ekitabo,book,nan-tono,Vector Search (Score: 0.89)
-koowa,koola,leaf,koowa,Vector Search (Score: 0.93)
-munno,omunnya,sorcerer,nan,Vector Search (Score: 0.85)
+na,na,and,nan,PanLex Exact Match
 Ekiri,kiri,it,ekiri,Substring Overlap
 muttu,wakati muttumbi,midnight,nan,Substring Overlap
-kimanywa,myanima,Myanmar (Burma),kimanywa,Vector Search (Score: 0.84)
-nyini,mayuni,coco yams,nyini,Vector Search (Score: 0.80)
 kyo,butasalawo,indecisive,nan,Substring Overlap
-Ekyengela,kwegendereza,careful,engela,Vector Search (Score: 0.83)
-amangu,mmamba,lung fish,amangu,Vector Search (Score: 0.88)
-kivunda,muganda,fellow-tribesman,ki-vunda,Vector Search (Score: 0.81)
-mangu,omwana,babe,nan,Vector Search (Score: 0.83)
-Embwa,bumba,mould,embwa,Vector Search (Score: 0.82)
-elina,endiga,sheep,elina,Vector Search (Score: 0.79)
-eggumba,kuggula,open a door,ggumba,Vector Search (Score: 0.81)
-kamwa,kaawa,coffee,nan,Vector Search (Score: 0.86)
-teluma,tetugalaba,I’m fine,teluma,Vector Search (Score: 0.81)
-Empungu,embuzi,goat,empungu,Vector Search (Score: 0.82)
-telya,nyala,banana,telya,Vector Search (Score: 0.78)
 bire,buta mwesigwa,unfaithful,bire,Substring Overlap
-Endiga,endiga,sheep,endiga,Exact Match
-tekabiira,ekitabo,book,teka-biira,Vector Search (Score: 0.85)
-mwaana,omwana,babe,mwaana,Vector Search (Score: 0.89)
+Endiga,endiga,sheep,endiga,PanLex Exact Match
 gwa,buta mwesigwa,unfaithful,nan,Substring Overlap
 mbuzi,embuzi,goat,mbuzi,Substring Overlap
-effudde,ffene,jackfruit,ffula,Vector Search (Score: 0.84)
-Enjovu,enjuki,bee,enjovu,Vector Search (Score: 0.83)
 ebbiri,bbi,feaces,ebbiri,Substring Overlap
-wezilwanira,kwemalirira,independent,wezilwanira,Vector Search (Score: 0.87)
-essubi,nsuma,snout fish,essubi,Vector Search (Score: 0.82)
 lisesetera,era,and,nan-sesetera,Substring Overlap
-telemelerwa,televison,TV set,telemelerwa,Vector Search (Score: 0.81)
-sanga,sande,Sunday,nan,Vector Search (Score: 0.91)
-lyaayo,yaayu,tomcat,lyaayo,Vector Search (Score: 0.89)
-Enkima,kima,monkey,enkima,Exact Match
-bwelemerelwa,kwejeerera,acquitted,bwelemerelwa,Vector Search (Score: 0.85)
+Enkima,kima,monkey,enkima,PanLex Exact Match
 okutuukirira,kiri,it,tuukirira,Substring Overlap
-elyenvu,olutindo,bridge,envu,Vector Search (Score: 0.77)
 nti,antigwa ne barabuda,Antigua & Barbuda,nan,Substring Overlap
-ago,noga,be flavoured,nan,Vector Search (Score: 0.83)
 tegengedde,era,and,tegengera,Substring Overlap
-Enkuba,enkuba,rain,enkuba,Exact Match
+Enkuba,enkuba,rain,enkuba,PanLex Exact Match
 tetonyera,era,and,tetonyera,Substring Overlap
 omu,okussa omukka,breathe,nan,Substring Overlap
-Engalo,endiga,sheep,nan,Vector Search (Score: 0.79)
-ensa,sena,draw,ensa,Vector Search (Score: 0.90)
-zigwanira,girimane,Germany,zigwanira,Vector Search (Score: 0.84)
 zo,butasalawo,indecisive,nan,Substring Overlap
-Enyana,annyina,brother,enyana,Vector Search (Score: 0.84)
 tesekerera,era,and,tesekerera,Substring Overlap
-nkunku,kukenkula,get fat,nkunku,Vector Search (Score: 0.82)
-Entalowooza,kwewojjoola,bashful,entalowooza,Vector Search (Score: 0.79)
 yamala,faranga ey’emalagase,Malagasy Ariary,yamala,Substring Overlap
 amazzi,muyizzi,hunter,amazzi,Substring Overlap
-mulwendo,olutindo,bridge,nan,Vector Search (Score: 0.85)
-Ensuwa,nsuma,snout fish,ensuwa,Vector Search (Score: 0.78)
-entono,ennyondo,hammer,nan,Vector Search (Score: 0.88)
-nazo,kazooba,Monday,nazo,Vector Search (Score: 0.77)
-zirina,zimu,spirit,zirina,Vector Search (Score: 0.81)
-amatu,mmamba,lung fish,amatu,Vector Search (Score: 0.87)
-Essubi,nsuma,snout fish,essubi,Vector Search (Score: 0.77)
-elyokya,ekyuma,ironware,ely-okya,Vector Search (Score: 0.80)
-enyumba,nyumba,house,enyumba,Exact Match
-embii,embizzi,pig,embii,Vector Search (Score: 0.90)
-iyelyokya,nayira ey’enayijerya,Nigerian Naira,lyokya,Vector Search (Score: 0.82)
-ne,ne,and,nan,Exact Match
-nungi,lungi,I’m fine,nungi,Vector Search (Score: 0.93)
+enyumba,nyumba,house,enyumba,PanLex Exact Match
+ne,ne,and,nan,PanLex Exact Match
 Eyali,walisi ne futuna,Wallis & Futuna,eyali,Substring Overlap
-alumidwa,amazalibwa,birthday,lumidwa,Vector Search (Score: 0.85)
 omusota,ota,bask,omusota,Substring Overlap
 bwalaba,tetugalaba,I’m fine,laba,Substring Overlap
-omunya,omunnya,sorcerer,omunya,Vector Search (Score: 0.97)
-agudduka,kuggula,open a door,gudduka,Vector Search (Score: 0.88)
-Eyettikka,okutayirira,circumcise,ettikka,Vector Search (Score: 0.76)
-obuvunanyizibwa,kuba nʼebisaanyizo,qualified,obuvunanyizibwa,Vector Search (Score: 0.87)
-era,era,and,nan,Exact Match
-afuna,nfuli,labium minora,funa,Vector Search (Score: 0.86)
-okunenye,okutonnya,rain,nenya,Vector Search (Score: 0.87)
-zebwa,webale,thanks,zebwa,Vector Search (Score: 0.85)
-Ezenkanankana,kwekanasa,picky,inkanankana,Vector Search (Score: 0.83)
-bisiki,simba,genet,bisiki,Vector Search (Score: 0.83)
-tezaaka,denimaaka,Denmark,tezaaka,Vector Search (Score: 0.84)
-Kamu,kambe,knife,nan,Vector Search (Score: 0.84)
-kamu,kambe,knife,nan,Vector Search (Score: 0.89)
+era,era,and,nan,PanLex Exact Match
 gwe,ekyangwe,sponge,nan,Substring Overlap
-muganda,ganda,fellow-tribesman,nan-ganda,Exact Match
+muganda,ganda,fellow-tribesman,nan-ganda,PanLex Exact Match
 Kakulu,mukulukusa,October,kakulu,Substring Overlap
 ta,takisi,cab,nan,Substring Overlap
 kulilwa,buulila,say,lilwa,Substring Overlap
 Kyenkola,kukola akajanja,finicky,enkola,Substring Overlap
-banange,sande,Sunday,nange,Vector Search (Score: 0.85)
-sagala,kwagalana,love,sagala,Vector Search (Score: 0.86)
-bakinkole,baketi,bucket,nan-kinkole,Vector Search (Score: 0.86)
-Lubaale,lubbama,Myanmar Language,lubaale,Vector Search (Score: 0.87)
 mbeera,era,and,mbeera,Substring Overlap
 mbiro,bbumbiro,potter shop,mbiro,Substring Overlap
-kwotadde,ota,bask,kwotadde,Exact Match
-Mama,maama,mother,nan,Vector Search (Score: 0.88)
-yasinga,kasimba,genet,singa,Vector Search (Score: 0.86)
-okuweeka,kukeerewa,late,nan-weeka,Vector Search (Score: 0.88)
-Mpola,kampala,Kampala,mpola,Vector Search (Score: 0.79)
-mpola,kampala,Kampala,mpola,Vector Search (Score: 0.85)
+kwotadde,ota,bask,kwotadde,PanLex Exact Match
 emugga,omugga,river,emugga,Substring Overlap
-Mulungi,lungi,I’m fine,mulungi,Exact Match
-emabega,embuyaga,wind,ema-bega,Vector Search (Score: 0.86)
-mubi,mubi,ugly,nan,Exact Match
-Omukazi,omukazi,woman,umukazi,Exact Match
-omugumba,omuganda,Ganda,omugumba,Vector Search (Score: 0.92)
-ufuna,kufunza,zoom,nan-funa,Vector Search (Score: 0.86)
+Mulungi,lungi,I’m fine,mulungi,PanLex Exact Match
+mubi,mubi,ugly,nan,PanLex Exact Match
+Omukazi,omukazi,woman,umukazi,PanLex Exact Match
 nyo,ekinyonyi,bird,nan,Substring Overlap
-abagenyi,abaganda,Ganda,abagenyi,Vector Search (Score: 0.88)
-Ne,ne,and,nan,Exact Match
-ssanja,nsanafu,ant,ssanja,Vector Search (Score: 0.89)
-lyaaliko,kijanyaalo,bean,nan,Vector Search (Score: 0.85)
+Ne,ne,and,nan,PanLex Exact Match
 olulagala,gambalagala,mountain,lagala,Substring Overlap
-Nonuzinyi,ekinyonyi,bird,nonuzinyi,Vector Search (Score: 0.84)
 ennyo,ekinyonyi,bird,nan,Substring Overlap
 alekulira,ntaulira,honey badger,lira,Substring Overlap
-ekidaala,denimaaka,Denmark,nan-daala,Vector Search (Score: 0.84)
-Obulamu,obuyambi,humanitarian,ubulamu,Vector Search (Score: 0.87)
-bulinga,buulila,say,bulinga,Vector Search (Score: 0.87)
 kisikiriize,kiri,it,ki-sikiriiza,Substring Overlap
-ria,sa,grind,nan,Vector Search (Score: 0.79)
 mukka,okussa omukka,breathe,mukka,Substring Overlap
-buyita,buulila,say,buyita,Vector Search (Score: 0.82)
-ate,ate,and,nan,Exact Match
-tebudda,tetugalaba,I’m fine,tebudda,Vector Search (Score: 0.80)
-masanda,asama,open the mouth,nan-sanda,Vector Search (Score: 0.88)
+ate,ate,and,nan,PanLex Exact Match
 bwoseleera,era,and,bwoseleera,Substring Overlap
-ogenda,ganda,fellow-tribesman,ogenda,Vector Search (Score: 0.88)
-Okugezaako,okusesema,Ralph,ukugezaako,Vector Search (Score: 0.83)
 okugwa,buta mwesigwa,unfaithful,nan,Substring Overlap
-bunafu,sanafu,ant,bunafu,Vector Search (Score: 0.83)
-Omwana,omwana,babe,omwana,Exact Match
+Omwana,omwana,babe,omwana,PanLex Exact Match
 omubi,mubi,ugly,omubi,Substring Overlap
-takaddiwa,takisi,cab,ddiwa,Vector Search (Score: 0.81)
 ewaka,wakati muttumbi,midnight,ewaka,Substring Overlap
 Wange,jjajja wange,great aunt,wange,Substring Overlap
 ansingira,nsi,country,nan-nsingira,Substring Overlap
 omulungii,lungi,I’m fine,omulungii,Substring Overlap
 owa,buta mwesigwa,unfaithful,nan,Substring Overlap
-mulilwana,muwala,girl,mulilwana,Vector Search (Score: 0.88)
-Ofundako,omuganda,Ganda,nan,Vector Search (Score: 0.80)
 okuwasa,kwasama,open the mouth,okuwasa,Substring Overlap
-omukadde,muzadde,parent,omukadde,Vector Search (Score: 0.88)
-okusinga,kusongola,cut to shape,nan-singa,Vector Search (Score: 0.87)
-obuwuulu,buulila,say,obuwuulu,Vector Search (Score: 0.86)
-Okwelinda,kwemalirira,independent,ulinda,Vector Search (Score: 0.78)
-ssi,nsi,country,nan,Vector Search (Score: 0.93)
 buti,faranga ey’ejjibuti,Djiboutian Franc,nan,Substring Overlap
-ensanafu,nsanafu,ant,ensanafu,Exact Match
-etambula,tetugalaba,I’m fine,etambula,Vector Search (Score: 0.85)
-egaludde,ggula,open a door,egalula,Vector Search (Score: 0.84)
-Okudizza,ekizinga,island,diza,Vector Search (Score: 0.80)
-guba,gaba,give away,nan,Vector Search (Score: 0.87)
-mwoyo,mpeewo,oribi antelope,mwoyo,Vector Search (Score: 0.83)
+ensanafu,nsanafu,ant,ensanafu,PanLex Exact Match
 Okufa,faranga ey’egini,Guinean Syli,ukufa,Substring Overlap
-nkovu,nkwa,tick,nkovu,Vector Search (Score: 0.82)
-etalisimuuka,tetugalaba,I’m fine,etalisimuuka,Vector Search (Score: 0.81)
-Olinye,lewone,Sierra Leonean Leone,olinya,Vector Search (Score: 0.78)
-jegava,weeraba,goodbye,jegava,Vector Search (Score: 0.80)
-nonywa,noonya,hand around,nywa,Vector Search (Score: 0.91)
-amatabangufu,omulenganjuba,clock,amatabangufu,Vector Search (Score: 0.86)
 Olubuto,kubeera lubuto,pregnant,ubuto,Substring Overlap
-lwo,bbo,basket,nan,Vector Search (Score: 0.83)
-bwoluwa,luwawu,sanding paper,bwoluwa,Vector Search (Score: 0.86)
-emmere,emmese,mouse,emmere,Vector Search (Score: 0.95)
 embi,embizzi,pig,embi,Substring Overlap
 lujja,byʼokubajja,capentry,lu-jja,Substring Overlap
 kukubira,kujjumbira,keen,kubira,Substring Overlap
-engoma,endiga,sheep,engoma,Vector Search (Score: 0.86)
-ozine,yizzi,hunter,zine,Vector Search (Score: 0.83)
 Oluliimi,ekisumuluzo,key,uliimi,Substring Overlap
 lwa,kusalwa,cut,nan,Substring Overlap
-mukabalo,omukwaano,love,muka-balo,Vector Search (Score: 0.88)
-lukaawa,kaawa,coffee,lukaawa,Exact Match
-Olunaku,olugalo,finger,olunaku,Vector Search (Score: 0.82)
-olumu,omulambo,corpse,olumu,Vector Search (Score: 0.85)
-teluvunza,omulenganjuba,clock,teluvunza,Vector Search (Score: 0.83)
-nyama,nyala,banana,nyama,Vector Search (Score: 0.93)
+lukaawa,kaawa,coffee,lukaawa,PanLex Exact Match
 Omukulu,mukulukusa,October,umukulu,Substring Overlap
-watali,wala,girl,watali,Vector Search (Score: 0.83)
 ebikere,era,and,ebikere,Substring Overlap
-bibunduka,kabuvubuka,adolescence,nan-bunduka,Vector Search (Score: 0.88)
-Omwaana,omwana,babe,omwaana,Vector Search (Score: 0.90)
-owegonjebwa,kwegendereza,careful,owe-gonjebwa,Vector Search (Score: 0.87)
-aweesa,weeraba,goodbye,weesa,Vector Search (Score: 0.85)
-ekitiibwa,ekitabo,book,ekitiibwa,Vector Search (Score: 0.88)
-Omutamiivu,wakati muttumbi,midnight,umutamiivu,Vector Search (Score: 0.82)
-tawaba,tamba,make offerings,tawaba,Vector Search (Score: 0.82)
 Omuze,muzadde,parent,omuze,Substring Overlap
 gwo,butasalawo,indecisive,nan,Substring Overlap
-muntu,muti,tree,nan,Vector Search (Score: 0.87)
-gumalwa,muwala,girl,gumalwa,Vector Search (Score: 0.89)
-ntaana,ntaulira,honey badger,ntaana,Vector Search (Score: 0.82)
-Omukwaano,omukwaano,love,umukwaano,Exact Match
-ogwokumpi,omugga,river,okwokumpi,Vector Search (Score: 0.83)
+Omukwaano,omukwaano,love,umukwaano,PanLex Exact Match
 ye,kkanisa ya yeso eyannamaddala,True Jesus Church,nan,Substring Overlap
 mulabe,tetugalaba,I’m fine,nan-labe,Substring Overlap
 wo,butasalawo,indecisive,nan,Substring Overlap
 Omumpi,kumpi ne,close,omumpi,Substring Overlap
-wakoma,kwasama,open the mouth,nan-koma,Vector Search (Score: 0.82)
 wakwaata,kwa,tick,wakwaata,Substring Overlap
-Omuntu,omulambo,corpse,umuntu,Vector Search (Score: 0.80)
 bwabeera,era,and,beera,Substring Overlap
 obwoomu,ekisumuluzo,key,obwoomu,Substring Overlap
-yefuula,kuwemula,vulgar,yefuula,Vector Search (Score: 0.84)
-kabaka,akabina,buttock,nan-baka,Vector Search (Score: 0.85)
-Omutima,omulambo,corpse,omutima,Vector Search (Score: 0.81)
-gulinga,ggula,open a door,gu-linga,Vector Search (Score: 0.89)
-gwetaaga,kwagalana,love,gwetaaga,Vector Search (Score: 0.87)
-kusiba,kasimba,genet,siba,Vector Search (Score: 0.90)
-Omusajja,byʼokubajja,capentry,omusajja,Vector Search (Score: 0.81)
-alina,wala,girl,alina,Vector Search (Score: 0.82)
-ebizibu,embuzi,goat,ebizibu,Vector Search (Score: 0.82)
-Aleesa,weeraba,goodbye,nan-leesa,Vector Search (Score: 0.78)
-Omuwala,wala,girl,omuwala,Exact Match
+Omuwala,wala,girl,omuwala,PanLex Exact Match
 maka,makansi,scissors,maka,Substring Overlap
-Omuyizzi,yizzi,hunter,umuyizzi,Exact Match
+Omuyizzi,yizzi,hunter,umuyizzi,PanLex Exact Match
 awondera,era,and,wondera,Substring Overlap
-enjovu,enjuki,bee,enjovu,Vector Search (Score: 0.89)
 tatekera,era,and,tatekera,Substring Overlap
-kukasukira,kuswakira,temper,nan-sukira,Vector Search (Score: 0.93)
-bunyonyi,ekinyonyi,bird,bunyonyi,Vector Search (Score: 0.87)
-mayinja,myanima,Myanmar (Burma),mayinja,Vector Search (Score: 0.89)
-Omwezi,embuzi,goat,omwezi,Vector Search (Score: 0.87)
-gutambula,kutamba,make offerings,gu-tambula,Vector Search (Score: 0.88)
 mpota,ota,bask,m-pota,Substring Overlap
 naye,ekyangwe,sponge,naye,Substring Overlap
-gubuuka,kabuvubuka,adolescence,gubuuka,Vector Search (Score: 0.89)
 ekibuga,obugazi,width,nan-buga,Substring Overlap
-Sente,sena,draw,sente,Vector Search (Score: 0.88)
-esala,asama,open the mouth,esala,Vector Search (Score: 0.84)
-ejjambiya,kujjumbira,keen,jjambiya,Vector Search (Score: 0.87)
-Sotta,ota,bask,sotta,Vector Search (Score: 0.84)
-abudongo,bongo,cheese,nan,Vector Search (Score: 0.85)
-bukyaali,budaaki,Netherlands,bukyaali,Vector Search (Score: 0.87)
-bubisi,bbumbiro,potter shop,bubisi,Vector Search (Score: 0.87)
-Taata,ota,bask,taata,Vector Search (Score: 0.78)
-ngabo,bongo,cheese,ngabo,Vector Search (Score: 0.84)
 ya,ekyangwe,sponge,nan,Substring Overlap
-Teli,ate,and,teli,Vector Search (Score: 0.73)
 azaalwa,kusalwa,cut,zaalwa,Substring Overlap
-bumanyirivu,kujjumbira,keen,bumanyirivu,Vector Search (Score: 0.84)
-Tewesiganga,tetugalaba,I’m fine,tewesiganga,Vector Search (Score: 0.85)
-omuntu,omulambo,corpse,nan,Vector Search (Score: 0.85)
-Tokungula,okutonnya,rain,tokungula,Vector Search (Score: 0.85)
 kyotasimba,ota,bask,kyotasimba,Substring Overlap
-Towakananga,lwakutaano,Friday,towakananga,Vector Search (Score: 0.84)
-musiru,muzimu,spirit,musiru,Vector Search (Score: 0.86)
-Toyonoona,noonya,hand around,toyonoona,Vector Search (Score: 0.80)
 muzinga,ekizinga,island,nan-zinga,Substring Overlap
-olwokwokebwa,kwewojjoola,bashful,okwokebwa,Vector Search (Score: 0.84)
 njuki,enjuki,bee,nan,Substring Overlap
-emu,emu,one,nan,Exact Match
-Tukozesa,okusesema,Ralph,kozesa,Vector Search (Score: 0.84)
-njuba,njuba,sun,nan,Exact Match
-naka,anika,dry,nan,Vector Search (Score: 0.87)
-gonna,ganda,fellow-tribesman,gonna,Vector Search (Score: 0.86)
-Wakili,kalati,carrot,wakili,Vector Search (Score: 0.76)
-okusooka,kusomoka,cross,nan-sooka,Vector Search (Score: 0.92)
+emu,emu,one,nan,PanLex Exact Match
+njuba,njuba,sun,nan,PanLex Exact Match
 bibi,akabina,buttock,nan,Substring Overlap
 nomala,faranga ey’emalagase,Malagasy Ariary,nomala,Substring Overlap
-nebirungi,breinigerberg,Breinigerberg,nebirungi,Vector Search (Score: 0.84)
 Zimba,kasimba,genet,zimba,Substring Overlap
-Nnene,sena,draw,nan,Vector Search (Score: 0.79)
-takutelaako,tetugalaba,I’m fine,nan,Vector Search (Score: 0.84)
-muti,muti,tree,muti,Exact Match
+muti,muti,tree,muti,PanLex Exact Match
