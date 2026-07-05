@@ -36,7 +36,8 @@ def affix_translate(segments, language):
                 if not part:
                     continue
 
-                prefix_candidate = part + '-'\n                suffix_candidate = '-' + part
+                prefix_candidate = part + '-'
+                suffix_candidate = '-' + part
 
                 if prefix_candidate in grammar_map:
                     sub_glossed.append(str(grammar_map[prefix_candidate]))
@@ -153,7 +154,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         'Match Type': []
     }
 
-    for i, row in model_df.iterrows():
+    for _, row in model_df.iterrows():
         surface_word = str(row['surface_word'])
         raw_lemmas = ast.literal_eval(row['lemmatization'])
         predicted_lemma = str(raw_lemmas[0]).lower().strip() if raw_lemmas else surface_word.lower()
@@ -184,9 +185,21 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                 matched = True
                 break
 
+        try:
+            morpheme_segments = ast.literal_eval(str(row['segmentation']))  # e.g., ['aba-', 'kadde']
+        except (ValueError, SyntaxError):
+            morpheme_segments = []
+
+        has_affix = False
+        for segment in morpheme_segment:
+            clean_segment = str(segment).lower().replace('-', '').strip()
+
+            if clean_segment in known_affixes:
+                has_affix = True
+                break
+
         # Tier 2: Substring Stem Overlap (Lexicon Containment Gate)
-        # SIDE A FILTER: Only execute if the target forms are not recognized functional affixes
-        if not matched and (normalized_lemma not in known_affixes and predicted_lemma not in known_affixes):
+        if not matched and not has_affix:
             for dict_word, eng_trans in exact_translation_map.items():
                 if len(dict_word) > 4 and (dict_word in normalized_lemma or normalized_lemma in dict_word):
                     output_data['Surface Word'].append(surface_word)
@@ -196,6 +209,8 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                     output_data['Match Type'].append('Substring Overlap')
                     matched = True
                     break
+        if not matched and (normalized_lemma in known_affixes and predicted_lemma in known_affixes):
+
 
         # Tier 3: Isolated Local Root Evaluation (Leveraging local grammar strip rules)
         if not matched:
