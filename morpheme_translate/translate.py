@@ -201,23 +201,24 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                     break
 
         if not matched and has_affix:
+            lemmatization_str = str(row['lemmatization']).lower()
             for affix in known_affixes:
-                if affix in model_path["lemmatization"]:
+                if affix in lemmatization_str:
                     noun_class = None
 
-                    # Safely parse noun class string and extract class tag
                     raw_nc = ast.literal_eval(row['noun class prediction'])
                     if raw_nc:
-                        nc_string = str(raw_nc[0])  # Fixed Indexing Bug (changed i to 0)
+                        nc_string = str(raw_nc[0])
                         features = nc_string.split()
                         if len(features) > 1:
-                            tags = features[1].split(';')  # ['N', 'PL', 'BANTU2']
-                            noun_class = tags[-1]          # "BANTU2"
+                            tags = features[1].split(';')
+                            noun_class = tags[-1]
+
                     output_data['Surface Word'].append(surface_word)
                     output_data[f'{lang.capitalize()} Lemma'].append(f"(-){surface_word}(-)")
-                    output_data['English translation'].append(noun_class)
+                    output_data['English translation'].append(noun_class if noun_class else "Unknown Class")
                     output_data['Glossing'].append(affix)
-                    output_data['Match Type'].append('Substring Overlap')
+                    output_data['Match Type'].append('Grammar Guard Fallback')
                     matched = True
                     break
 
