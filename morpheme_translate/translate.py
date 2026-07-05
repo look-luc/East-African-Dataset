@@ -30,34 +30,33 @@ def affix_translate(segments, language):
     }
 
     glossed_parts = []
+
     for seg in segments:
         clean_seg = seg.lower()
-        if "-" in clean_seg and clean_seg not in grammar_map:
+        if "-" in clean_seg:
             sub_parts = clean_seg.split("-")
             sub_glossed = []
 
-            for i, part in enumerate(sub_parts):
+            for part in sub_parts:
                 if not part:
                     continue
 
-                prefix_candidate = part + '-'
-                suffix_candidate = '-' + part
-
-                if prefix_candidate in grammar_map:
-                    sub_glossed.append(str(grammar_map[prefix_candidate]))
-                elif suffix_candidate in grammar_map:
-                    sub_glossed.append(str(grammar_map[suffix_candidate]))
+                if (part + "-") in grammar_map:
+                    sub_glossed.append(grammar_map[part + "-"])
+                elif ("-" + part) in grammar_map:
+                    sub_glossed.append(grammar_map["-" + part])
                 elif part in grammar_map:
-                    sub_glossed.append(str(grammar_map[part]))
+                    sub_glossed.append(grammar_map[part])
                 else:
                     sub_glossed.append(part)
-            if sub_glossed:
-                glossed_parts.append("-".join(sub_glossed))
+
+            glossed_parts.append("-".join(sub_glossed))
         else:
             if clean_seg in grammar_map:
-                glossed_parts.append(str(grammar_map[clean_seg]))
+                glossed_parts.append(grammar_map[clean_seg])
             else:
-                glossed_parts.append(str(clean_seg))
+                glossed_parts.append(clean_seg)
+
     return "-".join(glossed_parts)
 
 def normalize_ortho(word: str) -> str:
