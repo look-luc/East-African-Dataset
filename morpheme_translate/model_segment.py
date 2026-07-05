@@ -17,23 +17,30 @@ model = AutoModelForSeq2SeqLM.from_pretrained(model_id, token=TOKEN)
 
 script_dir = Path(__file__).resolve().parent.parent
 
+encoder = model.encoder()
+encoder.eval()
+
+def get_embeddings(word: str):
+    inputs = tokenizer(word, return_tensors="pt")
+
+    with torch.no_grad():
+        outputs = model.generate(**inputs)
+        hidden_states = outputs.last_hidden_state
+
+        mean_pooled = torch.mean(hidden_states, dim=1).squeeze(0)
+    return mean_pooled.tolist()
+
+
 def query_bantumorph(word: str, tasks: list[str] | None = None):
-    """
-    Tasks available: 'segmentation', 'lemmatization', 'noun class prediction'
-    """
     if tasks is None:
         tasks = ["lemmatization", "segmentation", "noun class prediction"]
 
-    # Uses dictionary comprehension to avoid the shared mutable object bug
     output = {word: {task: [] for task in tasks}}
-
     for task in tasks:
         input_text = f"{task}: {word}"
         inputs = tokenizer(input_text, return_tensors="pt")
-
         with torch.no_grad():
             outputs = model.generate(**inputs, max_length=64)
-
         output[word][task].append(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
     return output
@@ -50,11 +57,13 @@ def model_extract(data_title: str, lang: str):
 
     for proverb in proverbs:
         clean_proverb = re.sub(r"[^\w\s]", "", proverb).strip()
-
         for word in clean_proverb.split():
             if word not in seen_words:
                 seen_words.add(word)
-                model_out.append(query_bantumorph(word))
+
+                res = query_bantumorph(word)
+                res[word]['embedding'] = get_embeddings(word)
+                model_out.append(res)
 
     combined_dict = {k: v for d in model_out for k, v in d.items()}
     out_df = pd.DataFrame.from_dict(combined_dict, orient='index')

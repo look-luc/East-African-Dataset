@@ -1,6 +1,5 @@
 import ast
 import os
-from difflib import get_close_matches
 from functools import lru_cache
 from pathlib import Path
 
@@ -12,84 +11,10 @@ script_dir = Path(__file__).resolve().parent.parent
 load_dotenv()
 TOKEN = os.getenv("HF_TOKEN")
 
-BANTU_CORPUS_MAP = {
-    'ganda': {
-        'path': "michsethowusu/english-ganda_sentence-pairs",
-        'name': None,
-        'split': "train",
-        'extract_fn': lambda row: (str(row['Ganda']).lower(), str(row['English']))
-    },
-    'gikuyu': {
-        'path': "michsethowusu/english-kikuyu_sentence-pairs",
-        'name': None,
-        'split': "train",
-        'extract_fn': lambda row: (str(row['Kikuyu']).lower(), str(row['English']))
-    },
-    'tshiluba': {
-        'path': "michsethowusu/english-tshiluba_sentence-pairs",
-        'name': None,
-        'split': "train",
-        'extract_fn': lambda row: (str(row['Tshiluba']).lower(), str(row['English']))
-    },
-    'chiga': {
-        'path': "michsethowusu/Code-170k-kiga",
-        'name': None,
-        'split': "train",
-        'extract_fn': lambda row: (
-            str(row['conversations'][0]['value']).lower() if isinstance(row['conversations'], list)
-            else str(row['kiga_text']).lower(),
-            str(row['english_translation'])
-        )
-    },
-    'tooro': {
-        'path': "michsethowusu/english-tooro_sentence-pairs",
-        'name': None,
-        'split': "train",
-        'extract_fn': lambda row: (str(row['Tooro']).lower(), str(row['English']))
-    },
-    'runyoro': {
-        'path': "michsethowusu/english-nyoro_sentence-pairs",
-        'name': None,
-        'split': "train",
-        'extract_fn': lambda row: (str(row['Nyoro']).lower(), str(row['English']))
-    },
-    'kamba': {
-        'path': "michsethowusu/english-kamba_sentence-pairs",
-        'name': None,
-        'split': "train",
-        'extract_fn': lambda row: (str(row['Kamba']).lower(), str(row['English']))
-    }
-}
-
 bantu_iso_map = {
     'ganda': 'lug', 'gikuyu': 'kik', 'tshiluba': 'lua',
     'chiga': 'cgg', 'tooro': 'ttj', 'runyoro': 'nyo', 'kamba': 'kam'
 }
-
-def load_hf_corpus_context(lang: str) -> dict:
-    cfg = BANTU_CORPUS_MAP.get(lang.lower())
-    if not cfg:
-        return {}
-    corpus_words_map = {}
-    try:
-        if cfg['name']:
-            ds = load_dataset(cfg['path'], name=cfg['name'], split=cfg['split'], token=TOKEN).to_pandas()
-        else:
-            ds = load_dataset(cfg['path'], split=cfg['split'], token=TOKEN).to_pandas()
-
-        for _, row in ds.iterrows():
-            try:
-                bantu_sentence, eng_context = cfg['extract_fn'](row)
-                clean_sentence = bantu_sentence.strip(".,;:!?()\\\"'-")
-                for word in clean_sentence.split():
-                    w = word.strip(".,;:!?()\\\"'-")
-                    if len(w) > 2 and w not in corpus_words_map:
-                        corpus_words_map[w] = f"[HF Context] {eng_context.strip()}"
-            except Exception:
-                continue
-    except Exception as e:
-        print(f"Skipping HF corpus mapping: {e}")
-    return corpus_words_map
 
 grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
 
@@ -158,29 +83,6 @@ def get_lang_data(lang:str):
 
     return panlex_df
 
-def normalize_ortho(word: str) -> str:
-    w = str(word).lower().strip("[]'\\\" ")
-    prefixes = ['umu', 'aba', 'oki', 'oku', 'emi', 'eki', 'aka', 'omu', 'en']
-    for p in prefixes:
-        if w.startswith(p) and len(w) > len(p) + 2:
-            return w[len(p):]
-    return w
-
-def strip_bantu_prefixes(word: str) -> str:
-    """
-    Strips common Luganda nominal augments, noun class prefixes,
-    and verbal infinitive markers to expose the core stem for matching.
-    """
-    word = word.strip().lower().strip('-')
-
-    prefixes = [
-        "umu", "um"
-    ]
-    for p in sorted(prefixes, key=len, reverse=True):
-        if word.startswith(p) and len(word) > len(p):
-            return word[len(p):]
-    return word
-
 def translation(file_name: str, lang: str):
     iso_code = bantu_iso_map.get(lang.lower())
     if not iso_code:
@@ -188,7 +90,6 @@ def translation(file_name: str, lang: str):
 
     lang_data_df = get_lang_data(lang)
     lang_txt_col = f"txt_{iso_code}"
-    hf_corpus_map = load_hf_corpus_context(lang)
 
     model_path = script_dir / f"{file_name}"
     if not model_path.exists():
@@ -202,42 +103,61 @@ def translation(file_name: str, lang: str):
         else:
             model_df.rename(columns={model_df.columns[0]: 'surface_word'}, inplace=True)
 
-    exact_translation_map = {}
+    # --- VECTOR PREPARATION FOR PANLEX DICTIONARY ---
+    from model_segment import get_word_embedding
+
+    panlex_words = []
+    panlex_translations = []
+    panlex_vectors = []
+
+    print("Vectorizing PanLex dictionary references...")
     if not lang_data_df.empty:
-        for _, row in lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).iterrows():
+        unique_pairs = lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).drop_duplicates(subset=[lang_txt_col])
+        for _, row in unique_pairs.iterrows():
             dict_word = str(row[lang_txt_col]).lower().strip()
             eng_trans = str(row['txt_eng'])
-            if dict_word not in exact_translation_map:
-                exact_translation_map[dict_word] = eng_trans
+
+            panlex_words.append(dict_word)
+            panlex_translations.append(eng_trans)
+            panlex_vectors.append(get_word_embedding(dict_word))
+
+    if panlex_vectors:
+        panlex_tensor = torch.tensor(panlex_vectors) # Shape: [Num_PanLex_Words, Dimension]
+        panlex_tensor = panlex_tensor / panlex_tensor.norm(dim=1, keepdim=True) # Normalize for Cosine Similarity
+    else:
+        panlex_tensor = None
+
+    exact_translation_map = dict(zip(panlex_words, panlex_translations))
 
     output_data = {
         'Surface Word': [],
         f'{lang.capitalize()} Lemma': [],
         'English translation': [],
-        'Glossing': []
+        'Glossing': [],
+        'Match Type': []
     }
 
     for _, row in model_df.iterrows():
         surface_word = str(row['surface_word'])
-
         raw_lemmas = ast.literal_eval(row['lemmatization'])
         predicted_lemma = str(raw_lemmas[0]).lower().strip() if raw_lemmas else surface_word.lower()
         normalized_lemma = normalize_ortho(predicted_lemma)
-
         affix = affix_translate(ast.literal_eval(row['segmentation']), lang)
+
         matched = False
 
-        # Tier 1: Exact Match (Normalized vs Dictionary)
+        # Tier 1: Exact Match
         for lookup_key in [normalized_lemma, predicted_lemma, surface_word.lower()]:
             if lookup_key in exact_translation_map:
                 output_data['Surface Word'].append(surface_word)
                 output_data[f'{lang.capitalize()} Lemma'].append(lookup_key)
                 output_data['English translation'].append(exact_translation_map[lookup_key])
                 output_data['Glossing'].append(affix)
+                output_data['Match Type'].append('Exact Match')
                 matched = True
                 break
 
-        # Tier 2: Substring Stem Overlap (Catches morphologically complex lemmas)
+        # Tier 2: Substring Stem Overlap
         if not matched:
             for dict_word, eng_trans in exact_translation_map.items():
                 if len(dict_word) > 2 and (dict_word in normalized_lemma or normalized_lemma in dict_word):
@@ -245,30 +165,31 @@ def translation(file_name: str, lang: str):
                     output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
                     output_data['English translation'].append(eng_trans)
                     output_data['Glossing'].append(affix)
+                    output_data['Match Type'].append('Substring Overlap')
                     matched = True
                     break
 
-        # Tier 3: Contextual Sentence Text Search
-        if not matched and hf_corpus_map:
-            for word_key, context_sentence in hf_corpus_map.items():
-                if normalized_lemma in word_key or word_key in normalized_lemma:
+        # Tier 3: Vector Embedding Nearest Neighbor Search (Replaces Fuzzy Fallback)
+        if not matched and panlex_tensor is not None and 'embedding' in row:
+            try:
+                query_vec = ast.literal_eval(row['embedding'])
+                query_tensor = torch.tensor(query_vec).unsqueeze(0)
+                query_tensor = query_tensor / query_tensor.norm(dim=1, keepdim=True)
+
+                similarities = torch.mm(query_tensor, panlex_tensor.T).squeeze(0)
+                best_match_idx = torch.argmax(similarities).item()
+                highest_score = similarities[best_match_idx].item()
+
+                if highest_score > 0.65:
+                    best_word = panlex_words[best_match_idx]
                     output_data['Surface Word'].append(surface_word)
-                    output_data[f'{lang.capitalize()} Lemma'].append(word_key)
-                    output_data['English translation'].append(context_sentence)
+                    output_data[f'{lang.capitalize()} Lemma'].append(best_word)
+                    output_data['English translation'].append(panlex_translations[best_match_idx])
                     output_data['Glossing'].append(affix)
+                    output_data['Match Type'].append(f'Vector Search (Score: {highest_score:.2f})')
                     matched = True
-                    break
-
-        # Tier 4: Fuzzy Match Fallback
-        if not matched and exact_translation_map:
-            matches = get_close_matches(normalized_lemma, exact_translation_map.keys(), n=1, cutoff=0.7)
-            if matches:
-                best_match = matches[0]
-                output_data['Surface Word'].append(surface_word)
-                output_data[f'{lang.capitalize()} Lemma'].append(best_match)
-                output_data['English translation'].append(exact_translation_map[best_match])
-                output_data['Glossing'].append(affix)
-                matched = True
+            except Exception as e:
+                print(f"Embedding resolution failed for {surface_word}: {e}")
 
     df_out = pd.DataFrame(output_data).drop_duplicates(subset=['Surface Word']).reset_index(drop=True)
     df_out.to_csv(f"{lang.lower()}_translated.csv", index=False)
