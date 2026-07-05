@@ -1,14 +1,14 @@
 import ast
 import os
+import re
 from functools import lru_cache
 from pathlib import Path
 
 import pandas as pd
-import torch
 from datasets import load_dataset
 from dotenv import load_dotenv
 
-from morpheme_translate.model_segment import get_embeddings
+from morpheme_translate.extraction import root_extract
 
 script_dir = Path(__file__).resolve().parent.parent
 load_dotenv()
@@ -56,6 +56,14 @@ def affix_translate(segments, language):
                 glossed_parts.append(str(clean_seg))
     return "-".join(glossed_parts)
 
+def normalize_ortho(word: str) -> str:
+    w = str(word).lower().strip("[]'\\\" ")
+    prefixes = ['umu', 'aba', 'oki', 'oku', 'emi', 'eki', 'aka', 'omu', 'en']
+    for p in prefixes:
+        if w.startswith(p) and len(w) > len(p) + 2:
+            return w[len(p):]
+    return w
+
 @lru_cache(maxsize=64)
 def get_lang_data(lang:str):
     iso_code = bantu_iso_map.get(lang.lower())
@@ -86,7 +94,7 @@ def get_lang_data(lang:str):
 
     return panlex_df
 
-def translation(file_name: str, lang: str):
+def translation(file_name: str, lang: str, local_proverbs_title: str|None = None):
     iso_code = bantu_iso_map.get(lang.lower())
     if not iso_code:
         return
@@ -96,7 +104,7 @@ def translation(file_name: str, lang: str):
 
     model_path = script_dir / f"{file_name}"
     if not model_path.exists():
-        model_path = script_dir / f"{lang.lower()}_model_lem_seg.csv"
+        model_path = script_dir / f"{lang.lower().capitalize()}_model_lem_seg.csv"
 
     model_df = pd.read_csv(str(model_path), sep='\t')
 
@@ -108,26 +116,26 @@ def translation(file_name: str, lang: str):
 
     panlex_words = []
     panlex_translations = []
-    panlex_vectors = []
 
-    print("Vectorizing PanLex dictionary references...")
     if not lang_data_df.empty:
         unique_pairs = lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).drop_duplicates(subset=[lang_txt_col])
         for _, row in unique_pairs.iterrows():
             dict_word = str(row[lang_txt_col]).lower().strip()
             eng_trans = str(row['txt_eng'])
-
             panlex_words.append(dict_word)
             panlex_translations.append(eng_trans)
-            panlex_vectors.append(get_embeddings(dict_word))
-
-    if panlex_vectors:
-        panlex_tensor = torch.tensor(panlex_vectors) # Shape: [Num_PanLex_Words, Dimension]
-        panlex_tensor = panlex_tensor / panlex_tensor.norm(dim=1, keepdim=True) # Normalize for Cosine Similarity
-    else:
-        panlex_tensor = None
 
     exact_translation_map = dict(zip(panlex_words, panlex_translations))
+
+    # Optional: Load local proverbs context mapping if a local source path is provided
+    local_proverb_sentences = []
+    if local_proverbs_title:
+        proverbs_path = script_dir / local_proverbs_title
+        if proverbs_path.exists():
+            prov_df = pd.read_csv(str(proverbs_path), sep='\t')
+            if 'language' in prov_df.columns and 'african_proverb' in prov_df.columns:
+                lang_prov_df = prov_df[prov_df["language"].str.lower() == lang.lower()]
+                local_proverb_sentences = lang_prov_df["african_proverb"].dropna().tolist()
 
     output_data = {
         'Surface Word': [],
@@ -142,22 +150,23 @@ def translation(file_name: str, lang: str):
         raw_lemmas = ast.literal_eval(row['lemmatization'])
         predicted_lemma = str(raw_lemmas[0]).lower().strip() if raw_lemmas else surface_word.lower()
         normalized_lemma = normalize_ortho(predicted_lemma)
-        affix = affix_translate(ast.literal_eval(row['segmentation']), lang)
+        segmentation_str = row['segmentation']
+        affix = affix_translate(ast.literal_eval(segmentation_str), lang)
 
         matched = False
 
-        # Tier 1: Exact Match
+        # Tier 1: Exact Match (PanLex Lexicon Gate)
         for lookup_key in [normalized_lemma, predicted_lemma, surface_word.lower()]:
             if lookup_key in exact_translation_map:
                 output_data['Surface Word'].append(surface_word)
                 output_data[f'{lang.capitalize()} Lemma'].append(lookup_key)
                 output_data['English translation'].append(exact_translation_map[lookup_key])
                 output_data['Glossing'].append(affix)
-                output_data['Match Type'].append('Exact Match')
+                output_data['Match Type'].append('PanLex Exact Match')
                 matched = True
                 break
 
-        # Tier 2: Substring Stem Overlap
+        # Tier 2: Substring Stem Overlap (Lexicon Containment Gate)
         if not matched:
             for dict_word, eng_trans in exact_translation_map.items():
                 if len(dict_word) > 2 and (dict_word in normalized_lemma or normalized_lemma in dict_word):
@@ -169,27 +178,32 @@ def translation(file_name: str, lang: str):
                     matched = True
                     break
 
-        # Tier 3: Vector Embedding Nearest Neighbor Search (Replaces Fuzzy Fallback)
-        if not matched and panlex_tensor is not None and 'embedding' in row:
-            try:
-                query_vec = ast.literal_eval(row['embedding'])
-                query_tensor = torch.tensor(query_vec).unsqueeze(0)
-                query_tensor = query_tensor / query_tensor.norm(dim=1, keepdim=True)
-
-                similarities = torch.mm(query_tensor, panlex_tensor.T).squeeze(0)
-                best_match_idx = torch.argmax(similarities).item()
-                highest_score = similarities[best_match_idx].item()
-
-                if highest_score > 0.65:
-                    best_word = panlex_words[best_match_idx]
+        # Tier 3: Isolated Local Root Evaluation (Leveraging local grammar strip rules)
+        if not matched:
+            extracted_roots = root_extract(segmentation_str)
+            for root in extracted_roots:
+                clean_root = root.lower().strip()
+                if clean_root in exact_translation_map:
                     output_data['Surface Word'].append(surface_word)
-                    output_data[f'{lang.capitalize()} Lemma'].append(best_word)
-                    output_data['English translation'].append(panlex_translations[best_match_idx])
+                    output_data[f'{lang.capitalize()} Lemma'].append(clean_root)
+                    output_data['English translation'].append(exact_translation_map[clean_root])
                     output_data['Glossing'].append(affix)
-                    output_data['Match Type'].append(f'Vector Search (Score: {highest_score:.2f})')
+                    output_data['Match Type'].append('Isolated Root Exact Match')
                     matched = True
-            except Exception as e:
-                print(f"Embedding resolution failed for {surface_word}: {e}")
+                    break
+
+        # Alternative Tier 4: Word-Bounded Local Proverb Context Check (Only runs if text path is loaded)
+        if not matched and local_proverb_sentences:
+            pattern = re.compile(r'\b' + re.escape(normalized_lemma) + r'\b', re.IGNORECASE)
+            for proverb in local_proverb_sentences:
+                if pattern.search(proverb):
+                    output_data['Surface Word'].append(surface_word)
+                    output_data[f'{lang.capitalize()} Lemma'].append(normalized_lemma)
+                    output_data['English translation'].append(proverb)
+                    output_data['Glossing'].append(affix)
+                    output_data['Match Type'].append('Local Proverb Context Match')
+                    matched = True
+                    break
 
     df_out = pd.DataFrame(output_data).drop_duplicates(subset=['Surface Word']).reset_index(drop=True)
     df_out.to_csv(f"{lang.lower()}_translated.csv", index=False)
