@@ -10,7 +10,7 @@ if __name__ == "__main__":
     # for task,lang in zip(tasks,languages):
     #     print(f"Doing {task}...")
     #     main(script_parent, task, lang)
-    #
+
     tasks = ["morpheme_translate"]
     for task in tasks:
         print(f"Doing {task}...")
