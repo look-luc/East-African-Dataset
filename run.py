@@ -5,8 +5,14 @@ from src.main import main
 script_parent = Path(__file__).resolve().parent
 
 if __name__ == "__main__":
-    tasks = ["get_data", "model_segment" , "morpheme_translate"]
-
+    # tasks = ["count_morphemes","model_segment" , "morpheme_translate"]
+    # languages = ["ganda", "gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamba"]
+    # for task,lang in zip(tasks,languages):
+    #     print(f"Doing {task}...")
+    #     main(script_parent, task, lang)
+    #
+    tasks = ["morpheme_translate"]
     for task in tasks:
-        main(script_parent, "get_data")
+        print(f"Doing {task}...")
+        main(script_parent, task, "ganda")
     print("Ran")

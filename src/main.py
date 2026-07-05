@@ -5,24 +5,22 @@ from morpheme_translate.model_segment import model_extract
 from morpheme_translate.translate import get_lang_data, translation
 
 
-def main(path, task:str):
+def main(path, task:str, lang:str):
     if task == "get_data":
         print("Loading datasets...")
-        data, full_data = Get_Data()
+        data = Get_Data()
 
         print("Generating rough morpheme breaks...")
         data["morpheme_breaks"] = md.segment(df=data, product_threshold=25)
 
         data.to_csv("data.csv", sep='\t')
-        full_data.to_csv("full_data.csv", sep='\t')
         print("gathered data into data.csv")
-    # elif task =="count_morphemes":
-    #     print("Counting Morphemes")
-    #     morph_counter = m_count.morph_count(str(path / "data.csv"))
+    elif task =="count_morphemes":
+        print("Counting Morphemes")
+        morph_counter = m_count.morph_count(str(path / "data.csv"))
 
-    #     print("finished counting morphemes")
+        print("finished counting morphemes")
     elif task=="morpheme_translate":
-        get_lang_data("Ganda").to_csv("ganda.csv", sep="\t")
-        translation("ganda", "ganda")
+        translation(lang, lang)
     elif task == "model_segment":
-        model_extract("data.csv", "Ganda")
+        model_extract("data.csv", lang)
