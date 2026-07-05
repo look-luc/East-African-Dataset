@@ -24,7 +24,8 @@ def get_embeddings(word: str):
     inputs = tokenizer(word, return_tensors="pt")
 
     with torch.no_grad():
-        outputs = model.generate(**inputs)
+        outputs = encoder(**inputs)
+
         if hasattr(outputs, "last_hidden_state"):
             hidden_states = outputs.last_hidden_state
         elif isinstance(outputs, tuple):
