@@ -202,8 +202,9 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
         if not matched and has_affix:
             lemmatization_str = str(row['lemmatization']).lower()
-            for affix in known_affixes:
-                if affix in lemmatization_str:
+
+            for structural_affix in known_affixes:
+                if structural_affix in lemmatization_str:
                     noun_class = None
 
                     raw_nc = ast.literal_eval(row['noun class prediction'])
@@ -212,15 +213,20 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                         features = nc_string.split()
                         if len(features) > 1:
                             tags = features[1].split(';')
-                            noun_class = tags[-1]
+                            predicted_tag = tags[-1]
 
-                    output_data['Surface Word'].append(surface_word)
-                    output_data[f'{lang.capitalize()} Lemma'].append(f"(-){surface_word}(-)")
-                    output_data['English translation'].append(noun_class if noun_class else "Unknown Class")
-                    output_data['Glossing'].append(affix)
-                    output_data['Match Type'].append('Grammar Guard Fallback')
-                    matched = True
-                    break
+                            if "BANTU" in predicted_tag or "NC" in predicted_tag:
+                                noun_class = predicted_tag
+
+                    # Only consume the row if a genuine noun class fallback is verified
+                    if noun_class:
+                        output_data['Surface Word'].append(surface_word)
+                        output_data[f'{lang.capitalize()} Lemma'].append(f"(-){surface_word}(-)")
+                        output_data['English translation'].append(noun_class)
+                        output_data['Glossing'].append(affix)
+                        output_data['Match Type'].append('Grammar Guard Fallback')
+                        matched = True
+                        break
 
         # Tier 3: Isolated Local Root Evaluation (Leveraging local grammar strip rules)
         if not matched:

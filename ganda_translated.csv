@@ -1,23 +1,46 @@
 Surface Word,Ganda Lemma,English translation,Glossing,Match Type
+mu,(-)mu(-),BANTU1,u,Grammar Guard Fallback
+gandaalo,(-)gandaalo(-),BANTU1,a,Grammar Guard Fallback
+kisikiziz,(-)kisikiziz(-),PRS,ik,Grammar Guard Fallback
+Ababi,(-)Ababi(-),BANTU2,mubi,Grammar Guard Fallback
 abalungi,lungi,I’m fine,abalungi,Substring Overlap
+emilimo,(-)emilimo(-),BANTU1,u,Grammar Guard Fallback
 abangi,lungi,I’m fine,abangi,Substring Overlap
 musajja,byʼokubajja,capentry,nan-sa-jja,Substring Overlap
 Aboluganda,ganda,fellow-tribesman,aboluganda,Substring Overlap
+bita,(-)bita(-),PRS,ta,Grammar Guard Fallback
+nga,(-)nga(-),INTENS,a,Grammar Guard Fallback
+kwata,(-)kwata(-),PRS,ta,Grammar Guard Fallback
 yanoonya,kunoonya,hand around,onya,Substring Overlap
 Akaami,kwenyamira,depressed,akaami,Substring Overlap
+akatono,(-)akatono(-),SG,no,Grammar Guard Fallback
+wa,(-)wa(-),BANTU1,a,Grammar Guard Fallback
+mugga,(-)mugga(-),PRS,a,Grammar Guard Fallback
+mbegelaako,(-)mbegelaako(-),BANTU1,ko,Grammar Guard Fallback
 Akanyonyi,ekinyonyi,bird,akanyonyi,Substring Overlap
+byo,(-)byo(-),BANTU2,o,Grammar Guard Fallback
+oya,(-)oya(-),SG,a,Grammar Guard Fallback
 ekisu,ekisumuluzo,key,ekisu,Substring Overlap
+Akatono,(-)Akatono(-),SG,no,Grammar Guard Fallback
 liiso,liiso,eye,nan,PanLex Exact Match
+emikono,(-)emikono(-),BANTU1,ko,Grammar Guard Fallback
+kulya,(-)kulya(-),NFIN,a,Grammar Guard Fallback
+taba,(-)taba(-),Unknown Class,ta,Grammar Guard Fallback
 Alaba,tetugalaba,I’m fine,laba,Substring Overlap
 ekilungi,lungi,I’m fine,ekilungi,Substring Overlap
 Amaka,amaka,family,amaka,PanLex Exact Match
 muchaara,faranga ey’egini,Guinean Syli,nan-chaara,Substring Overlap
+ekisibo,(-)ekisibo(-),BANTU10,i,Grammar Guard Fallback
+nte,(-)nte(-),Unknown Class,e,Grammar Guard Fallback
 Akwaagala,kwagala okumanya,curious,agala,Substring Overlap
 Akwaagula,ggula,open a door,nan-kwaagula,Substring Overlap
+no,(-)no(-),BANTU9,no,Grammar Guard Fallback
+bwo,(-)bwo(-),BANTU14,o,Grammar Guard Fallback
 wala,wala,girl,wala,PanLex Exact Match
 kibuga,obugazi,width,ki-buga,Substring Overlap
 amalungi,lungi,I’m fine,amalungi,PanLex Exact Match
 gakola,kukola akajanja,finicky,ga-kola,Substring Overlap
+wamu,(-)wamu(-),BANTU1,am,Grammar Guard Fallback
 si,si,country,nan,PanLex Exact Match
 Amazzi,muyizzi,hunter,amazzi,Substring Overlap
 takula,amatala agokukubo,robot,takula,Substring Overlap
@@ -30,59 +53,106 @@ gombolola,ggombolola,sub-county,gombolola,Substring Overlap
 Bassa,okussa omukka,breathe,bantu2,Substring Overlap
 kimu,kimuli,flower,kimu,Substring Overlap
 Bazaala,zaala,give birth,bantu2,PanLex Exact Match
+mubiri,(-)mubiri(-),BANTU1,mubi,Grammar Guard Fallback
 tebazaala,zaala,give birth,tebazaala,PanLex Exact Match
+ssimuliro,(-)ssimuliro(-),PRS,u,Grammar Guard Fallback
+Bwoba,(-)Bwoba(-),Unknown Class,a,Grammar Guard Fallback
+mumaaso,(-)mumaaso(-),BANTU1,u,Grammar Guard Fallback
 olibeera,kubeera lubuto,pregnant,beera,Substring Overlap
+oli,(-)oli(-),BANTU1,oli,Grammar Guard Fallback
 mulungi,lungi,I’m fine,mulungi,Substring Overlap
 nelwolifa,faranga ey’egini,Guinean Syli,nelwolifa,Substring Overlap
+entaanayo,(-)entaanayo(-),BANTU10,ta,Grammar Guard Fallback
 mukulu,mukulukusa,October,mukulu,Substring Overlap
+oba,(-)oba(-),SG,a,Grammar Guard Fallback
+kya,(-)kya(-),BANTU15,kya,Grammar Guard Fallback
 enju,enjuki,bee,enju,Substring Overlap
 omukka,okussa omukka,breathe,omukka,Substring Overlap
+lya,(-)lya(-),BANTU5,a,Grammar Guard Fallback
 ekibya,dalasi ey’egambya,Gambian Dalasi,nan-bya,Substring Overlap
 na,na,and,nan,PanLex Exact Match
+Ekilabo,(-)Ekilabo(-),BANTU10,abo,Grammar Guard Fallback
+ekitono,(-)ekitono(-),BANTU10,ekitono,Grammar Guard Fallback
+munno,(-)munno(-),BANTU1,munno,Grammar Guard Fallback
+muttu,(-)muttu(-),BANTU1,u,Grammar Guard Fallback
+kyo,(-)kyo(-),BANTU15,o,Grammar Guard Fallback
+mangu,(-)mangu(-),BANTU1,u,Grammar Guard Fallback
+kamwa,(-)kamwa(-),BANTU15,am,Grammar Guard Fallback
 bire,buta mwesigwa,unfaithful,bire,Substring Overlap
 Endiga,endiga,sheep,endiga,PanLex Exact Match
+gwa,(-)gwa(-),BANTU1,a,Grammar Guard Fallback
 mbuzi,embuzi,goat,mbuzi,Substring Overlap
+sanga,(-)sanga(-),Unknown Class,a,Grammar Guard Fallback
 Enkima,kima,monkey,enkima,PanLex Exact Match
+nti,(-)nti(-),INTENS,i,Grammar Guard Fallback
+ago,(-)ago(-),SG,a,Grammar Guard Fallback
 Enkuba,enkuba,rain,enkuba,PanLex Exact Match
+omu,(-)omu(-),BANTU1,u,Grammar Guard Fallback
+Engalo,(-)Engalo(-),Unknown Class,a,Grammar Guard Fallback
+zo,(-)zo(-),BANTU8,o,Grammar Guard Fallback
 yamala,faranga ey’emalagase,Malagasy Ariary,yamala,Substring Overlap
 amazzi,muyizzi,hunter,amazzi,Substring Overlap
+mulwendo,(-)mulwendo(-),BANTU1,mulwendo,Grammar Guard Fallback
+entono,(-)entono(-),BANTU10,e,Grammar Guard Fallback
 enyumba,nyumba,house,enyumba,PanLex Exact Match
 ne,ne,and,nan,PanLex Exact Match
 Eyali,walisi ne futuna,Wallis & Futuna,eyali,Substring Overlap
 bwalaba,tetugalaba,I’m fine,laba,Substring Overlap
 era,era,and,nan,PanLex Exact Match
+Kamu,(-)Kamu(-),BANTU1,am,Grammar Guard Fallback
+kamu,(-)kamu(-),BANTU15,am,Grammar Guard Fallback
+gwe,(-)gwe(-),BANTU1,e,Grammar Guard Fallback
 muganda,ganda,fellow-tribesman,nan-ganda,PanLex Exact Match
 Kakulu,mukulukusa,October,kakulu,Substring Overlap
+ta,(-)ta(-),PRS,ta,Grammar Guard Fallback
 kulilwa,buulila,say,lilwa,Substring Overlap
 Kyenkola,kukola akajanja,finicky,enkola,Substring Overlap
 mbiro,bbumbiro,potter shop,mbiro,Substring Overlap
 kwotadde,ota,bask,kwotadde,PanLex Exact Match
+Mama,(-)Mama(-),BANTU6,am,Grammar Guard Fallback
 emugga,omugga,river,emugga,Substring Overlap
 Mulungi,lungi,I’m fine,mulungi,PanLex Exact Match
 mubi,mubi,ugly,nan,PanLex Exact Match
 Omukazi,omukazi,woman,umukazi,PanLex Exact Match
+nyo,(-)nyo(-),BANTU9,yo,Grammar Guard Fallback
 Ne,ne,and,nan,PanLex Exact Match
+lyaaliko,(-)lyaaliko(-),BANTU11,ko,Grammar Guard Fallback
 olulagala,gambalagala,mountain,lagala,Substring Overlap
+ennyo,(-)ennyo(-),BANTU9,yo,Grammar Guard Fallback
 alekulira,ntaulira,honey badger,lira,Substring Overlap
+ria,(-)ria(-),PRS,a,Grammar Guard Fallback
 mukka,okussa omukka,breathe,mukka,Substring Overlap
 ate,ate,and,nan,PanLex Exact Match
+okugwa,(-)okugwa(-),NFIN,a,Grammar Guard Fallback
 Omwana,omwana,babe,omwana,PanLex Exact Match
 ewaka,wakati muttumbi,midnight,ewaka,Substring Overlap
 Wange,jjajja wange,great aunt,wange,Substring Overlap
 omulungii,lungi,I’m fine,omulungii,Substring Overlap
+owa,(-)owa(-),BANTU1,a,Grammar Guard Fallback
+Ofundako,(-)Ofundako(-),SG,ko,Grammar Guard Fallback
 okuwasa,kwasama,open the mouth,okuwasa,Substring Overlap
+ssi,(-)ssi(-),INTENS,i,Grammar Guard Fallback
+buti,(-)buti(-),BANTU14,u,Grammar Guard Fallback
 ensanafu,nsanafu,ant,ensanafu,PanLex Exact Match
+guba,(-)guba(-),Unknown Class,u,Grammar Guard Fallback
 Okufa,faranga ey’egini,Guinean Syli,ukufa,Substring Overlap
 Olubuto,kubeera lubuto,pregnant,ubuto,Substring Overlap
+lwo,(-)lwo(-),BANTU11,lwo,Grammar Guard Fallback
 embi,embizzi,pig,embi,Substring Overlap
 lujja,byʼokubajja,capentry,lu-jja,Substring Overlap
 kukubira,kujjumbira,keen,kubira,Substring Overlap
 Oluliimi,ekisumuluzo,key,uliimi,Substring Overlap
+lwa,(-)lwa(-),PRS,a,Grammar Guard Fallback
+mukabalo,(-)mukabalo(-),BANTU1,a,Grammar Guard Fallback
 lukaawa,kaawa,coffee,lukaawa,PanLex Exact Match
 Omukulu,mukulukusa,October,umukulu,Substring Overlap
 Omuze,muzadde,parent,omuze,Substring Overlap
+gwo,(-)gwo(-),BANTU1,o,Grammar Guard Fallback
+muntu,(-)muntu(-),BANTU1,muntu,Grammar Guard Fallback
 Omukwaano,omukwaano,love,umukwaano,PanLex Exact Match
+ye,(-)ye(-),BANTU9,e,Grammar Guard Fallback
 mulabe,tetugalaba,I’m fine,nan-labe,Substring Overlap
+wo,(-)wo(-),BANTU1,o,Grammar Guard Fallback
 Omumpi,kumpi ne,close,omumpi,Substring Overlap
 bwabeera,kubeera lubuto,pregnant,beera,Substring Overlap
 obwoomu,ekisumuluzo,key,obwoomu,Substring Overlap
@@ -91,11 +161,19 @@ maka,makansi,scissors,maka,Substring Overlap
 Omuyizzi,yizzi,hunter,umuyizzi,PanLex Exact Match
 naye,ekyangwe,sponge,naye,Substring Overlap
 ekibuga,obugazi,width,nan-buga,Substring Overlap
+abudongo,(-)abudongo(-),BANTU14,u,Grammar Guard Fallback
+ya,(-)ya(-),BANTU9,a,Grammar Guard Fallback
 azaalwa,kusalwa,cut,zaalwa,Substring Overlap
+omuntu,(-)omuntu(-),BANTU1,muntu,Grammar Guard Fallback
 kyotasimba,simba,genet,kyotasimba,Substring Overlap
 muzinga,ekizinga,island,nan-zinga,Substring Overlap
+njuki,(-)njuki(-),BANTU10,njuki,Grammar Guard Fallback
 emu,emu,one,nan,PanLex Exact Match
 njuba,njuba,sun,nan,PanLex Exact Match
+naka,(-)naka(-),PST,a,Grammar Guard Fallback
+bibi,(-)bibi(-),LOC,i,Grammar Guard Fallback
 nomala,faranga ey’emalagase,Malagasy Ariary,nomala,Substring Overlap
 Zimba,kasimba,genet,zimba,Substring Overlap
+Nnene,(-)Nnene(-),Unknown Class,e,Grammar Guard Fallback
+takutelaako,(-)takutelaako(-),PL,ko,Grammar Guard Fallback
 muti,muti,tree,muti,PanLex Exact Match
