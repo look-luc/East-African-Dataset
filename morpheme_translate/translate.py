@@ -187,16 +187,15 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
         # Tier 2: Substring Stem Overlap (Lexicon Containment Gate)
         if not matched and not is_standalone_grammar:
-            if len(normalized_lemma) >= 3:
-                for dict_word, eng_trans in exact_translation_map.items():
-                    if len(dict_word) > 4 and (dict_word in normalized_lemma or normalized_lemma in dict_word):
-                        output_data['Surface Word'].append(surface_word)
-                        output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
-                        output_data['English translation'].append(eng_trans)
-                        output_data['Glossing'].append(affix)
-                        output_data['Match Type'].append('Substring Overlap')
-                        matched = True
-                        break
+            for dict_word, eng_trans in exact_translation_map.items():
+                if len(dict_word) > 3 and (dict_word in normalized_lemma or normalized_lemma in dict_word):
+                    output_data['Surface Word'].append(surface_word)
+                    output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
+                    output_data['English translation'].append(eng_trans)
+                    output_data['Glossing'].append(affix)
+                    output_data['Match Type'].append('Substring Overlap')
+                    matched = True
+                    break
 
         # Tier 2 Fallback: Only traps actual standalone grammatical tokens with a valid noun class prediction
         if not matched and is_standalone_grammar:
