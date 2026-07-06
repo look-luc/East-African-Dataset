@@ -29,7 +29,7 @@ def parse_morphemes(word):
 
     return morphemes
 
-def morph_count(df_path:str, output_file:str="bantu_grammar_lookup.csv", top_n_threshold=1000000):
+def morph_count(df_path:str, output_file:str="data/bantu_grammar_lookup.csv", top_n_threshold=1000000):
     df = pd.read_csv(df_path, sep='\t')
 
     print(f"Reading dataset: {df_path}...")

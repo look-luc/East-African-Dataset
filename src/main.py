@@ -37,7 +37,7 @@ def main(path, task:str, lang:str):
         folder = Path(f"{script_dir}/data/{lang}")
         folder.mkdir(parents=True, exist_ok=True)
 
-        model_csv = str(folder / f"{lang.lower().capitalize()}_model_lem_seg.csv")
+        model_csv = folder / f"{lang.lower().capitalize()}_model_lem_seg.csv"
         if not model_csv.exists():
             print(f"Model file missing for {lang}. Running model_extract first...")
             model_extract("data/data.csv", lang)
