@@ -6,7 +6,7 @@ script_parent = Path(__file__).resolve().parent
 
 if __name__ == "__main__":
     tasks = ["get_data", "count_morphemes", "model_segment", "morpheme_translate"]
-    languages = ["gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamba"]
+    languages = ["ganda", "gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamba"]
 
     # Run each language through the entire pipeline pipeline sequence
     for lang in languages:
