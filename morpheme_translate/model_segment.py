@@ -79,4 +79,4 @@ def model_extract(data_title: str, lang: str):
 
     out_df.index.name = 'surface_word'
 
-    out_df.to_csv(lang_folder / f"{lang.lower().capitalize()}_model_lem_seg.csv", sep='\t', index=False)
+    out_df.to_csv(lang_folder / f"{lang.lower().capitalize()}_model_lem_seg.csv", sep='\t', index=True)
