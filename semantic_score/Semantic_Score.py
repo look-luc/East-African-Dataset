@@ -1,9 +1,12 @@
+from pathlib import Path
+
 import Levenshtein
+import pandas as pd
 import torch
 from nltk.translate.chrf_score import sentence_chrf
 from transformers import AutoModel, AutoTokenizer
-from transformers.models import LlavaNextVideoForConditionalGeneration
 
+script_path = Path(__file__).resolve()
 
 def mean_pooling(model_output, attention_mask):
     token_embeddings = model_output[0] #First element of model_output contains all token embeddings
@@ -52,4 +55,5 @@ def compute_structural_metrics(manual_literals: list[str], model_literals: list[
         results[lang]["Levenshtein Distance"].append(levenshtein)
         results[lang]["Levenshtein Normalized_Sim"].append(normalized)
 
-    return results
+    results_df = pd.DataFrame(results)
+    results_df.to_csv(f"{script_path}/{lang}_results.csv", sep='\t')
