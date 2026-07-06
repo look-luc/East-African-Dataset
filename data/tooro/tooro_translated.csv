@@ -1,0 +1,36 @@
+Surface Word,Tooro Lemma,English translation,Glossing,Match Type
+kugamba,gamba,say,gamba V;NFIN,PanLex Exact Match
+Bakuha,ha,give away,ha V;FUT,PanLex Exact Match
+nyina,owanyina,brother,nyina V;PST;REC;1;SG,Substring Overlap
+nanyina,owanyina,brother,nyina V;PST;REC;1;SG,Substring Overlap
+ebiri,kuzibiriza,close,ebiri N;SG;BANTU14,Substring Overlap
+biri,kuzibiriza,close,biri DET;POSS;PSS1P;BANTU2,Substring Overlap
+ekyawe,ekyawe,your,ekyawe PRO;INT;INTENS,PanLex Exact Match
+babiri,kuzibiriza,close,biri V;PRS;HAB;3;PL,Substring Overlap
+omugamba,gamba,say,umugamba N;SG;BANTU1,PanLex Exact Match
+Kikuruga,oworuganda,fellow-tribesman,ruga V;PRS;HAB;3;SG,Substring Overlap
+enjara,anjara,apply,enjara V;PRS,Substring Overlap
+arikuruga,oworuganda,fellow-tribesman,ruga V;PRS;PROG;3;SG,Substring Overlap
+tayine,owanyina,brother,tayina V;PST;REC;1;PL,Substring Overlap
+gukagita,gita,oil,gukagita V;PST,PanLex Exact Match
+omurundi,rundi,shin,umurundi N;SG;BANTU1,PanLex Exact Match
+akachwamutwe,chwamu,leave,chwamutwe V;PST;REM;3;SG,Substring Overlap
+bwenjara,anjara,apply,enjara V;PRS,Substring Overlap
+nakura,kurambika,lay,nakura N;PL;BANTU9,Substring Overlap
+kumurinda,rinda,protect by charm,murinda V;NFIN,Substring Overlap
+ayine,owanyina,brother,yina V;PST;REC;3;SG,Substring Overlap
+Mtakuha,ha,give away,ha V;FUT,PanLex Exact Match
+nakira,beba enkoto eyomukira guraihir,rat,nakira N;SG;BANTU9,Substring Overlap
+bonka,onka,suck,bonka V;PRS,Substring Overlap
+yamateka,teka,put on the fire,teka V;PST;REC;3;SG,PanLex Exact Match
+nakuteka,teka,put on the fire,teka V;PST;REC;1;SG,PanLex Exact Match
+yatera,kutera amapapa,flap,tera V;PST;REC;3;SG,Substring Overlap
+kwonka,onka,suck,onka V;PRS;HAB;3;SG,PanLex Exact Match
+naroga,koroga,mix,roga V;PST;REC;1;SG,Substring Overlap
+Omukumi,kumiga,press out,umukumi N;SG;BANTU1,Substring Overlap
+bwomubazi,bazi,medicine,umubazi N;SG;PSSB14,PanLex Exact Match
+omubazi,bazi,medicine,umubazi N;SG;BANTU1,PanLex Exact Match
+Sotakatera,kutera amapapa,flap,Sotakatera V;PST;REC;1;PL,Substring Overlap
+Zayine,owanyina,brother,yina V;PST;REC;3;PL,Substring Overlap
+bwingi,hingika,pile up,bwingi DET;POSS;PSS1P;BANTU14,Substring Overlap
+Zimuti,zimu,spirit,Zimuti N;PL;BANTU10,Substring Overlap
