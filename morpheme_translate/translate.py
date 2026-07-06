@@ -20,7 +20,8 @@ bantu_iso_map = {
 }
 
 def build_model_glossary(lang:str):
-    df = pd.read_csv(f"{lang.lower().capitalize()}_model_lem_seg.csv", sep="\t")
+    lang_folder = script_dir / "data" / lang.lower()
+    df = pd.read_csv(f"{lang_folder}/{lang.lower().capitalize()}_model_lem_seg.csv", sep="\t")
     """Parses the model file to create a segment-to-gloss dictionary."""
     model_map = {}
     for _, row in df.iterrows():
@@ -109,6 +110,8 @@ def get_lang_data(lang:str):
     return panlex_df
 
 def translation(file_name: str, lang: str, local_proverbs_title: str|None = None):
+    lang_folder = script_dir / "data" / lang.lower()
+
     iso_code = bantu_iso_map.get(lang.lower())
     if not iso_code:
         return
@@ -116,9 +119,9 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
     lang_data_df = get_lang_data(lang)
     lang_txt_col = f"txt_{iso_code}"
 
-    model_path = script_dir / f"{file_name}"
+    model_path = lang_folder / f"{file_name}"
     if not model_path.exists():
-        model_path = script_dir / f"{lang.lower().capitalize()}_model_lem_seg.csv"
+        model_path = lang_folder / f"{lang.lower().capitalize()}_model_lem_seg.csv"
 
     model_df = pd.read_csv(str(model_path), sep='\t')
 
@@ -258,5 +261,5 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                     break
 
     df_out = pd.DataFrame(output_data).drop_duplicates(subset=['Surface Word']).reset_index(drop=True)
-    df_out.to_csv(f"{lang.lower()}_translated.csv", index=False)
+    df_out.to_csv(lang_folder / f"{lang.lower()}_translated.csv", index=False)
     print(f"Processed {lang}. Output entries: {len(df_out)}")
