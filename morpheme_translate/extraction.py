@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 
-script_dir = Path(__file__).resolve().parent
+script_dir = Path(__file__).resolve().parent.parent
 
 def root_extract(morpheme_string: str, language: str):
     grammar_df = pd.read_csv(f'{script_dir}/data/bantu_grammar_lookup.csv')
