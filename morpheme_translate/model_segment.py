@@ -55,7 +55,7 @@ def model_extract(data_title: str, lang: str):
     lang_folder = script_dir / "data" / lang.lower()
     lang_folder.mkdir(parents=True, exist_ok=True)
 
-    df = pd.read_csv(script_dir / "data" / data_title, sep='\t')
+    df = pd.read_csv(script_dir / data_title, sep='\t')
 
     lang_data_df = df[df["language"].str.lower() == lang.lower()]
 
