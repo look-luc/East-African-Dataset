@@ -1,0 +1,90 @@
+Surface Word,Ganda Lemma,English translation,Glossing,Match Type
+gandaalo,ganda,fellow-tribesman,gandaalo N;SG;BANTU1,Substring Overlap
+abalungi,lungi,I’m fine,umlungi N;PL;BANTU2,Substring Overlap
+musajja,sa,grind,musajja N;SG;BANTU1,Isolated Root Exact Match
+Aboluganda,ganda,fellow-tribesman,BANTU2,Substring Overlap
+yanoonya,kunoonya,hand around,onya V;PRS;HAB;3;SG,Substring Overlap
+Akanyonyi,ekinyonyi,bird,nyonyi V;PST;REC;3;SG,Substring Overlap
+ekisu,ekisumuluzo,key,ekisu N;SG;BANTU10,Substring Overlap
+liiso,liiso,eye,liiso,PanLex Exact Match
+Alaba,tetugalaba,I’m fine,laba V;PST;REC;3;SG,Substring Overlap
+ekilungi,lungi,I’m fine,kilungi N;SG;BANTU10,Substring Overlap
+Amaka,amaka,family,amaka V;PRS;HAB;3;SG,PanLex Exact Match
+Akwaagala,kwagala okumanya,curious,agala V;PRS;HAB;3;SG,Substring Overlap
+Akwaagula,ggula,open a door,agula V;PST;REC;3;SG,Substring Overlap
+wala,wala,girl,wala DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+kibuga,obugazi,width,buga V;PRS,Substring Overlap
+amalungi,lungi,I’m fine,amalungi N;PL;BANTU6,PanLex Exact Match
+gakola,kukola akajanja,finicky,gakola N;SG;BANTU1,Substring Overlap
+wamu,lwamukaaga,Saturday,wamu DET;POSS;PSS1P;BANTU1,Substring Overlap
+si,si,country,si PRO;INT;INT,PanLex Exact Match
+Amazzi,muyizzi,hunter,amazzi N;PL;BANTU6,Substring Overlap
+ekilo,ekilooto,dream,ekilo N;SG;BANTU10,Substring Overlap
+nyina,annyina,brother,nyina N;SG;BANTU9,Substring Overlap
+enjuba,njuba,sun,enjuba N;SG;BANTU10,PanLex Exact Match
+gombolola,ggombolola,sub-county,gombolola V;PRS,Substring Overlap
+kimu,kimuli,flower,kimu N;SG;BANTU15,Substring Overlap
+Bazaala,zaala,give birth,BANTU2,PanLex Exact Match
+mubiri,mubi,ugly,biri ADJ;BANTU1,Substring Overlap
+tebazaala,zaala,give birth,tebazaala V;PRS,PanLex Exact Match
+olibeera,kubeera lubuto,pregnant,beera V;PST;REC;3;SG,Substring Overlap
+mulungi,lungi,I’m fine,uMulungi N;SG;BANTU1,Substring Overlap
+mukulu,mukulukusa,October,mukulu N;SG;BANTU1,Substring Overlap
+na,na,and,na COP;IDENT,PanLex Exact Match
+muttu,wakati muttumbi,midnight,muttu N;SG;BANTU1,Substring Overlap
+Endiga,endiga,sheep,indiga N;SG;BANTU10,PanLex Exact Match
+mbuzi,embuzi,goat,mbuzi N;SG;BANTU1,Substring Overlap
+Enkima,kima,monkey,inkima N;SG;BANTU10,PanLex Exact Match
+okutuukirira,kiri,it,tuukirira V;NFIN,Substring Overlap
+Enkuba,enkuba,rain,inkuba,PanLex Exact Match
+ensa,sa,grind,ensa V;PRS,PanLex Exact Match
+yamala,faranga ey’emalagase,Malagasy Ariary,mala V;PST;REC;3;SG,Substring Overlap
+amazzi,muyizzi,hunter,amazzi N;PL;BANTU6,Substring Overlap
+enyumba,nyumba,house,nyumba V;PRS,PanLex Exact Match
+ne,ne,and,ne DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+Eyali,walisi ne futuna,Wallis & Futuna,Eyali N;SG;BANTU1,Substring Overlap
+bwalaba,tetugalaba,I’m fine,laba V;PST;REC;3;SG,Substring Overlap
+era,era,and,era V;PRS,PanLex Exact Match
+muganda,ganda,fellow-tribesman,muganda N;SG;BANTU1,PanLex Exact Match
+Kakulu,mukulukusa,October,Kakulu N;SG;BANTU15,Substring Overlap
+kulilwa,buulila,say,lila V;NFIN,Substring Overlap
+Kyenkola,kukola akajanja,finicky,inkola N;SG;BANTU15,Substring Overlap
+mbiro,bbumbiro,potter shop,mbiro,Substring Overlap
+kwotadde,ota,bask,ota V;PST;REC;3;SG,PanLex Exact Match
+Mulungi,lungi,I’m fine,uMulungi N;SG;BANTU1,PanLex Exact Match
+mubi,mubi,ugly,bi ADJ;BANTU1,PanLex Exact Match
+Omukazi,omukazi,woman,umukazi N;SG;BANTU1,PanLex Exact Match
+Ne,ne,and,ne DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+olulagala,gambalagala,mountain,lagala V;PRS;2;SG,Substring Overlap
+alekulira,ntaulira,honey badger,lira V;FUT,Substring Overlap
+kisikiriize,kiri,it,sikiriiza V;PST;REC;3;SG,Substring Overlap
+mukka,okussa omukka,breathe,mukka N;SG;BANTU1,Substring Overlap
+ate,ate,and,te PRO;INT;INTENS,PanLex Exact Match
+Omwana,omwana,babe,umwana N;SG;BANTU1,PanLex Exact Match
+ewaka,wakati muttumbi,midnight,ewaka V;PRS,Substring Overlap
+Wange,jjajja wange,great aunt,wange DET;POSS;PSS1P;BANTU1,Substring Overlap
+omulungii,lungi,I’m fine,umulungii N;SG;BANTU1,Substring Overlap
+okuwasa,kwasama,open the mouth,wasa V;NFIN,Substring Overlap
+buti,faranga ey’ejjibuti,Djiboutian Franc,buti PRO;INT;BANTU14,Substring Overlap
+ensanafu,nsanafu,ant,insanafu N;SG;BANTU10,PanLex Exact Match
+Olubuto,kubeera lubuto,pregnant,ubuto N;SG;BANTU11,Substring Overlap
+embi,embizzi,pig,emba V;PRS,Substring Overlap
+kukubira,kujjumbira,keen,kubira V;NFIN,Substring Overlap
+lukaawa,kaawa,coffee,lukaawa V;PRS;HAB;3;SG,PanLex Exact Match
+Omukulu,mukulukusa,October,umukulu N;SG;BANTU1,Substring Overlap
+Omuze,muzadde,parent,umuze N;SG;BANTU1,Substring Overlap
+Omukwaano,omukwaano,love,umukwaano N;SG;BANTU1,PanLex Exact Match
+mulabe,tetugalaba,I’m fine,laba V;PST;REC;2;PL,Substring Overlap
+bwabeera,kubeera lubuto,pregnant,beera V;PST;REC;3;SG,Substring Overlap
+Omuwala,wala,girl,umuwala N;SG;BANTU1,PanLex Exact Match
+maka,makansi,scissors,maka N;PL;BANTU6,Substring Overlap
+Omuyizzi,yizzi,hunter,umuyizzi N;SG;BANTU1,PanLex Exact Match
+ekibuga,obugazi,width,buga V;PRS;HAB;3;SG,Substring Overlap
+kyotasimba,simba,genet,otasimba V;FUT,Substring Overlap
+muzinga,ekizinga,island,zinga V;PRS,Substring Overlap
+njuki,enjuki,bee,njuki N;SG;BANTU10,Substring Overlap
+emu,emu,one,emu PRO;INT;INTENS,PanLex Exact Match
+njuba,njuba,sun,njuba N;SG;BANTU10,PanLex Exact Match
+nomala,faranga ey’emalagase,Malagasy Ariary,mala V;PRS;HAB;1;SG,Substring Overlap
+Zimba,kasimba,genet,Zimba V;PRS,Substring Overlap
+muti,muti,tree,muti N;SG;BANTU1,PanLex Exact Match

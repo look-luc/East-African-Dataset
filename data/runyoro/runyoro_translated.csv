@@ -1,0 +1,32 @@
+Surface Word,Runyoro Lemma,English translation,Glossing,Match Type
+ruka,kurata omurukarara,follow,ruka,Substring Overlap
+ukanuka,nuka,smell,nuka V;PST;REM;2;SG,PanLex Exact Match
+muno,kora muno,do masonry,muno N;SG;BANTU1,Substring Overlap
+Akutera,kutera amapapa,flap,Tera,Substring Overlap
+Amagita,gita,oil,gita V;PRS;HAB;3;SG,PanLex Exact Match
+Bakamukwata,kwata,grasp,BANTU2,Substring Overlap
+ninuka,nuka,smell,nuka V;PST;REC;1;SG,PanLex Exact Match
+mukibira,gambira,say,bira V;PRS;PROG;2;PL,Substring Overlap
+mutwe,etweka-ebintu hʼamutwe,pile up,mutwe N;SG;BANTU1,Substring Overlap
+Ekintu,etweka-ebintu hʼamutwe,pile up,Ekintu N;SG;BANTU10,Substring Overlap
+Enjura,jura,take off,Enjura N;SG;BANTU10,PanLex Exact Match
+ekinaga,naga,cooking pot,ekinaga N;SG;BANTU10,Substring Overlap
+kiki,kikira,carry,kiki,Substring Overlap
+ondi,honda,hammer,onda V;PRS;HAB;2;SG,Substring Overlap
+swera,swera,give in marriage,swera,PanLex Exact Match
+Nomutare,obutare,iron,umutare N;SG;BANTU1,Substring Overlap
+iyonka,onka,suck,yonka V;PRS,Substring Overlap
+Nomuzana,zana,exorcise,umuzana N;SG;BANTU1,PanLex Exact Match
+nakusemererwa,semererwa,tingle,semererwa V;PST;REC;1;SG,PanLex Exact Match
+okugura,igura,open a door,gura V;NFIN,Substring Overlap
+owangu,kwanguhiriza,come on,wangu DET;POSS;PSS1P;BANTU1,Substring Overlap
+rundi,kurundana hamwe,juxtapose,rundi N;SG;BANTU11,Substring Overlap
+akwzina,zina,dance,zina V;PRS;HAB;3;SG,PanLex Exact Match
+ekifuba,fuba,chest,fuba V;PRS;HAB;3;SG,PanLex Exact Match
+mukore,kora muno,do masonry,kora V;PST;REC;2;PL,Substring Overlap
+nanywa,kumanywa,become generally known,nywa V;PST;REC;1;SG,Substring Overlap
+ekisoro,kusoroza,gather,ekisoro N;SG;BANTU10,Substring Overlap
+nainuka,nuka,smell,nuka V;PST;REC;1;SG,PanLex Exact Match
+Omusiki,isiki,girl,umusiki N;SG;BANTU1,Substring Overlap
+okutaha,okutaha amaizi,draw,taha V;NFIN,Substring Overlap
+Tera,kutera amapapa,flap,Tera,Substring Overlap
