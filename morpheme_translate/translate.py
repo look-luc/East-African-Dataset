@@ -36,7 +36,7 @@ def build_model_glossary(lang:str):
             continue
     return model_map
 
-grammar_df = pd.read_csv(str(script_dir / "bantu_grammar_lookup.csv"))
+grammar_df = pd.read_csv(str(script_dir / "data/bantu_grammar_lookup.csv"))
 
 def affix_translate(segments, language, model_glossary):
     grammar = grammar_df[grammar_df['language'] == str(language).lower()]
