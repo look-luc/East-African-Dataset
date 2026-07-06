@@ -6,9 +6,10 @@ data_df = pd.read_csv("/Users/lucdenardi/Desktop/code_lang/python/East-African-D
 for lang in languages:
     lang_df = data_df[data_df["language"]==lang]
     if lang == "ganda":
-        rand_rows = pd.DataFrame(lang_df[lang_df["Output Type"]=="figurative_translate"]).sample(n=17)
-        rand_rows = pd.DataFrame(lang_df[lang_df["Output Type"]=="leteral_translate"]).sample(n=17)
+        fig_rand_rows = pd.DataFrame(lang_df[lang_df["Output Type"]=="figurative_translate"]).sample(n=17)
+        lit_rand_rows = pd.DataFrame(lang_df[lang_df["Output Type"]=="leteral_translate"]).sample(n=17)
     else:
-        rand_rows = pd.DataFrame(lang_df[lang_df["Output Type"]=="figurative_translate"]).sample(n=15)
-        rand_rows = pd.DataFrame(lang_df[lang_df["Output Type"]=="leteral_translate"]).sample(n=15)
-    rand_rows.to_csv(f"{lang}_random_15.csv", sep='\t')
+        fig_rand_rows = pd.DataFrame(lang_df[lang_df["Output Type"]=="figurative_translate"]).sample(n=15)
+        lit_rand_rows = pd.DataFrame(lang_df[lang_df["Output Type"]=="leteral_translate"]).sample(n=15)
+    fig_rand_rows.to_csv(f"fig_{lang}_random_15.csv", sep='\t')
+    lit_rand_rows.to_csv(f"lit_{lang}_random_15.csv", sep='\t')
