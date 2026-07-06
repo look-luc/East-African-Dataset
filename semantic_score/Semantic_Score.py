@@ -2,6 +2,7 @@ import Levenshtein
 import torch
 from nltk.translate.chrf_score import sentence_chrf
 from transformers import AutoModel, AutoTokenizer
+from transformers.models import LlavaNextVideoForConditionalGeneration
 
 
 def mean_pooling(model_output, attention_mask):
@@ -23,29 +24,32 @@ def semantic_score(model_text:str, gloss_translation:str):
     return sentence_embeddings
 
 def compute_chrf(manual_literals: str, model_literals: str):
+    chrf_score = sentence_chrf([manual_literals], model_literals)
+    round(chrf_score, 4)
 
-def compute_structural_metrics(manual_literals: str, model_literals: str):
-    results = []
+def levenshtein_score(manual_literals: str, model_literals: str):
+    abs_lev = Levenshtein.distance(manual_literals, model_literals)
 
+    max_len = max(len(manual_literals), len(model_literals))
+    normalized_similarity = 1.0 - (abs_lev / max_len) if max_len > 0 else 1.0
+
+    return abs_lev, normalized_similarity
+
+def compute_structural_metrics(manual_literals: list[str], model_literals: list[str], lang:str):
+    results = {
+        lang.lower().capitalize(): {
+            "Sentence Bert Embeddings": [],
+            "ChrF": [],
+            "Levenshtein Distance": [],
+            "Levenshtein Normalized_Sim": []
+        }
+    }
     for idx, (manual, model) in enumerate(zip(manual_literals, model_literals)):
-        # ChrF expects a list of reference tokens/sentences, and a candidate string
-        # By default, sentence_chrf handles character n-grams (usually up to 6-grams)
-        chrf_score = sentence_chrf([manual], model)
+        results[lang]["Sentence Bert Embeddings"].append(semantic_score(manual, model))
+        results[lang]["ChrF"].append(compute_chrf(manual, model))
 
-        # Absolute Levenshtein Distance (number of edits)
-        abs_lev = Levenshtein.distance(manual, model)
-
-        # Normalized Distance (0.0 to 1.0, where 1.0 means completely identical strings)
-        max_len = max(len(manual), len(model))
-        normalized_similarity = 1.0 - (abs_lev / max_len) if max_len > 0 else 1.0
-
-        results.append({
-            "Pair": idx + 1,
-            "Manual": manual,
-            "Model": model,
-            "ChrF": round(chrf_score, 4),
-            "Levenshtein_Distance": abs_lev,
-            "Levenshtein_Normalized_Sim": round(normalized_similarity, 4)
-        })
+        levenshtein, normalized = levenshtein_score(manual, model)
+        results[lang]["Levenshtein Distance"].append(levenshtein)
+        results[lang]["Levenshtein Normalized_Sim"].append(normalized)
 
     return results
