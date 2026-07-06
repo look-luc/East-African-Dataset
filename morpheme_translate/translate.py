@@ -235,7 +235,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
         # Tier 3: Isolated Local Root Evaluation (Leveraging local grammar strip rules)
         if not matched:
-            extracted_roots = root_extract(segmentation_str)
+            extracted_roots = root_extract(segmentation_str, lang)
             for root in extracted_roots:
                 clean_root = root.lower().strip()
                 if clean_root in exact_translation_map:
