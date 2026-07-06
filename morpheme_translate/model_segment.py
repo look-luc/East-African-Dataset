@@ -77,4 +77,6 @@ def model_extract(data_title: str, lang: str):
     combined_dict = {k: v for d in model_out for k, v in d.items()}
     out_df = pd.DataFrame.from_dict(combined_dict, orient='index')
 
+    out_df.index.name = 'surface_word'
+
     out_df.to_csv(lang_folder / f"{lang.lower().capitalize()}_model_lem_seg.csv", sep='\t', index=False)
