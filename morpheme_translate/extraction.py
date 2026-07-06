@@ -5,7 +5,7 @@ import pandas as pd
 script_dir = Path(__file__).resolve().parent
 
 def root_extract(morpheme_string: str, language: str):
-    grammar_df = pd.read_csv('bantu_grammar_lookup.csv')
+    grammar_df = pd.read_csv(f'{script_dir}/data/bantu_grammar_lookup.csv')
 
     lang_grammar = grammar_df[grammar_df['language'] == str(language).lower()]
     known_affixes = set(lang_grammar['morpheme_segment'].tolist())
