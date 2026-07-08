@@ -3,6 +3,7 @@ from pathlib import Path
 import Levenshtein
 import pandas as pd
 import torch
+import torch.nn.functional as F
 from nltk.translate.chrf_score import sentence_chrf
 from transformers import AutoModel, AutoTokenizer
 
