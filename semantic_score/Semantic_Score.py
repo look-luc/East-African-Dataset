@@ -23,6 +23,7 @@ def semantic_score(model_text:str, gloss_translation:str):
         model_output = model(**encoded_input)
 
     sentence_embeddings = mean_pooling(model_output, encoded_input['attention_mask'])
+    sentence_embeddings = F.normalize(sentence_embeddings, p=2, dim=1)
 
     return sentence_embeddings
 
