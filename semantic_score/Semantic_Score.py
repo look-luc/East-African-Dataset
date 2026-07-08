@@ -14,8 +14,8 @@ def mean_pooling(model_output, attention_mask):
     return torch.sum(token_embeddings * input_mask_expanded, 1) / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
 
 def semantic_score(model_text:str, gloss_translation:str):
-    tokenizer = AutoTokenizer.from_pretrained('efederici/sentence-bert-base')
-    model = AutoModel.from_pretrained('efederici/sentence-bert-base')
+    tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
+    model = AutoModel.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
 
     encoded_input = tokenizer([model_text, gloss_translation], padding=True, truncation=True, return_tensors='pt')
 
