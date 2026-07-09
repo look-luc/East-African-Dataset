@@ -56,13 +56,13 @@ def compute_structural_metrics(lang:str, gloss_rel_path:str, translation_column:
         model_literals = data_df[data_df["african_proverbs"] == manual_literals[["african_proverb"]]]
         manual_literals = manual_literals[[translation_column]]
 
-    for idx, (manual, model) in enumerate(zip(manual_literals, model_literals)):
-        results[lang]["Sentence Bert Embeddings"].append(semantic_score(manual, model))
-        results[lang]["ChrF"].append(compute_chrf(manual, model))
+        for idx, (manual, model) in enumerate(zip(manual_literals, model_literals)):
+            levenshtein, normalized = levenshtein_score(manual, model)
 
-        levenshtein, normalized = levenshtein_score(manual, model)
-        results[lang]["Levenshtein Distance"].append(levenshtein)
-        results[lang]["Levenshtein Normalized_Sim"].append(normalized)
+            results[lang]["Sentence Bert Embeddings"].append(semantic_score(manual, model))
+            results[lang]["ChrF"].append(compute_chrf(manual, model))
+            results[lang]["Levenshtein Distance"].append(levenshtein)
+            results[lang]["Levenshtein Normalized_Sim"].append(normalized)
 
     results_df = pd.DataFrame(results)
     results_df.to_csv(f"{script_path}/{lang}_results.csv", sep='\t')
