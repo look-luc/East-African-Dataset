@@ -1,6 +1,7 @@
 import ast
 import os
 import re
+import unicodedata
 from functools import lru_cache
 from pathlib import Path
 
@@ -22,11 +23,9 @@ bantu_iso_map = {
 def build_model_glossary(lang:str):
     lang_folder = script_dir / "data" / lang.lower()
     df = pd.read_csv(f"{lang_folder}/{lang.lower().capitalize()}_model_lem_seg.csv", sep="\t")
-    """Parses the model file to create a segment-to-gloss dictionary."""
     model_map = {}
     for _, row in df.iterrows():
         try:
-            # Safely convert string representation of list to actual list
             segments = ast.literal_eval(row['segmentation'])
             glosses = ast.literal_eval(row['noun class prediction'])
 
@@ -47,12 +46,10 @@ def affix_translate(segments, language, model_glossary):
     }
 
     master_map = {**model_glossary, **manual_map}
-
     glossed_parts = []
 
     for seg in segments:
         clean_seg = str(seg).lower().strip()
-
         if clean_seg in master_map:
             glossed_parts.append(master_map[clean_seg])
         elif "-" in clean_seg:
@@ -74,10 +71,15 @@ def normalize_ortho(word: str) -> str:
     w = str(word).lower().strip("[]'\\\" ")
     prefixes = ['umu', 'aba', 'oki', 'oku', 'emi', 'eki', 'aka', 'omu', 'en']
     for p in prefixes:
-        # Change operator from > to >= to accommodate high-frequency 2-character roots
         if w.startswith(p) and len(w) >= len(p) + 2:
             return w[len(p):]
     return w
+
+def strip_accents(text: str) -> str:
+    """Removes tonal accent marks (like à, ê) to align PanLex with model lemmas."""
+    return "".join(c for c in unicodedata.normalize('NFD', text) if unicodedata.category(c) != 'Mn')
+    # NFD stands for Normalization Form Canonical Decomposition.
+    # 'Mn' for Mark, Nonspacing
 
 @lru_cache(maxsize=64)
 def get_lang_data(lang:str):
@@ -89,10 +91,10 @@ def get_lang_data(lang:str):
     panlex_data = load_dataset("cointegrated/panlex-meanings", name=iso_code, split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
 
     eng_data = load_dataset("cointegrated/panlex-meanings", name='eng', split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
-    eng_data = eng_data[eng_data['langvar_uid'] == 'eng-000']
+    eng_data = eng_data[eng_data['langvar_uid'].str.startswith('eng', na=False)]
 
     ds_eng_word = load_dataset('cointegrated/panlex-definitions', name='eng', split='train').select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
-    ds_eng_word = ds_eng_word[ds_eng_word['langvar_uid'] == 'eng-000'].rename(columns={'txt': 'definition_text'})
+    ds_eng_word = ds_eng_word[ds_eng_word['langvar_uid'].str.startswith('eng', na=False)].rename(columns={'txt': 'definition_text'})
 
     df_eng = eng_data.merge(ds_eng_word, on='meaning', how='left')
     df_eng = df_eng.drop_duplicates(subset=['txt', 'definition_text'])
@@ -131,7 +133,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         else:
             model_df.rename(columns={model_df.columns[0]: 'surface_word'}, inplace=True)
 
-    # Side A Grammar Guard Setup: Extract and clean known functional affixes to protect Tier 2
     lang_grammar = grammar_df[grammar_df['language'] == str(lang).lower()]
     valid_grammar = lang_grammar.dropna(subset=['proposed_leipzig_gloss'])
 
@@ -148,14 +149,13 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
     if not lang_data_df.empty:
         unique_pairs = lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).drop_duplicates(subset=[lang_txt_col])
         for _, row in unique_pairs.iterrows():
-            dict_word = str(row[lang_txt_col]).lower().strip()
+            dict_word = strip_accents(str(row[lang_txt_col])).lower().strip()
             eng_trans = str(row['txt_eng'])
             panlex_words.append(dict_word)
             panlex_translations.append(eng_trans)
 
     exact_translation_map = dict(zip(panlex_words, panlex_translations))
 
-    # --- START OF DIAGNOSTIC PRINTS ---
     print("=" * 60)
     print(f"DIAGNOSTIC LOG FOR: {lang.upper()}")
     print(f"1. Total raw panlex rows fetched: {len(lang_data_df)}")
@@ -165,7 +165,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
     else:
         print("3. Sample dictionary keys: [NONE - DICTIONARY IS EMPTY]")
     print("=" * 60)
-    # --- END OF DIAGNOSTIC PRINTS ---
 
     local_proverb_sentences = []
     if local_proverbs_title:
@@ -195,7 +194,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
         matched = False
 
-        # Tier 1: Exact Match (PanLex Lexicon Gate)
+        # Tier 1: Exact Match
         for lookup_key in [normalized_lemma, predicted_lemma, surface_word.lower()]:
             if lookup_key in exact_translation_map:
                 output_data['Surface Word'].append(surface_word)
@@ -209,7 +208,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         clean_lemma_token = normalized_lemma.lower().replace('-', '').strip()
         is_standalone_grammar = clean_lemma_token in known_affixes
 
-        # Tier 2: Substring Stem Overlap (Lexicon Containment Gate)
+        # Tier 2: Substring Stem Overlap
         if not matched and not is_standalone_grammar:
             if len(normalized_lemma) >= 4:
                 for dict_word, eng_trans in exact_translation_map.items():
@@ -222,7 +221,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                         matched = True
                         break
 
-        # Tier 2 Fallback: Only traps actual standalone grammatical tokens with a valid noun class prediction
+        # Tier 2 Fallback: Grammar Guard
         if not matched and is_standalone_grammar:
             noun_class = None
             raw_nc = ast.literal_eval(row['noun class prediction'])
@@ -232,7 +231,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                 if len(features) > 1:
                     tags = features[1].split(';')
                     predicted_tag = tags[-1]
-
                     if "BANTU" in predicted_tag or "NC" in predicted_tag:
                         noun_class = predicted_tag
 
@@ -244,7 +242,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                 output_data['Match Type'].append('Grammar Guard Fallback')
                 matched = True
 
-        # Tier 3: Isolated Local Root Evaluation (Leveraging local grammar strip rules)
+        # Tier 3: Isolated Local Root Evaluation
         if not matched:
             extracted_roots = root_extract(segmentation_str, lang)
             for root in extracted_roots:
@@ -258,7 +256,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                     matched = True
                     break
 
-        # Alternative Tier 4: Word-Bounded Local Proverb Context Check (Only runs if text path is loaded)
+        # Tier 4: Word-Bounded Local Proverb Context Check
         if not matched and local_proverb_sentences:
             pattern = re.compile(r'\b' + re.escape(normalized_lemma) + r'\b', re.IGNORECASE)
             for proverb in local_proverb_sentences:
@@ -271,6 +269,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                     matched = True
                     break
 
+        # Fallback when no translation tier catches it
         if not matched:
             output_data['Surface Word'].append(surface_word)
             output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
