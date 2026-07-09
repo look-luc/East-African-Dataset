@@ -13,7 +13,7 @@ bantu_langs = ["ganda", "gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamb
 def making_df(jsonl_list):
     lang_pattern = r"\*\*Input\*\*:\nA proverb in (.*?)\n\n\*\*Output\*\*:"
     pattern = r"Now, please translate the following proverb:\n\n\*\*Input\*\*:\n(.*?)\n\n\*\*Output\*\*:"
-    output_pattern = r"(.*?)"
+    output_pattern = r"\"(.*?)\""
 
     df = []
     for file_path in jsonl_list:
@@ -52,9 +52,7 @@ def making_df(jsonl_list):
     final_df["african_proverb"] = final_df["prompt"].str.extract(pattern, flags=re.DOTALL, expand=False)
     final_df["african_proverb"] = final_df["african_proverb"].str.strip()
 
-    final_df["model output"] = final_df["predict"].str.extract(output_pattern, flags=re.DOTALL, expand=False)
-
-    return final_df[["experiment_config", "language", "language_family", "african_proverb", "label", "Output Type", "model output"]]
+    return final_df[["experiment_config", "language", "language_family", "african_proverb", "label", "Output Type", "predict"]]
 
 
 def Get_Data():
