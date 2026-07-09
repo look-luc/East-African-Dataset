@@ -89,19 +89,28 @@ def get_lang_data(lang:str):
         return pd.DataFrame()
 
     panlex_data = load_dataset("cointegrated/panlex-meanings", name=iso_code, split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
+    print(f"DEBUG [{lang}]: Raw dataset size: {len(panlex_data)}")
+    print(f"DEBUG [{lang}]: Unique langvar_uids present: {panlex_data['langvar_uid'].unique()}")
 
     eng_data = load_dataset("cointegrated/panlex-meanings", name='eng', split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
+    print(f"DEBUG [eng]: Raw English size before filter: {len(eng_data)}")
+
     eng_data = eng_data[eng_data['langvar_uid'].str.startswith('eng', na=False)]
+    print(f"DEBUG [eng]: English size after 'eng' filter: {len(eng_data)}")
 
     ds_eng_word = load_dataset('cointegrated/panlex-definitions', name='eng', split='train').select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
     ds_eng_word = ds_eng_word[ds_eng_word['langvar_uid'].str.startswith('eng', na=False)].rename(columns={'txt': 'definition_text'})
+    print(f"DEBUG [definitions]: Definition dataset size: {len(ds_eng_word)}")
 
     df_eng = eng_data.merge(ds_eng_word, on='meaning', how='left')
     df_eng = df_eng.drop_duplicates(subset=['txt', 'definition_text'])
+    print(f"DEBUG [merge 1]: Combined English reference pool size: {len(df_eng)}")
 
     panlex_df = panlex_data.merge(
         df_eng, on='meaning', how='left', suffixes=(f'_{iso_code}', '_eng')
-    ).drop_duplicates(subset=[f'txt_{iso_code}', 'txt_eng'])
+    )
+    print(f"DEBUG [merge 2]: Rows after matching on 'meaning' (before dropna): {len(panlex_df)}")
+    print(f"DEBUG [merge 2]: Valid 'txt_eng' matches found: {panlex_df['txt_eng'].notna().sum()}")
 
     noise = ['dollar', 'pound', 'shilling', 'republic', 'ocean', 'sea', 'continent', 'st.', 'saudi', 'papua', 'zimbabwe', 'sudanese']
     noise_regex = '|'.join(noise)
