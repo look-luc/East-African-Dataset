@@ -13,7 +13,7 @@ bantu_langs = ["ganda", "gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamb
 def making_df(jsonl_list):
     lang_pattern = r"\*\*Input\*\*:\nA proverb in (.*?)\n\n\*\*Output\*\*:"
     pattern = r"Now, please translate the following proverb:\n\n\*\*Input\*\*:\n(.*?)\n\n\*\*Output\*\*:"
-    output_pattern = r"\"(.*?)\""
+    output_pattern = r"(.*?)"
 
     df = []
     for file_path in jsonl_list:
