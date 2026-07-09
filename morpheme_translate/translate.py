@@ -15,7 +15,7 @@ load_dotenv()
 TOKEN = os.getenv("HF_TOKEN")
 
 bantu_iso_map = {
-    'ganda': 'lug', 'gikuyu': 'kik', 'tshiluba': 'lua',
+    'ganda': 'lug', 'gikuyu': 'kik', 'tshiluba': 'lub',
     'chiga': 'cgg', 'tooro': 'ttj', 'runyoro': 'nyo', 'kamba': 'kam'
 }
 
