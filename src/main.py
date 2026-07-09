@@ -5,6 +5,7 @@ import rough_morpheme.morpheme_draft as md
 from data.get_data import Get_Data
 from morpheme_translate.model_segment import model_extract
 from morpheme_translate.translate import translation
+from semantic_score.Semantic_Score import compute_structural_metrics
 
 script_dir = Path(__file__).resolve().parent.parent
 
@@ -44,3 +45,6 @@ def main(path, task:str, lang:str):
         translation(lang, lang)
     elif task == "model_segment":
         model_extract("data/data.csv", lang)
+    elif task == "metrics":
+        gloss_rel_path, translation_column = ""
+        compute_structural_metrics(lang, gloss_rel_path, translation_column)
