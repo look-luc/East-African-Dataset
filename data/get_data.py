@@ -52,7 +52,7 @@ def making_df(jsonl_list):
     final_df["african_proverb"] = final_df["prompt"].str.extract(pattern, flags=re.DOTALL, expand=False)
     final_df["african_proverb"] = final_df["african_proverb"].str.strip()
 
-    final_df["model output"]
+    final_df["model output"] = final_df["output_pattern"].str.extract(pattern, flags=re.DOTALL, expand=False)
 
     return final_df[["experiment_config", "language", "language_family", "african_proverb", "label", "Output Type", "model output"]]
 
