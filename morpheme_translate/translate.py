@@ -155,7 +155,18 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
     exact_translation_map = dict(zip(panlex_words, panlex_translations))
 
-    # Optional: Load local proverbs context mapping if a local source path is provided
+    # --- START OF DIAGNOSTIC PRINTS ---
+    print("=" * 60)
+    print(f"DIAGNOSTIC LOG FOR: {lang.upper()}")
+    print(f"1. Total raw panlex rows fetched: {len(lang_data_df)}")
+    print(f"2. Size of built exact_translation_map: {len(exact_translation_map)}")
+    if exact_translation_map:
+        print(f"3. Sample dictionary keys (first 15): {list(exact_translation_map.keys())[:15]}")
+    else:
+        print("3. Sample dictionary keys: [NONE - DICTIONARY IS EMPTY]")
+    print("=" * 60)
+    # --- END OF DIAGNOSTIC PRINTS ---
+
     local_proverb_sentences = []
     if local_proverbs_title:
         proverbs_path = script_dir / local_proverbs_title
@@ -259,12 +270,13 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                     output_data['Match Type'].append('Local Proverb Context Match')
                     matched = True
                     break
+
         if not matched:
-                    output_data['Surface Word'].append(surface_word)
-                    output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
-                    output_data['English translation'].append('[Translation Missing]')
-                    output_data['Glossing'].append(affix)
-                    output_data['Match Type'].append('No Lexicon Match')
+            output_data['Surface Word'].append(surface_word)
+            output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
+            output_data['English translation'].append('[Translation Missing]')
+            output_data['Glossing'].append(affix)
+            output_data['Match Type'].append('No Lexicon Match')
 
     df_out = pd.DataFrame(output_data).drop_duplicates(subset=['Surface Word']).reset_index(drop=True)
     df_out.to_csv(lang_folder / f"{lang.lower()}_translated.csv", index=False)
