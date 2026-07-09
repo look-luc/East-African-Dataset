@@ -15,7 +15,7 @@ load_dotenv()
 TOKEN = os.getenv("HF_TOKEN")
 
 bantu_iso_map = {
-    'ganda': 'lug', 'gikuyu': 'kik', 'tshiluba': 'lub',
+    'ganda': 'lug', 'gikuyu': 'kik', 'tshiluba': 'lua',
     'chiga': 'cgg', 'tooro': 'ttj', 'runyoro': 'nyo', 'kamba': 'kam'
 }
 
@@ -259,6 +259,12 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                     output_data['Match Type'].append('Local Proverb Context Match')
                     matched = True
                     break
+        if not matched:
+                    output_data['Surface Word'].append(surface_word)
+                    output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
+                    output_data['English translation'].append('[Translation Missing]')
+                    output_data['Glossing'].append(affix)
+                    output_data['Match Type'].append('No Lexicon Match')
 
     df_out = pd.DataFrame(output_data).drop_duplicates(subset=['Surface Word']).reset_index(drop=True)
     df_out.to_csv(lang_folder / f"{lang.lower()}_translated.csv", index=False)
