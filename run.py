@@ -9,10 +9,11 @@ if __name__ == "__main__":
     languages = ["ganda", "gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamba"]
 
     # Run each language through the entire pipeline pipeline sequence
-    for lang in languages:
-        print(f"\n--- Processing Language: {lang.upper()} ---")
-        for task in tasks:
-            print(f"Executing step: {task} for {lang}...")
-            main(script_parent, task, lang)
+    # for lang in languages:
+    #     print(f"\n--- Processing Language: {lang.upper()} ---")
+    #     for task in tasks:
+    #         print(f"Executing step: {task} for {lang}...")
+    #         main(script_parent, task, lang)
+    main(script_parent, "get_data", "ganda")
 
     print("Multilingual pipeline processing complete.")

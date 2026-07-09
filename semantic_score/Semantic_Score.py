@@ -7,7 +7,7 @@ import torch.nn.functional as F
 from nltk.translate.chrf_score import sentence_chrf
 from transformers import AutoModel, AutoTokenizer
 
-script_path = Path(__file__).resolve()
+script_path = Path(__file__).resolve().parent.parent
 
 def mean_pooling(model_output, attention_mask):
     token_embeddings = model_output[0] #First element of model_output contains all token embeddings
@@ -40,7 +40,10 @@ def levenshtein_score(manual_literals: str, model_literals: str):
 
     return abs_lev, normalized_similarity
 
-def compute_structural_metrics(manual_literals: list[str], model_literals: list[str], lang:str):
+def compute_structural_metrics(lang:str, gloss_rel_path:str, translation_column:str=""):
+    manual_gloss_df = pd.read_csv(f"{script_path}/{gloss_rel_path}")
+    manual_gloss_df = manual_gloss_df[["african_proverb", translation_column]]
+    data_df = pd.read_csv(f"{script_path}/data/data.csv")
     results = {
         lang.lower().capitalize(): {
             "Sentence Bert Embeddings": [],
@@ -49,6 +52,10 @@ def compute_structural_metrics(manual_literals: list[str], model_literals: list[
             "Levenshtein Normalized_Sim": []
         }
     }
+    for manual_literals in manual_gloss_df:
+        model_literals = data_df[data_df["african_proverbs"] == manual_literals[["african_proverb"]]]
+        manual_literals = manual_literals[[translation_column]]
+
     for idx, (manual, model) in enumerate(zip(manual_literals, model_literals)):
         results[lang]["Sentence Bert Embeddings"].append(semantic_score(manual, model))
         results[lang]["ChrF"].append(compute_chrf(manual, model))
