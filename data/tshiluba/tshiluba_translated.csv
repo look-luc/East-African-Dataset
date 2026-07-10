@@ -12,7 +12,7 @@ ki,ki,[Translation Missing],ki PRO;INT;INT,No Lexicon Match
 tshieba,tshieba,[Translation Missing],tshieba V;PRS,No Lexicon Match
 Mukana,kana,[Translation Missing],uMukana N;SG;BANTU1,No Lexicon Match
 mua,mua,[Translation Missing],mua V;PRS,No Lexicon Match
-muntu,muntu,human,uMuntu N;SG;BANTU1,PanLex Exact Match
+muntu,muntu,"human, human being, man",uMuntu N;SG;BANTU1,PanLex Exact Match
 mukole,kola,[Translation Missing],kola V;PST;REC;2;PL,No Lexicon Match
 mutu,mutu,[Translation Missing],mutu N;SG;BANTU1,No Lexicon Match
 mununka,nunka,[Translation Missing],mununka N;SG;BANTU1,No Lexicon Match
@@ -32,7 +32,7 @@ Dipuekesha,puekesha,[Translation Missing],Dipuekesha V;PRS;HAB;3;SG,No Lexicon M
 baku,waku,[Translation Missing],waku DET;POSS;PSS1P;BANTU2,No Lexicon Match
 bandisha,bandisha,[Translation Missing],bandisha V;PRS,No Lexicon Match
 Tshitu,tshitu,[Translation Missing],uTshitu,No Lexicon Match
-Muntu,muntu,human,uMuntu N;SG;BANTU1,PanLex Exact Match
+Muntu,muntu,"human, human being, man",uMuntu N;SG;BANTU1,PanLex Exact Match
 ukuna,ukuna,[Translation Missing],ukuna N;SG;BANTU1,No Lexicon Match
 kitshituyi,tshituyi,[Translation Missing],tshituyi V;PRS;HAB;3;SG,No Lexicon Match
 upola,pola,[Translation Missing],pola V;PRS,No Lexicon Match
@@ -219,8 +219,8 @@ bupita,pita,[Translation Missing],pita V;PRS,No Lexicon Match
 mushinga,shinga,[Translation Missing],mushinga N;SG;BANTU1,No Lexicon Match
 Kebeji,kebeji,[Translation Missing],Kebeji N;SG;BANTU1,No Lexicon Match
 kajimina,jimina,[Translation Missing],jimina V;PST;REC;3;SG,No Lexicon Match
-Tshiamuntu,muntu,human,tshiamuntu N;SG;BANTU10,Substring Overlap
-tshiamuntu,muntu,human,tshiamuntu N;SG;BANTU10,Substring Overlap
+Tshiamuntu,muntu,"human, human being, man",tshiamuntu N;SG;BANTU10,Substring Overlap
+tshiamuntu,muntu,"human, human being, man",tshiamuntu N;SG;BANTU10,Substring Overlap
 tshanzambi,anza,hand,tshanzambi V;PRS,Substring Overlap
 muavuala,vuala,[Translation Missing],vuala V;PST;REC;3;SG,No Lexicon Match
 vuala,vuala,[Translation Missing],vuala V;PST;REC;3;SG,No Lexicon Match
