@@ -45,7 +45,7 @@ def clean_segments(segmented_word: str):
 
     # Nasal+Consonant complexes like nt, nd, mp, mb act as single phonological units.
     segmented_word = re.sub(r'-([nt|nd|mp|mb|ng|nj])', r'\1', segmented_word)
-
+    return segmented_word
 
 def segment(df: DataFrame, min_word_len=4, product_threshold=15, ratio=0.35):
     """
