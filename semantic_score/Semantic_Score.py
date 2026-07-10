@@ -52,11 +52,20 @@ def compute_structural_metrics(lang:str, gloss_rel_path:str, translation_column:
             "Levenshtein Normalized_Sim": []
         }
     }
-    for manual_literals in manual_gloss_df:
-        model_literals = data_df[data_df["african_proverbs"] == manual_literals[["african_proverb"]]]
-        manual_literals = manual_literals[[translation_column]]
+    for idx, row in manual_gloss_df.iterrows():
+        proverb = row["african_proverb"]
+        matched_rows = data_df[data_df["african_proverbs"] == proverb]
+        if not matched_rows.empty:
+            config_name = matched_rows["experiment_config"].iloc[0]
+            results[f"{config_name} ({lang.lower().capitalize()})"] = {
+                "Sentence Bert Embeddings": [],
+                "ChrF": [],
+                "Levenshtein Distance": [],
+                "Levenshtein Normalized_Sim": []
+            }
+        manual_literals = matched_rows[[translation_column]]
 
-        for idx, (manual, model) in enumerate(zip(manual_literals, model_literals)):
+        for idx, (manual, model) in enumerate(zip(manual_literals, matched_rows)):
             levenshtein, normalized = levenshtein_score(manual, model)
 
             results[lang]["Sentence Bert Embeddings"].append(semantic_score(manual, model))
