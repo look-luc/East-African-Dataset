@@ -44,14 +44,7 @@ def compute_structural_metrics(lang:str, gloss_rel_path:str, translation_column:
     manual_gloss_df = pd.read_csv(f"{script_path}/{gloss_rel_path}")
     manual_gloss_df = manual_gloss_df[["african_proverb", translation_column]]
     data_df = pd.read_csv(f"{script_path}/data/data.csv")
-    results = {
-        lang.lower().capitalize(): {
-            "Sentence Bert Embeddings": [],
-            "ChrF": [],
-            "Levenshtein Distance": [],
-            "Levenshtein Normalized_Sim": []
-        }
-    }
+    results = {}
     for idx, row in manual_gloss_df.iterrows():
         proverb = row["african_proverb"]
         matched_rows = data_df[data_df["african_proverbs"] == proverb]
