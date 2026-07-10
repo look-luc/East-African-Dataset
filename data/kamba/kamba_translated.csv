@@ -1,72 +1,1002 @@
 Surface Word,Kamba Lemma,English translation,Glossing,Match Type
-mbua,mbua,rain,uMbua N;SG;BANTU1,PanLex Exact Match
-Kana,kanada,Canada,kana V;PRS,Substring Overlap
-mbuanĩ,mbua,rain,mbuanĩ N;SG;BANTU1,Substring Overlap
-matu,ikwata matu,brood,matu N;PL;BANTU6,Substring Overlap
-Yumaatatũ,lovo ya katatũ,3rd quarter,umaatatũ N;PL;BANTU1,Substring Overlap
-Kyetho,kulalya metho,close,Kyetho,Substring Overlap
-Mbua,mbua,rain,uMbua N;SG;BANTU1,PanLex Exact Match
-metho,kulalya metho,close,metho,Substring Overlap
-ndyasyaa,syaa,give birth,syaa V;PST;REC;2;SG,PanLex Exact Match
-ĩmantha,mantha,hand around,ĩmantha N;PL;BANTU6,Substring Overlap
-kua,kua,carry,kua V;PRS,PanLex Exact Match
-mbee,mbee wa yesũ,Before Common Era,mbee N;SG;BANTU1,Substring Overlap
-ũsyaa,syaa,give birth,ũsyaa N;SG;BANTU14,Substring Overlap
-kyanda,rwanda,Rwanda,anda V;PRS;HAB;3;SG,Substring Overlap
-Mwaka,kwaka,do masonry,uMwaka,Substring Overlap
-Vatakomwa,kukoma na wau,lay,komwa V;FUT;3;PL,Substring Overlap
-nduka,ndukani,shop,nduka N;SG;BANTU10,Substring Overlap
-nthongo,nthongo,one-eyed,nthongo N;SG;BANTU10,PanLex Exact Match
-ndia,india,India,ndia DET;POSS;PSS1P;BANTU9,Substring Overlap
-tũnini,mbenini,Benin,tũnini N;SG;BANTU10,Substring Overlap
-kyumaa,kyuma,iron,kyumaa V;PRS,Substring Overlap
-ũmũkwata,kwata,grasp,ũmũkwata N;SG;BANTU1,Substring Overlap
-Wĩĩthya,ithya,care for,thya V;PRS;PROG;3;SG,Substring Overlap
-wendo,wendo,love,wendo DET;POSS;PSS3P;BANTU1,PanLex Exact Match
-ndũsyaa,syaa,give birth,syaa V;PRS,PanLex Exact Match
-mbongenĩ,onga,suck,mbonga V;PRS,Substring Overlap
-ũsyae,syaa,give birth,ũsyae DET;POSS;PSS1P;BANTU1,Substring Overlap
-ũmanthwa,thwa,ant,ũmanthwa N;PL;BANTU1,Substring Overlap
-Ngai,ngai,God,Ngai NUM;CARD;10,PanLex Exact Match
-kana,kanada,Canada,kana V;PRS,Substring Overlap
-muunyĩ,kunyaiika,become generally known,muunya V;PRS;HAB;2;PL,Substring Overlap
-mũnini,mbenini,Benin,mũnini N;SG;BANTU1,Substring Overlap
-syaaki,syaa,give birth,syaaki,Substring Overlap
-wauta,uta,draw,uta V;PST;REC;2;SG,PanLex Exact Match
-isyaa,syaa,give birth,isyaa N;SG;BANTU9,PanLex Exact Match
-mũamba,muthamba,banana,mũamba N;SG;BANTU1,Substring Overlap
-Mwaamba,muthamba,banana,amba V;PST;REC;2;PL,Substring Overlap
-kĩvetanĩ,veta,remove a spell,kĩvetanĩ N;SG;BANTU15,PanLex Exact Match
-nĩmaua,ua,cook,nĩmaua N;PL;BANTU9,PanLex Exact Match
-kĩsyaa,syaa,give birth,kĩsyaa N;SG;BANTU15,PanLex Exact Match
-kyũsyaa,syaa,give birth,syaa V;NFIN,PanLex Exact Match
-maanga,kukaanga,be flavoured,maanga N;PL;BANTU6,Substring Overlap
-ĩnyungaa,nyunga,smell,ĩnyungaa N;SG;BANTU9,Substring Overlap
-nĩyũmĩsyaa,syaa,give birth,nĩyũmĩsyaa N;SG;BANTU9,Substring Overlap
-ĩsyaa,syaa,give birth,ĩsyaa N;SG;BANTU9,Substring Overlap
-kĩthangaitĩ,ngai,God,thangaitĩ V;NFIN,Substring Overlap
-Mũkua,kua,carry,uMũkua N;SG;BANTU1,PanLex Exact Match
-kelĩ,lovo ya kelĩ,2nd quarter,kelĩ PRO;INT;LOC,Substring Overlap
-Thii,athiia na nyundo,hammer,uThii N;SG;BANTU1,Substring Overlap
-yũate,gwatemala,Guatemala,yũate DET;POSS;PSS1P;BANTU9,Substring Overlap
-kĩthiia,athiia na nyundo,hammer,thiia V;PRS;NEG;1;SG,Substring Overlap
-ndũkaainge,inga usi,cross,ndũkaainge N;SG;BANTU10,Substring Overlap
-Watina,tina,tree-trunk,tina V;PST;REC;3;SG,PanLex Exact Match
-kasyaa,syaa,give birth,syaa V;PST;REC;2;SG,PanLex Exact Match
-nthwai,thwa,ant,nthwai N;SG;BANTU9,Substring Overlap
-aka,aka,do masonry,aka V;PRS,PanLex Exact Match
-welele,lela,hang,welela,Substring Overlap
-ithu,kithui,chest,ithu N;SG;BANTU9,Substring Overlap
-ĩtina,tina,tree-trunk,ĩtina N;SG;BANTU9,Substring Overlap
+Ĩlata,ĩlata,[Translation Missing],ĩlata N;SG;BANTU6,No Lexicon Match
+ya,ya,eat,ya DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+mbua,mbua,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles",uMbua N;SG;BANTU1,PanLex Exact Match
+ti,ti,tree,ti PRO;INT;INT,PanLex Exact Match
+ĩlata,ĩlata,[Translation Missing],ĩlata N;SG;BANTU6,No Lexicon Match
+sua,sua,"become full, abound, grandmother",Sua V;PRS,PanLex Exact Match
+Kana,kana,child,kana V;PRS,PanLex Exact Match
+kaketũũa,ketũũa,[Translation Missing],ketũũa V;PST;REC;3;SG,No Lexicon Match
+thano,thano,[Translation Missing],thano N;SG;BANTU10,No Lexicon Match
+kambĩĩaa,mbĩĩaa,[Translation Missing],mbĩĩaa V;PST;REC;3;SG,No Lexicon Match
+ũkolotya,kolotya,[Translation Missing],ũkolotya N;SG;BANTU14,No Lexicon Match
+mbuanĩ,mbuanĩ,rainy season,mbuanĩ N;SG;BANTU1,PanLex Exact Match
+Katu,katu,[Translation Missing],katu PRO;INT;BANTU15,No Lexicon Match
+nĩ,nĩ,tomorrow,nĩ DET;PROX;BANTU9,PanLex Exact Match
+ka,ka,"come, wife",ka V;PRS,PanLex Exact Match
+Kwakya,kya,[Translation Missing],Kwakya N;SG;BANTU15,No Lexicon Match
+kũte,kũta,"wall, polish, wipe",kũta V;PRS;NEG;3;SG,PanLex Exact Match
+katu,katu,[Translation Missing],katu PRO;INT;BANTU15,No Lexicon Match
+Mũthenya,thenya,"day, day-time",thenya V;PRS;HAB;2;SG,PanLex Exact Match
+wĩ,wĩ,[Translation Missing],wĩ DET;PROX;BANTU1,No Lexicon Match
+ndwĩ,ikuli ya ndwiki,"colobus monkey, colobus monkey (with long black silk hair, white on the shoulders)",ndwĩ DET;POSS;PSS1P;BANTU9,Substring Overlap
+matu,ikwata matu,"brood, brood (rest the cheek on the hand in brooding mood)",matu N;PL;BANTU6,Substring Overlap
+Matukũ,tukũ,night,tukũ V;PST;REC;3;SG,PanLex Exact Match
+oonthe,oonthe,all,ontha V;PST;REC;2;SG,PanLex Exact Match
+wa,wa,sugar cane,wa DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+sikũkũ,kukua,"pull up, root up, carry, take, carry (astride on the hip)",sikũkũ N;SG;BANTU7,Substring Overlap
+ma,ma,"go away, go out",ma DET;POSS;PSS1P;BANTU6,PanLex Exact Match
+kĩngei,kĩngei,[Translation Missing],kĩngei N;SG;BANTU15,No Lexicon Match
+mwonza,onza,seven,onza V;PRS,PanLex Exact Match
+Ndyĩsũvaa,sũvaa,[Translation Missing],Ndyĩsũvaa N;SG;BANTU10,No Lexicon Match
+ũtukũ,ũtukũ,night,ũtukũ N;SG;BANTU14,PanLex Exact Match
+kweteele,eteela,[Translation Missing],eteela V;PST;REC;3;SG,No Lexicon Match
+ũkya,kusyukya,revive,ũkya DET;PROX;BANTU15,Substring Overlap
+nĩyonee,onea,[Translation Missing],onea V;PST;PFV;1;SG,No Lexicon Match
+nthĩ,nthĩ,"earth, land, country, district, province",nthĩ DET;PROX;BANTU9,PanLex Exact Match
+Ũkaema,ema,mountain,ema V;PST;REC;3;SG,PanLex Exact Match
+ona,ona,see,ona V;PRS;HAB;3;SG,PanLex Exact Match
+mbũi,mbũi,"goat, white hair",mbũi N;SG;BANTU1,PanLex Exact Match
+nziũ,nziũ,"black, dark",nziũ DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+mũthenya,thenya,"day, day-time",mũthenya N;SG;BANTU1,PanLex Exact Match
+ndũmyona,ona,see,ndũmyona N;SG;BANTU9,PanLex Exact Match
+Ũthũku,ũthũku,"brass, copper",ũthũku N;SG;BANTU14,PanLex Exact Match
+ũkaa,kukaanga,"fry, be flavoured, be (properly) flavoured",ũkaa V;PRS,Substring Overlap
+na,na,"sing, child",na COP;IDENT,PanLex Exact Match
+ndũkemene,mene,[Translation Missing],ndũkemene N;SG;BANTU10,No Lexicon Match
+Ũseo,ũseo,[Translation Missing],ũseo N;SG;BANTU14,No Lexicon Match
+kĩla,kilalinda,"blind person, blind, spoil",kĩla V;PRS;HAB;3;SG,Substring Overlap
+ũthũku,ũthũku,"brass, copper",ũthũku N;SG;BANTU14,PanLex Exact Match
+o,o,[Translation Missing],o DET;PROX;BANTU1,No Lexicon Match
+ũmwe,ũmwe,[Translation Missing],ũmwe DET;PROX;BANTU1,No Lexicon Match
+Yumaatatũ,tatũ,three,umaatatũ N;PL;BANTU1,PanLex Exact Match
+ndĩtũaa,tũaa,[Translation Missing],tũaa V;PRS;PROG;1;SG,No Lexicon Match
+yumaa,umaa,"grandfather, urinate",yumaa V;PRS,Substring Overlap
+no,no,[Translation Missing],no DET;PROX;BANTU1,No Lexicon Match
+yĩĩsaa,kisio kya isaa,time zone,yĩĩsaa N;SG;BANTU9,Substring Overlap
+ĩvika,vika,"arrive, go back, return",ĩvika N;SG;BANTU6,Substring Overlap
+Kyetho,eketho,hiccup,Kyetho,Substring Overlap
+kya,kya,[Translation Missing],kya DET;POSS;PSS1P;BANTU15,No Lexicon Match
+yũlũ,ũlũ,"above, up",yũlũ DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+kĩtũaa,tũaa,[Translation Missing],kĩtũaa N;SG;BANTU15,No Lexicon Match
+Mbua,bua,rain,uMbua N;SG;BANTU1,PanLex Exact Match
+ndĩkĩlawa,galawa,dug-out canoe,ndĩkĩlawa N;SG;BANTU9,Substring Overlap
+metho,kukunua metho,"glare, stare",metho,Substring Overlap
+ndĩ,ndĩ,[Translation Missing],ndĩ PRO;INT;INTENS,No Lexicon Match
+kĩthuma,thuma,[Translation Missing],kĩthuma N;SG;BANTU15,No Lexicon Match
+ndyasyaa,syaa,"bear child, give birth, give birth (to a child)",syaa V;PST;REC;2;SG,PanLex Exact Match
+ĩmantha,mantha,"hand around, look for, hand around (to get something), search for, spy out",ĩmantha N;PL;BANTU6,Substring Overlap
+ĩmwe,ĩmwe,"dew, one, one",ĩmwe DET;PROX;BANTU6,PanLex Exact Match
+ũnyenyeũ,nyenyeũ,drizzle,nyenyeũ V;PRS;HAB;2;SG,PanLex Exact Match
+ndĩvandĩawa,ndia,pool,vandĩawa V;FUT,Substring Overlap
+nundu,undu,affair,nundu N;SG;BANTU10,Substring Overlap
+ndĩkyesaa,esaa,[Translation Missing],esaa V;PRS,No Lexicon Match
+ĩkĩlea,ĩkĩlea,[Translation Missing],ĩkĩlea N;SG;BANTU10,No Lexicon Match
+kua,kua,"pull up, root up, get lost, rain, carry, rain, take, carry (astride on the hip)",kua V;PRS,PanLex Exact Match
+ĩetae,etaa,[Translation Missing],etaa V;PST;REC;3;SG,No Lexicon Match
+mũumbĩ,itumbi,egg,mũumbĩ N;SG;BANTU1,Substring Overlap
+yũlea,lea,"refuse, say no, reject, deny",yũlea DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+ĩkwatasya,tasya,[Translation Missing],ĩkwatasya N;SG;BANTU15,No Lexicon Match
+ũkũngi8,kũngi8,[Translation Missing],ũkũngi N;SG;BANTU14,No Lexicon Match
+Mũndũ,mũndũ,"person, person, individual, capita",mũndũ N;SG;BANTU1,PanLex Exact Match
+awetae,weta,pronounce,wetaa V;PST;REC;3;SG,Substring Overlap
+yaamuĩa,muĩa,[Translation Missing],muĩa V;PST;REC;3;SG,No Lexicon Match
+Ndũkasuke,suka,"plait, slander",suka V;PST;REC;1;PL,PanLex Exact Match
+thaano,thaano,[Translation Missing],thaano N;SG;BANTU10,No Lexicon Match
+Ũtaathi,ũtaathi,[Translation Missing],ũtaathi N;SG;BANTU14,No Lexicon Match
+Ũmanyaa,anya,"leave, permission",ũmanyaa N;PL;BANTU10,Substring Overlap
+kwĩ,kwĩ,[Translation Missing],kwĩ V;PRS;HAB;3;SG,No Lexicon Match
+nĩkwona,ona,see,ona V;PRS;PROG;1;SG,PanLex Exact Match
+ũtisi,ũtisi,lightning,ũtisi N;SG;BANTU14,PanLex Exact Match
+mbee,mbee,in front of,mbee N;SG;BANTU1,PanLex Exact Match
+Kolyanza,lyanza,[Translation Missing],Kolyanza V;PRS;HAB;3;SG,No Lexicon Match
+Vai,vai,wall,Vai PRO;INT;INTENS,PanLex Exact Match
+ĩte,ĩte,[Translation Missing],ĩte DET;PROX;BANTU6,No Lexicon Match
+ũmuu,ũmuu,mosquito,ũmuu DET;PROX;BANTU1,PanLex Exact Match
+ĩtakya,ĩtakya,[Translation Missing],ĩtakya N;SG;BANTU1,No Lexicon Match
+Ndũkaume,uma,"bite, iron, steel, be fully grown, iron ore, dry up, ebb, abuse",ume N;SG;BANTU10,PanLex Exact Match
+ngwa,anangwa,"be spoilt, be stunted",ngwa DET;POSS;PSS1P;BANTU9,Substring Overlap
+ũtavika,vika,"arrive, go back, return",vika V;FUT,PanLex Exact Match
+ĩtunĩ,ĩtunĩ,[Translation Missing],ĩtunĩ N;SG;BANTU9,No Lexicon Match
+Ndũkaũmange,ũmange,[Translation Missing],ũmange V;PST;PFV;1;PL,No Lexicon Match
+ĩtanathũa,thũa,"grate, scratch, set, set (of the sun), be lame",thũa V;FUT,PanLex Exact Match
+Nzũũ,nzũũ,[Translation Missing],nzũũ N;SG;BANTU9,No Lexicon Match
+syaema,ema,mountain,ema V;PST;REC;3;SG,PanLex Exact Match
+ũsyaa,kusyaa,"bear child, give birth, give birth (to a child)",ũsyaa N;SG;BANTU14,Substring Overlap
+syaisye,isa,[Translation Missing],syaisa V;PST;REC;1;PL,No Lexicon Match
+yĩĩ,yĩĩ,bedstead,yĩĩ DET;PROX;BANTU9,PanLex Exact Match
+ĩvyũ,ĩvyũ,[Translation Missing],ĩvyũ DET;PROX;BANTU9,No Lexicon Match
+mũno,athamya muno,"open the mouth, open the mouth (wide)",mũno N;SG;BANTU1,Substring Overlap
+Sua,sua,"become full, abound, grandmother",Sua V;PRS,PanLex Exact Match
+yoomya,omya,[Translation Missing],yoomya DET;PROX;BANTU9,No Lexicon Match
+ũkatho,ũkatho,[Translation Missing],ũkatho N;SG;BANTU1,No Lexicon Match
+ngoowa,ngoo,heart,ngoowa N;SG;BANTU10,Substring Overlap
+Syathama,thama,"island, migrate, move away",thama V;PST;REC;3;SG,PanLex Exact Match
+itũngawa,tũngawa,[Translation Missing],tũngawa V;PRS;HAB;3;SG,No Lexicon Match
+Syatwaawa,twaa,"send away, start off, carry, take",twaawa V;PST;REC;3;SG,Substring Overlap
+ũseve,seve,wind,ũseve N;SG;BANTU14,Substring Overlap
+ndutani,nduta,[Translation Missing],ndutani N;SG;BANTU10,No Lexicon Match
+ĩyetelaa,etelaa,[Translation Missing],etelaa V;PRS;HAB;3;SG,No Lexicon Match
+Mũsili,umũsili,[Translation Missing],uMũsili N;SG;BANTU1,No Lexicon Match
+Wamanthĩa,nthi,"earth, land, country, district, province",manthĩa V;PST;REC;3;PL,Substring Overlap
+suanĩ,suanĩ,[Translation Missing],suanĩ V;PRS,No Lexicon Match
+ĩĩa,ĩĩa,"lake, milk, lake",ĩĩa V;PST;REC;3;SG,PanLex Exact Match
+munyĩnĩ,munyambu,lion,munya V;PRS,Substring Overlap
+Mũumbĩ,itumbi,egg,umbĩ N;SG;BANTU1,Substring Overlap
+ndwathawa,thawa,[Translation Missing],thawa V;PST;REC;1;SG,No Lexicon Match
+kĩĩma,kĩĩma,"hill, mountain",kĩĩma V;PRS;NEG;3;SG,PanLex Exact Match
+No,no,[Translation Missing],no DET;PROX;BANTU1,No Lexicon Match
+syĩĩma,iima,"hole, pit, nest",syĩĩma N;SG;BANTU7,Substring Overlap
+itakomanaa,koma,"sleep, lie down",itakomanaa N;PL;BANTU9,Substring Overlap
+kĩsinda,sinda,"overcome, vanquish, win",kĩsinda N;SG;BANTU15,PanLex Exact Match
+ĩnyũũ,ĩnyũũ,nose,ĩnyũũ N;SG;BANTU10,PanLex Exact Match
+nzeve,nzeve,[Translation Missing],nzeve N;SG;BANTU10,No Lexicon Match
+Vayĩ,wayĩ,[Translation Missing],Vayĩ DET;POSS;PSS1P;BANTU4,No Lexicon Match
+kĩkĩlĩtye,lita,"faint, lose consciousness",kĩkĩlĩta V;PST;REC;3;SG,Substring Overlap
+kĩngĩ,kĩngĩ,[Translation Missing],kĩngĩ PRO;INT;NEG,No Lexicon Match
+makanza,kanza,[Translation Missing],makanza N;PL;BANTU6,No Lexicon Match
+kalĩma,lĩma,[Translation Missing],lĩma V;PST;REC;3;SG,No Lexicon Match
+katalĩsĩka,sika,"rains, (the lesser) rains",talĩsĩka V;PST;REC;3;SG,Substring Overlap
+Ve,ve,[Translation Missing],ve PRO;INT;PROX;BANTU1,No Lexicon Match
+syĩ,syĩ,"town, arrowhead, head, spear head, head (of arrow), home",syĩ DET;PROX;BANTU7,PanLex Exact Match
+mbevo,mbevo,cold,mbevo,PanLex Exact Match
+Kĩlaa,ilaa,flower,kĩlaa V;PRS;HAB;3;SG,Substring Overlap
+kũmwe,kũmwe,[Translation Missing],kũmwe N;SG;BANTU15,No Lexicon Match
+ngongo,ngongoo,millipede,ngongo,Substring Overlap
+Kĩkalo,kĩkalo,[Translation Missing],Kĩkalo N;SG;BANTU10,No Lexicon Match
+kĩnene,nene,"chief person, head, great, large, chief, headman, fat, thick, master",nene ADJ;BANTU15,PanLex Exact Match
+kyeteelasya,etelasya,[Translation Missing],etelasya V;PRS;HAB;3;SG,No Lexicon Match
+mwene,mwene,self,mwene DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+mbuta,mbuta,[Translation Missing],mbuta N;SG;BANTU1,No Lexicon Match
+Kya,kya,[Translation Missing],kya DET;POSS;PSS1P;BANTU15,No Lexicon Match
+kiĩ,kiĩ,[Translation Missing],kiĩ DET;PROX;BANTU15,No Lexicon Match
+Ũsĩ,ũsĩ,"river, current, stream",ũsĩ DET;PROX;BANTU1,PanLex Exact Match
+ũatĩaa,tĩaa,[Translation Missing],tĩaa V;PST;REC;3;SG,No Lexicon Match
+kyanda,faranga ya rwanda,Rwandan Franc,anda V;PRS;HAB;3;SG,Substring Overlap
+ũtũlĩlaa,ilaa,flower,ũtũlĩlaa V;FUT,Substring Overlap
+vala,vala,"ascend, climb",Vala V;PRS,PanLex Exact Match
+vavũthũ,kuvuthua,"penetrate, bore a hole",vũthũ V;PST;REC;3;PL,Substring Overlap
+Mũtũa,tũa,"dwell, hammer, hit, hit (with a hammer), press out, press out (oil seed, sugar cane), forge",tũa V;PRS;HAB;3;SG,PanLex Exact Match
+kĩthamanĩ,thama,"island, migrate, move away",kĩthamanĩ N;SG;BANTU15,Substring Overlap
+ũsĩ,ũsĩ,"river, current, stream",ũsĩ DET;PROX;BANTU1,PanLex Exact Match
+esaa,esaa,[Translation Missing],esaa V;PRS,No Lexicon Match
+ũtwaawa,twaa,"send away, start off, carry, take",ũtwaawa N;SG;BANTU14,Substring Overlap
+Mũingi,nyingi,many,ingi N;SG;BANTU1,Substring Overlap
+ndathanaa,thanaa,[Translation Missing],thanaa V;PST,No Lexicon Match
+Kasĩla,sĩla,[Translation Missing],sĩla V;PST;REC;3;SG,No Lexicon Match
+kakaa,kaa,"charcoal, embers",kakaa V;PST;REC;3;SG,PanLex Exact Match
+konekaa,konekaa,[Translation Missing],konekaa V;PRS,No Lexicon Match
+yaĩte,ĩta,"call, pour away, leak, ooze out, pour, call, abundant",ĩta V;PST;REC;3;SG,PanLex Exact Match
+Myũnthĩ,nthi,"earth, land, country, district, province",uMyũnthĩ N;SG;BANTU1,Substring Overlap
+ĩthwĩwe,thwĩwe,[Translation Missing],ĩthwĩwe N;SG;BANTU10,No Lexicon Match
+kũkya,kya,[Translation Missing],kya V;NFIN,No Lexicon Match
+Wĩsĩ,faranga ya uswisi,Swiss Franc,wĩsĩ DET;POSS;PSS1P;BANTU1,Substring Overlap
+kenda,kenda,nine,kenda V;PRS,PanLex Exact Match
+ndwaa,ndwaa,[Translation Missing],ndwaa N;SG;BANTU9,No Lexicon Match
+kũmĩa,mĩa,defecate,mĩa V;NFIN,PanLex Exact Match
+Waĩĩ,ĩĩ,"body, root, root",ĩĩ DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+nũkũmĩe,kũmĩa,defecate,nũkũmĩe N;SG;BANTU9,PanLex Exact Match
+Ndunia,ndunia,[Translation Missing],Ndunia N;SG;BANTU10,No Lexicon Match
+nĩkeũkaa,kukaanga,"fry, be flavoured, be (properly) flavoured",ũkaa V;PRS;PROG;1;SG,Substring Overlap
+Mwaka,mwaka,year,uMwaka,PanLex Exact Match
+mũngongoo,gongoo,millipede,mũngongoo N;SG;BANTU1,Substring Overlap
+Kĩvindu,vindu,darkness,Kĩvindu N;SG;BANTU10,PanLex Exact Match
+kĩsanasya,sya,[Translation Missing],sya V;PRS;NEG;3;SG,No Lexicon Match
+kaũndũ,undu,affair,kaũndũ N;SG;BANTU15,Substring Overlap
+kaula,ula,[Translation Missing],kaula V;PST;REC;3;SG,No Lexicon Match
+i,i,"spoon, dung, excrement, O, Oct., N, Nov., D, Dec.",umun class PRED;BANTU4,PanLex Exact Match
+mbiti,mbiti,hyena,uMbiti N;SG;BANTU1,PanLex Exact Match
+Kĩwe,kĩwe,[Translation Missing],kĩwe DET;POSS;PSS1P;BANTU1,No Lexicon Match
+nokyo,nokyo,[Translation Missing],nokyo DET;POSS;PSS1P;BANTU9,No Lexicon Match
+Kũtingwa,tingwa,[Translation Missing],tingwa V;NFIN,No Lexicon Match
+ũtakesaa,kesaa,[Translation Missing],ũtakesaa V;FUT,No Lexicon Match
+Mũthi,thi,"pestle, country, district, province, earth, land, go away, leave, go",thi ADJ;BANTU4,PanLex Exact Match
+kũthi,kũthi,"go away, leave",kũthi N;SG;BANTU15,PanLex Exact Match
+ndathelaa,thela,"cease, finish",thelaa V;PST;REC;1;SG,Substring Overlap
+malanga,langa,"speckle, spot",malanga N;PL;BANTU6,PanLex Exact Match
+Ũtukũ,ũtukũ,night,ũtukũ N;SG;BANTU14,PanLex Exact Match
+ndũtumaa,tuma,"send, sew, knit, weave",tumaa V;PRS;HAB;1;SG,Substring Overlap
+nzele,nzela,[Translation Missing],nzela V;PST;REC;1;SG,No Lexicon Match
+mwaasa,mwaasa,[Translation Missing],mwaasa N;PL;BANTU1,No Lexicon Match
+ũthamaa,thama,"island, migrate, move away",ũthamaa N;SG;BANTU14,Substring Overlap
+ngovi,ngovi,[Translation Missing],ngovi N;SG;BANTU10,No Lexicon Match
+ndũkalaatawa,aata,"ferment, turn sour",laatawa V;PRS;PROG;1;SG,Substring Overlap
+kwĩngutha,ĩngutha,[Translation Missing],kwĩngutha N;SG;BANTU15,No Lexicon Match
+matũ,ikwata matu,"brood, brood (rest the cheek on the hand in brooding mood)",matũ N;PL;BANTU6,Substring Overlap
+nyũmba,nyũmba,[Translation Missing],nyũmba N;SG;BANTU9,No Lexicon Match
+ngunga,ngunga,[Translation Missing],ngunga N;SG;BANTU9,No Lexicon Match
+Mũeni,mũeni,"guest, stranger",uMũeni N;SG;BANTU1,PanLex Exact Match
+akomaa,koma,"sleep, lie down",komaa V;PRS,Substring Overlap
+kũla,kulaalaa,"copulate, have sexual intercourse, copulate (with), have sexual intercourse (with)",la V;PRS;HAB;3;SG,Substring Overlap
+kũtakomawa,koma,"sleep, lie down",takomawa V;NFIN,Substring Overlap
+Vatakomwa,koma,"sleep, lie down",komwa V;FUT;3;PL,PanLex Exact Match
+vakomeawa,komeawa,[Translation Missing],komeawa V;PST;REC;3;PL,No Lexicon Match
+nduka,kuvinduka,"change, turn round",nduka N;SG;BANTU10,Substring Overlap
+Kathima,thima,"well, examine, measure, test, spring, spring (of water)",thima V;PRS;HAB;3;SG,PanLex Exact Match
+kala,ikala nthi,sit,kala V;PRS;HAB;3;SG,Substring Overlap
+kaluĩlasya,luĩlasya,[Translation Missing],luĩlasya V;PST;REC;3;SG,No Lexicon Match
+kaiyĩĩawa,yiia,milk,iyĩĩawa N;SG;BANTU15,Substring Overlap
+Kĩthima,thima,"well, examine, measure, test, spring, spring (of water)",thima V;PRS;HAB;3;SG,PanLex Exact Match
+kĩnaema,ema,mountain,ema V;PST;REC;3;SG,PanLex Exact Match
+kĩitonyeka,tonyeka,[Translation Missing],tonyeka V;PRS;NEG;3;SG,No Lexicon Match
+ngũũe,nguu,"old, hippopotamus, tortoise, hump, hump (of hunchback)",Ngũũe N;SG;BANTU10,Substring Overlap
+Kĩla,kilalinda,"blind person, blind, spoil",kĩla V;PRS;HAB;3;SG,Substring Overlap
+ũkĩa,kukia,be afraid,ũkĩa N;SG;BANTU14,Substring Overlap
+kĩkakwĩthĩa,thia,"point, tip, peak, top, highest point, utmost, grind, grind (grain with a millstone)",kwĩthĩa V;PRS;NEG;3;SG,Substring Overlap
+Mwĩwa,mwĩwa,[Translation Missing],mwĩwa N;SG;BANTU1,No Lexicon Match
+ũthuasya,thua,"grate, scratch, set, set (of the sun), be lame",ũthuasya N;SG;BANTU14,Substring Overlap
+ũla,ũla,[Translation Missing],ũla DET;PROX;BANTU1,No Lexicon Match
+ũtonyetwe,tonya,"thrust into, bore a hole",tonyetwe V;PST;REC;2;SG,Substring Overlap
+Ũkambonia,mbonia,[Translation Missing],ũkambonia N;SG;BANTU1,No Lexicon Match
+kũũ,kũũ,"foot, leg, calabash",kũũ DET;PROX;BANTU15,PanLex Exact Match
+mwĩwa,mwĩwa,[Translation Missing],mwĩwa N;SG;BANTU1,No Lexicon Match
+Ũla,ũla,[Translation Missing],ũla DET;PROX;BANTU1,No Lexicon Match
+mũtine,muti,"tree, plant, organism capable of photosynthesis",mũtine N;SG;BANTU1,Substring Overlap
+nĩwe,nĩwe,[Translation Missing],nĩwe DET;POSS;PSS1P;BANTU9,No Lexicon Match
+wĩsĩ,faranga ya uswisi,Swiss Franc,wĩsĩ DET;POSS;PSS1P;BANTU1,Substring Overlap
+ve,ve,[Translation Missing],ve PRO;INT;PROX;BANTU1,No Lexicon Match
+kĩsemei,sema,[Translation Missing],kĩsemei N;SG;BANTU15,No Lexicon Match
+Ũtee,kutea,set a trap,ũtee DET;PROX;BANTU1,Substring Overlap
+nthongo,nthongo,"one-eyed, (being) one-eyed",nthongo N;SG;BANTU10,PanLex Exact Match
+vayaa,yaa,[Translation Missing],yaa V;PST;REC;3;PL,No Lexicon Match
+nyeki,nyeki,[Translation Missing],nyeki N;SG;BANTU9,No Lexicon Match
+mwando,mwando,[Translation Missing],mwando N;SG;BANTU1,No Lexicon Match
+mũvĩte,vĩta,"pass, surpass",mũvĩte N;SG;BANTU1,PanLex Exact Match
+ndia,ndia,pool,ndia DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+ĩtangalwa,ĩtangalwa,[Translation Missing],ĩtangalwa N;SG;BANTU10,No Lexicon Match
+Anakavĩte,vĩta,"pass, surpass",vĩta V;PST;REC;3;SG,PanLex Exact Match
+ta,ta,"bow, spittle",ta V;PRS,PanLex Exact Match
+ĩlaa,ĩlaa,flower,ĩlaa V;PST;REC;3;SG,PanLex Exact Match
+mũutĩ,mũutĩ,[Translation Missing],mũutĩ N;SG;BANTU1,No Lexicon Match
+Avaĩĩ,vaĩĩ,[Translation Missing],vaĩĩ V;PRS;HAB;3;SG,No Lexicon Match
+kĩtathe,tha,"Jun, Jun.",tha V;PST;REC;3;SG,PanLex Exact Match
+vayũaa,yũaa,[Translation Missing],yũaa V;PST;REC;3;PL,No Lexicon Match
+ndathe,tha,"Jun, Jun.",tha V;PST;REC;1;SG,PanLex Exact Match
+Ĩlaa,ĩlaa,flower,ĩlaa V;PST;REC;3;SG,PanLex Exact Match
+ngwatyo,ngwatyo,[Translation Missing],ngwatyo N;SG;BANTU10,No Lexicon Match
+yaĩlaa,ĩlaa,flower,ĩlaa V;PST;REC;3;SG,PanLex Exact Match
+Kamanyĩa,manyĩa,get accustomed,manyĩa V;PST;REC;3;SG,PanLex Exact Match
+kũlĩsa,lĩsa,[Translation Missing],lĩsa V;NFIN,No Lexicon Match
+mĩtĩ,mĩtĩ,[Translation Missing],mĩtĩ N;SG;BANTU1,No Lexicon Match
+ĩla,ĩla,[Translation Missing],ĩla V;PRS,No Lexicon Match
+mĩnene,nene,"chief person, head, great, large, chief, headman, fat, thick, master",nene ADJ;BANTU4,PanLex Exact Match
+tũla,tũla,"hem, make a border, break, snap",tũla V;PST;REC;3;SG,PanLex Exact Match
+tũnini,nini,"small, a few, not much",tũnini N;SG;BANTU10,PanLex Exact Match
+kaimanyaa,anya,"leave, permission",imanyaa V;PST;REC;3;SG,Substring Overlap
+kyumaa,kyuma,"iron, element, steel, iron ore, iron",kyumaa V;PRS,Substring Overlap
+nzĩ,nzĩ,sperm,nzĩ PRO;INT;INTENS,PanLex Exact Match
+mĩwa,mĩwa,[Translation Missing],mĩwa N;SG;BANTU1,No Lexicon Match
+ky,ky,[Translation Missing],ky DET;POSS;PSS1P;BANTU15,No Lexicon Match
+Kaumaa,umaa,"grandfather, urinate",umaa V;PST;REC;3;SG,PanLex Exact Match
+ũtwii,ũtwii,[Translation Missing],ũtwii DET;PROX;BANTU1,No Lexicon Match
+wako,wako,[Translation Missing],wako DET;POSS;PSS1P;BANTU1,No Lexicon Match
+Ĩtũlika,lika,"come in, go in",ĩtũlika V;PRS;HAB;3;SG,Substring Overlap
+mũtĩ,mũtĩ,"tree, plant, organism capable of photosynthesis",tĩ V;PRS;HAB;3;SG,PanLex Exact Match
+yoveyawa,veyawa,[Translation Missing],veyawa V;PRS;HAB;3;SG,No Lexicon Match
+ũngĩ,kunyungia,"smell out, sniff",ũngĩ DET;PROX;BANTU1,Substring Overlap
+Kakuthu,kuthu,"bush, thicket",kakuthu,PanLex Exact Match
+kaneyũmba,iyumbanyʼa,prepare,yũmba V;PST;REC;3;SG,Substring Overlap
+kaiaa,iaa,[Translation Missing],iaa V;PST;REC;3;SG,No Lexicon Match
+wĩvitho,itho,eye,wĩvitho DET;POSS;PSS1P;BANTU1,Substring Overlap
+ũmĩwa,ũmĩwa,[Translation Missing],ũmĩwa N;SG;BANTU14,No Lexicon Match
+Ndũkavũthĩĩsye,vuthi,"rubbish heap, garbage, rubbish",vũthĩĩsya V;PST;REC;1;PL,Substring Overlap
+kakuthu,kuthu,"bush, thicket",kakuthu,Substring Overlap
+kwaa,kwaa,"get lost, disappear, fade",Kwaa V;PRS;HAB;3;SG,PanLex Exact Match
+Kĩkoe,koa,[Translation Missing],kĩkoa V;PST;REC;3;SG,No Lexicon Match
+kĩ,kĩ,beer,kĩ DET;PROX;BANTU15,PanLex Exact Match
+mboka,mboka,[Translation Missing],mboka V;PRS,No Lexicon Match
+Ndũkaakĩĩe,kĩĩa,[Translation Missing],kĩĩa V;PST;REC;1;SG,No Lexicon Match
+kĩtheka,theka,"forest, thicket, laugh, bush",theka V;PRS;NEG;3;SG,PanLex Exact Match
+kũthunga,thunga,[Translation Missing],thunga V;NFIN,No Lexicon Match
+syamata,mata,spittle,syamata V;PST;REC;1;PL,Substring Overlap
+akesĩla,kesĩla,[Translation Missing],kesĩla V;PRS;HAB;3;SG,No Lexicon Match
+yalatanĩ,latanĩ,[Translation Missing],latanĩ V;PST;REC;3;SG,No Lexicon Match
+syiilea,lea,"refuse, say no, reject, deny",syiilea V;PRS,PanLex Exact Match
+ũmũkwata,kwata,"seize, get, obtain, grasp, hold, hold (in arm), arrest, receive",ũmũkwata N;SG;BANTU1,Substring Overlap
+katheka,theka,"forest, thicket, laugh, bush",theka V;PRS;HAB;3;SG,PanLex Exact Match
+kaũkuutwa,ũkuutwa,[Translation Missing],ũkuutwa V;PST;REC;3;SG,No Lexicon Match
+Kĩtheka,theka,"forest, thicket, laugh, bush",theka V;PRS;HAB;3;SG,PanLex Exact Match
+matũ4,tũ4,[Translation Missing],matũ4 N;PL;BANTU6,No Lexicon Match
+kĩthungu,ungu,"below, under, underneath",kĩthungu N;SG;BANTU15,Substring Overlap
+kĩsaa,saa,hour,kĩsaa N;SG;BANTU15,PanLex Exact Match
+ũtwĩka,ũtwĩka,[Translation Missing],ũtwĩka V;PRS,No Lexicon Match
+ĩei,ĩei,[Translation Missing],ĩei DET;PROX;BANTU6,No Lexicon Match
+nĩkyo,nĩkyo,[Translation Missing],nĩkyo DET;POSS;PSS1P;BANTU9,No Lexicon Match
+kĩyĩsĩ,kĩyĩsĩ,[Translation Missing],kĩyĩsĩ N;SG;BANTU15,No Lexicon Match
+Mbaĩ,mbaĩ,"clan, fierce, sharp",uMbaĩ N;SG;BANTU1,PanLex Exact Match
+sya,sya,[Translation Missing],Sya DET;POSS;PSS1P;BANTU7,No Lexicon Match
+ilĩ,ilĩ,two,ilĩ DET;PROX;BANTU9,PanLex Exact Match
+mũmũ,mũmũ,[Translation Missing],mũmũ N;SG;BANTU1,No Lexicon Match
+mwiyũ,mwiyũ,[Translation Missing],mwiyũ N;SG;BANTU1,No Lexicon Match
+Sere,sera,[Translation Missing],Sera,No Lexicon Match
+serasya,sya,[Translation Missing],serasya V;PRS,No Lexicon Match
+Wĩĩthya,thya,"point, tip, peak, top, highest point, utmost",thya V;PRS;PROG;3;SG,PanLex Exact Match
+mangula,mangula,[Translation Missing],mangula N;PL;BANTU6,No Lexicon Match
+twesĩle7,esĩla,[Translation Missing],esĩle V;PST;REC;1;PL,No Lexicon Match
+Eka,eka,"leave, leave (off)",Eka V;PRS,PanLex Exact Match
+ũtumba,ũtumba,[Translation Missing],ũtumba N;SG;BANTU14,No Lexicon Match
+ũvῖvye,ũvῖvya,[Translation Missing],ũvῖvya V;PST;REC;2;SG,No Lexicon Match
+Vau,vau,[Translation Missing],Vau DET;POSS;PSS1P;BANTU1,No Lexicon Match
+ũkũĩthya,ĩthya,"keep livestock, care for, tend, care for (look after grazing cattle, help a sick man on the road)",ĩthya V;PRS;PROG;2;SG,PanLex Exact Match
+mangũthĩ,mangũthĩ,[Translation Missing],mangũthĩ N;PL;BANTU6,No Lexicon Match
+nĩvo,nĩvo,[Translation Missing],nĩvo DET;POSS;PSS1P;BANTU9,No Lexicon Match
+naĩthasya,ĩthasya,[Translation Missing],ĩthasya V;PST;REC;1;SG,No Lexicon Match
+vuvĩ,kuvuviia,blow bellows,vuvĩ V;PRS,Substring Overlap
+mwanake,mwanake,"youth, youth, young man",mwanake N;PL;BANTU1,PanLex Exact Match
+Ũkonzawa,onza,seven,ũkonzawa N;SG;BANTU14,Substring Overlap
+wĩmwiyũ,wĩmwiyũ,[Translation Missing],wĩmwiyũ DET;POSS;PSS1P;BANTU1,No Lexicon Match
+woma,oma,[Translation Missing],woma DET;POSS;PSS1P;BANTU1,No Lexicon Match
+ndũkonzekaa,onze,"weak, be mutilated, cripple",konzekaa V;PRS;HAB;1;SG,Substring Overlap
+Kyũmati,kyuma,"iron, element, steel, iron ore, iron",Kyũmati N;SG;BANTU15,Substring Overlap
+kĩiminawa,wa,sugar cane,iminawa N;SG;BANTU15,PanLex Exact Match
+kweka,kweka,[Translation Missing],kweka V;PRS,No Lexicon Match
+Kavĩndĩ,vĩndĩ,bone,vĩndĩ V;PST;REC;3;SG,PanLex Exact Match
+mbĩtũke,mbĩtũke,[Translation Missing],mbĩtũke N;SG;BANTU1,No Lexicon Match
+Mũtĩ,mũtĩ,"tree, plant, organism capable of photosynthesis",tĩ V;PRS;HAB;3;SG,PanLex Exact Match
+wendo,wendo,"love, strong affection, affection",wendo DET;POSS;PSS3P;BANTU1,PanLex Exact Match
+ndũkuawa,awa,[Translation Missing],awa V;FUT,No Lexicon Match
+ngalĩ,kusisya kila ngaliko,look round,ngalĩ N;SG;BANTU9,Substring Overlap
+mũyo,mũyo,"pleasant, sweet",mũyo DET;PROX;BANTU4,PanLex Exact Match
+ndũsyaa,syaa,"bear child, give birth, give birth (to a child)",syaa V;PRS,PanLex Exact Match
+mwoomboko,mwoomboko,[Translation Missing],mwoomboko N;SG;BANTU1,No Lexicon Match
+ndũlĩsĩlawa,lĩsĩlawa,[Translation Missing],ndũlĩsĩlawa N;SG;BANTU10,No Lexicon Match
+mbongenĩ,onga,"suck, suck (the breast)",mbonga V;PRS,Substring Overlap
+ngasũa,sũa,"become full, abound, grandmother",ngasũa N;SG;BANTU9,PanLex Exact Match
+nĩwonaa,onaa,[Translation Missing],nĩwonaa N;SG;BANTU9,No Lexicon Match
+ũyambĩĩa,yambĩĩa,[Translation Missing],ũyambĩĩa N;SG;BANTU14,No Lexicon Match
+kweeka,eeka,[Translation Missing],eka V;PRS;HAB;3;SG,No Lexicon Match
+nonginya,nya,"Aug, Aug., four",nya V;PRS;HAB;1;SG,PanLex Exact Match
+ũsyae,kusyaa,"bear child, give birth, give birth (to a child)",ũsyae DET;POSS;PSS1P;BANTU1,Substring Overlap
+nĩwo,nĩwo,[Translation Missing],nĩwo DET;PROX;BANTU9,No Lexicon Match
+wĩkaswe,swa,[Translation Missing],wĩkaswe DET;POSS;PSS1P;BANTU1,No Lexicon Match
+mbĩla,mbĩla,[Translation Missing],mbĩla N;SG;BANTU1,No Lexicon Match
+ũte,ũte,[Translation Missing],ũte DET;PROX;BANTU1,No Lexicon Match
+mbonge,mbonge,[Translation Missing],mbonge N;SG;BANTU1,No Lexicon Match
+munyĩ,unyi,"shade, shadow",munya V;PRS;HAB;2;PL,Substring Overlap
+ũvalũkĩlaa,ilaa,flower,ũvalũkĩlaa V;PRS;HAB;2;SG,Substring Overlap
+wĩvakuvĩ,vakuvĩ,[Translation Missing],wĩvakuvĩ DET;POSS;PSS1P;BANTU1,No Lexicon Match
+wovosya,vosya,"extinguish, quench, cool, cure, heal",vosya V;PRS;HAB;2;SG,PanLex Exact Match
+ndwendekaa,endekaa,[Translation Missing],endekaa V;PRS,No Lexicon Match
+mwiingĩ,nyingi,many,ingĩ V;PRS;HAB;2;PL,Substring Overlap
+mũito,uito,"rhythm, weight",mũito N;SG;BANTU1,Substring Overlap
+waa,waa,"kill, put to death, be ill, groan",waa DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+ũmanthwa,thwa,"termite, ant, (small) ant",ũmanthwa N;PL;BANTU1,Substring Overlap
+Ngai,ngai,"God, single deity of monotheism, Almighty, Creator, Jah, Life, Man Upstairs, Omnipotent, Omniscient, Our Father, Providence, Supreme, godhead, supreme being, theopanism, god",Ngai NUM;CARD;10,PanLex Exact Match
+ndwĩwaa,waa,"kill, put to death, be ill, groan",ndwĩwaa N;SG;BANTU9,PanLex Exact Match
+ũmea,ũmea,"grow, grow (of plants)",ũmea N;SG;BANTU14,PanLex Exact Match
+kĩĩmani,kĩĩma,"hill, mountain",kĩĩma V;PRS;NEG;3;SG,PanLex Exact Match
+mangalata,gala,spark,mangalata N;PL;BANTU6,Substring Overlap
+kana,kana,child,kana V;PRS,PanLex Exact Match
+mbenzi,mbenzi,[Translation Missing],mbenzi N;SG;BANTU1,No Lexicon Match
+mwako,wako,[Translation Missing],mwako DET;POSS;PSS1P;BANTU1,No Lexicon Match
+ũtaumaa,umaa,"grandfather, urinate",ũtaumaa N;SG;BANTU14,PanLex Exact Match
+atemaa,tema,"liver, slash",temaa V;PRS,Substring Overlap
+ngĩĩtĩ,iiti,"medicine, medicine (art of medicine man)",ngĩĩtĩ N;SG;BANTU9,Substring Overlap
+ũndũ,ũndũ,affair,ũndũ DET;PROX;BANTU1,PanLex Exact Match
+wĩania,ania,"cry, sound",wĩania DET;POSS;PSS1P;BANTU1,Substring Overlap
+ndũyotaa,otaa,[Translation Missing],yotaa V;FUT,No Lexicon Match
+muunyĩ,muunyĩ,"shade, shadow",muunya V;PRS;HAB;2;PL,PanLex Exact Match
+mũnini,nini,"small, a few, not much",mũnini N;SG;BANTU1,PanLex Exact Match
+ndũthũũnawa,thũũnawa,[Translation Missing],thũũnawa V;FUT,No Lexicon Match
+ndũthũũnaa,thũũnaa,[Translation Missing],thũũnaa V;FUT,No Lexicon Match
+mũnene,nene,"chief person, head, great, large, chief, headman, fat, thick, master",nene ADJ;BANTU4,PanLex Exact Match
+ũtemawa,tema,"liver, slash",ũtemawa N;SG;BANTU14,Substring Overlap
+kĩthũmũsyo,thũmũsyo,[Translation Missing],kĩthũmũsyo N;SG;BANTU15,No Lexicon Match
+Kinyaa,nyaa,"dry up, ebb",nyaa V;PRS;HAB;3;SG,PanLex Exact Match
+kĩthanze,thanda,[Translation Missing],thanza V;PST;REC;3;SG,No Lexicon Match
+kĩvoo,kĩvoo,[Translation Missing],kĩvoo N;SG;BANTU15,No Lexicon Match
+Kĩseũ,seũ,[Translation Missing],kĩseũ N;SG;BANTU10,No Lexicon Match
+kĩitonywa,nywa,"mouth, drink",kĩitonywa N;SG;BANTU15,Substring Overlap
+mũkungo,mũkungo,[Translation Missing],mũkungo N;SG;BANTU1,No Lexicon Match
+Walea,lea,"refuse, say no, reject, deny",lea V;PST;REC;3;SG,PanLex Exact Match
+syaaki,syaa,"bear child, give birth, give birth (to a child)",syaaki,Substring Overlap
+wauta,uta,"bow, oil, draw, draw (water from well), oil (from plants)",uta V;PST;REC;2;SG,PanLex Exact Match
+aiti,iti,[Translation Missing],iti N;SG;BANTU6,No Lexicon Match
+Aũme,ũma,"bite, iron, steel, be fully grown, iron ore, dry up, ebb, abuse",ũme DET;POSS;PSS1P;BANTU6,PanLex Exact Match
+maindaa,inda,dip,indaa V;PST;REC;2;PL,Substring Overlap
+muu,muu,"ashes, mosquito",muu DET;PROX;BANTU1,PanLex Exact Match
+muunĩ,muunĩ,[Translation Missing],muunĩ N;SG;BANTU1,No Lexicon Match
+syeewa,ewa,[Translation Missing],syeewa V;PRS,No Lexicon Match
+maiya,iya,"place, put, set",maiya N;PL;BANTU6,PanLex Exact Match
+Ĩla,ĩla,[Translation Missing],ĩla V;PRS,No Lexicon Match
+ĩtulasya,tula,"hem, make a border, break, snap",ĩtulasya N;SG;BANTU11,Substring Overlap
+kĩmuu,kĩmuu,[Translation Missing],kĩmuu N;SG;BANTU15,No Lexicon Match
+tiyo,tiyo,[Translation Missing],tiyo DET;POSS;PSS1P;BANTU1,No Lexicon Match
+yosanasya,sya,[Translation Missing],yosanasya N;SG;BANTU1,No Lexicon Match
+Ngũ,ngũ,firewood,ngũ DET;PROX;BANTU9,PanLex Exact Match
+isyaa,syaa,"bear child, give birth, give birth (to a child)",isyaa N;SG;BANTU9,PanLex Exact Match
+Mũkũyũ,kũyũ,"fish, fig tree",uMũkũyũ N;SG;BANTU1,PanLex Exact Match
+wavalũka,valũka,fall,valũka V;PST;REC;2;SG,PanLex Exact Match
+ũtiaa,ũtiaa,[Translation Missing],ũtiaa V;PRS,No Lexicon Match
+mũuumo,muumo,"fig mulberry tree, borassus palm",mũuumo N;SG;BANTU1,Substring Overlap
+Mũuumo,muumo,"fig mulberry tree, borassus palm",umo N;SG;BANTU1,Substring Overlap
+mũthonoku,mũthonoku,[Translation Missing],mũthonoku N;SG;BANTU1,No Lexicon Match
+Vandũ,vandũ,"speckle, spot",vandũ PRO;INT;PROX;BANTU8,PanLex Exact Match
+vaĩ,vaĩ,wall,vaĩ DET;PROX;BANTU8,PanLex Exact Match
+mũamba,amba,baobab,mũamba N;SG;BANTU1,PanLex Exact Match
+mũumo,mũumo,"fig mulberry tree, borassus palm",mũumo N;SG;BANTU1,PanLex Exact Match
+Mwaamba,amba,baobab,amba V;PST;REC;2;PL,PanLex Exact Match
+ngamba,amba,baobab,ngamba N;SG;BANTU9,Substring Overlap
+ũkimawa,wa,sugar cane,ũkimawa N;SG;BANTU10,PanLex Exact Match
+maita,ita,"call, pour away, leak, ooze out, pour, call, abundant",ita V;PST;REC;2;PL,PanLex Exact Match
+elĩ,elĩ,[Translation Missing],elĩ DET;PROX;BANTU5,No Lexicon Match
+kothumũla,thumũla,[Translation Missing],thumũla V;NFIN,No Lexicon Match
+kate,kate,bread,kate,PanLex Exact Match
+ngalalũ,lalũ,[Translation Missing],ngalalũ N;SG;BANTU10,No Lexicon Match
+Nthũmũla,thũmũla,[Translation Missing],Nthũmũla N;SG;BANTU10,No Lexicon Match
+yĩndua,ndua,village,yĩndua N;SG;BANTU9,Substring Overlap
+Kũũ,kũũ,"foot, leg, calabash",kũũ DET;PROX;BANTU15,PanLex Exact Match
+twĩ,twĩ,[Translation Missing],twĩ DET;POSS;PSS1P;BANTU1,No Lexicon Match
+weũnĩ,eũnĩ,[Translation Missing],weũnĩ DET;POSS;PSS1P;BANTU1,No Lexicon Match
+Weũ,weũ,[Translation Missing],weũ DET;POSS;PSS1P;BANTU1,No Lexicon Match
+waya,waya,[Translation Missing],waya DET;POSS;PSS1P;BANTU1,No Lexicon Match
+nzei,nzei,[Translation Missing],nzei N;SG;BANTU10,No Lexicon Match
+ngũ,ngũ,firewood,ngũ DET;PROX;BANTU9,PanLex Exact Match
+ndũtũawa,tũawa,[Translation Missing],ndũtũawa N;SG;BANTU10,No Lexicon Match
+Ũka,ũka,come,ũka DET;PROX;BANTU1,PanLex Exact Match
+ũthyũ,ũthyũ,face,ũthyũ DET;PROX;BANTU1,PanLex Exact Match
+mũongo,mũongo,back,mũongo N;SG;BANTU1,PanLex Exact Match
+ũkũ,ũkũ,[Translation Missing],ũkũ DET;PROX;BANTU1,No Lexicon Match
+ũtatũmĩka,tatu,three,ũtatũmĩka N;SG;BANTU14,Substring Overlap
+kĩtĩawa,tĩawa,[Translation Missing],kĩtĩawa N;SG;BANTU15,No Lexicon Match
+kĩwũ,kĩwũ,[Translation Missing],Kĩwũ N;SG;BANTU1,No Lexicon Match
+Kathuma,thuma,[Translation Missing],thuma V;PRS;HAB;3;SG,No Lexicon Match
+mbavathi,mbavathi,[Translation Missing],mbavathi N;PL;BANTU1,No Lexicon Match
+kayĩkalasya,lasya,[Translation Missing],kayĩkalasya V;PST;REC;3;SG,No Lexicon Match
+mũtumĩa,mũtumĩa,old person,mũtumĩa N;SG;BANTU1,PanLex Exact Match
+thome,thoma,[Translation Missing],thoma V;PST;REC;1;PL,No Lexicon Match
+Ũ,ũ,"bitter, war, who, who?, foot, leg, ashes",ũ DET;PROX;BANTU1,PanLex Exact Match
+kĩvetanĩ,veta,"send away, start off, let off, remove a spell, wave, let off (a trap)",kĩvetanĩ N;SG;BANTU15,PanLex Exact Match
+ndũthekaa,theka,"forest, thicket, laugh, bush",thekaa V;PRS;HAB;1;SG,Substring Overlap
+iko,iko,"fireplace, hearth, kitchen, paddle, oar, filth, hearthstone, hearthstone (for putting pots on)",iko,PanLex Exact Match
+Ndũkaunĩĩe,unĩĩa,[Translation Missing],unĩĩa V;PST;REC;1;SG,No Lexicon Match
+kĩthĩnthĩmwa,nthi,"earth, land, country, district, province",thĩnthĩmwa V;NFIN,Substring Overlap
+Ĩlũkũ,ĩlũkũ,[Translation Missing],ĩlũkũ N;SG;BANTU1,No Lexicon Match
+Ĩ,ĩ,"spoon, dung, excrement, O, Oct., N, Nov., D, Dec.",ĩ DET;PROX;BANTU6,PanLex Exact Match
+yĩilea,ilea,[Translation Missing],yĩilea N;SG;BANTU9,No Lexicon Match
+ũtoa,toa,"give out smoke, smoke",ũtoa DET;PROX;BANTU14,PanLex Exact Match
+ũtumo,tumo,spear,ũtumo N;SG;BANTU14,Substring Overlap
+ũtaĩ,kutaia,honor,ũtaĩ DET;PROX;BANTU1,Substring Overlap
+matatwa,tatwa,[Translation Missing],tatwa V;PST;REC;2;PL,No Lexicon Match
+Ũtumo,tumo,spear,ũtumo N;SG;BANTU14,Substring Overlap
+nyama,nyama,[Translation Missing],nyama N;SG;BANTU9,No Lexicon Match
+Ngoko,ungoko,[Translation Missing],uNgoko,No Lexicon Match
+ĩngokwa,ĩngokwa,[Translation Missing],ĩngokwa N;SG;BANTU10,No Lexicon Match
+ene,ene,self,ene PRO;INT;INTENS,PanLex Exact Match
+ũtangokya,ango,door,ũtangokya N;SG;BANTU14,Substring Overlap
+Kũkwĩ,kwĩ,[Translation Missing],kwĩ V;PRS;HAB;3;SG,No Lexicon Match
+ngi,ngi,fly,ngi PRO;INT;INTENS,PanLex Exact Match
+kũyĩ,kuyiima,abstain,kũyĩ DET;PROX;BANTU15,Substring Overlap
+Mũkwa,mũkwa,[Translation Missing],mũkwa N;SG;BANTU1,No Lexicon Match
+mũkũũ,kũũ,"foot, leg, calabash",mũkũũ N;SG;BANTU1,PanLex Exact Match
+ũlũmasya,sya,[Translation Missing],ũlũmasya N;SG;BANTU1,No Lexicon Match
+Sisya,sisya,"look at, examine",Sisya V;PRS,PanLex Exact Match
+ũkuĩla,ĩla,[Translation Missing],ĩla V;PRS;PROG;2;SG,No Lexicon Match
+ĩkundonĩ,ĩkundo,knot,ĩkundo N;SG;BANTU15,PanLex Exact Match
+Andũ,ivandu,"speckle, spot",andũ PRO;INT;INTENS,Substring Overlap
+aa,waa,"kill, put to death, be ill, groan",aa V;PRS,PanLex Exact Match
+nĩmaua,ua,"cook, fry, cook (in water or fat), rain",nĩmaua N;PL;BANTU9,PanLex Exact Match
+mũũngũ,ungu,"below, under, underneath",mũũngũ N;SG;BANTU1,Substring Overlap
+wasama,sama,taste,sama V;PST;REC;2;SG,PanLex Exact Match
+ngombe,ngombe,[Translation Missing],ngombe N;SG;BANTU10,No Lexicon Match
+Kĩrũngũ,ungu,"below, under, underneath",Kĩrũngũ N;SG;BANTU10,Substring Overlap
+kĩsyaa,syaa,"bear child, give birth, give birth (to a child)",kĩsyaa N;SG;BANTU15,PanLex Exact Match
+kĩsera,sera,[Translation Missing],kĩsera V;PRS,No Lexicon Match
+kyũsyaa,syaa,"bear child, give birth, give birth (to a child)",syaa V;NFIN,PanLex Exact Match
+kĩyĩsaa,yĩsaa,[Translation Missing],kĩyĩsaa N;SG;BANTU15,No Lexicon Match
+mũũnda,mũũnda,"garden, cultivated ground",mũũnda N;SG;BANTU1,PanLex Exact Match
+mũtheo,theo,cloud,mũtheo N;SG;BANTU1,Substring Overlap
+Nzee,nzee,porcupine,nzee DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+ndĩsaa,saa,hour,ndĩsaa N;SG;BANTU9,PanLex Exact Match
+maanga,ananga,"destroy, spoil, break, snap, blind",maanga N;PL;BANTU6,Substring Overlap
+ũtũinĩ,utui,village,ũtũinĩ N;SG;BANTU14,Substring Overlap
+mĩingo,mĩingo,[Translation Missing],mĩingo N;SG;BANTU1,No Lexicon Match
+ĩlĩ,ĩlĩ,two,ĩlĩ DET;PROX;BANTU6,PanLex Exact Match
+ĩnyungaa,nyunga,"smell, smell (bad), smell (sweet)",ĩnyungaa N;SG;BANTU9,Substring Overlap
+mũtitũ,muti,"tree, plant, organism capable of photosynthesis",mũtitũ N;SG;BANTU1,Substring Overlap
+yĩeye,eya,[Translation Missing],yĩeye DET;POSS;PSS1P;BANTU9,No Lexicon Match
+nĩyũmĩsyaa,syaa,"bear child, give birth, give birth (to a child)",nĩyũmĩsyaa N;SG;BANTU9,Substring Overlap
+myũngũ,ungu,"below, under, underneath",myũngũ N;SG;BANTU1,Substring Overlap
+yũmea,mea,"grow, grow (of plants)",yũmea N;SG;BANTU9,PanLex Exact Match
+ĩkĩkũa,ĩkũa,[Translation Missing],ĩkĩkũa N;SG;BANTU10,No Lexicon Match
+ĩsyaa,syaa,"bear child, give birth, give birth (to a child)",ĩsyaa N;SG;BANTU9,Substring Overlap
+kĩthangaitĩ,ngai,"God, single deity of monotheism, Almighty, Creator, Jah, Life, Man Upstairs, Omnipotent, Omniscient, Our Father, Providence, Supreme, godhead, supreme being, theopanism, god",thangaitĩ V;NFIN,Substring Overlap
+Vala,vala,"ascend, climb",Vala V;PRS,PanLex Exact Match
+yavũnĩa,vũnĩa,[Translation Missing],vũnĩa V;PST;REC;3;SG,No Lexicon Match
+ĩtiaa,ĩtiaa,[Translation Missing],ĩtiaa N;SG;BANTU6,No Lexicon Match
+Yũngũ,ũngũ,"below, under, underneath",ũngũ DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+yĩmwe,imwe,"dew, one, one",yĩmwe DET;POSS;PSS1P;BANTU9,Substring Overlap
+yĩyonawa,wa,sugar cane,yonawa V;PRS;HAB;3;SG,PanLex Exact Match
+nzee,nzee,porcupine,nzee DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+Mbola,bola,[Translation Missing],uMbola N;SG;BANTU1,No Lexicon Match
+yũwaa,waa,"kill, put to death, be ill, groan",yũwaa DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+nzou,nzou,elephant,Nzou N;SG;BANTU10,PanLex Exact Match
+Mũkua,kua,"pull up, root up, get lost, rain, carry, rain, take, carry (astride on the hip)",uMũkua N;SG;BANTU1,PanLex Exact Match
+nima,nima,[Translation Missing],nima V;PRS,No Lexicon Match
+nĩyake,wake,[Translation Missing],nĩyake N;SG;BANTU9,No Lexicon Match
+onethĩwa,ithiwa,"be, become",thĩwa V;PRS;HAB;2;SG,Substring Overlap
+eanasya,sya,[Translation Missing],Sya DET;POSS;PSS1P;BANTU7,No Lexicon Match
+owaa,waa,"kill, put to death, be ill, groan",waa V;PRS;HAB;2;SG,PanLex Exact Match
+nũyumasya,sya,[Translation Missing],nũyumasya N;PL;BANTU9,No Lexicon Match
+nzounĩ,nzou,elephant,nzounĩ N;SG;BANTU9,Substring Overlap
+mũkuĩle,kuĩla,[Translation Missing],mũkuĩle N;SG;BANTU1,No Lexicon Match
+Mũsyĩmi,mũsyĩmi,"hunter, (professional) hunter",mũsyĩmi N;SG;BANTU1,PanLex Exact Match
+ũtaatha,tha,"Jun, Jun.",ũtaatha N;SG;BANTU14,PanLex Exact Match
+ndaatha,tha,"Jun, Jun.",tha V;FUT,PanLex Exact Match
+nduu,nduu,squirrel,nduu N;SG;BANTU9,PanLex Exact Match
+e,e,"T, Tu.",e PRO;INT;INTENS,PanLex Exact Match
+vata,vata,duck,vata V;PRS,PanLex Exact Match
+mĩwongo,ongo,back,mĩwongo N;SG;BANTU1,Substring Overlap
+Ndĩkyamanaa,manaa,[Translation Missing],manaa V;PRS;PROG;1;SG,No Lexicon Match
+kelĩ,lovo ya keli,2nd quarter,kelĩ PRO;INT;LOC,Substring Overlap
+Nzou,nzou,elephant,Nzou N;SG;BANTU10,PanLex Exact Match
+ndyũlawa,galawa,dug-out canoe,ndyũlawa N;SG;BANTU9,Substring Overlap
+kwoo,kwoo,[Translation Missing],kwoo DET;POSS;PSS1P;BANTU15,No Lexicon Match
+yakyamana,komana,meet,mana V;PRS;PROG;3;SG,Substring Overlap
+nĩvenawa,wa,sugar cane,wa V;PRS;PROG;1;SG,PanLex Exact Match
+ngũngi,ngũngi,[Translation Missing],ngũngi N;SG;BANTU9,No Lexicon Match
+Ndũsinda,sinda,"overcome, vanquish, win",sinda V;PRS;NEG;1;SG,PanLex Exact Match
+Ndũkeke,ndũkeke,[Translation Missing],ndũkeke N;SG;BANTU10,No Lexicon Match
+Thii,athiia na nyundo,"hammer, hit, hit (with a hammer)",uThii N;SG;BANTU1,Substring Overlap
+mwoo,mwoo,[Translation Missing],mwoo DET;POSS;PSS1P;BANTU1,No Lexicon Match
+ana,ana,"how many, how many?, child, hundred",ana V;PRS,PanLex Exact Match
+mũtwe,mũtwe,head,mũtwe N;SG;BANTU1,PanLex Exact Match
+Nzĩa,nzĩa,"path, highway, path, small gazelle",nzĩa N;SG;BANTU9,PanLex Exact Match
+yatũkaswa,tũkaswa,[Translation Missing],tũkaswa V;PST;REC;3;SG,No Lexicon Match
+ndĩmanyaa,anya,"leave, permission",nyaa V;PRS;PROG;1;SG,Substring Overlap
+syĩndũ,ũndũ,affair,syĩndũ N;SG;BANTU7,PanLex Exact Match
+mwĩĩ,mwĩĩ,"root, body, root",mwĩĩ N;SG;BANTU1,PanLex Exact Match
+wayo,wayo,[Translation Missing],wayo DET;POSS;PSS1P;BANTU1,No Lexicon Match
+ndĩemawa,emawa,[Translation Missing],emawa V;PRS;PROG;1;SG,No Lexicon Match
+yayo,wayo,[Translation Missing],yayo DET;POSS;PSS1P;BANTU9,No Lexicon Match
+yoasya,sya,[Translation Missing],yoasya DET;POSS;PSS1P;BANTU9,No Lexicon Match
+ĩvalũkĩte,kite,dog,ĩvalũkĩte N;SG;BANTU14,Substring Overlap
+yũate,gwatemala,"Guatemala, country in Central America, Guatemala City, 𐐘𐐶𐐪𐐼𐐲𐑋𐐪𐑊𐐲",yũate DET;POSS;PSS1P;BANTU9,Substring Overlap
+mbĩa,mbĩa,"rat, (very large long-tailed) rat, (kind of) rat, field rat",mbĩa N;SG;BANTU1,PanLex Exact Match
+nditalawa,galawa,dug-out canoe,lawa V;FUT,Substring Overlap
+ngũmbaũ,ngũmbaũ,[Translation Missing],ngũmbaũ N;SG;BANTU9,No Lexicon Match
+ĩtakalwa,lwa,forget,ĩtakalwa N;SG;BANTU10,PanLex Exact Match
+mee,mee,[Translation Missing],mee DET;POSS;PSS1S;BANTU4,No Lexicon Match
+kĩthiia,athiia na nyundo,"hammer, hit, hit (with a hammer)",thiia V;PRS;NEG;1;SG,Substring Overlap
+avalũkũ,valũkũ,hare,valũkũ V;PRS;HAB;3;SG,PanLex Exact Match
+keiwe,keiwa,[Translation Missing],keiwe PRO;INT;LOC,No Lexicon Match
+ũũ,ũũ,"bitter, who, who?, shade, shadow",ũũ DET;PROX;BANTU1,PanLex Exact Match
+mũliku,mũliku,[Translation Missing],mũliku N;SG;BANTU1,No Lexicon Match
+ndũkaainge,ginga,"long straight hair, long straight hair (of animals and Europeans)",ndũkaainge N;SG;BANTU10,Substring Overlap
+Kavũkũ,kuvukua,"dig up, dig out",vũkũ V;PST;REC;3;SG,Substring Overlap
+kaemea,emea,[Translation Missing],emea V;PST;REC;3;SG,No Lexicon Match
+kyenga,kengani,number,enga V;PRS;HAB;3;SG,Substring Overlap
+Mbũkũ,mbũkũ,[Translation Missing],uMbũkũ N;SG;BANTU1,No Lexicon Match
+ũliliinĩ,lilia,"palpitate, shiver, shudder",ũlilia V;PRS;HAB;2;SG,PanLex Exact Match
+ĩsyĩmawa,syima,hunt,ĩsyĩmawa N;SG;BANTU10,Substring Overlap
+mũndũ,mũndũ,"person, person, individual, capita",mũndũ N;SG;BANTU1,PanLex Exact Match
+mũĩ,mũĩ,spoon,mũĩ DET;PROX;BANTU4,PanLex Exact Match
+yesĩla,esĩla,[Translation Missing],esĩla V;PRS,No Lexicon Match
+kĩtonyinĩ,tonya,"thrust into, bore a hole",tonya V;PRS;NEG;1;SG,PanLex Exact Match
+ndĩleaa,leaa,[Translation Missing],ndĩleaa N;SG;BANTU9,No Lexicon Match
+ũtia,kutia,"leave, leave (off)",ũtia DET;PROX;BANTU1,Substring Overlap
+wia7,wia7,[Translation Missing],wia7 DET;POSS;PSS3P;BANTU1,No Lexicon Match
+Aumie,uma,"bite, iron, steel, be fully grown, iron ore, dry up, ebb, abuse",umia V;PST;REC;3;SG,PanLex Exact Match
+ĩkĩmboo,mboo,buffalo,ĩkĩmboo N;SG;BANTU10,Substring Overlap
+avota,vota,[Translation Missing],vota V;PRS,No Lexicon Match
+ĩkĩngo,ĩkĩngo,[Translation Missing],ĩkĩngo N;SG;BANTU10,No Lexicon Match
+Mboo,mboo,buffalo,mboo N;SG;BANTU1,PanLex Exact Match
+ila,ila,[Translation Missing],ila V;PRS,No Lexicon Match
+Kathaana,thaana,[Translation Missing],thaana V;PRS;HAB;3;SG,No Lexicon Match
+nosyo,nosyo,[Translation Missing],nosyo N;SG;BANTU9,No Lexicon Match
+Kyanzavĩ,anzavĩ,[Translation Missing],Kyanzavĩ N;PL;BANTU10,No Lexicon Match
+ndĩkwatawa,tawa,[Translation Missing],tawa V;PRS;PROG;1;SG,No Lexicon Match
+kĩtimba,imba,swell,timba V;PRS;NEG;1;SG,Substring Overlap
+ndwĩki,ikuli ya ndwiki,"colobus monkey, colobus monkey (with long black silk hair, white on the shoulders)",ndwĩki N;SG;BANTU9,Substring Overlap
+yendaa,enda,"go, love, want, need, wish, please, satisfy",endaa V;PRS,Substring Overlap
+yoka,oka,[Translation Missing],yoka V;PRS,No Lexicon Match
+nĩlĩsĩlawa,sĩlawa,[Translation Missing],sĩlawa V;FUT,No Lexicon Match
+ũkanyo,ũkanyo,[Translation Missing],ũkanyo N;SG;BANTU14,No Lexicon Match
+ũkakanwa,nwa,[Translation Missing],ũkakanwa N;SG;BANTU15,No Lexicon Match
+mboo,mboo,buffalo,mboo N;SG;BANTU1,PanLex Exact Match
+Watina,tina,"tree-trunk, (base of) tree-trunk, at the back of, behind",tina V;PST;REC;3;SG,PanLex Exact Match
+cha,cha,[Translation Missing],cha DET;POSS;PSS1P;BANTU7,No Lexicon Match
+kĩyĩemaa,emaa,[Translation Missing],emaa V;PRS;NEG;3;SG,No Lexicon Match
+mbusya,mbusya,rhinoceros,mbusya N;SG;BANTU1,PanLex Exact Match
+weemaa,emaa,[Translation Missing],weemaa V;PRS;HAB;2;SG,No Lexicon Match
+tyo,tyo,[Translation Missing],tyo DET;POSS;PSS1P;BANTU1,No Lexicon Match
+ntheeũ,theeũ,[Translation Missing],ntheeũ N;SG;BANTU9,No Lexicon Match
+Mũsingi,singi,[Translation Missing],uMũsingi N;SG;BANTU1,No Lexicon Match
+mũtae,mũtae,[Translation Missing],mũtae N;SG;BANTU1,No Lexicon Match
+ndakĩaa,kĩaa,[Translation Missing],kĩaa V;PST,No Lexicon Match
+ndatulasye,lasa,crab,tulasa V;PST;REC;1;SG,Substring Overlap
+ngũka,ngũka,[Translation Missing],ngũka N;SG;BANTU9,No Lexicon Match
+ndasyĩmaa,syima,hunt,syĩmaa V;PST;REC;1;SG,Substring Overlap
+kĩthekanĩ,theka,"forest, thicket, laugh, bush",theka V;PRS;NEG;1;SG,PanLex Exact Match
+kĩte,kĩta,fight,kĩte N;SG;BANTU15,PanLex Exact Match
+kĩndũ,kĩndũ,thing,kĩndũ N;SG;BANTU15,PanLex Exact Match
+ndatiaa,tiaa,[Translation Missing],tiaa V;PST,No Lexicon Match
+tũva,tũva,bottle,tũva V;PRS,PanLex Exact Match
+Mũthũsa,thũsa,[Translation Missing],thũsa V;PRS;HAB;2;SG,No Lexicon Match
+kĩvĩsĩ,kĩvĩsĩ,[Translation Missing],kĩvĩsĩ N;SG;BANTU15,No Lexicon Match
+ndaa,ndaa,louse,ndaa V;PRS,PanLex Exact Match
+mũlanza,uvalanza,"France, 𐐙𐑉𐐰𐑌𐑅",mũlanza N;SG;BANTU1,Substring Overlap
+ĩtako,ĩtako,thigh,ĩtako N;SG;BANTU10,PanLex Exact Match
+mbusya1,busya,rhinoceros,mbusya1,Substring Overlap
+Kathila,thila,[Translation Missing],thila V;PRS;HAB;3;SG,No Lexicon Match
+kasyaa,syaa,"bear child, give birth, give birth (to a child)",syaa V;PST;REC;2;SG,PanLex Exact Match
+kangĩ,angi,arrow,kangĩ PRO;INT;NEG,Substring Overlap
+matenge,tenga,[Translation Missing],tenga V;PST;REC;2;PL,No Lexicon Match
+nzia,nzia,"path, highway, path, small gazelle",nzia N;SG;BANTU9,PanLex Exact Match
+Kavii,vii,[Translation Missing],Kavii N;SG;BANTU1,No Lexicon Match
+ke,ke,[Translation Missing],ke DET;POSS;PSS1S;BANTU15,No Lexicon Match
+Yatta,tta,[Translation Missing],tta V;PST;REC;3;SG,No Lexicon Match
+nĩka,anika,"dry, set out, set out (to dry)",nĩka N;SG;BANTU9,Substring Overlap
+mũsyĩmi,mũsyĩmi,"hunter, (professional) hunter",mũsyĩmi N;SG;BANTU1,PanLex Exact Match
+Kũu,kũu,"foot, leg, calabash",Kũu DET;PROX;BANTU15,PanLex Exact Match
+ĩngĩ,nyingi,many,ĩngĩ DET;PROX;BANTU9,Substring Overlap
+lũma,kukulumanya,"turn over, turn upside down",Lũma N;SG;BANTU1,Substring Overlap
+Lũma,kukulumanya,"turn over, turn upside down",Lũma N;SG;BANTU1,Substring Overlap
+maayo,maayo ma nzou,elephant’s tusk,maayo N;PL;BANTU6,Substring Overlap
+ngunyũ,ngunyũ,[Translation Missing],ngunyũ N;SG;BANTU9,No Lexicon Match
+ũĩaa,ũĩaa,[Translation Missing],ũĩaa DET;POSS;PSS1P;BANTU1,No Lexicon Match
+nthingii,ngii,"warthog, crab, locust",nthingii N;SG;BANTU9,Substring Overlap
+nzaa,nzaa,hunger,nzaa N;SG;BANTU9,PanLex Exact Match
+Syavinya,inya,four,vinya V;PST;REC;3;SG,Substring Overlap
+naekee,ekea,[Translation Missing],ekea V;PST;REC;1;SG,No Lexicon Match
+Wĩa,wĩa,"work, labour, employment, occupation, job, business, employment, job, occupation, tool bit",wĩa DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+kwĩnza,ĩnza,"hollow out, dig",ĩnza V;PRS;NEG;1;SG,PanLex Exact Match
+maima,ima,"hill, mountain, cultivated ground, cultivate, cultivate, hole, pit, withhold from, nest, mature",ima V;PST;REC;2;PL,PanLex Exact Match
+nawo,nawo,[Translation Missing],nawo DET;POSS;PSS1P;BANTU9,No Lexicon Match
+ũkoma,koma,"sleep, lie down",ũkoma N;SG;BANTU14,Substring Overlap
+nzĩnĩ,nzĩnĩ,[Translation Missing],nzĩnĩ N;SG;BANTU9,No Lexicon Match
+amaima,ima,"hill, mountain, cultivated ground, cultivate, cultivate, hole, pit, withhold from, nest, mature",ima V;PRS;HAB;3;SG,PanLex Exact Match
+Mũthoi,thoi,broth,thoi V;PRS;HAB;3;SG,PanLex Exact Match
+ũaithasya,thasya,[Translation Missing],thasya V;PST;REC;3;SG,No Lexicon Match
+mũatĩĩi,tĩĩi,[Translation Missing],mũatĩĩi N;SG;BANTU1,No Lexicon Match
+ũndũmwe,undu,affair,ũndũmwe N;SG;BANTU1,Substring Overlap
+ngwae,ngwaa,[Translation Missing],ngwaa V;PST;REC;1;SG,No Lexicon Match
+ĩtambya,mbya,"horn, ivory",ĩtambya N;SG;BANTU10,Substring Overlap
+Ngũũe,ũa,"cook, fry, cook (in water or fat), rain",Ngũũe N;SG;BANTU10,PanLex Exact Match
+yĩkangaa,kangaa,[Translation Missing],yĩkangaa N;SG;BANTU9,No Lexicon Match
+a,a,"W, W., T, Th., F, F., S, Sa., intestines, get lost, penis, rain",a COP;ID;BANTU6,PanLex Exact Match
+yo,yo,"pleasant, sweet",yo DET;PROX;BANTU9,PanLex Exact Match
+Mwaathi,thi,"pestle, country, district, province, earth, land, go away, leave, go",uMwaathi N;PL;BANTU1,PanLex Exact Match
+nguma,nguma,[Translation Missing],nguma N;SG;BANTU9,No Lexicon Match
+ndathaa,thaa,[Translation Missing],thaa V;PST;REC;1;SG,No Lexicon Match
+Kũla,kulaalaa,"copulate, have sexual intercourse, copulate (with), have sexual intercourse (with)",la V;PRS;HAB;3;SG,Substring Overlap
+kumaa,maa,"grandfather, intestines, urinate",maa V;PRS,PanLex Exact Match
+mbĩkya,ikya,thrust into,mbĩkya N;SG;BANTU1,Substring Overlap
+nokwo,nokwo,[Translation Missing],nokwo DET;POSS;PSS1P;BANTU9,No Lexicon Match
+mboveli,mboveli,[Translation Missing],mboveli N;SG;BANTU1,No Lexicon Match
+Mbovi,umbovi,[Translation Missing],uMbovi N;SG;BANTU1,No Lexicon Match
+ndĩsĩ,ndĩsĩ,[Translation Missing],ndĩsĩ N;SG;BANTU9,No Lexicon Match
+nthwai,thwa,"termite, ant, (small) ant",nthwai N;SG;BANTU9,Substring Overlap
+Mwovela,ovela,[Translation Missing],uMwovela N;SG;BANTU1,No Lexicon Match
+weka,kutweka,melt,weka V;PRS,Substring Overlap
+ndathĩkaa,ikaa,"charcoal, embers",thĩkaa V;PST;REC;1;SG,Substring Overlap
+Nthee,thee,[Translation Missing],thee ADJ;BANTU1,No Lexicon Match
+iemwa,emwa,become jammed,emwa V;PRS,PanLex Exact Match
+mwatũ,kwatua,"crack, split, penetrate",mwatũ N;SG;BANTU1,Substring Overlap
+ilĩkĩlaa,ilaa,flower,lĩkĩlaa V;PST;REC;3;SG,Substring Overlap
+imilĩlaa,ilaa,flower,imilĩlaa N;PL;BANTU4,Substring Overlap
+mbya,mbya,"horn, ivory",mbya N;SG;BANTU1,PanLex Exact Match
+Ndwĩa,ndwĩa,giraffe,Ndwĩa N;SG;BANTU10,PanLex Exact Match
+nyamũ,nyamũ,[Translation Missing],Nyamũ N;SG;BANTU10,No Lexicon Match
+nene,nene,"chief person, head, great, large, chief, headman, fat, thick, master",nene PRO;INT;INTENS,PanLex Exact Match
+ĩndĩ,eneo la uingereza katika bahari hindi,𐐒𐑉𐐮𐐼𐐮𐑇 𐐆𐑌𐐼𐐨𐐲𐑌 𐐄𐑇𐐲𐑌 𐐓𐐯𐑉𐐲𐐻𐐱𐑉𐐨,ĩndĩ DET;PROX;BANTU9,Substring Overlap
+yevũthisye,vuthi,"rubbish heap, garbage, rubbish",vũthisa V;PST;REC;3;SG,Substring Overlap
+mbiivii,mbiivii,[Translation Missing],mbiivii N;SG;BANTU1,No Lexicon Match
+Ĩvai,ĩva,"pay, be sharp",ĩvai N;SG;BANTU6,PanLex Exact Match
+ĩyũaĩaa,ĩaa,[Translation Missing],ĩaa V;FUT,No Lexicon Match
+kũmbĩaa,mbia,"rat, (very large long-tailed) rat, (kind of) rat, field rat",mbĩaa V;NFIN,Substring Overlap
+Yamesya,sya,[Translation Missing],isya N;PL;BANTU1,No Lexicon Match
+maa,maa,"grandfather, intestines, urinate",maa V;PRS,PanLex Exact Match
+yĩsawa,wĩsawa,[Translation Missing],yĩsawa DET;POSS;PSS1P;BANTU9,No Lexicon Match
+aka,aka,"year, do masonry, work as a mason, build, construct, put together",aka V;PRS,PanLex Exact Match
+Makalanzanga,lanzanga,[Translation Missing],uMakalanzanga N;SG;BANTU1,No Lexicon Match
+matanĩaa,ania,"cry, sound",tanĩaa V;PST;REC;2;PL,Substring Overlap
+Makathanga,thanga,"soil, sand",thanga V;PST;REM;3;SG,PanLex Exact Match
+makaanaa,kaana,child,makaanaa N;PL;BANTU6,Substring Overlap
+Nyamũ,nyamũ,[Translation Missing],Nyamũ N;SG;BANTU10,No Lexicon Match
+ndĩyĩwaa,yĩwaa,[Translation Missing],ndĩyĩwaa N;SG;BANTU9,No Lexicon Match
+muuke,muuka,[Translation Missing],muuke N;SG;BANTU1,No Lexicon Match
+ĩkungĩawa,ĩkungĩawa,[Translation Missing],ĩkungĩawa N;SG;BANTU15,No Lexicon Match
+kĩvĩs,kĩvĩs,[Translation Missing],kĩvĩs N;SG;BANTU15,No Lexicon Match
+kũnwa,nwa,[Translation Missing],nwa V;NFIN,No Lexicon Match
+ngũngĩ,ngũngĩ,[Translation Missing],ngũngĩ N;SG;BANTU9,No Lexicon Match
+ndũmyathaa,thaa,[Translation Missing],thaa V;PRS;PROG;1;SG,No Lexicon Match
+welele,lela,"hang, hang (in mid-air)",welela,Substring Overlap
+ndĩtheaa,theaa,[Translation Missing],theaa V;PRS;PROG;1;SG,No Lexicon Match
+ũta,ũta,"bow, oil, draw, draw (water from well), oil (from plants)",ũta DET;PROX;BANTU1,PanLex Exact Match
+ndĩtiawaa,waa,"kill, put to death, be ill, groan",waa V;FUT,PanLex Exact Match
+nzame,nzame,[Translation Missing],nzame N;SG;BANTU10,No Lexicon Match
+yĩ,yĩ,[Translation Missing],yĩ DET;PROX;BANTU9,No Lexicon Match
+ndĩkũnawa,wa,sugar cane,ndĩkũnawa V;PRS;PROG;1;SG,PanLex Exact Match
+kavola,vola,[Translation Missing],vola V;PST;REC;3;SG,No Lexicon Match
+ĩkusaa,saa,hour,saa V;PRS;PROG;3;SG,PanLex Exact Match
+yĩendete,endeta,[Translation Missing],enda V;PST;PFV;3;SG,No Lexicon Match
+nũme,nũme,[Translation Missing],nũme N;SG;BANTU9,No Lexicon Match
+ndĩkĩlaa,laa,flower,ndĩkĩlaa N;SG;BANTU9,PanLex Exact Match
+mwaki,mwaki,fire,mwaki N;SG;BANTU1,PanLex Exact Match
+mbathe,mbathe,[Translation Missing],mbathe N;SG;BANTU1,No Lexicon Match
+ndĩkalaa,laa,flower,laa V;PRS;PROG;1;SG,PanLex Exact Match
+ũyinĩ,ũyinĩ,[Translation Missing],ũyinĩ DET;PROX;BANTU1,No Lexicon Match
+ngũlũ,ngulue,pig,ngũlũ N;SG;BANTU9,Substring Overlap
+ĩmĩaa,ĩmĩaa,[Translation Missing],ĩmĩaa N;SG;BANTU6,No Lexicon Match
+ĩũngeme,ĩũngema,[Translation Missing],ĩũngeme N;SG;BANTU10,No Lexicon Match
+Ũkamyona,myona,[Translation Missing],ũkamyona N;SG;BANTU1,No Lexicon Match
+ĩkwitheetha,theetha,[Translation Missing],ĩkwitheetha N;SG;BANTU15,No Lexicon Match
+wasya,sya,[Translation Missing],sya V;PST;REC;2;SG,No Lexicon Match
+ĩĩ,ĩĩ,"body, root, root",ĩĩ DET;PROX;BANTU6,PanLex Exact Match
+ndyaũmbwa,ũmbwa,[Translation Missing],ũmbwa V;PRS;HAB;1;SG,No Lexicon Match
+Wakomana,komana,meet,umana N;PL;BANTU1,PanLex Exact Match
+mavũngũ,kuvungua,open,mavũngũ N;PL;BANTU6,Substring Overlap
+isembete,embe,hoe,sembete V;PRS;HAB;3;SG,Substring Overlap
+manya,manya,know,manya N;PL;BANTU6,PanLex Exact Match
+ithu,ithukiisya,listen,ithu N;SG;BANTU9,Substring Overlap
+ĩtina,ĩtina,"tree-trunk, (base of) tree-trunk, at the back of, behind",ĩtina N;SG;BANTU9,PanLex Exact Match
+Wenda,enda,"go, love, want, need, wish, please, satisfy",enda V;PRS;HAB;3;SG,PanLex Exact Match
+ũmanya,manya,know,ũmanya N;SG;BANTU14,PanLex Exact Match
+nthũkũ,nthũkũ,"bad, wicked",nthũkũ N;SG;BANTU9,PanLex Exact Match
+kiita,ita,"call, pour away, leak, ooze out, pour, call, abundant",ita V;PRS,PanLex Exact Match
+ĩswii,ĩswii,[Translation Missing],ĩswii N;SG;BANTU10,No Lexicon Match
+Woona,ona,see,ona V;PRS;HAB;3;SG,PanLex Exact Match
+kasamũ,samũ,[Translation Missing],samũ V;PST;REC;3;SG,No Lexicon Match
+kasembete,embe,hoe,sembete V;PST;REC;3;SG,Substring Overlap
+kakĩĩte,kiitaliano,Italian,kĩĩta V;PST;REC;3;SG,Substring Overlap
+kwĩko,kwikoota,stretch oneself,kwĩko,Substring Overlap
+Mũthaimi,thaimi,[Translation Missing],thaimi V;PRS;HAB;3;SG,No Lexicon Match
+naĩ,naĩ,[Translation Missing],naĩ DET;POSS;PSS1P;BANTU9,No Lexicon Match
+athekawa,theka,"forest, thicket, laugh, bush",thekawa V;PRS,Substring Overlap
+kĩao,kĩao,bridge,kĩao N;SG;BANTU15,PanLex Exact Match
+Sya,sya,[Translation Missing],Sya DET;POSS;PSS1P;BANTU7,No Lexicon Match
+nĩsyo,isyo,"decisive, final",nĩsyo N;SG;BANTU9,Substring Overlap
+syĩnzanĩaa,nĩaa,[Translation Missing],syĩnzanĩaa V;PRS;NEG;1;PL,No Lexicon Match
+ũlenga,lenga,[Translation Missing],ũlenga N;SG;BANTU14,No Lexicon Match
+nzingi,nzingi,[Translation Missing],nzingi N;SG;BANTU10,No Lexicon Match
+ũkũlengala,gala,spark,lengala V;PRS;PROG;2;SG,Substring Overlap
+ĩthĩĩ,athiia na nyundo,"hammer, hit, hit (with a hammer)",ĩthĩĩ N;SG;BANTU9,Substring Overlap
+Ĩsũni,ĩsũni,[Translation Missing],ĩsũni N;SG;BANTU1,No Lexicon Match
+yĩkwĩtũũa,ĩkwĩtũũa,[Translation Missing],yĩkwĩtũũa N;SG;BANTU9,No Lexicon Match
+yonekaa,onekaa,[Translation Missing],onekaa V;PRS,No Lexicon Match
 kwacha,kwacha ya malawi,Malawian Kwacha,kwacha N;SG;BANTU15,Substring Overlap
-kyakwatwa,kwata,grasp,kwata V;PST;REC;3;SG,PanLex Exact Match
-yaana,kutwaana,marry,yaana DET;POSS;PSS1P;BANTU9,Substring Overlap
-nzoka,nzoka,snake,nzoka V;PRS,PanLex Exact Match
-mbaa,mbaama,Bahamas,mbaa V;PRS,Substring Overlap
-ndwaatonganga,tonga,Tonga,tonganga V;PST;REC;1;SG,Substring Overlap
-mũthwa,thwa,ant,mũthwa N;SG;BANTU1,Substring Overlap
-kakwataa,kwata,grasp,kwataa V;PST;REC;3;SG,Substring Overlap
-inya,iitu-wa-inya,brother,inya N;SG;BANTU9,Substring Overlap
-syĩthesyaa,syaa,give birth,syĩthesyaa V;PRS,Substring Overlap
-Kyonze,jondani,Jordan,kyonda V;PST;REC;3;SG,Substring Overlap
-wasyaa,syaa,give birth,syaa V;PST;REC;2;SG,PanLex Exact Match
+mũnuka,nuka,[Translation Missing],mũnuka N;SG;BANTU1,No Lexicon Match
+mũasa,asa,far,mũasa N;SG;BANTU1,PanLex Exact Match
+ĩyĩĩsawa,ĩsawa,[Translation Missing],ĩsawa V;PRS;HAB;3;SG,No Lexicon Match
+yĩoeaa,oeaa,[Translation Missing],oeaa V;PRS;HAB;3;SG,No Lexicon Match
+mokonĩ,mokonĩ,[Translation Missing],mokonĩ N;SG;BANTU1,No Lexicon Match
+yaũlekya,ũlekya,[Translation Missing],ũlekya V;PST;REC;3;SG,No Lexicon Match
+nĩyoneaa,oneaa,[Translation Missing],neaa V;PRS;PROG;2;PL,No Lexicon Match
+nzevenĩ,nzevenĩ,[Translation Missing],nzevenĩ N;SG;BANTU10,No Lexicon Match
+I,i,"spoon, dung, excrement, O, Oct., N, Nov., D, Dec.",umun class PRED;BANTU4,PanLex Exact Match
+yilũ,wilũ,[Translation Missing],yilũ DET;POSS;PSS1P;BANTU9,No Lexicon Match
+me,me,[Translation Missing],me DET;POSS;PSS1P;BANTU6,No Lexicon Match
+Ĩkoto,ĩkoto,[Translation Missing],ĩkoto N;SG;BANTU10,No Lexicon Match
+ĩvũthasya,thasya,[Translation Missing],ĩvũthasya N;SG;BANTU10,No Lexicon Match
+mũũlũkĩle,mũũlũkĩle,[Translation Missing],mũũlũkĩle N;SG;BANTU1,No Lexicon Match
+Kĩtaũmwa,kyumwa,week,ũmwa V;FUT;3;SG,Substring Overlap
+ĩkoto,ĩkoto,[Translation Missing],ĩkoto N;SG;BANTU10,No Lexicon Match
+kĩnengawe,nenga,give,nengawe V;PST;REC;3;SG,Substring Overlap
+ivĩsĩ,visiwa vya falkland,"Falkland Islands, Falkland Islands (Islas Malvinas), 𐐙𐐪𐑊𐐿𐑊𐐲𐑌𐐼 𐐌𐑊𐐲𐑌𐐼𐑆",vĩsĩ V;PRS;HAB;3;SG,Substring Overlap
+Mũlaki,mũlaki,[Translation Missing],uMũlass N;SG;BANTU1,No Lexicon Match
+ndũũ,ndũũ,squirrel,ndũũ N;SG;BANTU9,PanLex Exact Match
+kasyũngere,syũngera,[Translation Missing],syũngera V;PST;REC;3;SG,No Lexicon Match
+ndogaa,ndogaa,[Translation Missing],ndogaa N;SG;BANTU9,No Lexicon Match
+ngere,eneo la uingereza katika bahari hindi,𐐒𐑉𐐮𐐼𐐮𐑇 𐐆𐑌𐐼𐐨𐐲𐑌 𐐄𐑇𐐲𐑌 𐐓𐐯𐑉𐐲𐐻𐐱𐑉𐐨,ngere,Substring Overlap
+Kasĩlĩlĩ,sĩlĩlĩ,[Translation Missing],sĩlĩlĩ V;PST;REC;3;SG,No Lexicon Match
+kosyaĩa,syai,"parent, parent (he who begets)",syaĩa V;NFIN,Substring Overlap
+mauuwĩ,uuwĩ,[Translation Missing],uuwĩ V;PST;REC;2;PL,No Lexicon Match
+Kĩndilĩ,kĩndilĩ,[Translation Missing],kĩndilĩ N;SG;BANTU15,No Lexicon Match
+kĩkalasya,lasya,[Translation Missing],kĩkalasya N;SG;BANTU15,No Lexicon Match
+kyakwatwa,kwata,"seize, get, obtain, grasp, hold, hold (in arm), arrest, receive",kwata V;PST;REC;3;SG,PanLex Exact Match
+Ndala,ndala,"hole, nest",uNdala,PanLex Exact Match
+tũmĩmanyaa,anya,"leave, permission",tũmĩmanyaa V;PRS,Substring Overlap
+tũsĩla,sĩla,[Translation Missing],tũsĩla V;PRS,No Lexicon Match
+Nditũaa,tũaa,[Translation Missing],tũaa V;PRS;HAB;1;SG,No Lexicon Match
+vandũ,vandũ,"speckle, spot",vandũ PRO;INT;PROX;BANTU8,PanLex Exact Match
+vamwe,vamwe,[Translation Missing],vamwe,No Lexicon Match
+nzũũ,nzũũ,[Translation Missing],nzũũ N;SG;BANTU9,No Lexicon Match
+Nye,nye,[Translation Missing],nye DET;POSS;PSS1P;BANTU9,No Lexicon Match
+Kanywamalaa,nywa,"mouth, drink",Kanywamalaa V;PST;REC;3;SG,Substring Overlap
+ngũnywa,nywa,"mouth, drink",nywa V;PRS;HAB;1;SG,PanLex Exact Match
+malaa,laa,flower,malaa N;PL;BANTU6,PanLex Exact Match
+wĩna,kwina,sing,wĩna DET;POSS;PSS1P;BANTU1,Substring Overlap
+nziii,nziii,[Translation Missing],nziii N;SG;BANTU9,No Lexicon Match
+Ũsĩa,santalusia,"Saint Lucia, country in the Caribbean, St. Lucia",ũsĩa N;SG;BANTU14,Substring Overlap
+ndei,ndei,[Translation Missing],ndei PRO;INT;INTENS,No Lexicon Match
+ndwosawa,ndwosawa,[Translation Missing],ndwosawa N;SG;BANTU10,No Lexicon Match
+ĩtheo,ĩtheo,cloud,ĩtheo N;SG;BANTU9,PanLex Exact Match
+mũsyĩ,mũsyĩ,"town, arrowhead, head, spear head, head (of arrow), home",mũsyĩ N;SG;BANTU1,PanLex Exact Match
+Ũsĩnĩ,afrika kusini,"South Africa, 𐐝𐐵𐑃 𐐈𐑁𐑉𐐲𐐿𐐲",ũsĩnĩ N;SG;BANTU14,Substring Overlap
+ngunĩ,nguniko,"cork, stopper",ngunĩ N;SG;BANTU9,Substring Overlap
+Kĩwũ,kĩwũ,[Translation Missing],Kĩwũ N;SG;BANTU1,No Lexicon Match
+mangaa,mangaa,[Translation Missing],mangaa N;PL;BANTU6,No Lexicon Match
+mekaa,mekaa,[Translation Missing],mekaa N;SG;BANTU1,No Lexicon Match
+kweela,kuleela,"be faint, be loose, be weak",kweela V;PRS,Substring Overlap
+ngũlimũ,guli,"ape, baboon",ngũlimũ N;SG;BANTU9,Substring Overlap
+ĩvũĩ,ĩvũĩ,"dove, (red-eyed) dove, lung",ĩvũĩ N;SG;BANTU1,PanLex Exact Match
+ndyonawa,wa,sugar cane,ndyonawa N;SG;BANTU9,PanLex Exact Match
+maeo,eo,tooth,eo DET;POSS;PSS1P;BANTU6,PanLex Exact Match
+Ndunduli,undu,affair,uNdunduli N;SG;BANTU1,Substring Overlap
+nthũku,nthũku,"bad, wicked",nthũku N;SG;BANTU9,PanLex Exact Match
+ĩkawa,wa,sugar cane,wa V;PRS;PROG;3;SG,PanLex Exact Match
+kĩlĩo,kĩlĩo,[Translation Missing],kĩlĩo N;SG;BANTU15,No Lexicon Match
+ngalĩko,kusisya kila ngaliko,look round,ngalĩko N;SG;BANTU10,Substring Overlap
+Ndundulu,undu,affair,uNdundulu N;SG;BANTU10,Substring Overlap
+yatilwa,lwa,forget,lwa V;PST;REC;3;SG,PanLex Exact Match
+ngingo,ngingo,neck,ngingo N;SG;BANTU9,PanLex Exact Match
+ĩtwĩkaa,ikaa,"charcoal, embers",ĩtwĩkaa V;PRS,Substring Overlap
+ngũkũ,ngũkũ,"fowl, hen, hen, female chicken, chicken, ant, (reddish-brown biting) ant",ngũkũ N;SG;BANTU9,PanLex Exact Match
+Kasĩĩlĩlĩ,sĩĩlĩlĩ,[Translation Missing],sĩĩlĩlĩ V;PST;REC;3;SG,No Lexicon Match
+eetĩwe,etĩwe,[Translation Missing],etĩwe PRO;INT;INTENS,No Lexicon Match
+kũsĩĩlĩla,sĩĩlĩla,[Translation Missing],sĩĩlĩla V;NFIN,No Lexicon Match
+akĩsĩĩlĩlĩkĩla,kĩsĩĩlĩlĩkĩla,[Translation Missing],kĩsĩĩlĩlĩkĩla V;PRS;PROG;3;SG,No Lexicon Match
+kĩsĩĩlĩlonĩ,kĩsĩĩlĩlonĩ,[Translation Missing],kĩsĩĩlĩlonĩ V;NFIN,No Lexicon Match
+Kambee,kambea,[Translation Missing],Kambea V;PST;REC;3;SG,No Lexicon Match
+noko,noko,[Translation Missing],noko,No Lexicon Match
+kĩndalĩ,inda,dip,kĩndala V;PRS;NEG;1;SG,Substring Overlap
+kathũku,thũku,"bad, wicked, brass, copper",thũku V;PST;REC;3;SG,PanLex Exact Match
+kĩmbu,kimbuva,puff-adder,kĩmbu N;SG;BANTU15,Substring Overlap
+kĩivĩtĩlwa,vĩtĩlwa,[Translation Missing],vĩtĩlwa V;NFIN,No Lexicon Match
+ĩtoloka,ĩtoloka,[Translation Missing],ĩtoloka N;SG;BANTU10,No Lexicon Match
+Ngwete,ngwete,[Translation Missing],ngwete N;SG;BANTU10,No Lexicon Match
+ngwete,ngwete,[Translation Missing],ngwete N;SG;BANTU10,No Lexicon Match
+yaana,kutwaana,"marry, marry (of man)",yaana DET;POSS;PSS1P;BANTU9,Substring Overlap
+mwikithi,mwikithi,[Translation Missing],mwikithi N;SG;BANTU1,No Lexicon Match
+nũthi,nũthi,[Translation Missing],nũthi N;SG;BANTU9,No Lexicon Match
+Mwiiyi,mwii,"root, body, root",uMwiiyi N;SG;BANTU1,Substring Overlap
+mũka,mũka,wife,mũka N;SG;BANTU1,PanLex Exact Match
+alĩkaa,ikaa,"charcoal, embers",lĩkaa V;PRS,Substring Overlap
+nzoka,nzoka,"serpent, snake, legless reptile, adder, wriggler",nzoka V;PRS,PanLex Exact Match
+enũkĩte,kita,fight,nũkĩte ADJ;BANTU1;BANTU1,Substring Overlap
+maaũ,kuthi na maau,walk,maaũ N;PL;BANTU6,Substring Overlap
+Nganga,nganga,guinea fowl,nganga N;SG;BANTU9,PanLex Exact Match
+ĩ,ĩ,"spoon, dung, excrement, O, Oct., N, Nov., D, Dec.",ĩ DET;PROX;BANTU6,PanLex Exact Match
+mbaa,kitambaa,cloth,mbaa V;PRS,Substring Overlap
+Nĩ,nĩ,tomorrow,nĩ DET;PROX;BANTU9,PanLex Exact Match
+nganga,nganga,guinea fowl,nganga N;SG;BANTU9,PanLex Exact Match
+ĩalyũlĩte,alyula,"alter, change",lyũla V;PST;REC;3;SG,Substring Overlap
+mwasyo,mwasyo,[Translation Missing],mwasyo N;SG;BANTU1,No Lexicon Match
+Makanga,lee wa ukanga,"beach, coast",uMakanga,Substring Overlap
+nda,nda,womb,nda V;PRS,PanLex Exact Match
+mayusasya,yusasya,[Translation Missing],yusasya V;PST;REC;2;PL,No Lexicon Match
+mũsũkũi,suku,parrot,mũsũkũi N;SG;BANTU1,Substring Overlap
+Kĩthũi,thũi,"chest, chest (of animals and birds)",thũi V;PRS;PROG;1;PL,PanLex Exact Match
+ũlembwa,ũlembwa,bird-lime,ũlembwa V;PRS,PanLex Exact Match
+Kyelelo,elelo,[Translation Missing],Kyelelo N;SG;BANTU15,No Lexicon Match
+ĩkenge,ĩkenge,[Translation Missing],ĩkenge N;SG;BANTU10,No Lexicon Match
+kũkwatya,kwatya,"borrow, lend",kwatya V;NFIN,PanLex Exact Match
+kalekelye,kela,"filter, strain",lekela V;PST;REC;3;SG,Substring Overlap
+vonekaa,vonekaa,[Translation Missing],vonekaa V;PRS,No Lexicon Match
+Katumbĩlĩle,tumbi,egg,tumbĩla V;PST;REC;3;SG,Substring Overlap
+tikoneki,kona,[Translation Missing],tikoneki V;PRS,No Lexicon Match
+nĩko,guniko,"cork, stopper",nĩko DET;POSS;PSS1P;BANTU9,Substring Overlap
+kayonanasya,onanasya,[Translation Missing],yonanasya V;PST;REC;3;SG,No Lexicon Match
+kokĩla,kilalinda,"blind person, blind, spoil",kĩla V;NFIN,Substring Overlap
+Wangangaa,anganga,take a walk,wangangaa DET;POSS;PSS1P;BANTU1,Substring Overlap
+ĩkengeni,ĩkenga,[Translation Missing],ĩkenga V;IMP;2;PL,No Lexicon Match
+ndwaatonganga,ganga,guinea fowl,tonganga V;PST;REC;1;SG,Substring Overlap
+ũmwalyo,ũmwalyo,[Translation Missing],ũmwalyo N;SG;BANTU1,No Lexicon Match
+Ĩvyũvya,ĩvyũvya,[Translation Missing],ĩvyũvya N;SG;BANTU10,No Lexicon Match
+mũthwa,mũthwa,"termite, ant, (small) ant",mũthwa N;SG;BANTU1,PanLex Exact Match
+Makaanĩ,kaanĩ,[Translation Missing],uMakaanĩ N;SG;BANTU1,No Lexicon Match
+kũti,kutia,"leave, leave (off)",kũti N;SG;BANTU15,Substring Overlap
+ngũũ,ngũũ,"old, hippopotamus, tortoise, hump, hump (of hunchback)",ngũũ N;SG;BANTU9,PanLex Exact Match
+nĩkaa,ikaa,"charcoal, embers",nĩkaa N;SG;BANTU9,Substring Overlap
+mwithe,mwithe,tail,mwithe N;SG;BANTU1,PanLex Exact Match
+mawĩa,wĩa,"work, labour, employment, occupation, job, business, employment, job, occupation, tool bit",wĩa V;PST;REC;2;PL,PanLex Exact Match
+nĩvĩĩye,kuvuviia,blow bellows,nĩvĩĩye N;SG;BANTU9,Substring Overlap
+kĩthiita1,thiita1,[Translation Missing],thiita1,No Lexicon Match
+yatũla,tũla,"hem, make a border, break, snap",tũla V;PST;REC;3;SG,PanLex Exact Match
+ĩtaa,ĩtaa,python,ĩtaa V;PRS,PanLex Exact Match
+ndĩvithaa,vitha,hide,ndĩvithaa N;SG;BANTU9,Substring Overlap
+Mũtei,tei,"snare, trap, fishhook, bait",tei V;PRS;HAB;3;SG,PanLex Exact Match
+mũkwa,mũkwa,[Translation Missing],mũkwa N;SG;BANTU1,No Lexicon Match
+wavĩtya,itya,"direct, order",vĩtya V;PST;REC;2;SG,Substring Overlap
+ũtonyaa,nyaa,"dry up, ebb",ũtonyaa N;SG;BANTU14,Substring Overlap
+nzongo,ongo,back,nzongo N;SG;BANTU10,Substring Overlap
+kwananga,kwananga,"destroy, spoil, break, snap, blind",kwananga V;PST;REC;3;SG,PanLex Exact Match
+maangi,angi,arrow,maangi N;PL;BANTU6,PanLex Exact Match
+nzĩa,nzĩa,"path, highway, path, small gazelle",nzĩa N;SG;BANTU9,PanLex Exact Match
+Ndũkonũve,konũva,[Translation Missing],konũve V;PRS;NEG;1;SG,No Lexicon Match
+ngoso,ngoso,[Translation Missing],uNgoso,No Lexicon Match
+kĩvũĩyo,ivui,"dove, (red-eyed) dove, lung",kĩvũĩyo N;SG;BANTU15,Substring Overlap
+Ngoso,ungoso,[Translation Missing],uNgoso,No Lexicon Match
+kyengonĩ,engonĩ,[Translation Missing],engonĩ V;PRS;HAB;3;SG,No Lexicon Match
+ndivivaswa,vaswa,[Translation Missing],vaswa V;PRS;HAB;1;SG,No Lexicon Match
+ĩũlũ,ĩũlũ,"above, up",ĩũlũ N;SG;BANTU1,PanLex Exact Match
+ndi,ndi,[Translation Missing],ndi PRO;INT;INTENS,No Lexicon Match
+kĩvalala,vala,"ascend, climb",valala V;NFIN,Substring Overlap
+Masũni,umasũni,[Translation Missing],uMasũni N;PL;BANTU2,No Lexicon Match
+makũũ,kũũ,"foot, leg, calabash",makũũ N;PL;BANTU6,PanLex Exact Match
+mambaa,amba,baobab,mambaa V;PRS,Substring Overlap
+andũ,wandũ,[Translation Missing],andũ PRO;INT;INTENS,No Lexicon Match
+mai,mai,"dung, excrement",mai DET;POSS;PSS1P;BANTU6,PanLex Exact Match
+ũvakũsi,ũvakũsi,[Translation Missing],ũvakũsi N;SG;BANTU14,No Lexicon Match
+Wĩvũa,vũa,"wash, wash (clothes)",vũa V;PRS;HAB;3;SG,PanLex Exact Match
+itakũũlũka,kũũlũka,fly,itakũũlũka N;SG;BANTU9,PanLex Exact Match
+Kwaa,kwaa,"get lost, disappear, fade",Kwaa V;PRS;HAB;3;SG,PanLex Exact Match
+ngũngũũ,ngũngũũ,crow,Ngũngũũ N;SG;BANTU10,PanLex Exact Match
+kimba,kimba,"corpse, dead person",kimba V;PRS,PanLex Exact Match
+Kaũ,kaũ,war,Kaũ DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+ĩtoli,ĩtoli,[Translation Missing],ĩtoli N;SG;BANTU1,No Lexicon Match
+ũtanu,ũtanu,[Translation Missing],ũtanu N;SG;BANTU14,No Lexicon Match
+Ngũngũũ,ngũũ,"old, hippopotamus, tortoise, hump, hump (of hunchback)",Ngũngũũ N;SG;BANTU10,PanLex Exact Match
+ndĩsa,ndĩsa,[Translation Missing],ndĩsa N;SG;BANTU9,No Lexicon Match
+ũtuma,kutuma,"send, sew, knit, weave",ũtuma N;SG;BANTU14,Substring Overlap
+mũũngũu,nguu,"old, hippopotamus, tortoise, hump, hump (of hunchback)",mũũngũu N;SG;BANTU1,Substring Overlap
+yonaa,onaa,[Translation Missing],onaa V;PRS,No Lexicon Match
+vaasa,asa,far,vaasa V;PST,PanLex Exact Match
+vaa,vaa,[Translation Missing],vaa V;PST;REC;3;SG,No Lexicon Match
+Kasũni,kasũni,[Translation Missing],kasũni N;SG;BANTU15,No Lexicon Match
+kokĩlaa,ilaa,flower,kĩlaa V;NFIN,Substring Overlap
+tene,ivinda ya tene,old times,tene,Substring Overlap
+niko,guniko,"cork, stopper",niko DET;POSS;PSS1P;BANTU9,Substring Overlap
+kakwataa,kwata,"seize, get, obtain, grasp, hold, hold (in arm), arrest, receive",kwataa V;PST;REC;3;SG,Substring Overlap
+kiinyũ,inyunyu,buttock,inyũ N;SG;BANTU15,Substring Overlap
+Kasoni,soni,[Translation Missing],Kasoni N;SG;BANTU15,No Lexicon Match
+wavĩwe,vĩwa,[Translation Missing],vĩwa V;PST;REC;2;SG,No Lexicon Match
+akĩlasya,lasya,[Translation Missing],lasya V;PRS;PROG;3;SG,No Lexicon Match
+omanya,manya,know,manya V;PRS;HAB;2;SG,PanLex Exact Match
+kyathĩ,thĩ,"pestle, country, district, province, earth, land, go away, leave, go",thĩ V;PRS;NEG;3;SG,PanLex Exact Match
+nĩkyavika,vika,"arrive, go back, return",vika V;PRS;PROG;1;SG,PanLex Exact Match
+Ona,ona,see,ona V;PRS;HAB;3;SG,PanLex Exact Match
+kaunyũsye,unyũsa,[Translation Missing],unyũsa V;PST;REC;3;SG,No Lexicon Match
+kolũkaa,lũkaa,[Translation Missing],kolũkaa V;NFIN,No Lexicon Match
+kaikitalasya,tala,"palm, palm (of hand), count, flat of hand",ikitalasya N;SG;BANTU15,Substring Overlap
+ũseki,ũseki,[Translation Missing],ũseki N;SG;BANTU14,No Lexicon Match
+katanamba,amba,baobab,tanamba V;PST,Substring Overlap
+kũũlũka,ũlũka,fly,ũlũka V;NFIN,PanLex Exact Match
+kambaa,amba,baobab,kambaa V;PRS,Substring Overlap
+ũtumbĩlĩla,bili,"tick, (cattle or dog) tick",tumbĩlĩla V;PRS,Substring Overlap
+Kavaa,vaa,[Translation Missing],vaa V;PST;REC;3;SG,No Lexicon Match
+kasũni,kasũni,[Translation Missing],kasũni N;SG;BANTU15,No Lexicon Match
+kamwe,kamwe,[Translation Missing],kamwe,No Lexicon Match
+kwokonĩ,konĩ,[Translation Missing],kwokonĩ V;PRS;HAB;3;SG,No Lexicon Match
+twĩlĩ,twĩlĩ,[Translation Missing],twĩlĩ N;SG;BANTU11,No Lexicon Match
+wavĩyawa,vĩyawa,[Translation Missing],vĩyawa V;PST;REC;2;SG,No Lexicon Match
+nyonyi,nyonyi,[Translation Missing],nyonyi N;SG;BANTU9,No Lexicon Match
+kĩtoli,kĩtoli,[Translation Missing],kĩtoli N;SG;BANTU15,No Lexicon Match
+kyaasindana,inda,dip,sindana V;PRS;NEG;3;SG,Substring Overlap
+ndandaalika,lika,"come in, go in",ndandaalika V;PST,Substring Overlap
+Ĩkũya,ya,eat,ĩkũya N;SG;BANTU10,PanLex Exact Match
+nĩyo,nĩyo,[Translation Missing],nĩyo DET;PROX;BANTU9,No Lexicon Match
+maumĩ,umĩ,[Translation Missing],maumĩ N;PL;BANTU6,No Lexicon Match
+Ĩvĩndĩ,ĩvĩndĩ,bone,ĩvĩndĩ N;SG;BANTU10,PanLex Exact Match
+yaemie,ema,mountain,ema V;PST;REC;3;SG,PanLex Exact Match
+ngitĩ,ngitĩ,dog,ngitĩ DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+ekanaa,kana,child,kanaa V;PRS,Substring Overlap
+nayo,nayo,[Translation Missing],nayo DET;POSS;PSS1P;BANTU9,No Lexicon Match
+ata,ta,"bow, spittle",ata V;PRS,PanLex Exact Match
+Kala,ikala nthi,sit,kala V;PRS;HAB;3;SG,Substring Overlap
+kevwia,vwia,"feathers, fur, awe, fear of God",kevwia V;PRS,PanLex Exact Match
+kenũkĩaa,kenũkĩaa,[Translation Missing],kenũkĩaa V;NFIN,No Lexicon Match
+inya,inya,four,inya N;SG;BANTU9,PanLex Exact Match
+Kasamũ,samũ,[Translation Missing],samũ V;PST;REC;3;SG,No Lexicon Match
+kanini,nini,"small, a few, not much",kanini N;SG;BANTU15,Substring Overlap
+kaĩĩa,ĩĩa,"lake, milk, lake",ĩĩa V;PST;REC;3;SG,PanLex Exact Match
+Kanywa,nywa,"mouth, drink",nywa V;PST;REC;3;SG,PanLex Exact Match
+ũumaa,umaa,"grandfather, urinate",ũumaa N;SG;BANTU14,Substring Overlap
+mũingo,mũingo,[Translation Missing],mũingo N;SG;BANTU1,No Lexicon Match
+syĩthesyaa,syaa,"bear child, give birth, give birth (to a child)",syĩthesyaa V;PRS,Substring Overlap
+mavĩndĩ,vĩndĩ,bone,vĩndĩ V;PST;REC;2;PL,PanLex Exact Match
+katũlile,tũla,"hem, make a border, break, snap",tũla V;PST;REC;3;SG,PanLex Exact Match
+nyinya,inya,four,nyinya N;SG;BANTU9,Substring Overlap
+Kyonze,kyonze,"cripple, weak, be mutilated",kyonda V;PST;REC;3;SG,PanLex Exact Match
+kĩminũkĩlaswa,kĩminũkĩlaswa,[Translation Missing],kĩminũkĩlaswa V;NFIN,No Lexicon Match
+Kĩsaa,saa,hour,kĩsaa N;SG;BANTU15,PanLex Exact Match
+kĩvoyaa,voya,"ask for, borrow, lend",voyaa V;NFIN,Substring Overlap
+ĩmwenĩ,imwe,"dew, one, one",ĩmwenĩ N;SG;BANTU1,Substring Overlap
+Mbiti,mbiti,hyena,uMbiti N;SG;BANTU1,PanLex Exact Match
+ndyendaa,enda,"go, love, want, need, wish, please, satisfy",endaa V;PRS,Substring Overlap
+mũsolonĩ,mũsolonĩ,[Translation Missing],mũsolonĩ N;SG;BANTU1,No Lexicon Match
+iingĩ,nyingi,many,ingĩ DET;POSS;PSS2P;BANTU9,Substring Overlap
+Kũtukĩwa,kiwa,sugar cane,tukĩwa V;NFIN,Substring Overlap
+tikwo,tikwo,[Translation Missing],tikwo DET;POSS;PSS1P;BANTU10,No Lexicon Match
+kũlĩka,lĩka,"come in, go in",lĩka V;NFIN,PanLex Exact Match
+Kũndũ,kũndũ,"abscess, boil",Kũndũ N;SG;BANTU15,PanLex Exact Match
+ũkaaya,ya,eat,ũkaaya N;SG;BANTU14,PanLex Exact Match
+ndũkaawetee,wetea,[Translation Missing],wetea V;PST;REC;1;SG,No Lexicon Match
+ndatalaa,tala,"palm, palm (of hand), count, flat of hand",talaa V;PST,Substring Overlap
+maũmangwa,ũmangwa,[Translation Missing],maũmangwa N;PL;BANTU6,No Lexicon Match
+Mwĩao,mwĩao,[Translation Missing],Mwĩao N;SG;BANTU1,No Lexicon Match
+mũonza,onza,seven,onza V;PRS;HAB;2;PL,PanLex Exact Match
+wasyaa,syaa,"bear child, give birth, give birth (to a child)",syaa V;PST;REC;2;SG,PanLex Exact Match
+weethĩa,thia,"point, tip, peak, top, highest point, utmost, grind, grind (grain with a millstone)",weethĩa V;PRS;HAB;2;SG,Substring Overlap
+ndũkatie,ta,"bow, spittle",tia V;PST;REC;1;SG,PanLex Exact Match

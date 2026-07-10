@@ -1,90 +1,429 @@
 Surface Word,Ganda Lemma,English translation,Glossing,Match Type
-gandaalo,ganda,fellow-tribesman,gandaalo N;SG;BANTU1,Substring Overlap
-abalungi,lungi,I’m fine,umlungi N;PL;BANTU2,Substring Overlap
-musajja,sa,grind,musajja N;SG;BANTU1,Isolated Root Exact Match
-Aboluganda,ganda,fellow-tribesman,BANTU2,Substring Overlap
-yanoonya,kunoonya,hand around,onya V;PRS;HAB;3;SG,Substring Overlap
-Akanyonyi,ekinyonyi,bird,nyonyi V;PST;REC;3;SG,Substring Overlap
-ekisu,ekisumuluzo,key,ekisu N;SG;BANTU10,Substring Overlap
-liiso,liiso,eye,liiso,PanLex Exact Match
-Alaba,tetugalaba,I’m fine,laba V;PST;REC;3;SG,Substring Overlap
-ekilungi,lungi,I’m fine,kilungi N;SG;BANTU10,Substring Overlap
-Amaka,amaka,family,amaka V;PRS;HAB;3;SG,PanLex Exact Match
-Akwaagala,kwagala okumanya,curious,agala V;PRS;HAB;3;SG,Substring Overlap
-Akwaagula,ggula,open a door,agula V;PST;REC;3;SG,Substring Overlap
-wala,wala,girl,wala DET;POSS;PSS1P;BANTU1,PanLex Exact Match
-kibuga,obugazi,width,buga V;PRS,Substring Overlap
-amalungi,lungi,I’m fine,amalungi N;PL;BANTU6,PanLex Exact Match
-gakola,kukola akajanja,finicky,gakola N;SG;BANTU1,Substring Overlap
-wamu,lwamukaaga,Saturday,wamu DET;POSS;PSS1P;BANTU1,Substring Overlap
-si,si,country,si PRO;INT;INT,PanLex Exact Match
-Amazzi,muyizzi,hunter,amazzi N;PL;BANTU6,Substring Overlap
-ekilo,ekilooto,dream,ekilo N;SG;BANTU10,Substring Overlap
-nyina,annyina,brother,nyina N;SG;BANTU9,Substring Overlap
-enjuba,njuba,sun,enjuba N;SG;BANTU10,PanLex Exact Match
-gombolola,ggombolola,sub-county,gombolola V;PRS,Substring Overlap
-kimu,kimuli,flower,kimu N;SG;BANTU15,Substring Overlap
-Bazaala,zaala,give birth,BANTU2,PanLex Exact Match
-mubiri,mubi,ugly,biri ADJ;BANTU1,Substring Overlap
-tebazaala,zaala,give birth,tebazaala V;PRS,PanLex Exact Match
-olibeera,kubeera lubuto,pregnant,beera V;PST;REC;3;SG,Substring Overlap
-mulungi,lungi,I’m fine,uMulungi N;SG;BANTU1,Substring Overlap
-mukulu,mukulukusa,October,mukulu N;SG;BANTU1,Substring Overlap
-na,na,and,na COP;IDENT,PanLex Exact Match
-muttu,wakati muttumbi,midnight,muttu N;SG;BANTU1,Substring Overlap
-Endiga,endiga,sheep,indiga N;SG;BANTU10,PanLex Exact Match
-mbuzi,embuzi,goat,mbuzi N;SG;BANTU1,Substring Overlap
-Enkima,kima,monkey,inkima N;SG;BANTU10,PanLex Exact Match
-okutuukirira,kiri,it,tuukirira V;NFIN,Substring Overlap
-Enkuba,enkuba,rain,inkuba,PanLex Exact Match
-ensa,sa,grind,ensa V;PRS,PanLex Exact Match
-yamala,faranga ey’emalagase,Malagasy Ariary,mala V;PST;REC;3;SG,Substring Overlap
-amazzi,muyizzi,hunter,amazzi N;PL;BANTU6,Substring Overlap
-enyumba,nyumba,house,nyumba V;PRS,PanLex Exact Match
-ne,ne,and,ne DET;POSS;PSS1P;BANTU9,PanLex Exact Match
-Eyali,walisi ne futuna,Wallis & Futuna,Eyali N;SG;BANTU1,Substring Overlap
-bwalaba,tetugalaba,I’m fine,laba V;PST;REC;3;SG,Substring Overlap
-era,era,and,era V;PRS,PanLex Exact Match
-muganda,ganda,fellow-tribesman,muganda N;SG;BANTU1,PanLex Exact Match
-Kakulu,mukulukusa,October,Kakulu N;SG;BANTU15,Substring Overlap
-kulilwa,buulila,say,lila V;NFIN,Substring Overlap
-Kyenkola,kukola akajanja,finicky,inkola N;SG;BANTU15,Substring Overlap
-mbiro,bbumbiro,potter shop,mbiro,Substring Overlap
-kwotadde,ota,bask,ota V;PST;REC;3;SG,PanLex Exact Match
-Mulungi,lungi,I’m fine,uMulungi N;SG;BANTU1,PanLex Exact Match
-mubi,mubi,ugly,bi ADJ;BANTU1,PanLex Exact Match
-Omukazi,omukazi,woman,umukazi N;SG;BANTU1,PanLex Exact Match
-Ne,ne,and,ne DET;POSS;PSS1P;BANTU9,PanLex Exact Match
-olulagala,gambalagala,mountain,lagala V;PRS;2;SG,Substring Overlap
-alekulira,ntaulira,honey badger,lira V;FUT,Substring Overlap
-kisikiriize,kiri,it,sikiriiza V;PST;REC;3;SG,Substring Overlap
-mukka,okussa omukka,breathe,mukka N;SG;BANTU1,Substring Overlap
-ate,ate,and,te PRO;INT;INTENS,PanLex Exact Match
-Omwana,omwana,babe,umwana N;SG;BANTU1,PanLex Exact Match
-ewaka,wakati muttumbi,midnight,ewaka V;PRS,Substring Overlap
-Wange,jjajja wange,great aunt,wange DET;POSS;PSS1P;BANTU1,Substring Overlap
-omulungii,lungi,I’m fine,umulungii N;SG;BANTU1,Substring Overlap
-okuwasa,kwasama,open the mouth,wasa V;NFIN,Substring Overlap
-buti,faranga ey’ejjibuti,Djiboutian Franc,buti PRO;INT;BANTU14,Substring Overlap
-ensanafu,nsanafu,ant,insanafu N;SG;BANTU10,PanLex Exact Match
-Olubuto,kubeera lubuto,pregnant,ubuto N;SG;BANTU11,Substring Overlap
-embi,embizzi,pig,emba V;PRS,Substring Overlap
-kukubira,kujjumbira,keen,kubira V;NFIN,Substring Overlap
-lukaawa,kaawa,coffee,lukaawa V;PRS;HAB;3;SG,PanLex Exact Match
-Omukulu,mukulukusa,October,umukulu N;SG;BANTU1,Substring Overlap
-Omuze,muzadde,parent,umuze N;SG;BANTU1,Substring Overlap
-Omukwaano,omukwaano,love,umukwaano N;SG;BANTU1,PanLex Exact Match
-mulabe,tetugalaba,I’m fine,laba V;PST;REC;2;PL,Substring Overlap
-bwabeera,kubeera lubuto,pregnant,beera V;PST;REC;3;SG,Substring Overlap
-Omuwala,wala,girl,umuwala N;SG;BANTU1,PanLex Exact Match
-maka,makansi,scissors,maka N;PL;BANTU6,Substring Overlap
-Omuyizzi,yizzi,hunter,umuyizzi N;SG;BANTU1,PanLex Exact Match
-ekibuga,obugazi,width,buga V;PRS;HAB;3;SG,Substring Overlap
-kyotasimba,simba,genet,otasimba V;FUT,Substring Overlap
-muzinga,ekizinga,island,zinga V;PRS,Substring Overlap
-njuki,enjuki,bee,njuki N;SG;BANTU10,Substring Overlap
-emu,emu,one,emu PRO;INT;INTENS,PanLex Exact Match
-njuba,njuba,sun,njuba N;SG;BANTU10,PanLex Exact Match
-nomala,faranga ey’emalagase,Malagasy Ariary,mala V;PRS;HAB;1;SG,Substring Overlap
-Zimba,kasimba,genet,Zimba V;PRS,Substring Overlap
-muti,muti,tree,muti N;SG;BANTU1,PanLex Exact Match
+Abakadde,kadde,"old, old person",umkadde N;PL;BANTU2,Substring Overlap
+bali,emabbali wolugudo,sidewalk,bali PRO;INT;BANTU2,Substring Overlap
+mu,mu,"one, in, inside",mu DET;PROX;BANTU1,PanLex Exact Match
+gandaalo,ganda,"Luganda, brother, fellow-tribesman, relative",gandaalo N;SG;BANTU1,Substring Overlap
+kisikiziz,sikiziz,[Translation Missing],sikiziz V;PRS,No Lexicon Match
+kyomuti,omuti,"tree, pole",kyomuti N;SG;BANTU15,PanLex Exact Match
+Ababi,akuma akapima obunyogovu oba ebugumu mumubiri,thermometer,bi ADJ;BANTU2,Substring Overlap
+okulya,lya,eat,lya V;NFIN,PanLex Exact Match
+abalungi,lungi,"good, beautiful, I’m fine, response",umlungi N;PL;BANTU2,Substring Overlap
+emilimo,umlimo,[Translation Missing],umlimo N;PL;BANTU1,No Lexicon Match
+Abakazi,kazi,"woman, wife",umkazi N;PL;BANTU2,Substring Overlap
+abangi,abangi,[Translation Missing],abangi PRO;INT;INTENS,No Lexicon Match
+bafuula,fuula,"alter, change",fuula V;PRS,PanLex Exact Match
+musajja,jja,come,musajja N;SG;BANTU1,PanLex Exact Match
+waabwe,waabwe,[Translation Missing],waabwe,No Lexicon Match
+okwogera,okwogera,"speak, talk",ogera V;PRS;HAB;2;SG,PanLex Exact Match
+Aboluganda,ganda,"Luganda, brother, fellow-tribesman, relative",BANTU2,Substring Overlap
+bita,bikumi bitaano,five hundred,bita V;PRS,Substring Overlap
+nga,nga,"like, when",nga PRO;INT;INTENS,PanLex Exact Match
+bayombye,kuyomba,quarrel,yomba V;PST;REC;3;PL,Substring Overlap
+kwata,kwata,seize,kwata V;PRS,PanLex Exact Match
+enkumbi,enkumbi,hoe,inkumbi N;SG;BANTU10,PanLex Exact Match
+olime,lima,cultivate,lima V;PST;REC;2;SG,PanLex Exact Match
+Abuliira,buliira,[Translation Missing],buliira V;PRS,No Lexicon Match
+omugezi,umugezi,[Translation Missing],umugezi N;SG;BANTU1,No Lexicon Match
+tatawaana,kukwaana,flirt,tatawaana V;FUT,Substring Overlap
+Addukana,ddukana,[Translation Missing],ddukana V;PRS,No Lexicon Match
+yanoonya,gatonya,January,onya V;PRS;HAB;3;SG,Substring Overlap
+akuyu,kuyuguuma,upheaval,akuyu N;SG;BANTU1,Substring Overlap
+Akaami,ami,"chief, headman",ami N;SG;BANTU1,PanLex Exact Match
+akatono,tono,small,tono V;PST;REC;3;SG,PanLex Exact Match
+okagayira,gayira,[Translation Missing],gayira V;PST;REM;2;SG,No Lexicon Match
+mitala,mita,meter,mitala N;PL;BANTU4,Substring Overlap
+wa,wa,"give, of, where",wa DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+mugga,gga,river,gga V;PRS,PanLex Exact Match
+Akako,wakako,[Translation Missing],akako,No Lexicon Match
+kakila,ekilaamo,will,kila V;PST;REC;3;SG,Substring Overlap
+mbegelaako,mbegelaako,[Translation Missing],mbegelaako N;SG;BANTU1,No Lexicon Match
+Akanyonyi,nyonyi,bird,nyonyi V;PST;REC;3;SG,PanLex Exact Match
+kakozesa,kozesa,use,kozesa V;PST;REC;3;SG,PanLex Exact Match
+byo,wo,there,byo DET;POSS;PSS1P;BANTU2,PanLex Exact Match
+oya,oya,[Translation Missing],oya V;PRS;HAB;2;SG,No Lexicon Match
+birara,bira,forest,birara,Substring Overlap
+okuzimba,zimba,"swell, build",zimba V;NFIN,PanLex Exact Match
+ekisu,ekisenge ekisulwaamu,"bedchamber, bedroom, chamber, sleeping room",ekisu N;SG;BANTU10,Substring Overlap
+kyaako,bujjanjabi obusokerwaako,first aid,kyaako,Substring Overlap
+Akatono,tono,small,tono V;PST;REC;3;SG,PanLex Exact Match
+kazila,zila,[Translation Missing],zila V;PST;REC;3;SG,No Lexicon Match
+liiso,liiso,"eye, organ",liiso,PanLex Exact Match
+Akozesa,kozesa,use,kozesa V;PRS;HAB;1;SG,PanLex Exact Match
+emikono,kono,"arm, hand",umkono N;PL;BANTU1,Substring Overlap
+gyombi,gyombi,[Translation Missing],gyombi N;SG;BANTU1,No Lexicon Match
+talemwa,lemwa,[Translation Missing],talemwa V;PST,No Lexicon Match
+kulya,lya,eat,lya DET;POSS;PSS1P;BANTU5,PanLex Exact Match
+Akussuka,ssuka,[Translation Missing],ssuka V;NFIN,No Lexicon Match
+lyali,lyali,[Translation Missing],lyali N;SG;BANTU11,No Lexicon Match
+nalyo,lyo,[Translation Missing],nalyo N;PL;BANTU9,No Lexicon Match
+taba,amataba,flood,taba,Substring Overlap
+mutti,mutti,[Translation Missing],mutti N;SG;BANTU1,No Lexicon Match
+Alaba,laba,see,laba V;PST;REC;3;SG,PanLex Exact Match
+ekilungi,kilungi,nice,kilungi N;SG;BANTU10,PanLex Exact Match
+akinyumya,nyumya,[Translation Missing],nyumya V;PRS;PROG;3;SG,No Lexicon Match
+Amaka,amaka,"family, immediate family, e.g. parents and their children, home",amaka V;PRS;HAB;3;SG,PanLex Exact Match
+omutali,umutali,[Translation Missing],umutali N;SG;BANTU1,No Lexicon Match
+muchaara,ara,[Translation Missing],muchaara N;SG;BANTU1,No Lexicon Match
+galinga,galinga,[Translation Missing],galinga V;PRS,No Lexicon Match
+ekisibo,kisibo,[Translation Missing],ekisibo N;SG;BANTU10,No Lexicon Match
+nte,nte,"cow, cattle",nte,PanLex Exact Match
+Akwaagala,agala,"love, want, need, wish",agala V;PRS;HAB;3;SG,PanLex Exact Match
+Akwaagula,gula,buy,agula V;PST;REC;3;SG,PanLex Exact Match
+no,no,[Translation Missing],no DET;PROX;BANTU9,No Lexicon Match
+bujama,bujama,"dirt, filth",jama V;PRS,PanLex Exact Match
+bwo,wo,there,bwo DET;POSS;PSS1P;BANTU14,PanLex Exact Match
+Akwata,kwata,seize,akwata V;PRS;HAB;3;SG,PanLex Exact Match
+empoya,mpoya,[Translation Missing],mpoya N;SG;BANTU1,No Lexicon Match
+atuuka,kutuuka ekikeerezi,"late, late (be)",tuuka V;PST;REC;3;SG,Substring Overlap
+wala,wala,"girl, virgin, virgin (bride), away, distant, far",wala DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+Nawolovu,nnawolovu,chameleon,uNawolovu N;PL;BANTU10,Substring Overlap
+yatuuka,kutuuka ekikeerezi,"late, late (be)",tuuka V;PST;REC;3;SG,Substring Overlap
+kibuga,buga,town,buga V;PRS,PanLex Exact Match
+amalungi,lungi,"good, beautiful, I’m fine, response",amalungi N;PL;BANTU6,PanLex Exact Match
+gakola,kola,"do, make",gakola N;SG;BANTU1,PanLex Exact Match
+ekibanja,banja,plot of ground,banja V;PRS;HAB;3;SG,PanLex Exact Match
+ekiningi,ningi,[Translation Missing],ningi ADJ;BANTU1;BANTU10,No Lexicon Match
+Amatu,amatu,[Translation Missing],amatu N;PL;BANTU6,No Lexicon Match
+agatawulira,wulira,hear,gatawulira V;FUT,Substring Overlap
+kubulirirwa,bulirira,[Translation Missing],bulirirwa V;NFIN,No Lexicon Match
+gagendera,enda,nine,gagendera V;PST,Substring Overlap
+wamu,wamu,together,wamu DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+nomutwe,mutwe,head,nomutwe N;SG;BANTU1,Substring Overlap
+Amambuka,bizinga bya mariyana eby’omumambuka,"Northern Mariana Islands, 𐐤𐐱𐑉𐑄𐐲𐑉𐑌 𐐣𐐰𐑉𐐨𐐱𐑌𐐲 𐐌𐑊𐐲𐑌𐐼𐑆",mbuka V;PRS;HAB;3;SG,Substring Overlap
+si,si,"country, (our) country, earth, land, (dry) land",si PRO;INT;INT,PanLex Exact Match
+maserengeta,maserengeta,South,serengeta V;PST;REC;2;PL,PanLex Exact Match
+Amazzi,amazzi,"water, pee, pee-pee, piss, urine, wee-wee",amazzi N;PL;BANTU6,PanLex Exact Match
+amasabe,saba,ask for,isabe N;PL;BANTU6,PanLex Exact Match
+tegamala,gama,mug,tegamala V;PRS,Substring Overlap
+nyonta,nyonta,thirst,nyonta N;SG;BANTU9,PanLex Exact Match
+Atalimba,daalimba,lazy,limba V;FUT,Substring Overlap
+takula,la,[Translation Missing],la V;FUT,No Lexicon Match
+Atambula,tambula,"walk, take a walk",tambula V;FUT,PanLex Exact Match
+ekilo,ekilooto,"dream, imaginary events seen while sleeping",ekilo N;SG;BANTU10,Substring Overlap
+Atanatambula,tambula,"walk, take a walk",tambula V;FUT,PanLex Exact Match
+yatenda,enda,nine,tenda V;PST;REC;3;SG,Substring Overlap
+nyina,annyina,"brother, sister, (her) brother, (his) sister",nyina N;SG;BANTU9,Substring Overlap
+okufumba,fumba,"boil, cook",fumba V;NFIN,PanLex Exact Match
+Atya,tya,be afraid,tya V;PRS,PanLex Exact Match
+enjuba,njuba,"sun, yolk, the star around which the Earth revolves",enjuba N;SG;BANTU10,PanLex Exact Match
+taliba,ba,"be, become, string",taliba V;FUT,PanLex Exact Match
+gombolola,bolo,penis,gombolola V;PRS,Substring Overlap
+Bassa,ssa,[Translation Missing],BANTU2,No Lexicon Match
+kimu,ekifo ekimu,somewhere,kimu N;SG;BANTU15,Substring Overlap
+nkuyege,kakuyege,campaign,nkuyege N;SG;BANTU10,Substring Overlap
+Bazaala,zaala,"give birth, give birth (to a child)",BANTU2,PanLex Exact Match
+mubiri,mubiri,body,biri ADJ;BANTU1,PanLex Exact Match
+tebazaala,zaala,"give birth, give birth (to a child)",tebazaala V;PRS,PanLex Exact Match
+mpisa,mpisa,manners,mpisa N;SG;BANTU1,PanLex Exact Match
+Bugubugu,bantu,people,BANTU14,Substring Overlap
+ssimuliro,muli,"reed, flower",ssimuliro V;PRS,Substring Overlap
+Bwoba,oba,[Translation Missing],oba V;PRS;HAB;2;SG,No Lexicon Match
+tosobota,sobota,[Translation Missing],tosobota V;PRS,No Lexicon Match
+kutunula,tunula,see,tunula V;NFIN,PanLex Exact Match
+mumaaso,mumaaso,face,mumaaso N;PL;BANTU1,PanLex Exact Match
+olibeera,embeera,"mood, state",beera V;PST;REC;3;SG,Substring Overlap
+mabega,mabega,"back, behind, rear",bega V;PST;REC;2;PL,PanLex Exact Match
+oli,oli,[Translation Missing],oli DET;POSS;PSS1P;BANTU1,No Lexicon Match
+mulungi,lungi,"good, beautiful, I’m fine, response",uMulungi N;SG;BANTU1,Substring Overlap
+nelwolifa,fa,die,nelwolifa N;SG;BANTU11,PanLex Exact Match
+entaanayo,entaanayo,[Translation Missing],entaanayo N;SG;BANTU10,No Lexicon Match
+elyagalwa,mwagalwa,"beloved, dear",agalwa V;FUT,Substring Overlap
+onywanye,nywana,[Translation Missing],nywana V;PST;REC;2;SG,No Lexicon Match
+mukulu,mukulu,"adult, elder",mukulu N;SG;BANTU1,PanLex Exact Match
+oba,oba,[Translation Missing],oba V;PRS;HAB;2;SG,No Lexicon Match
+otuliidde,tuli,"hole, nest",tuliira V;PST;REC;2;SG,Substring Overlap
+muguwa,muguwa,rope,muguwa N;SG;BANTU1,PanLex Exact Match
+Bwoyo,bantu,people,BANTU14,Substring Overlap
+kya,kya,"dawn, of",kya DET;POSS;PSS1P;BANTU15,PanLex Exact Match
+enju,amanyi genjuba,solar,enju PRO;INT;INTENS,Substring Overlap
+oyinza,yinza,[Translation Missing],yinza V;PRS;HAB;2;SG,No Lexicon Match
+okusazamu,saza,"cut, lop",sazamu V;NFIN,Substring Overlap
+omukka,kka,smoke,mukka N;SG;BANTU1,PanLex Exact Match
+Bwosalawo,bantu,people,BANTU14,Substring Overlap
+embwa,embwa,"dog, pet",embwa V;PRS,PanLex Exact Match
+lya,lya,eat,lya DET;POSS;PSS1P;BANTU5,PanLex Exact Match
+ensava,nsava,[Translation Missing],ensava N;SG;BANTU10,No Lexicon Match
+Bwosekerera,kere,frog,BANTU14,Substring Overlap
+ekibya,bya,[Translation Missing],bya V;PRS;HAB;3;SG,No Lexicon Match
+osekerera,kere,frog,sekerera V;PRS,Substring Overlap
+mubumbii,bumbii,[Translation Missing],mubumbii N;SG;BANTU1,No Lexicon Match
+Ebbeere,ebbeere,breast,ebbeere V;PRS;HAB;3;SG,PanLex Exact Match
+nyabo,nnyabo,"madam, miss, mrs",nyabo N;SG;BANTU9,Substring Overlap
+telifuna,funa,"get, obtain, receive",funa V;PRS,PanLex Exact Match
+Bigenge,genga,[Translation Missing],BANTU10,No Lexicon Match
+Ecika,cika,[Translation Missing],Ecika V;PRS,No Lexicon Match
+ekikolimire,lima,cultivate,kolima V;PST;REC;3;SG,Substring Overlap
+mwemuva,imuva,[Translation Missing],mwemuva N;SG;BANTU1,No Lexicon Match
+abakazi,kazi,"woman, wife",umkazi N;PL;BANTU2,Substring Overlap
+abalwaana,kulwaana,fight,balwaana V;PRS;3;PL,Substring Overlap
+na,na,"four, forty, and, used to connect two similar words, phrases, et cetera",na COP;IDENT,PanLex Exact Match
+mafumu,mafumu,[Translation Missing],mafumu N;PL;BANTU6,No Lexicon Match
+Ekilabo,ulabo,[Translation Missing],Ekilabo N;SG;BANTU10,No Lexicon Match
+ekitono,ekitono,"few, less, little, small",ekitono N;SG;BANTU10,PanLex Exact Match
+koowa,kukoowa,"tire, tired",koowa V;PRS;HAB;3;SG,Substring Overlap
+munno,munno,[Translation Missing],munno N;SG;BANTU1,No Lexicon Match
+Ekiri,ekirime,plant,Ekiri N;SG;BANTU1,Substring Overlap
+muttu,wakati muttumbi,"midnight, 12 o'clock at night",muttu N;SG;BANTU1,Substring Overlap
+kimanywa,eky’okunywa,drink,nywa V;PRS;HAB;3;SG,Substring Overlap
+nyini,bwa nnanyini,ownership,nyini DET;PROX;BANTU9,Substring Overlap
+kyo,wo,there,kyo DET;PROX;BANTU15,PanLex Exact Match
+Ekyengela,engela,ripen,engela V;PRS;HAB;3;SG,PanLex Exact Match
+amangu,angu,light in weight,amangu N;PL;BANTU6,Substring Overlap
+kivunda,vunda,[Translation Missing],vunda V;PRS,No Lexicon Match
+mangu,mangu,quick,mangu N;PL;BANTU1,PanLex Exact Match
+Embwa,embwa,"dog, pet",embwa V;PRS,PanLex Exact Match
+elina,-lina,have,elina V;PRS,Substring Overlap
+eggumba,ggumba,bone,ggumba V;PRS,PanLex Exact Match
+kamwa,kamwa,mouth,kamwa N;SG;BANTU15,PanLex Exact Match
+teluma,luma,"bite, spy out",teluma V;PRS,Substring Overlap
+Empungu,empungu,eagle,impungu N;SG;BANTU1,PanLex Exact Match
+telya,telya,[Translation Missing],telya V;PRS,No Lexicon Match
+bire,wa,"give, of, where",bire,PanLex Exact Match
+Endiga,endiga,"sheep, animal",indiga N;SG;BANTU10,PanLex Exact Match
+tekabiira,kusuubiira,expect,tekabiira V;PST,Substring Overlap
+mwaana,mwaana,[Translation Missing],mwaana N;SG;BANTU1,No Lexicon Match
+gwa,gwa,fall,gwa DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+mbuzi,mbuzi,goat,mbuzi N;SG;BANTU1,PanLex Exact Match
+effudde,ffula,[Translation Missing],ffula V;PST;REC;3;SG,No Lexicon Match
+Enjovu,enjovu,elephant,enjovu N;SG;BANTU10,PanLex Exact Match
+ebbiri,bbiri,two,ebbiri N;SG;BANTU1,Substring Overlap
+wezilwanira,isilwanira,[Translation Missing],isilwanira N;PL;PSSB1,No Lexicon Match
+essubi,ssubi,[Translation Missing],Essubi N;SG;BANTU1,No Lexicon Match
+lisesetera,sesetera,[Translation Missing],sesetera V;PRS,No Lexicon Match
+telemelerwa,lerwa,midwife,telemelerwa V;PRS,Substring Overlap
+sanga,sanga,meet,sanga,PanLex Exact Match
+lyaayo,lyaayo,[Translation Missing],lyaayo DET;POSS;PSS1P;BANTU5,No Lexicon Match
+Enkima,enkima,monkey,inkima N;SG;BANTU10,PanLex Exact Match
+bwelemerelwa,bwelemerelwa,[Translation Missing],bwelemerelwa V;PRS,No Lexicon Match
+okutuukirira,kiri,"it, it (be)",tuukirira V;NFIN,Substring Overlap
+elyenvu,envumuulo,fast,envu ADJ;BANTU5,Substring Overlap
+nti,nti,that,nti PRO;INT;INTENS,PanLex Exact Match
+ago,wago,[Translation Missing],ago PRO;3;SG,No Lexicon Match
+tegengedde,enge,beer,tegengera V;PST,Substring Overlap
+Enkuba,enkuba,"rain, condensed water from a cloud",inkuba,PanLex Exact Match
+tetonyera,tetonyera,[Translation Missing],tetonyera V;PRS,No Lexicon Match
+omu,omu,[Translation Missing],omu DET;PROX;BANTU1,No Lexicon Match
+Engalo,ingalo,[Translation Missing],ingalo,No Lexicon Match
+ensa,ensa,sense,ensa V;PRS,PanLex Exact Match
+zigwanira,gwanira,[Translation Missing],gwanira V;PRS,No Lexicon Match
+zo,wo,there,zo DET;POSS;PSS1P;BANTU8,PanLex Exact Match
+Enyana,nyana,calf,Enyana N;SG;BANTU10,Substring Overlap
+tesekerera,kere,frog,tesekerera V;PRS,Substring Overlap
+nkunku,nkunku,[Translation Missing],nkunku N;SG;BANTU10,No Lexicon Match
+Entalowooza,lowooza,"imagine, think",Entalowooza N;SG;BANTU10,PanLex Exact Match
+yamala,mala,"complete, do, finish",mala V;PST;REC;3;SG,PanLex Exact Match
+amazzi,amazzi,"water, pee, pee-pee, piss, urine, wee-wee",amazzi N;PL;BANTU6,PanLex Exact Match
+mulwendo,wendo,number,mulwendo N;SG;BANTU1,Substring Overlap
+Ensuwa,suwa,vein,Ensuwa N;SG;BANTU10,Substring Overlap
+entono,tono,small,entono N;SG;BANTU10,Substring Overlap
+nazo,nazo,[Translation Missing],nazo N;SG;BANTU9,No Lexicon Match
+zirina,zirina,[Translation Missing],zirina V;PRS,No Lexicon Match
+amatu,buzindaalo bwokumatu,headphones,amatu N;PL;BANTU6,Substring Overlap
+Essubi,ssubi,[Translation Missing],Essubi N;SG;BANTU1,No Lexicon Match
+elyokya,okya,roast,okya V;PRS;HAB;3;SG,PanLex Exact Match
+enyumba,nyumba,"house, human abode",nyumba V;PRS,PanLex Exact Match
+embii,embia,[Translation Missing],embia V;PRS,No Lexicon Match
+iyelyokya,okya,roast,lyokya V;PST;PRF;3;SG,Substring Overlap
+ne,ne,"and, with, used to connect two similar words, phrases, et cetera",ne DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+nungi,nungi,[Translation Missing],nungi PRO;INT;INTENS,No Lexicon Match
+Eyali,wali,there,Eyali N;SG;BANTU1,PanLex Exact Match
+alumidwa,lumidwa,[Translation Missing],lumidwa V;PRS,No Lexicon Match
+omusota,omusota,snake,umusota N;SG;BANTU1,PanLex Exact Match
+bwalaba,laba,see,laba V;PST;REC;3;SG,PanLex Exact Match
+omunya,munya,lizard,munya V;PRS;HAB;2;SG,PanLex Exact Match
+agudduka,gudduka,[Translation Missing],gudduka V;PRS,No Lexicon Match
+Eyettikka,ettikka,[Translation Missing],ettikka V;PRS;HAB;3;SG,No Lexicon Match
+obuvunanyizibwa,obuvunanyizibwa,responsibility,ubuvunanyizibwa N;SG;BANTU14,PanLex Exact Match
+era,era,"and, used to string together sentences or sentence fragments in chronological order, moreover",era V;PRS,PanLex Exact Match
+afuna,funa,"get, obtain, receive",funa V;PRS,PanLex Exact Match
+okunenye,kunenya,blame,nenya V;PRS;HAB;2;SG,Substring Overlap
+zebwa,bikozesebwa,instrument,zebwa,Substring Overlap
+Ezenkanankana,inkanankana,[Translation Missing],inkanankana N;SG;BANTU10,No Lexicon Match
+bisiki,bisi,"uncooked, unripe",bisiki N;PL;BANTU2,Substring Overlap
+tezaaka,tezaaka,[Translation Missing],tezaaka,No Lexicon Match
+Kamu,akamuli kakawoowo,rose,kamu PRO;INT;BANTU15,Substring Overlap
+kamu,akamuli kakawoowo,rose,kamu PRO;INT;BANTU15,Substring Overlap
+gwe,gwe,[Translation Missing],gwe DET;POSS;PSS1P;BANTU1,No Lexicon Match
+muganda,ganda,"Luganda, brother, fellow-tribesman, relative",muganda N;SG;BANTU1,PanLex Exact Match
+Kakulu,akaduukulu,jail,Kakulu N;SG;BANTU15,Substring Overlap
+ta,ta,"milk, calabash",ta V;PRS,PanLex Exact Match
+kulilwa,buulila,"say, tell, say (to), tell (to)",lila V;NFIN,Substring Overlap
+Kyenkola,enkola,process,inkola N;SG;BANTU15,PanLex Exact Match
+banange,nanga,[Translation Missing],nanga V;PST;REC;3;PL,No Lexicon Match
+sagala,agala,"love, want, need, wish",sagala V;PRS,Substring Overlap
+bakinkole,kola,"do, make",kinkola V;PST;REC;3;PL,Substring Overlap
+Lubaale,baala,ant-hill,baala V;PST;REC;3;SG,PanLex Exact Match
+mbeera,mbeera,"mood, state, temperature",mbeera,PanLex Exact Match
+mbiro,mbiro,diarrhea,mbiro,PanLex Exact Match
+kwotadde,ota,"bask, warm oneself, bask (in the sun)",ota V;PST;REC;3;SG,PanLex Exact Match
+Mama,mama,[Translation Missing],uMama N;SG;BANTU6,No Lexicon Match
+yasinga,singa,if,singa V;PST;REC;3;SG,PanLex Exact Match
+okuweeka,kukweeka,hide,weeka V;NFIN,Substring Overlap
+Mpola,umpola,[Translation Missing],mpola N;SG;BANTU1,No Lexicon Match
+mpola,mpola,[Translation Missing],mpola N;SG;BANTU1,No Lexicon Match
+emugga,gga,river,mugga N;SG;BANTU1,PanLex Exact Match
+Mulungi,lungi,"good, beautiful, I’m fine, response",uMulungi N;SG;BANTU1,Substring Overlap
+emabega,emabega,"after, behind, back, rear",bega V;PRS;HAB;3;PL,PanLex Exact Match
+mubi,bi,bad,bi ADJ;BANTU1,PanLex Exact Match
+Omukazi,omukazi,"woman, adult female human being, female",umukazi N;SG;BANTU1,PanLex Exact Match
+omugumba,omugumba,"barren, infertile",umugumba N;SG;BANTU1,PanLex Exact Match
+ufuna,funa,"get, obtain, receive",funa V;PRS,PanLex Exact Match
+nyo,nyo,[Translation Missing],nyo DET;POSS;PSS1P;BANTU9,No Lexicon Match
+abagenyi,genyi,"guest, stranger",umgenyi N;PL;BANTU2,Substring Overlap
+Ne,ne,"and, with, used to connect two similar words, phrases, et cetera",ne DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+ssanja,ssanja,[Translation Missing],ssanja V;PRS,No Lexicon Match
+lyaaliko,lyaaliko,[Translation Missing],lyaaliko N;PL;BANTU11,No Lexicon Match
+olulagala,agala,"love, want, need, wish",lagala V;PRS;2;SG,Substring Overlap
+Nonuzinyi,zinyi,[Translation Missing],zinyi V;PRS;HAB;1;SG,No Lexicon Match
+ennyo,ekibi ennyo,"awful, direful, fearsome, frightening, horrendous, horrific, scary, terrible",ennyo DET;POSS;PSS1P;BANTU9,Substring Overlap
+alekulira,kintu kyowulira mumubiri,feeling,lira V;FUT,Substring Overlap
+ekidaala,daala,step,daala V;PRS;HAB;3;SG,PanLex Exact Match
+Obulamu,obulamu,"health, life",ubulamu N;SG;BANTU14,PanLex Exact Match
+bulinga,linga,[Translation Missing],bulinga V;PRS,No Lexicon Match
+kisikiriize,kiri,"it, it (be)",sikiriiza V;PST;REC;3;SG,Substring Overlap
+ria,ria,[Translation Missing],ria V;PRS,No Lexicon Match
+mukka,mukka,"smoke, gas",mukka N;SG;BANTU1,PanLex Exact Match
+buyita,yita,"pass, surpass, call",yita V;PRS,PanLex Exact Match
+ate,te,cow,te PRO;INT;INTENS,PanLex Exact Match
+tebudda,tebudda,[Translation Missing],tebudda V;PRS,No Lexicon Match
+masanda,masanda,rubber,masanda N;PL;BANTU6,PanLex Exact Match
+bwoseleera,oseleera,[Translation Missing],seleera V;PRS,No Lexicon Match
+ogenda,genda,go,genda V;PRS;HAB;2;SG,PanLex Exact Match
+Okugezaako,okugezaako,"attempt, try",gezaako V;NFIN,PanLex Exact Match
+okugwa,gwa,fall,gwa V;NFIN,PanLex Exact Match
+bunafu,bunafu,"dull, weak",bunafu N;SG;BANTU14,PanLex Exact Match
+Omwana,omwana,"child, babe, baby, infaneto, kid",umwana N;SG;BANTU1,PanLex Exact Match
+omubi,omubi,"ugly, ugly (be)",umubi N;SG;BANTU1,PanLex Exact Match
+takaddiwa,ddiwa,[Translation Missing],ddiwa V;PST,No Lexicon Match
+ewaka,bwakabaka,kingdom,ewaka V;PRS,Substring Overlap
+Wange,wange,excuse me,wange DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+ansingira,gira,act,nsingira V;PRS,Substring Overlap
+omulungii,lungi,"good, beautiful, I’m fine, response",umulungii N;SG;BANTU1,Substring Overlap
+owa,wa,"give, of, where",wa DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+mulilwana,kulwaana,fight,mulilwana N;SG;BANTU1,Substring Overlap
+Ofundako,fundako,[Translation Missing],fundako V;PRS;HAB;2;SG,No Lexicon Match
+okuwasa,okuwasa,"marry, wed",wasa V;NFIN,PanLex Exact Match
+omukadde,kadde,"old, old person",umukadde N;SG;BANTU1,PanLex Exact Match
+okusinga,singa,if,singa V;NFIN,PanLex Exact Match
+obuwuulu,ubuwuulu,[Translation Missing],ubuwuulu N;SG;BANTU14,No Lexicon Match
+Okwelinda,kulinda,wait,linda V;PRS;HAB;2;SG,Substring Overlap
+ssi,ssi,bait,ssi PRO;INT;INTENS,PanLex Exact Match
+buti,butida,slingshot,buti PRO;INT;BANTU14,Substring Overlap
+ensanafu,nsanafu,"ant, (reddish-brown biting) ant",insanafu N;SG;BANTU10,PanLex Exact Match
+etambula,tambula,"walk, take a walk",tambula V;PRS,PanLex Exact Match
+egaludde,galula,[Translation Missing],galula V;PST;REC;3;SG,No Lexicon Match
+Okudizza,diza,[Translation Missing],diza V;PRS;HAB;2;SG,No Lexicon Match
+guba,gubaafu,bathtub,guba,Substring Overlap
+mwoyo,mwoyo,"soul, spirit",mwoyo N;SG;BANTU1,PanLex Exact Match
+Okufa,fa,die,fa V;NFIN,PanLex Exact Match
+nkovu,nkovu,scar,nkovu N;SG;BANTU10,PanLex Exact Match
+etalisimuuka,simuuka,[Translation Missing],etalisimuuka V;FUT,No Lexicon Match
+Olinye,-lina,have,linya V;PST;REC;2;SG,Substring Overlap
+jegava,egava,[Translation Missing],jegava V;PRS,No Lexicon Match
+nonywa,eky’okunywa,drink,nywa V;PRS;HAB;1;SG,Substring Overlap
+amatabangufu,angu,light in weight,itabangufu N;PL;BANTU6,Substring Overlap
+Olubuto,olubuto,"abdomen, belly, stomach, venter, pregnancy",ubuto N;SG;BANTU11,PanLex Exact Match
+lwo,lwo,[Translation Missing],lwo DET;POSS;PSS1P;BANTU11,No Lexicon Match
+bwoluwa,kufuuwa oluwa,whistle,bwoluwa V;PRS;HAB;3;SG,Substring Overlap
+emmere,mmere,food,mmere N;SG;BANTU1,PanLex Exact Match
+embi,embira,bead,emba V;PRS,Substring Overlap
+lujja,jja,come,jja V;PRS;HAB;3;SG,PanLex Exact Match
+kukubira,bira,forest,kubira V;NFIN,PanLex Exact Match
+engoma,ngoma,drum,engoma N;SG;BANTU10,PanLex Exact Match
+ozine,zina,dance,zina V;PST;REC;2;SG,PanLex Exact Match
+Oluliimi,umu,[Translation Missing],uliimi N;SG;BANTU1;PSSB11,No Lexicon Match
+lwa,lwa,[Translation Missing],lwa V;PRS,No Lexicon Match
+mukabalo,ekyambalo,costume,mukabalo N;SG;BANTU1,Substring Overlap
+lukaawa,kaawa,"coffee, beverage",lukaawa V;PRS;HAB;3;SG,PanLex Exact Match
+Olunaku,olunaku,"date, day",ulunaku N;SG;BANTU11,PanLex Exact Match
+olumu,olumu,[Translation Missing],olumu N;SG;BANTU11,No Lexicon Match
+teluvunza,vunza,[Translation Missing],vunza V;PRS,No Lexicon Match
+nyama,nyama,meat,nyama N;SG;BANTU9,PanLex Exact Match
+Omukulu,omukulu,"adult, elder, grown-up",umukulu N;SG;BANTU1,PanLex Exact Match
+watali,butali bwesigwa,infidelity,tali V;PST;REC;2;SG,Substring Overlap
+ebikere,fumbekera,full,bikere V;PST;REC;3;PL,Substring Overlap
+bibunduka,bunduka,[Translation Missing],bunduka V;PRS,No Lexicon Match
+Omwaana,umwaana,[Translation Missing],umwaana N;SG;BANTU1,No Lexicon Match
+owegonjebwa,egonjebwa,[Translation Missing],gonjebwa V;PST;REC;2;SG,No Lexicon Match
+aweesa,weesa,[Translation Missing],weesa V;PRS,No Lexicon Match
+ekitiibwa,ekitiibwa,respect,tiibwa V;PRS;HAB;3;SG,PanLex Exact Match
+Omutamiivu,omutamiivu,"alcoholic, drunk",umutamiivu N;SG;BANTU1,PanLex Exact Match
+tawaba,luseregende lwabantu,row,tawaba V;PST,Substring Overlap
+Omuze,omuze,habit,umuze N;SG;BANTU1,PanLex Exact Match
+gwo,wo,there,gwo DET;PROX;BANTU1,PanLex Exact Match
+muntu,muntu,"human, person",muntu N;SG;BANTU1,PanLex Exact Match
+gumalwa,gumalwa,[Translation Missing],gumalwa V;PRS;HAB;3;SG,No Lexicon Match
+ntaana,ntaana,[Translation Missing],ntaana N;SG;BANTU9,No Lexicon Match
+Omukwaano,omukwaano,"love, strong affection, romance",umukwaano N;SG;BANTU1,PanLex Exact Match
+ogwokumpi,kumpi,"near, close",ukumpi N;SG;BANTU1,Substring Overlap
+ye,ye,"yes, ay, aye, yeah, yep",ye DET;PROX;BANTU9,PanLex Exact Match
+mulabe,laba,see,laba V;PST;REC;2;PL,PanLex Exact Match
+wo,wo,there,wo DET;POSS;PSS1P;BANTU1,PanLex Exact Match
+Omumpi,umumpi,[Translation Missing],umumpi N;SG;BANTU1,No Lexicon Match
+wakoma,kukomawo,return,koma V;PST;REC;2;SG,Substring Overlap
+wakwaata,kukwaata,"catch, hold",kwaata V;PST;REC;2;SG,Substring Overlap
+Omuntu,omuntu,"person, man, human",umuntu N;SG;BANTU1,PanLex Exact Match
+bwabeera,embeera,"mood, state",beera V;PST;REC;3;SG,Substring Overlap
+obwoomu,umu,[Translation Missing],umu N;SG;BANTU14,No Lexicon Match
+yefuula,fuula,"alter, change",fuula V;PST;REC;3;SG,PanLex Exact Match
+kabaka,baka,"sleep, king",kabaka,PanLex Exact Match
+Omutima,omutima,heart,umutima N;SG;BANTU1,PanLex Exact Match
+gulinga,linga,[Translation Missing],gulinga V;PRS,No Lexicon Match
+gwetaaga,etaaga,[Translation Missing],gwetaaga V;PRS,No Lexicon Match
+kusiba,siba,tie up,siba V;NFIN,PanLex Exact Match
+Omusajja,omusajja,"man, adult male human",umusajja N;SG;BANTU1,PanLex Exact Match
+alina,-lina,have,lina V;PRS,Substring Overlap
+ebizibu,ekizibu,"difficult, hard, issue, mystery, problem",bizibu N;PL;BANTU10,Substring Overlap
+Aleesa,lesa,[Translation Missing],lesa V;PRS,No Lexicon Match
+Omuwala,omuwala,"girl, young female, daughter",umuwala N;SG;BANTU1,PanLex Exact Match
+maka,maka,"family, home",maka N;PL;BANTU6,PanLex Exact Match
+Omuyizzi,omuyizzi,hunter,umuyizzi N;SG;BANTU1,PanLex Exact Match
+awondera,kuwondera,chase,wondera V;PRS,Substring Overlap
+enjovu,enjovu,elephant,enjovu N;SG;BANTU10,PanLex Exact Match
+tatekera,tekera,[Translation Missing],tatekera V;PST,No Lexicon Match
+kukasukira,kukasukira,sling,kasukira V;NFIN,PanLex Exact Match
+bunyonyi,nyonyi,bird,bunyonyi V;PRS,Substring Overlap
+mayinja,yinja,[Translation Missing],yinja V;PST;REC;2;PL,No Lexicon Match
+Omwezi,mwezi,"month, moon",umwezi N;PL;BANTU1,Substring Overlap
+gutambula,tambula,"walk, take a walk",gutambula V;PRS,PanLex Exact Match
+mpota,mpota,[Translation Missing],mpota N;SG;BANTU1,No Lexicon Match
+naye,naye,"but, however, on the contrary, yet",naye DET;POSS;PSS1P;BANTU9,PanLex Exact Match
+gubuuka,buuka,fly,gubuuka V;PRS,Substring Overlap
+ekibuga,buga,town,buga V;PRS;HAB;3;SG,PanLex Exact Match
+Sente,sente,money,Senta,PanLex Exact Match
+esala,sala,slaughter,esala V;PRS,Substring Overlap
+ejjambiya,jambiya,machete,jjambiya V;PRS,Substring Overlap
+Sotta,sotta,[Translation Missing],Sotta V;PRS,No Lexicon Match
+abudongo,ubudongo,[Translation Missing],ubudongo N;SG;BANTU14,No Lexicon Match
+bukyaali,bukyaali,[Translation Missing],bukyaali N;SG;BANTU14,No Lexicon Match
+bubisi,bisi,"uncooked, unripe",bisi V;PRS,PanLex Exact Match
+Taata,taata,"dad, daddy, father",Taata V;PRS,PanLex Exact Match
+ngabo,ngabo,shield,ngabo N;SG;BANTU10,PanLex Exact Match
+ya,ya,[Translation Missing],ya DET;POSS;PSS1P;BANTU9,No Lexicon Match
+Teli,teli,[Translation Missing],uTeli,No Lexicon Match
+azaalwa,lwa,[Translation Missing],lwa V;FUT,No Lexicon Match
+bumanyirivu,bumanyirivu,experience,manyirivu V;PRS,PanLex Exact Match
+Tewesiganga,siga,"plant, sow",Tewesiganga V;PRS;HAB;1;SG,Substring Overlap
+omuntu,omuntu,"person, man, human",umuntu N;SG;BANTU1,PanLex Exact Match
+Tokungula,kungula,reap,uTokungula N;SG;BANTU1,PanLex Exact Match
+kyotasimba,simba,"genet, genet (kind of speckled civet cat)",otasimba V;FUT,Substring Overlap
+Towakananga,nanga,[Translation Missing],umunanga,No Lexicon Match
+musiru,musiru,"fool, stupid, silly",musiru N;SG;BANTU1,PanLex Exact Match
+Toyonoona,ona,[Translation Missing],uToyonoona,No Lexicon Match
+muzinga,zinga,island,zinga V;PRS,PanLex Exact Match
+olwokwokebwa,ukwokebwa,[Translation Missing],ukwokebwa N;SG;BANTU1;PSSB11,No Lexicon Match
+njuki,njuki,bee,njuki N;SG;BANTU10,PanLex Exact Match
+emu,emu,"one, cardinal number 1",emu PRO;INT;INTENS,PanLex Exact Match
+Tukozesa,kozesa,use,kozesa V;PRS;HAB;1;SG,PanLex Exact Match
+njuba,njuba,"sun, yolk, the star around which the Earth revolves",njuba N;SG;BANTU10,PanLex Exact Match
+naka,kanakana,"shake, tremble",naka V;PST,Substring Overlap
+gonna,gonna,[Translation Missing],gonna V;PRS,No Lexicon Match
+Wakili,wakili,[Translation Missing],wakili DET;POSS;PSS1P;BANTU1,No Lexicon Match
+okusooka,-sooka,first,sooka V;NFIN,Substring Overlap
+bibi,bi,bad,bi COP;LOC,PanLex Exact Match
+nomala,mala,"complete, do, finish",mala V;PRS;HAB;1;SG,PanLex Exact Match
+nebirungi,nebirungi,[Translation Missing],nebirungi N;PL;BANTU10,No Lexicon Match
+Zimba,zimba,"swell, build",Zimba V;PRS,PanLex Exact Match
+Nnene,musenennene,November,uNnene,Substring Overlap
+takutelaako,telaako,[Translation Missing],telaako V;PST;REC;1;PL,No Lexicon Match
+muti,muti,"coward, tree, pole, large woody plant",muti N;SG;BANTU1,PanLex Exact Match

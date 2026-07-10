@@ -8,7 +8,7 @@ if __name__ == "__main__":
     # tasks = ["count_morphemes", "model_segment", "morpheme_translate"]
     languages = ["ganda", "gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamba"]
     tasks = ["model_segment","morpheme_translate"]
-    # languages = ["tooro"]
+    # languages = ["tooro", "tshiluba"]
 
     # Run each language through the entire pipeline pipeline sequence
     for lang in languages:
