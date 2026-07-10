@@ -82,8 +82,7 @@ def strip_accents(text: str) -> str:
     # 'Mn' for Mark, Nonspacing
 
 @lru_cache(maxsize=64)
-@lru_cache(maxsize=64)
-def get_lang_data(lang:str):
+def get_lang_data(lang: str):
     iso_code = bantu_iso_map.get(lang.lower())
     if not iso_code:
         print(f"Warning: {lang} is not in the target Bantu dictionary.")
@@ -92,7 +91,6 @@ def get_lang_data(lang:str):
     panlex_data = load_dataset("cointegrated/panlex-meanings", name=iso_code, split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
 
     eng_data = load_dataset("cointegrated/panlex-meanings", name='eng', split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
-
     df_eng = eng_data[eng_data['langvar_uid'].str.startswith('eng', na=False)]
 
     df_eng = df_eng.drop_duplicates(subset=['meaning'])
@@ -104,7 +102,7 @@ def get_lang_data(lang:str):
     noise = ['dollar', 'pound', 'shilling', 'republic', 'ocean', 'sea', 'continent', 'st.', 'saudi', 'papua', 'zimbabwe', 'sudanese']
     noise_regex = '|'.join(noise)
     panlex_df = panlex_df[~panlex_df['txt_eng'].str.contains(noise_regex, case=False, na=False)]
-    panlex_df = panlex_df[~panlex_df['txt_eng'].str.contains(r':|/', na=False)]
+
     panlex_df = panlex_df[panlex_df['txt_eng'].str.len() < 100]
 
     return panlex_df
