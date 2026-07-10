@@ -67,12 +67,22 @@ def affix_translate(segments, language, model_glossary):
 
     return "-".join(glossed_parts)
 
-def normalize_ortho(word: str) -> str:
+def normalize_ortho(word: str, lang: str = "") -> str:
     w = str(word).lower().strip("[]'\\\" ")
-    prefixes = ['umu', 'aba', 'oki', 'oku', 'emi', 'eki', 'aka', 'omu', 'en']
-    for p in prefixes:
-        if w.startswith(p) and len(w) >= len(p) + 2:
-            return w[len(p):]
+    lang = lang.lower()
+
+    if lang in ['ganda', 'gikuyu', 'chiga', 'tooro', 'runyoro', 'kamba']:
+        prefixes = ['umu', 'aba', 'oki', 'oku', 'emi', 'eki', 'aka', 'omu', 'en']
+        for p in prefixes:
+            if w.startswith(p) and len(w) >= len(p) + 2:
+                return w[len(p):]
+
+    elif lang == 'tshiluba':
+        tshiluba_prefixes = ['tshi', 'bi', 'mu', 'ba', 'di', 'ma', 'lu', 'ka', 'tu']
+        for p in tshiluba_prefixes:
+            if w.startswith(p) and len(w) >= len(p) + 2:
+                return w[len(p):]
+
     return w
 
 def strip_accents(text: str) -> str:
