@@ -78,8 +78,6 @@ def normalize_ortho(word: str) -> str:
 def strip_accents(text: str) -> str:
     """Removes tonal accent marks (like à, ê) to align PanLex with model lemmas."""
     return "".join(c for c in unicodedata.normalize('NFD', text) if unicodedata.category(c) != 'Mn')
-    # NFD stands for Normalization Form Canonical Decomposition.
-    # 'Mn' for Mark, Nonspacing
 
 @lru_cache(maxsize=64)
 def get_lang_data(lang: str):
@@ -141,16 +139,13 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         .dropna()
     )
 
-    panlex_words = []
-    panlex_translations = []
+    exact_translation_map = {}
 
     if not lang_data_df.empty:
         valid_pairs = lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).copy()
         valid_pairs['clean_key'] = valid_pairs[lang_txt_col].astype(str).apply(strip_accents).str.lower().str.strip()
         valid_pairs = valid_pairs.drop_duplicates(subset=['clean_key'], keep='first')
         exact_translation_map = dict(zip(valid_pairs['clean_key'], valid_pairs['txt_eng']))
-
-    exact_translation_map = dict(zip(panlex_words, panlex_translations))
 
     print("=" * 60)
     print(f"DIAGNOSTIC LOG FOR: {lang.upper()}")
@@ -192,10 +187,11 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
         # Tier 1: Exact Match
         for lookup_key in [normalized_lemma, predicted_lemma, surface_word.lower()]:
-            if lookup_key in exact_translation_map:
+            clean_lookup = strip_accents(lookup_key).lower().strip()
+            if clean_lookup in exact_translation_map:
                 output_data['Surface Word'].append(surface_word)
                 output_data[f'{lang.capitalize()} Lemma'].append(lookup_key)
-                output_data['English translation'].append(exact_translation_map[lookup_key])
+                output_data['English translation'].append(exact_translation_map[clean_lookup])
                 output_data['Glossing'].append(affix)
                 output_data['Match Type'].append('PanLex Exact Match')
                 matched = True
@@ -207,8 +203,9 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         # Tier 2: Substring Stem Overlap
         if not matched and not is_standalone_grammar:
             if len(normalized_lemma) >= 4:
+                clean_norm_lemma = strip_accents(normalized_lemma).lower().strip()
                 for dict_word, eng_trans in exact_translation_map.items():
-                    if len(dict_word) > 3 and (dict_word in normalized_lemma or normalized_lemma in dict_word):
+                    if len(dict_word) > 3 and (dict_word in clean_norm_lemma or clean_norm_lemma in dict_word):
                         output_data['Surface Word'].append(surface_word)
                         output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
                         output_data['English translation'].append(eng_trans)
@@ -242,10 +239,10 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         if not matched:
             extracted_roots = root_extract(segmentation_str, lang)
             for root in extracted_roots:
-                clean_root = root.lower().strip()
+                clean_root = strip_accents(root).lower().strip()
                 if clean_root in exact_translation_map:
                     output_data['Surface Word'].append(surface_word)
-                    output_data[f'{lang.capitalize()} Lemma'].append(clean_root)
+                    output_data[f'{lang.capitalize()} Lemma'].append(root)
                     output_data['English translation'].append(exact_translation_map[clean_root])
                     output_data['Glossing'].append(affix)
                     output_data['Match Type'].append('Isolated Root Exact Match')
