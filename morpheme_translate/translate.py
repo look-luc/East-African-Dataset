@@ -1,13 +1,15 @@
 import ast
 import os
-import re
 import unicodedata
 from functools import lru_cache
 from pathlib import Path
 
 import pandas as pd
+import torch
+import torch.nn.functional as F
 from datasets import load_dataset
 from dotenv import load_dotenv
+from transformers import AutoModel, AutoTokenizer
 
 from morpheme_translate.extraction import root_extract
 
@@ -19,6 +21,23 @@ bantu_iso_map = {
     'ganda': 'lug', 'gikuyu': 'kik', 'tshiluba': 'lua',
     'chiga': 'cgg', 'tooro': 'ttj', 'runyoro': 'nyo', 'kamba': 'kam'
 }
+
+bantuberta_id = "dsfsi/BantuBERTa"  # Or specific language variations if available
+bb_tokenizer = AutoTokenizer.from_pretrained(bantuberta_id)
+bb_model = AutoModel.from_pretrained(bantuberta_id)
+bb_model.eval()
+
+def get_bantuberta_embedding(sentence: str, target_word: str):
+    """Generates a contextual embedding for a specific word inside its proverb context."""
+    inputs = bb_tokenizer(sentence, return_tensors="pt")
+
+    with torch.no_grad():
+        outputs = bb_model(**inputs)
+        # Shape: [1, sequence_length, hidden_size]
+        hidden_states = outputs.last_hidden_state
+
+        sentence_embedding = torch.mean(hidden_states, dim=1).squeeze(0)
+    return sentence_embedding
 
 def build_model_glossary(lang:str):
     lang_folder = script_dir / "data" / lang.lower()
@@ -276,16 +295,30 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
         # Tier 4: Word-Bounded Local Proverb Context Check
         if not matched and local_proverb_sentences:
-            pattern = re.compile(r'\b' + re.escape(normalized_lemma) + r'\b', re.IGNORECASE)
+            current_proverb = ""
             for proverb in local_proverb_sentences:
-                if pattern.search(proverb):
-                    output_data['Surface Word'].append(surface_word)
-                    output_data[f'{lang.capitalize()} Lemma'].append(normalized_lemma)
-                    output_data['English translation'].append(proverb)
-                    output_data['Glossing'].append(affix)
-                    output_data['Match Type'].append('Local Proverb Context Match')
-                    matched = True
+                if surface_word in proverb:
+                    current_proverb = proverb
                     break
+
+            if current_proverb:
+                unknown_vec = get_bantuberta_embedding(current_proverb, surface_word)
+
+                best_score = -1.0
+                best_translation = None
+
+                for known_vec, known_translation in successful_embeddings_pool.items():
+                    similarity = F.cosine_similarity(unknown_vec.unsqueeze(0), known_vec.unsqueeze(0)).item()
+                    if similarity > best_score:
+                        best_score = similarity
+                        best_translation = known_translation
+                if best_score > 0.82:
+                            output_data['Surface Word'].append(surface_word)
+                            output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
+                            output_data['English translation'].append(f"{best_translation} (Inferred via BantuBERTa)")
+                            output_data['Glossing'].append(affix)
+                            output_data['Match Type'].append('BantuBERTa Vector Neighborhood')
+                            matched = True
 
         # Fallback when no translation tier catches it
         if not matched:
