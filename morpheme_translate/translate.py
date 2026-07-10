@@ -101,19 +101,30 @@ def get_lang_data(lang: str):
     eng_data = load_dataset("cointegrated/panlex-meanings", name='eng', split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
     df_eng = eng_data[eng_data['langvar_uid'].str.startswith('eng', na=False)]
 
+    try:
+        eng_def_data = load_dataset("cointegrated/panlex-definitions", name='eng', split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
+        df_eng_def = eng_def_data[eng_def_data['langvar_uid'].str.startswith('eng', na=False)]
+        df_eng = pd.concat([df_eng, df_eng_def], ignore_index=True)
+    except Exception as e:
+        print(f"Note: Could not supplement with panlex-definitions: {e}")
+
     panlex_df = panlex_data.merge(
         df_eng, on='meaning', how='inner', suffixes=(f'_{iso_code}', '_eng')
     )
 
     noise = ['dollar', 'pound', 'shilling', 'republic', 'ocean', 'sea', 'continent', 'st.', 'saudi', 'papua', 'zimbabwe', 'sudanese']
-    noise_regex = '|'.join(noise)
+    noise_regex = '|'.join([rf'\b{w}\b' for w in noise])
     panlex_df = panlex_df[~panlex_df['txt_eng'].str.contains(noise_regex, case=False, na=False)]
     panlex_df = panlex_df[panlex_df['txt_eng'].str.len() < 100]
 
     panlex_df['txt_eng'] = panlex_df['txt_eng'].str.split(r':|/').str[0].str.strip()
 
     target_word_col = f'txt_{iso_code}'
-    panlex_df = panlex_df.drop_duplicates(subset=[target_word_col], keep='first')
+
+    panlex_df = panlex_df.dropna(subset=[target_word_col, 'txt_eng'])
+    panlex_df = panlex_df.groupby(target_word_col)['txt_eng'].apply(
+        lambda x: ", ".join(dict.fromkeys(x.dropna().astype(str)))
+    ).reset_index()
 
     return panlex_df
 
@@ -154,7 +165,11 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
     if not lang_data_df.empty:
         valid_pairs = lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).copy()
         valid_pairs['clean_key'] = valid_pairs[lang_txt_col].astype(str).apply(strip_accents).str.lower().str.strip()
-        valid_pairs = valid_pairs.drop_duplicates(subset=['clean_key'], keep='first')
+
+        valid_pairs = valid_pairs.groupby('clean_key')['txt_eng'].apply(
+            lambda x: ", ".join(dict.fromkeys(x.dropna().astype(str)))
+        ).reset_index()
+
         exact_translation_map = dict(zip(valid_pairs['clean_key'], valid_pairs['txt_eng']))
 
     print("=" * 60)
