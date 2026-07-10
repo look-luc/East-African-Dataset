@@ -93,8 +93,6 @@ def get_lang_data(lang: str):
     eng_data = load_dataset("cointegrated/panlex-meanings", name='eng', split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
     df_eng = eng_data[eng_data['langvar_uid'].str.startswith('eng', na=False)]
 
-    df_eng = df_eng.drop_duplicates(subset=['meaning'])
-
     panlex_df = panlex_data.merge(
         df_eng, on='meaning', how='inner', suffixes=(f'_{iso_code}', '_eng')
     )
@@ -102,8 +100,12 @@ def get_lang_data(lang: str):
     noise = ['dollar', 'pound', 'shilling', 'republic', 'ocean', 'sea', 'continent', 'st.', 'saudi', 'papua', 'zimbabwe', 'sudanese']
     noise_regex = '|'.join(noise)
     panlex_df = panlex_df[~panlex_df['txt_eng'].str.contains(noise_regex, case=False, na=False)]
-
     panlex_df = panlex_df[panlex_df['txt_eng'].str.len() < 100]
+
+    panlex_df['txt_eng'] = panlex_df['txt_eng'].str.split(r':|/').str[0].str.strip()
+
+    target_word_col = f'txt_{iso_code}'
+    panlex_df = panlex_df.drop_duplicates(subset=[target_word_col], keep='first')
 
     return panlex_df
 
@@ -143,12 +145,10 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
     panlex_translations = []
 
     if not lang_data_df.empty:
-        unique_pairs = lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).drop_duplicates(subset=[lang_txt_col])
-        for _, row in unique_pairs.iterrows():
-            dict_word = strip_accents(str(row[lang_txt_col])).lower().strip()
-            eng_trans = str(row['txt_eng'])
-            panlex_words.append(dict_word)
-            panlex_translations.append(eng_trans)
+        valid_pairs = lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).copy()
+        valid_pairs['clean_key'] = valid_pairs[lang_txt_col].astype(str).apply(strip_accents).str.lower().str.strip()
+        valid_pairs = valid_pairs.drop_duplicates(subset=['clean_key'], keep='first')
+        exact_translation_map = dict(zip(valid_pairs['clean_key'], valid_pairs['txt_eng']))
 
     exact_translation_map = dict(zip(panlex_words, panlex_translations))
 
