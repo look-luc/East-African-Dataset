@@ -380,19 +380,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                 except Exception:
                     pass
 
-        # Tier 5: Word-Bounded Local Proverb Context Check
-        if not matched and local_proverb_sentences:
-            pattern = re.compile(r'\b' + re.escape(normalized_lemma) + r'\b', re.IGNORECASE)
-            for proverb in local_proverb_sentences:
-                if pattern.search(proverb):
-                    output_data['Surface Word'].append(surface_word)
-                    output_data[f'{lang.capitalize()} Lemma'].append(normalized_lemma)
-                    output_data['English translation'].append(proverb)
-                    output_data['Glossing'].append(affix)
-                    output_data['Match Type'].append('Local Proverb Context Match')
-                    matched = True
-                    break
-
         # Fallback when no translation tier catches it
         if not matched:
             output_data['Surface Word'].append(surface_word)
