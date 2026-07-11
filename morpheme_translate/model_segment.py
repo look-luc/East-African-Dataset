@@ -23,24 +23,38 @@ script_dir = Path(__file__).resolve().parent.parent
 encoder = model.get_encoder()
 encoder.eval()
 
-def get_embeddings(word: str):
-    inputs = {k: v.to(device) for k, v in tokenizer(word, return_tensors="pt").items()}
+def get_embeddings(words: list[str], batch_size: int = 128):
+    word_to_embedding = {}
+    if not words:
+        return word_to_embedding
 
-    with torch.no_grad():
-        outputs = encoder(**inputs)
+    for i in range(0, len(words), batch_size):
+        batch_words = words[i:i + batch_size]
+        inputs = tokenizer(batch_words, return_tensors="pt", padding=True).to(device)
 
-        if hasattr(outputs, "last_hidden_state"):
-            hidden_states = outputs.last_hidden_state
-        elif isinstance(outputs, tuple):
-            hidden_states = outputs[0]
-        else:
-            hidden_states = outputs
+        with torch.no_grad():
+            outputs = encoder(**inputs)
 
-        mean_pooled = torch.mean(hidden_states, dim=1).squeeze(0)
-    return mean_pooled
+            if hasattr(outputs, "last_hidden_state"):
+                hidden_states = outputs.last_hidden_state
+            elif isinstance(outputs, tuple):
+                hidden_states = outputs[0]
+            else:
+                hidden_states = outputs
+
+            attention_mask = inputs["attention_mask"].unsqueeze(-1)
+            masked_hidden = hidden_states * attention_mask
+            sum_embeddings = torch.sum(masked_hidden, dim=1)
+            sum_mask = torch.clamp(attention_mask.sum(dim=1), min=1e-9)
+            mean_pooled = sum_embeddings / sum_mask
+
+        for word, emb in zip(batch_words, mean_pooled):
+            word_to_embedding[word] = emb
+
+    return word_to_embedding
 
 
-def query_bantumorph(words: list[str], batch_size: int = 64):
+def query_bantumorph(words: list[str], batch_size: int = 128):
     """Processes multiple words and tasks in parallel batches on the GPU."""
     tasks = ["lemmatization", "segmentation", "noun class prediction"]
 
@@ -78,27 +92,36 @@ def model_extract(data_title: str, lang: str):
     lang_data_df = df[df["language"].str.lower() == lang.lower()]
     proverbs = lang_data_df["african_proverb"].tolist()
 
-    model_out = []
-    seen_words = set()
-
+    all_unique_words = set()
     for proverb in proverbs:
         clean_proverb = re.sub(r"[^\w\s]", "", proverb).strip()
-        words_in_proverb = clean_proverb.split()
-        batch_results = query_bantumorph(words_in_proverb)
+        all_unique_words.update(clean_proverb.split())
 
-        for word in words_in_proverb:
-            if word not in seen_words:
-                seen_words.add(word)
+    unique_words_list = list(all_unique_words)
+    print(f"Total unique words to process for {lang}: {len(unique_words_list)}")
 
-                word_data: dict = batch_results[word]
+    print("Running parallel task generation batches...")
+    global_batch_results = query_bantumorph(unique_words_list, batch_size=128)
 
-                word_data['embedding'] = get_embeddings(word)
+    print("Running parallel encoder embedding batches...")
+    global_embeddings = get_embeddings(unique_words_list, batch_size=128)
 
-                model_out.append({word: word_data})
+    combined_dict = {}
+    for word in unique_words_list:
+        word_data: dict = global_batch_results[word]
+        word_data['embedding'] = global_embeddings[word]
+        combined_dict[word] = word_data
 
-    combined_dict = {k: v for d in model_out for k, v in d.items()}
-    out_df = pd.DataFrame.from_dict(combined_dict, orient='index')
+    final_records = []
+    for word, data in combined_dict.items():
+        final_records.append({
+            "word": word,
+            "lemmatization": data["lemmatization"],
+            "segmentation": data["segmentation"],
+            "noun class prediction": data["noun class prediction"],
+            "embedding": data["embedding"].cpu().tolist()
+        })
 
-    out_df.index.name = 'surface_word'
-
-    out_df.to_csv(lang_folder / f"{lang.lower().capitalize()}_model_lem_seg.csv", sep='\t', index=True)
+    out_df = pd.DataFrame(final_records)
+    out_df.to_csv(lang_folder / f"{lang.lower().capitalize()}_model_lem_seg.csv", sep='\t', index=False)
+    print(f"Completed processing {lang}. Extraction output saved.")

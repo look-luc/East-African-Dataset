@@ -14,6 +14,8 @@ from transformers import AutoModel, AutoTokenizer
 from morpheme_translate.extraction import root_extract
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+torch.set_num_threads(8)
+torch.set_num_interop_threads(8)
 
 script_dir = Path(__file__).resolve().parent.parent
 load_dotenv()
@@ -325,7 +327,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
             if current_proverb and successful_embeddings_pool:  # Guard against empty pools
                 unknown_vec = get_bantuberta_embedding(current_proverb, surface_word)
-                unkown_vec = unkown_vec.to(device)
+                unknown_vec = unknown_vec.to(device)
 
                 best_score = -1.0
                 best_translation = None
