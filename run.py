@@ -12,7 +12,7 @@ torch.set_num_interop_threads(8)
 if __name__ == "__main__":
     # tasks = ["count_morphemes", "model_segment", "morpheme_translate"]
     languages = ["ganda", "gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamba"]
-    tasks = ["model_segment","morpheme_translate"]
+    tasks = ["morpheme_translate"]
     # languages = ["tooro", "tshiluba"]
 
     # Run each language through the entire pipeline pipeline sequence

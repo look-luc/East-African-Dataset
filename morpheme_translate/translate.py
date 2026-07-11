@@ -174,7 +174,7 @@ def get_lang_data(lang: str):
         lambda x: ", ".join(dict.fromkeys(x.dropna().astype(str)))
     ).reset_index()
 
-    return panlex_df
+    return dict(zip(panlex_df[target_word_col].str.lower().str.strip(), panlex_df['txt_eng']))
 
 def fallback_translation_tier(surface_word: str, lemma: str, lex_exact: dict, lex_sub: dict, panlex_dict: dict):
     """Evaluates lexical priority tiers to locate matching base definitions."""
