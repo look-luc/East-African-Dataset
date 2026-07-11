@@ -251,7 +251,8 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
             for w in words_in_proverb:
                 clean_w = strip_accents(w).lower().strip()
                 if clean_w in exact_translation_map:
-                    translation_string = exact_translation_map[clean_w]
+                    raw_translation_string = exact_translation_map[clean_w]
+                    translation_string = raw_translation_string.split(',')[0].strip()
                     try:
                         known_vec = get_bantuberta_embedding(clean_proverb, w)
                         if known_vec is not None:
@@ -259,7 +260,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                     except Exception:
                         continue
         print(f"Contextual Reference Pool Compiled: {len(successful_embeddings_pool)} vectors aligned.")
-    # --- END BANTUBERTA REFERENCE POOL COMPILATION ---
 
     output_data = {
         'Surface Word': [],
@@ -274,14 +274,13 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         surface_word = str(row['surface_word'])
         raw_lemmas = ast.literal_eval(row['lemmatization'])
         predicted_lemma = str(raw_lemmas[0]).lower().strip() if raw_lemmas else surface_word.lower()
-        normalized_lemma = normalize_ortho(predicted_lemma)
+        normalized_lemma = normalize_ortho(predicted_lemma, lang)
         segmentation_str = row['segmentation']
         affix = affix_translate(ast.literal_eval(segmentation_str), lang, model_glossary)
 
         matched = False
 
-        # Tier 1: Exact Match
-        for lookup_key in [normalized_lemma, predicted_lemma, surface_word.lower()]:
+        for lookup_key in [surface_word.lower(), predicted_lemma, normalized_lemma]:
             clean_lookup = strip_accents(lookup_key).lower().strip()
             if clean_lookup in exact_translation_map:
                 output_data['Surface Word'].append(surface_word)
@@ -295,12 +294,11 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         clean_lemma_token = normalized_lemma.lower().replace('-', '').strip()
         is_standalone_grammar = clean_lemma_token in known_affixes
 
-        # Tier 2: Substring Stem Overlap
         if not matched and not is_standalone_grammar:
-            if len(normalized_lemma) >= 4:
+            if len(normalized_lemma) >= 5:
                 clean_norm_lemma = strip_accents(normalized_lemma).lower().strip()
                 for dict_word, eng_trans in exact_translation_map.items():
-                    if len(dict_word) > 3 and (dict_word in clean_norm_lemma or clean_norm_lemma in dict_word):
+                    if len(dict_word) >= 5 and (dict_word == clean_norm_lemma or f"-{dict_word}" in clean_norm_lemma or clean_norm_lemma.startswith(dict_word)):
                         output_data['Surface Word'].append(surface_word)
                         output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
                         output_data['English translation'].append(eng_trans)
@@ -332,19 +330,21 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
         # Tier 3: Isolated Local Root Evaluation
         if not matched:
-            extracted_roots = root_extract(segmentation_str, lang)
-            for root in extracted_roots:
-                clean_root = strip_accents(root).lower().strip()
-                if clean_root in exact_translation_map:
-                    output_data['Surface Word'].append(surface_word)
-                    output_data[f'{lang.capitalize()} Lemma'].append(root)
-                    output_data['English translation'].append(exact_translation_map[clean_root])
-                    output_data['Glossing'].append(affix)
-                    output_data['Match Type'].append('Isolated Root Exact Match')
-                    matched = True
-                    break
+            try:
+                extracted_roots = root_extract(segmentation_str, lang)
+                for root in extracted_roots:
+                    clean_root = strip_accents(root).lower().strip()
+                    if clean_root in exact_translation_map:
+                        output_data['Surface Word'].append(surface_word)
+                        output_data[f'{lang.capitalize()} Lemma'].append(root)
+                        output_data['English translation'].append(exact_translation_map[clean_root])
+                        output_data['Glossing'].append(affix)
+                        output_data['Match Type'].append('Isolated Root Exact Match')
+                        matched = True
+                        break
+            except Exception:
+                pass
 
-        # --- START TIER 4: BANTUBERTA NEIGHBORHOOD FALLBACK ---
         if not matched and len(successful_embeddings_pool) > 0 and local_proverb_sentences:
             context_proverb = None
             for proverb in local_proverb_sentences:
@@ -370,7 +370,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                                 best_score = similarity
                                 best_translation = known_translation
 
-                        if best_score > 0.82:
+                        if best_score > 0.88:
                             output_data['Surface Word'].append(surface_word)
                             output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
                             output_data['English translation'].append(f"{best_translation} (Inferred via BantuBERTa)")
