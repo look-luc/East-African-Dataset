@@ -1,5 +1,6 @@
 import ast
 import os
+import re
 import unicodedata
 from functools import lru_cache
 from pathlib import Path
@@ -230,7 +231,7 @@ def translation(lang: str, output_name: str, proverbs_file: str):
     iso_code = bantu_iso_map.get(lang.lower(), 'lug')
     panlex_dict = get_lang_data(iso_code)
 
-    data_path = script_dir / proverbs_file
+    data_path = f"{script_dir}/data/{proverbs_file}"
     df_data = pd.read_csv(data_path, sep='\t')
     df_lang = df_data[df_data["language"].str.lower() == lang.lower()]
 
