@@ -24,7 +24,7 @@ encoder = model.get_encoder()
 encoder.eval()
 
 def get_embeddings(word: str):
-    inputs = tokenizer(word, return_tensors="pt")
+    inputs = {k: v.to(device) for k, v in tokenizer(word, return_tensors="pt").items()}
 
     with torch.no_grad():
         outputs = encoder(**inputs)
@@ -37,7 +37,7 @@ def get_embeddings(word: str):
             hidden_states = outputs
 
         mean_pooled = torch.mean(hidden_states, dim=1).squeeze(0)
-    return mean_pooled.tolist()
+    return mean_pooled
 
 
 def query_bantumorph(word: str, tasks: list[str] | None = None):
@@ -77,7 +77,7 @@ def model_extract(data_title: str, lang: str):
                 res[word]['embedding'] = get_embeddings(word)
                 model_out.append(res)
 
-    combined_dict = {k: v.to(device) for d in model_out for k, v in d.items()}
+    combined_dict = {k: v for d in model_out for k, v in d.items()}
     out_df = pd.DataFrame.from_dict(combined_dict, orient='index')
 
     out_df.index.name = 'surface_word'
