@@ -176,21 +176,33 @@ def get_lang_data(lang: str):
 
     return panlex_df
 
-def fallback_translation_tier(surface_word: str, lemma: str, lex_exact: dict, lex_sub: dict, panlex_dict: dict):
-    """Evaluates lexical priority tiers to locate matching base definitions."""
+def fallback_translation_tier(surface_word: str, lemma: str, lang: str, lex_exact: dict, lex_sub: dict, panlex_dict: dict):
+    """Evaluates lexical priority tiers, integrating root morphological extraction as fallbacks."""
     norm_surface = strip_accents(surface_word).lower().strip()
     norm_lemma = strip_accents(lemma).lower().strip()
 
+    # Tier 1: Local Lexicon Exact Maps (Surface & Lemma)
     if norm_surface in lex_exact:
         return lex_exact[norm_surface], 'Lexicon Exact Match'
     if norm_lemma in lex_exact:
         return lex_exact[norm_lemma], 'Lexicon Exact Match'
 
+    # Tier 2: Valid PanLex Dictionary Key Mapping (Surface & Lemma)
     if norm_surface in panlex_dict:
         return panlex_dict[norm_surface], 'PanLex Exact Match'
     if norm_lemma in panlex_dict:
         return panlex_dict[norm_lemma], 'PanLex Exact Match'
 
+    # Tier 3: Morphological Root Extractions checked across Local & PanLex mappings
+    extracted_roots = root_extract(norm_lemma, lang)
+    for root in extracted_roots:
+        norm_root = strip_accents(root).lower().strip()
+        if norm_root in lex_exact:
+            return lex_exact[norm_root], 'Root Morph Match (Lexicon)'
+        if norm_root in panlex_dict:
+            return panlex_dict[norm_root], 'Root Morph Match (PanLex)'
+
+    # Tier 4: Substring Lookups
     if norm_surface in lex_sub:
         return lex_sub[norm_surface], 'Substring Overlap'
     if norm_lemma in lex_sub:
@@ -216,7 +228,7 @@ def translation(lang: str, output_name: str, proverbs_file: str):
         combined_dict[w] = {'lemmatization': lem_val, 'segmentation': seg_val}
 
     lex_exact, lex_sub = {}, {}
-    dict_path = lang_folder / f"{lang.lower()}_dictionary.csv"
+    dict_path = lang_folder / f"{lang.lower()}_translated.csv"
     if dict_path.exists():
         try:
             df_dict = pd.read_csv(dict_path)
