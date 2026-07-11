@@ -176,99 +176,90 @@ def get_lang_data(lang: str):
 
     return panlex_df
 
-def fallback_translation_tier(surface_word: str, lemma: str, lang: str, lex_exact: dict, lex_sub: dict, panlex_dict: dict):
-    """Evaluates lexical priority tiers, integrating root morphological extraction as fallbacks."""
-    norm_surface = strip_accents(surface_word).lower().strip()
-    norm_lemma = strip_accents(lemma).lower().strip()
-
-    # Tier 1: Local Lexicon Exact Maps (Surface & Lemma)
-    if norm_surface in lex_exact:
-        return lex_exact[norm_surface], 'Lexicon Exact Match'
-    if norm_lemma in lex_exact:
-        return lex_exact[norm_lemma], 'Lexicon Exact Match'
-
-    # Tier 2: Valid PanLex Dictionary Key Mapping (Surface & Lemma)
-    if norm_surface in panlex_dict:
-        return panlex_dict[norm_surface], 'PanLex Exact Match'
-    if norm_lemma in panlex_dict:
-        return panlex_dict[norm_lemma], 'PanLex Exact Match'
-
-    # Tier 3: Morphological Root Extractions checked across Local & PanLex mappings
-    extracted_roots = root_extract(norm_lemma, lang)
-    for root in extracted_roots:
-        norm_root = strip_accents(root).lower().strip()
-        if norm_root in lex_exact:
-            return lex_exact[norm_root], 'Root Morph Match (Lexicon)'
-        if norm_root in panlex_dict:
-            return panlex_dict[norm_root], 'Root Morph Match (PanLex)'
-
-    # Tier 4: Substring Lookups
-    if norm_surface in lex_sub:
-        return lex_sub[norm_surface], 'Substring Overlap'
-    if norm_lemma in lex_sub:
-        return lex_sub[norm_lemma], 'Substring Overlap'
-
-    return None, 'No Lexicon Match'
-
-def translation(lang: str, output_name: str, proverbs_file: str):
+def translation(file_name: str, lang: str, local_proverbs_title: str|None = None):
     lang_folder = script_dir / "data" / lang.lower()
+    data_folder = script_dir / "data"
 
-    model_csv = lang_folder / f"{lang.lower().capitalize()}_model_lem_seg.csv"
-    if not model_csv.exists():
-        print(f"Error: Missing dependency matrix file {model_csv}. Run model_segment first.")
+    iso_code = bantu_iso_map.get(lang.lower())
+    if not iso_code:
         return
 
-    df_model = pd.read_csv(model_csv, sep='\t')
+    lang_data_df = get_lang_data(lang)
+    lang_txt_col = f"txt_{iso_code}"
 
-    combined_dict = {}
-    for _, row in df_model.iterrows():
-        w = str(row['word'])
-        lem_val = ast.literal_eval(row['lemmatization']) if isinstance(row['lemmatization'], str) else row['lemmatization']
-        seg_val = ast.literal_eval(row['segmentation']) if isinstance(row['segmentation'], str) else row['segmentation']
-        combined_dict[w] = {'lemmatization': lem_val, 'segmentation': seg_val}
+    model_path = lang_folder / f"{file_name}"
+    if not model_path.exists():
+        model_path = lang_folder / f"{lang.lower().capitalize()}_model_lem_seg.csv"
 
-    lex_exact, lex_sub = {}, {}
-    dict_path = lang_folder / f"{lang.lower()}_translated.csv"
-    if dict_path.exists():
-        try:
-            df_dict = pd.read_csv(dict_path)
-            for _, row in df_dict.iterrows():
-                k = str(row.get('word', '')).lower().strip()
-                v = str(row.get('translation', ''))
-                if k and v:
-                    lex_exact[k], lex_sub[k] = v, v
-        except Exception as e:
-            print(f"Lexicon loading skipped for {lang}: {e}")
+    model_df = pd.read_csv(str(model_path), sep='\t')
 
-    panlex_dict = get_lang_data(lang)
+    if 'surface_word' not in model_df.columns and len(model_df.columns) > 0:
+        if 'Unnamed: 0' in model_df.columns:
+            model_df.rename(columns={'Unnamed: 0': 'surface_word'}, inplace=True)
+        else:
+            model_df.rename(columns={model_df.columns[0]: 'surface_word'}, inplace=True)
 
-    data_path = f"{script_dir}/data/{proverbs_file}"
-    df_data = pd.read_csv(data_path, sep='\t')
-    df_lang = df_data[df_data["language"].str.lower() == lang.lower()]
+    lang_grammar = grammar_df[grammar_df['language'] == str(lang).lower()]
+    valid_grammar = lang_grammar.dropna(subset=['proposed_leipzig_gloss'])
 
+    known_affixes = set(
+        valid_grammar['morpheme_segment']
+        .str.replace('-', '', regex=False)
+        .str.lower()
+        .dropna()
+    )
+
+    exact_translation_map = {}
+
+    if not lang_data_df.empty:
+        valid_pairs = lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).copy()
+        valid_pairs['clean_key'] = valid_pairs[lang_txt_col].astype(str).apply(strip_accents).str.lower().str.strip()
+
+        valid_pairs = valid_pairs.groupby('clean_key')['txt_eng'].apply(
+            lambda x: ", ".join(dict.fromkeys(x.dropna().astype(str)))
+        ).reset_index()
+
+        exact_translation_map = dict(zip(valid_pairs['clean_key'], valid_pairs['txt_eng']))
+
+    print("=" * 60)
+    print(f"DIAGNOSTIC LOG FOR: {lang.upper()}")
+    print(f"1. Total raw panlex rows fetched: {len(lang_data_df)}")
+    print(f"2. Size of built exact_translation_map: {len(exact_translation_map)}")
+    if exact_translation_map:
+        print(f"3. Sample dictionary keys (first 15): {list(exact_translation_map.keys())[:15]}")
+    else:
+        print("3. Sample dictionary keys: [NONE - DICTIONARY IS EMPTY]")
+    print("=" * 60)
+
+    local_proverb_sentences = []
+    if local_proverbs_title:
+        proverbs_path = data_folder / local_proverbs_title
+        if proverbs_path.exists():
+            prov_df = pd.read_csv(str(proverbs_path), sep='\t')
+            if 'language' in prov_df.columns and 'african_proverb' in prov_df.columns:
+                lang_prov_df = prov_df[prov_df["language"].str.lower() == lang.lower()]
+                local_proverb_sentences = lang_prov_df["african_proverb"].dropna().tolist()
+
+    # --- START BANTUBERTA REFERENCE POOL COMPILATION ---
     successful_embeddings_pool = []
+    if local_proverb_sentences and exact_translation_map:
+        print("Building contextual BantuBERTa reference pool maps across corpus entries...")
+        for proverb_text in local_proverb_sentences:
+            clean_proverb = re.sub(r"[^\w\s]", "", proverb_text).strip()
+            words_in_proverb = clean_proverb.split()
 
-    print("Building contextual BantuBERTa reference pool maps across corpus entries...")
-    for _, row in df_lang.iterrows():
-        proverb_text = str(row['african_proverb'])
-        clean_proverb = re.sub(r"[^\w\s]", "", proverb_text).strip()
-        words_in_proverb = clean_proverb.split()
-
-        for surface_word in words_in_proverb:
-            predicted_lemma, _ = parse_model_outputs(surface_word, combined_dict)
-            translation_string, match_type = fallback_translation_tier(
-                surface_word, predicted_lemma, lang, lex_exact, lex_sub, panlex_dict
-            )
-
-            if translation_string and match_type != 'No Lexicon Match':
-                try:
-                    known_vec = get_bantuberta_embedding(clean_proverb, surface_word)
-                    if known_vec is not None:
-                        successful_embeddings_pool.append((known_vec, translation_string))
-                except Exception:
-                    continue
-
-    print(f"Contextual Reference Pool Compiled: {len(successful_embeddings_pool)} vectors aligned.")
+            for w in words_in_proverb:
+                clean_w = strip_accents(w).lower().strip()
+                if clean_w in exact_translation_map:
+                    translation_string = exact_translation_map[clean_w]
+                    try:
+                        known_vec = get_bantuberta_embedding(clean_proverb, w)
+                        if known_vec is not None:
+                            successful_embeddings_pool.append((known_vec, translation_string))
+                    except Exception:
+                        continue
+        print(f"Contextual Reference Pool Compiled: {len(successful_embeddings_pool)} vectors aligned.")
+    # --- END BANTUBERTA REFERENCE POOL COMPILATION ---
 
     output_data = {
         'Surface Word': [],
@@ -278,30 +269,93 @@ def translation(lang: str, output_name: str, proverbs_file: str):
         'Match Type': []
     }
 
-    for _, row in df_lang.iterrows():
-        proverb_text = row['african_proverb']
-        clean_proverb = re.sub(r"[^\w\s]", "", proverb_text).strip()
-        words_in_proverb = clean_proverb.split()
+    model_glossary = build_model_glossary(lang)
+    for _, row in model_df.iterrows():
+        surface_word = str(row['surface_word'])
+        raw_lemmas = ast.literal_eval(row['lemmatization'])
+        predicted_lemma = str(raw_lemmas[0]).lower().strip() if raw_lemmas else surface_word.lower()
+        normalized_lemma = normalize_ortho(predicted_lemma)
+        segmentation_str = row['segmentation']
+        affix = affix_translate(ast.literal_eval(segmentation_str), lang, model_glossary)
 
-        for surface_word in words_in_proverb:
-            predicted_lemma, affix = parse_model_outputs(surface_word, combined_dict)
-            translation_string, match_type = fallback_translation_tier(
-                surface_word, predicted_lemma, lang, lex_exact, lex_sub, panlex_dict
-            )
+        matched = False
 
-            matched = False
-            if translation_string and match_type != 'No Lexicon Match':
+        # Tier 1: Exact Match
+        for lookup_key in [normalized_lemma, predicted_lemma, surface_word.lower()]:
+            clean_lookup = strip_accents(lookup_key).lower().strip()
+            if clean_lookup in exact_translation_map:
                 output_data['Surface Word'].append(surface_word)
-                output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
-                output_data['English translation'].append(translation_string)
+                output_data[f'{lang.capitalize()} Lemma'].append(lookup_key)
+                output_data['English translation'].append(exact_translation_map[clean_lookup])
                 output_data['Glossing'].append(affix)
-                output_data['Match Type'].append(match_type)
+                output_data['Match Type'].append('PanLex Exact Match')
+                matched = True
+                break
+
+        clean_lemma_token = normalized_lemma.lower().replace('-', '').strip()
+        is_standalone_grammar = clean_lemma_token in known_affixes
+
+        # Tier 2: Substring Stem Overlap
+        if not matched and not is_standalone_grammar:
+            if len(normalized_lemma) >= 4:
+                clean_norm_lemma = strip_accents(normalized_lemma).lower().strip()
+                for dict_word, eng_trans in exact_translation_map.items():
+                    if len(dict_word) > 3 and (dict_word in clean_norm_lemma or clean_norm_lemma in dict_word):
+                        output_data['Surface Word'].append(surface_word)
+                        output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
+                        output_data['English translation'].append(eng_trans)
+                        output_data['Glossing'].append(affix)
+                        output_data['Match Type'].append('Substring Overlap')
+                        matched = True
+                        break
+
+        # Tier 2 Fallback: Grammar Guard
+        if not matched and is_standalone_grammar:
+            noun_class = None
+            raw_nc = ast.literal_eval(row['noun class prediction'])
+            if raw_nc:
+                nc_string = str(raw_nc[0])
+                features = nc_string.split()
+                if len(features) > 1:
+                    tags = features[1].split(';')
+                    predicted_tag = tags[-1]
+                    if "BANTU" in predicted_tag or "NC" in predicted_tag:
+                        noun_class = predicted_tag
+
+            if noun_class:
+                output_data['Surface Word'].append(surface_word)
+                output_data[f'{lang.capitalize()} Lemma'].append(f"(-){surface_word}(-)")
+                output_data['English translation'].append(noun_class)
+                output_data['Glossing'].append(affix)
+                output_data['Match Type'].append('Grammar Guard Fallback')
                 matched = True
 
-            # Vector Neighborhood Fallback via Contextual BantuBERTa Tensors
-            if not matched and len(successful_embeddings_pool) > 0:
+        # Tier 3: Isolated Local Root Evaluation
+        if not matched:
+            extracted_roots = root_extract(segmentation_str, lang)
+            for root in extracted_roots:
+                clean_root = strip_accents(root).lower().strip()
+                if clean_root in exact_translation_map:
+                    output_data['Surface Word'].append(surface_word)
+                    output_data[f'{lang.capitalize()} Lemma'].append(root)
+                    output_data['English translation'].append(exact_translation_map[clean_root])
+                    output_data['Glossing'].append(affix)
+                    output_data['Match Type'].append('Isolated Root Exact Match')
+                    matched = True
+                    break
+
+        # --- START TIER 4: BANTUBERTA NEIGHBORHOOD FALLBACK ---
+        if not matched and len(successful_embeddings_pool) > 0 and local_proverb_sentences:
+            context_proverb = None
+            for proverb in local_proverb_sentences:
+                if re.search(r'\b' + re.escape(surface_word) + r'\b', proverb, re.IGNORECASE):
+                    context_proverb = proverb
+                    break
+
+            if context_proverb:
                 try:
-                    unknown_vec = get_bantuberta_embedding(clean_proverb, surface_word)
+                    clean_context = re.sub(r"[^\w\s]", "", context_proverb).strip()
+                    unknown_vec = get_bantuberta_embedding(clean_context, surface_word)
                     if unknown_vec is not None:
                         best_score = -1.0
                         best_translation = None
@@ -326,13 +380,27 @@ def translation(lang: str, output_name: str, proverbs_file: str):
                 except Exception:
                     pass
 
-            if not matched:
-                output_data['Surface Word'].append(surface_word)
-                output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
-                output_data['English translation'].append('[Translation Missing]')
-                output_data['Glossing'].append(affix)
-                output_data['Match Type'].append('No Lexicon Match')
+        # Tier 5: Word-Bounded Local Proverb Context Check
+        if not matched and local_proverb_sentences:
+            pattern = re.compile(r'\b' + re.escape(normalized_lemma) + r'\b', re.IGNORECASE)
+            for proverb in local_proverb_sentences:
+                if pattern.search(proverb):
+                    output_data['Surface Word'].append(surface_word)
+                    output_data[f'{lang.capitalize()} Lemma'].append(normalized_lemma)
+                    output_data['English translation'].append(proverb)
+                    output_data['Glossing'].append(affix)
+                    output_data['Match Type'].append('Local Proverb Context Match')
+                    matched = True
+                    break
+
+        # Fallback when no translation tier catches it
+        if not matched:
+            output_data['Surface Word'].append(surface_word)
+            output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
+            output_data['English translation'].append('[Translation Missing]')
+            output_data['Glossing'].append(affix)
+            output_data['Match Type'].append('No Lexicon Match')
 
     df_out = pd.DataFrame(output_data).drop_duplicates(subset=['Surface Word']).reset_index(drop=True)
     df_out.to_csv(lang_folder / f"{lang.lower()}_translated.csv", index=False)
-    print(f"Processed {lang.upper()} successfully via BantuBERTa pipeline. Output records stored: {len(df_out)}")
+    print(f"Processed {lang}. Output entries: {len(df_out)}")
