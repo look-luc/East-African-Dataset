@@ -47,7 +47,7 @@ def query_bantumorph(word: str, tasks: list[str] | None = None):
     output = {word: {task: [] for task in tasks}}
     for task in tasks:
         input_text = f"{task}: {word}"
-        inputs = {k: v.to(device) for k, v in tokenizer(input_text, return_tengers="pt").items()}
+        inputs = {k: v.to(device) for k, v in tokenizer(input_text, return_tensors="pt").items()}
         with torch.no_grad():
             outputs = model.generate(**inputs, max_length=64)
         output[word][task].append(tokenizer.decode(outputs[0], skip_special_tokens=True))
