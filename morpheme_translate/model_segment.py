@@ -7,13 +7,15 @@ import torch
 from dotenv import load_dotenv
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
+torch.set_num_threads(8)
+torch.set_num_interop_threads(8)
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 load_dotenv()
 TOKEN = os.getenv("HF_TOKEN")
 
 model_id = "thiomi/bantumorph-v7"
-
 tokenizer = AutoTokenizer.from_pretrained(model_id, token=TOKEN)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_id, token=TOKEN)
 model = model.to(device)
@@ -23,7 +25,8 @@ script_dir = Path(__file__).resolve().parent.parent
 encoder = model.get_encoder()
 encoder.eval()
 
-def get_embeddings(words: list[str], batch_size: int = 128):
+def batch_get_embeddings(words: list[str], batch_size: int = 128) -> dict[str, torch.Tensor]:
+    """Generates embeddings for all unique words at once using large parallel GPU matrices."""
     word_to_embedding = {}
     if not words:
         return word_to_embedding
@@ -54,10 +57,9 @@ def get_embeddings(words: list[str], batch_size: int = 128):
     return word_to_embedding
 
 
-def query_bantumorph(words: list[str], batch_size: int = 128):
-    """Processes multiple words and tasks in parallel batches on the GPU."""
+def query_bantumorph(words: list[str], batch_size: int = 128) -> dict[str, dict]:
+    """Generates task annotations in parallel batches on the GPU."""
     tasks = ["lemmatization", "segmentation", "noun class prediction"]
-
     prompts = []
     prompt_metadata = []
 
@@ -69,8 +71,8 @@ def query_bantumorph(words: list[str], batch_size: int = 128):
     results = {word: {task: [] for task in tasks} for word in words}
 
     for i in range(0, len(prompts), batch_size):
-        batch_prompts = prompts[i:i+batch_size]
-        batch_meta = prompt_metadata[i:i+batch_size]
+        batch_prompts = prompts[i:i + batch_size]
+        batch_meta = prompt_metadata[i:i + batch_size]
 
         inputs = tokenizer(batch_prompts, return_tensors="pt", padding=True).to(device)
 
@@ -83,6 +85,7 @@ def query_bantumorph(words: list[str], batch_size: int = 128):
             results[word][task].append(decoded_text)
 
     return results
+
 
 def model_extract(data_title: str, lang: str):
     lang_folder = script_dir / "data" / lang.lower()
@@ -104,7 +107,7 @@ def model_extract(data_title: str, lang: str):
     global_batch_results = query_bantumorph(unique_words_list, batch_size=128)
 
     print("Running parallel encoder embedding batches...")
-    global_embeddings = get_embeddings(unique_words_list, batch_size=128)
+    global_embeddings = batch_get_embeddings(unique_words_list, batch_size=128)
 
     combined_dict = {}
     for word in unique_words_list:
