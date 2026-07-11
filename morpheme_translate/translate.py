@@ -228,7 +228,7 @@ def translation(lang: str, output_name: str, proverbs_file: str):
             print(f"Lexicon loading skipped for {lang}: {e}")
 
     iso_code = bantu_iso_map.get(lang.lower(), 'lug')
-    panlex_dict = load_panlex(iso_code)
+    panlex_dict = get_lang_data(iso_code)
 
     data_path = script_dir / proverbs_file
     df_data = pd.read_csv(data_path, sep='\t')
