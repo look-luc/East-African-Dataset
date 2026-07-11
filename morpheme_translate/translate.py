@@ -174,7 +174,7 @@ def get_lang_data(lang: str):
         lambda x: ", ".join(dict.fromkeys(x.dropna().astype(str)))
     ).reset_index()
 
-    return dict(zip(panlex_df[target_word_col].str.lower().str.strip(), panlex_df['txt_eng']))
+    return panlex_df
 
 def fallback_translation_tier(surface_word: str, lemma: str, lex_exact: dict, lex_sub: dict, panlex_dict: dict):
     """Evaluates lexical priority tiers to locate matching base definitions."""
@@ -203,14 +203,14 @@ def translation(lang: str, output_name: str, proverbs_file: str):
 
     model_csv = lang_folder / f"{lang.lower().capitalize()}_model_lem_seg.csv"
     if not model_csv.exists():
-        print(f"Error: Missing dependency file {model_csv}. Execute model_segment first.")
+        print(f"Error: Missing dependency matrix file {model_csv}. Run model_segment first.")
         return
 
     df_model = pd.read_csv(model_csv, sep='\t')
 
     combined_dict = {}
     for _, row in df_model.iterrows():
-        w = row['word']
+        w = str(row['word'])
         lem_val = ast.literal_eval(row['lemmatization']) if isinstance(row['lemmatization'], str) else row['lemmatization']
         seg_val = ast.literal_eval(row['segmentation']) if isinstance(row['segmentation'], str) else row['segmentation']
         combined_dict[w] = {'lemmatization': lem_val, 'segmentation': seg_val}
@@ -228,29 +228,24 @@ def translation(lang: str, output_name: str, proverbs_file: str):
         except Exception as e:
             print(f"Lexicon loading skipped for {lang}: {e}")
 
-    iso_code = bantu_iso_map.get(lang.lower(), 'lug')
-    panlex_dict = get_lang_data(iso_code)
+    panlex_dict = get_lang_data(lang)
 
     data_path = f"{script_dir}/data/{proverbs_file}"
     df_data = pd.read_csv(data_path, sep='\t')
     df_lang = df_data[df_data["language"].str.lower() == lang.lower()]
 
-    # List of tuples (Tensor, String) to store verified contextual embeddings safely
     successful_embeddings_pool = []
 
-    print("Building contextual BantuBERTa reference pool maps...")
+    print("Building contextual BantuBERTa reference pool maps across corpus entries...")
     for _, row in df_lang.iterrows():
-        proverb_text = row['african_proverb']
+        proverb_text = str(row['african_proverb'])
         clean_proverb = re.sub(r"[^\w\s]", "", proverb_text).strip()
         words_in_proverb = clean_proverb.split()
 
         for surface_word in words_in_proverb:
             predicted_lemma, _ = parse_model_outputs(surface_word, combined_dict)
-            if not predicted_lemma:
-                predicted_lemma = surface_word
-
             translation_string, match_type = fallback_translation_tier(
-                surface_word, predicted_lemma, lex_exact, lex_sub, panlex_dict
+                surface_word, predicted_lemma, lang, lex_exact, lex_sub, panlex_dict
             )
 
             if translation_string and match_type != 'No Lexicon Match':
@@ -278,11 +273,8 @@ def translation(lang: str, output_name: str, proverbs_file: str):
 
         for surface_word in words_in_proverb:
             predicted_lemma, affix = parse_model_outputs(surface_word, combined_dict)
-            if not predicted_lemma:
-                predicted_lemma, affix = surface_word, surface_word
-
             translation_string, match_type = fallback_translation_tier(
-                surface_word, predicted_lemma, lex_exact, lex_sub, panlex_dict
+                surface_word, predicted_lemma, lang, lex_exact, lex_sub, panlex_dict
             )
 
             matched = False
@@ -298,7 +290,6 @@ def translation(lang: str, output_name: str, proverbs_file: str):
             if not matched and len(successful_embeddings_pool) > 0:
                 try:
                     unknown_vec = get_bantuberta_embedding(clean_proverb, surface_word)
-
                     if unknown_vec is not None:
                         best_score = -1.0
                         best_translation = None
