@@ -11,7 +11,7 @@
 #SBATCH --qos=blanca-clearlab2
 #SBATCH --mail-type=END,FAIL
 
-export HF_TOKEN="${HF_TOKEN}"
+# export HF_TOKEN="${HF_TOKEN}"
 export HF_HOME="/projects/$USER/.cache/huggingface"
 export EVALUATE_CACHE_DIR="/projects/$USER/.cache/evaluate"
 export TRANSFORMERS_CACHE="/projects/$USER/.cache/transformers"
@@ -21,3 +21,7 @@ mkdir -p "$HF_HOME" "$EVALUATE_CACHE_DIR" "$TRANSFORMERS_CACHE"
 module purge
 module load anaconda
 conda activate east_african_dataset
+
+cd /projects/$USER/East-African-Dataset
+
+python -u run.py

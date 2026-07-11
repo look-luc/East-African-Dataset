@@ -13,6 +13,8 @@ from transformers import AutoModel, AutoTokenizer
 
 from morpheme_translate.extraction import root_extract
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 script_dir = Path(__file__).resolve().parent.parent
 load_dotenv()
 TOKEN = os.getenv("HF_TOKEN")
@@ -25,18 +27,19 @@ bantu_iso_map = {
 bantuberta_id = "dsfsi/BantuBERTa"  # Or specific language variations if available
 bb_tokenizer = AutoTokenizer.from_pretrained(bantuberta_id)
 bb_model = AutoModel.from_pretrained(bantuberta_id)
+bb_model = bb_model.to(device)
 bb_model.eval()
 
 def get_bantuberta_embedding(sentence: str, target_word: str):
     """Generates a contextual embedding isolated for a specific word inside its proverb context."""
-    inputs = bb_tokenizer(sentence, return_tensors="pt")
+    inputs = {k: v.to(device) for k, v in bb_tokenizer(sentence, return_tensors="pt").items()}
 
     word_tokens = bb_tokenizer.tokenize(target_word)
     word_ids = bb_tokenizer.convert_tokens_to_ids(word_tokens)
 
     with torch.no_grad():
         outputs = bb_model(**inputs)
-        hidden_states = outputs.last_hidden_state.squeeze(0) # Shape: [seq_len, hidden_size]
+        hidden_states = outputs.last_hidden_state.squeeze(0)
 
     input_ids = inputs["input_ids"].squeeze(0).tolist()
     match_indices = [i for i, idx in enumerate(input_ids) if idx in word_ids]

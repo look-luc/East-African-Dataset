@@ -7,6 +7,8 @@ import torch
 from dotenv import load_dotenv
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 load_dotenv()
 TOKEN = os.getenv("HF_TOKEN")
 
@@ -14,6 +16,7 @@ model_id = "thiomi/bantumorph-v7"
 
 tokenizer = AutoTokenizer.from_pretrained(model_id, token=TOKEN)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_id, token=TOKEN)
+model = model.to(device)
 
 script_dir = Path(__file__).resolve().parent.parent
 
@@ -44,7 +47,7 @@ def query_bantumorph(word: str, tasks: list[str] | None = None):
     output = {word: {task: [] for task in tasks}}
     for task in tasks:
         input_text = f"{task}: {word}"
-        inputs = tokenizer(input_text, return_tensors="pt")
+        inputs = {k: v.to(device) for k, v in tokenizer(input_text, return_tengers="pt").items()}
         with torch.no_grad():
             outputs = model.generate(**inputs, max_length=64)
         output[word][task].append(tokenizer.decode(outputs[0], skip_special_tokens=True))
@@ -74,7 +77,7 @@ def model_extract(data_title: str, lang: str):
                 res[word]['embedding'] = get_embeddings(word)
                 model_out.append(res)
 
-    combined_dict = {k: v for d in model_out for k, v in d.items()}
+    combined_dict = {k: v.to(device) for d in model_out for k, v in d.items()}
     out_df = pd.DataFrame.from_dict(combined_dict, orient='index')
 
     out_df.index.name = 'surface_word'
