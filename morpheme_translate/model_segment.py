@@ -7,9 +7,6 @@ import torch
 from dotenv import load_dotenv
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-torch.set_num_threads(8)
-torch.set_num_interop_threads(8)
-
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 load_dotenv()
