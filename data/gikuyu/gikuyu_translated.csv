@@ -1,7 +1,7 @@
 Surface Word,Gikuyu Lemma,English translation,Glossing,Match Type
 thio,ethiopia,"Ethiopia, country in Eastern Africa",thio DET;POSS;PSS1P;BANTU1,Substring Overlap
 kiumu,kiumu,"dawn, daybreak, plunge into, sink, (cause to) sink, grind, grind (grain with a millstone) (Inferred via BantuBERTa)",kiumu N;SG;BANTU15,BantuBERTa Vector Neighborhood
-nyeki,nyeki,Iri guthua ndongoria itikinyagira nyeki,nyeki N;SG;BANTU9,Local Proverb Context Match
+nyeki,nyeki,[Translation Missing],nyeki N;SG;BANTU9,No Lexicon Match
 mucoka,coka,"return, go back",coka V;PRS,PanLex Exact Match
 ndagaga,agaga,two (Inferred via BantuBERTa),ndagaga N;SG;BANTU9,BantuBERTa Vector Neighborhood
 wothe,otha,sing (Inferred via BantuBERTa),wothe DET;POSS;PSS1S;BANTU1,BantuBERTa Vector Neighborhood
@@ -14,7 +14,7 @@ cia,cia,moon (Inferred via BantuBERTa),Cia DET;PROX;BANTU7,BantuBERTa Vector Nei
 ciake,wake,sing (Inferred via BantuBERTa),ciake,BantuBERTa Vector Neighborhood
 ndurokaga,rokaga,[Translation Missing],ndurokaga N;SG;BANTU10,No Lexicon Match
 athinirie,thinira,[Translation Missing],thiniria V;PST;REC;3;SG,No Lexicon Match
-ndebe,ndebe,Itheru riuragaga ndebe,ndebe N;SG;BANTU9,Local Proverb Context Match
+ndebe,ndebe,[Translation Missing],ndebe N;SG;BANTU9,No Lexicon Match
 kunwithia,thia,"point, tip, highest point, utmost, keep livestock",nwithia V;NFIN,Substring Overlap
 matu,matu,cloud,matu N;PL;BANTU6,PanLex Exact Match
 aimaga,imaga,[Translation Missing],imaga V;PRS,No Lexicon Match
@@ -22,7 +22,7 @@ muhuhi,muhuhi,fight (Inferred via BantuBERTa),muhuhi N;SG;BANTU1,BantuBERTa Vect
 miti,miti,"herb, plant",miti N;PL;BANTU4,PanLex Exact Match
 Cia,cia,moon (Inferred via BantuBERTa),Cia DET;PROX;BANTU7,BantuBERTa Vector Neighborhood
 kendagia,enda,"love, want, need, wish",kendagia V;PRS,Substring Overlap
-thakirio,thakirio,Ehera thakirio,thakirio V;PRS,Local Proverb Context Match
+thakirio,thakirio,[Translation Missing],thakirio V;PRS,No Lexicon Match
 rubia,rubia rwa india,Indian Rupee,rubia V;PRS,Substring Overlap
 kuruga,ruga,"cook, stir",ruga V;PRS;PROG;3;SG,PanLex Exact Match
 itigayagwo,tiga,"leave, leave (off)",itigayagwo N;SG;BANTU9,Substring Overlap
@@ -50,10 +50,10 @@ ndagambaga,amba,"apply, spread over, apply (by stretching)",gambaga V;PST;REC;1;
 mathina,thina,home (Inferred via BantuBERTa),thina V;PST;REC;2;PL,BantuBERTa Vector Neighborhood
 ndakoragwo,koragwo,sing (Inferred via BantuBERTa),ndakoragwo N;PL;BANTU10,BantuBERTa Vector Neighborhood
 mwamukaniro,mukaniro,[Translation Missing],mwamukaniro N;PL;BANTU1,No Lexicon Match
-gatukagia,gatukagia,Karatha gatukagia karatha,gatukagia V;PST,Local Proverb Context Match
+gatukagia,gatukagia,[Translation Missing],gatukagia V;PST,No Lexicon Match
 Mba,ba,sing (Inferred via BantuBERTa),ba V;PRS,BantuBERTa Vector Neighborhood
 gia,gia,"call, pour away, pour, hip (Inferred via BantuBERTa)",gia V;PRS,BantuBERTa Vector Neighborhood
-tikuo,tikuo,Gukuhiriria mbaara tikuo kurua,tikuo N;SG;BANTU10,Local Proverb Context Match
+tikuo,tikuo,[Translation Missing],tikuo N;SG;BANTU10,No Lexicon Match
 ritituhagia,hagia,knife (Inferred via BantuBERTa),ritituhagia V;PRS,BantuBERTa Vector Neighborhood
 Gikuyu,gikuyu,Kikuyu,Gikuyu N;SG;BANTU1,PanLex Exact Match
 utugire,tuga,moon (Inferred via BantuBERTa),tuga V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
@@ -74,15 +74,15 @@ muigana,igana,hundred,igana N;SG;BANTU1,PanLex Exact Match
 gake,wake,liver (Inferred via BantuBERTa),gake DET;POSS;PSS1S;BANTU7,BantuBERTa Vector Neighborhood
 kumathaga,thaga,[Translation Missing],thaga V;PRS;NEG;3;SG,No Lexicon Match
 gitigunaga,gitigunaga,"bush, thicket (Inferred via BantuBERTa)",gitigunaga V;PRS,BantuBERTa Vector Neighborhood
-Ciunagwo,ciunagwo,"Ciunagwo rukomo, kimenyi akamenya ikiunwo",Ciunagwo N;SG;BANTU10,Local Proverb Context Match
+Ciunagwo,ciunagwo,[Translation Missing],Ciunagwo N;SG;BANTU10,No Lexicon Match
 muguguta,guta,"idleness, sloth, oil, oil (from plants)",guguta V;PRS,Substring Overlap
-mbaara,mbaara,Gukuhiriria mbaara tikuo kurua,uMbaara,Local Proverb Context Match
+mbaara,mbaara,[Translation Missing],uMbaara,No Lexicon Match
 gitithiragwo,gitithiragwo,liver (Inferred via BantuBERTa),gitithiragwo N;SG;BANTU10,BantuBERTa Vector Neighborhood
 ndacokaga,coka,"return, go back",cokaga V;PST;REC;1;SG,Substring Overlap
 Murimi,muri,root,murimi N;SG;BANTU1,Substring Overlap
 Muigua,gua,"fall, hear",uMuigua N;SG;BANTU1,PanLex Exact Match
 Kieru,eru,liver (Inferred via BantuBERTa),eru ADJ;BANTU7,BantuBERTa Vector Neighborhood
-riumaga,riumaga,Itheru riumaga mbaara,riumaga V;PRS,Local Proverb Context Match
+riumaga,riumaga,[Translation Missing],riumaga V;PRS,No Lexicon Match
 Aka,aka,"construct, put together, year, build",aka V;PRS,PanLex Exact Match
 ndubatabataga,bata,duck,ndubatabataga N;PL;BANTU10,Substring Overlap
 Cionje,onja,ten (Inferred via BantuBERTa),Cionje N;SG;BANTU10,BantuBERTa Vector Neighborhood
@@ -115,7 +115,7 @@ Mbogo,mbogo,buffalo,uMbogo,PanLex Exact Match
 nditihagira,kuhagira nyungu,"put on the fire, put (a pot) on the fire",hagira V;FUT,Substring Overlap
 Kuira,ira,"say, tell, say (to), tell (to), yesterday, yesterday",ira V;PRS;HAB;3;SG,PanLex Exact Match
 kanuaini,kanua,mouth,kanua V;PRS,PanLex Exact Match
-Ithinjiro,ithinjiro,Ithinjiro ritiagaga thakame,ithinjiro N;SG;BANTU10,Local Proverb Context Match
+Ithinjiro,ithinjiro,[Translation Missing],ithinjiro N;SG;BANTU10,No Lexicon Match
 ma,ma,liver (Inferred via BantuBERTa),ma DET;POSS;PSS1P;BANTU6,BantuBERTa Vector Neighborhood
 ndendaga,enda,"love, want, need, wish",endaga V;PRS,Substring Overlap
 makoro,koro,skin,makoro N;PL;BANTU6,Substring Overlap
@@ -143,14 +143,14 @@ wonaga,ona,"person, person, individual, capita (Inferred via BantuBERTa)",wonaga
 kahiu,kahiu,knife,Kahiu N;SG;BANTU15,PanLex Exact Match
 Kinya,nya,"four, calabash",nya V;PRS;HAB;3;SG,PanLex Exact Match
 unyakukagwo,unyakukagwo,liver (Inferred via BantuBERTa),unyakukagwo N;SG;BANTU1,BantuBERTa Vector Neighborhood
-Cira,cira,Cira munene ni ukia,Cira,Local Proverb Context Match
+Cira,cira,[Translation Missing],Cira,No Lexicon Match
 njuguma,njuguma,sing (Inferred via BantuBERTa),njuguma N;SG;BANTU10,BantuBERTa Vector Neighborhood
 ngee,ngee,louse (Inferred via BantuBERTa),ngee DET;POSS;PSS1S;BANTU9,BantuBERTa Vector Neighborhood
 toi,toi,body (Inferred via BantuBERTa),toi DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
 gitirugaga,ruga,"cook, stir",gitirugaga V;PRS,Substring Overlap
 ita,ita,"call, pour away, pour, hip",ita V;PRS,PanLex Exact Match
 kiariire,ariary ya bukini,Malagasy Ariary,aria V;PST;REC;3;SG,Substring Overlap
-Maheni,ha,Handu ha njuguma na ha mugwi hatiganaine,uMaheni N;PL;BANTU2,Local Proverb Context Match
+Maheni,ha,[Translation Missing],uMaheni N;PL;BANTU2,No Lexicon Match
 munyu,munyu,salt,munyu N;SG;BANTU1,PanLex Exact Match
 gatukiriirie,iria,"that, milk, breast, lake",gatukiriiria V;PST;REC;3;SG,Substring Overlap
 konagia,konagia,"person, person, individual, capita (Inferred via BantuBERTa)",konagia V;PRS,BantuBERTa Vector Neighborhood
@@ -158,7 +158,7 @@ gitindagia,tindagia,highway (Inferred via BantuBERTa),gitindagia V;PRS,BantuBERT
 mahitukaga,hituka,"pass, surpass",hitukaga V;PST;REC;2;PL,Substring Overlap
 kuhika,tahika,vomit,hika V;NFIN,Substring Overlap
 uru,uru,bad,uru DET;PROX;BANTU1,PanLex Exact Match
-Gakiihotora,gakiihotora,Gakiihotora niko koi uria kariina,Gakiihotora V;PRS;PROG;3;SG,Local Proverb Context Match
+Gakiihotora,gakiihotora,[Translation Missing],Gakiihotora V;PRS;PROG;3;SG,No Lexicon Match
 rimwe,imwe,one,rimwe,Substring Overlap
 mukundu,muku,ashes,mukundu N;SG;BANTU1,Substring Overlap
 Gathutha,gathutha,"person, person, individual, capita (Inferred via BantuBERTa)",Gathutha V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
@@ -183,9 +183,9 @@ wira,wira,"work, work, labour, employment, occupation, job, business, employment
 utonga,tonga,"Tonga, country, 𐐓𐐪𐑍𐑀𐐲",tonga V;PRS,PanLex Exact Match
 rithekagia,theka,laugh,thekagia V;PRS,Substring Overlap
 ndangihota,hota,"overcome, vanquish, win",hota V;PST,PanLex Exact Match
-kikuo,kikuo,Guthinga kikuo kihoto,kikuo N;SG;BANTU15,Local Proverb Context Match
+kikuo,kikuo,[Translation Missing],kikuo N;SG;BANTU15,No Lexicon Match
 tha,tha,"leave, permission",tha V;PRS,PanLex Exact Match
-Ehera,ehera,Ehera thakirio,Ehera,Local Proverb Context Match
+Ehera,ehera,[Translation Missing],Ehera,No Lexicon Match
 uguithagia,thagi,buttermilk,guithagia V;PRS,Substring Overlap
 guoko,guoko,"arm, hand",guoko,PanLex Exact Match
 irugitwo,irugitwo,ten (Inferred via BantuBERTa),irugitwo N;SG;BANTU9,BantuBERTa Vector Neighborhood
@@ -206,7 +206,7 @@ mukuru,muku,ashes,uMukuru N;SG;BANTU1,Substring Overlap
 umenyagwo,enya,shave,umenyagwo N;SG;BANTU1,Substring Overlap
 mari,kicumari,Somali,uMari,Substring Overlap
 kiuru,kiuru,"dawn, daybreak, plunge into, sink, (cause to) sink, grind, grind (grain with a millstone) (Inferred via BantuBERTa)",kiuru N;SG;BANTU15,BantuBERTa Vector Neighborhood
-gwatuka,gwatuka,"Gwakia kwarama, gwatuka gwakundeera",gwatuka V;PST,Local Proverb Context Match
+gwatuka,gwatuka,[Translation Missing],gwatuka V;PST,No Lexicon Match
 igithii,igithii,"sky, above, up (Inferred via BantuBERTa)",igithii N;SG;BANTU9,BantuBERTa Vector Neighborhood
 iraka,irak,"Iraq, country, Shia crescent, axis of evil",iraka,Substring Overlap
 Irio,ndirenda irio,I need food,irio,Substring Overlap
@@ -241,7 +241,7 @@ ikiumbuka,umbuka,[Translation Missing],umbuka V;PRS;HAB;3;SG,No Lexicon Match
 Muhoreri,horeri,dog (Inferred via BantuBERTa),uMuhoreri N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Kuona,ona,honey (Inferred via BantuBERTa),ona V;NFIN,BantuBERTa Vector Neighborhood
 kurita,mambarita,thatched roof,rita,Substring Overlap
-niguo,niguo,Muikaranio niguo mubarano,niguo N;SG;BANTU9,Local Proverb Context Match
+niguo,niguo,[Translation Missing],niguo N;SG;BANTU9,No Lexicon Match
 mahiga,higa,stone,higa V;PST;REC;2;PL,PanLex Exact Match
 ngwatiro,ngwatiro,"hunter, (professional) hunter (Inferred via BantuBERTa)",ngwatiro N;SG;BANTU10,BantuBERTa Vector Neighborhood
 kuohwo,ohwo,"tree-trunk, (base of) tree-trunk, tree (Inferred via BantuBERTa)",ohwo V;NFIN,BantuBERTa Vector Neighborhood
@@ -268,25 +268,25 @@ kwigita,igita,[Translation Missing],igita N;SG;BANTU15,No Lexicon Match
 gutuura,gutuura,"tree-trunk, (base of) tree-trunk, tree (Inferred via BantuBERTa)",gutuura V;PRS,BantuBERTa Vector Neighborhood
 Mucii,mucii,home,mucii N;SG;BANTU1,PanLex Exact Match
 njuru,njuru,"person, person, individual, capita (Inferred via BantuBERTa)",njuru N;SG;BANTU9,BantuBERTa Vector Neighborhood
-uriru,uriru,Gutiri uriru utonwo,uriru N;SG;BANTU1,Local Proverb Context Match
+uriru,uriru,[Translation Missing],uriru N;SG;BANTU1,No Lexicon Match
 niwiriagira,kuhagira nyungu,"put on the fire, put (a pot) on the fire",niwiriagira V;PRS,Substring Overlap
 ndatuuraga,uraga,"kill, break, snap",tuuraga V;PST,Substring Overlap
 igiraga,igiraga,"great, powerful, chief, large, master (Inferred via BantuBERTa)",igiraga N;SG;BANTU9,BantuBERTa Vector Neighborhood
 kirugamanio,gama,"come to a halt, pull up",kirugamanio N;SG;BANTU15,Substring Overlap
 itimenyagirwo,enya,shave,itimenyagirwo N;SG;BANTU9,Substring Overlap
 ritigiragia,tigiragia,"milk, breast, lake (Inferred via BantuBERTa)",ritigiragia V;PRS,BantuBERTa Vector Neighborhood
-gitiro,gitiro,Muka uri kironda ainagira gitiro ihugo,gitiro,Local Proverb Context Match
+gitiro,gitiro,[Translation Missing],gitiro,No Lexicon Match
 Kuma,ma,"tree-trunk, (base of) tree-trunk, tree (Inferred via BantuBERTa)",kuma V;NFIN,BantuBERTa Vector Neighborhood
 itimuragira,itimu,spear,itimuragira N;SG;BANTU9,Substring Overlap
 mugui,mugui,"tree-trunk, (base of) tree-trunk, tree (Inferred via BantuBERTa)",uMugui N;SG;BANTU1,BantuBERTa Vector Neighborhood
 kugurana,gura,buy,gurana V;NFIN,PanLex Exact Match
-gugithinjwo,gugithinjwo,Kaihu koruri gatigaga kwao gugithinjwo,gugithinjwo N;SG;BANTU14,Local Proverb Context Match
+gugithinjwo,gugithinjwo,[Translation Missing],gugithinjwo N;SG;BANTU14,No Lexicon Match
 guoya,oya,"carry, take",guoya N;SG;BANTU14,PanLex Exact Match
 kworire,ora,"rotten, become bad, become rotten, rot",kwora V;PST;REC;3;SG,PanLex Exact Match
-utonwo,utonwo,Gutiri uriru utonwo,utonwo N;SG;BANTU1,Local Proverb Context Match
+utonwo,utonwo,[Translation Missing],utonwo N;SG;BANTU1,No Lexicon Match
 ritwa,ritwa,"child, baby, very young human being, babby, babe, infaneto, infant, kid, little sweetie, newborn, newborn child, papoose, pikkie, small insect (Inferred via BantuBERTa)",ritwa,BantuBERTa Vector Neighborhood
 gatune,gatuna,[Translation Missing],gatuna V;PST;REC;3;SG,No Lexicon Match
-Kaihu,kaihu,Kaihu koruri gatigaga kwao gugithinjwo,Kaihu N;SG;BANTU15,Local Proverb Context Match
+Kaihu,kaihu,[Translation Missing],Kaihu N;SG;BANTU15,No Lexicon Match
 kiondo,kiondo,"basket, basket (of open wicker-work)",kiondo N;SG;BANTU15,PanLex Exact Match
 thira,huthira,use,thira,Substring Overlap
 itirumagwo,ruma,"bite, abuse",itirumagwo N;SG;BANTU9,Substring Overlap
@@ -299,7 +299,7 @@ kwao,wao,[Translation Missing],kwao DET;POSS;PSS1P;BANTU15,No Lexicon Match
 Kiega,ega,"dawn, daybreak, plunge into, sink, (cause to) sink, grind, grind (grain with a millstone) (Inferred via BantuBERTa)",ega V;PRS,BantuBERTa Vector Neighborhood
 mucii,mucii,home,mucii N;SG;BANTU1,PanLex Exact Match
 gukaana,gukaana,"dawn, daybreak, plunge into, sink, (cause to) sink, grind, grind (grain with a millstone) (Inferred via BantuBERTa)",gukaana V;PRS,BantuBERTa Vector Neighborhood
-ihugo,ihugo,Muka uri kironda ainagira gitiro ihugo,ihugo N;SG;BANTU9,Local Proverb Context Match
+ihugo,ihugo,[Translation Missing],ihugo N;SG;BANTU9,No Lexicon Match
 mondo,ondo,"basket, basket (of open wicker-work)",uMondo N;SG;BANTU1,Substring Overlap
 guthira,uthi,pestle,guthira,Substring Overlap
 agithii,githii,"country, (our) country (Inferred via BantuBERTa)",githii V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
@@ -313,7 +313,7 @@ ndua,nduano,fishhook,ndua V;PST;REC;1;SG,Substring Overlap
 ngime,ngime,liver (Inferred via BantuBERTa),ngime N;SG;BANTU9,BantuBERTa Vector Neighborhood
 ngia,ngia,steal (Inferred via BantuBERTa),ngia DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
 Kuhoya,hoya,ask for,hoya V;NFIN,PanLex Exact Match
-ngamini,ngamini,Andu matiui ngamini,ngamini N;SG;BANTU10,Local Proverb Context Match
+ngamini,ngamini,[Translation Missing],ngamini N;SG;BANTU10,No Lexicon Match
 uturaga,tura,town,turaga V;PRS,Substring Overlap
 gutigiragia,tigiragia,"person, person, individual, capita (Inferred via BantuBERTa)",gutigiragia V;PRS,BantuBERTa Vector Neighborhood
 kiigaga,igaga,buttock (Inferred via BantuBERTa),igaga N;SG;BANTU1,BantuBERTa Vector Neighborhood
@@ -355,9 +355,9 @@ ekuuma,uma,"become dry, dry up, go away, go out",uma V;PRS;PROG;2;SG,PanLex Exac
 kuriha,riha,pay,riha V;NFIN,PanLex Exact Match
 athi,thi,"country, (our) country",athi PRO;INT;INTENS,PanLex Exact Match
 ndugukagwo,gwo,voice (Inferred via BantuBERTa),ndugukagwo N;SG;BANTU10,BantuBERTa Vector Neighborhood
-wayo,wayo,Gutiri ngware itari muhuririe wayo,wayo DET;POSS;PSS1P;BANTU1,Local Proverb Context Match
+wayo,wayo,[Translation Missing],wayo DET;POSS;PSS1P;BANTU1,No Lexicon Match
 kaigu,igu,[Translation Missing],kaigu N;SG;BANTU15,No Lexicon Match
-Kanoro,kanoro,Kanoro kari ituura gatituhagia,Kanoro,Local Proverb Context Match
+Kanoro,kanoro,[Translation Missing],Kanoro,No Lexicon Match
 ndwakaga,ga,cook,ndwakaga N;SG;BANTU10,PanLex Exact Match
 gatituhagia,hagia,[Translation Missing],gatituhagia V;PST,No Lexicon Match
 Itari,dagitari,"doctor, physician, physican",itari,Substring Overlap
@@ -377,7 +377,7 @@ giakura,giaku,"your, yours, yours (plural)",giakura V;PST,Substring Overlap
 Igwa,igwa,thorn,igwa N;SG;BANTU9,PanLex Exact Match
 igiri,igiri,two,igiri,PanLex Exact Match
 njuu,njuu,rat (Inferred via BantuBERTa),njuu N;SG;BANTU9,BantuBERTa Vector Neighborhood
-riunaga,riunaga,Ihenya inene riunaga gikwa ihatha,riunaga V;PRS,Local Proverb Context Match
+riunaga,riunaga,[Translation Missing],riunaga V;PRS,No Lexicon Match
 ihiga,higa,stone,higa V;PRS,PanLex Exact Match
 ititiraga,titiraga,"eye, organ, mince pie (Inferred via BantuBERTa)",titiraga V;PRS,BantuBERTa Vector Neighborhood
 runene,nene,"great, powerful, chief, large, master",nene ADJ;BANTU11,PanLex Exact Match
@@ -388,7 +388,7 @@ gitei,gitei,"tree-trunk, (base of) tree-trunk, tree (Inferred via BantuBERTa)",g
 gako,wako,[Translation Missing],gako DET;POSS;PSS1P;BANTU6,No Lexicon Match
 Kiunuhu,unuhu,[Translation Missing],unuhu N;SG;BANTU15,No Lexicon Match
 Ireragira,reragira,sing (Inferred via BantuBERTa),ireragira,BantuBERTa Vector Neighborhood
-gutiri,gutiri,Gutiri gitatuirie kingi,Gutiri N;SG;BANTU1,Local Proverb Context Match
+gutiri,gutiri,[Translation Missing],Gutiri N;SG;BANTU1,No Lexicon Match
 kigunaga,gunaga,"bush, thicket (Inferred via BantuBERTa)",gunaga V;PRS,BantuBERTa Vector Neighborhood
 Kwa,kwa,bad (Inferred via BantuBERTa),Kwa DET;POSS;PSS1P;BANTU15,BantuBERTa Vector Neighborhood
 Me,me,dew,me DET;POSS;PSS1P;BANTU6,PanLex Exact Match
@@ -410,7 +410,7 @@ Kindu,kindu,thing,kindu N;SG;BANTU15,PanLex Exact Match
 rwagatha,gatha,steal (Inferred via BantuBERTa),rwagatha V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 githunu,thunu,[Translation Missing],githunu N;SG;BANTU10,No Lexicon Match
 hatiganaine,gana,hundred,hatiganaine V;PST;REC;2;PL,Substring Overlap
-Gucukagwo,gucukagwo,Gucukagwo utaguteo,Gucukagwo N;SG;BANTU14,Local Proverb Context Match
+Gucukagwo,gucukagwo,[Translation Missing],Gucukagwo N;SG;BANTU14,No Lexicon Match
 nduoyagwo,oyagwo,"country, (our) country (Inferred via BantuBERTa)",nduoyagwo N;SG;BANTU10,BantuBERTa Vector Neighborhood
 ahikanaga,hikanaga,sing (Inferred via BantuBERTa),ahikanaga N;SG;BANTU1,BantuBERTa Vector Neighborhood
 oi,oi,"person, person, individual, capita (Inferred via BantuBERTa)",oi DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
@@ -427,14 +427,14 @@ yene,yene,"work, work, labour, employment, occupation, job, business, employment
 Mugarirua,gari,leopard,garirua V;PRS,Substring Overlap
 Kurita,mambarita,thatched roof,rita,Substring Overlap
 gatiumagia,umagia,fry (Inferred via BantuBERTa),gatiumagia V;PST,BantuBERTa Vector Neighborhood
-ndeto,ndeto,Kurikanira gutigiragia ndeto ihitane,ndeto N;SG;BANTU9,Local Proverb Context Match
+ndeto,ndeto,[Translation Missing],ndeto N;SG;BANTU9,No Lexicon Match
 Mbu,bumbui,spider,mbu N;SG;BANTU1,Substring Overlap
 kuhinja,hinja,"become lean, grow thin",hinja V;NFIN,PanLex Exact Match
 inyuaga,nyuaga,body (Inferred via BantuBERTa),inyuaga N;SG;BANTU9,BantuBERTa Vector Neighborhood
 Ithinjagirwo,hinja,"become lean, grow thin",thinjagirwo V;PRS;HAB;3;SG,Substring Overlap
 koragia,ragia,honey (Inferred via BantuBERTa),koragia V;NFIN,BantuBERTa Vector Neighborhood
 kwihaka,haka,"polish, boundary",ihaka N;SG;BANTU15,Substring Overlap
-gitahi,gitahi,Gwethera gitahi muka,gitahi N;SG;BANTU1,Local Proverb Context Match
+gitahi,gitahi,[Translation Missing],gitahi N;SG;BANTU1,No Lexicon Match
 huhita,hita,"hunting, swear",huhita V;PRS,PanLex Exact Match
 Guthekio,guthekio,"tree-trunk, (base of) tree-trunk, tree (Inferred via BantuBERTa)",Guthekio N;SG;BANTU14,BantuBERTa Vector Neighborhood
 kuoria,oria,liver (Inferred via BantuBERTa),oria V;NFIN,BantuBERTa Vector Neighborhood
@@ -464,13 +464,13 @@ itanakira,kira,"wear, be quiet, clothe, place, put",itanakira,Substring Overlap
 ndwagaga,gagatu,bitter,ndwagaga N;SG;BANTU10,Substring Overlap
 Mari,kicumari,Somali,uMari,Substring Overlap
 Ciatura,tura,town,Ciatura,PanLex Exact Match
-riuaini,riua,Iri guciarira riua-ini yongithagiria o ho,riuaini N;SG;BANTU10,Local Proverb Context Match
+riuaini,riua,[Translation Missing],riuaini N;SG;BANTU10,No Lexicon Match
 ndaiguaga,guaga,liver (Inferred via BantuBERTa),guaga V;PST,BantuBERTa Vector Neighborhood
-kirimu,kirimu,Cira wa kirimu utindaga kiharo,Kirimu N;SG;BANTU10,Local Proverb Context Match
+kirimu,kirimu,[Translation Missing],Kirimu N;SG;BANTU10,No Lexicon Match
 we,we,you,we DET;POSS;PSS1P;BANTU1,PanLex Exact Match
 Muimwo,umuimwo,"do, come (Inferred via BantuBERTa)",uMuimwo N;SG;BANTU1,BantuBERTa Vector Neighborhood
 akamenya,menya,know,menya V;NFIN,PanLex Exact Match
-ikumbi,ikumbi,Cia thuguri itiyuraga ikumbi,ikumbi N;SG;BANTU9,Local Proverb Context Match
+ikumbi,ikumbi,[Translation Missing],ikumbi N;SG;BANTU9,No Lexicon Match
 Iriaga,aga,[Translation Missing],iriaga,No Lexicon Match
 gwakundeera,kundeera,[Translation Missing],gwakundeera V;PST;REC;3;SG,No Lexicon Match
 Kihooto,hooto,"cook, stir (Inferred via BantuBERTa)",Kihooto N;SG;BANTU10,BantuBERTa Vector Neighborhood
@@ -507,9 +507,9 @@ mukoroku,koro,skin,mukoroku N;SG;BANTU1,Substring Overlap
 ndangimiona,ona,sing (Inferred via BantuBERTa),ona V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
 rikinyaga,kirinyaga,Mount Kenya,rikinyaga V;PRS;PROG;3;SG,Substring Overlap
 utuuragia,tuuragia,home (Inferred via BantuBERTa),tuuragia V;PRS,BantuBERTa Vector Neighborhood
-mukiri,mukiri,"Kwa munegeni gukiura, kwa mukiri kworire tene",mukiri N;SG;BANTU1,Local Proverb Context Match
+mukiri,mukiri,[Translation Missing],mukiri N;SG;BANTU1,No Lexicon Match
 Kuhuuta,huuta,sing (Inferred via BantuBERTa),huuta V;NFIN,BantuBERTa Vector Neighborhood
-kihoto,kihoto,Guthinga kikuo kihoto,kihoto,Local Proverb Context Match
+kihoto,kihoto,[Translation Missing],kihoto,No Lexicon Match
 Watatua,tatua,[Translation Missing],tatua V;PST;REC;3;PL,No Lexicon Match
 Itheru,theru,liver (Inferred via BantuBERTa),theru ADJ;BANTU4,BantuBERTa Vector Neighborhood
 ndiambagiririo,amba,"apply, spread over, apply (by stretching)",ambagiririo V;PRS;HAB;1;SG,Substring Overlap
@@ -530,7 +530,7 @@ Kanya,nya,"four, calabash",Kanya V;PRS;HAB;3;SG,PanLex Exact Match
 kuura,ura,"get lost, frog, leak, ooze out",ura V;NFIN,PanLex Exact Match
 Githuri,githuri,chest,Githuri N;SG;BANTU1,PanLex Exact Match
 noko,noko,"do, come (Inferred via BantuBERTa)",noko,BantuBERTa Vector Neighborhood
-Gwakia,gwakia,"Gwakia kwarama, gwatuka gwakundeera",Gwakia V;PRS,Local Proverb Context Match
+Gwakia,gwakia,[Translation Missing],Gwakia V;PRS,No Lexicon Match
 kuuru,kuuruga,"mix, stir, mix (by stirring), stir up",kuuru N;SG;BANTU15,Substring Overlap
 Gatundu,undu,affair,Gatundu N;SG;BANTU1,Substring Overlap
 kogi,kogi,"call, bow, spittle, pour, bending, hip, bowstring (Inferred via BantuBERTa)",kogi PRO;INT;NEG,BantuBERTa Vector Neighborhood
@@ -547,10 +547,10 @@ ndiriragwo,rira,"cry, wail, trickle away, disappear, fade",ndiriragwo N;PL;BANTU
 kiarua,arua,sing (Inferred via BantuBERTa),arua V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 mutumia,mutumia,"wife, married woman, spouse, Frau, Miss, Mrs, Mrs., Ms, Ms., bride, female, femme, girl, lady, little woman, madam, missus, mistress, old woman, signora, squaw, wifey, woman",mutumia N;SG;BANTU1,PanLex Exact Match
 Muri,muri,root,uMuri,PanLex Exact Match
-ruiyuru,ruiyuru,Kihooto kiringaga ruui ruiyuru,ruiyuru N;SG;BANTU11,Local Proverb Context Match
+ruiyuru,ruiyuru,[Translation Missing],ruiyuru N;SG;BANTU11,No Lexicon Match
 gitiunanagirwo,gitiunanagirwo,"heart, soul, spirit (Inferred via BantuBERTa)",gitiunanagirwo N;SG;BANTU1,BantuBERTa Vector Neighborhood
 irugaga,ruga,"cook, stir",irugaga N;SG;BANTU9,Substring Overlap
-iganjo,iganjo,Gitonga kigiragio iganjo gikarima,iganjo,Local Proverb Context Match
+iganjo,iganjo,[Translation Missing],iganjo,No Lexicon Match
 Gieterero,gieterero,"tree-trunk, (base of) tree-trunk, tree (Inferred via BantuBERTa)",Gieterero N;SG;BANTU10,BantuBERTa Vector Neighborhood
 witeithitie,thita,penis,teithitia V;PST;REC;2;SG,PanLex Exact Match
 Muhenania,henania,[Translation Missing],henania V;PRS;HAB;3;SG,No Lexicon Match
@@ -558,7 +558,7 @@ gutwika,gutwika,"bead, bead(s) (Inferred via BantuBERTa)",gutwika V;PRS,BantuBER
 magithii,githii,sing (Inferred via BantuBERTa),githii V;PST;REC;2;PL,BantuBERTa Vector Neighborhood
 Mbaara,umba,"mould, mould (pottery)",uMbaara,Substring Overlap
 rwimbo,umbo,"oil, oil (from plants) (Inferred via BantuBERTa)",rwimbo,BantuBERTa Vector Neighborhood
-mahoro,mahoro,Mukagera mahoro ma ndugira,mahoro N;PL;BANTU6,Local Proverb Context Match
+mahoro,mahoro,[Translation Missing],mahoro N;PL;BANTU6,No Lexicon Match
 ime,ime,dew,ime DET;POSS;PSS1P;BANTU9,PanLex Exact Match
 itangigwatirira,rira,"cry, wail, trickle away, disappear, fade",itangigwatirira N;SG;BANTU9,Substring Overlap
 ndaconokaga,conokaga,[Translation Missing],conokaga V;PST;REC;1;SG,No Lexicon Match
@@ -577,14 +577,14 @@ mburi,mburi,goat,mburi N;SG;BANTU1,PanLex Exact Match
 kiratina,tina,buttock,kiratina V;PRS,Substring Overlap
 kao,wao,moon (Inferred via BantuBERTa),kao DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
 kihii,kihii,sing (Inferred via BantuBERTa),kihii N;SG;BANTU15,BantuBERTa Vector Neighborhood
-heho,heho,Kuma kwa mbaa guthii kwa heho,heho,Local Proverb Context Match
+heho,heho,[Translation Missing],heho,No Lexicon Match
 mutino,muti,"tree-trunk, (base of) tree-trunk, tree, plant, organism capable of photosynthesis, herb",mutino N;SG;BANTU1,Substring Overlap
 kiongagirirwo,giri,"two, warthog, enclosure, fence",kiongagirirwo N;SG;BANTU15,Substring Overlap
 ithendu,ithendu,"firewood, below, under, underneath, clothes, material (Inferred via BantuBERTa)",ithendu N;SG;BANTU9,BantuBERTa Vector Neighborhood
 Hururu,ruru,"shade, shadow",hururu N;SG;BANTU1,Substring Overlap
 murugirwo,muru,mosquito,murugirwo N;SG;BANTU1,Substring Overlap
 muka,humuka,"breathe, rest",uMuka N;SG;BANTU1,Substring Overlap
-ruhara,ruhara,Mugiti ndagaga ruhara,ruhara,Local Proverb Context Match
+ruhara,ruhara,[Translation Missing],ruhara,No Lexicon Match
 Kahii,kahii,home (Inferred via BantuBERTa),kahii,BantuBERTa Vector Neighborhood
 kwaga,waga,"water, dung, excrement, water (Inferred via BantuBERTa)",aga V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
 itiumaga,tiumaga,home (Inferred via BantuBERTa),itiumaga N;SG;BANTU9,BantuBERTa Vector Neighborhood
@@ -594,11 +594,11 @@ ni,ni,liver,ni COP;IDENT,PanLex Exact Match
 nyama,ndiriaga nyama,"I don’t eat meat, I don't eat meat",nyama N;SG;BANTU9,Substring Overlap
 Muremwo,umuremwo,liver (Inferred via BantuBERTa),uMuremwo,BantuBERTa Vector Neighborhood
 kagaruragwo,garuragwo,sing (Inferred via BantuBERTa),garuragwo V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-rukomo,rukomo,"Ciunagwo rukomo, kimenyi akamenya ikiunwo",rukomo N;SG;BANTU11,Local Proverb Context Match
+rukomo,rukomo,[Translation Missing],rukomo N;SG;BANTU11,No Lexicon Match
 ukayaga,aga,[Translation Missing],yaga V;PST;REM;2;SG,No Lexicon Match
 gwathana,athana,"chief person, head",gwathana V;PST;REC;3;SG,Substring Overlap
 athamaki,thamaki,"king, fish, vertebrate animal",thamaki V;PRS,PanLex Exact Match
-mahiu,mahiu,Maai mararu timo mahiu,mahiu N;PL;BANTU6,Local Proverb Context Match
+mahiu,mahiu,[Translation Missing],mahiu N;PL;BANTU6,No Lexicon Match
 ngondu,ngondu,[Translation Missing],ngondu N;SG;BANTU10,No Lexicon Match
 ndatumagwo,tuma,"send, sew, woman",tumagwo V;PST;REC;1;SG,Substring Overlap
 ta,ta,"call, bow, spittle, pour, bending, hip, bowstring",ta V;PRS,PanLex Exact Match
@@ -606,8 +606,8 @@ akuhia,hia,sing (Inferred via BantuBERTa),hia V;PRS;PROG;3;SG,BantuBERTa Vector 
 ha,ha,sing (Inferred via BantuBERTa),ha V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
 Kwaria,ariary ya bukini,Malagasy Ariary,Kwaria V;PRS;HAB;3;SG,Substring Overlap
 Mugoma,goma,"spirit, spirit (of dead person), evil spirit",goma V;PRS;HAB;3;SG,PanLex Exact Match
-ndugira,ndugira,Mukagera mahoro ma ndugira,ndugira N;SG;BANTU10,Local Proverb Context Match
-ndiiro,ndiiro,Aka matiri cia ndiiro no cia nyiniko,ndiiro N;SG;BANTU9,Local Proverb Context Match
+ndugira,ndugira,[Translation Missing],ndugira N;SG;BANTU10,No Lexicon Match
+ndiiro,ndiiro,[Translation Missing],ndiiro N;SG;BANTU9,No Lexicon Match
 kanono,kanono,knife (Inferred via BantuBERTa),kanono N;SG;BANTU15,BantuBERTa Vector Neighborhood
 urutagwo,ruta,"take off, take off (clothes)",urutagwo N;SG;BANTU11,Substring Overlap
 tiga,tiga,"leave, leave (off)",tiga V;PST;REC;1;SG,PanLex Exact Match
@@ -638,7 +638,7 @@ nducokaga,coka,"return, go back",cokaga V;PRS,Substring Overlap
 ndugu,ndugu,sing (Inferred via BantuBERTa),ndugu N;SG;BANTU9,BantuBERTa Vector Neighborhood
 ndia,ndia,pool,ndia DET;POSS;PSS1P;BANTU9,PanLex Exact Match
 Itakuura,ura,"get lost, frog, leak, ooze out",ura V;NFIN,PanLex Exact Match
-Gwethera,gwethera,Gwethera gitahi muka,Gwethera,Local Proverb Context Match
+Gwethera,gwethera,[Translation Missing],Gwethera,No Lexicon Match
 kamukwa,mukwa,liver (Inferred via BantuBERTa),mukwa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 kimwe,imwe,one,kimwe DET;POSS;PSS1P;BANTU10,Substring Overlap
 guthinga,hinga,obstruct,guthinga V;PRS,Substring Overlap
@@ -648,7 +648,7 @@ nduinagwo,gwo,"plot of ground, garden, earth, land, cultivated ground, farm, a p
 Mukurira,kurira,"disappear, fade",uMukurira N;SG;BANTU1,PanLex Exact Match
 Kaana,kaana,"do, come (Inferred via BantuBERTa)",kaana V;PRS,BantuBERTa Vector Neighborhood
 Muhenio,heni,lightning,henio V;PRS;HAB;3;SG,Substring Overlap
-gikwa,gikwa,Ihenya inene riunaga gikwa ihatha,gikwa N;SG;BANTU10,Local Proverb Context Match
+gikwa,gikwa,[Translation Missing],gikwa N;SG;BANTU10,No Lexicon Match
 arugaga,ruga,"cook, stir",rugaga V;PRS,Substring Overlap
 akarega,rega,"refuse, say no",rega V;PST;REM;3;SG,PanLex Exact Match
 Guoya,oya,"carry, take",Guoya V;PRS;HAB;3;SG,PanLex Exact Match
@@ -659,7 +659,7 @@ kiongo,kiongo,head,kiongo,PanLex Exact Match
 hunyu,hunyu,mother (Inferred via BantuBERTa),hunyu DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
 ungi,kunungira,"smell out, sniff",ungi DET;POSS;PSS1P;BANTU1,Substring Overlap
 kwarama,kurarama,"roar, rumble",rama V;PST;REC;3;SG,Substring Overlap
-wiki,wiki,Muria wiki akuaga wiki,wiki DET;POSS;PSS1P;BANTU1,Local Proverb Context Match
+wiki,wiki,[Translation Missing],wiki DET;POSS;PSS1P;BANTU1,No Lexicon Match
 gikuu,gikuu,death,Gikuu N;SG;BANTU14,PanLex Exact Match
 mukimiri,mukimiri,liver (Inferred via BantuBERTa),mukimiri N;SG;BANTU1,BantuBERTa Vector Neighborhood
 kiabaca,baca,dog (Inferred via BantuBERTa),baca V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
@@ -667,7 +667,7 @@ Guthinga,hinga,obstruct,Guthinga V;PRS,Substring Overlap
 mai,mai,"water, dung, excrement, water",mai DET;POSS;PSS1P;BANTU6,PanLex Exact Match
 munyiti,munyiti,calf (Inferred via BantuBERTa),munyiti N;SG;BANTU1,BantuBERTa Vector Neighborhood
 rir,rir,knife (Inferred via BantuBERTa),rir DET;POSS;PSS1P;BANTU5,BantuBERTa Vector Neighborhood
-iriuko,iriuko,Mugogo umwe nduhingaga iriuko,iriuko N;SG;BANTU9,Local Proverb Context Match
+iriuko,iriuko,[Translation Missing],iriuko N;SG;BANTU9,No Lexicon Match
 Murori,umurori,[Translation Missing],uMurori N;SG;BANTU1,No Lexicon Match
 riua,riua,"effort, exertion (Inferred via BantuBERTa)",riua V;PRS,BantuBERTa Vector Neighborhood
 aheo,heo,liver (Inferred via BantuBERTa),aheo DET;POSS;PSS2P;BANTU6,BantuBERTa Vector Neighborhood
@@ -685,14 +685,14 @@ kabariti,bari,clan,bariti V;PST;REC;3;SG,Substring Overlap
 matinaga,tina,buttock,tinaga V;PST;REC;2;PL,Substring Overlap
 itikagio,itikagio,steal (Inferred via BantuBERTa),itikagio N;SG;BANTU9,BantuBERTa Vector Neighborhood
 gatiiyumburaga,bura,rain,gatiiyumburaga V;FUT,Substring Overlap
-mugumo,mugumo,Ithare riaguka gucokaga mugumo,mugumo N;SG;BANTU1,Local Proverb Context Match
+mugumo,mugumo,[Translation Missing],mugumo N;SG;BANTU1,No Lexicon Match
 iruga,ruga,"cook, stir",iruga N;SG;BANTU9,PanLex Exact Match
 inene,nene,"great, powerful, chief, large, master",nene ADJ;BANTU9,PanLex Exact Match
 Kamamiriria,inamiriria,"bend, twist, hook, hook (pull down branches in plucking fruit)",miriria V;PRS;HAB;3;SG,Substring Overlap
 gitina,itina,buttock,gitina V;PRS,Substring Overlap
 Murugiri,giri,"two, warthog, enclosure, fence",uMurugiri N;SG;BANTU1,Substring Overlap
 mwoni,mwoni,sing (Inferred via BantuBERTa),mwoni N;SG;BANTU1,BantuBERTa Vector Neighborhood
-mbaa,mbaa,Kuma kwa mbaa guthii kwa heho,mbaa V;PRS,Local Proverb Context Match
+mbaa,mbaa,[Translation Missing],mbaa V;PRS,No Lexicon Match
 mwana,mwana,"child, baby, very young human being, babby, babe, infaneto, infant, kid, little sweetie, newborn, newborn child, papoose, pikkie, small insect",mwana N;SG;BANTU1,PanLex Exact Match
 gitiriagirwo,iria,"that, milk, breast, lake",gitiriagirwo N;SG;BANTU1,Substring Overlap
 Kiaga,aga,dog (Inferred via BantuBERTa),aga V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
@@ -700,7 +700,7 @@ Matigana,gana,hundred,tigana V;PST;REC;3;SG,Substring Overlap
 kwirwo,kwirwo,"tree-trunk, (base of) tree-trunk, tree (Inferred via BantuBERTa)",kwirwo,BantuBERTa Vector Neighborhood
 kuru,kuruka,"rest, take a holiday",kuru DET;POSS;PSS1P;BANTU15,Substring Overlap
 Muingatwo,ingatwo,sing (Inferred via BantuBERTa),ingatwo N;SG;BANTU1,BantuBERTa Vector Neighborhood
-nyiniko,nyiniko,Aka matiri cia ndiiro no cia nyiniko,nyiniko N;SG;BANTU9,Local Proverb Context Match
+nyiniko,nyiniko,[Translation Missing],nyiniko N;SG;BANTU9,No Lexicon Match
 irima,irima,"hole, pit, nest",irima N;SG;BANTU10,PanLex Exact Match
 Itonga,tonga,"Tonga, country, 𐐓𐐪𐑍𐑀𐐲",tonga V;PRS,PanLex Exact Match
 Gwi,gwi,arrow,Gwi DET;POSS;PSS1P;BANTU1,PanLex Exact Match
@@ -732,7 +732,7 @@ itara,tara,count,itara,PanLex Exact Match
 kuororoa,ororoa,"tree-trunk, (base of) tree-trunk, tree (Inferred via BantuBERTa)",ororoa V;NFIN,BantuBERTa Vector Neighborhood
 njoya,njoya,"feathers, fur",njoya N;SG;BANTU9,PanLex Exact Match
 Mucaria,caria,"search for, search, search (diligently)",caria V;PRS,PanLex Exact Match
-Kirimu,kirimu,Cira wa kirimu utindaga kiharo,Kirimu N;SG;BANTU10,Local Proverb Context Match
+Kirimu,kirimu,[Translation Missing],Kirimu N;SG;BANTU10,No Lexicon Match
 Hiti,hiti,"hunter, (professional) hunter",hiti DET;POSS;PSS1P;BANTU1,PanLex Exact Match
 Muciari,ciari,"parent, parent (he who begets)",uMuciari N;SG;BANTU1,PanLex Exact Match
 kigeturaga,tura,town,geturaga V;NFIN,Substring Overlap
@@ -752,7 +752,7 @@ Kuruga,ruga,"cook, stir",ruga V;PRS;PROG;3;SG,PanLex Exact Match
 ungitema,gwatemala,"Guatemala, country in Central America, Guatemala City, 𐐘𐐶𐐪𐐼𐐲𐑋𐐪𐑊𐐲",tema V;PRS;HAB;2;SG,Substring Overlap
 muura,muura,"dawn, daybreak, plunge into, sink, (cause to) sink, grind, grind (grain with a millstone) (Inferred via BantuBERTa)",muura V;PRS,BantuBERTa Vector Neighborhood
 mubarano,bara,war,mubarano N;SG;BANTU1,Substring Overlap
-ngatho,ngatho,Gukira kuri ngatho,ngatho N;SG;BANTU9,Local Proverb Context Match
+ngatho,ngatho,[Translation Missing],ngatho N;SG;BANTU9,No Lexicon Match
 mbeu,mbeu,"tree-trunk, (base of) tree-trunk, tree (Inferred via BantuBERTa)",mbeu N;SG;BANTU1,BantuBERTa Vector Neighborhood
 kingi,kingi,liver (Inferred via BantuBERTa),kingi PRO;INT;INTENS,BantuBERTa Vector Neighborhood
 thigo,thigo,liver (Inferred via BantuBERTa),thigo N;SG;BANTU10,BantuBERTa Vector Neighborhood
@@ -763,10 +763,10 @@ ugwati,ugwati,sing (Inferred via BantuBERTa),ugwati N;SG;BANTU1,BantuBERTa Vecto
 urugari,gari,leopard,urugari N;SG;BANTU11,Substring Overlap
 Hinga,hinga,obstruct,hinga V;PRS,PanLex Exact Match
 muciarire,ciara,bear child,ciara V;PST;REC;2;PL,PanLex Exact Match
-thooko,thooko,Gakunywo kagira thooko,thooko,Local Proverb Context Match
+thooko,thooko,[Translation Missing],thooko,No Lexicon Match
 Hinya,inya,four,hinya V;PRS,Substring Overlap
 gukira,kira,"wear, be quiet, clothe, place, put",gukira,Substring Overlap
-Komu,komu,Komu ateire kaigu wa nyina,Komu N;SG;BANTU15,Local Proverb Context Match
+Komu,komu,[Translation Missing],Komu N;SG;BANTU15,No Lexicon Match
 igucagio,cagi,village,igucagio N;SG;BANTU9,Substring Overlap
 gicinga,cinga,gun,gicinga N;SG;BANTU1,PanLex Exact Match
 Guthekererwo,guthekererwo,liver (Inferred via BantuBERTa),Guthekererwo V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
@@ -873,7 +873,7 @@ Maithori,maithori,tears,uMaithori N;PL;BANTU2,PanLex Exact Match
 karugi,karugi,husband (Inferred via BantuBERTa),karugi N;SG;BANTU15,BantuBERTa Vector Neighborhood
 kwendana,enda,"love, want, need, wish",enda V;PRS;HAB;3;SG,PanLex Exact Match
 gwithokia,thokia,fight (Inferred via BantuBERTa),gwithokia V;PRS,BantuBERTa Vector Neighborhood
-moranwo,moranwo,Matigana nomo moranwo,moranwo N;SG;BANTU1,Local Proverb Context Match
+moranwo,moranwo,[Translation Missing],moranwo N;SG;BANTU1,No Lexicon Match
 Mugiri,giri,"two, warthog, enclosure, fence",uMugiri N;SG;BANTU1,Substring Overlap
 Muka,humuka,"breathe, rest",uMuka N;SG;BANTU1,Substring Overlap
 mwatu,mwatu,chest (Inferred via BantuBERTa),mwatu N;SG;BANTU1,BantuBERTa Vector Neighborhood
@@ -886,7 +886,7 @@ nduire,dua,sing (Inferred via BantuBERTa),ndua V;PST;REC;1;SG,BantuBERTa Vector 
 kunaga,naga,"banana, banana (fruit) (Inferred via BantuBERTa)",kunaga V;NFIN,BantuBERTa Vector Neighborhood
 iria,iria,"that, milk, breast, lake",iria N;SG;BANTU9,PanLex Exact Match
 Kiririria,iria,"that, milk, breast, lake",Kiririria V;PRS;PROG;3;SG,Substring Overlap
-Gatinyinyiraga,gatinyinyiraga,Gatinyinyiraga gatari gakunye,Gatinyinyiraga V;PRS;HAB;3;SG,Local Proverb Context Match
+Gatinyinyiraga,gatinyinyiraga,[Translation Missing],Gatinyinyiraga V;PRS;HAB;3;SG,No Lexicon Match
 gutongitwo,gutongitwo,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles (Inferred via BantuBERTa)",gutongitwo V;PRS,BantuBERTa Vector Neighborhood
 muhuririe,huri,lung,huriria V;PST;REC;2;PL,Substring Overlap
 kiumia,kiumia,"Sunday, week",umia V;PRS,PanLex Exact Match
@@ -903,16 +903,16 @@ gwota,gwota,fire (Inferred via BantuBERTa),gwota V;PRS,BantuBERTa Vector Neighbo
 imera,mera,"grow, grow (of plants)",imera N;SG;BANTU9,Substring Overlap
 ngigi,ngigi,locust,ngigi N;SG;BANTU9,PanLex Exact Match
 Kariki,kariki,"dove, (red-eyed) dove (Inferred via BantuBERTa)",Kariki,BantuBERTa Vector Neighborhood
-nomo,nomo,Mageria nomo mahota,nomo N;SG;BANTU9,Local Proverb Context Match
+nomo,nomo,[Translation Missing],nomo N;SG;BANTU9,No Lexicon Match
 akua,kua,die,akua V;PRS,PanLex Exact Match
 Kareraria,rari,soot,reraria V;PRS;PROG;3;SG,Substring Overlap
 kuonagia,onagia,"person, person, individual, capita (Inferred via BantuBERTa)",onagia V;NFIN,BantuBERTa Vector Neighborhood
 Ciakorire,gokora,elbow,Ciakora V;PST;REC;3;SG,Substring Overlap
-gatari,gatari,Gatinyinyiraga gatari gakunye,gatari N;SG;BANTU1,Local Proverb Context Match
+gatari,gatari,[Translation Missing],gatari N;SG;BANTU1,No Lexicon Match
 maku,waku,[Translation Missing],maku DET;POSS;PSS1P;BANTU6,No Lexicon Match
 muici,muici,thief,uMuici N;SG;BANTU1,PanLex Exact Match
 thingira,hingira,close,thingira V;PRS,Substring Overlap
-ngiha,ha,Handu ha njuguma na ha mugwi hatiganaine,ngiha N;SG;BANTU9,Local Proverb Context Match
+ngiha,ha,[Translation Missing],ngiha N;SG;BANTU9,No Lexicon Match
 Kuhika,tahika,vomit,hika V;NFIN,Substring Overlap
 karathime,thima,well,thima V;PST;REC;3;SG,PanLex Exact Match
 kiriagwo,iria,"that, milk, breast, lake",kiriagwo N;SG;BANTU15,Substring Overlap
@@ -920,7 +920,7 @@ muthece,theca,"calabash, tramp of feet, arrive (Inferred via BantuBERTa)",theca 
 como,como,home (Inferred via BantuBERTa),como,BantuBERTa Vector Neighborhood
 murimi,muri,root,murimi N;SG;BANTU1,Substring Overlap
 mugwi,mugwi,arrow,mugwi N;SG;BANTU1,PanLex Exact Match
-ndoi,ndoi,Muikia ndoi mwehereri,ndoi DET;POSS;PSS1P;BANTU9,Local Proverb Context Match
+ndoi,ndoi,[Translation Missing],ndoi DET;POSS;PSS1P;BANTU9,No Lexicon Match
 kimbu,kimbu,liver (Inferred via BantuBERTa),kimbu,BantuBERTa Vector Neighborhood
 keminagira,minagira,"feathers, fur (Inferred via BantuBERTa)",minagira V;PRS,BantuBERTa Vector Neighborhood
 muhiti,muhiti,"hunter, (professional) hunter",muhiti N;SG;BANTU1,PanLex Exact Match
@@ -937,7 +937,7 @@ Mukagera,gera,"iron, iron ore, machine, spring",gera V;PST;REC;3;SG,PanLex Exact
 iminaga,iminaga,sing (Inferred via BantuBERTa),iminaga N;PL;BANTU4,BantuBERTa Vector Neighborhood
 Mukuru,muku,ashes,uMukuru N;SG;BANTU1,Substring Overlap
 ukabi,ukabi,Kikuyu (Inferred via BantuBERTa),ukabi N;SG;BANTU1,BantuBERTa Vector Neighborhood
-Gitoi,toi,Mundu utathiaga athinjaga mwati toi ndurume iri gicegu,Gitoi N;SG;BANTU10,Local Proverb Context Match
+Gitoi,toi,[Translation Missing],Gitoi N;SG;BANTU10,No Lexicon Match
 timo,timori ya mashariki,"East Timor, Timor-Leste, 𐐀𐑅𐐻 𐐓𐐨𐑋𐐱𐑉",timo N;SG;BANTU10,Substring Overlap
 Mitheko,theko,"measure, size (Inferred via BantuBERTa)",uMitheko N;PL;BANTU4,BantuBERTa Vector Neighborhood
 kurimithanio,rimi,"tongue, agriculture",rimithanio V;NFIN,Substring Overlap
@@ -967,16 +967,16 @@ ria,ria,"milk, breast, lake",ria V;NFIN,PanLex Exact Match
 riene,ena,neck (Inferred via BantuBERTa),ene ADJ;BANTU5,BantuBERTa Vector Neighborhood
 Ikuruma,ruma,"bite, abuse",ruma V;NFIN,PanLex Exact Match
 iikagirio,giri,"two, warthog, enclosure, fence",ikagirio N;SG;BANTU9,Substring Overlap
-itigi,itigi,Mukwithia ari itigi kwi muthati,itigi N;SG;BANTU9,Local Proverb Context Match
+itigi,itigi,[Translation Missing],itigi N;SG;BANTU9,No Lexicon Match
 itiaganaga,agana,wicked,itiaganaga,Substring Overlap
 Angimituiria,iria,"that, milk, breast, lake",tuiria V;CAUS;NFIN,Substring Overlap
 ndararaga,raraga,[Translation Missing],raraga V;PST,No Lexicon Match
 gitikuonwo,ona,[Translation Missing],gitikuonwo N;SG;BANTU14,No Lexicon Match
 Ikinya,nya,"four, calabash",INTJ,PanLex Exact Match
 gitininukagio,nukagio,"old, tortoise (Inferred via BantuBERTa)",gitininukagio N;PL;BANTU10,BantuBERTa Vector Neighborhood
-ruo,ruo,"Kiririria, thuti ti ruo",ruo,Local Proverb Context Match
-Gwika,gwika,Gwika wega kumathaga ungi,Gwika V;PRS,Local Proverb Context Match
-koruri,koruri,Kaihu koruri gatigaga kwao gugithinjwo,koruri N;SG;BANTU15,Local Proverb Context Match
+ruo,ruo,[Translation Missing],ruo,No Lexicon Match
+Gwika,gwika,[Translation Missing],Gwika V;PRS,No Lexicon Match
+koruri,koruri,[Translation Missing],koruri N;SG;BANTU15,No Lexicon Match
 nduriukagwo,nduriukagwo,"palm-wine, beer (Inferred via BantuBERTa)",nduriukagwo N;SG;BANTU10,BantuBERTa Vector Neighborhood
 uriendwo,uriendwo,"person, person, individual, capita (Inferred via BantuBERTa)",enda V;PRS;PROG;2;SG,BantuBERTa Vector Neighborhood
 etereire,terea,sing (Inferred via BantuBERTa),terea V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
@@ -997,7 +997,7 @@ Muciri,ciri,"shin, shin (bone)",uMuciri N;SG;BANTU1,PanLex Exact Match
 matigiragia,tigiragia,"eye, organ, mince pie (Inferred via BantuBERTa)",tigiragia V;PST;REC;2;PL,BantuBERTa Vector Neighborhood
 mugambo,mugambo,voice,uMugambo N;SG;BANTU1,PanLex Exact Match
 ndagathimaga,gathi,"bead, bead(s)",gathimaga V;PST,Substring Overlap
-maheo,maheo,Mundu ageraga maimwo ndageraga maheo,maheo N;PL;BANTU6,Local Proverb Context Match
+maheo,maheo,[Translation Missing],maheo N;PL;BANTU6,No Lexicon Match
 airaga,iraga,liver (Inferred via BantuBERTa),iraga V;PRS,BantuBERTa Vector Neighborhood
 Kunyitha,nyitha,"tree-trunk, (base of) tree-trunk, tree (Inferred via BantuBERTa)",nyitha V;NFIN,BantuBERTa Vector Neighborhood
 Kurima,rima,"cultivate, mountain, hill, hole, pit, nest",rima V;PRS;PROG;3;SG,PanLex Exact Match
@@ -1014,7 +1014,7 @@ matiagaga,tiagaga,dew (Inferred via BantuBERTa),tiagaga V;PST;REC;2;PL,BantuBERT
 mwiri,mwiri,body,mwiri N;SG;BANTU1,PanLex Exact Match
 gutinia,gutinia,slash,gutinia V;PRS,PanLex Exact Match
 kiene,ene,self,ene ADJ;BANTU7,PanLex Exact Match
-nikuo,nikuo,Guthama nikuo kuhika kwa arume,nikuo N;SG;BANTU9,Local Proverb Context Match
+nikuo,nikuo,[Translation Missing],nikuo N;SG;BANTU9,No Lexicon Match
 Kiri,ega makiria,"excellent, fine",kiri DET;POSS;PSS1P;BANTU1,Substring Overlap
 gitiri,gitiri,"heart, soul, spirit (Inferred via BantuBERTa)",gitiri N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Mucukani,umucuka,home (Inferred via BantuBERTa),uMucuka N;SG;BANTU1,BantuBERTa Vector Neighborhood
@@ -1027,13 +1027,13 @@ ndaruriagira,ruriagira,[Translation Missing],ruriagira V;PST,No Lexicon Match
 tene,tene,"calabash, tramp of feet, arrive (Inferred via BantuBERTa)",tene,BantuBERTa Vector Neighborhood
 ciothe,otha,[Translation Missing],ciothe,No Lexicon Match
 Gutema,gutema,sing (Inferred via BantuBERTa),Gutema N;SG;BANTU14,BantuBERTa Vector Neighborhood
-murwaru,murwaru,Ithinjagirwo murwaru igakora warwarire tene,murwaru N;SG;BANTU1,Local Proverb Context Match
-no,no,Aka matiri cia ndiiro no cia nyiniko,no DET;PROX;BANTU9,Local Proverb Context Match
+murwaru,murwaru,[Translation Missing],murwaru N;SG;BANTU1,No Lexicon Match
+no,no,[Translation Missing],no DET;PROX;BANTU9,No Lexicon Match
 Kiuga,uga,[Translation Missing],uga V;NFIN,No Lexicon Match
 kimenyi,menya,know,menya V;PRS;HAB;3;SG,PanLex Exact Match
 nduguini,ndugua,[Translation Missing],ndugua V;PRS;HAB;1;SG,No Lexicon Match
 Guthukagirio,giri,"two, warthog, enclosure, fence",Guthukagirio V;PRS;HAB;3;SG,Substring Overlap
-nyinyi,nyinyi,Gutiri ngware nyinyi mahuririo-ini,nyinyi N;SG;BANTU9,Local Proverb Context Match
+nyinyi,nyinyi,[Translation Missing],nyinyi N;SG;BANTU9,No Lexicon Match
 athuri,thuri,chest,thuri V;PRS;HAB;3;SG,PanLex Exact Match
 Maguta,guta,"idleness, sloth, oil, oil (from plants)",guta V;PST;REC;3;SG,PanLex Exact Match
 Ku,ku,"ashes, die",Ku DET;PROX;BANTU15,PanLex Exact Match
@@ -1065,7 +1065,7 @@ kinandu,kinandu,knife (Inferred via BantuBERTa),Kinandu N;SG;BANTU10,BantuBERTa 
 gitanakua,tana,"instruct, teach",gitanakua V;PRS,Substring Overlap
 muriha,muri,root,muriha N;SG;BANTU1,Substring Overlap
 nook,nook,"do, come (Inferred via BantuBERTa)",nook DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
-Kungu,kungu,Kungu maitu na hunyu wake,Kungu N;SG;BANTU15,Local Proverb Context Match
+Kungu,kungu,[Translation Missing],Kungu N;SG;BANTU15,No Lexicon Match
 ndikinyaga,kirinyaga,Mount Kenya,nyaga V;PRS;PROG;1;SG,Substring Overlap
 yongithagiria,giri,"two, warthog, enclosure, fence",thagiria V;PRS;HAB;3;SG,Substring Overlap
 gitinyihaga,nyiha,"diminish, grow less",gitinyihaga N;SG;BANTU1,Substring Overlap
@@ -1110,7 +1110,7 @@ rwa,wa,fight (Inferred via BantuBERTa),rwa V;PRS,BantuBERTa Vector Neighborhood
 kiongaga,onga,"suck, suck (the breast)",ongaga V;PRS,Substring Overlap
 wenjagirwo,injagirwo,"wife, married woman, spouse, Frau, Miss, Mrs, Mrs., Ms, Ms., bride, female, femme, girl, lady, little woman, madam, missus, mistress, old woman, signora, squaw, wifey, woman (Inferred via BantuBERTa)",injagirwo N;SG;BANTU1,BantuBERTa Vector Neighborhood
 mwire,mwire,liver (Inferred via BantuBERTa),mwire,BantuBERTa Vector Neighborhood
-kwi,kwi,Mukwithia ari itigi kwi muthati,kwi DET;POSS;PSS1P;BANTU15,Local Proverb Context Match
+kwi,kwi,[Translation Missing],kwi DET;POSS;PSS1P;BANTU15,No Lexicon Match
 utaguteo,guteo,[Translation Missing],guteo V;FUT;2;SG,No Lexicon Match
 Kiama,ama,magic,Kiama N;SG;BANTU15,PanLex Exact Match
 ndarundagwo,rundagwo,"uncooked, unripe (Inferred via BantuBERTa)",rundagwo V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
@@ -1175,26 +1175,26 @@ kumenyuka,menyuka,liver (Inferred via BantuBERTa),menyuka V;NFIN,BantuBERTa Vect
 ui,ui,"person, person, individual, capita (Inferred via BantuBERTa)",ui DET;PROX;BANTU3,BantuBERTa Vector Neighborhood
 Muregi,regi,[Translation Missing],uMuregi N;SG;BANTU1,No Lexicon Match
 Muukiri,ukiri,[Translation Missing],ukiri N;SG;BANTU1,No Lexicon Match
-igakora,igakora,Ithinjagirwo murwaru igakora warwarire tene,igakora N;SG;BANTU9,Local Proverb Context Match
+igakora,igakora,[Translation Missing],igakora N;SG;BANTU9,No Lexicon Match
 kuguru,guru,"sky, foot, leg, above, up, old, tortoise",guru ADJ;BANTU15,PanLex Exact Match
 gakunyaga,kirinyaga,Mount Kenya,gakunyaga N;SG;BANTU15,Substring Overlap
 guteaga,teaga,male (Inferred via BantuBERTa),guteaga V;PRS,BantuBERTa Vector Neighborhood
 gutema,gwatemala,"Guatemala, country in Central America, Guatemala City, 𐐘𐐶𐐪𐐼𐐲𐑋𐐪𐑊𐐲",gutema N;SG;BANTU14,Substring Overlap
 kiugaga,ugaga,frog (Inferred via BantuBERTa),ugaga V;PRS,BantuBERTa Vector Neighborhood
-Gikuru,gikuru,Gikuru kiega no kiratina,Gikuru N;SG;BANTU1,Local Proverb Context Match
-gwathwo,gwathwo,Muregi gwathwo ndangihota gwathana,gwathwo N;SG;BANTU1,Local Proverb Context Match
+Gikuru,gikuru,[Translation Missing],Gikuru N;SG;BANTU1,No Lexicon Match
+gwathwo,gwathwo,[Translation Missing],gwathwo N;SG;BANTU1,No Lexicon Match
 Ciathanaga,thanaga,[Translation Missing],thanaga V;PST;REC;3;SG,No Lexicon Match
 mugongo,mugongo,back,mugongo N;SG;BANTU1,PanLex Exact Match
 muthiomerwo,muthi,today,muthiomerwo N;SG;BANTU1,Substring Overlap
 mugathi,mugathi,"bead, bead(s)",mugathi N;SG;BANTU1,PanLex Exact Match
 Mbia,mbia,rat,uMbia N;SG;BANTU1,PanLex Exact Match
-Kirihia,kirihia,Kirihia thuti,Kirihia V;PRS;PROG;3;SG,Local Proverb Context Match
+Kirihia,kirihia,[Translation Missing],Kirihia V;PRS;PROG;3;SG,No Lexicon Match
 hako,hako,fry (Inferred via BantuBERTa),hako,BantuBERTa Vector Neighborhood
 kuhitha,hitha,"light in weight, hide",hitha V;NFIN,PanLex Exact Match
 kigiragio,giragio,[Translation Missing],kigiragio N;SG;BANTU15,No Lexicon Match
 matari,mata,spittle,matari N;PL;BANTU6,Substring Overlap
-Gutiri,gutiri,Gutiri gitatuirie kingi,Gutiri N;SG;BANTU1,Local Proverb Context Match
-mwiroreri,mwiroreri,Iri gukura ndiri mwiroreri,mwiroreri N;SG;BANTU1,Local Proverb Context Match
+Gutiri,gutiri,[Translation Missing],Gutiri N;SG;BANTU1,No Lexicon Match
+mwiroreri,mwiroreri,[Translation Missing],mwiroreri N;SG;BANTU1,No Lexicon Match
 Mbere,bere ya,in front of,uMbere,Substring Overlap
 agicoka,coka,"return, go back",gicoka V;PRS,Substring Overlap
 Mugambo,mugambo,voice,uMugambo N;SG;BANTU1,PanLex Exact Match
@@ -1202,7 +1202,7 @@ Muici,muici,thief,uMuici N;SG;BANTU1,PanLex Exact Match
 monaga,monaga,"hunter, (professional) hunter (Inferred via BantuBERTa)",monaga V;PRS,BantuBERTa Vector Neighborhood
 ikenagira,kenagira,affair (Inferred via BantuBERTa),kenagira V;PRS,BantuBERTa Vector Neighborhood
 ndaimagwo,imagwo,sing (Inferred via BantuBERTa),ndaimagwo N;PL;BANTU10,BantuBERTa Vector Neighborhood
-thuguri,thuguri,Cia thuguri itiyuraga ikumbi,thuguri N;SG;BANTU11,Local Proverb Context Match
+thuguri,thuguri,[Translation Missing],thuguri N;SG;BANTU11,No Lexicon Match
 Mukari,umukari,[Translation Missing],uMukari,No Lexicon Match
 njara,njara,"that, milk, breast, lake (Inferred via BantuBERTa)",njara N;SG;BANTU9,BantuBERTa Vector Neighborhood
 igunagwo,igunagwo,liver (Inferred via BantuBERTa),igunagwo N;SG;BANTU9,BantuBERTa Vector Neighborhood
@@ -1224,8 +1224,8 @@ kuhuuna,huuna,sing (Inferred via BantuBERTa),huuna V;NFIN,BantuBERTa Vector Neig
 ucuru,ucuru,gruel,ucuru N;SG;BANTU1,PanLex Exact Match
 Mageria,nigeria,"Nigeria, in Western Africa, Kanuri",geria V;PRS;HAB;3;SG,Substring Overlap
 wourugana,gana,hundred,urugana N;SG;BANTU1,Substring Overlap
-nyota,nyota,Mari mbere matirutaga nyota,nyota N;SG;BANTU9,Local Proverb Context Match
-ngware,ngware,Gutiri ngware itari muhuririe wayo,ngware,Local Proverb Context Match
+nyota,nyota,[Translation Missing],nyota N;SG;BANTU9,No Lexicon Match
+ngware,ngware,[Translation Missing],ngware,No Lexicon Match
 igwa,igwa,thorn,igwa N;SG;BANTU9,PanLex Exact Match
 yaringirira,giri,"two, warthog, enclosure, fence",ringirira V;PST;REC;3;SG,Substring Overlap
 kiiraga,iraga,liver (Inferred via BantuBERTa),iraga V;PRS,BantuBERTa Vector Neighborhood
@@ -1249,7 +1249,7 @@ kia,kia,"dawn, daybreak, plunge into, sink, (cause to) sink, grind, grind (grain
 njau,njau,calf,njau DET;POSS;PSS1P;BANTU9,PanLex Exact Match
 miguongo,guongo,"trunk, trunk (of elephant), horn, ivory, elephant’s tusk",miguongo N;PL;BANTU4,Substring Overlap
 igwatagia,gwatagia,[Translation Missing],gwatagia V;PRS,No Lexicon Match
-kero,kero,Kanywanjui kerathaga kero gako,kero,Local Proverb Context Match
+kero,kero,[Translation Missing],kero,No Lexicon Match
 ngoro,ngoro,"heart, soul, spirit",ngoro,PanLex Exact Match
 kariire,ria,"milk, breast, lake",ria V;PST;REC;3;SG,PanLex Exact Match
 githaragio,githaragio,liver (Inferred via BantuBERTa),githaragio N;SG;BANTU10,BantuBERTa Vector Neighborhood
@@ -1312,14 +1312,14 @@ Mubatari,bata,duck,uMubatari N;SG;BANTU1,Substring Overlap
 kugereka,gerekania,"juxtapose, put together, put together (for comparison)",gereka V;NFIN,Substring Overlap
 makuru,makuru,"oil, oil (from plants) (Inferred via BantuBERTa)",makuru N;PL;BANTU6,BantuBERTa Vector Neighborhood
 Bata,bata,duck,BANTU2,PanLex Exact Match
-haraya,haraya,Me haraya matirutaga nyota,haraya,Local Proverb Context Match
-nduri,nduri,Hinya nduri indo,nduri N;SG;BANTU10,Local Proverb Context Match
+haraya,haraya,[Translation Missing],haraya,No Lexicon Match
+nduri,nduri,[Translation Missing],nduri N;SG;BANTU10,No Lexicon Match
 ngirinyu,giri,"two, warthog, enclosure, fence",ngirinyu N;SG;BANTU9,Substring Overlap
 murume,murume,husband,murume N;SG;BANTU1,PanLex Exact Match
 ugaruragirwo,ugaruragirwo,liver (Inferred via BantuBERTa),ugaruragirwo N;SG;BANTU1,BantuBERTa Vector Neighborhood
 kwigeria,nigeria,"Nigeria, in Western Africa, Kanuri",igeria N;SG;BANTU15,Substring Overlap
 matirutaga,iruta,learn,tirutaga V;PST;REC;2;PL,Substring Overlap
-kuma,kuma,"kuma ti kuma ta ihiga, na kuororoa ti kuororoa ta maai",kuma V;NFIN,Local Proverb Context Match
+kuma,kuma,[Translation Missing],kuma V;NFIN,No Lexicon Match
 riaguka,guka,[Translation Missing],guka V;PST;REC;3;SG,No Lexicon Match
 Muciriri,ciri,"shin, shin (bone)",uMuciriri N;SG;BANTU1,Substring Overlap
 me,me,dew,me DET;POSS;PSS1P;BANTU6,PanLex Exact Match
@@ -1342,19 +1342,19 @@ ndundu,undu,affair,ndundu N;SG;BANTU9,Substring Overlap
 ukiaga,aga,"day, day, day-time (Inferred via BantuBERTa)",aga V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
 mwathi,thi,"country, (our) country",mwathi N;PL;BANTU1,PanLex Exact Match
 Ihenya,enya,shave,henya V;PRS,Substring Overlap
-kaara,kaara,Gutiri ucokaga haria arumiirwo kaara,Kaara,Local Proverb Context Match
+kaara,kaara,[Translation Missing],Kaara,No Lexicon Match
 rwamba,amba,"apply, spread over, apply (by stretching)",rwamba,Substring Overlap
 thuti,huti,hay,thuti N;SG;BANTU11,Substring Overlap
 Kiero,ero,thigh,Kiero N;SG;BANTU15,PanLex Exact Match
 Muikaranio,ikara,"charcoal, embers",uMuikaranio N;SG;BANTU1,Substring Overlap
 mutwe,mutwe,home (Inferred via BantuBERTa),mutwe N;SG;BANTU1,BantuBERTa Vector Neighborhood
 gukua,guku,"fowl, hen, hump, hump (of hunchback)",gukua V;PRS,Substring Overlap
-githinji,githinji,Gutiri githinji utathinja.,githinji N;SG;BANTU1,Local Proverb Context Match
-munge,munge,Mbui nyingi ndiri munge,munge PRO;INT;BANTU1,Local Proverb Context Match
+githinji,githinji,[Translation Missing],githinji N;SG;BANTU1,No Lexicon Match
+munge,munge,[Translation Missing],munge PRO;INT;BANTU1,No Lexicon Match
 tuhu,tuhu,"old, tortoise (Inferred via BantuBERTa)",tuhu PRO;INT;INTENS,BantuBERTa Vector Neighborhood
 ngagacoka,coka,"return, go back",gacoka V;PST;REC;1;SG,Substring Overlap
 kiura,kiura,frog,kiura V;PRS,PanLex Exact Match
-gukahuka,gukahuka,Kuri gukahuka guticokaga ndebe,gukahuka V;PRS;PROG;3;SG,Local Proverb Context Match
+gukahuka,gukahuka,[Translation Missing],gukahuka V;PRS;PROG;3;SG,No Lexicon Match
 kuhiga,higa,stone,higa V;NFIN,PanLex Exact Match
 nguyu,kiunguyu,fish,nguyu DET;POSS;PSS1P;BANTU9,Substring Overlap
 ucuwe,cuwa,liver (Inferred via BantuBERTa),cuwa V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
@@ -1378,7 +1378,7 @@ gitonga,tonga,"Tonga, country, 𐐓𐐪𐑍𐑀𐐲",gitonga N;SG;BANTU10,PanLex
 kana,hakana,"be adjacent, border",kana V;PRS,Substring Overlap
 ikigua,gua,"fall, hear",gua V;PRS;HAB;3;SG,PanLex Exact Match
 kahia,kahia,body (Inferred via BantuBERTa),kahia V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-muthati,muthati,Mukwithia ari itigi kwi muthati,muthati N;SG;BANTU1,Local Proverb Context Match
+muthati,muthati,[Translation Missing],muthati N;SG;BANTU1,No Lexicon Match
 Muceera,ceera,sing (Inferred via BantuBERTa),ceera V;PRS,BantuBERTa Vector Neighborhood
 moi,moi,pool (Inferred via BantuBERTa),moi DET;POSS;PSS1P;BANTU4,BantuBERTa Vector Neighborhood
 itikinyagira,nyagira,[Translation Missing],itikinyagira N;SG;BANTU9,No Lexicon Match
@@ -1386,7 +1386,7 @@ taguo,taguo,sing (Inferred via BantuBERTa),taguo,BantuBERTa Vector Neighborhood
 murii,muri,root,murii N;SG;BANTU1,Substring Overlap
 Karegi,regi,[Translation Missing],Karegi N;SG;BANTU1,No Lexicon Match
 Munua,umunua,liver (Inferred via BantuBERTa),uMunua N;SG;BANTU1,BantuBERTa Vector Neighborhood
-Kaara,kaara,Gutiri ucokaga haria arumiirwo kaara,Kaara,Local Proverb Context Match
+Kaara,kaara,[Translation Missing],Kaara,No Lexicon Match
 kiara,kiara,"rubbish heap, toe",kiara,PanLex Exact Match
 Mucari,caria,"search for, search, search (diligently)",uMucari,Substring Overlap
 gucaya,gucaya,"tree-trunk, (base of) tree-trunk, tree (Inferred via BantuBERTa)",gucaya V;PRS,BantuBERTa Vector Neighborhood
@@ -1419,15 +1419,15 @@ inyanya,inyanya,eight,inyanya N;SG;BANTU9,PanLex Exact Match
 andu,wandu,sing (Inferred via BantuBERTa),andu PRO;INT;INTENS,BantuBERTa Vector Neighborhood
 tiri,itirira,giraffe,tiri PRO;INT;INT,Substring Overlap
 atari,dagitari,"doctor, physician, physican",atari N;SG;BANTU1,Substring Overlap
-Gakunywo,gakunywo,Gakunywo kagira thooko,Gakunywo N;SG;BANTU15,Local Proverb Context Match
+Gakunywo,gakunywo,[Translation Missing],Gakunywo N;SG;BANTU15,No Lexicon Match
 unyonie,nyona,[Translation Missing],nyona V;PST;REC;2;SG,No Lexicon Match
 kuri,gukuria,"bring up, bring up (a child)",kuri DET;POSS;PSS1P;BANTU15,Substring Overlap
 nduiriro,riro,"cry, sound",nduiriro N;SG;BANTU10,Substring Overlap
 ndathiragwo,thiragwo,liver (Inferred via BantuBERTa),thiragwo V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
 utahaga,haga,male (Inferred via BantuBERTa),haga V;FUT,BantuBERTa Vector Neighborhood
-mugiano,mugiano,Mbere no mbere thutha no mugiano,mugiano N;SG;BANTU1,Local Proverb Context Match
+mugiano,mugiano,[Translation Missing],mugiano N;SG;BANTU1,No Lexicon Match
 Gitiganiriro,riro,"cry, sound",Gitiganiriro V;PRS;HAB;3;SG,Substring Overlap
-gakunye,kuna,Kuhika ni kuna,gakuna V;PST;REC;3;SG,Local Proverb Context Match
+gakunye,kuna,[Translation Missing],gakuna V;PST;REC;3;SG,No Lexicon Match
 urugaga,ruga,"cook, stir",urugaga N;SG;BANTU11,Substring Overlap
 mbura,mbura,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles",mbura N;SG;BANTU1,PanLex Exact Match
 thiri,thiri,liver (Inferred via BantuBERTa),thiri PRO;INT;INT,BantuBERTa Vector Neighborhood
