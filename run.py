@@ -1,8 +1,13 @@
 from pathlib import Path
 
+import torch
+
 from src.main import main
 
 script_parent = Path(__file__).resolve().parent
+
+torch.set_num_threads(8)
+torch.set_num_interop_threads(8)
 
 if __name__ == "__main__":
     # tasks = ["count_morphemes", "model_segment", "morpheme_translate"]

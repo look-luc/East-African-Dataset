@@ -325,6 +325,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
             if current_proverb and successful_embeddings_pool:  # Guard against empty pools
                 unknown_vec = get_bantuberta_embedding(current_proverb, surface_word)
+                unkown_vec = unkown_vec.to(device)
 
                 best_score = -1.0
                 best_translation = None
