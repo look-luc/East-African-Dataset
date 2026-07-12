@@ -1,7 +1,7 @@
 Surface Word,Tshiluba Lemma,English translation,Glossing,Match Type
 bakola,kola,[Translation Missing],kola V;PRS;HAB;3;PL,No Lexicon Match
 buebe,eba,[Translation Missing],eba V;PST;REC;2;PL,No Lexicon Match
-tshanza,anza,hand,tshanza V;PRS,Substring Overlap
+tshanza,tshanza,[Translation Missing],tshanza V;PRS,No Lexicon Match
 kutuila,tuila,woman (Inferred via BantuBERTa),tuila V;NFIN,BantuBERTa Vector Neighborhood
 kanya,kanya,bone (Inferred via BantuBERTa),kanya V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 ngela,ngela,[Translation Missing],ngela N;SG;BANTU9,No Lexicon Match
@@ -17,7 +17,7 @@ ndilengela,lengela,[Translation Missing],lengela V;PRS,No Lexicon Match
 nkaka,nkaka,[Translation Missing],nkaka,No Lexicon Match
 nkufikisha,fikisha,[Translation Missing],fikisha V;PRS;HAB;1;SG,No Lexicon Match
 kosha,kosha,[Translation Missing],kosha,No Lexicon Match
-Mukana,kana,"human, human being, man (Inferred via BantuBERTa)",uMukana N;SG;BANTU1,BantuBERTa Vector Neighborhood
+Mukana,kana,human (Inferred via BantuBERTa),uMukana N;SG;BANTU1,BantuBERTa Vector Neighborhood
 akudila,dila,[Translation Missing],dila V;PRS;PROG;3;SG,No Lexicon Match
 pebe,peba,two (Inferred via BantuBERTa),peba,BantuBERTa Vector Neighborhood
 mukaji,mukaji,woman,uMukaji N;SG;BANTU1,PanLex Exact Match
@@ -69,7 +69,7 @@ kabena,bena,woman (Inferred via BantuBERTa),bena V;PST;REC;3;SG,BantuBERTa Vecto
 manseba,nseba,[Translation Missing],manseba N;PL;BANTU6,No Lexicon Match
 Mutshoku,umutshoku,[Translation Missing],uMutshoku N;SG;BANTU1,No Lexicon Match
 wenu,wenu,[Translation Missing],wenu DET;POSS;PSS1P;BANTU1,No Lexicon Match
-tshiamuntu,muntu,"human, human being, man",umuntu N;SG;BANTU1,Substring Overlap
+tshiamuntu,tshiamuntu,[Translation Missing],umuntu N;SG;BANTU1,No Lexicon Match
 iboba,boba,[Translation Missing],iboba,No Lexicon Match
 muatshi,muatshi,[Translation Missing],muatshi N;SG;BANTU1,No Lexicon Match
 baku,waku,[Translation Missing],waku DET;POSS;PSS1P;BANTU2,No Lexicon Match
@@ -88,7 +88,7 @@ bitshi,tshi,[Translation Missing],bitshi N;PL;BANTU2,No Lexicon Match
 diadikenga,kenga,[Translation Missing],dikenga V;PST;REC;3;SG,No Lexicon Match
 Kabundi,bundi,[Translation Missing],bundi V;PST;REC;3;SG,No Lexicon Match
 mabika,bika,[Translation Missing],bika V;PST;REC;2;PL,No Lexicon Match
-kulu,mwaanda mukulu,eight,kulu DET;POSS;PSS1P;BANTU15,Substring Overlap
+kulu,kulu,[Translation Missing],kulu DET;POSS;PSS1P;BANTU15,No Lexicon Match
 mmone,mona,[Translation Missing],mona V;PST;REC;2;PL,No Lexicon Match
 Budimu,bantu14,[Translation Missing],BANTU14,No Lexicon Match
 uya,uya,bone (Inferred via BantuBERTa),uya DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
@@ -98,11 +98,11 @@ Biasala,sala,[Translation Missing],BANTU2,No Lexicon Match
 Tshiseba,tshiseba,[Translation Missing],tshiseba V;PRS,No Lexicon Match
 uma,uma,[Translation Missing],uma V;PRS,No Lexicon Match
 Kafuta,futa,[Translation Missing],futa V;PST;REC;3;SG,No Lexicon Match
-Tshitu,tshitu,bone (Inferred via BantuBERTa),tshitu N;SG;BANTU10,BantuBERTa Vector Neighborhood
+Tshitu,tu,ear,tshitu N;SG;BANTU10,PanLex Exact Match
 wadia,dia,[Translation Missing],dia V;PST;REC;2;SG,No Lexicon Match
 batuta,tuta,[Translation Missing],tuta V;PRS,No Lexicon Match
 kakuate,kuata,die (Inferred via BantuBERTa),kuata V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-kantu,kantu,[Translation Missing],Kantu N;SG;BANTU1,No Lexicon Match
+kantu,ntu,person,Kantu N;SG;BANTU1,PanLex Exact Match
 lelu,lelu,[Translation Missing],lelu,No Lexicon Match
 banga,banga,woman (Inferred via BantuBERTa),banga,BantuBERTa Vector Neighborhood
 Bidi,bidi,two,bidi N;SG;BANTU2,PanLex Exact Match
@@ -111,22 +111,22 @@ nsala,nsala,[Translation Missing],nsala V;PRS,No Lexicon Match
 banyishanyisha,nyishanyisha,[Translation Missing],nyishanyisha V;PST,No Lexicon Match
 mbiasa,mbiasa,[Translation Missing],mbiasa N;SG;BANTU1,No Lexicon Match
 bieba,eba,two (Inferred via BantuBERTa),eba V;PST;REC;2;PL,BantuBERTa Vector Neighborhood
-katu,katu,one (Inferred via BantuBERTa),katu PRO;INT;BANTU15,BantuBERTa Vector Neighborhood
+katu,tu,ear,katu PRO;INT;BANTU15,PanLex Exact Match
 wa,wa,[Translation Missing],wa DET;POSS;PSS1P;BANTU1,No Lexicon Match
 munu,munu,[Translation Missing],uMunu N;SG;BANTU1,No Lexicon Match
 kanyunyi,kanyunyi,[Translation Missing],nyunyi V;PST;REC;3;SG,No Lexicon Match
 Kakasekasekabo,sekasekabo,[Translation Missing],sekasekabo V;PST;REC;3;SG,No Lexicon Match
 bela,bela,[Translation Missing],BANTU2,No Lexicon Match
-kalema,lema,woman (Inferred via BantuBERTa),lema V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+kalema,lema,[Translation Missing],lema V;PST;REC;3;SG,No Lexicon Match
 umbule,umbule,bone (Inferred via BantuBERTa),umbule N;SG;BANTU1,BantuBERTa Vector Neighborhood
-mutu,mutu,"human, human being, man (Inferred via BantuBERTa)",mutu N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mutu,tu,ear,mutu N;SG;BANTU1,PanLex Exact Match
 ubandishila,bandishila,[Translation Missing],bandishila V;PRS,No Lexicon Match
 Kunangidi,nangidi,[Translation Missing],nangidi V;PRS;HAB;3;SG,No Lexicon Match
 wendenda,endenda,[Translation Missing],indenda N;SG;BANTU1,No Lexicon Match
 mpala,mpala,[Translation Missing],mpala N;SG;BANTU1,No Lexicon Match
-mununka,nunka,"human, human being, man (Inferred via BantuBERTa)",mununka N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mununka,nunka,human (Inferred via BantuBERTa),mununka N;SG;BANTU1,BantuBERTa Vector Neighborhood
 mbupite,bupita,[Translation Missing],mbupite N;SG;BANTU1,No Lexicon Match
-tshitu,tshitu,bone (Inferred via BantuBERTa),tshitu N;SG;BANTU10,BantuBERTa Vector Neighborhood
+tshitu,tu,ear,tshitu N;SG;BANTU10,PanLex Exact Match
 tshitalu,tshitalu,[Translation Missing],tshitalu V;PRS;HAB;1;PL,No Lexicon Match
 chomba,chomba,[Translation Missing],chomba V;PRS,No Lexicon Match
 wenda,enda,[Translation Missing],enda V;NFIN,No Lexicon Match
@@ -137,7 +137,7 @@ ka,ka,[Translation Missing],ka V;PRS,No Lexicon Match
 kuulu,kuulu,[Translation Missing],kuulu N;SG;BANTU15,No Lexicon Match
 bwa,wa,[Translation Missing],bwa V;PRS,No Lexicon Match
 mu,mu,one,mu DET;PROX;BANTU1,PanLex Exact Match
-Kabuya,buya,woman (Inferred via BantuBERTa),buya V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+Kabuya,buya,[Translation Missing],buya V;PST;REC;3;SG,No Lexicon Match
 ndambilu,ndambilu,two (Inferred via BantuBERTa),ndambilu N;SG;BANTU10,BantuBERTa Vector Neighborhood
 mukuta,ta,die (Inferred via BantuBERTa),mukuta N;SG;BANTU1,BantuBERTa Vector Neighborhood
 mupongu,mupongu,[Translation Missing],mupongu N;SG;BANTU1,No Lexicon Match
@@ -148,7 +148,7 @@ nfuaka,fuaka,[Translation Missing],nfuaka,No Lexicon Match
 bienzelu,enzelu,[Translation Missing],enzelu V;PRS;HAB;3;PL,No Lexicon Match
 Bulunda,bantu14,[Translation Missing],bulunda V;PRS,No Lexicon Match
 mutshina,mutshina,[Translation Missing],mutshina N;SG;BANTU1,No Lexicon Match
-teleja,ja,"human, human being, man (Inferred via BantuBERTa)",teleja V;PRS,BantuBERTa Vector Neighborhood
+teleja,ja,human (Inferred via BantuBERTa),teleja V;PRS,BantuBERTa Vector Neighborhood
 tshikulule,tshikulula,ear (Inferred via BantuBERTa),tshikulula V;PST;REC;1;PL,BantuBERTa Vector Neighborhood
 mbale,bala,[Translation Missing],mbale N;SG;BANTU1,No Lexicon Match
 Tshishi,tshishi,[Translation Missing],uTshishi N;SG;BANTU1,No Lexicon Match
@@ -160,7 +160,7 @@ kola,kola,[Translation Missing],kola V;PRS,No Lexicon Match
 Kakulakaji,lakaji,[Translation Missing],lakaji V;PST;REC;3;SG,No Lexicon Match
 ukuna,ukuna,[Translation Missing],ukuna N;SG;BANTU1,No Lexicon Match
 yaki,waki,[Translation Missing],waki DET;POSS;PSS1P;BANTU9,No Lexicon Match
-mianda,mwaanda mukulu,eight,anda V;PRS,Substring Overlap
+mianda,anda,[Translation Missing],anda V;PRS,No Lexicon Match
 bijimina,jimina,[Translation Missing],bijimina V;PRS,No Lexicon Match
 kumanyi,manya,[Translation Missing],manya V;NFIN,No Lexicon Match
 kuikala,ikala,[Translation Missing],ikala V;NFIN,No Lexicon Match
@@ -173,7 +173,7 @@ tshibelu,tshibelu,[Translation Missing],tshibelu V;PRS,No Lexicon Match
 Kadianyishi,dianyishi,[Translation Missing],dianyishi V;PST;REC;3;SG,No Lexicon Match
 tshi,tshi,[Translation Missing],tshi PRO;INT;INTENS,No Lexicon Match
 tumpu,tumpu,[Translation Missing],tumpu N;SG;BANTU11,No Lexicon Match
-Kadilu,mudilu,fire,Kadilu N;SG;BANTU15,Substring Overlap
+Kadilu,dilu,[Translation Missing],Kadilu N;SG;BANTU15,No Lexicon Match
 mutshimabimpa,bimpa,[Translation Missing],mutshimabimpa N;SG;BANTU1,No Lexicon Match
 Muana,ana,[Translation Missing],uMuana N;SG;BANTU1,No Lexicon Match
 matsho,matsho,[Translation Missing],matsho N;PL;BANTU6,No Lexicon Match
@@ -187,8 +187,8 @@ Katende,tenda,[Translation Missing],tenda V;PST;REC;1;PL,No Lexicon Match
 ne,ne,[Translation Missing],ne PRO;INT;INTENS,No Lexicon Match
 bayenda,yenda,one (Inferred via BantuBERTa),yenda V;PRS,BantuBERTa Vector Neighborhood
 bakimina,mina,[Translation Missing],mina V;PRS;PROG;3;PL,No Lexicon Match
-mua,mua,"human, human being, man (Inferred via BantuBERTa)",mua V;PRS,BantuBERTa Vector Neighborhood
-to,to,one (Inferred via BantuBERTa),umunoun class PRO;INT;PROX,BantuBERTa Vector Neighborhood
+mua,mua,human (Inferred via BantuBERTa),mua V;PRS,BantuBERTa Vector Neighborhood
+to,to,[Translation Missing],umunoun class PRO;INT;PROX,No Lexicon Match
 Munu,umunu,[Translation Missing],uMunu N;SG;BANTU1,No Lexicon Match
 nsengu,nsengu,[Translation Missing],nsengu N;SG;BANTU10,No Lexicon Match
 diakuila,ila,[Translation Missing],ila V;PST;REC;3;SG,No Lexicon Match
@@ -209,12 +209,12 @@ pabula,pabula,[Translation Missing],pabula V;PST;REC;3;SG,No Lexicon Match
 bandisha,bandisha,[Translation Missing],bandisha V;PRS,No Lexicon Match
 biende,enda,[Translation Missing],enda V;NFIN,No Lexicon Match
 ngudiadia,dia,[Translation Missing],ngudiadia N;SG;BANTU10,No Lexicon Match
-Kuibidija,bidi,two,ibidija V;NFIN,Substring Overlap
-ba,ba,one (Inferred via BantuBERTa),ba V;PRS,BantuBERTa Vector Neighborhood
+Kuibidija,ibidija,[Translation Missing],ibidija V;NFIN,No Lexicon Match
+ba,ba,[Translation Missing],ba V;PRS,No Lexicon Match
 bujitu,jitu,[Translation Missing],jitu V;PRS;HAB;3;SG,No Lexicon Match
 tshinya,tshinya,bone (Inferred via BantuBERTa),tshinya V;PRS,BantuBERTa Vector Neighborhood
 mpasu,mpasu,[Translation Missing],mpasu N;SG;BANTU1,No Lexicon Match
-uteketa,teketa,one (Inferred via BantuBERTa),teketa V;PRS,BantuBERTa Vector Neighborhood
+uteketa,teketa,[Translation Missing],teketa V;PRS,No Lexicon Match
 amu,wamu,[Translation Missing],amu DET;POSS;PSS1P;BANTU6,No Lexicon Match
 kakaya,ya,[Translation Missing],kaya V;PST;REC;3;SG,No Lexicon Match
 biapita,pita,[Translation Missing],pita V;PST;REC;3;SG,No Lexicon Match
@@ -228,7 +228,7 @@ Nyunga,nyunga,[Translation Missing],Nyunga N;SG;BANTU10,No Lexicon Match
 wabenda,benda,[Translation Missing],benda V;PST;REC;2;SG,No Lexicon Match
 Kubunda,bunda,[Translation Missing],bunda V;PRS;HAB;3;SG,No Lexicon Match
 tshota,tshota,[Translation Missing],tshota V;PRS,No Lexicon Match
-mbudimi,dimi,tongue,mbudimi N;SG;BANTU1,Substring Overlap
+mbudimi,mbudimi,[Translation Missing],mbudimi N;SG;BANTU1,No Lexicon Match
 Mulopwe,umulopwe,[Translation Missing],uMulopwe N;SG;BANTU1,No Lexicon Match
 Kankamana,mana,[Translation Missing],mana V;PRS;HAB;3;SG,No Lexicon Match
 lubalabala,balabala,die (Inferred via BantuBERTa),balabala V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
@@ -242,10 +242,10 @@ kapingana,pingana,[Translation Missing],pingana V;PST;REC;3;SG,No Lexicon Match
 uta,uta,[Translation Missing],uta V;PRS,No Lexicon Match
 mbonga,mbonga,one (Inferred via BantuBERTa),mbonga N;SG;BANTU1,BantuBERTa Vector Neighborhood
 neumone,mona,[Translation Missing],mona V;PST;REC;1;SG,No Lexicon Match
-mufu,mufu,"human, human being, man (Inferred via BantuBERTa)",mufu N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mufu,mufu,human (Inferred via BantuBERTa),mufu N;SG;BANTU1,BantuBERTa Vector Neighborhood
 disu,disu,[Translation Missing],disu DET;POSS;PSS1P;BANTU10,No Lexicon Match
 mweneba,eneba,[Translation Missing],eneba V;PRS;HAB;2;PL,No Lexicon Match
-Kashingi,ingi,water,shingi ADJ;BANTU1,Substring Overlap
+Kashingi,shingi,[Translation Missing],shingi ADJ;BANTU1,No Lexicon Match
 tshikonyangana,tshikonyangana,[Translation Missing],tshikonyangana V;PRS,No Lexicon Match
 mushinga,shinga,[Translation Missing],mushinga N;SG;BANTU1,No Lexicon Match
 kwabu,wabu,[Translation Missing],kwabu DET;POSS;PSS1P;BANTU15,No Lexicon Match
@@ -267,19 +267,19 @@ Kabukebakeba,bukebakeba,[Translation Missing],bukebakeba V;PST;REC;3;SG,No Lexic
 Bakupa,pa,[Translation Missing],pa V;PRS;PROG;3;PL,No Lexicon Match
 Kusuluilu,suluilu,[Translation Missing],suluilu V;PRS;HAB;3;SG,No Lexicon Match
 ntuilu,ntuilu,two (Inferred via BantuBERTa),ntuilu N;SG;BANTU9,BantuBERTa Vector Neighborhood
-bidimu,bidi,two,bidimu N;PL;BANTU2,Substring Overlap
+bidimu,bidimu,[Translation Missing],bidimu N;PL;BANTU2,No Lexicon Match
 kalua,lua,bone (Inferred via BantuBERTa),lua V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 mudima,dima,[Translation Missing],mudima N;SG;BANTU1,No Lexicon Match
 nshiba,nshiba,[Translation Missing],nshiba N;SG;BANTU9,No Lexicon Match
 Bilengela,lengela,[Translation Missing],BANTU14,No Lexicon Match
 nkulu,nkulu,[Translation Missing],nkulu N;SG;BANTU10,No Lexicon Match
 munda,munda,[Translation Missing],munda V;PRS,No Lexicon Match
-Kantu,kantu,[Translation Missing],Kantu N;SG;BANTU1,No Lexicon Match
+Kantu,ntu,person,Kantu N;SG;BANTU1,PanLex Exact Match
 tshimue,tshimua,[Translation Missing],tshimua V;PST;REC;1;PL,No Lexicon Match
 buanga,buanga,[Translation Missing],buanga,No Lexicon Match
 tshoto,tshoto,[Translation Missing],tshoto N;SG;BANTU10,No Lexicon Match
 nyingu,nyingu,[Translation Missing],nyingu N;SG;BANTU9,No Lexicon Match
-bantu,bantu,ear (Inferred via BantuBERTa),BANTU2,BantuBERTa Vector Neighborhood
+bantu,ntu,person,BANTU2,PanLex Exact Match
 kakuluile,kulua,[Translation Missing],kulua V;PST;REC;3;SG,No Lexicon Match
 Diwadia,wadia,[Translation Missing],Diwadia N;SG;BANTU10,No Lexicon Match
 tshula,tshula,[Translation Missing],tshula V;PRS,No Lexicon Match
@@ -290,7 +290,7 @@ filaku,fila,woman (Inferred via BantuBERTa),filaku V;PST,BantuBERTa Vector Neigh
 kuenda,enda,[Translation Missing],enda V;NFIN,No Lexicon Match
 tatu,tatu,woman (Inferred via BantuBERTa),tatu PRO;INT;INTENS,BantuBERTa Vector Neighborhood
 Dipuekesha,puekesha,[Translation Missing],Dipuekesha V;PRS;HAB;3;SG,No Lexicon Match
-mutshinu,mutshinu,one (Inferred via BantuBERTa),mutshinu N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mutshinu,mutshinu,[Translation Missing],mutshinu N;SG;BANTU1,No Lexicon Match
 kasanka,sanka,[Translation Missing],sanka V;PST;REC;3;SG,No Lexicon Match
 matala,tala,[Translation Missing],matala N;PL;BANTU6,No Lexicon Match
 muntu,muntu,"human, human being, man",uMuntu N;SG;BANTU1,PanLex Exact Match
@@ -310,7 +310,7 @@ lwanga,lwanga,[Translation Missing],lwanga V;PRS,No Lexicon Match
 kutshina,tshina,[Translation Missing],tshina V;PRS;HAB;3;SG,No Lexicon Match
 tumonangana,monangana,[Translation Missing],monangana V;PRS,No Lexicon Match
 kindiwamena,mena,[Translation Missing],kindiwamena N;SG;BANTU15,No Lexicon Match
-kadi,kadi,"human, human being, man (Inferred via BantuBERTa)",kadi PRO;INT;INTENS,BantuBERTa Vector Neighborhood
+kadi,kadi,human (Inferred via BantuBERTa),kadi PRO;INT;INTENS,BantuBERTa Vector Neighborhood
 kavuala,vuala,[Translation Missing],vuala V;PST;REC;2;PL,No Lexicon Match
 munyoka,nyoka,[Translation Missing],munyoka N;SG;BANTU1,No Lexicon Match
 Muntu,muntu,"human, human being, man",uMuntu N;SG;BANTU1,PanLex Exact Match
@@ -322,7 +322,7 @@ munkelenda,lenda,[Translation Missing],lenda V;PRS;HAB;2;PL,No Lexicon Match
 kajiji,jiji,[Translation Missing],jiji V;PST;REC;3;SG,No Lexicon Match
 bikole,kola,[Translation Missing],kola V;PST;REC;3;PL,No Lexicon Match
 mibanga,banga,die (Inferred via BantuBERTa),mibanga N;PL;BANTU4,BantuBERTa Vector Neighborhood
-Tshikuyu,kuyu,ear (Inferred via BantuBERTa),uTshikuyu N;SG;BANTU1,BantuBERTa Vector Neighborhood
+Tshikuyu,kuyu,[Translation Missing],uTshikuyu N;SG;BANTU1,No Lexicon Match
 mudinaya,ya,[Translation Missing],mudinaya N;SG;BANTU1,No Lexicon Match
 mapa,pa,[Translation Missing],pa V;PST;REC;2;PL,No Lexicon Match
 kasu,kasu,bone (Inferred via BantuBERTa),kasu PRO;INT;BANTU15,BantuBERTa Vector Neighborhood
@@ -337,9 +337,9 @@ panshi,panshi,[Translation Missing],panshi N;SG;BANTU1,No Lexicon Match
 Bakuanyisha,anyisha,[Translation Missing],anyisha V;PRS;PROG;3;PL,No Lexicon Match
 Tshiyaya,tshiyaya,[Translation Missing],uTshiyaya N;SG;BANTU10,No Lexicon Match
 biteketa,teketa,[Translation Missing],teketa V;PRS,No Lexicon Match
-Tshiamuntu,muntu,"human, human being, man",umuntu N;SG;BANTU1,Substring Overlap
+Tshiamuntu,tshiamuntu,[Translation Missing],umuntu N;SG;BANTU1,No Lexicon Match
 bulambi,bulambi,[Translation Missing],bulambi N;SG;BANTU14,No Lexicon Match
-muamba,amba,"human, human being, man (Inferred via BantuBERTa)",amba V;PRS,BantuBERTa Vector Neighborhood
+muamba,amba,human (Inferred via BantuBERTa),amba V;PRS,BantuBERTa Vector Neighborhood
 bupua,pua,[Translation Missing],pua V;PRS,No Lexicon Match
 tshia,tshia,[Translation Missing],tshia V;PRS,No Lexicon Match
 bulunda,bulunda,[Translation Missing],bulunda V;PRS,No Lexicon Match
@@ -356,7 +356,7 @@ tudi,tudi,[Translation Missing],tudi N;SG;BANTU11,No Lexicon Match
 Kadia,dia,[Translation Missing],dia V;PRS;HAB;3;SG,No Lexicon Match
 mpelelu,mpelelu,two (Inferred via BantuBERTa),mpelelu N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Kwatshila,tshila,[Translation Missing],tshila V;PST;REC;3;SG,No Lexicon Match
-upanga,panga,woman (Inferred via BantuBERTa),panga V;PRS,BantuBERTa Vector Neighborhood
+upanga,panga,[Translation Missing],panga V;PRS,No Lexicon Match
 katshidi,tshidi,die (Inferred via BantuBERTa),tshidi V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 Lulengu,lengu,[Translation Missing],Lulengu N;SG;BANTU11,No Lexicon Match
 ntshintu,ntshintu,die (Inferred via BantuBERTa),ntshintu N;SG;BANTU10,BantuBERTa Vector Neighborhood
@@ -364,10 +364,10 @@ yakakala,kala,[Translation Missing],kala V;PST;REM;3;SG,No Lexicon Match
 mumukana,kana,[Translation Missing],mumukana N;SG;BANTU1,No Lexicon Match
 kupopoka,popoka,[Translation Missing],popoka V;NFIN,No Lexicon Match
 Nkashama,shama,[Translation Missing],shama V;PST;REC;1;SG,No Lexicon Match
-mwanda,mwaanda mukulu,eight,anda V;PRS;HAB;2;PL,Substring Overlap
-mutua,mutua,one (Inferred via BantuBERTa),mutua N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mwanda,anda,[Translation Missing],anda V;PRS;HAB;2;PL,No Lexicon Match
+mutua,mutua,[Translation Missing],mutua N;SG;BANTU1,No Lexicon Match
 meji,meji,[Translation Missing],meji N;SG;BANTU1,No Lexicon Match
-mabanza,anza,hand,banza V;PST;REC;2;PL,Substring Overlap
+mabanza,banza,[Translation Missing],banza V;PST;REC;2;PL,No Lexicon Match
 ni,ni,[Translation Missing],ni COP;IDENT,No Lexicon Match
 nyama,nyama,[Translation Missing],nyama N;SG;BANTU9,No Lexicon Match
 dinu,winu,bone (Inferred via BantuBERTa),dinu DET;POSS;PSS1P;BANTU10,BantuBERTa Vector Neighborhood
@@ -380,7 +380,7 @@ Lufu,fu,[Translation Missing],Lufu N;SG;BANTU11,No Lexicon Match
 kosa,kosa,[Translation Missing],kosa V;PRS;HAB;3;SG,No Lexicon Match
 Tshidibudibu,tshidibudibu,[Translation Missing],uTshidibudibu,No Lexicon Match
 nke,nke,[Translation Missing],nke DET;POSS;PSS1S;BANTU9,No Lexicon Match
-kitsidiyi,tsidiyi,"human, human being, man (Inferred via BantuBERTa)",tsidiyi V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
+kitsidiyi,tsidiyi,human (Inferred via BantuBERTa),tsidiyi V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
 tshibi,tshibi,[Translation Missing],tshibi,No Lexicon Match
 kalubilu,kalubilu,[Translation Missing],kalubilu N;SG;BANTU15,No Lexicon Match
 kabanyabanya,banyabanya,bone (Inferred via BantuBERTa),banyabanya V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
@@ -390,19 +390,19 @@ bayebe,yeba,[Translation Missing],yeba V;PST;REC;3;PL,No Lexicon Match
 mudiadia,dia,[Translation Missing],mudiadia N;SG;BANTU1,No Lexicon Match
 mbulowa,mbulowa,[Translation Missing],mbulowa N;SG;BANTU1,No Lexicon Match
 kabikila,bikila,[Translation Missing],bikila V;PST;REC;3;SG,No Lexicon Match
-batu,batu,[Translation Missing],batu PRO;INT;BANTU2,No Lexicon Match
+batu,tu,ear,batu PRO;INT;BANTU2,PanLex Exact Match
 difua,fua,[Translation Missing],fua V;PRS,No Lexicon Match
 Kutshina,tshina,[Translation Missing],tshina V;PRS;HAB;3;SG,No Lexicon Match
-bulelela,bulelela,"human, human being, man (Inferred via BantuBERTa)",bulelela V;PRS,BantuBERTa Vector Neighborhood
+bulelela,bulelela,human (Inferred via BantuBERTa),bulelela V;PRS,BantuBERTa Vector Neighborhood
 kupeshi,pesha,[Translation Missing],pesha V;NFIN,No Lexicon Match
 kabomba,bomba,[Translation Missing],bomba V;PST;REC;3;SG,No Lexicon Match
 mutshi,mutshi,[Translation Missing],mutshi N;SG;BANTU1,No Lexicon Match
 Butuku,bantu14,[Translation Missing],BANTU14,No Lexicon Match
-kanza,anza,hand,kanza,Substring Overlap
+kanza,kanza,bone (Inferred via BantuBERTa),kanza,BantuBERTa Vector Neighborhood
 pabule,pabula,[Translation Missing],pabula V;PST;REC;3;SG,No Lexicon Match
 ntshipapayi,ntshipapayi,bone (Inferred via BantuBERTa),ntshipapayi N;SG;BANTU10,BantuBERTa Vector Neighborhood
 kajiminyi,jiminyi,one (Inferred via BantuBERTa),jiminyi V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-mulu,mulume,man,mulu N;SG;BANTU1,Substring Overlap
+mulu,mulu,[Translation Missing],mulu N;SG;BANTU1,No Lexicon Match
 maalu,maalu,[Translation Missing],maalu N;PL;BANTU6,No Lexicon Match
 bakwatshishabu,tshishabu,[Translation Missing],kwatshishabu V;PST;REC;3;PL,No Lexicon Match
 diba,diba,[Translation Missing],diba,No Lexicon Match
@@ -414,7 +414,7 @@ mbuji,mbuji,[Translation Missing],mbuji N;SG;BANTU1,No Lexicon Match
 budika,budika,bone (Inferred via BantuBERTa),budika V;PRS,BantuBERTa Vector Neighborhood
 tshidiadia,tshidiadia,[Translation Missing],tshidiadia V;PRS,No Lexicon Match
 Wapesha,pesha,[Translation Missing],pesha V;PST;REC;3;SG,No Lexicon Match
-mukole,kola,"human, human being, man (Inferred via BantuBERTa)",kola V;PST;REC;2;PL,BantuBERTa Vector Neighborhood
+mukole,kola,human (Inferred via BantuBERTa),kola V;PST;REC;2;PL,BantuBERTa Vector Neighborhood
 Nzambi,unzambi,[Translation Missing],uNzambi,No Lexicon Match
 badiadia,adia,one (Inferred via BantuBERTa),diadia V;PRS,BantuBERTa Vector Neighborhood
 mputa,mputa,[Translation Missing],mputa N;SG;BANTU1,No Lexicon Match
@@ -459,8 +459,8 @@ Kabua,bua,[Translation Missing],bua V;PST;REC;3;SG,No Lexicon Match
 lukunda,kunda,[Translation Missing],kunda V;PRS;HAB;3;SG,No Lexicon Match
 kabenda,benda,[Translation Missing],benda V;PST;REC;3;SG,No Lexicon Match
 dia,dia,bone (Inferred via BantuBERTa),dia V;PRS,BantuBERTa Vector Neighborhood
-Kankenene,nene,die (Inferred via BantuBERTa),nene V;PST;PROG;3;SG;BANTU1,BantuBERTa Vector Neighborhood
-tshiseba,tshiseba,one (Inferred via BantuBERTa),tshiseba V;PRS,BantuBERTa Vector Neighborhood
+Kankenene,nene,[Translation Missing],nene V;PST;PROG;3;SG;BANTU1,No Lexicon Match
+tshiseba,tshiseba,[Translation Missing],tshiseba V;PRS,No Lexicon Match
 kufua,fua,[Translation Missing],fua V;NFIN,No Lexicon Match
 bamumanya,manya,[Translation Missing],manya V;PRS;HAB;3;PL,No Lexicon Match
 katukajimina,tukajimina,[Translation Missing],tukajimina V;PST;REC;3;SG,No Lexicon Match
@@ -468,24 +468,24 @@ sama,sama,[Translation Missing],sama V;PRS,No Lexicon Match
 tutende,tenda,[Translation Missing],tenda V;PST;REC;1;PL,No Lexicon Match
 bilengele,lengela,[Translation Missing],lengela V;PST;REC;3;PL,No Lexicon Match
 Kalume,luma,[Translation Missing],Kaluma V;PST;REC;3;SG,No Lexicon Match
-To,wo,one (Inferred via BantuBERTa),umunoun class PRO;INT;PROX,BantuBERTa Vector Neighborhood
+To,wo,[Translation Missing],umunoun class PRO;INT;PROX,No Lexicon Match
 wapangana,pangana,[Translation Missing],pangana V;PST;REC;2;SG,No Lexicon Match
 washadila,shadila,[Translation Missing],shadila V;PST;REC;2;SG,No Lexicon Match
-kateketshi,teketshi,one (Inferred via BantuBERTa),teketshi V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+kateketshi,teketshi,[Translation Missing],teketshi V;PST;REC;3;SG,No Lexicon Match
 tente,tenta,two (Inferred via BantuBERTa),tenta V;PST;REC;1;PL,BantuBERTa Vector Neighborhood
 udia,dia,[Translation Missing],dia V;PRS,No Lexicon Match
 tshilema,tshilema,ear (Inferred via BantuBERTa),tshilema V;PRS,BantuBERTa Vector Neighborhood
-nansha,nsha,one (Inferred via BantuBERTa),nansha N;SG;BANTU9,BantuBERTa Vector Neighborhood
+nansha,nsha,[Translation Missing],nansha N;SG;BANTU9,No Lexicon Match
 bidi,bidi,two,bidi N;SG;BANTU2,PanLex Exact Match
 Nvula,vula,[Translation Missing],uNvula,No Lexicon Match
 Tshidimanyine,tshidimanya,[Translation Missing],Tshidimanyine V;PST;REC;1;PL,No Lexicon Match
 nku,nku,[Translation Missing],nku DET;POSS;PSS1P;BANTU9,No Lexicon Match
-Kakulumpe,kulumpa,bone (Inferred via BantuBERTa),lumpa V;PST;PROG;3;SG;BANTU15,BantuBERTa Vector Neighborhood
+Kakulumpe,kulumpa,[Translation Missing],lumpa V;PST;PROG;3;SG;BANTU15,No Lexicon Match
 munkelende,lenda,[Translation Missing],munkelende N;SG;BANTU1,No Lexicon Match
 mawu,wawu,woman (Inferred via BantuBERTa),mawu N;PL;BANTU6,BantuBERTa Vector Neighborhood
 alekele,lekela,woman (Inferred via BantuBERTa),lekela V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 kukuma,kuma,[Translation Missing],kuma V;NFIN,No Lexicon Match
-mulenga,lenga,woman (Inferred via BantuBERTa),lenga V;PRS,BantuBERTa Vector Neighborhood
+mulenga,lenga,[Translation Missing],lenga V;PRS,No Lexicon Match
 tshieba,tshieba,[Translation Missing],tshieba V;PRS,No Lexicon Match
 wamanya,manya,[Translation Missing],manya V;PST;REC;2;SG,No Lexicon Match
 bundu,bundu,[Translation Missing],bundu N;SG;BANTU14,No Lexicon Match
@@ -500,7 +500,7 @@ mbamumonyi,monya,[Translation Missing],mbamumonyi N;PL;BANTU1,No Lexicon Match
 monji,monji,[Translation Missing],monji N;SG;BANTU1,No Lexicon Match
 nyunyi,nyunyi,[Translation Missing],nyunyi N;SG;BANTU9,No Lexicon Match
 tshishiku,tshishiku,[Translation Missing],tshishiku V;PRS,No Lexicon Match
-tshanzambi,anza,hand,tshanzambi V;PRS,Substring Overlap
+tshanzambi,tshanzambi,[Translation Missing],tshanzambi V;PRS,No Lexicon Match
 kinyalelu,nyalelu,[Translation Missing],kinyalelu N;SG;BANTU15,No Lexicon Match
 muavuala,vuala,[Translation Missing],vuala V;PST;REC;2;PL,No Lexicon Match
 waba,waba,[Translation Missing],waba DET;POSS;PSS1P;BANTU1,No Lexicon Match

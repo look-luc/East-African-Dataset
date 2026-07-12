@@ -1,11 +1,11 @@
 Surface Word,Ganda Lemma,English translation,Glossing,Match Type
 era,era,"and, used to string together sentences or sentence fragments in chronological order, moreover",era V;PRS,PanLex Exact Match
-abangi,abangi,"male, man (Inferred via BantuBERTa)",abangi PRO;INT;INTENS,BantuBERTa Vector Neighborhood
+abangi,ngi,many,abangi PRO;INT;INTENS,PanLex Exact Match
 elyokya,okya,roast,okya V;PRS;HAB;3;SG,PanLex Exact Match
 ufuna,funa,"get, obtain, receive",funa V;PRS,PanLex Exact Match
-kyotasimba,simba,"genet, genet (kind of speckled civet cat)",otasimba V;FUT,Substring Overlap
-eggumba,ggumba,bone,ggumba V;PRS,PanLex Exact Match
-zebwa,bikozesebwa,instrument,zebwa,Substring Overlap
+kyotasimba,otasimba,[Translation Missing],otasimba V;FUT,No Lexicon Match
+eggumba,eggumba,bone,ggumba V;PRS,PanLex Exact Match
+zebwa,ebwa,responsibility (Inferred via BantuBERTa),zebwa,BantuBERTa Vector Neighborhood
 mbuzi,mbuzi,goat,mbuzi N;SG;BANTU1,PanLex Exact Match
 lwa,lwa,[Translation Missing],lwa V;PRS,No Lexicon Match
 Ebbeere,ebbeere,breast,ebbeere V;PRS;HAB;3;SG,PanLex Exact Match
@@ -15,243 +15,243 @@ bujama,bujama,"dirt, filth",jama V;PRS,PanLex Exact Match
 tebazaala,zaala,"give birth, give birth (to a child)",tebazaala V;PRS,PanLex Exact Match
 Omuntu,omuntu,"person, man, human",umuntu N;SG;BANTU1,PanLex Exact Match
 aweesa,weesa,respect (Inferred via BantuBERTa),weesa V;PRS,BantuBERTa Vector Neighborhood
-engoma,ngoma,drum,engoma N;SG;BANTU10,PanLex Exact Match
-naka,kanakana,"shake, tremble",naka V;PST,Substring Overlap
-bulinga,linga,"four, forty, and, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",bulinga V;PRS,BantuBERTa Vector Neighborhood
-bakinkole,kola,"do, make",kinkola V;PST;REC;3;PL,Substring Overlap
+engoma,engoma,drum,engoma N;SG;BANTU10,PanLex Exact Match
+naka,naka,sun (Inferred via BantuBERTa),naka V;PST,BantuBERTa Vector Neighborhood
+bulinga,linga,four (Inferred via BantuBERTa),bulinga V;PRS,BantuBERTa Vector Neighborhood
+bakinkole,kinkola,[Translation Missing],kinkola V;PST;REC;3;PL,No Lexicon Match
 bwalaba,laba,see,laba V;PRS,PanLex Exact Match
 mukka,mukka,"smoke, gas",mukka N;SG;BANTU1,PanLex Exact Match
-mugga,gga,river,gga V;PRS,PanLex Exact Match
-Bwoba,oba,face (Inferred via BantuBERTa),oba V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
+mugga,mugga,river,gga V;PRS,PanLex Exact Match
+Bwoba,oba,[Translation Missing],oba V;PRS;HAB;2;SG,No Lexicon Match
 egaludde,galula,bait (Inferred via BantuBERTa),galula V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 emu,emu,"one, cardinal number 1",emu PRO;INT;INTENS,PanLex Exact Match
-okutuukirira,kiri,"it, it (be)",tuukirira V;NFIN,Substring Overlap
-muchaara,ara,"cow, cattle (Inferred via BantuBERTa)",muchaara N;SG;BANTU1,BantuBERTa Vector Neighborhood
-omukka,kka,smoke,mukka N;SG;BANTU1,PanLex Exact Match
-alekulira,kintu kyowulira mumubiri,feeling,lira V;FUT,Substring Overlap
-amangu,angu,light in weight,amangu N;PL;BANTU6,Substring Overlap
-gagendera,enda,nine,gagendera V;PST,Substring Overlap
-mubi,bi,bad,bi ADJ;BANTU1,PanLex Exact Match
-empoya,mpoya,"girl, virgin, virgin (bride), away, distant, far (Inferred via BantuBERTa)",mpoya N;SG;BANTU1,BantuBERTa Vector Neighborhood
+okutuukirira,tuukirira,that (Inferred via BantuBERTa),tuukirira V;NFIN,BantuBERTa Vector Neighborhood
+muchaara,ara,cow (Inferred via BantuBERTa),muchaara N;SG;BANTU1,BantuBERTa Vector Neighborhood
+omukka,omukka,"gas, smoke",mukka N;SG;BANTU1,PanLex Exact Match
+alekulira,lira,[Translation Missing],lira V;FUT,No Lexicon Match
+amangu,amangu,quick (Inferred via BantuBERTa),amangu N;PL;BANTU6,BantuBERTa Vector Neighborhood
+gagendera,gagenda,together (Inferred via BantuBERTa),gagendera V;PST,BantuBERTa Vector Neighborhood
+mubi,mubi,"ugly, ugly (be)",bi ADJ;BANTU1,PanLex Exact Match
+empoya,mpoya,girl (Inferred via BantuBERTa),mpoya N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Atambula,tambula,"walk, take a walk",tambula V;FUT,PanLex Exact Match
-ate,te,cow,te PRO;INT;INTENS,PanLex Exact Match
+ate,ate,"and, used to connect two similar words, phrases, et cetera",te PRO;INT;INTENS,PanLex Exact Match
 byo,wo,there,byo DET;POSS;PSS1P;BANTU2,PanLex Exact Match
-muganda,ganda,"Luganda, brother, fellow-tribesman, relative",muganda N;SG;BANTU1,PanLex Exact Match
+muganda,muganda,"brother, fellow-tribesman, relative",muganda N;SG;BANTU1,PanLex Exact Match
 Mama,mama,[Translation Missing],uMama N;SG;BANTU6,No Lexicon Match
 ozine,zina,dance,zina V;PST;REC;2;SG,PanLex Exact Match
-kabaka,baka,"sleep, king",kabaka,PanLex Exact Match
+kabaka,kabaka,king,kabaka,PanLex Exact Match
 Wange,wange,excuse me,wange DET;POSS;PSS1P;BANTU1,PanLex Exact Match
 Bwoyo,bantu,people,BANTU14,Substring Overlap
 kubulirirwa,bulirira,together (Inferred via BantuBERTa),bulirirwa V;NFIN,BantuBERTa Vector Neighborhood
 jegava,egava,[Translation Missing],jegava V;PRS,No Lexicon Match
-nkuyege,kakuyege,campaign,nkuyege N;SG;BANTU10,Substring Overlap
-Eyettikka,ettikka,responsibility (Inferred via BantuBERTa),ettikka V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
+nkuyege,yege,like (Inferred via BantuBERTa),nkuyege N;SG;BANTU10,BantuBERTa Vector Neighborhood
+Eyettikka,ettikka,[Translation Missing],ettikka V;PRS;HAB;3;SG,No Lexicon Match
 Olubuto,olubuto,"abdomen, belly, stomach, venter, pregnancy",ubuto N;SG;BANTU11,PanLex Exact Match
 teluvunza,vunza,meat (Inferred via BantuBERTa),vunza V;PRS,BantuBERTa Vector Neighborhood
-birara,bira,forest,birara,Substring Overlap
+birara,birara,building (Inferred via BantuBERTa),birara,BantuBERTa Vector Neighborhood
 omuntu,omuntu,"person, man, human",umuntu N;SG;BANTU1,PanLex Exact Match
-mulwendo,wendo,number,mulwendo N;SG;BANTU1,Substring Overlap
+mulwendo,mulwendo,water (Inferred via BantuBERTa),mulwendo N;SG;BANTU1,BantuBERTa Vector Neighborhood
 tatekera,tekera,elephant (Inferred via BantuBERTa),tatekera V;PST,BantuBERTa Vector Neighborhood
-kyaako,bujjanjabi obusokerwaako,first aid,kyaako,Substring Overlap
+kyaako,waako,building (Inferred via BantuBERTa),kyaako,BantuBERTa Vector Neighborhood
 kukubira,bira,forest,kubira V;NFIN,PanLex Exact Match
 zigwanira,gwanira,sense (Inferred via BantuBERTa),gwanira V;PRS,BantuBERTa Vector Neighborhood
 Omwaana,umwaana,respect (Inferred via BantuBERTa),umwaana N;SG;BANTU1,BantuBERTa Vector Neighborhood
-iyelyokya,okya,roast,lyokya V;PST;PRF;3;SG,Substring Overlap
-nyina,annyina,"brother, sister, (her) brother, (his) sister",nyina N;SG;BANTU9,Substring Overlap
+iyelyokya,lyokya,and (Inferred via BantuBERTa),lyokya V;PST;PRF;3;SG,BantuBERTa Vector Neighborhood
+nyina,nyina,bake (Inferred via BantuBERTa),nyina N;SG;BANTU9,BantuBERTa Vector Neighborhood
 nalyo,lyo,[Translation Missing],nalyo N;PL;BANTU9,No Lexicon Match
 masanda,masanda,rubber,masanda N;PL;BANTU6,PanLex Exact Match
-kulilwa,buulila,"say, tell, say (to), tell (to)",lila V;NFIN,Substring Overlap
-ansingira,gira,act,nsingira V;PRS,Substring Overlap
+kulilwa,lila,milk (Inferred via BantuBERTa),lila V;NFIN,BantuBERTa Vector Neighborhood
+ansingira,nsingira,ugly (Inferred via BantuBERTa),nsingira V;PRS,BantuBERTa Vector Neighborhood
 effudde,ffula,fall (Inferred via BantuBERTa),ffula V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-guba,gubaafu,bathtub,guba,Substring Overlap
-bunyonyi,nyonyi,bird,bunyonyi V;PRS,Substring Overlap
+guba,guba,soul (Inferred via BantuBERTa),guba,BantuBERTa Vector Neighborhood
+bunyonyi,bunyonyi,elephant (Inferred via BantuBERTa),bunyonyi V;PRS,BantuBERTa Vector Neighborhood
 maka,maka,"family, home",maka N;PL;BANTU6,PanLex Exact Match
-nebirungi,nebirungi,"and, with, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",nebirungi N;PL;BANTU10,BantuBERTa Vector Neighborhood
+nebirungi,nebirungi,and (Inferred via BantuBERTa),nebirungi N;PL;BANTU10,BantuBERTa Vector Neighborhood
 ago,wago,that (Inferred via BantuBERTa),ago PRO;3;SG,BantuBERTa Vector Neighborhood
 mbiro,mbiro,diarrhea,mbiro,PanLex Exact Match
-agatawulira,wulira,hear,gatawulira V;FUT,Substring Overlap
+agatawulira,gatawulira,together (Inferred via BantuBERTa),gatawulira V;FUT,BantuBERTa Vector Neighborhood
 Omutima,omutima,heart,umutima N;SG;BANTU1,PanLex Exact Match
-nyini,bwa nnanyini,ownership,nyini DET;PROX;BANTU9,Substring Overlap
-okulya,lya,eat,lya V;NFIN,PanLex Exact Match
-mulungi,lungi,"good, beautiful, I’m fine, response",uMulungi N;SG;BANTU1,Substring Overlap
+nyini,nyini,that (Inferred via BantuBERTa),nyini DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
+okulya,okulya,"eat, feed",lya V;NFIN,PanLex Exact Match
+mulungi,mulungi,[Translation Missing],uMulungi N;SG;BANTU1,No Lexicon Match
 afuna,funa,"get, obtain, receive",funa V;PRS,PanLex Exact Match
-abalwaana,kulwaana,fight,balwaana V;PRS;3;PL,Substring Overlap
-bwabeera,embeera,"mood, state",beera V;FUT,Substring Overlap
+abalwaana,lwaana,four (Inferred via BantuBERTa),balwaana V;PRS;3;PL,BantuBERTa Vector Neighborhood
+bwabeera,beera,king (Inferred via BantuBERTa),beera V;FUT,BantuBERTa Vector Neighborhood
 ogenda,genda,go,genda V;PRS;HAB;2;SG,PanLex Exact Match
-mitala,mita,meter,mitala N;PL;BANTU4,Substring Overlap
+mitala,mitala,give (Inferred via BantuBERTa),mitala N;PL;BANTU4,BantuBERTa Vector Neighborhood
 bubisi,bisi,"uncooked, unripe",bisi V;PRS,PanLex Exact Match
 njuki,njuki,bee,njuki N;SG;BANTU10,PanLex Exact Match
-oba,oba,"adult, elder (Inferred via BantuBERTa)",oba V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
-nonywa,eky’okunywa,drink,nywa V;PRS;HAB;1;SG,Substring Overlap
+oba,oba,adult (Inferred via BantuBERTa),oba V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
+nonywa,nywa,[Translation Missing],nywa V;PRS;HAB;1;SG,No Lexicon Match
 embwa,embwa,"dog, pet",embwa V;PRS,PanLex Exact Match
-bwoluwa,kufuuwa oluwa,whistle,bwoluwa V;PRS;HAB;3;SG,Substring Overlap
+bwoluwa,oluwa,food (Inferred via BantuBERTa),bwoluwa V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
 ssanja,ssanja,[Translation Missing],ssanja V;PRS,No Lexicon Match
-nungi,nungi,"and, with, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",nungi PRO;INT;INTENS,BantuBERTa Vector Neighborhood
-tatawaana,kukwaana,flirt,tatawaana V;FUT,Substring Overlap
-obuwuulu,ubuwuulu,"marry, wed (Inferred via BantuBERTa)",ubuwuulu N;SG;BANTU14,BantuBERTa Vector Neighborhood
+nungi,nungi,and (Inferred via BantuBERTa),nungi PRO;INT;INTENS,BantuBERTa Vector Neighborhood
+tatawaana,waana,[Translation Missing],tatawaana V;FUT,No Lexicon Match
+obuwuulu,ubuwuulu,marry (Inferred via BantuBERTa),ubuwuulu N;SG;BANTU14,BantuBERTa Vector Neighborhood
 enyumba,nyumba,"house, human abode",nyumba V;PRS,PanLex Exact Match
 Enkuba,enkuba,"rain, condensed water from a cloud",inkuba,PanLex Exact Match
-tawaba,luseregende lwabantu,row,tawaba V;PST,Substring Overlap
+tawaba,waba,alcoholic (Inferred via BantuBERTa),tawaba V;PST,BantuBERTa Vector Neighborhood
 Tukozesa,kozesa,use,kozesa V;PRS,PanLex Exact Match
-emmere,mmere,food,mmere N;SG;BANTU1,PanLex Exact Match
-akuyu,kuyuguuma,upheaval,akuyu N;SG;BANTU1,Substring Overlap
+emmere,emmere,food,mmere N;SG;BANTU1,PanLex Exact Match
+akuyu,kuyu,[Translation Missing],akuyu N;SG;BANTU1,No Lexicon Match
 Akatono,tono,small,tono V;PST;REC;3;SG,PanLex Exact Match
-Amambuka,bizinga bya mariyana eby’omumambuka,"Northern Mariana Islands, 𐐤𐐱𐑉𐑄𐐲𐑉𐑌 𐐣𐐰𐑉𐐨𐐱𐑌𐐲 𐐌𐑊𐐲𐑌𐐼𐑆",mbuka V;PRS;HAB;3;SG,Substring Overlap
-gubuuka,buuka,fly,gubuuka V;PRS,Substring Overlap
-kakila,ekilaamo,will,kila V;PST;REC;3;SG,Substring Overlap
+Amambuka,mbuka,[Translation Missing],mbuka V;PRS;HAB;3;SG,No Lexicon Match
+gubuuka,gubuuka,but (Inferred via BantuBERTa),gubuuka V;PRS,BantuBERTa Vector Neighborhood
+kakila,kila,[Translation Missing],kila V;PST;REC;3;SG,No Lexicon Match
 enjovu,enjovu,elephant,injovu N;SG;BANTU10,PanLex Exact Match
-okusooka,-sooka,first,sooka V;NFIN,Substring Overlap
+okusooka,sooka,and (Inferred via BantuBERTa),sooka V;NFIN,BantuBERTa Vector Neighborhood
 omugumba,omugumba,"barren, infertile",umugumba N;SG;BANTU1,PanLex Exact Match
 musiru,musiru,"fool, stupid, silly",musiru N;SG;BANTU1,PanLex Exact Match
-muzinga,zinga,island,zinga V;PRS,PanLex Exact Match
+muzinga,muzinga,cannon,zinga V;PRS,PanLex Exact Match
 yamala,mala,"complete, do, finish",mala V;PST;REC;3;SG,PanLex Exact Match
-tesekerera,kere,frog,tesekerera V;PRS,Substring Overlap
+tesekerera,tesekerera,[Translation Missing],tesekerera V;PRS,No Lexicon Match
 Addukana,ddukana,[Translation Missing],ddukana V;PRS,No Lexicon Match
 wa,wa,"give, of, where",wa DET;POSS;PSS1P;BANTU1,PanLex Exact Match
-ekisibo,kisibo,"cow, cattle (Inferred via BantuBERTa)",ekisibo N;SG;BANTU10,BantuBERTa Vector Neighborhood
-onywanye,nywana,"adult, elder (Inferred via BantuBERTa)",nywana V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
+ekisibo,kisibo,cow (Inferred via BantuBERTa),ekisibo N;SG;BANTU10,BantuBERTa Vector Neighborhood
+onywanye,nywana,adult (Inferred via BantuBERTa),nywana V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
 Omwana,omwana,"child, babe, baby, infaneto, kid",umwana N;SG;BANTU1,PanLex Exact Match
-ogwokumpi,kumpi,"near, close",ukumpi N;SG;BANTU1,Substring Overlap
-takaddiwa,ddiwa,"ugly, ugly (be) (Inferred via BantuBERTa)",ddiwa V;PST,BantuBERTa Vector Neighborhood
-kisikiziz,sikiziz,"one, in, inside (Inferred via BantuBERTa)",sikiziz V;PRS,BantuBERTa Vector Neighborhood
-ebbiri,bbiri,two,ebbiri N;SG;BANTU1,Substring Overlap
+ogwokumpi,ukumpi,yes (Inferred via BantuBERTa),ukumpi N;SG;BANTU1,BantuBERTa Vector Neighborhood
+takaddiwa,ddiwa,ugly (Inferred via BantuBERTa),ddiwa V;PST,BantuBERTa Vector Neighborhood
+kisikiziz,sikiziz,one (Inferred via BantuBERTa),sikiziz V;PRS,BantuBERTa Vector Neighborhood
+ebbiri,ebbiri,[Translation Missing],ebbiri N;SG;BANTU1,No Lexicon Match
 kukasukira,kukasukira,sling,kasukira V;NFIN,PanLex Exact Match
 ekitiibwa,ekitiibwa,respect,tiibwa V;PRS;HAB;3;SG,PanLex Exact Match
-Enyana,nyana,calf,Enyana N;SG;BANTU10,Substring Overlap
+Enyana,enyana,[Translation Missing],Enyana N;SG;BANTU10,No Lexicon Match
 taliba,ba,"be, become, string",taliba V;FUT,PanLex Exact Match
 Omusajja,omusajja,"man, adult male human",umusajja N;SG;BANTU1,PanLex Exact Match
-muttu,wakati muttumbi,"midnight, 12 o'clock at night",muttu N;SG;BANTU1,Substring Overlap
+muttu,muttu,that (Inferred via BantuBERTa),muttu N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Alaba,laba,see,laba V;PRS,PanLex Exact Match
 mpola,mpola,[Translation Missing],uMpola N;SG;BANTU1,No Lexicon Match
-mukabalo,ekyambalo,costume,mukabalo N;SG;BANTU1,Substring Overlap
+mukabalo,balo,[Translation Missing],mukabalo N;SG;BANTU1,No Lexicon Match
 ngabo,ngabo,shield,ngabo N;SG;BANTU10,PanLex Exact Match
 Lubaale,baala,ant-hill,baala V;PST;REC;3;SG,PanLex Exact Match
-mulabe,laba,see,laba V;PST;REC;2;PL,PanLex Exact Match
-mwemuva,imuva,"four, forty, and, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",mwemuva N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mulabe,mulabe,enemy,laba V;PST;REC;2;PL,PanLex Exact Match
+mwemuva,imuva,four (Inferred via BantuBERTa),mwemuva N;SG;BANTU1,BantuBERTa Vector Neighborhood
 bwo,wo,there,bwo DET;POSS;PSS1P;BANTU14,PanLex Exact Match
-buti,butida,slingshot,buti PRO;INT;BANTU14,Substring Overlap
+buti,buti,bait (Inferred via BantuBERTa),buti PRO;INT;BANTU14,BantuBERTa Vector Neighborhood
 amazzi,amazzi,"water, pee, pee-pee, piss, urine, wee-wee",amazzi N;PL;BANTU2,PanLex Exact Match
 telya,telya,eagle (Inferred via BantuBERTa),telya V;PRS,BantuBERTa Vector Neighborhood
-ekibanja,banja,plot of ground,banja V;PRS;HAB;3;SG,PanLex Exact Match
-telemelerwa,lerwa,midwife,telemelerwa V;PRS,Substring Overlap
-ebikere,fumbekera,full,bikere V;PST;REC;3;PL,Substring Overlap
+ekibanja,ekibanja,plot,banja V;PRS;HAB;3;SG,PanLex Exact Match
+telemelerwa,telemelerwa,meet (Inferred via BantuBERTa),telemelerwa V;PRS,BantuBERTa Vector Neighborhood
+ebikere,kera,[Translation Missing],bikere V;PST;REC;3;PL,No Lexicon Match
 wezilwanira,isilwanira,[Translation Missing],isilwanira N;PL;PSSB1,No Lexicon Match
-bisiki,bisi,"uncooked, unripe",bisiki N;PL;BANTU2,Substring Overlap
-koowa,kukoowa,"tire, tired",koowa V;PRS;HAB;3;SG,Substring Overlap
-Tewesiganga,siga,"plant, sow",Tewesiganga V;PRS;HAB;1;SG,Substring Overlap
+bisiki,bisiki,and (Inferred via BantuBERTa),bisiki N;PL;BANTU2,BantuBERTa Vector Neighborhood
+koowa,koowa,few (Inferred via BantuBERTa),koowa V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
+Tewesiganga,siganga,person (Inferred via BantuBERTa),Tewesiganga V;PRS;HAB;1;SG,BantuBERTa Vector Neighborhood
 olime,lima,cultivate,lima V;PST;REC;2;SG,PanLex Exact Match
-ntaana,ntaana,"human, person (Inferred via BantuBERTa)",ntaana N;SG;BANTU9,BantuBERTa Vector Neighborhood
+ntaana,ntaana,human (Inferred via BantuBERTa),ntaana N;SG;BANTU9,BantuBERTa Vector Neighborhood
 mu,mu,"one, in, inside",mu DET;PROX;BANTU1,PanLex Exact Match
 obwoomu,umu,king (Inferred via BantuBERTa),umu N;SG;BANTU14,BantuBERTa Vector Neighborhood
-amatabangufu,angu,light in weight,itabangufu N;PL;BANTU6,Substring Overlap
+amatabangufu,tabangufu,[Translation Missing],itabangufu N;PL;BANTU6,No Lexicon Match
 Zimba,zimba,"swell, build",Zimba V;PRS,PanLex Exact Match
 emugga,gga,river,mugga N;SG;BANTU1,PanLex Exact Match
 Ne,ne,"and, with, used to connect two similar words, phrases, et cetera",ne PRO;INT;INTENS,PanLex Exact Match
 gutambula,tambula,"walk, take a walk",gutambula V;PRS,PanLex Exact Match
-Mulungi,lungi,"good, beautiful, I’m fine, response",uMulungi N;SG;BANTU1,Substring Overlap
-Aleesa,lesa,"like, when (Inferred via BantuBERTa)",lesa V;PRS,BantuBERTa Vector Neighborhood
-mafumu,mafumu,"four, forty, and, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",mafumu N;PL;BANTU6,BantuBERTa Vector Neighborhood
-esala,sala,slaughter,esala V;PRS,Substring Overlap
-nyabo,nnyabo,"madam, miss, mrs",nyabo N;SG;BANTU9,Substring Overlap
+Mulungi,lungi,"good, beautiful, I’m fine, response",uMulungi N;SG;BANTU1,PanLex Exact Match
+Aleesa,lesa,[Translation Missing],lesa V;PRS,No Lexicon Match
+mafumu,mafumu,four (Inferred via BantuBERTa),mafumu N;PL;BANTU6,BantuBERTa Vector Neighborhood
+esala,esala,[Translation Missing],esala V;PRS,No Lexicon Match
+nyabo,nyabo,eat (Inferred via BantuBERTa),nyabo N;SG;BANTU9,BantuBERTa Vector Neighborhood
 Obulamu,obulamu,"health, life",ubulamu N;SG;BANTU14,PanLex Exact Match
-taba,amataba,flood,taba,Substring Overlap
+taba,taba,[Translation Missing],taba,No Lexicon Match
 Omuwala,omuwala,"girl, young female, daughter",umuwala N;SG;BANTU1,PanLex Exact Match
 bwelemerelwa,bwelemerelwa,that (Inferred via BantuBERTa),bwelemerelwa V;PRS,BantuBERTa Vector Neighborhood
-nomutwe,mutwe,head,nomutwe N;SG;BANTU1,Substring Overlap
-Kamu,akamuli kakawoowo,rose,kamu PRO;INT;BANTU15,Substring Overlap
-bibunduka,bunduka,"adult, elder, grown-up (Inferred via BantuBERTa)",bunduka V;PRS,BantuBERTa Vector Neighborhood
-mpota,mpota,"but, however, on the contrary, yet (Inferred via BantuBERTa)",mpota N;SG;BANTU1,BantuBERTa Vector Neighborhood
-Nawolovu,nnawolovu,chameleon,uNawolovu N;PL;BANTU10,Substring Overlap
+nomutwe,twe,head,nomutwe N;SG;BANTU1,PanLex Exact Match
+Kamu,kamu,brother (Inferred via BantuBERTa),kamu PRO;INT;BANTU15,BantuBERTa Vector Neighborhood
+bibunduka,bunduka,[Translation Missing],bunduka V;PRS,No Lexicon Match
+mpota,mpota,but (Inferred via BantuBERTa),mpota N;SG;BANTU1,BantuBERTa Vector Neighborhood
+Nawolovu,wolovu,[Translation Missing],uNawolovu N;PL;BANTU10,No Lexicon Match
 okwogera,okwogera,"speak, talk",ogera V;PRS;HAB;2;SG,PanLex Exact Match
 Essubi,ssubi,[Translation Missing],essubi N;SG;BANTU10,No Lexicon Match
-nyo,nyo,"barren, infertile (Inferred via BantuBERTa)",nyo DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
+nyo,nyo,barren (Inferred via BantuBERTa),nyo DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
 kwata,kwata,seize,kwata V;PRS,PanLex Exact Match
-mulilwana,kulwaana,fight,mulilwana N;SG;BANTU1,Substring Overlap
-galinga,galinga,"cow, cattle (Inferred via BantuBERTa)",galinga V;PRS,BantuBERTa Vector Neighborhood
-gyombi,gyombi,"eat, ate, feed (Inferred via BantuBERTa)",gyombi N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mulilwana,lwaana,ugly (Inferred via BantuBERTa),mulilwana N;SG;BANTU1,BantuBERTa Vector Neighborhood
+galinga,galinga,cow (Inferred via BantuBERTa),galinga V;PRS,BantuBERTa Vector Neighborhood
+gyombi,gyombi,eat (Inferred via BantuBERTa),gyombi N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Embwa,embwa,"dog, pet",embwa V;PRS,PanLex Exact Match
 enkumbi,enkumbi,hoe,inkumbi N;SG;BANTU10,PanLex Exact Match
 Mpola,umpola,[Translation Missing],uMpola N;SG;BANTU1,No Lexicon Match
-azaalwa,lwa,"four, forty, and, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",lwa V;FUT,BantuBERTa Vector Neighborhood
+azaalwa,lwa,four (Inferred via BantuBERTa),lwa V;FUT,BantuBERTa Vector Neighborhood
 ensa,ensa,sense,ensa V;PRS,PanLex Exact Match
-Okwelinda,kulinda,wait,linda V;PRS;HAB;2;SG,Substring Overlap
+Okwelinda,linda,[Translation Missing],linda V;PRS;HAB;2;SG,No Lexicon Match
 mbeera,mbeera,"mood, state, temperature",mbeera,PanLex Exact Match
 ne,ne,"and, with, used to connect two similar words, phrases, et cetera",ne PRO;INT;INTENS,PanLex Exact Match
-okagayira,gayira,"give, of, where (Inferred via BantuBERTa)",gayira V;PST;REM;2;SG,BantuBERTa Vector Neighborhood
-bita,bikumi bitaano,five hundred,bita V;PRS,Substring Overlap
-ewaka,bwakabaka,kingdom,ewaka V;PRS,Substring Overlap
+okagayira,gayira,give (Inferred via BantuBERTa),gayira V;PST;REM;2;SG,BantuBERTa Vector Neighborhood
+bita,bita,[Translation Missing],bita V;PRS,No Lexicon Match
+ewaka,waka,ugly (Inferred via BantuBERTa),ewaka V;PRS,BantuBERTa Vector Neighborhood
 omubi,omubi,"ugly, ugly (be)",umubi N;SG;BANTU1,PanLex Exact Match
 lyaaliko,lyaaliko,[Translation Missing],lyaaliko N;PL;BANTU11,No Lexicon Match
 nomala,mala,"complete, do, finish",mala V;PRS;HAB;1;SG,PanLex Exact Match
 lya,lya,eat,lya V;NFIN,PanLex Exact Match
-kamu,akamuli kakawoowo,rose,kamu PRO;INT;BANTU15,Substring Overlap
-abakazi,kazi,"woman, wife",umkazi N;PL;BANTU2,Substring Overlap
-takutelaako,telaako,"coward, tree, pole, large woody plant (Inferred via BantuBERTa)",telaako V;PST;REC;1;PL,BantuBERTa Vector Neighborhood
+kamu,kamu,brother (Inferred via BantuBERTa),kamu PRO;INT;BANTU15,BantuBERTa Vector Neighborhood
+abakazi,umkazi,male (Inferred via BantuBERTa),umkazi N;PL;BANTU2,BantuBERTa Vector Neighborhood
+takutelaako,telaako,coward (Inferred via BantuBERTa),telaako V;PST;REC;1;PL,BantuBERTa Vector Neighborhood
 Oluliimi,umu,[Translation Missing],uliimi N;SG;BANTU1;PSSB11,No Lexicon Match
-tegamala,gama,mug,tegamala V;PRS,Substring Overlap
+tegamala,tegamala,thirst (Inferred via BantuBERTa),tegamala V;PRS,BantuBERTa Vector Neighborhood
 Omuze,omuze,habit,umuze N;SG;BANTU1,PanLex Exact Match
 lwo,lwo,food (Inferred via BantuBERTa),lwo DET;POSS;PSS1P;BANTU11,BantuBERTa Vector Neighborhood
 Akako,wakako,[Translation Missing],akako,No Lexicon Match
 mubumbii,bumbii,[Translation Missing],mubumbii N;SG;BANTU1,No Lexicon Match
 Amatu,amatu,[Translation Missing],amatu N;PL;BANTU6,No Lexicon Match
-omukadde,kadde,"old, old person",umukadde N;SG;BANTU1,PanLex Exact Match
-Omwezi,mwezi,"month, moon",umwezi N;PL;BANTU1,Substring Overlap
+omukadde,omukadde,parent,umukadde N;SG;BANTU1,PanLex Exact Match
+Omwezi,umwezi,[Translation Missing],umwezi N;PL;BANTU1,No Lexicon Match
 Amazzi,amazzi,"water, pee, pee-pee, piss, urine, wee-wee",amazzi N;PL;BANTU2,PanLex Exact Match
-Abakadde,kadde,"old, old person",umkadde N;PL;BANTU2,Substring Overlap
+Abakadde,kadde,"old, old person",umkadde N;PL;BANTU2,PanLex Exact Match
 amalungi,lungi,"good, beautiful, I’m fine, response",amalungi N;PL;BANTU6,PanLex Exact Match
-Abakazi,kazi,"woman, wife",umkazi N;PL;BANTU2,Substring Overlap
-okuweeka,kukweeka,hide,weeka V;NFIN,Substring Overlap
-abagenyi,genyi,"guest, stranger",umgenyi N;PL;BANTU2,Substring Overlap
+Abakazi,umkazi,[Translation Missing],umkazi N;PL;BANTU2,No Lexicon Match
+okuweeka,weeka,[Translation Missing],weeka V;NFIN,No Lexicon Match
+abagenyi,umgenyi,barren (Inferred via BantuBERTa),umgenyi N;PL;BANTU2,BantuBERTa Vector Neighborhood
 olwokwokebwa,ukwokebwa,cannon (Inferred via BantuBERTa),ukwokebwa N;SG;BANTU1;PSSB11,BantuBERTa Vector Neighborhood
-lujja,jja,come,jja V;PRS;HAB;3;SG,PanLex Exact Match
+lujja,lujja,"compound, yard",jja V;PRS;HAB;3;SG,PanLex Exact Match
 Olunaku,olunaku,"date, day",ulunaku N;SG;BANTU11,PanLex Exact Match
-elina,-lina,have,elina V;PRS,Substring Overlap
+elina,lina,bone (Inferred via BantuBERTa),elina V;PRS,BantuBERTa Vector Neighborhood
 lukaawa,kaawa,"coffee, beverage",lukaawa V;PRS;HAB;3;SG,PanLex Exact Match
 Endiga,endiga,"sheep, animal",indiga N;SG;BANTU10,PanLex Exact Match
 Akwaagula,gula,buy,agula V;PST;REC;3;SG,PanLex Exact Match
 kamwa,kamwa,mouth,kamwa N;SG;BANTU15,PanLex Exact Match
-ensava,nsava,"eat, feed (Inferred via BantuBERTa)",ensava N;SG;BANTU10,BantuBERTa Vector Neighborhood
-bukyaali,bukyaali,"like, when (Inferred via BantuBERTa)",bukyaali N;SG;BANTU14,BantuBERTa Vector Neighborhood
+ensava,nsava,eat (Inferred via BantuBERTa),ensava N;SG;BANTU10,BantuBERTa Vector Neighborhood
+bukyaali,bukyaali,like (Inferred via BantuBERTa),bukyaali N;SG;BANTU14,BantuBERTa Vector Neighborhood
 lyaayo,lyaayo,meet (Inferred via BantuBERTa),lyaayo DET;POSS;PSS1P;BANTU5,BantuBERTa Vector Neighborhood
 mutti,mutti,[Translation Missing],mutti N;SG;BANTU1,No Lexicon Match
 Okugezaako,okugezaako,"attempt, try",gezaako V;NFIN,PanLex Exact Match
-tekabiira,kusuubiira,expect,tekabiira V;PST,Substring Overlap
+tekabiira,biira,fall (Inferred via BantuBERTa),tekabiira V;PST,BantuBERTa Vector Neighborhood
 bunafu,bunafu,"dull, weak",bunafu N;SG;BANTU14,PanLex Exact Match
 Omuyizzi,omuyizzi,hunter,umuyizzi N;SG;BANTU1,PanLex Exact Match
 Akanyonyi,nyonyi,bird,nyonyi V;PST;REC;3;SG,PanLex Exact Match
 Eyali,wali,there,Eyali N;SG;BANTU1,PanLex Exact Match
-okufumba,fumba,"boil, cook",fumba V;NFIN,PanLex Exact Match
-abudongo,ubudongo,"like, when (Inferred via BantuBERTa)",ubudongo N;SG;BANTU14,BantuBERTa Vector Neighborhood
-ejjambiya,jambiya,machete,jjambiya V;PRS,Substring Overlap
-osekerera,kere,frog,sekerera V;PRS,Substring Overlap
-tebudda,tebudda,"four, forty, and, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",tebudda V;PRS,BantuBERTa Vector Neighborhood
+okufumba,okufumba,"bake, cook",fumba V;NFIN,PanLex Exact Match
+abudongo,ubudongo,like (Inferred via BantuBERTa),ubudongo N;SG;BANTU14,BantuBERTa Vector Neighborhood
+ejjambiya,jjambiya,[Translation Missing],jjambiya V;PRS,No Lexicon Match
+osekerera,sekerera,[Translation Missing],sekerera V;PRS,No Lexicon Match
+tebudda,tebudda,four (Inferred via BantuBERTa),tebudda V;PRS,BantuBERTa Vector Neighborhood
 etambula,tambula,"walk, take a walk",tambula V;PRS,PanLex Exact Match
-otuliidde,tuli,"hole, nest",tuliira V;PST;REC;2;SG,Substring Overlap
+otuliidde,tuliira,adult (Inferred via BantuBERTa),tuliira V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
 okuwasa,okuwasa,"marry, wed",wasa V;NFIN,PanLex Exact Match
 maserengeta,maserengeta,South,serengeta V;PST;REC;2;PL,PanLex Exact Match
-Sotta,sotta,"like, when (Inferred via BantuBERTa)",Sotta V;PRS,BantuBERTa Vector Neighborhood
+Sotta,sotta,like (Inferred via BantuBERTa),Sotta V;PRS,BantuBERTa Vector Neighborhood
 Enkima,enkima,monkey,inkima N;SG;BANTU10,PanLex Exact Match
 gwo,wo,there,gwo DET;PROX;BANTU1,PanLex Exact Match
-Towakananga,nanga,"four, forty, and, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",umunanga,BantuBERTa Vector Neighborhood
+Towakananga,nanga,four (Inferred via BantuBERTa),umunanga,BantuBERTa Vector Neighborhood
 emabega,emabega,"after, behind, back, rear",bega V;PRS;HAB;3;PL,PanLex Exact Match
 mpisa,mpisa,manners,mpisa N;SG;BANTU1,PanLex Exact Match
 Atya,tya,be afraid,tya V;PRS,PanLex Exact Match
 mumaaso,mumaaso,face,mumaaso N;PL;BANTU1,PanLex Exact Match
-oyinza,yinza,"dawn, of (Inferred via BantuBERTa)",yinza V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
-watali,butali bwesigwa,infidelity,tali V;PST;REC;2;SG,Substring Overlap
+oyinza,yinza,dawn (Inferred via BantuBERTa),yinza V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
+watali,tali,[Translation Missing],tali V;PST;REC;2;SG,No Lexicon Match
 ssi,ssi,bait,ssi PRO;INT;INTENS,PanLex Exact Match
 takula,la,[Translation Missing],la V;FUT,No Lexicon Match
-teluma,luma,"bite, spy out",teluma V;PRS,Substring Overlap
+teluma,teluma,bone (Inferred via BantuBERTa),teluma V;PRS,BantuBERTa Vector Neighborhood
 nti,nti,that,nti PRO;INT;INTENS,PanLex Exact Match
-ekibuga,buga,town,buga V;PRS;HAB;3;SG,PanLex Exact Match
+ekibuga,ekibuga,"city, settlement, town",buga V;PRS;HAB;3;SG,PanLex Exact Match
 Sente,sente,money,Senta,PanLex Exact Match
-gombolola,bolo,penis,gombolola V;PRS,Substring Overlap
+gombolola,gombolola,sun (Inferred via BantuBERTa),gombolola V;PRS,BantuBERTa Vector Neighborhood
 kya,kya,"dawn, of",kya DET;POSS;PSS1P;BANTU15,PanLex Exact Match
-ekisu,ekisenge ekisulwaamu,"bedchamber, bedroom, chamber, sleeping room",ekisu N;SG;BANTU10,Substring Overlap
+ekisu,kisu,building (Inferred via BantuBERTa),ekisu N;SG;BANTU10,BantuBERTa Vector Neighborhood
 buyita,yita,"pass, surpass, call",yita V;PRS,PanLex Exact Match
 Entalowooza,lowooza,"imagine, think",Entalowooza N;SG;BANTU10,PanLex Exact Match
 ekitono,ekitono,"few, less, little, small",ekitono N;SG;BANTU10,PanLex Exact Match
-Bwosekerera,kere,frog,BANTU14,Substring Overlap
+Bwosekerera,sekerera,[Translation Missing],BANTU14,No Lexicon Match
 Akwata,kwata,seize,akwata V;PRS;HAB;3;SG,PanLex Exact Match
 obuvunanyizibwa,obuvunanyizibwa,responsibility,ubuvunanyizibwa N;SG;BANTU14,PanLex Exact Match
 muguwa,muguwa,rope,muguwa N;SG;BANTU1,PanLex Exact Match
@@ -260,135 +260,135 @@ yasinga,singa,if,singa V;PST;REC;3;SG,PanLex Exact Match
 kyomuti,omuti,"tree, pole",kyomuti N;SG;BANTU15,PanLex Exact Match
 mbegelaako,mbegelaako,[Translation Missing],mbegelaako N;SG;BANTU1,No Lexicon Match
 Omukwaano,omukwaano,"love, strong affection, romance",umukwaano N;SG;BANTU1,PanLex Exact Match
-wakwaata,kukwaata,"catch, hold",kwaata V;PST;REC;2;SG,Substring Overlap
-awondera,kuwondera,chase,wondera V;PRS,Substring Overlap
+wakwaata,kwaata,[Translation Missing],kwaata V;PST;REC;2;SG,No Lexicon Match
+awondera,wondera,elephant (Inferred via BantuBERTa),wondera V;PRS,BantuBERTa Vector Neighborhood
 nte,nte,"cow, cattle",nte,PanLex Exact Match
 akinyumya,nyumya,[Translation Missing],nyumya V;PRS;PROG;3;SG,No Lexicon Match
 muntu,muntu,"human, person",muntu N;SG;BANTU1,PanLex Exact Match
-olulagala,agala,"love, want, need, wish",lagala V;PRS;2;SG,Substring Overlap
-munno,munno,"few, less, little, small (Inferred via BantuBERTa)",munno N;SG;BANTU1,BantuBERTa Vector Neighborhood
+olulagala,lagala,[Translation Missing],lagala V;PRS;2;SG,No Lexicon Match
+munno,munno,few (Inferred via BantuBERTa),munno N;SG;BANTU1,BantuBERTa Vector Neighborhood
 gandaalo,ganda,"Luganda, brother, fellow-tribesman, relative",gandaalo N;SG;BANTU1,Substring Overlap
 lisesetera,sesetera,[Translation Missing],sesetera V;PRS,No Lexicon Match
 Abuliira,buliira,[Translation Missing],buliira V;PRS,No Lexicon Match
-gonna,gonna,"sun, yolk, the star around which the Earth revolves (Inferred via BantuBERTa)",gonna V;PRS,BantuBERTa Vector Neighborhood
-ekikolimire,lima,cultivate,kolima V;PST;REC;3;SG,Substring Overlap
+gonna,gonna,sun (Inferred via BantuBERTa),gonna V;PRS,BantuBERTa Vector Neighborhood
+ekikolimire,kolima,four (Inferred via BantuBERTa),kolima V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 omulungii,lungi,"good, beautiful, I’m fine, response",umulungii N;SG;BANTU1,Substring Overlap
-wakoma,kukomawo,return,koma V;PST;REC;2;SG,Substring Overlap
+wakoma,koma,[Translation Missing],koma V;PST;REC;2;SG,No Lexicon Match
 Teli,teli,[Translation Missing],uTeli,No Lexicon Match
-Ekiri,ekirime,plant,Ekiri N;SG;BANTU1,Substring Overlap
+Ekiri,ekiri,[Translation Missing],Ekiri N;SG;BANTU1,No Lexicon Match
 na,na,"four, forty, and, used to connect two similar words, phrases, et cetera",na COP;IDENT,PanLex Exact Match
-ya,ya,"yes, ay, aye, yeah, yep (Inferred via BantuBERTa)",ya DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
+ya,ya,yes (Inferred via BantuBERTa),ya DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
 ekibya,bya,[Translation Missing],bya V;PRS;HAB;3;SG,No Lexicon Match
-Kakulu,akaduukulu,jail,Kakulu N;SG;BANTU15,Substring Overlap
-alina,-lina,have,lina V;PRS,Substring Overlap
+Kakulu,kulu,[Translation Missing],Kakulu N;SG;BANTU15,No Lexicon Match
+alina,lina,like (Inferred via BantuBERTa),lina V;PRS,BantuBERTa Vector Neighborhood
 owa,wa,"give, of, where",wa DET;POSS;PSS1P;BANTU1,PanLex Exact Match
 kutunula,tunula,see,tunula V;NFIN,PanLex Exact Match
-tegengedde,enge,beer,tegengera V;PST,Substring Overlap
-abalungi,lungi,"good, beautiful, I’m fine, response",umlungi N;PL;BANTU2,Substring Overlap
+tegengedde,tegengera,that (Inferred via BantuBERTa),tegengera V;PST,BantuBERTa Vector Neighborhood
+abalungi,umlungi,eat (Inferred via BantuBERTa),umlungi N;PL;BANTU2,BantuBERTa Vector Neighborhood
 mwoyo,mwoyo,"soul, spirit",mwoyo N;SG;BANTU1,PanLex Exact Match
 alumidwa,lumidwa,snake (Inferred via BantuBERTa),lumidwa V;PRS,BantuBERTa Vector Neighborhood
 nkunku,nkunku,[Translation Missing],nkunku N;SG;BANTU10,No Lexicon Match
-okunenye,kunenya,blame,nenya V;PRS;HAB;2;SG,Substring Overlap
-ennyo,ekibi ennyo,"awful, direful, fearsome, frightening, horrendous, horrific, scary, terrible",ennyo DET;POSS;PSS1P;BANTU9,Substring Overlap
-kimanywa,eky’okunywa,drink,nywa V;PRS;HAB;3;SG,Substring Overlap
-omunya,munya,lizard,munya V;PRS;HAB;2;SG,PanLex Exact Match
+okunenye,nenya,responsibility (Inferred via BantuBERTa),nenya V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
+ennyo,ennyo,[Translation Missing],ennyo DET;POSS;PSS1P;BANTU9,No Lexicon Match
+kimanywa,nywa,that (Inferred via BantuBERTa),nywa V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
+omunya,omunya,lizard,munya V;PRS;HAB;2;SG,PanLex Exact Match
 wala,wala,"girl, virgin, virgin (bride), away, distant, far",wala DET;POSS;PSS1P;BANTU1,PanLex Exact Match
-oya,oya,"building, swell (Inferred via BantuBERTa)",oya V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
-sagala,agala,"love, want, need, wish",sagala V;PRS,Substring Overlap
+oya,oya,building (Inferred via BantuBERTa),oya V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
+sagala,sagala,[Translation Missing],sagala V;PRS,No Lexicon Match
 okusinga,singa,if,singa V;NFIN,PanLex Exact Match
-omutali,umutali,"cow, cattle (Inferred via BantuBERTa)",umutali N;SG;BANTU1,BantuBERTa Vector Neighborhood
-kisikiriize,kiri,"it, it (be)",sikiriiza V;PST;REC;3;SG,Substring Overlap
+omutali,umutali,cow (Inferred via BantuBERTa),umutali N;SG;BANTU1,BantuBERTa Vector Neighborhood
+kisikiriize,sikiriiza,four (Inferred via BantuBERTa),sikiriiza V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 zirina,zirina,[Translation Missing],zirina V;PRS,No Lexicon Match
 oli,oli,[Translation Missing],oli DET;POSS;PSS1P;BANTU1,No Lexicon Match
-Ekilabo,ulabo,"few, less, little, small (Inferred via BantuBERTa)",Ekilabo N;SG;BANTU10,BantuBERTa Vector Neighborhood
+Ekilabo,ulabo,few (Inferred via BantuBERTa),Ekilabo N;SG;BANTU10,BantuBERTa Vector Neighborhood
 ye,ye,"yes, ay, aye, yeah, yep",ye DET;PROX;BANTU9,PanLex Exact Match
-atuuka,kutuuka ekikeerezi,"late, late (be)",tuuka V;PST;REC;3;SG,Substring Overlap
+atuuka,tuuka,girl (Inferred via BantuBERTa),tuuka V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 bwoseleera,oseleera,rubber (Inferred via BantuBERTa),seleera V;PRS,BantuBERTa Vector Neighborhood
 owegonjebwa,egonjebwa,respect (Inferred via BantuBERTa),gonjebwa V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
 nelwolifa,fa,die,nelwolifa N;SG;BANTU11,PanLex Exact Match
-Okufa,fa,die,fa V;NFIN,PanLex Exact Match
+Okufa,okufa,"death, die",fa V;NFIN,PanLex Exact Match
 mwaana,mwaana,fall (Inferred via BantuBERTa),mwaana N;SG;BANTU1,BantuBERTa Vector Neighborhood
-embi,embira,bead,emba V;PRS,Substring Overlap
-omu,omu,"rain, condensed water from a cloud (Inferred via BantuBERTa)",omu DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
+embi,embi,food (Inferred via BantuBERTa),emba V;PRS,BantuBERTa Vector Neighborhood
+omu,omu,[Translation Missing],omu DET;PROX;BANTU1,No Lexicon Match
 bire,wa,"give, of, where",bire,PanLex Exact Match
 kivunda,vunda,quick (Inferred via BantuBERTa),vunda V;PRS,BantuBERTa Vector Neighborhood
 liiso,liiso,"eye, organ",liiso,PanLex Exact Match
-embii,embia,"and, with, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",embia V;PRS,BantuBERTa Vector Neighborhood
-gwe,gwe,"brother, fellow-tribesman, relative (Inferred via BantuBERTa)",gwe DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
-ria,ria,"four, forty, and, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",ria V;PRS,BantuBERTa Vector Neighborhood
-Wakili,wakili,"and, with, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",wakili DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
+embii,embia,and (Inferred via BantuBERTa),embia V;PRS,BantuBERTa Vector Neighborhood
+gwe,gwe,brother (Inferred via BantuBERTa),gwe DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
+ria,ria,four (Inferred via BantuBERTa),ria V;PRS,BantuBERTa Vector Neighborhood
+Wakili,wakili,[Translation Missing],wakili DET;POSS;PSS1P;BANTU1,No Lexicon Match
 kwotadde,ota,"bask, warm oneself, bask (in the sun)",ota V;PST;REC;3;SG,PanLex Exact Match
 Omutamiivu,omutamiivu,"alcoholic, drunk",umutamiivu N;SG;BANTU1,PanLex Exact Match
-Atalimba,daalimba,lazy,limba V;FUT,Substring Overlap
-yatenda,enda,nine,tenda V;PST;REC;3;SG,Substring Overlap
+Atalimba,limba,[Translation Missing],limba V;FUT,No Lexicon Match
+yatenda,tenda,bake (Inferred via BantuBERTa),tenda V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 njuba,njuba,"sun, yolk, the star around which the Earth revolves",njuba N;SG;BANTU10,PanLex Exact Match
 Ofundako,fundako,[Translation Missing],fundako V;PRS;HAB;2;SG,No Lexicon Match
-gumalwa,gumalwa,"human, person (Inferred via BantuBERTa)",gumalwa V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
+gumalwa,gumalwa,human (Inferred via BantuBERTa),gumalwa V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
 si,si,"country, (our) country, earth, land, (dry) land",si PRO;INT;INT,PanLex Exact Match
 nazo,nazo,[Translation Missing],nazo N;SG;BANTU9,No Lexicon Match
-kazila,zila,"one, in, inside (Inferred via BantuBERTa)",zila V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+kazila,zila,one (Inferred via BantuBERTa),zila V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 Bwosalawo,bantu,people,BANTU14,Substring Overlap
 mukulu,mukulu,"adult, elder",mukulu N;SG;BANTU1,PanLex Exact Match
-kyo,wo,there,kyo DET;PROX;BANTU15,PanLex Exact Match
+kyo,kyo,that,kyo DET;PROX;BANTU15,PanLex Exact Match
 tosobota,sobota,face (Inferred via BantuBERTa),tosobota V;PRS,BantuBERTa Vector Neighborhood
 banange,nanga,[Translation Missing],nanga V;PST;REC;3;PL,No Lexicon Match
 sanga,sanga,meet,sanga,PanLex Exact Match
-Ababi,akuma akapima obunyogovu oba ebugumu mumubiri,thermometer,bi ADJ;BANTU2,Substring Overlap
+Ababi,bi,bad,bi ADJ;BANTU2,PanLex Exact Match
 nyama,nyama,meat,nyama N;SG;BANTU9,PanLex Exact Match
 kakozesa,kozesa,use,kozesa V;PST;REC;3;SG,PanLex Exact Match
-Bassa,ssa,"like, when (Inferred via BantuBERTa)",BANTU2,BantuBERTa Vector Neighborhood
-olibeera,embeera,"mood, state",beera V;FUT,Substring Overlap
+Bassa,ssa,[Translation Missing],BANTU2,No Lexicon Match
+olibeera,beera,face (Inferred via BantuBERTa),beera V;FUT,BantuBERTa Vector Neighborhood
 Tokungula,kungula,reap,uTokungula N;SG;BANTU1,PanLex Exact Match
 wo,wo,there,wo DET;POSS;PSS1P;BANTU1,PanLex Exact Match
 telifuna,funa,"get, obtain, receive",funa V;PRS,PanLex Exact Match
 mayinja,yinja,elephant (Inferred via BantuBERTa),yinja V;PST;REC;2;PL,BantuBERTa Vector Neighborhood
-okugwa,gwa,fall,gwa V;NFIN,PanLex Exact Match
+okugwa,okugwa,"fail, fall",gwa V;NFIN,PanLex Exact Match
 gwa,gwa,fall,gwa DET;POSS;PSS1P;BANTU1,PanLex Exact Match
 Amaka,amaka,"family, immediate family, e.g. parents and their children, home",amaka V;PRS;HAB;3;SG,PanLex Exact Match
 Akaami,ami,"chief, headman",ami N;SG;BANTU1,PanLex Exact Match
-bali,emabbali wolugudo,sidewalk,bali PRO;INT;BANTU2,Substring Overlap
+bali,bali,one (Inferred via BantuBERTa),bali PRO;INT;BANTU2,BantuBERTa Vector Neighborhood
 ta,ta,"milk, calabash",ta V;PRS,PanLex Exact Match
 naye,naye,"but, however, on the contrary, yet",naye DET;POSS;PSS1P;BANTU9,PanLex Exact Match
-tetonyera,tetonyera,"rain, condensed water from a cloud (Inferred via BantuBERTa)",tetonyera V;PRS,BantuBERTa Vector Neighborhood
+tetonyera,tetonyera,[Translation Missing],tetonyera V;PRS,No Lexicon Match
 Omukazi,omukazi,"woman, adult female human being, female",umukazi N;SG;BANTU1,PanLex Exact Match
 bafuula,fuula,"alter, change",fuula V;PRS,PanLex Exact Match
 entaanayo,entaanayo,[Translation Missing],entaanayo N;SG;BANTU10,No Lexicon Match
 gakola,kola,"do, make",gakola N;SG;BANTU1,PanLex Exact Match
-bayombye,kuyomba,quarrel,yomba V;PST;REC;3;PL,Substring Overlap
+bayombye,yomba,like (Inferred via BantuBERTa),yomba V;PST;REC;3;PL,BantuBERTa Vector Neighborhood
 essubi,ssubi,[Translation Missing],essubi N;SG;BANTU10,No Lexicon Match
-yanoonya,gatonya,January,onya V;PRS;HAB;3;SG,Substring Overlap
+yanoonya,onya,[Translation Missing],onya V;PRS;HAB;3;SG,No Lexicon Match
 Ecika,cika,[Translation Missing],Ecika V;PRS,No Lexicon Match
 omugezi,umugezi,[Translation Missing],umugezi N;SG;BANTU1,No Lexicon Match
 yefuula,fuula,"alter, change",fuula V;PST;REC;3;SG,PanLex Exact Match
-entono,tono,small,entono N;SG;BANTU10,Substring Overlap
-ekilo,ekilooto,"dream, imaginary events seen while sleeping",ekilo N;SG;BANTU10,Substring Overlap
-okusazamu,saza,"cut, lop",sazamu V;NFIN,Substring Overlap
+entono,tono,small,entono N;SG;BANTU10,PanLex Exact Match
+ekilo,kilo,[Translation Missing],ekilo N;SG;BANTU10,No Lexicon Match
+okusazamu,sazamu,dawn (Inferred via BantuBERTa),sazamu V;NFIN,BantuBERTa Vector Neighborhood
 Ekyengela,engela,ripen,engela V;PRS;HAB;3;SG,PanLex Exact Match
-ebizibu,ekizibu,"difficult, hard, issue, mystery, problem",bizibu N;PL;BANTU10,Substring Overlap
-kibuga,buga,town,buga V;PRS,PanLex Exact Match
+ebizibu,izibu,like (Inferred via BantuBERTa),bizibu N;PL;BANTU10,BantuBERTa Vector Neighborhood
+kibuga,kibuga,"city, town",buga V;PRS,PanLex Exact Match
 Nonuzinyi,zinyi,[Translation Missing],zinyi V;PRS;HAB;1;SG,No Lexicon Match
-talemwa,lemwa,"eat, ate, feed (Inferred via BantuBERTa)",talemwa V;PST,BantuBERTa Vector Neighborhood
+talemwa,lemwa,eat (Inferred via BantuBERTa),talemwa V;PST,BantuBERTa Vector Neighborhood
 akatono,tono,small,tono V;PST;REC;3;SG,PanLex Exact Match
-tezaaka,tezaaka,"and, with, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",tezaaka,BantuBERTa Vector Neighborhood
+tezaaka,tezaaka,and (Inferred via BantuBERTa),tezaaka,BantuBERTa Vector Neighborhood
 Akozesa,kozesa,use,kozesa V;PRS,PanLex Exact Match
 Omukulu,omukulu,"adult, elder, grown-up",umukulu N;SG;BANTU1,PanLex Exact Match
 Kyenkola,enkola,process,inkola N;SG;BANTU15,PanLex Exact Match
-waabwe,waabwe,"male, man (Inferred via BantuBERTa)",waabwe,BantuBERTa Vector Neighborhood
-Ezenkanankana,inkanankana,"and, with, used to connect two similar words, phrases, et cetera (Inferred via BantuBERTa)",inkanankana N;SG;BANTU10,BantuBERTa Vector Neighborhood
+waabwe,waabwe,male (Inferred via BantuBERTa),waabwe,BantuBERTa Vector Neighborhood
+Ezenkanankana,inkanankana,[Translation Missing],inkanankana N;SG;BANTU10,No Lexicon Match
 Enjovu,enjovu,elephant,injovu N;SG;BANTU10,PanLex Exact Match
-no,no,"dirt, filth (Inferred via BantuBERTa)",no DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
-Aboluganda,ganda,"Luganda, brother, fellow-tribesman, relative",BANTU2,Substring Overlap
+no,no,dirt (Inferred via BantuBERTa),no DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
+Aboluganda,uluganda,[Translation Missing],BANTU2,No Lexicon Match
 Empungu,empungu,eagle,impungu N;SG;BANTU1,PanLex Exact Match
-enjuba,njuba,"sun, yolk, the star around which the Earth revolves",enjuba N;SG;BANTU10,PanLex Exact Match
-Okudizza,diza,"soul, spirit (Inferred via BantuBERTa)",diza V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
-yatuuka,kutuuka ekikeerezi,"late, late (be)",tuuka V;PST;REC;3;SG,Substring Overlap
-Toyonoona,ona,cannon (Inferred via BantuBERTa),uToyonoona,BantuBERTa Vector Neighborhood
+enjuba,enjuba,"sun, Sun, egg yolk, yolk",enjuba N;SG;BANTU10,PanLex Exact Match
+Okudizza,diza,soul (Inferred via BantuBERTa),diza V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
+yatuuka,tuuka,girl (Inferred via BantuBERTa),tuuka V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+Toyonoona,ona,[Translation Missing],uToyonoona,No Lexicon Match
 mangu,mangu,quick,mangu N;PL;BANTU1,PanLex Exact Match
-Ensuwa,suwa,vein,Ensuwa N;SG;BANTU10,Substring Overlap
-bibi,bi,bad,bi COP;LOC,PanLex Exact Match
-kusiba,siba,tie up,siba V;NFIN,PanLex Exact Match
-Omumpi,umumpi,[Translation Missing],umumpi N;SG;BANTU1,No Lexicon Match
-emilimo,umlimo,"eat, feed (Inferred via BantuBERTa)",umlimo N;PL;BANTU1,BantuBERTa Vector Neighborhood
+Ensuwa,suwa,vein,Ensuwa N;SG;BANTU10,PanLex Exact Match
+bibi,bibi,boundary,bi COP;LOC,PanLex Exact Match
+kusiba,kusiba,"tie up, lock, sentence, tie",siba V;NFIN,PanLex Exact Match
+Omumpi,mpi,"short, near",umumpi N;SG;BANTU1,PanLex Exact Match
+emilimo,umlimo,eat (Inferred via BantuBERTa),umlimo N;PL;BANTU1,BantuBERTa Vector Neighborhood
 agudduka,gudduka,snake (Inferred via BantuBERTa),gudduka V;PRS,BantuBERTa Vector Neighborhood
 wamu,wamu,together,wamu DET;POSS;PSS1P;BANTU1,PanLex Exact Match
 bumanyirivu,bumanyirivu,experience,manyirivu V;PRS,PanLex Exact Match
@@ -397,32 +397,32 @@ olumu,olumu,meat (Inferred via BantuBERTa),olumu N;SG;BANTU11,BantuBERTa Vector 
 mubiri,mubiri,body,biri ADJ;BANTU1,PanLex Exact Match
 mabega,mabega,"back, behind, rear",bega V;PST;REC;2;PL,PanLex Exact Match
 ekilungi,kilungi,nice,kilungi N;SG;BANTU10,PanLex Exact Match
-Olinye,-lina,have,linya V;PST;REC;2;SG,Substring Overlap
-elyenvu,envumuulo,fast,envu ADJ;BANTU5,Substring Overlap
-elyagalwa,mwagalwa,"beloved, dear",agalwa V;FUT,Substring Overlap
-amatu,buzindaalo bwokumatu,headphones,amatu N;PL;BANTU6,Substring Overlap
+Olinye,lina,[Translation Missing],linya V;PST;REC;2;SG,No Lexicon Match
+elyenvu,envu,that (Inferred via BantuBERTa),envu ADJ;BANTU5,BantuBERTa Vector Neighborhood
+elyagalwa,agalwa,[Translation Missing],agalwa V;FUT,No Lexicon Match
+amatu,matu,together (Inferred via BantuBERTa),amatu N;PL;BANTU6,BantuBERTa Vector Neighborhood
 gulinga,linga,goat (Inferred via BantuBERTa),gulinga V;PRS,BantuBERTa Vector Neighborhood
 zo,wo,there,zo DET;POSS;PSS1P;BANTU8,PanLex Exact Match
 Akwaagala,agala,"love, want, need, wish",agala V;PRS;HAB;3;SG,PanLex Exact Match
-emikono,kono,"arm, hand",umkono N;PL;BANTU1,Substring Overlap
+emikono,umkono,eat (Inferred via BantuBERTa),umkono N;PL;BANTU1,BantuBERTa Vector Neighborhood
 ensanafu,nsanafu,"ant, (reddish-brown biting) ant",insanafu N;SG;BANTU10,PanLex Exact Match
-okuzimba,zimba,"swell, build",zimba V;NFIN,PanLex Exact Match
+okuzimba,okuzimba,"building, swell",zimba V;NFIN,PanLex Exact Match
 amasabe,saba,ask for,isabe N;PL;BANTU6,PanLex Exact Match
-ssimuliro,muli,"reed, flower",ssimuliro V;PRS,Substring Overlap
+ssimuliro,ssimu,"call, phone, telephone",ssimuliro V;PRS,Substring Overlap
 nkovu,nkovu,scar,nkovu N;SG;BANTU10,PanLex Exact Match
-Nnene,musenennene,November,uNnene,Substring Overlap
+Nnene,nnene,[Translation Missing],uNnene,No Lexicon Match
 nga,nga,"like, when",nga PRO;INT;INTENS,PanLex Exact Match
 ekidaala,daala,step,daala V;PRS;HAB;3;SG,PanLex Exact Match
 Bazaala,zaala,"give birth, give birth (to a child)",BANTU2,PanLex Exact Match
 etalisimuuka,simuuka,scar (Inferred via BantuBERTa),etalisimuuka V;FUT,BantuBERTa Vector Neighborhood
-kulya,lya,eat,lya V;NFIN,PanLex Exact Match
+kulya,kulya,"eat, ate, feed",lya V;NFIN,PanLex Exact Match
 nyonta,nyonta,thirst,nyonta N;SG;BANTU9,PanLex Exact Match
-enju,amanyi genjuba,solar,enju PRO;INT;INTENS,Substring Overlap
-Bigenge,genga,eat (Inferred via BantuBERTa),BANTU10,BantuBERTa Vector Neighborhood
+enju,ju,house,enju PRO;INT;INTENS,PanLex Exact Match
+Bigenge,genga,[Translation Missing],BANTU10,No Lexicon Match
 Atanatambula,tambula,"walk, take a walk",tambula V;FUT,PanLex Exact Match
-kimu,ekifo ekimu,somewhere,kimu N;SG;BANTU15,Substring Overlap
+kimu,kimu,like (Inferred via BantuBERTa),kimu N;SG;BANTU15,BantuBERTa Vector Neighborhood
 Akussuka,ssuka,[Translation Missing],ssuka V;NFIN,No Lexicon Match
-musajja,jja,come,musajja N;SG;BANTU1,PanLex Exact Match
+musajja,musajja,"male, man",musajja N;SG;BANTU1,PanLex Exact Match
 gwetaaga,etaaga,goat (Inferred via BantuBERTa),gwetaaga V;PRS,BantuBERTa Vector Neighborhood
 Taata,taata,"dad, daddy, father",Taata V;PRS,PanLex Exact Match
 lyali,lyali,[Translation Missing],lyali N;SG;BANTU11,No Lexicon Match

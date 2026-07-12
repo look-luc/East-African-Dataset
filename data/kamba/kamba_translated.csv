@@ -1,8 +1,8 @@
 Surface Word,Kamba Lemma,English translation,Glossing,Match Type
 yaĩte,ĩta,"call, pour away, leak, ooze out, pour, call, abundant",ĩta V;PST;REC;3;SG,PanLex Exact Match
-Kĩla,kilalinda,"blind person, blind, spoil",kĩla V;PRS,Substring Overlap
-mbaa,kitambaa,cloth,mbaa V;PRS,Substring Overlap
-ndi,ndi,"above, up (Inferred via BantuBERTa)",ndi PRO;INT;INTENS,BantuBERTa Vector Neighborhood
+Kĩla,kĩla,tomorrow (Inferred via BantuBERTa),kĩla V;PRS,BantuBERTa Vector Neighborhood
+mbaa,mbaa,[Translation Missing],mbaa V;PRS,No Lexicon Match
+ndi,ndi,above (Inferred via BantuBERTa),ndi PRO;INT;INTENS,BantuBERTa Vector Neighborhood
 ũtakesaa,kesaa,night (Inferred via BantuBERTa),ũtakesaa V;FUT,BantuBERTa Vector Neighborhood
 I,i,"spoon, dung, excrement, O, Oct., N, Nov., D, Dec.",i PRO;INT;INT,PanLex Exact Match
 kũkya,kya,tomorrow (Inferred via BantuBERTa),kya V;NFIN,BantuBERTa Vector Neighborhood
@@ -10,363 +10,363 @@ Mũeni,mũeni,"guest, stranger",uMũeni N;SG;BANTU1,PanLex Exact Match
 mwonza,onza,seven,onza V;PRS,PanLex Exact Match
 kĩsemei,sema,tomorrow (Inferred via BantuBERTa),kĩsemei N;SG;BANTU15,BantuBERTa Vector Neighborhood
 nyeki,nyeki,sugar cane (Inferred via BantuBERTa),nyeki N;SG;BANTU9,BantuBERTa Vector Neighborhood
-yesĩla,esĩla,"fireplace, hearth, kitchen, paddle, oar, filth, hearthstone, hearthstone (for putting pots on) (Inferred via BantuBERTa)",esĩla V;PRS,BantuBERTa Vector Neighborhood
+yesĩla,esĩla,[Translation Missing],esĩla V;PRS,No Lexicon Match
 Ĩlaa,ĩlaa,flower,ĩlaa V;PST;REC;3;SG,PanLex Exact Match
 ndĩtũaa,tũaa,[Translation Missing],tũaa V;PRS;PROG;1;SG,No Lexicon Match
-syaisye,isa,"become full, abound, grandmother (Inferred via BantuBERTa)",syaisa V;PST;REC;1;PL,BantuBERTa Vector Neighborhood
+syaisye,isa,become full (Inferred via BantuBERTa),syaisa V;PST;REC;1;PL,BantuBERTa Vector Neighborhood
 kĩtonyinĩ,tonya,"thrust into, bore a hole",tonya V;PRS;NEG;1;SG,PanLex Exact Match
 ngũka,ngũka,rhinoceros (Inferred via BantuBERTa),ngũka N;SG;BANTU9,BantuBERTa Vector Neighborhood
 makaanaa,kaana,child,makaanaa N;PL;BANTU6,Substring Overlap
 mayusasya,yusasya,womb (Inferred via BantuBERTa),yusasya V;PST;REC;2;PL,BantuBERTa Vector Neighborhood
-syamata,mata,spittle,syamata V;PST;REC;1;PL,Substring Overlap
+syamata,syamata,sugar cane (Inferred via BantuBERTa),syamata V;PST;REC;1;PL,BantuBERTa Vector Neighborhood
 ũkaaya,ya,eat,ũkaaya N;SG;BANTU14,PanLex Exact Match
-ĩei,ĩei,tomorrow (Inferred via BantuBERTa),ĩei DET;PROX;BANTU6,BantuBERTa Vector Neighborhood
-ũtũinĩ,utui,village,ũtũinĩ N;SG;BANTU14,Substring Overlap
+ĩei,ĩei,[Translation Missing],ĩei DET;PROX;BANTU6,No Lexicon Match
+ũtũinĩ,ũtũinĩ,[Translation Missing],ũtũinĩ N;SG;BANTU14,No Lexicon Match
 Mwovela,ovela,[Translation Missing],uMwovela N;SG;BANTU1,No Lexicon Match
-twĩ,twĩ,"foot, leg, calabash (Inferred via BantuBERTa)",twĩ DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
+twĩ,twĩ,foot (Inferred via BantuBERTa),twĩ DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
 Ndwĩa,ndwĩa,giraffe,Ndwĩa N;SG;BANTU10,PanLex Exact Match
 Kwaa,kwaa,"get lost, disappear, fade",kwaa V;PRS,PanLex Exact Match
-myũngũ,ungu,"below, under, underneath",myũngũ N;SG;BANTU1,Substring Overlap
-kũlĩka,lĩka,"come in, go in",lĩka V;NFIN,PanLex Exact Match
-ũkũ,ũkũ,"day, day, day-time (Inferred via BantuBERTa)",ũkũ DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
+myũngũ,myũngũ,porcupine (Inferred via BantuBERTa),myũngũ N;SG;BANTU1,BantuBERTa Vector Neighborhood
+kũlĩka,kũlĩka,"come in, go in",lĩka V;NFIN,PanLex Exact Match
+ũkũ,ũkũ,[Translation Missing],ũkũ DET;PROX;BANTU1,No Lexicon Match
 mboo,mboo,buffalo,uMboo,PanLex Exact Match
 Kũndũ,kũndũ,"abscess, boil",Kũndũ N;SG;BANTU15,PanLex Exact Match
-nĩsyo,isyo,"decisive, final",nĩsyo N;SG;BANTU9,Substring Overlap
+nĩsyo,nĩsyo,[Translation Missing],nĩsyo N;SG;BANTU9,No Lexicon Match
 mwithe,mwithe,tail,mwithe N;SG;BANTU1,PanLex Exact Match
 nĩkyavika,vika,"arrive, go back, return",vika V;PRS;PROG;1;SG,PanLex Exact Match
 yũlũ,ũlũ,"above, up",yũlũ DET;POSS;PSS1P;BANTU9,PanLex Exact Match
 tikoneki,kona,[Translation Missing],tikoneki V;PRS,No Lexicon Match
-ndyaũmbwa,ũmbwa,"body, root, root (Inferred via BantuBERTa)",ũmbwa V;PRS;HAB;1;SG,BantuBERTa Vector Neighborhood
-naĩthasya,ĩthasya,"youth, youth, young man (Inferred via BantuBERTa)",ĩthasya V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
-ũtuma,kutuma,"send, sew, knit, weave",ũtuma N;SG;BANTU14,Substring Overlap
+ndyaũmbwa,ũmbwa,body (Inferred via BantuBERTa),ũmbwa V;PRS;HAB;1;SG,BantuBERTa Vector Neighborhood
+naĩthasya,ĩthasya,youth (Inferred via BantuBERTa),ĩthasya V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
+ũtuma,ũtuma,squirrel (Inferred via BantuBERTa),ũtuma N;SG;BANTU14,BantuBERTa Vector Neighborhood
 kĩnaema,ema,mountain,ema V;PST;REC;1;PL,PanLex Exact Match
-ke,ke,"hunter, (professional) hunter (Inferred via BantuBERTa)",ke DET;POSS;PSS1S;BANTU15,BantuBERTa Vector Neighborhood
-iingĩ,nyingi,many,ingĩ DET;POSS;PSS2P;BANTU9,Substring Overlap
+ke,ke,hunter (Inferred via BantuBERTa),ke DET;POSS;PSS1S;BANTU15,BantuBERTa Vector Neighborhood
+iingĩ,ingĩ,sing (Inferred via BantuBERTa),ingĩ DET;POSS;PSS2P;BANTU9,BantuBERTa Vector Neighborhood
 mbĩtũke,mbĩtũke,[Translation Missing],mbĩtũke N;SG;BANTU1,No Lexicon Match
-enũkĩte,kita,fight,nũkĩte ADJ;BANTU1;BANTU1,Substring Overlap
-yĩkangaa,kangaa,"sing, child (Inferred via BantuBERTa)",yĩkangaa N;SG;BANTU9,BantuBERTa Vector Neighborhood
+enũkĩte,nũkĩta,sugar cane (Inferred via BantuBERTa),nũkĩte ADJ;BANTU1;BANTU1,BantuBERTa Vector Neighborhood
+yĩkangaa,kangaa,sing (Inferred via BantuBERTa),yĩkangaa N;SG;BANTU9,BantuBERTa Vector Neighborhood
 ndĩtiawaa,waa,"kill, put to death, be ill, groan",waa V;FUT,PanLex Exact Match
 Mũthaimi,thaimi,tomorrow (Inferred via BantuBERTa),thaimi V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
 kwokonĩ,konĩ,[Translation Missing],kwokonĩ V;PRS;HAB;3;SG,No Lexicon Match
-sya,sya,"forest, thicket, bush (Inferred via BantuBERTa)",sya V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-Katu,katu,tomorrow (Inferred via BantuBERTa),katu PRO;INT;BANTU15,BantuBERTa Vector Neighborhood
-Ũkonzawa,onza,seven,ũkonzawa N;SG;BANTU14,Substring Overlap
-ĩnyungaa,nyunga,"smell, smell (bad), smell (sweet)",ĩnyungaa N;SG;BANTU9,Substring Overlap
-mbĩkya,ikya,thrust into,mbĩkya N;SG;BANTU1,Substring Overlap
+sya,sya,forest (Inferred via BantuBERTa),sya V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+Katu,katu,[Translation Missing],katu PRO;INT;BANTU15,No Lexicon Match
+Ũkonzawa,ũkonzawa,[Translation Missing],ũkonzawa N;SG;BANTU14,No Lexicon Match
+ĩnyungaa,ĩnyungaa,[Translation Missing],ĩnyungaa N;SG;BANTU9,No Lexicon Match
+mbĩkya,mbĩkya,urinate (Inferred via BantuBERTa),mbĩkya N;SG;BANTU1,BantuBERTa Vector Neighborhood
 itakũũlũka,kũũlũka,fly,itakũũlũka N;SG;BANTU9,PanLex Exact Match
-mĩtĩ,mĩtĩ,"hem, make a border, break, snap (Inferred via BantuBERTa)",mĩtĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mĩtĩ,mĩtĩ,hem (Inferred via BantuBERTa),mĩtĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Wĩĩthya,thya,"point, tip, peak, top, highest point, utmost",thya V;PRS;PROG;3;SG,PanLex Exact Match
 Ndunia,ndunia,[Translation Missing],Ndunia N;SG;BANTU10,No Lexicon Match
 ũkuĩla,ĩla,[Translation Missing],ĩla V;PRS;PROG;2;SG,No Lexicon Match
 Aumie,uma,"bite, iron, steel, be fully grown, iron ore, dry up, ebb, abuse",umia V;PST;REC;3;SG,PanLex Exact Match
-yumaa,umaa,"grandfather, urinate",yumaa V;PRS,Substring Overlap
+yumaa,yumaa,[Translation Missing],yumaa V;PRS,No Lexicon Match
 kyumaa,kyuma,"iron, element, steel, iron ore, iron",kyumaa V;PRS,Substring Overlap
 thome,thoma,bread (Inferred via BantuBERTa),thoma V;PST;REC;1;PL,BantuBERTa Vector Neighborhood
 mbua,mbua,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles",uMbua N;SG;BANTU1,PanLex Exact Match
-kĩte,kĩta,fight,kĩte N;SG;BANTU15,PanLex Exact Match
+kĩte,kĩte,dog,kĩte N;SG;BANTU15,PanLex Exact Match
 aiti,iti,[Translation Missing],iti N;SG;BANTU6,No Lexicon Match
-Mũingi,nyingi,many,ingi N;SG;BANTU1,Substring Overlap
-ĩtulasya,tula,"hem, make a border, break, snap",ĩtulasya N;SG;BANTU11,Substring Overlap
-ũtiaa,ũtiaa,fig tree (Inferred via BantuBERTa),ũtiaa V;PRS,BantuBERTa Vector Neighborhood
-kakuthu,kuthu,"bush, thicket",thu ADJ;BANTU15,Substring Overlap
+Mũingi,ingi,sugar cane (Inferred via BantuBERTa),ingi N;SG;BANTU1,BantuBERTa Vector Neighborhood
+ĩtulasya,ĩtulasya,[Translation Missing],ĩtulasya N;SG;BANTU11,No Lexicon Match
+ũtiaa,ũtiaa,[Translation Missing],ũtiaa V;PRS,No Lexicon Match
+kakuthu,kakuthu,[Translation Missing],thu ADJ;BANTU15,No Lexicon Match
 wayo,wayo,child (Inferred via BantuBERTa),wayo DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
 nthũku,nthũku,"bad, wicked",nthũku N;SG;BANTU9,PanLex Exact Match
-matu,ikwata matu,"brood, brood (rest the cheek on the hand in brooding mood)",matu N;PL;BANTU6,Substring Overlap
-suanĩ,suanĩ,"lake, milk, lake (Inferred via BantuBERTa)",suanĩ V;PRS,BantuBERTa Vector Neighborhood
+matu,matu,rain (Inferred via BantuBERTa),matu N;PL;BANTU6,BantuBERTa Vector Neighborhood
+suanĩ,suanĩ,lake (Inferred via BantuBERTa),suanĩ V;PRS,BantuBERTa Vector Neighborhood
 oonthe,oonthe,all,ontha V;PST;REC;2;SG,PanLex Exact Match
-Kĩrũngũ,ungu,"below, under, underneath",Kĩrũngũ N;SG;BANTU10,Substring Overlap
-yĩĩsaa,kisio kya isaa,time zone,yĩĩsaa N;SG;BANTU9,Substring Overlap
+Kĩrũngũ,kĩrũngũ,[Translation Missing],Kĩrũngũ N;SG;BANTU10,No Lexicon Match
+yĩĩsaa,ĩsaa,[Translation Missing],yĩĩsaa N;SG;BANTU9,No Lexicon Match
 mboveli,mboveli,urinate (Inferred via BantuBERTa),mboveli N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Walea,lea,"refuse, say no, reject, deny",lea V;PST;REC;3;SG,PanLex Exact Match
 ĩmwe,ĩmwe,"dew, one, one",ĩmwe DET;PROX;BANTU6,PanLex Exact Match
 nzou,nzou,elephant,Nzou N;SG;BANTU10,PanLex Exact Match
-Ũla,ũla,"sing, child (Inferred via BantuBERTa)",ũla DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
+Ũla,ũla,[Translation Missing],ũla DET;PROX;BANTU1,No Lexicon Match
 nduu,nduu,squirrel,nduu N;SG;BANTU9,PanLex Exact Match
 akesĩla,kesĩla,sugar cane (Inferred via BantuBERTa),kesĩla V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
 kĩvĩs,kĩvĩs,tomorrow (Inferred via BantuBERTa),kĩvĩs N;SG;BANTU15,BantuBERTa Vector Neighborhood
-ngamba,amba,baobab,ngamba N;SG;BANTU9,Substring Overlap
-kĩvĩsĩ,kĩvĩsĩ,"sing, child (Inferred via BantuBERTa)",kĩvĩsĩ N;SG;BANTU15,BantuBERTa Vector Neighborhood
+ngamba,ngamba,[Translation Missing],ngamba N;SG;BANTU9,No Lexicon Match
+kĩvĩsĩ,kĩvĩsĩ,sing (Inferred via BantuBERTa),kĩvĩsĩ N;SG;BANTU15,BantuBERTa Vector Neighborhood
 ndyonawa,wa,sugar cane,ndyonawa N;SG;BANTU9,PanLex Exact Match
-mwiyũ,mwiyũ,"forest, thicket, bush (Inferred via BantuBERTa)",mwiyũ N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mwiyũ,mwiyũ,forest (Inferred via BantuBERTa),mwiyũ N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Anakavĩte,vĩta,"pass, surpass",vĩta V;PST;REC;3;SG,PanLex Exact Match
-Kavũkũ,kuvukua,"dig up, dig out",vũkũ V;PST;REC;3;SG,Substring Overlap
+Kavũkũ,vũkũ,[Translation Missing],vũkũ V;PST;REC;3;SG,No Lexicon Match
 kĩtũaa,tũaa,[Translation Missing],kĩtũaa N;SG;BANTU15,No Lexicon Match
-weũnĩ,eũnĩ,"foot, leg, calabash (Inferred via BantuBERTa)",weũnĩ DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
-onethĩwa,ithiwa,"be, become",thĩwa V;PRS;HAB;2;SG,Substring Overlap
+weũnĩ,eũnĩ,foot (Inferred via BantuBERTa),weũnĩ DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
+onethĩwa,thĩwa,tomorrow (Inferred via BantuBERTa),thĩwa V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
 mwoo,mwoo,sugar cane (Inferred via BantuBERTa),mwoo DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
-yĩmwe,imwe,"dew, one, one",yĩmwe DET;POSS;PSS1P;BANTU9,Substring Overlap
+yĩmwe,yĩmwe,tomorrow (Inferred via BantuBERTa),yĩmwe DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
 ana,ana,"how many, how many?, child, hundred",ana V;PRS,PanLex Exact Match
 twesĩle7,esĩla,[Translation Missing],esĩle V;PST;REC;1;PL,No Lexicon Match
-ĩvũthasya,thasya,"sing, child (Inferred via BantuBERTa)",ĩvũthasya N;SG;BANTU10,BantuBERTa Vector Neighborhood
+ĩvũthasya,thasya,sing (Inferred via BantuBERTa),ĩvũthasya N;SG;BANTU10,BantuBERTa Vector Neighborhood
 nokwo,nokwo,[Translation Missing],nokwo DET;POSS;PSS1P;BANTU9,No Lexicon Match
 Mbovi,umbovi,[Translation Missing],uMbovi N;SG;BANTU1,No Lexicon Match
-Sya,sya,"forest, thicket, bush (Inferred via BantuBERTa)",sya V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-ngunĩ,nguniko,"cork, stopper",ngunĩ N;SG;BANTU9,Substring Overlap
-ngongo,ngongoo,millipede,ngongo,Substring Overlap
+Sya,sya,forest (Inferred via BantuBERTa),sya V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+ngunĩ,ngunĩ,chief (Inferred via BantuBERTa),ngunĩ N;SG;BANTU9,BantuBERTa Vector Neighborhood
+ngongo,ngongo,[Translation Missing],ngongo,No Lexicon Match
 nĩvenawa,wa,sugar cane,wa V;PRS;PROG;1;SG,PanLex Exact Match
-Ũtee,kutea,set a trap,ũtee DET;PROX;BANTU1,Substring Overlap
+Ũtee,ũtea,sugar cane (Inferred via BantuBERTa),ũtee DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
 ky,ky,sperm (Inferred via BantuBERTa),ky DET;POSS;PSS1P;BANTU15,BantuBERTa Vector Neighborhood
 syĩnzanĩaa,nĩaa,[Translation Missing],syĩnzanĩaa V;PRS;NEG;1;PL,No Lexicon Match
 Mũkwa,mũkwa,firewood (Inferred via BantuBERTa),mũkwa N;SG;BANTU1,BantuBERTa Vector Neighborhood
-ila,ila,"town, arrowhead, head, spear head, head (of arrow), home (Inferred via BantuBERTa)",ila V;PRS,BantuBERTa Vector Neighborhood
+ila,ila,town (Inferred via BantuBERTa),ila V;PRS,BantuBERTa Vector Neighborhood
 Ndala,ndala,"hole, nest",uNdala,PanLex Exact Match
-kangĩ,angi,arrow,kangĩ PRO;INT;NEG,Substring Overlap
+kangĩ,kangĩ,[Translation Missing],kangĩ PRO;INT;NEG,No Lexicon Match
 kĩthekanĩ,theka,"forest, thicket, laugh, bush",theka V;PRS;NEG;1;SG,PanLex Exact Match
 ĩtina,ĩtina,"tree-trunk, (base of) tree-trunk, at the back of, behind",ĩtina N;SG;BANTU9,PanLex Exact Match
 naĩ,naĩ,tomorrow (Inferred via BantuBERTa),naĩ DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
-Nditũaa,tũaa,"speckle, spot (Inferred via BantuBERTa)",tũaa V;PRS;HAB;1;SG,BantuBERTa Vector Neighborhood
+Nditũaa,tũaa,speckle (Inferred via BantuBERTa),tũaa V;PRS;HAB;1;SG,BantuBERTa Vector Neighborhood
 yĩyonawa,wa,sugar cane,yonawa V;PRS;HAB;3;SG,PanLex Exact Match
-ndũkaainge,ginga,"long straight hair, long straight hair (of animals and Europeans)",ndũkaainge N;SG;BANTU10,Substring Overlap
+ndũkaainge,inga,tomorrow (Inferred via BantuBERTa),ndũkaainge N;SG;BANTU10,BantuBERTa Vector Neighborhood
 nzei,nzei,[Translation Missing],nzei N;SG;BANTU10,No Lexicon Match
 Syathama,thama,"island, migrate, move away",thama V;PST;REC;3;SG,PanLex Exact Match
 eetĩwe,etĩwe,tomorrow (Inferred via BantuBERTa),etĩwe PRO;INT;INTENS,BantuBERTa Vector Neighborhood
 tũla,tũla,"hem, make a border, break, snap",tũla V;PST;REC;3;SG,PanLex Exact Match
 kĩsĩĩlĩlonĩ,kĩsĩĩlĩlonĩ,tomorrow (Inferred via BantuBERTa),kĩsĩĩlĩlonĩ V;NFIN,BantuBERTa Vector Neighborhood
-kumaa,maa,"grandfather, intestines, urinate",maa V;PRS,PanLex Exact Match
+kumaa,kumaa,urinate,maa V;PRS,PanLex Exact Match
 kyathĩ,thĩ,"pestle, country, district, province, earth, land, go away, leave, go",thĩ V;PRS;NEG;3;SG,PanLex Exact Match
-mũthonoku,mũthonoku,"pleasant, sweet (Inferred via BantuBERTa)",mũthonoku N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mũthonoku,mũthonoku,pleasant (Inferred via BantuBERTa),mũthonoku N;SG;BANTU1,BantuBERTa Vector Neighborhood
 mee,mee,elephant (Inferred via BantuBERTa),mee DET;POSS;PSS1S;BANTU4,BantuBERTa Vector Neighborhood
 ngwae,ngwaa,sugar cane (Inferred via BantuBERTa),ngwaa V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
 mũthwa,mũthwa,"termite, ant, (small) ant",mũthwa N;SG;BANTU1,PanLex Exact Match
 Kyũmati,kyuma,"iron, element, steel, iron ore, iron",Kyũmati N;SG;BANTU15,Substring Overlap
-wĩania,ania,"cry, sound",wĩania DET;POSS;PSS1P;BANTU1,Substring Overlap
-ndũkalaatawa,aata,"ferment, turn sour",laatawa V;PRS;PROG;1;SG,Substring Overlap
+wĩania,wĩania,person (Inferred via BantuBERTa),wĩania DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
+ndũkalaatawa,laatawa,tomorrow (Inferred via BantuBERTa),laatawa V;PRS;PROG;1;SG,BantuBERTa Vector Neighborhood
 syeewa,ewa,[Translation Missing],syeewa V;PRS,No Lexicon Match
 kĩvoo,kĩvoo,[Translation Missing],kĩvoo N;SG;BANTU15,No Lexicon Match
-Ũsĩnĩ,afrika kusini,"South Africa, 𐐝𐐵𐑃 𐐈𐑁𐑉𐐲𐐿𐐲",ũsĩnĩ N;SG;BANTU14,Substring Overlap
+Ũsĩnĩ,ũsĩnĩ,chief (Inferred via BantuBERTa),ũsĩnĩ N;SG;BANTU14,BantuBERTa Vector Neighborhood
 ũmwalyo,ũmwalyo,[Translation Missing],ũmwalyo N;SG;BANTU1,No Lexicon Match
-Kasĩla,sĩla,"day, day, day-time (Inferred via BantuBERTa)",sĩla V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-yakyamana,komana,meet,mana V;PRS;PROG;3;SG,Substring Overlap
+Kasĩla,sĩla,day (Inferred via BantuBERTa),sĩla V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+yakyamana,mana,[Translation Missing],mana V;PRS;PROG;3;SG,No Lexicon Match
 Ndũkasuke,suka,"plait, slander",suka V;PST;REC;1;PL,PanLex Exact Match
 yosanasya,sya,[Translation Missing],yosanasya N;SG;BANTU1,No Lexicon Match
 isyaa,syaa,"bear child, give birth, give birth (to a child)",isyaa N;SG;BANTU9,PanLex Exact Match
-ndandaalika,lika,"come in, go in",ndandaalika V;PST,Substring Overlap
-kĩthangaitĩ,ngai,"God, single deity of monotheism, Almighty, Creator, Jah, Life, Man Upstairs, Omnipotent, Omniscient, Our Father, Providence, Supreme, godhead, supreme being, theopanism, god",thangaitĩ V;NFIN,Substring Overlap
+ndandaalika,alika,sing (Inferred via BantuBERTa),ndandaalika V;PST,BantuBERTa Vector Neighborhood
+kĩthangaitĩ,thanga,"soil, sand",thangaitĩ V;NFIN,Substring Overlap
 ĩĩ,ĩĩ,"body, root, root",ĩĩ DET;PROX;BANTU6,PanLex Exact Match
-alĩkaa,ikaa,"charcoal, embers",lĩkaa V;PRS,Substring Overlap
-kĩthungu,ungu,"below, under, underneath",kĩthungu N;SG;BANTU15,Substring Overlap
-Mũuumo,muumo,"fig mulberry tree, borassus palm",umo N;SG;BANTU1,Substring Overlap
+alĩkaa,lĩkaa,sugar cane (Inferred via BantuBERTa),lĩkaa V;PRS,BantuBERTa Vector Neighborhood
+kĩthungu,kĩthungu,tomorrow (Inferred via BantuBERTa),kĩthungu N;SG;BANTU15,BantuBERTa Vector Neighborhood
+Mũuumo,uumo,fig tree (Inferred via BantuBERTa),umo N;SG;BANTU1,BantuBERTa Vector Neighborhood
 mũliku,mũliku,tomorrow (Inferred via BantuBERTa),mũliku N;SG;BANTU1,BantuBERTa Vector Neighborhood
 akĩlasya,lasya,see (Inferred via BantuBERTa),lasya V;PRS;PROG;3;SG,BantuBERTa Vector Neighborhood
 Wĩa,wĩa,"work, labour, employment, occupation, job, business, employment, job, occupation, tool bit",wĩa DET;POSS;PSS1P;BANTU1,PanLex Exact Match
-kiĩ,kiĩ,"earth, land, country, district, province (Inferred via BantuBERTa)",kiĩ DET;PROX;BANTU15,BantuBERTa Vector Neighborhood
+kiĩ,kiĩ,earth (Inferred via BantuBERTa),kiĩ DET;PROX;BANTU15,BantuBERTa Vector Neighborhood
 Weũ,weũ,[Translation Missing],weũ DET;POSS;PSS1P;BANTU1,No Lexicon Match
 Kathila,thila,[Translation Missing],thila V;PRS;HAB;3;SG,No Lexicon Match
 ĩtunĩ,ĩtunĩ,[Translation Missing],ĩtunĩ N;SG;BANTU9,No Lexicon Match
 Ngũũe,ũa,"cook, fry, cook (in water or fat), rain",ngũũe N;SG;BANTU9,PanLex Exact Match
 ndathelaa,thela,"cease, finish",thelaa V;PST;REC;1;SG,Substring Overlap
-nzeve,nzeve,"hill, mountain (Inferred via BantuBERTa)",nzeve N;SG;BANTU10,BantuBERTa Vector Neighborhood
+nzeve,nzeve,hill (Inferred via BantuBERTa),nzeve N;SG;BANTU10,BantuBERTa Vector Neighborhood
 Nye,nye,[Translation Missing],nye DET;POSS;PSS1P;BANTU9,No Lexicon Match
-Myũnthĩ,nthi,"earth, land, country, district, province",uMyũnthĩ N;SG;BANTU1,Substring Overlap
+Myũnthĩ,myũnthĩ,tomorrow (Inferred via BantuBERTa),uMyũnthĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
 ĩtanathũa,thũa,"grate, scratch, set, set (of the sun), be lame",thũa V;FUT,PanLex Exact Match
-kĩyĩsaa,yĩsaa,"garden, cultivated ground (Inferred via BantuBERTa)",kĩyĩsaa N;SG;BANTU15,BantuBERTa Vector Neighborhood
+kĩyĩsaa,yĩsaa,garden (Inferred via BantuBERTa),kĩyĩsaa N;SG;BANTU15,BantuBERTa Vector Neighborhood
 ĩlata,ĩlata,eat (Inferred via BantuBERTa),ĩlata N;SG;BANTU6,BantuBERTa Vector Neighborhood
-Ũkambonia,mbonia,"foot, leg, calabash (Inferred via BantuBERTa)",ũkambonia N;SG;BANTU1,BantuBERTa Vector Neighborhood
+Ũkambonia,mbonia,foot (Inferred via BantuBERTa),ũkambonia N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Mbũkũ,mbũkũ,eat (Inferred via BantuBERTa),uMbũkũ N;SG;BANTU1,BantuBERTa Vector Neighborhood
-ĩyĩĩsawa,ĩsawa,firewood (Inferred via BantuBERTa),ĩsawa V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
+ĩyĩĩsawa,ĩsawa,[Translation Missing],ĩsawa V;PRS;HAB;3;SG,No Lexicon Match
 Ĩlata,ĩlata,eat (Inferred via BantuBERTa),ĩlata N;SG;BANTU6,BantuBERTa Vector Neighborhood
-yũate,gwatemala,"Guatemala, country in Central America, Guatemala City, 𐐘𐐶𐐪𐐼𐐲𐑋𐐪𐑊𐐲",yũate DET;POSS;PSS1P;BANTU9,Substring Overlap
-Ve,ve,"town, arrowhead, head, spear head, head (of arrow), home (Inferred via BantuBERTa)",ve PRO;INT;PROX;BANTU1,BantuBERTa Vector Neighborhood
+yũate,wate,rat (Inferred via BantuBERTa),yũate DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
+Ve,ve,[Translation Missing],ve PRO;INT;PROX;BANTU1,No Lexicon Match
 Mbiti,mbiti,hyena,mbiti N;SG;BANTU1,PanLex Exact Match
 Mwaathi,thi,"pestle, country, district, province, earth, land, go away, leave, go",uMwaathi N;PL;BANTU1,PanLex Exact Match
-mũsũkũi,suku,parrot,mũsũkũi N;SG;BANTU1,Substring Overlap
+mũsũkũi,mũsũkũi,womb (Inferred via BantuBERTa),mũsũkũi N;SG;BANTU1,BantuBERTa Vector Neighborhood
 syĩ,syĩ,"town, arrowhead, head, spear head, head (of arrow), home",syĩ DET;PROX;BANTU7,PanLex Exact Match
-matũ,ikwata matu,"brood, brood (rest the cheek on the hand in brooding mood)",matũ N;PL;BANTU6,Substring Overlap
+matũ,matũ,sing (Inferred via BantuBERTa),matũ N;PL;BANTU6,BantuBERTa Vector Neighborhood
 keiwe,keiwa,tomorrow (Inferred via BantuBERTa),keiwe PRO;INT;LOC,BantuBERTa Vector Neighborhood
-ĩyũaĩaa,ĩaa,fig tree (Inferred via BantuBERTa),ĩaa V;FUT,BantuBERTa Vector Neighborhood
+ĩyũaĩaa,ĩaa,[Translation Missing],ĩaa V;FUT,No Lexicon Match
 Kũũ,kũũ,"foot, leg, calabash",kũũ DET;POSS;PSS1P;BANTU15,PanLex Exact Match
-Kala,ikala nthi,sit,kala,Substring Overlap
+Kala,kala,tomorrow (Inferred via BantuBERTa),kala,BantuBERTa Vector Neighborhood
 yoka,oka,buffalo (Inferred via BantuBERTa),yoka V;PRS,BantuBERTa Vector Neighborhood
 kayĩkalasya,lasya,bread (Inferred via BantuBERTa),kayĩkalasya V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 kaũkuutwa,ũkuutwa,[Translation Missing],ũkuutwa V;PST;REC;3;SG,No Lexicon Match
-Mũthenya,thenya,"day, day-time",thenya V;PRS;HAB;2;SG,PanLex Exact Match
-mwatũ,kwatua,"crack, split, penetrate",mwatũ N;SG;BANTU1,Substring Overlap
+Mũthenya,mũthenya,"day, day, day-time",thenya V;PRS;HAB;2;SG,PanLex Exact Match
+mwatũ,watũ,two (Inferred via BantuBERTa),mwatũ N;SG;BANTU1,BantuBERTa Vector Neighborhood
 ndwosawa,ndwosawa,sugar cane (Inferred via BantuBERTa),ndwosawa N;SG;BANTU10,BantuBERTa Vector Neighborhood
 ĩngokwa,ĩngokwa,[Translation Missing],ĩngokwa N;SG;BANTU10,No Lexicon Match
-mũkuĩle,kuĩla,"sing, child (Inferred via BantuBERTa)",mũkuĩle N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mũkuĩle,kuĩla,sing (Inferred via BantuBERTa),mũkuĩle N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Kĩkoe,koa,beer (Inferred via BantuBERTa),kĩkoa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-ĩtoloka,ĩtoloka,"bow, spittle (Inferred via BantuBERTa)",ĩtoloka N;SG;BANTU10,BantuBERTa Vector Neighborhood
+ĩtoloka,ĩtoloka,bow (Inferred via BantuBERTa),ĩtoloka N;SG;BANTU10,BantuBERTa Vector Neighborhood
 ũlũmasya,sya,firewood (Inferred via BantuBERTa),ũlũmasya N;SG;BANTU1,BantuBERTa Vector Neighborhood
-Mũlaki,mũlaki,"T, Tu. (Inferred via BantuBERTa)",uMũlass N;SG;BANTU1,BantuBERTa Vector Neighborhood
-wĩvakuvĩ,vakuvĩ,"tree, plant, organism capable of photosynthesis (Inferred via BantuBERTa)",wĩvakuvĩ DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
-ndatulasye,lasa,crab,tulasa V;PST;REC;1;SG,Substring Overlap
+Mũlaki,mũlaki,T (Inferred via BantuBERTa),uMũlass N;SG;BANTU1,BantuBERTa Vector Neighborhood
+wĩvakuvĩ,vakuvĩ,tree (Inferred via BantuBERTa),wĩvakuvĩ DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
+ndatulasye,tulasa,rhinoceros (Inferred via BantuBERTa),tulasa V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
 ũkanyo,ũkanyo,[Translation Missing],ũkanyo N;SG;BANTU14,No Lexicon Match
 kĩnene,nene,"chief person, head, great, large, chief, headman, fat, thick, master",nene ADJ;BANTU15,PanLex Exact Match
-kĩivĩtĩlwa,vĩtĩlwa,"bow, spittle (Inferred via BantuBERTa)",vĩtĩlwa V;NFIN,BantuBERTa Vector Neighborhood
-Yamesya,sya,"grandfather, intestines, urinate (Inferred via BantuBERTa)",isya N;PL;BANTU1,BantuBERTa Vector Neighborhood
-maaũ,kuthi na maau,walk,maaũ N;PL;BANTU6,Substring Overlap
+kĩivĩtĩlwa,vĩtĩlwa,bow (Inferred via BantuBERTa),vĩtĩlwa V;NFIN,BantuBERTa Vector Neighborhood
+Yamesya,sya,grandfather (Inferred via BantuBERTa),isya N;PL;BANTU1,BantuBERTa Vector Neighborhood
+maaũ,maaũ,sugar cane (Inferred via BantuBERTa),maaũ N;PL;BANTU6,BantuBERTa Vector Neighborhood
 ndivivaswa,vaswa,eat (Inferred via BantuBERTa),vaswa V;PRS;HAB;1;SG,BantuBERTa Vector Neighborhood
-Thii,athiia na nyundo,"hammer, hit, hit (with a hammer)",uThii N;SG;BANTU1,Substring Overlap
+Thii,thii,[Translation Missing],uThii N;SG;BANTU1,No Lexicon Match
 ĩvũĩ,ĩvũĩ,"dove, (red-eyed) dove, lung",ĩvũĩ N;SG;BANTU1,PanLex Exact Match
-mũtine,muti,"tree, plant, organism capable of photosynthesis",mũtine N;SG;BANTU1,Substring Overlap
-kolũkaa,lũkaa,see (Inferred via BantuBERTa),kolũkaa V;NFIN,BantuBERTa Vector Neighborhood
+mũtine,mũtine,tomorrow (Inferred via BantuBERTa),mũtine N;SG;BANTU1,BantuBERTa Vector Neighborhood
+kolũkaa,lũkaa,[Translation Missing],kolũkaa V;NFIN,No Lexicon Match
 Kavĩndĩ,vĩndĩ,bone,vĩndĩ V;PST;REC;3;SG,PanLex Exact Match
 ĩtiaa,ĩtiaa,[Translation Missing],ĩtiaa N;SG;BANTU6,No Lexicon Match
-Ndunduli,undu,affair,uNdunduli N;SG;BANTU1,Substring Overlap
+Ndunduli,undunduli,[Translation Missing],uNdunduli N;SG;BANTU1,No Lexicon Match
 kĩĩmani,kĩĩma,"hill, mountain",kĩĩma N;SG;BANTU15,PanLex Exact Match
 ũmuu,ũmuu,mosquito,ũmuu DET;PROX;BANTU1,PanLex Exact Match
-kũti,kutia,"leave, leave (off)",kũti N;SG;BANTU15,Substring Overlap
-vaa,vaa,"corpse, dead person (Inferred via BantuBERTa)",vaa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-Ũmanyaa,anya,"leave, permission",ũmanyaa N;PL;BANTU10,Substring Overlap
+kũti,kũti,guinea fowl (Inferred via BantuBERTa),kũti N;SG;BANTU15,BantuBERTa Vector Neighborhood
+vaa,vaa,corpse (Inferred via BantuBERTa),vaa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+Ũmanyaa,ũmanyaa,[Translation Missing],ũmanyaa N;PL;BANTU10,No Lexicon Match
 Mũtũa,tũa,"dwell, hammer, hit, hit (with a hammer), press out, press out (oil seed, sugar cane), forge",tũa V;PRS;HAB;3;SG,PanLex Exact Match
 ũla,ũla,[Translation Missing],ũla DET;PROX;BANTU1,No Lexicon Match
 nzĩ,nzĩ,sperm,nzĩ PRO;INT;INTENS,PanLex Exact Match
 yaemie,ema,mountain,ema V;PST;REC;1;PL,PanLex Exact Match
 matatwa,tatwa,[Translation Missing],tatwa V;PST;REC;2;PL,No Lexicon Match
 ĩkĩkũa,ĩkũa,[Translation Missing],ĩkĩkũa N;SG;BANTU10,No Lexicon Match
-kĩkĩlĩtye,lita,"faint, lose consciousness",kĩkĩlĩta V;PST;REC;3;SG,Substring Overlap
+kĩkĩlĩtye,kĩkĩlĩta,hill (Inferred via BantuBERTa),kĩkĩlĩta V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 wasyaa,syaa,"bear child, give birth, give birth (to a child)",syaa V;PST;REC;3;SG,PanLex Exact Match
 ũtanu,ũtanu,sugar cane (Inferred via BantuBERTa),ũtanu N;SG;BANTU14,BantuBERTa Vector Neighborhood
-mũnene,nene,"chief person, head, great, large, chief, headman, fat, thick, master",nene ADJ;BANTU4,PanLex Exact Match
+mũnene,mũnene,"chief, headman, chief person, head, master",nene ADJ;BANTU4,PanLex Exact Match
 mbũi,mbũi,"goat, white hair",mbũi N;SG;BANTU1,PanLex Exact Match
 kĩvetanĩ,veta,"send away, start off, let off, remove a spell, wave, let off (a trap)",kĩvetanĩ N;SG;BANTU15,PanLex Exact Match
-ũtwii,ũtwii,"earth, land, country, district, province (Inferred via BantuBERTa)",ũtwii DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
-Mũthoi,thoi,broth,thoi V;PRS;HAB;3;SG,PanLex Exact Match
+ũtwii,ũtwii,earth (Inferred via BantuBERTa),ũtwii DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
+Mũthoi,mũthoi,broth,thoi V;PRS;HAB;3;SG,PanLex Exact Match
 vata,vata,duck,vata V;PRS,PanLex Exact Match
-Kĩtaũmwa,kyumwa,week,ũmwa V;FUT;3;SG,Substring Overlap
+Kĩtaũmwa,ũmwa,[Translation Missing],ũmwa V;FUT;3;SG,No Lexicon Match
 maumĩ,umĩ,firewood (Inferred via BantuBERTa),maumĩ N;PL;BANTU6,BantuBERTa Vector Neighborhood
-mambaa,amba,baobab,mambaa V;PRS,Substring Overlap
-ndwĩki,ikuli ya ndwiki,"colobus monkey, colobus monkey (with long black silk hair, white on the shoulders)",ndwĩki N;SG;BANTU9,Substring Overlap
+mambaa,mambaa,bow (Inferred via BantuBERTa),mambaa V;PRS,BantuBERTa Vector Neighborhood
+ndwĩki,ndwĩki,buffalo (Inferred via BantuBERTa),ndwĩki N;SG;BANTU9,BantuBERTa Vector Neighborhood
 ũtavika,vika,"arrive, go back, return",vika V;FUT,PanLex Exact Match
 ndĩkalaa,laa,flower,laa V;PRS;PROG;1;SG,PanLex Exact Match
 yalatanĩ,latanĩ,sugar cane (Inferred via BantuBERTa),latanĩ V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 mũtumĩa,mũtumĩa,old person,mũtumĩa N;SG;BANTU1,PanLex Exact Match
-kwĩko,kwikoota,stretch oneself,kwĩko,Substring Overlap
+kwĩko,kwĩko,tomorrow (Inferred via BantuBERTa),kwĩko,BantuBERTa Vector Neighborhood
 kiita,ita,"call, pour away, leak, ooze out, pour, call, abundant",ita V;PRS,PanLex Exact Match
 maiya,iya,"place, put, set",maiya N;PL;BANTU6,PanLex Exact Match
-ĩte,ĩte,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles (Inferred via BantuBERTa)",ĩte DET;PROX;BANTU6,BantuBERTa Vector Neighborhood
+ĩte,ĩte,rain (Inferred via BantuBERTa),ĩte DET;PROX;BANTU6,BantuBERTa Vector Neighborhood
 Mbaĩ,mbaĩ,"clan, fierce, sharp",uMbaĩ N;SG;BANTU1,PanLex Exact Match
-Ũtumo,tumo,spear,ũtumo N;SG;BANTU14,Substring Overlap
+Ũtumo,ũtumo,[Translation Missing],ũtumo N;SG;BANTU14,No Lexicon Match
 katu,katu,tomorrow (Inferred via BantuBERTa),katu PRO;INT;BANTU15,BantuBERTa Vector Neighborhood
 wa,wa,sugar cane,wa DET;POSS;PSS1P;BANTU1,PanLex Exact Match
-ũkaa,kukaanga,"fry, be flavoured, be (properly) flavoured",ũkaa V;PRS,Substring Overlap
+ũkaa,ũkaa,sing (Inferred via BantuBERTa),ũkaa V;PRS,BantuBERTa Vector Neighborhood
 mangula,mangula,[Translation Missing],mangula N;PL;BANTU6,No Lexicon Match
 mũyo,mũyo,"pleasant, sweet",mũyo DET;PROX;BANTU4,PanLex Exact Match
 Kwakya,kya,[Translation Missing],Kwakya N;SG;BANTU15,No Lexicon Match
 ngasũa,sũa,"become full, abound, grandmother",ngasũa N;SG;BANTU9,PanLex Exact Match
 nzoka,nzoka,"serpent, snake, legless reptile, adder, wriggler",nzoka V;PRS,PanLex Exact Match
 ũkatho,ũkatho,tomorrow (Inferred via BantuBERTa),ũkatho N;SG;BANTU1,BantuBERTa Vector Neighborhood
-kũmĩa,mĩa,defecate,mĩa V;NFIN,PanLex Exact Match
+kũmĩa,kũmĩa,defecate,mĩa V;NFIN,PanLex Exact Match
 ndwaa,ndwaa,nine (Inferred via BantuBERTa),ndwaa N;SG;BANTU9,BantuBERTa Vector Neighborhood
 wasama,sama,taste,sama V;PST;REC;2;SG,PanLex Exact Match
-mũthenya,thenya,"day, day-time",mũthenya N;SG;BANTU1,PanLex Exact Match
+mũthenya,mũthenya,"day, day, day-time",mũthenya N;SG;BANTU1,PanLex Exact Match
 Kũtingwa,tingwa,night (Inferred via BantuBERTa),tingwa V;NFIN,BantuBERTa Vector Neighborhood
-kũthunga,thunga,"forest, thicket, bush (Inferred via BantuBERTa)",thunga V;NFIN,BantuBERTa Vector Neighborhood
+kũthunga,thunga,forest (Inferred via BantuBERTa),thunga V;NFIN,BantuBERTa Vector Neighborhood
 ĩtoli,ĩtoli,sugar cane (Inferred via BantuBERTa),ĩtoli N;SG;BANTU1,BantuBERTa Vector Neighborhood
 malanga,langa,"speckle, spot",malanga N;PL;BANTU6,PanLex Exact Match
 Ũtukũ,ũtukũ,night,ũtukũ DET;POSS;PSS1P;BANTU1,PanLex Exact Match
-muunĩ,muunĩ,"ashes, mosquito (Inferred via BantuBERTa)",muunĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
+muunĩ,muunĩ,ashes (Inferred via BantuBERTa),muunĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Ĩ,ĩ,"spoon, dung, excrement, O, Oct., N, Nov., D, Dec.",ĩ DET;PROX;BANTU6,PanLex Exact Match
 eanasya,sya,elephant (Inferred via BantuBERTa),sya V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 Nganga,nganga,guinea fowl,nganga N;SG;BANTU9,PanLex Exact Match
 Ndũkaume,uma,"bite, iron, steel, be fully grown, iron ore, dry up, ebb, abuse",ume N;SG;BANTU10,PanLex Exact Match
 Vatakomwa,koma,"sleep, lie down",komwa V;FUT;3;PL,PanLex Exact Match
-mwikithi,mwikithi,"dew, one, one (Inferred via BantuBERTa)",mwikithi N;SG;BANTU1,BantuBERTa Vector Neighborhood
-kĩvoyaa,voya,"ask for, borrow, lend",voyaa V;NFIN,Substring Overlap
-ũtangokya,ango,door,ũtangokya N;SG;BANTU14,Substring Overlap
+mwikithi,mwikithi,[Translation Missing],mwikithi N;SG;BANTU1,No Lexicon Match
+kĩvoyaa,voyaa,hyena (Inferred via BantuBERTa),voyaa V;NFIN,BantuBERTa Vector Neighborhood
+ũtangokya,ũtangokya,[Translation Missing],ũtangokya N;SG;BANTU14,No Lexicon Match
 Nzĩa,nzĩa,"path, highway, path, small gazelle",nzĩa N;SG;BANTU9,PanLex Exact Match
 tũva,tũva,bottle,tũva V;PRS,PanLex Exact Match
 ũatĩaa,tĩaa,[Translation Missing],tĩaa V;PST;REC;3;SG,No Lexicon Match
 Kavaa,vaa,[Translation Missing],vaa V;PST;REC;3;SG,No Lexicon Match
-nyonyi,nyonyi,"chief, headman, chief person, head, master (Inferred via BantuBERTa)",nyonyi N;SG;BANTU9,BantuBERTa Vector Neighborhood
+nyonyi,nyonyi,chief (Inferred via BantuBERTa),nyonyi N;SG;BANTU9,BantuBERTa Vector Neighborhood
 kaketũũa,ketũũa,rainy season (Inferred via BantuBERTa),ketũũa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 ũtaatha,tha,"Jun, Jun.",ũtaatha N;SG;BANTU14,PanLex Exact Match
 Ũtaathi,ũtaathi,tomorrow (Inferred via BantuBERTa),ũtaathi N;SG;BANTU14,BantuBERTa Vector Neighborhood
-nĩwo,nĩwo,"sing, child (Inferred via BantuBERTa)",nĩwo DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
+nĩwo,nĩwo,sing (Inferred via BantuBERTa),nĩwo DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
 mwako,wako,sugar cane (Inferred via BantuBERTa),mwako DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
 wavalũka,valũka,fall,valũka V;PST;REC;2;SG,PanLex Exact Match
 mawĩa,wĩa,"work, labour, employment, occupation, job, business, employment, job, occupation, tool bit",wĩa V;PST;REC;2;PL,PanLex Exact Match
 Ngai,ngai,"God, single deity of monotheism, Almighty, Creator, Jah, Life, Man Upstairs, Omnipotent, Omniscient, Our Father, Providence, Supreme, godhead, supreme being, theopanism, god",Ngai NUM;CARD;10,PanLex Exact Match
 mekaa,mekaa,tomorrow (Inferred via BantuBERTa),mekaa N;SG;BANTU1,BantuBERTa Vector Neighborhood
 ĩthwĩwe,thwĩwe,tomorrow (Inferred via BantuBERTa),ĩthwĩwe N;SG;BANTU10,BantuBERTa Vector Neighborhood
-nundu,undu,affair,nundu N;SG;BANTU10,Substring Overlap
-ũtonyaa,nyaa,"dry up, ebb",ũtonyaa N;SG;BANTU14,Substring Overlap
-ũtwaawa,twaa,"send away, start off, carry, take",ũtwaawa N;SG;BANTU14,Substring Overlap
-ngunyũ,ngunyũ,"bow, spittle (Inferred via BantuBERTa)",ngunyũ N;SG;BANTU9,BantuBERTa Vector Neighborhood
+nundu,nundu,eat (Inferred via BantuBERTa),nundu N;SG;BANTU10,BantuBERTa Vector Neighborhood
+ũtonyaa,tonya,"thrust into, bore a hole",ũtonyaa N;SG;BANTU14,Substring Overlap
+ũtwaawa,ũtwaawa,tomorrow (Inferred via BantuBERTa),ũtwaawa N;SG;BANTU14,BantuBERTa Vector Neighborhood
+ngunyũ,ngunyũ,bow (Inferred via BantuBERTa),ngunyũ N;SG;BANTU9,BantuBERTa Vector Neighborhood
 tiyo,tiyo,[Translation Missing],tiyo DET;POSS;PSS1P;BANTU1,No Lexicon Match
 ĩkengeni,ĩkenga,[Translation Missing],ĩkenga V;IMP;2;PL,No Lexicon Match
 kĩkalasya,lasya,[Translation Missing],kĩkalasya N;SG;BANTU15,No Lexicon Match
 ka,ka,"come, wife",ka V;PRS,PanLex Exact Match
 ĩkusaa,saa,hour,saa V;PRS;PROG;3;SG,PanLex Exact Match
 ũtisi,ũtisi,lightning,ũtisi N;SG;BANTU14,PanLex Exact Match
-kelĩ,lovo ya keli,2nd quarter,kelĩ PRO;INT;LOC,Substring Overlap
-Kanywamalaa,nywa,"mouth, drink",Kanywamalaa V;PST;REC;3;SG,Substring Overlap
-kambaa,amba,baobab,kambaa V;PRS,Substring Overlap
+kelĩ,kelĩ,[Translation Missing],kelĩ PRO;INT;LOC,No Lexicon Match
+Kanywamalaa,nywamalaa,[Translation Missing],Kanywamalaa V;PST;REC;3;SG,No Lexicon Match
+kambaa,kambaa,fly (Inferred via BantuBERTa),kambaa V;PRS,BantuBERTa Vector Neighborhood
 ũmanya,manya,know,ũmanya N;SG;BANTU14,PanLex Exact Match
 mbavathi,mbavathi,bread (Inferred via BantuBERTa),mbavathi N;PL;BANTU1,BantuBERTa Vector Neighborhood
 mũumo,mũumo,"fig mulberry tree, borassus palm",mũumo N;SG;BANTU1,PanLex Exact Match
-Ndyĩsũvaa,sũvaa,"earth, land, country, district, province (Inferred via BantuBERTa)",Ndyĩsũvaa N;SG;BANTU10,BantuBERTa Vector Neighborhood
+Ndyĩsũvaa,sũvaa,earth (Inferred via BantuBERTa),Ndyĩsũvaa N;SG;BANTU10,BantuBERTa Vector Neighborhood
 mũkungo,mũkungo,tomorrow (Inferred via BantuBERTa),mũkungo N;SG;BANTU1,BantuBERTa Vector Neighborhood
-Ndũkaakĩĩe,kĩĩa,"forest, thicket, bush (Inferred via BantuBERTa)",kĩĩa V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
+Ndũkaakĩĩe,kĩĩa,forest (Inferred via BantuBERTa),kĩĩa V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
 Ũkamyona,myona,[Translation Missing],ũkamyona N;SG;BANTU1,No Lexicon Match
 nima,nima,tomorrow (Inferred via BantuBERTa),nima V;PRS,BantuBERTa Vector Neighborhood
-ĩla,ĩla,"hem, make a border, break, snap (Inferred via BantuBERTa)",ĩla V;PRS,BantuBERTa Vector Neighborhood
-Wĩsĩ,faranga ya uswisi,Swiss Franc,wĩsĩ DET;POSS;PSS1P;BANTU1,Substring Overlap
-kakĩĩte,kiitaliano,Italian,kĩĩta V;PST;REC;3;SG,Substring Overlap
-kũla,kulaalaa,"copulate, have sexual intercourse, copulate (with), have sexual intercourse (with)",la V;PRS;HAB;3;SG,Substring Overlap
+ĩla,ĩla,hem (Inferred via BantuBERTa),ĩla V;PRS,BantuBERTa Vector Neighborhood
+Wĩsĩ,wĩsĩ,nine (Inferred via BantuBERTa),wĩsĩ DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
+kakĩĩte,kĩĩta,tomorrow (Inferred via BantuBERTa),kĩĩta V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+kũla,kũla,guest (Inferred via BantuBERTa),la V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
 kĩminũkĩlaswa,kĩminũkĩlaswa,hyena (Inferred via BantuBERTa),kĩminũkĩlaswa V;NFIN,BantuBERTa Vector Neighborhood
-ĩmwenĩ,imwe,"dew, one, one",ĩmwenĩ N;SG;BANTU1,Substring Overlap
-kalekelye,kela,"filter, strain",lekela V;PST;REC;3;SG,Substring Overlap
-mbĩla,mbĩla,"sing, child (Inferred via BantuBERTa)",mbĩla N;SG;BANTU1,BantuBERTa Vector Neighborhood
-ndĩkĩlawa,galawa,dug-out canoe,ndĩkĩlawa N;SG;BANTU9,Substring Overlap
-wĩsĩ,faranga ya uswisi,Swiss Franc,wĩsĩ DET;POSS;PSS1P;BANTU1,Substring Overlap
+ĩmwenĩ,ĩmwenĩ,hyena (Inferred via BantuBERTa),ĩmwenĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
+kalekelye,lekela,tomorrow (Inferred via BantuBERTa),lekela V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+mbĩla,mbĩla,sing (Inferred via BantuBERTa),mbĩla N;SG;BANTU1,BantuBERTa Vector Neighborhood
+ndĩkĩlawa,lawa,[Translation Missing],ndĩkĩlawa N;SG;BANTU9,No Lexicon Match
+wĩsĩ,wĩsĩ,nine (Inferred via BantuBERTa),wĩsĩ DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
 mĩingo,mĩingo,two (Inferred via BantuBERTa),mĩingo N;SG;BANTU1,BantuBERTa Vector Neighborhood
-nĩkyo,nĩkyo,"forest, thicket, bush (Inferred via BantuBERTa)",nĩkyo DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
+nĩkyo,nĩkyo,forest (Inferred via BantuBERTa),nĩkyo DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
 yatũkaswa,tũkaswa,tomorrow (Inferred via BantuBERTa),tũkaswa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 mokonĩ,mokonĩ,eat (Inferred via BantuBERTa),mokonĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
-kiinyũ,inyunyu,buttock,inyũ N;SG;BANTU15,Substring Overlap
+kiinyũ,inyũ,[Translation Missing],inyũ N;SG;BANTU15,No Lexicon Match
 wavĩwe,vĩwa,see (Inferred via BantuBERTa),vĩwa V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
 kate,kate,bread,kate,PanLex Exact Match
 ngitĩ,ngitĩ,dog,ngitĩ DET;POSS;PSS1P;BANTU9,PanLex Exact Match
 vandũ,vandũ,"speckle, spot",Vandũ N;SG;BANTU1,PanLex Exact Match
 kaĩĩa,ĩĩa,"lake, milk, lake",ĩĩa DET;PROX;BANTU6,PanLex Exact Match
 nĩyoneaa,oneaa,[Translation Missing],neaa V;PRS;PROG;2;PL,No Lexicon Match
-Ngoso,ungoso,"sing, child (Inferred via BantuBERTa)",ngoso N;SG;BANTU10,BantuBERTa Vector Neighborhood
-Mũthi,thi,"pestle, country, district, province, earth, land, go away, leave, go",thi ADJ;BANTU4,PanLex Exact Match
+Ngoso,ungoso,sing (Inferred via BantuBERTa),ngoso N;SG;BANTU10,BantuBERTa Vector Neighborhood
+Mũthi,mũthi,pestle,thi ADJ;BANTU4,PanLex Exact Match
 Vandũ,vandũ,"speckle, spot",Vandũ N;SG;BANTU1,PanLex Exact Match
 wendo,wendo,"love, strong affection, affection",wendo DET;POSS;PSS3P;BANTU1,PanLex Exact Match
-mũamba,amba,baobab,mũamba N;SG;BANTU1,PanLex Exact Match
-mũũlũkĩle,mũũlũkĩle,"sing, child (Inferred via BantuBERTa)",mũũlũkĩle N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mũamba,mũamba,baobab,mũamba N;SG;BANTU1,PanLex Exact Match
+mũũlũkĩle,mũũlũkĩle,sing (Inferred via BantuBERTa),mũũlũkĩle N;SG;BANTU1,BantuBERTa Vector Neighborhood
 nzevenĩ,nzevenĩ,[Translation Missing],nzevenĩ N;SG;BANTU10,No Lexicon Match
 kũnwa,nwa,eat (Inferred via BantuBERTa),nwa V;NFIN,BantuBERTa Vector Neighborhood
 ngingo,ngingo,neck,ngingo N;SG;BANTU9,PanLex Exact Match
 Mwĩwa,mwĩwa,[Translation Missing],mwĩwa N;SG;BANTU1,No Lexicon Match
-ũndũmwe,undu,affair,ũndũmwe N;SG;BANTU1,Substring Overlap
+ũndũmwe,ũndũmwe,sugar cane (Inferred via BantuBERTa),ũndũmwe N;SG;BANTU1,BantuBERTa Vector Neighborhood
 ĩkungĩawa,ĩkungĩawa,tomorrow (Inferred via BantuBERTa),ĩkungĩawa N;SG;BANTU15,BantuBERTa Vector Neighborhood
-ndĩ,ndĩ,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles (Inferred via BantuBERTa)",ndĩ PRO;INT;INTENS,BantuBERTa Vector Neighborhood
-kaikitalasya,tala,"palm, palm (of hand), count, flat of hand",ikitalasya N;SG;BANTU15,Substring Overlap
+ndĩ,ndĩ,[Translation Missing],ndĩ PRO;INT;INTENS,No Lexicon Match
+kaikitalasya,talasya,sing (Inferred via BantuBERTa),ikitalasya N;SG;BANTU15,BantuBERTa Vector Neighborhood
 Vala,vala,"ascend, climb",vala,PanLex Exact Match
-ndũtumaa,tuma,"send, sew, knit, weave",tumaa V;PRS;HAB;1;SG,Substring Overlap
-mwiingĩ,nyingi,many,ingĩ V;PRS;HAB;2;PL,Substring Overlap
+ndũtumaa,tumaa,night (Inferred via BantuBERTa),tumaa V;PRS;HAB;1;SG,BantuBERTa Vector Neighborhood
+mwiingĩ,ingĩ,tree (Inferred via BantuBERTa),ingĩ V;PRS;HAB;2;PL,BantuBERTa Vector Neighborhood
 ma,ma,"go away, go out",ma DET;POSS;PSS1P;BANTU6,PanLex Exact Match
 maeo,eo,tooth,eo DET;POSS;PSS1P;BANTU6,PanLex Exact Match
 ngũ,ngũ,firewood,Ngũ DET;PROX;BANTU10,PanLex Exact Match
 Mũsili,umũsili,[Translation Missing],uMũsili N;SG;BANTU1,No Lexicon Match
 mbya,mbya,"horn, ivory",mbya N;SG;BANTU1,PanLex Exact Match
-kĩtheka,theka,"forest, thicket, laugh, bush",theka V;PRS;NEG;3;SG,PanLex Exact Match
+kĩtheka,kĩtheka,"forest, thicket, bush",theka V;PRS;NEG;3;SG,PanLex Exact Match
 ndũũ,ndũũ,squirrel,ndũũ N;SG;BANTU9,PanLex Exact Match
 ata,ta,"bow, spittle",ata V;PRS,PanLex Exact Match
 Wakomana,komana,meet,umana N;PL;BANTU1,PanLex Exact Match
-kweteele,eteela,"earth, land, country, district, province (Inferred via BantuBERTa)",eteela V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-mangalata,gala,spark,mangalata N;PL;BANTU6,Substring Overlap
+kweteele,eteela,earth (Inferred via BantuBERTa),eteela V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+mangalata,mangalata,[Translation Missing],mangalata N;PL;BANTU6,No Lexicon Match
 mũtae,mũtae,rhinoceros (Inferred via BantuBERTa),mũtae N;SG;BANTU1,BantuBERTa Vector Neighborhood
 maima,ima,"hill, mountain, cultivated ground, cultivate, cultivate, hole, pit, withhold from, nest, mature",ima V;PST;REC;2;PL,PanLex Exact Match
 Kakuthu,kuthu,"bush, thicket",thu ADJ;BANTU15,PanLex Exact Match
 kĩsinda,sinda,"overcome, vanquish, win",kĩsinda N;SG;BANTU15,PanLex Exact Match
-nũthi,nũthi,"dew, one, one (Inferred via BantuBERTa)",nũthi N;SG;BANTU9,BantuBERTa Vector Neighborhood
+nũthi,nũthi,[Translation Missing],nũthi N;SG;BANTU9,No Lexicon Match
 nawo,nawo,[Translation Missing],nawo DET;POSS;PSS1P;BANTU9,No Lexicon Match
-kĩvũĩyo,ivui,"dove, (red-eyed) dove, lung",kĩvũĩyo N;SG;BANTU15,Substring Overlap
-kĩla,kilalinda,"blind person, blind, spoil",kĩla V;PRS,Substring Overlap
+kĩvũĩyo,kĩvũĩyo,sing (Inferred via BantuBERTa),kĩvũĩyo N;SG;BANTU15,BantuBERTa Vector Neighborhood
+kĩla,kĩla,tomorrow (Inferred via BantuBERTa),kĩla V;PRS,BantuBERTa Vector Neighborhood
 ũlembwa,ũlembwa,bird-lime,ũlembwa V;PRS,PanLex Exact Match
 ndĩvithaa,vitha,hide,ndĩvithaa N;SG;BANTU9,Substring Overlap
 vayũaa,yũaa,[Translation Missing],yũaa V;PST;REC;3;PL,No Lexicon Match
-nĩko,guniko,"cork, stopper",nĩko DET;POSS;PSS1P;BANTU9,Substring Overlap
-Ngũngũũ,ngũũ,"old, hippopotamus, tortoise, hump, hump (of hunchback)",ngũngũũ N;SG;BANTU9,PanLex Exact Match
-mũũngũu,nguu,"old, hippopotamus, tortoise, hump, hump (of hunchback)",mũũngũu N;SG;BANTU1,Substring Overlap
-ndathĩkaa,ikaa,"charcoal, embers",thĩkaa V;PST;REC;1;SG,Substring Overlap
+nĩko,nĩko,[Translation Missing],nĩko DET;POSS;PSS1P;BANTU9,No Lexicon Match
+Ngũngũũ,ngũngũũ,crow,ngũngũũ N;SG;BANTU9,PanLex Exact Match
+mũũngũu,mũũngũu,squirrel (Inferred via BantuBERTa),mũũngũu N;SG;BANTU1,BantuBERTa Vector Neighborhood
+ndathĩkaa,thika,bury,thĩkaa V;PST;REC;1;SG,Substring Overlap
 itũngawa,tũngawa,tomorrow (Inferred via BantuBERTa),tũngawa V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
-kũyĩ,kuyiima,abstain,kũyĩ DET;PROX;BANTU15,Substring Overlap
-ũthuasya,thua,"grate, scratch, set, set (of the sun), be lame",ũthuasya N;SG;BANTU14,Substring Overlap
+kũyĩ,kũyĩ,fly (Inferred via BantuBERTa),kũyĩ DET;PROX;BANTU15,BantuBERTa Vector Neighborhood
+ũthuasya,thuasya,[Translation Missing],ũthuasya N;SG;BANTU14,No Lexicon Match
 kyũsyaa,syaa,"bear child, give birth, give birth (to a child)",syaa V;NFIN,PanLex Exact Match
 ũmwe,ũmwe,tomorrow (Inferred via BantuBERTa),ũmwe DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
 Nzou,nzou,elephant,Nzou N;SG;BANTU10,PanLex Exact Match
@@ -374,93 +374,93 @@ twĩlĩ,twĩlĩ,[Translation Missing],twĩlĩ N;SG;BANTU11,No Lexicon Match
 yĩĩ,yĩĩ,bedstead,yĩĩ DET;PROX;BANTU9,PanLex Exact Match
 mwanake,mwanake,"youth, youth, young man",mwanake N;PL;BANTU1,PanLex Exact Match
 manya,manya,know,manya N;PL;BANTU6,PanLex Exact Match
-Kĩkalo,kĩkalo,"earth, land, country, district, province (Inferred via BantuBERTa)",Kĩkalo N;SG;BANTU10,BantuBERTa Vector Neighborhood
+Kĩkalo,kĩkalo,earth (Inferred via BantuBERTa),Kĩkalo N;SG;BANTU10,BantuBERTa Vector Neighborhood
 nũkũmĩe,kũmĩa,defecate,nũkũmĩe N;SG;BANTU9,PanLex Exact Match
-kasembete,embe,hoe,sembete V;PST;REC;3;SG,Substring Overlap
-vuvĩ,kuvuviia,blow bellows,vuvĩ V;PRS,Substring Overlap
+kasembete,sembete,tomorrow (Inferred via BantuBERTa),sembete V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+vuvĩ,vuvĩ,youth (Inferred via BantuBERTa),vuvĩ V;PRS,BantuBERTa Vector Neighborhood
 nzame,nzame,eat (Inferred via BantuBERTa),nzame N;SG;BANTU10,BantuBERTa Vector Neighborhood
 Kĩndilĩ,kĩndilĩ,[Translation Missing],kĩndilĩ N;SG;BANTU15,No Lexicon Match
 ũthyũ,ũthyũ,face,ũthyũ DET;PROX;BANTU1,PanLex Exact Match
 ene,ene,self,ene PRO;INT;INTENS,PanLex Exact Match
-ũyambĩĩa,yambĩĩa,"tree, plant, organism capable of photosynthesis (Inferred via BantuBERTa)",ũyambĩĩa N;SG;BANTU14,BantuBERTa Vector Neighborhood
-Kũtukĩwa,kiwa,sugar cane,tukĩwa V;NFIN,Substring Overlap
+ũyambĩĩa,yambĩĩa,tree (Inferred via BantuBERTa),ũyambĩĩa N;SG;BANTU14,BantuBERTa Vector Neighborhood
+Kũtukĩwa,tukĩwa,come in (Inferred via BantuBERTa),tukĩwa V;NFIN,BantuBERTa Vector Neighborhood
 makũũ,kũũ,"foot, leg, calabash",makũũ N;PL;BANTU6,PanLex Exact Match
-ndwathawa,thawa,"hill, mountain (Inferred via BantuBERTa)",thawa V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
+ndwathawa,thawa,hill (Inferred via BantuBERTa),thawa V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
 mĩnene,nene,"chief person, head, great, large, chief, headman, fat, thick, master",nene ADJ;BANTU4,PanLex Exact Match
 kĩiminawa,wa,sugar cane,iminawa N;SG;BANTU15,PanLex Exact Match
 ntheeũ,theeũ,rhinoceros (Inferred via BantuBERTa),ntheeũ N;SG;BANTU9,BantuBERTa Vector Neighborhood
 kenũkĩaa,kenũkĩaa,four (Inferred via BantuBERTa),kenũkĩaa V;NFIN,BantuBERTa Vector Neighborhood
-kasyũngere,syũngera,"T, Tu. (Inferred via BantuBERTa)",syũngera V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+kasyũngere,syũngera,T (Inferred via BantuBERTa),syũngera V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 ndũkatie,ta,"bow, spittle",tia V;PST;REC;1;SG,PanLex Exact Match
-nokyo,nokyo,"day, day, day-time (Inferred via BantuBERTa)",nokyo DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
+nokyo,nokyo,day (Inferred via BantuBERTa),nokyo DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
 Kĩsaa,saa,hour,kĩsaa N;SG;BANTU15,PanLex Exact Match
 vakomeawa,komeawa,[Translation Missing],komeawa V;PST;REC;3;PL,No Lexicon Match
-Kĩthima,thima,"well, examine, measure, test, spring, spring (of water)",thima V;PRS;HAB;3;SG,PanLex Exact Match
-nzingi,nzingi,"bow, spittle (Inferred via BantuBERTa)",nzingi N;SG;BANTU10,BantuBERTa Vector Neighborhood
+Kĩthima,kĩthima,"well, spring, spring (of water)",thima V;PRS;HAB;3;SG,PanLex Exact Match
+nzingi,nzingi,bow (Inferred via BantuBERTa),nzingi N;SG;BANTU10,BantuBERTa Vector Neighborhood
 tũnini,nini,"small, a few, not much",tũnini N;SG;BANTU10,PanLex Exact Match
 mũkũũ,kũũ,"foot, leg, calabash",mũkũũ N;SG;BANTU1,PanLex Exact Match
 ndaa,ndaa,louse,ndaa V;PRS,PanLex Exact Match
-nĩvĩĩye,kuvuviia,blow bellows,nĩvĩĩye N;SG;BANTU9,Substring Overlap
-ndatalaa,tala,"palm, palm (of hand), count, flat of hand",talaa V;PST,Substring Overlap
-munyĩ,unyi,"shade, shadow",munya V;PRS;HAB;2;PL,Substring Overlap
-isembete,embe,hoe,sembete V;PRS;HAB;3;SG,Substring Overlap
-mũumbĩ,itumbi,egg,mũumbĩ N;SG;BANTU1,Substring Overlap
-syĩĩma,iima,"hole, pit, nest",syĩĩma N;SG;BANTU7,Substring Overlap
-ilĩkĩlaa,ilaa,flower,lĩkĩlaa V;PST;REC;3;SG,Substring Overlap
+nĩvĩĩye,vĩĩa,guinea fowl (Inferred via BantuBERTa),nĩvĩĩye N;SG;BANTU9,BantuBERTa Vector Neighborhood
+ndatalaa,talaa,hyena (Inferred via BantuBERTa),talaa V;PST,BantuBERTa Vector Neighborhood
+munyĩ,munyĩ,tree (Inferred via BantuBERTa),munya V;PRS;HAB;2;PL,BantuBERTa Vector Neighborhood
+isembete,sembete,sing (Inferred via BantuBERTa),sembete V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
+mũumbĩ,umbĩ,pull up (Inferred via BantuBERTa),mũumbĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
+syĩĩma,syĩĩma,[Translation Missing],syĩĩma N;SG;BANTU7,No Lexicon Match
+ilĩkĩlaa,lĩkĩlaa,horn (Inferred via BantuBERTa),lĩkĩlaa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 ngũngĩ,ngũngĩ,eat (Inferred via BantuBERTa),ngũngĩ N;SG;BANTU9,BantuBERTa Vector Neighborhood
-yonekaa,onekaa,eat (Inferred via BantuBERTa),onekaa V;PRS,BantuBERTa Vector Neighborhood
-kĩngĩ,kĩngĩ,"hill, mountain (Inferred via BantuBERTa)",kĩngĩ PRO;INT;NEG,BantuBERTa Vector Neighborhood
+yonekaa,onekaa,[Translation Missing],onekaa V;PRS,No Lexicon Match
+kĩngĩ,kĩngĩ,hill (Inferred via BantuBERTa),kĩngĩ PRO;INT;NEG,BantuBERTa Vector Neighborhood
 mwando,mwando,tomorrow (Inferred via BantuBERTa),mwando N;SG;BANTU1,BantuBERTa Vector Neighborhood
-kĩthuma,thuma,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles (Inferred via BantuBERTa)",kĩthuma N;SG;BANTU15,BantuBERTa Vector Neighborhood
+kĩthuma,thuma,[Translation Missing],kĩthuma N;SG;BANTU15,No Lexicon Match
 ũthamaa,thama,"island, migrate, move away",ũthamaa N;SG;BANTU14,Substring Overlap
-kĩthĩnthĩmwa,nthi,"earth, land, country, district, province",thĩnthĩmwa V;NFIN,Substring Overlap
-mũngongoo,gongoo,millipede,mũngongoo N;SG;BANTU1,Substring Overlap
+kĩthĩnthĩmwa,thĩnthĩmwa,firewood (Inferred via BantuBERTa),thĩnthĩmwa V;NFIN,BantuBERTa Vector Neighborhood
+mũngongoo,mũngongoo,[Translation Missing],mũngongoo N;SG;BANTU1,No Lexicon Match
 ngombe,ngombe,[Translation Missing],ngombe N;SG;BANTU10,No Lexicon Match
-nĩka,anika,"dry, set out, set out (to dry)",nĩka N;SG;BANTU9,Substring Overlap
+nĩka,nĩka,hunter (Inferred via BantuBERTa),nĩka N;SG;BANTU9,BantuBERTa Vector Neighborhood
 katũlile,tũla,"hem, make a border, break, snap",tũla V;PST;REC;3;SG,PanLex Exact Match
 Mũkua,kua,"pull up, root up, get lost, rain, carry, rain, take, carry (astride on the hip)",uMũkua N;SG;BANTU1,PanLex Exact Match
-ũvakũsi,ũvakũsi,"dung, excrement (Inferred via BantuBERTa)",ũvakũsi N;SG;BANTU14,BantuBERTa Vector Neighborhood
+ũvakũsi,ũvakũsi,dung (Inferred via BantuBERTa),ũvakũsi N;SG;BANTU14,BantuBERTa Vector Neighborhood
 nda,nda,womb,nda V;PRS,PanLex Exact Match
 wovosya,vosya,"extinguish, quench, cool, cure, heal",vosya V;PRS;HAB;2;SG,PanLex Exact Match
 kothumũla,thumũla,bread (Inferred via BantuBERTa),thumũla V;NFIN,BantuBERTa Vector Neighborhood
 muunyĩ,muunyĩ,"shade, shadow",muunya V;PRS;HAB;2;PL,PanLex Exact Match
 kyengonĩ,engonĩ,eat (Inferred via BantuBERTa),engonĩ V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
-kũũlũka,ũlũka,fly,ũlũka V;NFIN,PanLex Exact Match
+kũũlũka,kũũlũka,fly,ũlũka V;NFIN,PanLex Exact Match
 kalĩma,lĩma,[Translation Missing],lĩma V;PST;REC;3;SG,No Lexicon Match
 nũme,nũme,fire (Inferred via BantuBERTa),nũme N;SG;BANTU9,BantuBERTa Vector Neighborhood
-ũngĩ,kunyungia,"smell out, sniff",ũngĩ DET;PROX;BANTU1,Substring Overlap
+ũngĩ,ũngĩ,tree (Inferred via BantuBERTa),ũngĩ DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
 Ona,ona,see,ona V;PRS;HAB;2;SG,PanLex Exact Match
-Syatwaawa,twaa,"send away, start off, carry, take",twaawa V;PST;REC;3;SG,Substring Overlap
-wĩ,wĩ,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles (Inferred via BantuBERTa)",wĩ DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
-Nzũũ,nzũũ,"become full, abound, grandmother (Inferred via BantuBERTa)",nzũũ N;SG;BANTU9,BantuBERTa Vector Neighborhood
-Mbola,bola,elephant (Inferred via BantuBERTa),uMbola N;SG;BANTU1,BantuBERTa Vector Neighborhood
-mũtheo,theo,cloud,mũtheo N;SG;BANTU1,Substring Overlap
-kaula,ula,"sing, child (Inferred via BantuBERTa)",kaula V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+Syatwaawa,twaawa,[Translation Missing],twaawa V;PST;REC;3;SG,No Lexicon Match
+wĩ,wĩ,rain (Inferred via BantuBERTa),wĩ DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
+Nzũũ,nzũũ,become full (Inferred via BantuBERTa),nzũũ N;SG;BANTU9,BantuBERTa Vector Neighborhood
+Mbola,bola,[Translation Missing],uMbola N;SG;BANTU1,No Lexicon Match
+mũtheo,mũtheo,garden (Inferred via BantuBERTa),mũtheo N;SG;BANTU1,BantuBERTa Vector Neighborhood
+kaula,ula,sing (Inferred via BantuBERTa),kaula V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 tũsĩla,sĩla,eat (Inferred via BantuBERTa),tũsĩla V;PRS,BantuBERTa Vector Neighborhood
 ũkolotya,kolotya,rainy season (Inferred via BantuBERTa),ũkolotya N;SG;BANTU14,BantuBERTa Vector Neighborhood
 mĩwa,mĩwa,[Translation Missing],mĩwa N;SG;BANTU1,No Lexicon Match
 ũtonyetwe,tonya,"thrust into, bore a hole",tonyetwe V;PST;REC;2;SG,Substring Overlap
-mũno,athamya muno,"open the mouth, open the mouth (wide)",mũno N;SG;BANTU1,Substring Overlap
-metho,kukunua metho,"glare, stare",metho,Substring Overlap
+mũno,mũno,become full (Inferred via BantuBERTa),mũno N;SG;BANTU1,BantuBERTa Vector Neighborhood
+metho,metho,rain (Inferred via BantuBERTa),metho,BantuBERTa Vector Neighborhood
 Sere,sera,[Translation Missing],Sera,No Lexicon Match
 nĩwe,nĩwe,tomorrow (Inferred via BantuBERTa),nĩwe DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
-ĩmantha,mantha,"hand around, look for, hand around (to get something), search for, spy out",ĩmantha N;PL;BANTU6,Substring Overlap
+ĩmantha,ĩmantha,eat (Inferred via BantuBERTa),ĩmantha N;PL;BANTU6,BantuBERTa Vector Neighborhood
 ndathanaa,thanaa,sugar cane (Inferred via BantuBERTa),thanaa V;PST,BantuBERTa Vector Neighborhood
-Kĩvindu,vindu,darkness,Kĩvindu N;SG;BANTU10,PanLex Exact Match
-ũtumbĩlĩla,bili,"tick, (cattle or dog) tick",tumbĩlĩla V;PRS,Substring Overlap
+Kĩvindu,kĩvindu,darkness,Kĩvindu N;SG;BANTU10,PanLex Exact Match
+ũtumbĩlĩla,tumbi,egg,tumbĩlĩla V;PRS,Substring Overlap
 ndĩkũnawa,wa,sugar cane,ndĩkũnawa V;PRS;PROG;1;SG,PanLex Exact Match
 kenda,kenda,nine,kenda V;PRS,PanLex Exact Match
 Woona,ona,see,ona V;PRS;HAB;2;SG,PanLex Exact Match
-ũnyenyeũ,nyenyeũ,drizzle,nyenyeũ V;PRS;HAB;2;SG,PanLex Exact Match
+ũnyenyeũ,ũnyenyeũ,drizzle,nyenyeũ V;PRS;HAB;2;SG,PanLex Exact Match
 Mwaka,mwaka,year,uMwaka,PanLex Exact Match
 kasamũ,samũ,tomorrow (Inferred via BantuBERTa),samũ V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 ndĩemawa,emawa,tomorrow (Inferred via BantuBERTa),emawa V;PRS;PROG;1;SG,BantuBERTa Vector Neighborhood
-Wamanthĩa,nthi,"earth, land, country, district, province",manthĩa V;PST;REC;3;PL,Substring Overlap
+Wamanthĩa,manthĩa,lake (Inferred via BantuBERTa),manthĩa V;PST;REC;3;PL,BantuBERTa Vector Neighborhood
 inya,inya,four,inya N;SG;BANTU9,PanLex Exact Match
 Nzee,nzee,porcupine,nzee DET;POSS;PSS1P;BANTU9,PanLex Exact Match
 Ũka,ũka,come,ũka DET;PROX;BANTU1,PanLex Exact Match
 Kaumaa,umaa,"grandfather, urinate",umaa V;PST;REC;3;SG,PanLex Exact Match
-ũtia,kutia,"leave, leave (off)",ũtia DET;PROX;BANTU1,Substring Overlap
+ũtia,ũtia,[Translation Missing],ũtia DET;PROX;BANTU1,No Lexicon Match
 Ũkaema,ema,mountain,ema V;PST;REC;1;PL,PanLex Exact Match
 ngwatyo,ngwatyo,eat (Inferred via BantuBERTa),ngwatyo N;SG;BANTU10,BantuBERTa Vector Neighborhood
 kayonanasya,onanasya,[Translation Missing],yonanasya V;PST;REC;3;SG,No Lexicon Match
@@ -469,39 +469,39 @@ ndũtũawa,tũawa,firewood (Inferred via BantuBERTa),ndũtũawa N;SG;BANTU10,Ban
 ũkũĩthya,ĩthya,"keep livestock, care for, tend, care for (look after grazing cattle, help a sick man on the road)",ĩthya V;PRS;PROG;2;SG,PanLex Exact Match
 sua,sua,"become full, abound, grandmother",Sua V;PRS,PanLex Exact Match
 Vau,vau,[Translation Missing],Vau DET;POSS;PSS1P;BANTU1,No Lexicon Match
-andũ,wandũ,"finger, disappear, fade, get lost (Inferred via BantuBERTa)",andũ PRO;INT;INTENS,BantuBERTa Vector Neighborhood
+andũ,wandũ,finger (Inferred via BantuBERTa),andũ PRO;INT;INTENS,BantuBERTa Vector Neighborhood
 ndũsyaa,syaa,"bear child, give birth, give birth (to a child)",syaa V;PRS,PanLex Exact Match
 Mwaamba,amba,baobab,amba V;PST;REC;2;PL,PanLex Exact Match
 Kũkwĩ,kwĩ,fly (Inferred via BantuBERTa),kwĩ DET;POSS;PSS1P;BANTU15,BantuBERTa Vector Neighborhood
 athekawa,theka,"forest, thicket, laugh, bush",thekawa V;PRS,Substring Overlap
 wĩkaswe,swa,[Translation Missing],wĩkaswe DET;POSS;PSS1P;BANTU1,No Lexicon Match
-mwoomboko,mwoomboko,"pleasant, sweet (Inferred via BantuBERTa)",mwoomboko N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mwoomboko,mwoomboko,pleasant (Inferred via BantuBERTa),mwoomboko N;SG;BANTU1,BantuBERTa Vector Neighborhood
 ndũkaawetee,wetea,hyena (Inferred via BantuBERTa),wetea V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
-weethĩa,thia,"point, tip, peak, top, highest point, utmost, grind, grind (grain with a millstone)",weethĩa V;PRS;HAB;2;SG,Substring Overlap
+weethĩa,ethĩa,sugar cane (Inferred via BantuBERTa),weethĩa V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
 ũaithasya,thasya,sugar cane (Inferred via BantuBERTa),thasya V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 mũnini,nini,"small, a few, not much",mũnini N;SG;BANTU1,PanLex Exact Match
 nene,nene,"chief person, head, great, large, chief, headman, fat, thick, master",nene PRO;INT;INTENS,PanLex Exact Match
-awetae,weta,pronounce,wetaa V;PST;REC;3;SG,Substring Overlap
-ũsyae,kusyaa,"bear child, give birth, give birth (to a child)",ũsyae DET;POSS;PSS1P;BANTU1,Substring Overlap
+awetae,wetaa,rain (Inferred via BantuBERTa),wetaa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+ũsyae,ũsyaa,sing (Inferred via BantuBERTa),ũsyae DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
 ilĩ,ilĩ,two,ilĩ DET;PROX;BANTU9,PanLex Exact Match
-kĩvalala,vala,"ascend, climb",valala V;NFIN,Substring Overlap
-ĩkwitheetha,theetha,"body, root, root (Inferred via BantuBERTa)",ĩkwitheetha N;SG;BANTU15,BantuBERTa Vector Neighborhood
+kĩvalala,valala,above (Inferred via BantuBERTa),valala V;NFIN,BantuBERTa Vector Neighborhood
+ĩkwitheetha,theetha,[Translation Missing],ĩkwitheetha N;SG;BANTU15,No Lexicon Match
 nzia,nzia,"path, highway, path, small gazelle",nzia N;SG;BANTU9,PanLex Exact Match
 yatilwa,lwa,forget,lwa V;PST;REC;3;SG,PanLex Exact Match
 tikwo,tikwo,[Translation Missing],tikwo DET;POSS;PSS1P;BANTU10,No Lexicon Match
 Yũngũ,ũngũ,"below, under, underneath",ũngũ DET;POSS;PSS1P;BANTU9,PanLex Exact Match
 ndĩsĩ,ndĩsĩ,[Translation Missing],ndĩsĩ N;SG;BANTU9,No Lexicon Match
-ĩmĩaa,ĩmĩaa,eat (Inferred via BantuBERTa),ĩmĩaa N;SG;BANTU6,BantuBERTa Vector Neighborhood
-ĩkoto,ĩkoto,"sing, child (Inferred via BantuBERTa)",ĩkoto N;SG;BANTU1,BantuBERTa Vector Neighborhood
+ĩmĩaa,ĩmĩaa,[Translation Missing],ĩmĩaa N;SG;BANTU6,No Lexicon Match
+ĩkoto,ĩkoto,sing (Inferred via BantuBERTa),ĩkoto N;SG;BANTU1,BantuBERTa Vector Neighborhood
 maangi,angi,arrow,maangi N;PL;BANTU6,PanLex Exact Match
-mũmũ,mũmũ,"forest, thicket, bush (Inferred via BantuBERTa)",mũmũ N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mũmũ,mũmũ,forest (Inferred via BantuBERTa),mũmũ N;SG;BANTU1,BantuBERTa Vector Neighborhood
 mũongo,mũongo,back,mũongo N;SG;BANTU1,PanLex Exact Match
-mũuumo,muumo,"fig mulberry tree, borassus palm",mũuumo N;SG;BANTU1,Substring Overlap
+mũuumo,uumo,fig tree (Inferred via BantuBERTa),mũuumo N;SG;BANTU1,BantuBERTa Vector Neighborhood
 yo,yo,"pleasant, sweet",yo DET;PROX;BANTU9,PanLex Exact Match
 nthũkũ,nthũkũ,"bad, wicked",nthũkũ N;SG;BANTU9,PanLex Exact Match
 syĩndũ,ũndũ,affair,syĩndũ N;SG;BANTU7,PanLex Exact Match
 yũwaa,waa,"kill, put to death, be ill, groan",yũwaa DET;POSS;PSS1P;BANTU9,PanLex Exact Match
-mũsolonĩ,mũsolonĩ,"sing, child (Inferred via BantuBERTa)",mũsolonĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mũsolonĩ,mũsolonĩ,sing (Inferred via BantuBERTa),mũsolonĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
 ndei,ndei,sugar cane (Inferred via BantuBERTa),ndei PRO;INT;INTENS,BantuBERTa Vector Neighborhood
 Ĩvĩndĩ,ĩvĩndĩ,bone,ĩvĩndĩ N;SG;BANTU10,PanLex Exact Match
 Ũthũku,ũthũku,"brass, copper",ũthũku N;SG;BANTU14,PanLex Exact Match
@@ -509,484 +509,484 @@ nzĩa,nzĩa,"path, highway, path, small gazelle",nzĩa N;SG;BANTU9,PanLex Exact 
 ndatiaa,tiaa,bottle (Inferred via BantuBERTa),tiaa V;PST,BantuBERTa Vector Neighborhood
 kĩĩma,kĩĩma,"hill, mountain",kĩĩma N;SG;BANTU15,PanLex Exact Match
 Kathuma,thuma,bread (Inferred via BantuBERTa),thuma V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
-ngũmbaũ,ngũmbaũ,"rat, (very large long-tailed) rat, (kind of) rat, field rat (Inferred via BantuBERTa)",ngũmbaũ N;SG;BANTU9,BantuBERTa Vector Neighborhood
-mũlanza,uvalanza,"France, 𐐙𐑉𐐰𐑌𐑅",mũlanza N;SG;BANTU1,Substring Overlap
+ngũmbaũ,ngũmbaũ,rat (Inferred via BantuBERTa),ngũmbaũ N;SG;BANTU9,BantuBERTa Vector Neighborhood
+mũlanza,lanza,sing (Inferred via BantuBERTa),mũlanza N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Kasĩĩlĩlĩ,sĩĩlĩlĩ,tomorrow (Inferred via BantuBERTa),sĩĩlĩlĩ V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 omanya,manya,know,manya V;PRS;HAB;2;SG,PanLex Exact Match
 kĩtathe,tha,"Jun, Jun.",tha V;PST;REC;3;SG,PanLex Exact Match
-kyaasindana,inda,dip,sindana V;PRS;NEG;3;SG,Substring Overlap
-ĩndĩ,eneo la uingereza katika bahari hindi,𐐒𐑉𐐮𐐼𐐮𐑇 𐐆𐑌𐐼𐐨𐐲𐑌 𐐄𐑇𐐲𐑌 𐐓𐐯𐑉𐐲𐐻𐐱𐑉𐐨,ĩndĩ DET;PROX;BANTU9,Substring Overlap
+kyaasindana,sinda,"overcome, vanquish, win",sindana V;PRS;NEG;3;SG,Substring Overlap
+ĩndĩ,ĩndĩ,tomorrow (Inferred via BantuBERTa),ĩndĩ DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
 kĩthanze,thanda,[Translation Missing],thanza V;PST;REC;3;SG,No Lexicon Match
-ũtemawa,tema,"liver, slash",ũtemawa N;SG;BANTU14,Substring Overlap
-vamwe,vamwe,"speckle, spot (Inferred via BantuBERTa)",vamwe,BantuBERTa Vector Neighborhood
-kĩtimba,imba,swell,timba V;PRS;NEG;1;SG,Substring Overlap
-nĩkaa,ikaa,"charcoal, embers",nĩkaa N;SG;BANTU9,Substring Overlap
-ũtumba,ũtumba,"earth, land, country, district, province (Inferred via BantuBERTa)",ũtumba N;SG;BANTU14,BantuBERTa Vector Neighborhood
-Syavinya,inya,four,vinya V;PST;REC;3;SG,Substring Overlap
-ĩũngeme,ĩũngema,eat (Inferred via BantuBERTa),ĩũngeme N;SG;BANTU10,BantuBERTa Vector Neighborhood
-thaano,thaano,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles (Inferred via BantuBERTa)",thaano N;SG;BANTU10,BantuBERTa Vector Neighborhood
+ũtemawa,temawa,chief (Inferred via BantuBERTa),ũtemawa N;SG;BANTU14,BantuBERTa Vector Neighborhood
+vamwe,vamwe,speckle (Inferred via BantuBERTa),vamwe,BantuBERTa Vector Neighborhood
+kĩtimba,timba,buffalo (Inferred via BantuBERTa),timba V;PRS;NEG;1;SG,BantuBERTa Vector Neighborhood
+nĩkaa,nĩkaa,sing (Inferred via BantuBERTa),nĩkaa N;SG;BANTU9,BantuBERTa Vector Neighborhood
+ũtumba,ũtumba,earth (Inferred via BantuBERTa),ũtumba N;SG;BANTU14,BantuBERTa Vector Neighborhood
+Syavinya,vinya,[Translation Missing],vinya V;PST;REC;3;SG,No Lexicon Match
+ĩũngeme,ĩũngema,[Translation Missing],ĩũngeme N;SG;BANTU10,No Lexicon Match
+thaano,thaano,rain (Inferred via BantuBERTa),thaano N;SG;BANTU10,BantuBERTa Vector Neighborhood
 maa,maa,"grandfather, intestines, urinate",maa V;PRS,PanLex Exact Match
-ũvῖvye,ũvῖvya,"earth, land, country, district, province (Inferred via BantuBERTa)",ũvῖvya V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
-ndĩvandĩawa,ndia,pool,vandĩawa V;FUT,Substring Overlap
+ũvῖvye,ũvῖvya,earth (Inferred via BantuBERTa),ũvῖvya V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
+ndĩvandĩawa,vandĩawa,eat (Inferred via BantuBERTa),vandĩawa V;FUT,BantuBERTa Vector Neighborhood
 katheka,theka,"forest, thicket, laugh, bush",theka V;PRS;HAB;3;SG,PanLex Exact Match
 ũmĩwa,ũmĩwa,[Translation Missing],ũmĩwa N;SG;BANTU14,No Lexicon Match
-ũkya,kusyukya,revive,ũkya DET;PROX;BANTU15,Substring Overlap
-ndũyotaa,otaa,"shade, shadow (Inferred via BantuBERTa)",yotaa V;FUT,BantuBERTa Vector Neighborhood
-kwĩ,kwĩ,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles (Inferred via BantuBERTa)",kwĩ DET;POSS;PSS1P;BANTU15,BantuBERTa Vector Neighborhood
-ũsyaa,kusyaa,"bear child, give birth, give birth (to a child)",ũsyaa N;SG;BANTU14,Substring Overlap
+ũkya,ũkya,earth (Inferred via BantuBERTa),ũkya DET;PROX;BANTU15,BantuBERTa Vector Neighborhood
+ndũyotaa,otaa,shade (Inferred via BantuBERTa),yotaa V;FUT,BantuBERTa Vector Neighborhood
+kwĩ,kwĩ,rain (Inferred via BantuBERTa),kwĩ DET;POSS;PSS1P;BANTU15,BantuBERTa Vector Neighborhood
+ũsyaa,ũsyaa,become full (Inferred via BantuBERTa),ũsyaa N;SG;BANTU14,BantuBERTa Vector Neighborhood
 kĩthamanĩ,thama,"island, migrate, move away",kĩthamanĩ N;SG;BANTU15,Substring Overlap
 waya,waya,[Translation Missing],waya DET;POSS;PSS1P;BANTU1,No Lexicon Match
-kaiyĩĩawa,yiia,milk,iyĩĩawa N;SG;BANTU15,Substring Overlap
+kaiyĩĩawa,yĩĩawa,tomorrow (Inferred via BantuBERTa),iyĩĩawa N;SG;BANTU15,BantuBERTa Vector Neighborhood
 nonginya,nya,"Aug, Aug., four",nya V;PRS;HAB;1;SG,PanLex Exact Match
 e,e,"T, Tu.",e PRO;INT;INTENS,PanLex Exact Match
-ĩkĩlea,ĩkĩlea,"pull up, root up, get lost, rain, carry, rain, take, carry (astride on the hip) (Inferred via BantuBERTa)",ĩkĩlea N;SG;BANTU10,BantuBERTa Vector Neighborhood
+ĩkĩlea,ĩkĩlea,pull up (Inferred via BantuBERTa),ĩkĩlea N;SG;BANTU10,BantuBERTa Vector Neighborhood
 mũsyĩ,mũsyĩ,"town, arrowhead, head, spear head, head (of arrow), home",mũsyĩ N;SG;BANTU1,PanLex Exact Match
 kũsĩĩlĩla,sĩĩlĩla,tomorrow (Inferred via BantuBERTa),sĩĩlĩla V;NFIN,BantuBERTa Vector Neighborhood
 akĩsĩĩlĩlĩkĩla,kĩsĩĩlĩlĩkĩla,tomorrow (Inferred via BantuBERTa),kĩsĩĩlĩlĩkĩla V;PRS;PROG;3;SG,BantuBERTa Vector Neighborhood
 ĩũlũ,ĩũlũ,"above, up",ĩũlũ N;SG;BANTU1,PanLex Exact Match
-ũmanthwa,thwa,"termite, ant, (small) ant",ũmanthwa N;PL;BANTU1,Substring Overlap
-kaũndũ,undu,affair,kaũndũ N;SG;BANTU15,Substring Overlap
+ũmanthwa,nthwa,sugar cane (Inferred via BantuBERTa),ũmanthwa N;PL;BANTU1,BantuBERTa Vector Neighborhood
+kaũndũ,kaũndũ,sing (Inferred via BantuBERTa),kaũndũ N;SG;BANTU15,BantuBERTa Vector Neighborhood
 kwoo,kwoo,tomorrow (Inferred via BantuBERTa),kwoo DET;POSS;PSS1P;BANTU15,BantuBERTa Vector Neighborhood
-Kĩlaa,ilaa,flower,kĩlaa V;PRS;HAB;3;SG,Substring Overlap
-ndwendekaa,endekaa,"tree, plant, organism capable of photosynthesis (Inferred via BantuBERTa)",endekaa V;PRS,BantuBERTa Vector Neighborhood
+Kĩlaa,kĩlaa,[Translation Missing],kĩlaa V;PRS;HAB;3;SG,No Lexicon Match
+ndwendekaa,endekaa,tree (Inferred via BantuBERTa),endekaa V;PRS,BantuBERTa Vector Neighborhood
 Sua,sua,"become full, abound, grandmother",Sua V;PRS,PanLex Exact Match
 Kasĩlĩlĩ,sĩlĩlĩ,duck (Inferred via BantuBERTa),sĩlĩlĩ V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-kosyaĩa,syai,"parent, parent (he who begets)",syaĩa V;NFIN,Substring Overlap
+kosyaĩa,syaĩa,duck (Inferred via BantuBERTa),syaĩa V;NFIN,BantuBERTa Vector Neighborhood
 ndĩkwatawa,tawa,buffalo (Inferred via BantuBERTa),tawa V;PRS;PROG;1;SG,BantuBERTa Vector Neighborhood
 ndwĩwaa,waa,"kill, put to death, be ill, groan",ndwĩwaa N;SG;BANTU9,PanLex Exact Match
 iko,iko,"fireplace, hearth, kitchen, paddle, oar, filth, hearthstone, hearthstone (for putting pots on)",iko,PanLex Exact Match
-ĩtwĩkaa,ikaa,"charcoal, embers",ĩtwĩkaa V;PRS,Substring Overlap
+ĩtwĩkaa,ĩtwĩkaa,neck (Inferred via BantuBERTa),ĩtwĩkaa V;PRS,BantuBERTa Vector Neighborhood
 kĩ,kĩ,beer,kĩ DET;PROX;BANTU15,PanLex Exact Match
 owaa,waa,"kill, put to death, be ill, groan",waa V;PRS;HAB;2;SG,PanLex Exact Match
-yavũnĩa,vũnĩa,"chief, headman, chief person, head, master (Inferred via BantuBERTa)",vũnĩa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+yavũnĩa,vũnĩa,[Translation Missing],vũnĩa V;PST;REC;3;SG,No Lexicon Match
 ndaatha,tha,"Jun, Jun.",tha V;FUT,PanLex Exact Match
 nziũ,nziũ,"black, dark",nziũ DET;POSS;PSS1P;BANTU9,PanLex Exact Match
 Kũu,kũu,"foot, leg, calabash",Kũu DET;PROX;BANTU15,PanLex Exact Match
 kua,kua,"pull up, root up, get lost, rain, carry, rain, take, carry (astride on the hip)",kua V;PRS,PanLex Exact Match
-ĩalyũlĩte,alyula,"alter, change",lyũla V;PST;REC;3;SG,Substring Overlap
-nosyo,nosyo,"town, arrowhead, head, spear head, head (of arrow), home (Inferred via BantuBERTa)",nosyo N;SG;BANTU9,BantuBERTa Vector Neighborhood
-Vayĩ,wayĩ,"hill, mountain (Inferred via BantuBERTa)",Vayĩ DET;POSS;PSS1P;BANTU4,BantuBERTa Vector Neighborhood
+ĩalyũlĩte,lyũla,guinea fowl (Inferred via BantuBERTa),lyũla V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+nosyo,nosyo,town (Inferred via BantuBERTa),nosyo N;SG;BANTU9,BantuBERTa Vector Neighborhood
+Vayĩ,wayĩ,hill (Inferred via BantuBERTa),Vayĩ DET;POSS;PSS1P;BANTU4,BantuBERTa Vector Neighborhood
 weemaa,emaa,rhinoceros (Inferred via BantuBERTa),weemaa V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
-kokĩla,kilalinda,"blind person, blind, spoil",kĩla V;NFIN,Substring Overlap
+kokĩla,kĩla,[Translation Missing],kĩla V;NFIN,No Lexicon Match
 Mũndũ,mũndũ,"person, person, individual, capita",mũndũ N;SG;BANTU1,PanLex Exact Match
-Ĩlũkũ,ĩlũkũ,"fireplace, hearth, kitchen, paddle, oar, filth, hearthstone, hearthstone (for putting pots on) (Inferred via BantuBERTa)",ĩlũkũ N;SG;BANTU1,BantuBERTa Vector Neighborhood
-Andũ,ivandu,"speckle, spot",andũ PRO;INT;INTENS,Substring Overlap
+Ĩlũkũ,ĩlũkũ,fireplace (Inferred via BantuBERTa),ĩlũkũ N;SG;BANTU1,BantuBERTa Vector Neighborhood
+Andũ,andũ,finger (Inferred via BantuBERTa),andũ PRO;INT;INTENS,BantuBERTa Vector Neighborhood
 noko,noko,[Translation Missing],noko,No Lexicon Match
 kĩsaa,saa,hour,kĩsaa N;SG;BANTU15,PanLex Exact Match
 avalũkũ,valũkũ,hare,valũkũ V;PRS;HAB;3;SG,PanLex Exact Match
-mũito,uito,"rhythm, weight",mũito N;SG;BANTU1,Substring Overlap
+mũito,mũito,sugar cane (Inferred via BantuBERTa),mũito N;SG;BANTU1,BantuBERTa Vector Neighborhood
 kĩndũ,kĩndũ,thing,kĩndũ N;SG;BANTU15,PanLex Exact Match
-ngũlimũ,guli,"ape, baboon",ngũlimũ N;SG;BANTU9,Substring Overlap
+ngũlimũ,nguli,"ape, baboon",ngũlimũ N;SG;BANTU9,Substring Overlap
 mauuwĩ,uuwĩ,duck (Inferred via BantuBERTa),uuwĩ V;PST;REC;2;PL,BantuBERTa Vector Neighborhood
 ngũngũũ,ngũngũũ,crow,ngũngũũ N;SG;BANTU9,PanLex Exact Match
-mũutĩ,mũutĩ,"bow, spittle (Inferred via BantuBERTa)",mũutĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
-ndwaatonganga,ganga,guinea fowl,tonganga V;PST;REC;1;SG,Substring Overlap
+mũutĩ,mũutĩ,bow (Inferred via BantuBERTa),mũutĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
+ndwaatonganga,tonga,"Tonga, country, 𐐓𐐪𐑍𐑀𐐲",tonganga V;PST;REC;1;SG,Substring Overlap
 Kambee,kambea,[Translation Missing],Kambea V;PST;REC;3;SG,No Lexicon Match
 Kathaana,thaana,[Translation Missing],thaana V;PRS;HAB;3;SG,No Lexicon Match
 kya,kya,[Translation Missing],kya DET;POSS;PSS1P;BANTU15,No Lexicon Match
 Ngũ,ngũ,firewood,Ngũ DET;PROX;BANTU10,PanLex Exact Match
-ũumaa,umaa,"grandfather, urinate",ũumaa N;SG;BANTU14,Substring Overlap
-Mũkũyũ,kũyũ,"fish, fig tree",uMũkũyũ N;SG;BANTU1,PanLex Exact Match
-kaneyũmba,iyumbanyʼa,prepare,yũmba V;PST;REC;3;SG,Substring Overlap
+ũumaa,ũumaa,[Translation Missing],ũumaa N;SG;BANTU14,No Lexicon Match
+Mũkũyũ,mũkũyũ,fig tree,uMũkũyũ N;SG;BANTU1,PanLex Exact Match
+kaneyũmba,yũmba,[Translation Missing],yũmba V;PST;REC;3;SG,No Lexicon Match
 Watina,tina,"tree-trunk, (base of) tree-trunk, at the back of, behind",tina V;PST;REC;3;SG,PanLex Exact Match
 kevwia,vwia,"feathers, fur, awe, fear of God",kevwia V;PRS,PanLex Exact Match
 ndũmyathaa,thaa,eat (Inferred via BantuBERTa),thaa V;PRS;PROG;1;SG,BantuBERTa Vector Neighborhood
 Eka,eka,"leave, leave (off)",Eka V;PRS,PanLex Exact Match
-maindaa,inda,dip,indaa V;PST;REC;2;PL,Substring Overlap
+maindaa,indaa,ashes (Inferred via BantuBERTa),indaa V;PST;REC;2;PL,BantuBERTa Vector Neighborhood
 ĩlaa,ĩlaa,flower,ĩlaa V;PST;REC;3;SG,PanLex Exact Match
 kambĩĩaa,mbĩĩaa,rainy season (Inferred via BantuBERTa),mbĩĩaa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-nditalawa,galawa,dug-out canoe,lawa V;FUT,Substring Overlap
+nditalawa,lawa,rat (Inferred via BantuBERTa),lawa V;FUT,BantuBERTa Vector Neighborhood
 Wenda,enda,"go, love, want, need, wish, please, satisfy",enda V;PRS;HAB;3;SG,PanLex Exact Match
 Kaũ,kaũ,war,Kaũ DET;POSS;PSS1P;BANTU1,PanLex Exact Match
 Kasũni,kasũni,[Translation Missing],kasũni N;SG;BANTU15,No Lexicon Match
-imilĩlaa,ilaa,flower,imilĩlaa N;PL;BANTU4,Substring Overlap
+imilĩlaa,lĩlaa,horn (Inferred via BantuBERTa),imilĩlaa N;PL;BANTU4,BantuBERTa Vector Neighborhood
 ĩĩa,ĩĩa,"lake, milk, lake",ĩĩa DET;PROX;BANTU6,PanLex Exact Match
 ndũmyona,ona,see,ndũmyona N;SG;BANTU9,PanLex Exact Match
-Ũseo,ũseo,"brass, copper (Inferred via BantuBERTa)",ũseo N;SG;BANTU14,BantuBERTa Vector Neighborhood
+Ũseo,ũseo,brass (Inferred via BantuBERTa),ũseo N;SG;BANTU14,BantuBERTa Vector Neighborhood
 yũmea,mea,"grow, grow (of plants)",yũmea N;SG;BANTU9,PanLex Exact Match
-Kyelelo,elelo,tomorrow (Inferred via BantuBERTa),Kyelelo N;SG;BANTU15,BantuBERTa Vector Neighborhood
-katanamba,amba,baobab,tanamba V;PST,Substring Overlap
+Kyelelo,elelo,[Translation Missing],Kyelelo N;SG;BANTU15,No Lexicon Match
+katanamba,tanamba,fly (Inferred via BantuBERTa),tanamba V;PST,BantuBERTa Vector Neighborhood
 kĩmuu,kĩmuu,[Translation Missing],kĩmuu N;SG;BANTU15,No Lexicon Match
 nganga,nganga,guinea fowl,nganga N;SG;BANTU9,PanLex Exact Match
-ndĩmanyaa,anya,"leave, permission",nyaa V;PRS;PROG;1;SG,Substring Overlap
-ũseki,ũseki,"sing, child (Inferred via BantuBERTa)",ũseki N;SG;BANTU14,BantuBERTa Vector Neighborhood
+ndĩmanyaa,manya,know,nyaa V;PRS;PROG;1;SG,Substring Overlap
+ũseki,ũseki,[Translation Missing],ũseki N;SG;BANTU14,No Lexicon Match
 mavĩndĩ,vĩndĩ,bone,vĩndĩ V;PST;REC;2;PL,PanLex Exact Match
 kĩthiita1,thiita1,[Translation Missing],thiita1,No Lexicon Match
-ngũngi,ngũngi,elephant (Inferred via BantuBERTa),ngũngi N;SG;BANTU9,BantuBERTa Vector Neighborhood
-kavola,vola,fire (Inferred via BantuBERTa),vola V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-ithu,ithukiisya,listen,ithu N;SG;BANTU9,Substring Overlap
+ngũngi,ngũngi,[Translation Missing],ngũngi N;SG;BANTU9,No Lexicon Match
+kavola,vola,[Translation Missing],vola V;PST;REC;3;SG,No Lexicon Match
+ithu,ithu,sing (Inferred via BantuBERTa),ithu N;SG;BANTU9,BantuBERTa Vector Neighborhood
 mwĩĩ,mwĩĩ,"root, body, root",mwĩĩ N;SG;BANTU1,PanLex Exact Match
 Mũsingi,singi,rhinoceros (Inferred via BantuBERTa),uMũsingi N;SG;BANTU1,BantuBERTa Vector Neighborhood
 ndĩsa,ndĩsa,squirrel (Inferred via BantuBERTa),ndĩsa N;SG;BANTU9,BantuBERTa Vector Neighborhood
 ũtwĩka,ũtwĩka,tomorrow (Inferred via BantuBERTa),ũtwĩka V;PRS,BantuBERTa Vector Neighborhood
-Nthũmũla,thũmũla,"dew, one, one (Inferred via BantuBERTa)",Nthũmũla N;SG;BANTU10,BantuBERTa Vector Neighborhood
-nĩlĩsĩlawa,sĩlawa,"tree, plant, organism capable of photosynthesis (Inferred via BantuBERTa)",sĩlawa V;FUT,BantuBERTa Vector Neighborhood
-ve,ve,"town, arrowhead, head, spear head, head (of arrow), home (Inferred via BantuBERTa)",ve PRO;INT;PROX;BANTU1,BantuBERTa Vector Neighborhood
-aa,waa,"kill, put to death, be ill, groan",aa V;PRS,PanLex Exact Match
-yĩendete,endeta,tomorrow (Inferred via BantuBERTa),enda V;PST;PFV;3;SG,BantuBERTa Vector Neighborhood
-kũtakomawa,koma,"sleep, lie down",takomawa V;NFIN,Substring Overlap
-ũlenga,lenga,"bow, spittle (Inferred via BantuBERTa)",ũlenga N;SG;BANTU14,BantuBERTa Vector Neighborhood
-Masũni,umasũni,"bow, spittle (Inferred via BantuBERTa)",uMasũni N;PL;BANTU2,BantuBERTa Vector Neighborhood
+Nthũmũla,thũmũla,[Translation Missing],Nthũmũla N;SG;BANTU10,No Lexicon Match
+nĩlĩsĩlawa,sĩlawa,tree (Inferred via BantuBERTa),sĩlawa V;FUT,BantuBERTa Vector Neighborhood
+ve,ve,town (Inferred via BantuBERTa),ve PRO;INT;PROX;BANTU1,BantuBERTa Vector Neighborhood
+aa,aa,"finger, disappear, fade, get lost",aa V;PRS,PanLex Exact Match
+yĩendete,endeta,[Translation Missing],enda V;PST;PFV;3;SG,No Lexicon Match
+kũtakomawa,komawa,guest (Inferred via BantuBERTa),takomawa V;NFIN,BantuBERTa Vector Neighborhood
+ũlenga,lenga,bow (Inferred via BantuBERTa),ũlenga N;SG;BANTU14,BantuBERTa Vector Neighborhood
+Masũni,umasũni,bow (Inferred via BantuBERTa),uMasũni N;PL;BANTU2,BantuBERTa Vector Neighborhood
 Ndũkavũthĩĩsye,vuthi,"rubbish heap, garbage, rubbish",vũthĩĩsya V;PST;REC;1;PL,Substring Overlap
 Kinyaa,nyaa,"dry up, ebb",nyaa V;PRS;HAB;3;SG,PanLex Exact Match
 mũingo,mũingo,hyena (Inferred via BantuBERTa),mũingo N;SG;BANTU1,BantuBERTa Vector Neighborhood
 Mũtĩ,mũtĩ,"tree, plant, organism capable of photosynthesis",mũtĩ N;SG;BANTU1,PanLex Exact Match
 vaĩ,vaĩ,wall,vaĩ DET;PROX;BANTU8,PanLex Exact Match
 i,i,"spoon, dung, excrement, O, Oct., N, Nov., D, Dec.",i PRO;INT;INT,PanLex Exact Match
-ũtaĩ,kutaia,honor,ũtaĩ DET;PROX;BANTU1,Substring Overlap
+ũtaĩ,ũtaĩ,[Translation Missing],ũtaĩ DET;PROX;BANTU1,No Lexicon Match
 ndogaa,ndogaa,[Translation Missing],ndogaa N;SG;BANTU9,No Lexicon Match
-ĩkwatasya,tasya,"pull up, root up, get lost, rain, carry, rain, take, carry (astride on the hip) (Inferred via BantuBERTa)",ĩkwatasya N;SG;BANTU15,BantuBERTa Vector Neighborhood
-mbuta,mbuta,"earth, land, country, district, province (Inferred via BantuBERTa)",mbuta N;SG;BANTU1,BantuBERTa Vector Neighborhood
-yĩ,yĩ,fire (Inferred via BantuBERTa),yĩ DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
-itakomanaa,koma,"sleep, lie down",itakomanaa N;PL;BANTU9,Substring Overlap
+ĩkwatasya,tasya,pull up (Inferred via BantuBERTa),ĩkwatasya N;SG;BANTU15,BantuBERTa Vector Neighborhood
+mbuta,mbuta,earth (Inferred via BantuBERTa),mbuta N;SG;BANTU1,BantuBERTa Vector Neighborhood
+yĩ,yĩ,[Translation Missing],yĩ DET;PROX;BANTU9,No Lexicon Match
+itakomanaa,komana,meet,itakomanaa N;PL;BANTU9,Substring Overlap
 nayo,nayo,hyena (Inferred via BantuBERTa),nayo DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
-maayo,maayo ma nzou,elephant’s tusk,maayo N;PL;BANTU6,Substring Overlap
-konekaa,konekaa,"day, day, day-time (Inferred via BantuBERTa)",konekaa V;PRS,BantuBERTa Vector Neighborhood
-wasya,sya,"body, root, root (Inferred via BantuBERTa)",sya V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
+maayo,maayo,bow (Inferred via BantuBERTa),maayo N;PL;BANTU6,BantuBERTa Vector Neighborhood
+konekaa,konekaa,day (Inferred via BantuBERTa),konekaa V;PRS,BantuBERTa Vector Neighborhood
+wasya,sya,body (Inferred via BantuBERTa),sya V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
 muu,muu,"ashes, mosquito",muu DET;PROX;BANTU1,PanLex Exact Match
 kĩtĩawa,tĩawa,firewood (Inferred via BantuBERTa),kĩtĩawa N;SG;BANTU15,BantuBERTa Vector Neighborhood
-nzongo,ongo,back,nzongo N;SG;BANTU10,Substring Overlap
+nzongo,nzongo,sugar cane (Inferred via BantuBERTa),nzongo N;SG;BANTU10,BantuBERTa Vector Neighborhood
 ya,ya,eat,ya DET;POSS;PSS1P;BANTU9,PanLex Exact Match
 na,na,"sing, child",na COP;IDENT,PanLex Exact Match
 ũkakanwa,nwa,[Translation Missing],ũkakanwa N;SG;BANTU15,No Lexicon Match
-weka,kutweka,melt,weka V;PRS,Substring Overlap
+weka,weka,[Translation Missing],weka V;PRS,No Lexicon Match
 nyamũ,nyamũ,tomorrow (Inferred via BantuBERTa),Nyamũ N;SG;BANTU10,BantuBERTa Vector Neighborhood
-ĩswii,ĩswii,"bad, wicked (Inferred via BantuBERTa)",ĩswii N;SG;BANTU10,BantuBERTa Vector Neighborhood
-ndĩleaa,leaa,"fireplace, hearth, kitchen, paddle, oar, filth, hearthstone, hearthstone (for putting pots on) (Inferred via BantuBERTa)",ndĩleaa N;SG;BANTU9,BantuBERTa Vector Neighborhood
-yĩsawa,wĩsawa,"grandfather, intestines, urinate (Inferred via BantuBERTa)",yĩsawa DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
+ĩswii,ĩswii,bad (Inferred via BantuBERTa),ĩswii N;SG;BANTU10,BantuBERTa Vector Neighborhood
+ndĩleaa,leaa,[Translation Missing],ndĩleaa N;SG;BANTU9,No Lexicon Match
+yĩsawa,wĩsawa,grandfather (Inferred via BantuBERTa),yĩsawa DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
 Katumbĩlĩle,tumbi,egg,tumbĩla V;PST;REC;3;SG,Substring Overlap
 Ndũkaunĩĩe,unĩĩa,firewood (Inferred via BantuBERTa),unĩĩa V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
 Wĩvũa,vũa,"wash, wash (clothes)",vũa V;PRS;HAB;3;SG,PanLex Exact Match
-kaunyũsye,unyũsa,see (Inferred via BantuBERTa),unyũsa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+kaunyũsye,unyũsa,[Translation Missing],unyũsa V;PST;REC;3;SG,No Lexicon Match
 mbenzi,mbenzi,sugar cane (Inferred via BantuBERTa),mbenzi N;SG;BANTU1,BantuBERTa Vector Neighborhood
 syaema,ema,mountain,ema V;PST;REC;1;PL,PanLex Exact Match
 ndyasyaa,syaa,"bear child, give birth, give birth (to a child)",syaa V;PST;REC;3;SG,PanLex Exact Match
 ũtaumaa,umaa,"grandfather, urinate",ũtaumaa N;SG;BANTU14,PanLex Exact Match
 ndũthekaa,theka,"forest, thicket, laugh, bush",thekaa V;PRS;HAB;1;SG,Substring Overlap
-Ĩsũni,ĩsũni,eat (Inferred via BantuBERTa),ĩsũni N;SG;BANTU1,BantuBERTa Vector Neighborhood
-nĩwonaa,onaa,"tree, plant, organism capable of photosynthesis (Inferred via BantuBERTa)",nĩwonaa N;SG;BANTU9,BantuBERTa Vector Neighborhood
+Ĩsũni,ĩsũni,[Translation Missing],ĩsũni N;SG;BANTU1,No Lexicon Match
+nĩwonaa,onaa,tree (Inferred via BantuBERTa),nĩwonaa N;SG;BANTU9,BantuBERTa Vector Neighborhood
 mwasyo,mwasyo,guinea fowl (Inferred via BantuBERTa),mwasyo N;SG;BANTU1,BantuBERTa Vector Neighborhood
 kũũ,kũũ,"foot, leg, calabash",kũũ DET;POSS;PSS1P;BANTU15,PanLex Exact Match
-ndũthũũnaa,thũũnaa,"tree, plant, organism capable of photosynthesis (Inferred via BantuBERTa)",thũũnaa V;FUT,BantuBERTa Vector Neighborhood
+ndũthũũnaa,thũũnaa,tree (Inferred via BantuBERTa),thũũnaa V;FUT,BantuBERTa Vector Neighborhood
 kũmwe,kũmwe,[Translation Missing],kũmwe N;SG;BANTU15,No Lexicon Match
 Ndũsinda,sinda,"overcome, vanquish, win",sinda V;PRS;NEG;1;SG,PanLex Exact Match
 nzaa,nzaa,hunger,nzaa N;SG;BANTU9,PanLex Exact Match
 ĩtangalwa,ĩtangalwa,[Translation Missing],ĩtangalwa N;SG;BANTU10,No Lexicon Match
 Mwĩao,mwĩao,sugar cane (Inferred via BantuBERTa),Mwĩao N;SG;BANTU1,BantuBERTa Vector Neighborhood
-kũkwatya,kwatya,"borrow, lend",kwatya V;NFIN,PanLex Exact Match
-makanza,kanza,"hill, mountain (Inferred via BantuBERTa)",makanza N;PL;BANTU6,BantuBERTa Vector Neighborhood
-sikũkũ,kukua,"pull up, root up, carry, take, carry (astride on the hip)",sikũkũ N;SG;BANTU7,Substring Overlap
+kũkwatya,kũkwatya,"borrow, lend",kwatya V;NFIN,PanLex Exact Match
+makanza,kanza,hill (Inferred via BantuBERTa),makanza N;PL;BANTU6,BantuBERTa Vector Neighborhood
+sikũkũ,kũkũ,all (Inferred via BantuBERTa),sikũkũ N;SG;BANTU7,BantuBERTa Vector Neighborhood
 nzĩnĩ,nzĩnĩ,sugar cane (Inferred via BantuBERTa),nzĩnĩ N;SG;BANTU9,BantuBERTa Vector Neighborhood
-ngũlũ,ngulue,pig,ngũlũ N;SG;BANTU9,Substring Overlap
+ngũlũ,ngũlũ,eat (Inferred via BantuBERTa),ngũlũ N;SG;BANTU9,BantuBERTa Vector Neighborhood
 malaa,laa,flower,malaa N;PL;BANTU6,PanLex Exact Match
 Nĩ,nĩ,tomorrow,nĩ PRO;INT;INTENS,PanLex Exact Match
-mũũngũ,ungu,"below, under, underneath",mũũngũ N;SG;BANTU1,Substring Overlap
+mũũngũ,mũũngũ,finger (Inferred via BantuBERTa),mũũngũ N;SG;BANTU1,BantuBERTa Vector Neighborhood
 aka,aka,"year, do masonry, work as a mason, build, construct, put together",aka V;PRS,PanLex Exact Match
-ngoowa,ngoo,heart,ngoowa N;SG;BANTU10,Substring Overlap
+ngoowa,ngoowa,[Translation Missing],ngoowa N;SG;BANTU10,No Lexicon Match
 ngovi,ngovi,tomorrow (Inferred via BantuBERTa),ngovi N;SG;BANTU10,BantuBERTa Vector Neighborhood
-ndyũlawa,galawa,dug-out canoe,ndyũlawa N;SG;BANTU9,Substring Overlap
-ndathaa,thaa,"earth, land, country, district, province (Inferred via BantuBERTa)",thaa V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
-ivĩsĩ,visiwa vya falkland,"Falkland Islands, Falkland Islands (Islas Malvinas), 𐐙𐐪𐑊𐐿𐑊𐐲𐑌𐐼 𐐌𐑊𐐲𐑌𐐼𐑆",vĩsĩ V;PRS;HAB;3;SG,Substring Overlap
-ũte,ũte,"tree, plant, organism capable of photosynthesis (Inferred via BantuBERTa)",ũte DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
-Aũme,ũma,"bite, iron, steel, be fully grown, iron ore, dry up, ebb, abuse",ũme DET;POSS;PSS1P;BANTU6,PanLex Exact Match
+ndyũlawa,lawa,tomorrow (Inferred via BantuBERTa),ndyũlawa N;SG;BANTU9,BantuBERTa Vector Neighborhood
+ndathaa,thaa,earth (Inferred via BantuBERTa),thaa V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
+ivĩsĩ,vĩsĩ,[Translation Missing],vĩsĩ V;PRS;HAB;3;SG,No Lexicon Match
+ũte,ũte,[Translation Missing],ũte DET;PROX;BANTU1,No Lexicon Match
+Aũme,aũme,righthand,ũme DET;POSS;PSS1P;BANTU6,PanLex Exact Match
 yũlea,lea,"refuse, say no, reject, deny",yũlea DET;POSS;PSS1P;BANTU9,PanLex Exact Match
-kala,ikala nthi,sit,kala,Substring Overlap
-Nthee,thee,two (Inferred via BantuBERTa),thee ADJ;BANTU1,BantuBERTa Vector Neighborhood
+kala,kala,tomorrow (Inferred via BantuBERTa),kala,BantuBERTa Vector Neighborhood
+Nthee,thee,[Translation Missing],thee ADJ;BANTU1,No Lexicon Match
 Kathima,thima,"well, examine, measure, test, spring, spring (of water)",thima V;PRS;HAB;3;SG,PanLex Exact Match
 Yumaatatũ,tatũ,three,umaatatũ N;PL;BANTU1,PanLex Exact Match
-ĩngĩ,nyingi,many,ĩngĩ DET;PROX;BANTU9,Substring Overlap
-ndũkemene,mene,"sing, child (Inferred via BantuBERTa)",ndũkemene N;SG;BANTU10,BantuBERTa Vector Neighborhood
+ĩngĩ,ĩngĩ,tomorrow (Inferred via BantuBERTa),ĩngĩ DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
+ndũkemene,mene,sing (Inferred via BantuBERTa),ndũkemene N;SG;BANTU10,BantuBERTa Vector Neighborhood
 mbusya,mbusya,rhinoceros,mbusya N;SG;BANTU1,PanLex Exact Match
-Ndũkaũmange,ũmange,"become full, abound, grandmother (Inferred via BantuBERTa)",ũmange V;PST;PFV;1;PL,BantuBERTa Vector Neighborhood
+Ndũkaũmange,ũmange,become full (Inferred via BantuBERTa),ũmange V;PST;PFV;1;PL,BantuBERTa Vector Neighborhood
 yaĩlaa,ĩlaa,flower,ĩlaa V;PST;REC;3;SG,PanLex Exact Match
 Sisya,sisya,"look at, examine",Sisya V;PRS,PanLex Exact Match
-yaana,kutwaana,"marry, marry (of man)",yaana DET;POSS;PSS1P;BANTU9,Substring Overlap
+yaana,waana,[Translation Missing],yaana DET;POSS;PSS1P;BANTU9,No Lexicon Match
 Ĩvyũvya,ĩvyũvya,eat (Inferred via BantuBERTa),ĩvyũvya N;SG;BANTU10,BantuBERTa Vector Neighborhood
 ndĩkĩlaa,laa,flower,ndĩkĩlaa N;SG;BANTU9,PanLex Exact Match
 kĩsera,sera,[Translation Missing],kĩsera V;PRS,No Lexicon Match
 yoomya,omya,tomorrow (Inferred via BantuBERTa),yoomya DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
-ekanaa,kana,child,kanaa V;PRS,Substring Overlap
+ekanaa,kanaa,hyena (Inferred via BantuBERTa),kanaa V;PRS,BantuBERTa Vector Neighborhood
 Kasamũ,samũ,tomorrow (Inferred via BantuBERTa),samũ V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 nthĩ,nthĩ,"earth, land, country, district, province",nthĩ DET;PROX;BANTU9,PanLex Exact Match
 nĩkwona,ona,see,ona V;PRS;PROG;1;SG,PanLex Exact Match
-ĩvalũkĩte,kite,dog,ĩvalũkĩte N;SG;BANTU14,Substring Overlap
-mũtitũ,muti,"tree, plant, organism capable of photosynthesis",mũtitũ N;SG;BANTU1,Substring Overlap
+ĩvalũkĩte,ĩvalũkĩte,ascend (Inferred via BantuBERTa),ĩvalũkĩte N;SG;BANTU14,BantuBERTa Vector Neighborhood
+mũtitũ,mũtitũ,[Translation Missing],mũtitũ N;SG;BANTU1,No Lexicon Match
 kwĩngutha,ĩngutha,[Translation Missing],kwĩngutha N;SG;BANTU15,No Lexicon Match
-nĩyũmĩsyaa,syaa,"bear child, give birth, give birth (to a child)",nĩyũmĩsyaa N;SG;BANTU9,Substring Overlap
-wĩvitho,itho,eye,wĩvitho DET;POSS;PSS1P;BANTU1,Substring Overlap
-yilũ,wilũ,"grandfather, intestines, urinate (Inferred via BantuBERTa)",yilũ DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
-Makanga,lee wa ukanga,"beach, coast",uMakanga,Substring Overlap
+nĩyũmĩsyaa,mĩsyaa,porcupine (Inferred via BantuBERTa),nĩyũmĩsyaa N;SG;BANTU9,BantuBERTa Vector Neighborhood
+wĩvitho,wĩvitho,[Translation Missing],wĩvitho DET;POSS;PSS1P;BANTU1,No Lexicon Match
+yilũ,wilũ,grandfather (Inferred via BantuBERTa),yilũ DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
+Makanga,kanga,womb (Inferred via BantuBERTa),uMakanga,BantuBERTa Vector Neighborhood
 Kĩseũ,seũ,tomorrow (Inferred via BantuBERTa),kĩseũ N;SG;BANTU10,BantuBERTa Vector Neighborhood
 ũsĩ,ũsĩ,"river, current, stream",ũsĩ DET;PROX;BANTU1,PanLex Exact Match
 mũũnda,mũũnda,"garden, cultivated ground",mũũnda N;SG;BANTU1,PanLex Exact Match
 kĩitonyeka,tonyeka,hyena (Inferred via BantuBERTa),tonyeka V;PRS;NEG;3;SG,BantuBERTa Vector Neighborhood
-ũkũlengala,gala,spark,lengala V;PRS;PROG;2;SG,Substring Overlap
+ũkũlengala,lengala,bow (Inferred via BantuBERTa),lengala V;PRS;PROG;2;SG,BantuBERTa Vector Neighborhood
 kĩlĩo,kĩlĩo,tomorrow (Inferred via BantuBERTa),kĩlĩo N;SG;BANTU15,BantuBERTa Vector Neighborhood
 Kana,kana,child,kana V;PRS,PanLex Exact Match
-me,me,"grandfather, intestines, urinate (Inferred via BantuBERTa)",me DET;POSS;PSS1P;BANTU6,BantuBERTa Vector Neighborhood
-Kanywa,nywa,"mouth, drink",nywa V;PST;REC;3;SG,PanLex Exact Match
-ndwĩ,ikuli ya ndwiki,"colobus monkey, colobus monkey (with long black silk hair, white on the shoulders)",ndwĩ DET;POSS;PSS1P;BANTU9,Substring Overlap
-mbongenĩ,onga,"suck, suck (the breast)",mbonga V;PRS,Substring Overlap
+me,me,grandfather (Inferred via BantuBERTa),me DET;POSS;PSS1P;BANTU6,BantuBERTa Vector Neighborhood
+Kanywa,kanywa,mouth,nywa V;PST;REC;3;SG,PanLex Exact Match
+ndwĩ,ndwĩ,rain (Inferred via BantuBERTa),ndwĩ DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
+mbongenĩ,mbonga,tree (Inferred via BantuBERTa),mbonga V;PRS,BantuBERTa Vector Neighborhood
 ũndũ,ũndũ,affair,ũndũ DET;PROX;BANTU1,PanLex Exact Match
-ngalĩko,kusisya kila ngaliko,look round,ngalĩko N;SG;BANTU10,Substring Overlap
+ngalĩko,ngalĩko,tomorrow (Inferred via BantuBERTa),ngalĩko N;SG;BANTU10,BantuBERTa Vector Neighborhood
 mũĩ,mũĩ,spoon,mũĩ DET;PROX;BANTU4,PanLex Exact Match
-ĩthĩĩ,athiia na nyundo,"hammer, hit, hit (with a hammer)",ĩthĩĩ N;SG;BANTU9,Substring Overlap
+ĩthĩĩ,thĩĩ,bow (Inferred via BantuBERTa),ĩthĩĩ N;SG;BANTU9,BantuBERTa Vector Neighborhood
 kyakwatwa,kwata,"seize, get, obtain, grasp, hold, hold (in arm), arrest, receive",kwata V;PST;REC;3;SG,PanLex Exact Match
 ĩyetelaa,etelaa,[Translation Missing],etelaa V;PRS;HAB;3;SG,No Lexicon Match
 ngũkũ,ngũkũ,"fowl, hen, hen, female chicken, chicken, ant, (reddish-brown biting) ant",ngũkũ N;SG;BANTU9,PanLex Exact Match
-wavĩtya,itya,"direct, order",vĩtya V;PST;REC;2;SG,Substring Overlap
+wavĩtya,vĩtya,sugar cane (Inferred via BantuBERTa),vĩtya V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
 ĩ,ĩ,"spoon, dung, excrement, O, Oct., N, Nov., D, Dec.",ĩ DET;PROX;BANTU6,PanLex Exact Match
 Nyamũ,nyamũ,tomorrow (Inferred via BantuBERTa),Nyamũ N;SG;BANTU10,BantuBERTa Vector Neighborhood
 ũĩaa,ũĩaa,hunger (Inferred via BantuBERTa),ũĩaa DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
-lũma,kukulumanya,"turn over, turn upside down",Lũma N;SG;BANTU1,Substring Overlap
-Lũma,kukulumanya,"turn over, turn upside down",Lũma N;SG;BANTU1,Substring Overlap
-nyũmba,nyũmba,"sing, child (Inferred via BantuBERTa)",nyũmba N;SG;BANTU9,BantuBERTa Vector Neighborhood
+lũma,lũma,tomorrow (Inferred via BantuBERTa),Lũma N;SG;BANTU1,BantuBERTa Vector Neighborhood
+Lũma,lũma,tomorrow (Inferred via BantuBERTa),Lũma N;SG;BANTU1,BantuBERTa Vector Neighborhood
+nyũmba,nyũmba,sing (Inferred via BantuBERTa),nyũmba N;SG;BANTU9,BantuBERTa Vector Neighborhood
 Makaanĩ,kaanĩ,guinea fowl (Inferred via BantuBERTa),uMakaanĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
-yonaa,onaa,"corpse, dead person (Inferred via BantuBERTa)",onaa V;PRS,BantuBERTa Vector Neighborhood
+yonaa,onaa,corpse (Inferred via BantuBERTa),onaa V;PRS,BantuBERTa Vector Neighborhood
 Kyonze,kyonze,"cripple, weak, be mutilated",kyonda V;PST;REC;3;SG,PanLex Exact Match
-kwacha,kwacha ya malawi,Malawian Kwacha,kwacha N;SG;BANTU15,Substring Overlap
-Kĩwe,kĩwe,"day, day, day-time (Inferred via BantuBERTa)",kĩwe DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
-nũyumasya,sya,"sing, child (Inferred via BantuBERTa)",nũyumasya N;PL;BANTU9,BantuBERTa Vector Neighborhood
+kwacha,kwacha,[Translation Missing],kwacha N;SG;BANTU15,No Lexicon Match
+Kĩwe,kĩwe,day (Inferred via BantuBERTa),kĩwe DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
+nũyumasya,sya,sing (Inferred via BantuBERTa),nũyumasya N;PL;BANTU9,BantuBERTa Vector Neighborhood
 Ngoko,ungoko,[Translation Missing],uNgoko,No Lexicon Match
 ĩnyũũ,ĩnyũũ,nose,ĩnyũũ N;SG;BANTU10,PanLex Exact Match
 woma,oma,[Translation Missing],woma DET;POSS;PSS1P;BANTU1,No Lexicon Match
-nthwai,thwa,"termite, ant, (small) ant",nthwai N;SG;BANTU9,Substring Overlap
+nthwai,nthwai,[Translation Missing],nthwai N;SG;BANTU9,No Lexicon Match
 Mũtei,tei,"snare, trap, fishhook, bait",tei V;PRS;HAB;3;SG,PanLex Exact Match
-Mũthũsa,thũsa,"sing, child (Inferred via BantuBERTa)",thũsa V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
+Mũthũsa,thũsa,sing (Inferred via BantuBERTa),thũsa V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
 vala,vala,"ascend, climb",vala,PanLex Exact Match
 mbevo,mbevo,cold,mbevo,PanLex Exact Match
-syĩthesyaa,syaa,"bear child, give birth, give birth (to a child)",syĩthesyaa V;PRS,Substring Overlap
+syĩthesyaa,thesyaa,[Translation Missing],syĩthesyaa V;PRS,No Lexicon Match
 amaima,ima,"hill, mountain, cultivated ground, cultivate, cultivate, hole, pit, withhold from, nest, mature",ima V;PRS;HAB;3;SG,PanLex Exact Match
 nĩyo,nĩyo,firewood (Inferred via BantuBERTa),nĩyo DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
 kĩwũ,kĩwũ,[Translation Missing],Kĩwũ N;SG;BANTU1,No Lexicon Match
 mũka,mũka,wife,mũka N;SG;BANTU1,PanLex Exact Match
-ngoso,ngoso,"sing, child (Inferred via BantuBERTa)",ngoso N;SG;BANTU10,BantuBERTa Vector Neighborhood
+ngoso,ngoso,sing (Inferred via BantuBERTa),ngoso N;SG;BANTU10,BantuBERTa Vector Neighborhood
 kaemea,emea,[Translation Missing],emea V;PST;REC;3;SG,No Lexicon Match
 ũliliinĩ,lilia,"palpitate, shiver, shudder",ũlilia V;PRS;HAB;2;SG,PanLex Exact Match
-Kũla,kulaalaa,"copulate, have sexual intercourse, copulate (with), have sexual intercourse (with)",la V;PRS;HAB;3;SG,Substring Overlap
-Kĩthũi,thũi,"chest, chest (of animals and birds)",thũi V;PRS;PROG;1;PL,PanLex Exact Match
+Kũla,kũla,guest (Inferred via BantuBERTa),la V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
+Kĩthũi,kĩthũi,"chest, chest (of animals and birds)",thũi V;PRS;PROG;1;PL,PanLex Exact Match
 ndĩtheaa,theaa,eat (Inferred via BantuBERTa),theaa V;PRS;PROG;1;SG,BantuBERTa Vector Neighborhood
 ĩlĩ,ĩlĩ,two,ĩlĩ DET;PROX;BANTU6,PanLex Exact Match
 mbuanĩ,mbuanĩ,rainy season,mbuanĩ N;SG;BANTU1,PanLex Exact Match
-syaaki,syaa,"bear child, give birth, give birth (to a child)",syaaki,Substring Overlap
-tũmĩmanyaa,anya,"leave, permission",tũmĩmanyaa V;PRS,Substring Overlap
+syaaki,syaaki,[Translation Missing],syaaki,No Lexicon Match
+tũmĩmanyaa,manya,know,tũmĩmanyaa V;PRS,Substring Overlap
 mangũthĩ,mangũthĩ,[Translation Missing],mangũthĩ N;PL;BANTU6,No Lexicon Match
 ũta,ũta,"bow, oil, draw, draw (water from well), oil (from plants)",ũta DET;PROX;BANTU1,PanLex Exact Match
 nyama,nyama,firewood (Inferred via BantuBERTa),nyama N;SG;BANTU9,BantuBERTa Vector Neighborhood
-kĩkakwĩthĩa,thia,"point, tip, peak, top, highest point, utmost, grind, grind (grain with a millstone)",kwĩthĩa V;PRS;NEG;3;SG,Substring Overlap
+kĩkakwĩthĩa,kwĩthĩa,day (Inferred via BantuBERTa),kwĩthĩa V;PRS;NEG;3;SG,BantuBERTa Vector Neighborhood
 Avaĩĩ,vaĩĩ,[Translation Missing],vaĩĩ V;PRS;HAB;3;SG,No Lexicon Match
-niko,guniko,"cork, stopper",niko DET;POSS;PSS1P;BANTU9,Substring Overlap
-mbonge,mbonge,"tree, plant, organism capable of photosynthesis (Inferred via BantuBERTa)",mbonge N;SG;BANTU1,BantuBERTa Vector Neighborhood
-Ũsĩa,santalusia,"Saint Lucia, country in the Caribbean, St. Lucia",ũsĩa N;SG;BANTU14,Substring Overlap
-Mwiiyi,mwii,"root, body, root",uMwiiyi N;SG;BANTU1,Substring Overlap
+niko,niko,[Translation Missing],niko DET;POSS;PSS1P;BANTU9,No Lexicon Match
+mbonge,mbonge,tree (Inferred via BantuBERTa),mbonge N;SG;BANTU1,BantuBERTa Vector Neighborhood
+Ũsĩa,ũsĩa,sugar cane (Inferred via BantuBERTa),ũsĩa N;SG;BANTU14,BantuBERTa Vector Neighborhood
+Mwiiyi,umwiiyi,[Translation Missing],uMwiiyi N;SG;BANTU1,No Lexicon Match
 kaluĩlasya,luĩlasya,tomorrow (Inferred via BantuBERTa),luĩlasya V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
 Makalanzanga,lanzanga,tomorrow (Inferred via BantuBERTa),uMakalanzanga N;SG;BANTU1,BantuBERTa Vector Neighborhood
-kyanda,faranga ya rwanda,Rwandan Franc,anda V;PRS;HAB;3;SG,Substring Overlap
+kyanda,anda,river (Inferred via BantuBERTa),anda V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
 matũ4,tũ4,[Translation Missing],matũ4 N;PL;BANTU6,No Lexicon Match
 nĩ,nĩ,tomorrow,nĩ PRO;INT;INTENS,PanLex Exact Match
 kwananga,kwananga,"destroy, spoil, break, snap, blind",kwananga V;PST;REC;3;SG,PanLex Exact Match
-kĩthũmũsyo,thũmũsyo,"chief, headman, chief person, head, master (Inferred via BantuBERTa)",kĩthũmũsyo N;SG;BANTU15,BantuBERTa Vector Neighborhood
+kĩthũmũsyo,thũmũsyo,chief (Inferred via BantuBERTa),kĩthũmũsyo N;SG;BANTU15,BantuBERTa Vector Neighborhood
 ndakĩaa,kĩaa,rhinoceros (Inferred via BantuBERTa),kĩaa V;PST,BantuBERTa Vector Neighborhood
-Wangangaa,anganga,take a walk,wangangaa DET;POSS;PSS1P;BANTU1,Substring Overlap
-ndũlĩsĩlawa,lĩsĩlawa,"tree, plant, organism capable of photosynthesis (Inferred via BantuBERTa)",ndũlĩsĩlawa N;SG;BANTU10,BantuBERTa Vector Neighborhood
+Wangangaa,wangangaa,[Translation Missing],wangangaa DET;POSS;PSS1P;BANTU1,No Lexicon Match
+ndũlĩsĩlawa,lĩsĩlawa,tree (Inferred via BantuBERTa),ndũlĩsĩlawa N;SG;BANTU10,BantuBERTa Vector Neighborhood
 waa,waa,"kill, put to death, be ill, groan",waa DET;POSS;PSS1P;BANTU1,PanLex Exact Match
 nzee,nzee,porcupine,nzee DET;POSS;PSS1P;BANTU9,PanLex Exact Match
-ũtumo,tumo,spear,ũtumo N;SG;BANTU14,Substring Overlap
-mbathe,mbathe,firewood (Inferred via BantuBERTa),mbathe N;SG;BANTU1,BantuBERTa Vector Neighborhood
+ũtumo,ũtumo,[Translation Missing],ũtumo N;SG;BANTU14,No Lexicon Match
+mbathe,mbathe,[Translation Missing],mbathe N;SG;BANTU1,No Lexicon Match
 mbee,mbee,in front of,mbee N;SG;BANTU1,PanLex Exact Match
 kweka,kweka,tomorrow (Inferred via BantuBERTa),kweka V;PRS,BantuBERTa Vector Neighborhood
-kweeka,eeka,"tree, plant, organism capable of photosynthesis (Inferred via BantuBERTa)",eka V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
+kweeka,eeka,tree (Inferred via BantuBERTa),eka V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
 muuke,muuka,[Translation Missing],muuke N;SG;BANTU1,No Lexicon Match
 kĩao,kĩao,bridge,kĩao N;SG;BANTU15,PanLex Exact Match
-yaamuĩa,muĩa,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles (Inferred via BantuBERTa)",muĩa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-ndũkuawa,awa,"love, strong affection, affection (Inferred via BantuBERTa)",awa V;FUT,BantuBERTa Vector Neighborhood
+yaamuĩa,muĩa,rain (Inferred via BantuBERTa),muĩa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+ndũkuawa,awa,love (Inferred via BantuBERTa),awa V;FUT,BantuBERTa Vector Neighborhood
 cha,cha,buffalo (Inferred via BantuBERTa),cha DET;POSS;PSS1P;BANTU7,BantuBERTa Vector Neighborhood
-ndyendaa,enda,"go, love, want, need, wish, please, satisfy",endaa V;PRS,Substring Overlap
-kĩmbu,kimbuva,puff-adder,kĩmbu N;SG;BANTU15,Substring Overlap
+ndyendaa,daa,louse,endaa V;PRS,PanLex Exact Match
+kĩmbu,kĩmbu,bow (Inferred via BantuBERTa),kĩmbu N;SG;BANTU15,BantuBERTa Vector Neighborhood
 naekee,ekea,[Translation Missing],ekea V;PST;REC;1;SG,No Lexicon Match
 ũmea,ũmea,"grow, grow (of plants)",ũmea N;SG;BANTU14,PanLex Exact Match
 ta,ta,"bow, spittle",ta V;PRS,PanLex Exact Match
-katalĩsĩka,sika,"rains, (the lesser) rains",talĩsĩka V;PST;REC;3;SG,Substring Overlap
+katalĩsĩka,talĩsĩka,[Translation Missing],talĩsĩka V;PST;REC;3;SG,No Lexicon Match
 mũkwa,mũkwa,firewood (Inferred via BantuBERTa),mũkwa N;SG;BANTU1,BantuBERTa Vector Neighborhood
-kokĩlaa,ilaa,flower,kĩlaa V;NFIN,Substring Overlap
+kokĩlaa,kĩlaa,[Translation Missing],kĩlaa V;NFIN,No Lexicon Match
 ĩtheo,ĩtheo,cloud,ĩtheo N;SG;BANTU9,PanLex Exact Match
 iemwa,emwa,become jammed,emwa V;PRS,PanLex Exact Match
 vayaa,yaa,sugar cane (Inferred via BantuBERTa),yaa V;PST;REC;3;PL,BantuBERTa Vector Neighborhood
 ĩkundonĩ,ĩkundo,knot,ĩkundo N;SG;BANTU15,PanLex Exact Match
-ĩsyaa,syaa,"bear child, give birth, give birth (to a child)",ĩsyaa N;SG;BANTU9,Substring Overlap
+ĩsyaa,ĩsyaa,[Translation Missing],ĩsyaa N;SG;BANTU9,No Lexicon Match
 Ngwete,ngwete,[Translation Missing],ngwete N;SG;BANTU10,No Lexicon Match
 kĩsyaa,syaa,"bear child, give birth, give birth (to a child)",kĩsyaa N;SG;BANTU15,PanLex Exact Match
-Kĩtheka,theka,"forest, thicket, laugh, bush",theka V;PRS;HAB;3;SG,PanLex Exact Match
+Kĩtheka,kĩtheka,"forest, thicket, bush",theka V;PRS;HAB;3;SG,PanLex Exact Match
 ĩtako,ĩtako,thigh,ĩtako N;SG;BANTU10,PanLex Exact Match
-ĩtakya,ĩtakya,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles (Inferred via BantuBERTa)",ĩtakya N;SG;BANTU1,BantuBERTa Vector Neighborhood
+ĩtakya,ĩtakya,rain (Inferred via BantuBERTa),ĩtakya N;SG;BANTU1,BantuBERTa Vector Neighborhood
 kĩyĩemaa,emaa,rhinoceros (Inferred via BantuBERTa),emaa V;PRS;NEG;3;SG,BantuBERTa Vector Neighborhood
-wĩna,kwina,sing,wĩna DET;POSS;PSS1P;BANTU1,Substring Overlap
-nzounĩ,nzou,elephant,nzounĩ N;SG;BANTU9,Substring Overlap
+wĩna,wĩna,head (Inferred via BantuBERTa),wĩna DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
+nzounĩ,nzounĩ,sing (Inferred via BantuBERTa),nzounĩ N;SG;BANTU9,BantuBERTa Vector Neighborhood
 ĩtaa,ĩtaa,python,ĩtaa V;PRS,PanLex Exact Match
 mangaa,mangaa,[Translation Missing],mangaa N;PL;BANTU6,No Lexicon Match
-ũtũlĩlaa,ilaa,flower,ũtũlĩlaa V;FUT,Substring Overlap
+ũtũlĩlaa,lĩlaa,ascend (Inferred via BantuBERTa),ũtũlĩlaa V;FUT,BantuBERTa Vector Neighborhood
 Mboo,mboo,buffalo,uMboo,PanLex Exact Match
-ĩvyũ,ĩvyũ,"become full, abound, grandmother (Inferred via BantuBERTa)",ĩvyũ DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
-ũseve,seve,wind,ũseve N;SG;BANTU14,Substring Overlap
+ĩvyũ,ĩvyũ,become full (Inferred via BantuBERTa),ĩvyũ DET;PROX;BANTU9,BantuBERTa Vector Neighborhood
+ũseve,ũseve,tomorrow (Inferred via BantuBERTa),ũseve N;SG;BANTU14,BantuBERTa Vector Neighborhood
 kwaa,kwaa,"get lost, disappear, fade",kwaa V;PRS,PanLex Exact Match
 mwĩwa,mwĩwa,[Translation Missing],mwĩwa N;SG;BANTU1,No Lexicon Match
-mũnuka,nuka,eat (Inferred via BantuBERTa),mũnuka N;SG;BANTU1,BantuBERTa Vector Neighborhood
+mũnuka,nuka,[Translation Missing],mũnuka N;SG;BANTU1,No Lexicon Match
 nziii,nziii,head (Inferred via BantuBERTa),nziii N;SG;BANTU9,BantuBERTa Vector Neighborhood
 yatũla,tũla,"hem, make a border, break, snap",tũla V;PST;REC;3;SG,PanLex Exact Match
 ngi,ngi,fly,ngi PRO;INT;INTENS,PanLex Exact Match
-akomaa,koma,"sleep, lie down",komaa V;PRS,Substring Overlap
-ngalĩ,kusisya kila ngaliko,look round,ngalĩ N;SG;BANTU9,Substring Overlap
-yĩilea,ilea,"fireplace, hearth, kitchen, paddle, oar, filth, hearthstone, hearthstone (for putting pots on) (Inferred via BantuBERTa)",yĩilea N;SG;BANTU9,BantuBERTa Vector Neighborhood
-yendaa,enda,"go, love, want, need, wish, please, satisfy",endaa V;PRS,Substring Overlap
+akomaa,komaa,guest (Inferred via BantuBERTa),komaa V;PRS,BantuBERTa Vector Neighborhood
+ngalĩ,ngalĩ,love (Inferred via BantuBERTa),ngalĩ N;SG;BANTU9,BantuBERTa Vector Neighborhood
+yĩilea,ilea,fireplace (Inferred via BantuBERTa),yĩilea N;SG;BANTU9,BantuBERTa Vector Neighborhood
+yendaa,daa,louse,endaa V;PRS,PanLex Exact Match
 maita,ita,"call, pour away, leak, ooze out, pour, call, abundant",ita V;PST;REC;2;PL,PanLex Exact Match
-nthingii,ngii,"warthog, crab, locust",nthingii N;SG;BANTU9,Substring Overlap
+nthingii,nthingii,hunger (Inferred via BantuBERTa),nthingii N;SG;BANTU9,BantuBERTa Vector Neighborhood
 kũthi,kũthi,"go away, leave",kũthi N;SG;BANTU15,PanLex Exact Match
 mboka,mboka,beer (Inferred via BantuBERTa),mboka V;PRS,BantuBERTa Vector Neighborhood
 Ĩkũya,ya,eat,ĩkũya N;SG;BANTU10,PanLex Exact Match
-ngĩĩtĩ,iiti,"medicine, medicine (art of medicine man)",ngĩĩtĩ N;SG;BANTU9,Substring Overlap
+ngĩĩtĩ,ngĩĩtĩ,person (Inferred via BantuBERTa),ngĩĩtĩ N;SG;BANTU9,BantuBERTa Vector Neighborhood
 serasya,sya,[Translation Missing],serasya V;PRS,No Lexicon Match
-Kolyanza,lyanza,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles (Inferred via BantuBERTa)",Kolyanza V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
-ũkoma,koma,"sleep, lie down",ũkoma N;SG;BANTU14,Substring Overlap
-maanga,ananga,"destroy, spoil, break, snap, blind",maanga N;PL;BANTU6,Substring Overlap
+Kolyanza,lyanza,[Translation Missing],Kolyanza V;PRS;HAB;3;SG,No Lexicon Match
+ũkoma,ũkoma,[Translation Missing],ũkoma N;SG;BANTU14,No Lexicon Match
+maanga,anga,porcupine (Inferred via BantuBERTa),maanga N;PL;BANTU6,BantuBERTa Vector Neighborhood
 kasyaa,syaa,"bear child, give birth, give birth (to a child)",syaa V;PST;REC;3;SG,PanLex Exact Match
-ngere,eneo la uingereza katika bahari hindi,𐐒𐑉𐐮𐐼𐐮𐑇 𐐆𐑌𐐼𐐨𐐲𐑌 𐐄𐑇𐐲𐑌 𐐓𐐯𐑉𐐲𐐻𐐱𐑉𐐨,ngere,Substring Overlap
+ngere,ngere,[Translation Missing],ngere,No Lexicon Match
 Kĩwũ,kĩwũ,[Translation Missing],Kĩwũ N;SG;BANTU1,No Lexicon Match
 ĩkenge,ĩkenge,tomorrow (Inferred via BantuBERTa),ĩkenge N;SG;BANTU10,BantuBERTa Vector Neighborhood
 Ndũkeke,ndũkeke,eat (Inferred via BantuBERTa),ndũkeke N;SG;BANTU10,BantuBERTa Vector Neighborhood
-ndũkonzekaa,onze,"weak, be mutilated, cripple",konzekaa V;PRS;HAB;1;SG,Substring Overlap
-kĩtoli,kĩtoli,"sing, child (Inferred via BantuBERTa)",kĩtoli N;SG;BANTU15,BantuBERTa Vector Neighborhood
-atemaa,tema,"liver, slash",temaa V;PRS,Substring Overlap
-ĩkĩmboo,mboo,buffalo,ĩkĩmboo N;SG;BANTU10,Substring Overlap
-kyenga,kengani,number,enga V;PRS;HAB;3;SG,Substring Overlap
+ndũkonzekaa,konzekaa,[Translation Missing],konzekaa V;PRS;HAB;1;SG,No Lexicon Match
+kĩtoli,kĩtoli,sing (Inferred via BantuBERTa),kĩtoli N;SG;BANTU15,BantuBERTa Vector Neighborhood
+atemaa,temaa,person (Inferred via BantuBERTa),temaa V;PRS,BantuBERTa Vector Neighborhood
+ĩkĩmboo,ĩkĩmboo,[Translation Missing],ĩkĩmboo N;SG;BANTU10,No Lexicon Match
+kyenga,enga,[Translation Missing],enga V;PRS;HAB;3;SG,No Lexicon Match
 kũte,kũta,"wall, polish, wipe",kũta V;PRS;NEG;3;SG,PanLex Exact Match
 Vai,vai,wall,Vai PRO;INT;INTENS,PanLex Exact Match
 kana,kana,child,kana V;PRS,PanLex Exact Match
 mũatĩĩi,tĩĩi,sugar cane (Inferred via BantuBERTa),mũatĩĩi N;SG;BANTU1,BantuBERTa Vector Neighborhood
-nyinya,inya,four,nyinya N;SG;BANTU9,Substring Overlap
-ĩsyĩmawa,syima,hunt,ĩsyĩmawa N;SG;BANTU10,Substring Overlap
+nyinya,nyinya,come (Inferred via BantuBERTa),nyinya N;SG;BANTU9,BantuBERTa Vector Neighborhood
+ĩsyĩmawa,ĩsyĩmawa,eat (Inferred via BantuBERTa),ĩsyĩmawa N;SG;BANTU10,BantuBERTa Vector Neighborhood
 ndutani,nduta,tomorrow (Inferred via BantuBERTa),ndutani N;SG;BANTU10,BantuBERTa Vector Neighborhood
 Kamanyĩa,manyĩa,get accustomed,manyĩa V;PST;REC;3;SG,PanLex Exact Match
 mũasa,asa,far,mũasa N;SG;BANTU1,PanLex Exact Match
 kimba,kimba,"corpse, dead person",kimba V;PRS,PanLex Exact Match
-nzũũ,nzũũ,"become full, abound, grandmother (Inferred via BantuBERTa)",nzũũ N;SG;BANTU9,BantuBERTa Vector Neighborhood
-Ndũkonũve,konũva,"sing, child (Inferred via BantuBERTa)",konũve V;PRS;NEG;1;SG,BantuBERTa Vector Neighborhood
+nzũũ,nzũũ,become full (Inferred via BantuBERTa),nzũũ N;SG;BANTU9,BantuBERTa Vector Neighborhood
+Ndũkonũve,konũva,sing (Inferred via BantuBERTa),konũve V;PRS;NEG;1;SG,BantuBERTa Vector Neighborhood
 wĩmwiyũ,wĩmwiyũ,[Translation Missing],wĩmwiyũ DET;POSS;PSS1P;BANTU1,No Lexicon Match
-nĩvo,nĩvo,"youth, youth, young man (Inferred via BantuBERTa)",nĩvo DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
+nĩvo,nĩvo,youth (Inferred via BantuBERTa),nĩvo DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
 mũtĩ,mũtĩ,"tree, plant, organism capable of photosynthesis",mũtĩ N;SG;BANTU1,PanLex Exact Match
-kaimanyaa,anya,"leave, permission",imanyaa V;PST;REC;3;SG,Substring Overlap
-kĩyĩsĩ,kĩyĩsĩ,"forest, thicket, bush (Inferred via BantuBERTa)",kĩyĩsĩ N;SG;BANTU15,BantuBERTa Vector Neighborhood
-kĩsanasya,sya,"sing, child (Inferred via BantuBERTa)",sya V;PRS;NEG;3;SG,BantuBERTa Vector Neighborhood
+kaimanyaa,imanyaa,hem (Inferred via BantuBERTa),imanyaa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+kĩyĩsĩ,kĩyĩsĩ,forest (Inferred via BantuBERTa),kĩyĩsĩ N;SG;BANTU15,BantuBERTa Vector Neighborhood
+kĩsanasya,sya,sing (Inferred via BantuBERTa),sya V;PRS;NEG;3;SG,BantuBERTa Vector Neighborhood
 esaa,esaa,tomorrow (Inferred via BantuBERTa),esaa V;PRS;PROG;1;SG,BantuBERTa Vector Neighborhood
-ngwete,ngwete,"dew, one, one (Inferred via BantuBERTa)",ngwete N;SG;BANTU10,BantuBERTa Vector Neighborhood
-Ĩtũlika,lika,"come in, go in",ĩtũlika V;PRS;HAB;3;SG,Substring Overlap
-mũonza,onza,seven,onza V;PRS;HAB;2;PL,PanLex Exact Match
+ngwete,ngwete,[Translation Missing],ngwete N;SG;BANTU10,No Lexicon Match
+Ĩtũlika,ĩtũlika,tree (Inferred via BantuBERTa),ĩtũlika V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
+mũonza,mũonza,seven,onza V;PRS;HAB;2;PL,PanLex Exact Match
 ndasyĩmaa,syima,hunt,syĩmaa V;PST;REC;1;SG,Substring Overlap
 mbĩa,mbĩa,"rat, (very large long-tailed) rat, (kind of) rat, field rat",mbĩa N;SG;BANTU1,PanLex Exact Match
 vaasa,asa,far,vaasa V;PST,PanLex Exact Match
-kĩitonywa,nywa,"mouth, drink",kĩitonywa N;SG;BANTU15,Substring Overlap
-yĩeye,eya,"sing, child (Inferred via BantuBERTa)",yĩeye DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
+kĩitonywa,tonywa,tomorrow (Inferred via BantuBERTa),kĩitonywa N;SG;BANTU15,BantuBERTa Vector Neighborhood
+yĩeye,eya,[Translation Missing],yĩeye DET;POSS;PSS1P;BANTU9,No Lexicon Match
 kaiaa,iaa,[Translation Missing],iaa V;PST;REC;3;SG,No Lexicon Match
 nthongo,nthongo,"one-eyed, (being) one-eyed",nthongo N;SG;BANTU10,PanLex Exact Match
 No,no,[Translation Missing],no DET;PROX;BANTU9,No Lexicon Match
 yevũthisye,vuthi,"rubbish heap, garbage, rubbish",vũthisa V;PST;REC;3;SG,Substring Overlap
-Ĩkoto,ĩkoto,"sing, child (Inferred via BantuBERTa)",ĩkoto N;SG;BANTU1,BantuBERTa Vector Neighborhood
+Ĩkoto,ĩkoto,[Translation Missing],ĩkoto N;SG;BANTU1,No Lexicon Match
 ndĩyĩwaa,yĩwaa,[Translation Missing],ndĩyĩwaa N;SG;BANTU9,No Lexicon Match
-kweela,kuleela,"be faint, be loose, be weak",kweela V;PRS,Substring Overlap
+kweela,eela,tomorrow (Inferred via BantuBERTa),kweela V;PRS,BantuBERTa Vector Neighborhood
 mũtwe,mũtwe,head,mũtwe N;SG;BANTU1,PanLex Exact Match
 ona,ona,see,ona V;PRS;HAB;2;SG,PanLex Exact Match
 matenge,tenga,[Translation Missing],tenga V;PST;REC;2;PL,No Lexicon Match
 maũmangwa,ũmangwa,hyena (Inferred via BantuBERTa),maũmangwa N;PL;BANTU6,BantuBERTa Vector Neighborhood
-kũlĩsa,lĩsa,"hem, make a border, break, snap (Inferred via BantuBERTa)",lĩsa V;NFIN,BantuBERTa Vector Neighborhood
+kũlĩsa,lĩsa,hem (Inferred via BantuBERTa),lĩsa V;NFIN,BantuBERTa Vector Neighborhood
 Matukũ,tukũ,night,tukũ V;PST;REC;3;SG,PanLex Exact Match
-kĩndalĩ,inda,dip,kĩndala V;PRS;NEG;1;SG,Substring Overlap
+kĩndalĩ,kĩndalĩ,[Translation Missing],kĩndala V;PRS;NEG;1;SG,No Lexicon Match
 Kya,kya,[Translation Missing],kya DET;POSS;PSS1P;BANTU15,No Lexicon Match
-tene,ivinda ya tene,old times,tene,Substring Overlap
+tene,tene,[Translation Missing],tene,No Lexicon Match
 Makathanga,thanga,"soil, sand",thanga V;PST;REM;3;SG,PanLex Exact Match
-Mbua,bua,rain,uMbua N;SG;BANTU1,PanLex Exact Match
-Mũumbĩ,itumbi,egg,umbĩ N;SG;BANTU1,Substring Overlap
-kũmbĩaa,mbia,"rat, (very large long-tailed) rat, (kind of) rat, field rat",mbĩaa V;NFIN,Substring Overlap
+Mbua,mbua,"rain, condensed water from a cloud, hydrometeor, methane rain, pula, rain water, tinsel icicles",uMbua N;SG;BANTU1,PanLex Exact Match
+Mũumbĩ,umbĩ,pull up (Inferred via BantuBERTa),umbĩ N;SG;BANTU1,BantuBERTa Vector Neighborhood
+kũmbĩaa,mbĩaa,[Translation Missing],mbĩaa V;NFIN,No Lexicon Match
 ngalalũ,lalũ,bread (Inferred via BantuBERTa),ngalalũ N;SG;BANTU10,BantuBERTa Vector Neighborhood
 Ndĩkyamanaa,manaa,[Translation Missing],manaa V;PRS;PROG;1;SG,No Lexicon Match
-nguma,nguma,"earth, land, country, district, province (Inferred via BantuBERTa)",nguma N;SG;BANTU9,BantuBERTa Vector Neighborhood
+nguma,nguma,earth (Inferred via BantuBERTa),nguma N;SG;BANTU9,BantuBERTa Vector Neighborhood
 ndia,ndia,pool,ndia DET;POSS;PSS1P;BANTU9,PanLex Exact Match
 o,o,tomorrow (Inferred via BantuBERTa),o DET;PROX;BANTU1,BantuBERTa Vector Neighborhood
-yoasya,sya,"ascend, climb (Inferred via BantuBERTa)",yoasya DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
+yoasya,sya,ascend (Inferred via BantuBERTa),yoasya DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
 thano,thano,rainy season (Inferred via BantuBERTa),thano N;SG;BANTU10,BantuBERTa Vector Neighborhood
 no,no,[Translation Missing],no DET;PROX;BANTU9,No Lexicon Match
 avota,vota,[Translation Missing],vota V;PRS,No Lexicon Match
 mũndũ,mũndũ,"person, person, individual, capita",mũndũ N;SG;BANTU1,PanLex Exact Match
 Yatta,tta,[Translation Missing],tta V;PST;REC;3;SG,No Lexicon Match
-ngwa,anangwa,"be spoilt, be stunted",ngwa DET;POSS;PSS1P;BANTU9,Substring Overlap
-mavũngũ,kuvungua,open,mavũngũ N;PL;BANTU6,Substring Overlap
+ngwa,ngwa,[Translation Missing],ngwa DET;POSS;PSS1P;BANTU9,No Lexicon Match
+mavũngũ,vũngũ,sing (Inferred via BantuBERTa),mavũngũ N;PL;BANTU6,BantuBERTa Vector Neighborhood
 ũũ,ũũ,"bitter, who, who?, shade, shadow",ũũ DET;PROX;BANTU1,PanLex Exact Match
-welele,lela,"hang, hang (in mid-air)",welela,Substring Overlap
+welele,elela,eat (Inferred via BantuBERTa),welela,BantuBERTa Vector Neighborhood
 yaũlekya,ũlekya,[Translation Missing],ũlekya V;PST;REC;3;SG,No Lexicon Match
-wavĩyawa,vĩyawa,"chief, headman, chief person, head, master (Inferred via BantuBERTa)",vĩyawa V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
-Ndundulu,undu,affair,uNdundulu N;SG;BANTU10,Substring Overlap
+wavĩyawa,vĩyawa,chief (Inferred via BantuBERTa),vĩyawa V;PST;REC;2;SG,BantuBERTa Vector Neighborhood
+Ndundulu,undundulu,[Translation Missing],uNdundulu N;SG;BANTU10,No Lexicon Match
 ĩkĩngo,ĩkĩngo,[Translation Missing],ĩkĩngo N;SG;BANTU10,No Lexicon Match
-ũmũkwata,kwata,"seize, get, obtain, grasp, hold, hold (in arm), arrest, receive",ũmũkwata N;SG;BANTU1,Substring Overlap
+ũmũkwata,umũkwata,sugar cane (Inferred via BantuBERTa),ũmũkwata N;SG;BANTU1,BantuBERTa Vector Neighborhood
 syiilea,lea,"refuse, say no, reject, deny",syiilea V;PRS,PanLex Exact Match
-yoveyawa,veyawa,"tree, plant, organism capable of photosynthesis (Inferred via BantuBERTa)",veyawa V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
-Kyanzavĩ,anzavĩ,"town, arrowhead, head, spear head, head (of arrow), home (Inferred via BantuBERTa)",Kyanzavĩ N;PL;BANTU10,BantuBERTa Vector Neighborhood
+yoveyawa,veyawa,tree (Inferred via BantuBERTa),veyawa V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
+Kyanzavĩ,anzavĩ,town (Inferred via BantuBERTa),Kyanzavĩ N;PL;BANTU10,BantuBERTa Vector Neighborhood
 ti,ti,tree,ti PRO;INT;INT,PanLex Exact Match
-Ĩla,ĩla,"hem, make a border, break, snap (Inferred via BantuBERTa)",ĩla V;PRS,BantuBERTa Vector Neighborhood
+Ĩla,ĩla,hem (Inferred via BantuBERTa),ĩla V;PRS,BantuBERTa Vector Neighborhood
 ndĩkyesaa,esaa,eat (Inferred via BantuBERTa),esaa V;PRS;PROG;1;SG,BantuBERTa Vector Neighborhood
-ĩvika,vika,"arrive, go back, return",ĩvika N;SG;BANTU6,Substring Overlap
+ĩvika,ĩvika,[Translation Missing],ĩvika N;SG;BANTU6,No Lexicon Match
 ndathe,tha,"Jun, Jun.",tha V;PST;REC;1;SG,PanLex Exact Match
 yayo,wayo,tomorrow (Inferred via BantuBERTa),yayo DET;POSS;PSS1P;BANTU9,BantuBERTa Vector Neighborhood
-vavũthũ,kuvuthua,"penetrate, bore a hole",vũthũ V;PST;REC;3;PL,Substring Overlap
+vavũthũ,vũthũ,ascend (Inferred via BantuBERTa),vũthũ V;PST;REC;3;PL,BantuBERTa Vector Neighborhood
 Waĩĩ,ĩĩ,"body, root, root",ĩĩ DET;POSS;PSS1P;BANTU1,PanLex Exact Match
 ĩkawa,wa,sugar cane,wa V;PRS;PROG;3;SG,PanLex Exact Match
-Kasoni,soni,see (Inferred via BantuBERTa),Kasoni N;SG;BANTU15,BantuBERTa Vector Neighborhood
+Kasoni,soni,[Translation Missing],Kasoni N;SG;BANTU15,No Lexicon Match
 Ũsĩ,ũsĩ,"river, current, stream",ũsĩ DET;PROX;BANTU1,PanLex Exact Match
 mũvĩte,vĩta,"pass, surpass",mũvĩte N;SG;BANTU1,PanLex Exact Match
 Ũ,ũ,"bitter, war, who, who?, foot, leg, ashes",ũ DET;PROX;BANTU1,PanLex Exact Match
 wauta,uta,"bow, oil, draw, draw (water from well), oil (from plants)",uta V;PST;REC;2;SG,PanLex Exact Match
-matanĩaa,ania,"cry, sound",tanĩaa V;PST;REC;2;PL,Substring Overlap
-mĩwongo,ongo,back,mĩwongo N;SG;BANTU1,Substring Overlap
+matanĩaa,tanĩaa,tomorrow (Inferred via BantuBERTa),tanĩaa V;PST;REC;2;PL,BantuBERTa Vector Neighborhood
+mĩwongo,mĩwongo,sugar cane (Inferred via BantuBERTa),mĩwongo N;SG;BANTU1,BantuBERTa Vector Neighborhood
 mai,mai,"dung, excrement",mai DET;POSS;PSS1P;BANTU6,PanLex Exact Match
 ndĩsaa,saa,hour,ndĩsaa N;SG;BANTU9,PanLex Exact Match
-kanini,nini,"small, a few, not much",kanini N;SG;BANTU15,Substring Overlap
+kanini,kanini,hunger (Inferred via BantuBERTa),kanini N;SG;BANTU15,BantuBERTa Vector Neighborhood
 ngũũ,ngũũ,"old, hippopotamus, tortoise, hump, hump (of hunchback)",ngũũ N;SG;BANTU9,PanLex Exact Match
-Kyetho,eketho,hiccup,Kyetho,Substring Overlap
+Kyetho,etho,[Translation Missing],Kyetho,No Lexicon Match
 ũyinĩ,ũyinĩ,[Translation Missing],ũyinĩ DET;PROX;BANTU1,No Lexicon Match
 mbusya1,busya,rhinoceros,mbusya1,Substring Overlap
 nzele,nzela,night (Inferred via BantuBERTa),nzela V;PST;REC;1;SG,BantuBERTa Vector Neighborhood
 ũthũku,ũthũku,"brass, copper",ũthũku N;SG;BANTU14,PanLex Exact Match
-nduka,kuvinduka,"change, turn round",nduka N;SG;BANTU10,Substring Overlap
+nduka,nduka,[Translation Missing],nduka N;SG;BANTU10,No Lexicon Match
 wia7,wia7,[Translation Missing],wia7 DET;POSS;PSS3P;BANTU1,No Lexicon Match
-ĩtambya,mbya,"horn, ivory",ĩtambya N;SG;BANTU10,Substring Overlap
-wako,wako,"earth, land, country, district, province (Inferred via BantuBERTa)",wako DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
-nĩyonee,onea,"earth, land, country, district, province (Inferred via BantuBERTa)",onea V;PST;PFV;1;SG,BantuBERTa Vector Neighborhood
+ĩtambya,ĩtambya,[Translation Missing],ĩtambya N;SG;BANTU10,No Lexicon Match
+wako,wako,earth (Inferred via BantuBERTa),wako DET;POSS;PSS1P;BANTU1,BantuBERTa Vector Neighborhood
+nĩyonee,onea,earth (Inferred via BantuBERTa),onea V;PST;PFV;1;SG,BantuBERTa Vector Neighborhood
 kĩngei,kĩngei,[Translation Missing],kĩngei N;SG;BANTU15,No Lexicon Match
-ngũũe,nguu,"old, hippopotamus, tortoise, hump, hump (of hunchback)",ngũũe N;SG;BANTU9,Substring Overlap
-yĩkwĩtũũa,ĩkwĩtũũa,eat (Inferred via BantuBERTa),yĩkwĩtũũa N;SG;BANTU9,BantuBERTa Vector Neighborhood
+ngũũe,ngũũa,hyena (Inferred via BantuBERTa),ngũũe N;SG;BANTU9,BantuBERTa Vector Neighborhood
+yĩkwĩtũũa,ĩkwĩtũũa,[Translation Missing],yĩkwĩtũũa N;SG;BANTU9,No Lexicon Match
 nĩmaua,ua,"cook, fry, cook (in water or fat), rain",nĩmaua N;PL;BANTU9,PanLex Exact Match
 ngũnywa,nywa,"mouth, drink",nywa V;PRS;HAB;1;SG,PanLex Exact Match
 Ĩvai,ĩva,"pay, be sharp",ĩvai N;SG;BANTU6,PanLex Exact Match
 yĩoeaa,oeaa,eat (Inferred via BantuBERTa),oeaa V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
-ũvalũkĩlaa,ilaa,flower,ũvalũkĩlaa V;PRS;HAB;2;SG,Substring Overlap
-nĩkeũkaa,kukaanga,"fry, be flavoured, be (properly) flavoured",ũkaa V;PRS;PROG;1;SG,Substring Overlap
+ũvalũkĩlaa,valũkĩlaa,tree (Inferred via BantuBERTa),ũvalũkĩlaa V;PRS;HAB;2;SG,BantuBERTa Vector Neighborhood
+nĩkeũkaa,ũkaa,[Translation Missing],ũkaa V;PRS;PROG;1;SG,No Lexicon Match
 Mũsyĩmi,mũsyĩmi,"hunter, (professional) hunter",mũsyĩmi N;SG;BANTU1,PanLex Exact Match
 mbiti,mbiti,hyena,mbiti N;SG;BANTU1,PanLex Exact Match
 mbiivii,mbiivii,tomorrow (Inferred via BantuBERTa),mbiivii N;SG;BANTU1,BantuBERTa Vector Neighborhood
 kathũku,thũku,"bad, wicked, brass, copper",thũku V;PST;REC;3;SG,PanLex Exact Match
 vonekaa,vonekaa,tomorrow (Inferred via BantuBERTa),vonekaa V;PRS,BantuBERTa Vector Neighborhood
-munyĩnĩ,munyambu,lion,munya V;PRS,Substring Overlap
-ũkĩa,kukia,be afraid,ũkĩa N;SG;BANTU14,Substring Overlap
+munyĩnĩ,munya,lake (Inferred via BantuBERTa),munya V;PRS,BantuBERTa Vector Neighborhood
+ũkĩa,ũkĩa,day (Inferred via BantuBERTa),ũkĩa N;SG;BANTU14,BantuBERTa Vector Neighborhood
 ũkũngi8,kũngi8,[Translation Missing],ũkũngi N;SG;BANTU14,No Lexicon Match
-ũtatũmĩka,tatu,three,ũtatũmĩka N;SG;BANTU14,Substring Overlap
+ũtatũmĩka,tatũmĩka,[Translation Missing],ũtatũmĩka N;SG;BANTU14,No Lexicon Match
 kakwataa,kwata,"seize, get, obtain, grasp, hold, hold (in arm), arrest, receive",kwataa V;PST;REC;3;SG,Substring Overlap
-ndũthũũnawa,thũũnawa,"tree, plant, organism capable of photosynthesis (Inferred via BantuBERTa)",thũũnawa V;FUT,BantuBERTa Vector Neighborhood
-kyeteelasya,etelasya,"earth, land, country, district, province (Inferred via BantuBERTa)",etelasya V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
+ndũthũũnawa,thũũnawa,tree (Inferred via BantuBERTa),thũũnawa V;FUT,BantuBERTa Vector Neighborhood
+kyeteelasya,etelasya,earth (Inferred via BantuBERTa),etelasya V;PRS;HAB;3;SG,BantuBERTa Vector Neighborhood
 mwene,mwene,self,mwene DET;POSS;PSS1P;BANTU1,PanLex Exact Match
 kasũni,kasũni,[Translation Missing],kasũni N;SG;BANTU15,No Lexicon Match
 kamwe,kamwe,[Translation Missing],kamwe,No Lexicon Match
 mwaasa,mwaasa,tomorrow (Inferred via BantuBERTa),mwaasa N;PL;BANTU1,BantuBERTa Vector Neighborhood
 mũsyĩmi,mũsyĩmi,"hunter, (professional) hunter",mũsyĩmi N;SG;BANTU1,PanLex Exact Match
-kĩthiia,athiia na nyundo,"hammer, hit, hit (with a hammer)",thiia V;PRS;NEG;1;SG,Substring Overlap
-ĩetae,etaa,"pull up, root up, get lost, rain, carry, rain, take, carry (astride on the hip) (Inferred via BantuBERTa)",etaa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
-ngunga,ngunga,"sing, child (Inferred via BantuBERTa)",ngunga N;SG;BANTU9,BantuBERTa Vector Neighborhood
+kĩthiia,thiia,elephant (Inferred via BantuBERTa),thiia V;PRS;NEG;1;SG,BantuBERTa Vector Neighborhood
+ĩetae,etaa,pull up (Inferred via BantuBERTa),etaa V;PST;REC;3;SG,BantuBERTa Vector Neighborhood
+ngunga,ngunga,sing (Inferred via BantuBERTa),ngunga N;SG;BANTU9,BantuBERTa Vector Neighborhood
 nĩyake,wake,tomorrow (Inferred via BantuBERTa),nĩyake N;SG;BANTU9,BantuBERTa Vector Neighborhood
 ũtukũ,ũtukũ,night,ũtukũ DET;POSS;PSS1P;BANTU1,PanLex Exact Match
 ũtoa,toa,"give out smoke, smoke",ũtoa DET;PROX;BANTU14,PanLex Exact Match
@@ -996,7 +996,7 @@ tyo,tyo,rhinoceros (Inferred via BantuBERTa),tyo DET;POSS;PSS1P;BANTU1,BantuBERT
 ũkimawa,wa,sugar cane,ũkimawa N;SG;BANTU10,PanLex Exact Match
 a,a,"W, W., T, Th., F, F., S, Sa., intestines, get lost, penis, rain",a COP;ID;BANTU6,PanLex Exact Match
 mwaki,mwaki,fire,mwaki N;SG;BANTU1,PanLex Exact Match
-Kavii,vii,"hunter, (professional) hunter (Inferred via BantuBERTa)",Kavii N;SG;BANTU1,BantuBERTa Vector Neighborhood
-kwĩnza,ĩnza,"hollow out, dig",ĩnza V;PRS;NEG;1;SG,PanLex Exact Match
-yĩndua,ndua,village,yĩndua N;SG;BANTU9,Substring Overlap
+Kavii,vii,[Translation Missing],Kavii N;SG;BANTU1,No Lexicon Match
+kwĩnza,kwĩnza,"dig, hollow out",ĩnza V;PRS;NEG;1;SG,PanLex Exact Match
+yĩndua,yĩndua,dew (Inferred via BantuBERTa),yĩndua N;SG;BANTU9,BantuBERTa Vector Neighborhood
 kĩnengawe,nenga,give,nengawe V;PST;REC;3;SG,Substring Overlap
