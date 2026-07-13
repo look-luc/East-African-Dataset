@@ -6,10 +6,20 @@ from functools import lru_cache
 from pathlib import Path
 
 import pandas as pd
+import torch
+import torch.nn.functional as F
 from datasets import load_dataset
 from dotenv import load_dotenv
+from transformers import AutoModel, AutoTokenizer
 
 from morpheme_translate.extraction import root_extract
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+bantuberta_id = "dsfsi/BantuBERTa"
+bb_tokenizer = AutoTokenizer.from_pretrained(bantuberta_id)
+bb_model = AutoModel.from_pretrained(bantuberta_id).to(device)
+bb_model.eval()
 
 script_dir = Path(__file__).resolve().parent.parent
 load_dotenv()
@@ -86,8 +96,46 @@ def normalize_ortho(word: str, lang: str = "") -> str:
     return w
 
 def strip_accents(text: str) -> str:
-    """Removes tonal accent marks (like à, ê) to align PanLex with model lemmas."""
-    return "".join(c for c in unicodedata.normalize('NFD', text) if unicodedata.category(c) != 'Mn')
+    if not isinstance(text, str):
+        return ""
+    nfkd_form = unicodedata.normalize('NFKD', text)
+    return "".join([c for c in nfkd_form if not unicodedata.combining(c)])
+
+def get_bantuberta_embedding(sentence: str, target_word: str):
+    inputs = {k: v.to(device) for k, v in bb_tokenizer(sentence, return_tensors="pt").items()}
+
+    word_tokens = bb_tokenizer.tokenize(target_word)
+    word_ids = bb_tokenizer.convert_tokens_to_ids(word_tokens)
+
+    if not word_ids:
+        return None
+
+    with torch.no_grad():
+        outputs = bb_model(**inputs)
+        hidden_states = outputs.last_hidden_state.squeeze(0) # Shape: [seq_len, 768]
+
+    input_ids = inputs["input_ids"].squeeze(0).tolist()
+    match_indices = []
+
+    for i in range(len(input_ids) - len(word_ids) + 1):
+        if input_ids[i:i+len(word_ids)] == word_ids:
+            match_indices = list(range(i, i + len(word_ids)))
+            break
+
+    if match_indices:
+        target_states = hidden_states[match_indices]
+        return torch.mean(target_states, dim=0)
+    else:
+        return torch.mean(hidden_states, dim=0)
+
+def parse_model_outputs(word: str, combined_dict: dict):
+    if word in combined_dict:
+        lem = combined_dict[word].get('lemmatization', [])
+        seg = combined_dict[word].get('segmentation', [])
+        predicted_lemma = lem[0] if (isinstance(lem, list) and len(lem) > 0) else word
+        affix = seg[0] if (isinstance(seg, list) and len(seg) > 0) else word
+        return predicted_lemma, affix
+    return None, None
 
 @lru_cache(maxsize=64)
 def get_lang_data(lang: str):
@@ -130,6 +178,7 @@ def get_lang_data(lang: str):
 
 def translation(file_name: str, lang: str, local_proverbs_title: str|None = None):
     lang_folder = script_dir / "data" / lang.lower()
+    data_folder = script_dir / "data"
 
     iso_code = bantu_iso_map.get(lang.lower())
     if not iso_code:
@@ -184,12 +233,33 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
     local_proverb_sentences = []
     if local_proverbs_title:
-        proverbs_path = script_dir / local_proverbs_title
+        proverbs_path = data_folder / local_proverbs_title
         if proverbs_path.exists():
             prov_df = pd.read_csv(str(proverbs_path), sep='\t')
             if 'language' in prov_df.columns and 'african_proverb' in prov_df.columns:
                 lang_prov_df = prov_df[prov_df["language"].str.lower() == lang.lower()]
                 local_proverb_sentences = lang_prov_df["african_proverb"].dropna().tolist()
+
+    # --- START BANTUBERTA REFERENCE POOL COMPILATION ---
+    successful_embeddings_pool = []
+    if local_proverb_sentences and exact_translation_map:
+        print("Building contextual BantuBERTa reference pool maps across corpus entries...")
+        for proverb_text in local_proverb_sentences:
+            clean_proverb = re.sub(r"[^\w\s]", "", proverb_text).strip()
+            words_in_proverb = clean_proverb.split()
+
+            for w in words_in_proverb:
+                clean_w = strip_accents(w).lower().strip()
+                if clean_w in exact_translation_map:
+                    raw_translation_string = exact_translation_map[clean_w]
+                    translation_string = raw_translation_string.split(',')[0].strip()
+                    try:
+                        known_vec = get_bantuberta_embedding(clean_proverb, w)
+                        if known_vec is not None:
+                            successful_embeddings_pool.append((known_vec, translation_string))
+                    except Exception:
+                        continue
+        print(f"Contextual Reference Pool Compiled: {len(successful_embeddings_pool)} vectors aligned.")
 
     output_data = {
         'Surface Word': [],
@@ -204,14 +274,13 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         surface_word = str(row['surface_word'])
         raw_lemmas = ast.literal_eval(row['lemmatization'])
         predicted_lemma = str(raw_lemmas[0]).lower().strip() if raw_lemmas else surface_word.lower()
-        normalized_lemma = normalize_ortho(predicted_lemma)
+        normalized_lemma = normalize_ortho(predicted_lemma, lang)
         segmentation_str = row['segmentation']
         affix = affix_translate(ast.literal_eval(segmentation_str), lang, model_glossary)
 
         matched = False
 
-        # Tier 1: Exact Match
-        for lookup_key in [normalized_lemma, predicted_lemma, surface_word.lower()]:
+        for lookup_key in [surface_word.lower(), predicted_lemma, normalized_lemma]:
             clean_lookup = strip_accents(lookup_key).lower().strip()
             if clean_lookup in exact_translation_map:
                 output_data['Surface Word'].append(surface_word)
@@ -225,12 +294,11 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         clean_lemma_token = normalized_lemma.lower().replace('-', '').strip()
         is_standalone_grammar = clean_lemma_token in known_affixes
 
-        # Tier 2: Substring Stem Overlap
         if not matched and not is_standalone_grammar:
-            if len(normalized_lemma) >= 4:
+            if len(normalized_lemma) >= 5:
                 clean_norm_lemma = strip_accents(normalized_lemma).lower().strip()
                 for dict_word, eng_trans in exact_translation_map.items():
-                    if len(dict_word) > 3 and (dict_word in clean_norm_lemma or clean_norm_lemma in dict_word):
+                    if len(dict_word) >= 5 and (dict_word == clean_norm_lemma or f"-{dict_word}" in clean_norm_lemma or clean_norm_lemma.startswith(dict_word)):
                         output_data['Surface Word'].append(surface_word)
                         output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
                         output_data['English translation'].append(eng_trans)
@@ -262,30 +330,55 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
         # Tier 3: Isolated Local Root Evaluation
         if not matched:
-            extracted_roots = root_extract(segmentation_str, lang)
-            for root in extracted_roots:
-                clean_root = strip_accents(root).lower().strip()
-                if clean_root in exact_translation_map:
-                    output_data['Surface Word'].append(surface_word)
-                    output_data[f'{lang.capitalize()} Lemma'].append(root)
-                    output_data['English translation'].append(exact_translation_map[clean_root])
-                    output_data['Glossing'].append(affix)
-                    output_data['Match Type'].append('Isolated Root Exact Match')
-                    matched = True
+            try:
+                extracted_roots = root_extract(segmentation_str, lang)
+                for root in extracted_roots:
+                    clean_root = strip_accents(root).lower().strip()
+                    if clean_root in exact_translation_map:
+                        output_data['Surface Word'].append(surface_word)
+                        output_data[f'{lang.capitalize()} Lemma'].append(root)
+                        output_data['English translation'].append(exact_translation_map[clean_root])
+                        output_data['Glossing'].append(affix)
+                        output_data['Match Type'].append('Isolated Root Exact Match')
+                        matched = True
+                        break
+            except Exception:
+                pass
+
+        if not matched and len(successful_embeddings_pool) > 0 and local_proverb_sentences:
+            context_proverb = None
+            for proverb in local_proverb_sentences:
+                if re.search(r'\b' + re.escape(surface_word) + r'\b', proverb, re.IGNORECASE):
+                    context_proverb = proverb
                     break
 
-        # Tier 4: Word-Bounded Local Proverb Context Check
-        if not matched and local_proverb_sentences:
-            pattern = re.compile(r'\b' + re.escape(normalized_lemma) + r'\b', re.IGNORECASE)
-            for proverb in local_proverb_sentences:
-                if pattern.search(proverb):
-                    output_data['Surface Word'].append(surface_word)
-                    output_data[f'{lang.capitalize()} Lemma'].append(normalized_lemma)
-                    output_data['English translation'].append(proverb)
-                    output_data['Glossing'].append(affix)
-                    output_data['Match Type'].append('Local Proverb Context Match')
-                    matched = True
-                    break
+            if context_proverb:
+                try:
+                    clean_context = re.sub(r"[^\w\s]", "", context_proverb).strip()
+                    unknown_vec = get_bantuberta_embedding(clean_context, surface_word)
+                    if unknown_vec is not None:
+                        best_score = -1.0
+                        best_translation = None
+
+                        for known_vec, known_translation in successful_embeddings_pool:
+                            similarity = F.cosine_similarity(
+                                unknown_vec.unsqueeze(0),
+                                known_vec.unsqueeze(0)
+                            ).item()
+
+                            if similarity > best_score:
+                                best_score = similarity
+                                best_translation = known_translation
+
+                        if best_score > 0.88:
+                            output_data['Surface Word'].append(surface_word)
+                            output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
+                            output_data['English translation'].append(f"{best_translation} (Inferred via BantuBERTa)")
+                            output_data['Glossing'].append(affix)
+                            output_data['Match Type'].append('BantuBERTa Vector Neighborhood')
+                            matched = True
+                except Exception:
+                    pass
 
         # Fallback when no translation tier catches it
         if not matched:

@@ -9,7 +9,7 @@ from semantic_score.Semantic_Score import compute_structural_metrics
 
 script_dir = Path(__file__).resolve().parent.parent
 
-def main(path, task:str, lang:str):
+def main(path, task:str, lang:str, proverbs):
     if task == "get_data":
         print("Loading datasets...")
         data = Get_Data()
@@ -42,7 +42,7 @@ def main(path, task:str, lang:str):
         if not model_csv.exists():
             print(f"Model file missing for {lang}. Running model_extract first...")
             model_extract("data/data.csv", lang)
-        translation(lang, lang)
+        translation(lang, lang, proverbs)
     elif task == "model_segment":
         model_extract("data/data.csv", lang)
     elif task == "metrics":
