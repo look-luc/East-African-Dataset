@@ -1,8 +1,11 @@
 from pathlib import Path
 
+import pandas as pd
+
 import rough_morpheme.morpheme_counter as m_count
 import rough_morpheme.morpheme_draft as md
 from data.get_data import Get_Data
+from morpheme_translate.final_pass import translation_final_pass
 from morpheme_translate.model_segment import model_extract
 from morpheme_translate.translate import translation
 from semantic_score.Semantic_Score import compute_structural_metrics
@@ -48,3 +51,10 @@ def main(path, task:str, lang:str, proverbs):
     elif task == "metrics":
         gloss_rel_path, translation_column = ""
         compute_structural_metrics(lang, gloss_rel_path, translation_column)
+    elif task =="final_pass":
+        final_pass = translation_final_pass()
+        languages = ["ganda", "gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamba"]
+        passes = final_pass.ranked_translation("lit", "tshiluba")
+
+        translation_df = pd.read_csv(f"{script_dir}/data/lit_{lang.lower()}_random_15-lit_{lang}_random_15.csv")
+        translation_df["final pass"] = passes
