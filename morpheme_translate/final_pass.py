@@ -41,9 +41,7 @@ class translation_final_pass:
         self.lang = lang
 
         self.translation_keyword = translation_keyword
-        self.df_translation = pd.read_csv(
-            f"{parent_path}/data/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang.lower()}_random_15.csv"
-        )
+        self.df_translation = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang.lower()}_random_15.csv")
         self.lexicon = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower()}_translated.csv")
         self.lang_data = pd.DataFrame(self.data[self.data["language"]==self.lang])
         self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"]==self.lang])
@@ -71,7 +69,7 @@ class translation_final_pass:
             print("-" * 50)
 
             for idx, slot_tag in enumerate(slots):
-                clean_tag = re.sub(r"^_{2,4}\.", "", slot_tag)
+                clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
 
                 gloss_col = 'Glossing' if 'Glossing' in self.lexicon.columns else 'proposed_leipzig_gloss'
                 word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
