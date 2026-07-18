@@ -51,10 +51,12 @@ def main(path, task:str, lang:str, proverbs):
     elif task == "metrics":
         gloss_rel_path, translation_column = ""
         compute_structural_metrics(lang, gloss_rel_path, translation_column)
-    elif task =="final_pass":
+    elif task == "final_pass":
         final_pass = translation_final_pass()
-        languages = ["ganda", "gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamba"]
-        passes = final_pass.ranked_translation("lit", "tshiluba")
+
+        passes = final_pass.ranked_translation(fig_or_lit="lit", translation_keyword="translation", lang=lang)
 
         translation_df = pd.read_csv(f"{script_dir}/data/lit_{lang.lower()}_random_15-lit_{lang}_random_15.csv")
         translation_df["final pass"] = passes
+        translation_df.to_csv(f"{script_dir}/data/lit_{lang.lower()}_completed.csv", index=False)
+        print(f"Saved complete dynamic translations for {lang}!")

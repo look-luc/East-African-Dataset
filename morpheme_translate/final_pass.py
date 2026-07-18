@@ -71,27 +71,20 @@ class translation_final_pass:
             print("-" * 50)
 
             for idx, slot_tag in enumerate(slots):
-                clean_tag = slot_tag.replace(r"_{2,4}", "")
+                clean_tag = re.sub(r"^_{2,4}\.", "", slot_tag)
 
                 gloss_col = 'Glossing' if 'Glossing' in self.lexicon.columns else 'proposed_leipzig_gloss'
                 word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
 
-                candidate_pool = self.lexicon[self.lexicon[gloss_col]==clean_tag][word_col].dropna().unique().tolist()
+                candidate_pool = self.lexicon[self.lexicon[gloss_col] == clean_tag][word_col].dropna().unique().tolist()
 
                 if not candidate_pool:
-                    candidate_pool = self.lexicon[
-                        (
-                            self.lexicon['language'] == self.lang.lower()
-                        ) &
-                        (
-                            self.lexicon['proposed_leipzig_gloss'] == clean_tag
-                        )
-                    ][
-                    'morpheme_segment'
-                    ].dropna().unique().tolist()
+                    candidate_pool = self.grammar_lookup[
+                        self.grammar_lookup['proposed_leipzig_gloss'] == clean_tag
+                    ]['morpheme_segment'].dropna().unique().tolist()
 
                 if not candidate_pool:
-                    print(f"⚠️ No vocabulary matches found for tag '{clean_tag}' in file '{self.lexicon}'. Skipping slot.")
+                    print(f"⚠️ No vocabulary matches found for tag '{clean_tag}'. Skipping slot.")
                     continue
 
                 prompt = f"{current_context} Frame: {working_sentence.replace(slot_tag, '[MASK]', 1)}"

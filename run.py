@@ -22,6 +22,6 @@ if __name__ == "__main__":
     #         print(f"Executing step: {task} for {lang}...")
     #         main(script_parent, task, lang, "data.csv")
 
-    main(script_parent, "get_data", "final_pass", "data.csv")
+    main(script_parent, task="get_data", lang="tshiluba", proverbs="data.csv")
 
     print("Multilingual pipeline processing complete.")
