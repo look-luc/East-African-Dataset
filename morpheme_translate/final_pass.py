@@ -14,15 +14,10 @@ class translation_final_pass:
         model_name:str="dsfsi/BantuBERTa",
         data_file:str=f"{parent_path}/data/data.csv",
         grammar_file:str=f"{parent_path}/data/bantu_grammar_lookup.csv",
-        lang:str|None=None,
     ) -> None:
-        if lang is None:
-            raise ValueError("Provide a language")
 
         self.data = pd.read_csv(data_file, sep='\t')
         self.grammar_data = pd.read_csv(grammar_file)
-
-        self.lang = lang
 
         self.model_name = model_name
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
@@ -39,7 +34,12 @@ class translation_final_pass:
     def extract_slots(self, template_sentence: str)->list[str]:
         return re.findall(r"__(?_)(?_)(?:\.[\w\d]+)+", template_sentence)
 
-    def ranked_translation(self, fig_or_lit:str, translation_keyword:str="translation"):
+    def ranked_translation(self, fig_or_lit:str, translation_keyword:str="translation", lang:str|None=None,):
+        if lang is None:
+            raise ValueError("Provide a language")
+
+        self.lang = lang
+
         self.translation_keyword = translation_keyword
         self.df_translation = pd.read_csv(f"{parent_path}/data/{fig_or_lit}_{self.lang.lower()}_random_15.csv")
         self.lexicon = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}_translated.csv")
