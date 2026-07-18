@@ -4,7 +4,7 @@ from pathlib import Path
 import pandas as pd
 import torch
 import torch.nn.functional as F
-from transformers import AutoModel, AutoTokenizer
+from transformers import AutoModelForMaskedLM, AutoTokenizer
 
 parent_path = script_dir = Path(__file__).resolve().parent.parent
 
@@ -21,7 +21,7 @@ class translation_final_pass:
 
         self.model_name = model_name
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
-        self.model = AutoModel.from_pretrained(self.model_name)
+        self.model = AutoModelForMaskedLM.from_pretrained(self.model_name)
 
     def _get_embedding(self, text):
         """Generates a dense sequence embedding using contextual mean pooling."""
@@ -70,19 +70,16 @@ class translation_final_pass:
 
             for idx, slot_tag in enumerate(slots):
                 clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
-                tag_components = [c.upper() for c in clean_tag.split('.') if c]
+                tag_components = [
+                    re.sub(r"^N(\d+)$", r"BANTU\1", c.upper())
+                    for c in clean_tag.split('.') if c
+                ]
                 components = ";".join(tag_components)
-                components = re.sub(r"^N\d+$", r"^BANTU\d+$", components)
 
                 gloss_col = 'Glossing' if 'Glossing' in self.lexicon.columns else 'proposed_leipzig_gloss'
                 word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
 
                 candidate_pool = self.lexicon[self.lexicon[gloss_col].str.contains(components)][word_col].dropna().unique().tolist()
-
-                if not candidate_pool:
-                    candidate_pool = self.grammar_lookup[
-                        self.grammar_lookup['proposed_leipzig_gloss'].str.contains(components)
-                    ]['morpheme_segment'].dropna().unique().tolist()
 
                 if not candidate_pool:
                     print(f"⚠️ No vocabulary matches found for tag '{components}'. Skipping slot.")
