@@ -34,6 +34,41 @@ class translation_final_pass:
     def extract_slots(self, template_sentence: str)->list[str]:
         return re.findall(r"_{2,4}(?:\.[\w\d]+)+", template_sentence)
 
+    def _find_best_candidate(self, native_words: list, target_word_idx: int, candidate_pool: list) -> str:
+            """Masks a targeted native word slot and returns the highest scoring candidate from the pool."""
+            if not candidate_pool:
+                return ""
+
+            masked_words = native_words.copy() # getting the copy of the word to translate
+            masked_words[target_word_idx] = self.tokenizer.mask_token # made it into a mask token
+            masked_sentence = " ".join(masked_words)
+
+            inputs = self.tokenizer(masked_sentence, return_tensors="pt") # tokenized the whole sentence with the replaced masked token
+
+            mask_token_index = torch.where(inputs["input_ids"] == self.tokenizer.mask_token_id)[1] # finding where the masked token is in the inputs
+
+            # fallback where if there isn't anything will be [UNK]
+            if len(mask_token_index) == 0:
+                return candidate_pool[0]
+
+            with torch.no_grad():
+                outputs = self.model(**inputs)
+                mask_logits = outputs.logits[0, mask_token_index, :] # getting the output logits for the masked logit
+
+            candidate_ids = [self.tokenizer.convert_tokens_to_ids(str(c)) for c in candidate_pool] # getting all of the best representations
+
+            # making sure that there are any valid logits that are not [UNK]
+            valid_candidates = [(cand, cid) for cand, cid in zip(candidate_pool, candidate_ids) if cid != self.tokenizer.unk_token_id]
+
+            # putting [UNK] if everything fails
+            if not valid_candidates:
+                return candidate_pool[0]
+
+            scores = [mask_logits[0, cid].item() for _, cid in valid_candidates] # calculating the scores for the best output translation
+            best_idx = scores.index(max(scores))
+
+            return valid_candidates[best_idx][0]
+
     def ranked_translation(self, fig_or_lit:str, translation_keyword:str="translation", lang:str|None=None,):
         if lang is None:
             raise ValueError("Provide a language")
@@ -41,7 +76,9 @@ class translation_final_pass:
         self.lang = lang
 
         self.translation_keyword = translation_keyword
-        self.df_translation = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang.lower()}_random_15.csv")
+        self.df_translation = pd.read_csv(
+            f"{parent_path}/data/{self.lang.lower()}/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang.lower()}_random_15.csv"
+        )
         self.lexicon = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower()}_translated.csv")
         self.lang_data = pd.DataFrame(self.data[self.data["language"]==self.lang])
         self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"]==self.lang])
@@ -51,17 +88,13 @@ class translation_final_pass:
         for row in self.df_translation.itertuples():
             translation = getattr(row, self.translation_keyword)
 
-            if not isinstance(translation, str):
-                ranked_indices.append(translation)
-                continue
+            native_proverb_tokens = getattr(row, "african_proverb").split()
 
             slots = self.extract_slots(translation)
-
-            if not slots:
+            if not isinstance(translation, str) or not slots:
                 ranked_indices.append(translation)
                 continue
 
-            current_context = f"[Language: {self.lang.lower()}] Sentence Structure: "
             working_sentence = translation
 
             print(f"\nProcessing Sentence Frame for Language: [{self.lang.upper()}]")
@@ -81,23 +114,12 @@ class translation_final_pass:
 
                 candidate_pool = self.lexicon[self.lexicon[gloss_col].str.contains(components)][word_col].dropna().unique().tolist()
 
-                if not candidate_pool:
-                    print(f"⚠️ No vocabulary matches found for tag '{components}'. Skipping slot.")
-                    continue
+                target_word_idx = idx
 
-                prompt = f"{current_context} Frame: {working_sentence.replace(slot_tag, '[MASK]', 1)}"
-                target_vector = self._get_embedding(prompt)
+                chosen_token = self._find_best_candidate(native_proverb_tokens, target_word_idx, candidate_pool) # getting best word to replace
 
-                candidate_vectors = torch.cat([self._get_embedding(str(c)) for c in candidate_pool], dim=0)
-                scores = torch.matmul(target_vector, candidate_vectors.T).squeeze(0)
-
-                best_idx = torch.argmax(scores).item()
-                chosen_token = str(candidate_pool[best_idx])
-
-                working_sentence = working_sentence.replace(slot_tag, chosen_token, 1)
-                current_context += f" {chosen_token}"
-
-                print(f"Filled Slot {idx + 1} ({slot_tag}) ➔ '{chosen_token}' (Confidence: {scores[best_idx].item():.4f})")
+                if chosen_token:
+                    working_sentence = working_sentence.replace(slot_tag, str(chosen_token), 1)
 
             ranked_indices.append(working_sentence)
         return ranked_indices
