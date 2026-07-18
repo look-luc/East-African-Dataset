@@ -42,7 +42,7 @@ class translation_final_pass:
 
         self.translation_keyword = translation_keyword
         self.df_translation = pd.read_csv(
-            f"{parent_path}/data/{self.lang}/{fig_or_lit}_{self.lang.lower()}_random_15-{fig_or_lit}_{self.lang}_random_15.csv"
+            f"{parent_path}/data/{self.lang}/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang}_random_15.csv"
         )
         self.lexicon = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}_translated.csv")
         self.lang_data = pd.DataFrame(self.data[self.data["language"]==self.lang])
