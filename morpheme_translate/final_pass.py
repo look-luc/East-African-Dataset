@@ -32,7 +32,7 @@ class translation_final_pass:
         return F.normalize(embeddings, p=2, dim=1)
 
     def extract_slots(self, template_sentence: str)->list[str]:
-        return re.findall(r"__(?_)(?_)(?:\.[\w\d]+)+", template_sentence)
+        return re.findall(r"_{2,4}(?:\.[\w\d]+)+", template_sentence)
 
     def ranked_translation(self, fig_or_lit:str, translation_keyword:str="translation", lang:str|None=None,):
         if lang is None:
@@ -51,10 +51,15 @@ class translation_final_pass:
         for row in self.df_translation.itertuples():
             translation = getattr(row, self.translation_keyword)
 
+            if not isinstance(translation, str):
+                ranked_indices.append(translation)
+                continue
+
             slots = self.extract_slots(translation)
 
             if not slots:
-                return translation
+                ranked_indices.append(translation)
+                continue
 
             current_context = f"[Language: {self.lang.lower()}] Sentence Structure: "
             working_sentence = translation
@@ -64,7 +69,7 @@ class translation_final_pass:
             print("-" * 50)
 
             for idx, slot_tag in enumerate(slots):
-                clean_tag = slot_tag.replace(r"__?_?_.", "")
+                clean_tag = slot_tag.replace(r"_{2,4}", "")
 
                 gloss_col = 'Glossing' if 'Glossing' in self.lexicon.columns else 'proposed_leipzig_gloss'
                 word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
