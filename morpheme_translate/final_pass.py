@@ -42,6 +42,7 @@ class translation_final_pass:
     def ranked_translation(self, fig_or_lit:str, translation_keyword:str="translation"):
         self.translation_keyword = translation_keyword
         self.df_translation = pd.read_csv(f"{parent_path}/data/{fig_or_lit}_{self.lang.lower()}_random_15.csv")
+        self.lexicon = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}_translated.csv")
         self.lang_data = pd.DataFrame(self.data[self.data["language"]==self.lang])
         self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"]==self.lang])
 
@@ -65,5 +66,40 @@ class translation_final_pass:
             for idx, slot_tag in enumerate(slots):
                 clean_tag = slot_tag.replace(r"__?_?_.", "")
 
-                gloss_col = 'Glossing' if 'Glossing' in self.grammar_data.columns else 'proposed_leipzig_gloss'
-                word_col = 'Surface Word' if 'Surface Word' in self.grammar_data.columns else 'word'
+                gloss_col = 'Glossing' if 'Glossing' in self.lexicon.columns else 'proposed_leipzig_gloss'
+                word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
+
+                candidate_pool = self.lexicon[self.lexicon[gloss_col]==clean_tag][word_col].dropna().unique().tolist()
+
+                if not candidate_pool:
+                    candidate_pool = self.lexicon[
+                        (
+                            self.lexicon['language'] == self.lang.lower()
+                        ) &
+                        (
+                            self.lexicon['proposed_leipzig_gloss'] == clean_tag
+                        )
+                    ][
+                    'morpheme_segment'
+                    ].dropna().unique().tolist()
+
+                if not candidate_pool:
+                    print(f"⚠️ No vocabulary matches found for tag '{clean_tag}' in file '{self.lexicon}'. Skipping slot.")
+                    continue
+
+                prompt = f"{current_context} Frame: {working_sentence.replace(slot_tag, '[MASK]', 1)}"
+                target_vector = self._get_embedding(prompt)
+
+                candidate_vectors = torch.cat([self._get_embedding(str(c)) for c in candidate_pool], dim=0)
+                scores = torch.matmul(target_vector, candidate_vectors.T).squeeze(0)
+
+                best_idx = torch.argmax(scores).item()
+                chosen_token = str(candidate_pool[best_idx])
+
+                working_sentence = working_sentence.replace(slot_tag, chosen_token, 1)
+                current_context += f" {chosen_token}"
+
+                print(f"Filled Slot {idx + 1} ({slot_tag}) ➔ '{chosen_token}' (Confidence: {scores[best_idx].item():.4f})")
+
+            ranked_indices.append(working_sentence)
+        return ranked_indices
