@@ -84,56 +84,72 @@ class translation_final_pass:
         self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"]==self.lang])
 
         ranked_indices = []
-
+        reference_pool = []
         for row in self.df_translation.itertuples():
             translation = getattr(row, self.translation_keyword)
 
-            native_proverb_tokens = getattr(row, "african_proverb").split()
-
-            if not isinstance(translation, str):
-                ranked_indices.append(translation)
-                continue
-
-            native_proverb_tokens = getattr(row, "african_proverb").split()
+            native_proverb_tokens = getattr(row, "african_proverb")
             slots = self.extract_slots(translation)
 
+            if isinstance(translation, str) and slots:
+                prov = native_proverb_tokens
+                emb = self._get_embedding(prov)
+                reference_pool.append({"template": translation, "embedding": emb})
+
+            is_borrowed = False
+            if not isinstance(translation, str):
+                current_prov = getattr(row, "african_proverb")
+                current_emb = self._get_embedding(current_prov)
+
+                best_template = None
+                best_sim = -1.0
+
+                # Compare current vector against all valid reference vectors
+                for ref in reference_pool:
+                    similarity = torch.mm(current_emb, ref["embedding"].T).item()
+                    if similarity > best_sim:
+                        best_sim = similarity
+                        best_template = ref["template"]
+
+                if best_template:
+                    translation = best_template
+                    is_borrowed = True
+                else:
+                    # Absolute safety fallback if the reference pool is completely empty
+                    ranked_indices.append(translation)
+                    continue
             working_sentence = translation
-            if slots:
-                print(f"\nProcessing Sentence Frame for Language: [{self.lang.upper()}]")
-                print(f"Original Input: {translation}")
-                print("-" * 50)
+            if is_borrowed:
+                print(f"\n[BantuBERTa Retrieval] Borrowed template for: {getattr(row, 'african_proverb')}")
+                print(f"Borrowed Frame: {translation}")
+            for idx, slot_tag in enumerate(slots):
+                clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
+                tag_components = [
+                    re.sub(r"^N(\d+)$", r"BANTU\1", c.upper())
+                    for c in clean_tag.split('.') if c
+                ]
+                components = ";".join(tag_components)
 
-                for idx, slot_tag in enumerate(slots):
-                    clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
-                    tag_components = [
-                        re.sub(r"^N(\d+)$", r"BANTU\1", c.upper())
-                        for c in clean_tag.split('.') if c
-                    ]
-                    components = ";".join(tag_components)
+                gloss_col = 'Glossing' if 'Glossing' in self.lexicon.columns else 'proposed_leipzig_gloss'
+                word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
 
-                    gloss_col = 'Glossing' if 'Glossing' in self.lexicon.columns else 'proposed_leipzig_gloss'
-                    word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
+                candidate_pool = self.lexicon[self.lexicon[gloss_col].str.contains(components)][word_col].dropna().unique().tolist()
 
-                    candidate_pool = self.lexicon[self.lexicon[gloss_col].str.contains(components)][word_col].dropna().unique().tolist()
+                target_word_idx = None
+                morpheme_source = getattr(row, "morpheme_breaks", "")
+                morpheme_tokens = morpheme_source.split() if isinstance(morpheme_source, str) else []
+                for word_idx, native_token in enumerate(morpheme_tokens):
+                    native_token_upper = native_token.upper()
+                    if all(comp in native_token_upper for comp in tag_components):
+                        target_word_idx = word_idx
+                        break
 
-                    target_word_idx = None
-                    morpheme_source = getattr(row, "morpheme_breaks", "")
-                    morpheme_tokens = morpheme_source.split() if isinstance(morpheme_source, str) else []
+                if target_word_idx is None:
+                    continue
 
-                    for word_idx, native_token in enumerate(morpheme_tokens):
-                        native_token_upper = native_token.upper()
-                        if all(comp in native_token_upper for comp in tag_components):
-                            target_word_idx = word_idx
-                            break
+                chosen_token = self._find_best_candidate(native_proverb_tokens, target_word_idx, candidate_pool) # getting best word to replace
 
-                    if target_word_idx is None:
-                        continue
-
-                    chosen_token = self._find_best_candidate(native_proverb_tokens, target_word_idx, candidate_pool)
-
-                    if chosen_token:
-                        working_sentence = working_sentence.replace(slot_tag, str(chosen_token), 1)
-
-            # Every row (modified or skipped) passes through this point exactly once
+                if chosen_token:
+                    working_sentence = working_sentence.replace(slot_tag, str(chosen_token), 1)
             ranked_indices.append(working_sentence)
         return ranked_indices
