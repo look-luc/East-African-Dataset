@@ -33,7 +33,7 @@ class translation_final_pass:
         return F.normalize(embeddings, p=2, dim=1)
 
     def extract_slots(self, template_sentence: str)->list[str]:
-        return re.findall(r"_{2,4}(?:\.[\w\d]+)+", template_sentence)
+        return re.findall(r"_{2,4}(?:\.[\w\d]+)*", template_sentence)
 
     def _find_best_candidate(self, native_words: list, target_word_idx: int, candidate_pool: list) -> str:
             """Masks a targeted native word slot and returns the highest scoring candidate from the pool."""
@@ -52,7 +52,7 @@ class translation_final_pass:
                 if all(item == self.tokenizer.unk_token_id for item  in candidate_ids):
                     continue
 
-                masked_words = native_words.copy() # getting the copy of the word to translate
+                masked_words = native_words.copy()
                 if target_word_idx >= len(masked_words):
                     continue
 
@@ -66,9 +66,8 @@ class translation_final_pass:
                     outputs = self.model(**inputs)
                     mask_logits = outputs.logits
 
-                mask_token_index = torch.where(inputs["input_ids"] == self.tokenizer.mask_token_id)[1] # finding where the masked token is in the inputs
+                mask_token_index = torch.where(inputs["input_ids"] == self.tokenizer.mask_token_id)[1]
 
-                # fallback where if there isn't anything will be [UNK]
                 if len(mask_token_index) != num_masks_needed:
                     continue
 
@@ -100,25 +99,24 @@ class translation_final_pass:
             f"{parent_path}/data/{self.lang.lower()}/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang.lower()}_random_15.csv"
         )
         self.lexicon = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower()}_translated.csv")
-        self.lem_seg = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower().capitalize()}_model_lem_seg.csv")
+        self.lem_seg = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower().capitalize()}_model_lem_seg.csv", sep='\t')
+
         self.lang_data = pd.DataFrame(self.data[self.data["language"]==self.lang])
         self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"]==self.lang])
 
         self.glosses = []
-        for r in self.lem_seg.itertuples():
-            g = getattr(r, "noun class prediction")
-            gloss = g.strip(" ")[1]
-            self.glosses.append(gloss[:-1])
+        for _, row in self.lem_seg.iterrows():
+            g = row["noun class prediction"]
+            glossed = g.strip(" ")[1]
+            self.glosses.append(glossed[:-1])
 
-        # Shared translation table to cleanly strip punctuation marks
         translator = str.maketrans('', '', string.punctuation)
 
         reference_pool = []
         for r in self.df_translation.itertuples():
             t = getattr(r, self.translation_keyword)
             if isinstance(t, str):
-                # Ensure the reference has valid slot markers before counting it
-                if re.search(r"_{2,4}(?:\.[\w\d]+)+", t):
+                if re.search(r"_{2,4}(?:\.[\w\d]+)*", t):
                     prov = getattr(r, "african_proverb")
                     if isinstance(prov, str):
                         prov = prov.translate(translator)
@@ -128,7 +126,6 @@ class translation_final_pass:
         for row in self.df_translation.itertuples():
             translation = getattr(row, self.translation_keyword)
 
-            # Clean and split the proverb string to align exactly with structural arrays
             raw_proverb = getattr(row, "african_proverb", "")
             if isinstance(raw_proverb, str):
                 native_proverb_tokens = raw_proverb.translate(translator).split()
@@ -137,7 +134,6 @@ class translation_final_pass:
 
             is_borrowed = False
 
-            # If template is missing, execute BantuBERTa similarity retrieval
             if not isinstance(translation, str):
                 current_prov = getattr(row, "african_proverb")
                 current_emb = self._get_embedding(current_prov)
@@ -164,24 +160,28 @@ class translation_final_pass:
                 print(f"\n[BantuBERTa Retrieval] Borrowed template for: {getattr(row, 'african_proverb')}")
                 print(f"Borrowed Frame: {translation}")
 
-            # Now the slot loop will evaluate perfectly for both original and borrowed frames
             for idx, slot_tag in enumerate(slots):
                 clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
                 tag_components = [
                     re.sub(r"^N(\d+)$", r"BANTU\1", c.upper())
                     for c in clean_tag.split('.') if c
                 ]
-                components = ";".join(tag_components)
 
-                gloss_col = self.glosses
+                gloss_col = next((col for col in self.lexicon.columns if 'gloss' in col.lower()), 'gloss')
                 word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
 
-                candidate_pool = self.lexicon[self.lexicon[gloss_col].str.contains(components)][word_col].dropna().unique().tolist()
+                if tag_components:
+                    mask = pd.Series(True, index=self.lexicon.index)
+                    for comp in tag_components:
+                        mask &= self.lexicon[gloss_col].str.contains(comp, na=False, regex=False)
+                    candidate_pool = self.lexicon[mask][word_col].dropna().unique().tolist()
+                else:
+                    # Fallback for plain blanks without any tags
+                    candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
 
                 target_word_idx = None
                 morpheme_source = getattr(row, "morpheme_breaks", "")
 
-                # Clean and split morpheme targets to preserve 1:1 length parity with proverb tokens
                 if isinstance(morpheme_source, str):
                     morpheme_tokens = morpheme_source.translate(translator).split()
                 else:
@@ -189,14 +189,17 @@ class translation_final_pass:
 
                 for word_idx, native_token in enumerate(morpheme_tokens):
                     native_token_upper = native_token.upper()
-                    if all(comp in native_token_upper for comp in tag_components):
+                    if tag_components and all(comp in native_token_upper for comp in tag_components):
                         target_word_idx = word_idx
+                        break
+                    elif not tag_components:
+                        target_word_idx = idx if idx < len(morpheme_tokens) else None
                         break
 
                 if target_word_idx is None:
                     continue
 
-                chosen_token = self._find_best_candidate(native_proverb_tokens, target_word_idx, candidate_pool) # getting best word to replace
+                chosen_token = self._find_best_candidate(native_proverb_tokens, target_word_idx, candidate_pool)
 
                 if chosen_token:
                     working_sentence = working_sentence.replace(slot_tag, str(chosen_token), 1)
