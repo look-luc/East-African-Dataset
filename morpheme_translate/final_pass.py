@@ -40,7 +40,7 @@ class translation_final_pass:
                 return ""
 
             best_candidate = candidate_pool[0]
-            highest_score = torch.inf
+            highest_score = -torch.inf
 
             for candidate in candidate_pool:
                 candidate_tokens = self.tokenizer.tokenize(candidate)
@@ -48,7 +48,7 @@ class translation_final_pass:
                 candidate_ids = self.tokenizer.convert_tokens_to_ids(candidate_tokens)
                 num_masks_needed = len(candidate_tokens)
 
-                if all(item == self.tokenizer.mask_token for item  in candidate_ids):
+                if all(item == self.tokenizer.unk_token_id for item  in candidate_ids):
                     continue
 
                 masked_words = native_words.copy() # getting the copy of the word to translate
@@ -60,12 +60,12 @@ class translation_final_pass:
 
                 with torch.no_grad():
                     outputs = self.model(**inputs)
-                    mask_logits = outputs.logitss
+                    mask_logits = outputs.logits
 
                 mask_token_index = torch.where(inputs["input_ids"] == self.tokenizer.mask_token_id)[1] # finding where the masked token is in the inputs
 
                 # fallback where if there isn't anything will be [UNK]
-                if len(mask_token_index) == num_masks_needed:
+                if len(mask_token_index) != num_masks_needed:
                     continue
 
                 current_candidate_score = 0.0
@@ -76,7 +76,7 @@ class translation_final_pass:
 
                     token_logits = mask_logits[0, mask_position, :]
 
-                    log_probabilities = F.log_softmax(token_logits)
+                    log_probabilities = F.log_softmax(token_logits, dim=-1)
                     current_candidate_score = current_candidate_score + log_probabilities[target_subword_id].item()
 
                 if current_candidate_score > highest_score:
