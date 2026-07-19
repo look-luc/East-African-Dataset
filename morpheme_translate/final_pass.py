@@ -39,33 +39,46 @@ class translation_final_pass:
             if not candidate_pool:
                 return ""
 
-            masked_words = native_words.copy() # getting the copy of the word to translate
-            masked_words[target_word_idx] = self.tokenizer.mask_token # made it into a mask token
-            masked_sentence = " ".join(masked_words)
+            best_candidate = candidate_pool[0]
+            highest_score = torch.inf
 
-            inputs = self.tokenizer(masked_sentence, return_tensors="pt") # tokenized the whole sentence with the replaced masked token
+            for candidate in candidate_pool:
+                candidate_tokens = self.tokenizer.tokenize(candidate)
 
-            mask_token_index = torch.where(inputs["input_ids"] == self.tokenizer.mask_token_id)[1] # finding where the masked token is in the inputs
+                candidate_ids = self.tokenizer.convert_tokens_to_ids(candidate_tokens)
+                num_masks_needed = len(candidate_tokens)
 
-            # fallback where if there isn't anything will be [UNK]
-            if len(mask_token_index) == 0:
-                return candidate_pool[0]
+                if all(item == self.tokenizer.mask_token for item  in candidate_ids):
+                    continue
 
-            with torch.no_grad():
-                outputs = self.model(**inputs)
-                mask_logits = outputs.logits[0, mask_token_index, :] # getting the output logits for the masked logit
+                masked_words = native_words.copy() # getting the copy of the word to translate
+                mask_string = " ".join([self.tokenizer.mask_token] * num_masks_needed)
+                masked_words[target_word_idx] = mask_string
+                masked_sentence = " ".join(masked_words)
 
-            candidate_ids = [self.tokenizer.convert_tokens_to_ids(str(c)) for c in candidate_pool] # getting all of the best representations
+                inputs = self.tokenizer(masked_sentence, return_tensors="pt") # tokenized the whole sentence with the replaced masked token
 
-            # making sure that there are any valid logits that are not [UNK]
-            valid_candidates = [(cand, cid) for cand, cid in zip(candidate_pool, candidate_ids) if cid != self.tokenizer.unk_token_id]
+                with torch.no_grad():
+                    outputs = self.model(**inputs)
+                    mask_logits = outputs.logits[0, inputs, :] # getting the output logits for the masked logit
 
-            # putting [UNK] if everything fails
-            if not valid_candidates:
-                return candidate_pool[0]
+                mask_token_index = torch.where(inputs["input_ids"] == self.tokenizer.mask_token_id)[1] # finding where the masked token is in the inputs
 
-            scores = [mask_logits[0, cid].item() for _, cid in valid_candidates] # calculating the scores for the best output translation
-            best_idx = scores.index(max(scores))
+                # fallback where if there isn't anything will be [UNK]
+                if len(mask_token_index) == 0:
+                    return candidate_pool[0]
+
+                candidate_ids = [self.tokenizer.convert_tokens_to_ids(str(c)) for c in candidate_pool] # getting all of the best representations
+
+                # making sure that there are any valid logits that are not [UNK]
+                valid_candidates = [(cand, cid) for cand, cid in zip(candidate_pool, candidate_ids) if cid != self.tokenizer.unk_token_id]
+
+                # putting [UNK] if everything fails
+                if not valid_candidates:
+                    return candidate_pool[0]
+
+                scores = [mask_logits[0, cid].item() for _, cid in valid_candidates] # calculating the scores for the best output translation
+                best_idx = scores.index(max(scores))
 
             return valid_candidates[best_idx][0]
 
