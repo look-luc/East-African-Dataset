@@ -90,36 +90,50 @@ class translation_final_pass:
 
             native_proverb_tokens = getattr(row, "african_proverb").split()
 
-            slots = self.extract_slots(translation)
-            if not isinstance(translation, str) or not slots:
+            if not isinstance(translation, str):
                 ranked_indices.append(translation)
                 continue
 
+            native_proverb_tokens = getattr(row, "african_proverb").split()
+            slots = self.extract_slots(translation)
+
             working_sentence = translation
+            if slots:
+                print(f"\nProcessing Sentence Frame for Language: [{self.lang.upper()}]")
+                print(f"Original Input: {translation}")
+                print("-" * 50)
 
-            print(f"\nProcessing Sentence Frame for Language: [{self.lang.upper()}]")
-            print(f"Original Input: {translation}")
-            print("-" * 50)
+                for idx, slot_tag in enumerate(slots):
+                    clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
+                    tag_components = [
+                        re.sub(r"^N(\d+)$", r"BANTU\1", c.upper())
+                        for c in clean_tag.split('.') if c
+                    ]
+                    components = ";".join(tag_components)
 
-            for idx, slot_tag in enumerate(slots):
-                clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
-                tag_components = [
-                    re.sub(r"^N(\d+)$", r"BANTU\1", c.upper())
-                    for c in clean_tag.split('.') if c
-                ]
-                components = ";".join(tag_components)
+                    gloss_col = 'Glossing' if 'Glossing' in self.lexicon.columns else 'proposed_leipzig_gloss'
+                    word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
 
-                gloss_col = 'Glossing' if 'Glossing' in self.lexicon.columns else 'proposed_leipzig_gloss'
-                word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
+                    candidate_pool = self.lexicon[self.lexicon[gloss_col].str.contains(components)][word_col].dropna().unique().tolist()
 
-                candidate_pool = self.lexicon[self.lexicon[gloss_col].str.contains(components)][word_col].dropna().unique().tolist()
+                    target_word_idx = None
+                    morpheme_source = getattr(row, "morpheme_breaks", "")
+                    morpheme_tokens = morpheme_source.split() if isinstance(morpheme_source, str) else []
 
-                target_word_idx = idx
+                    for word_idx, native_token in enumerate(morpheme_tokens):
+                        native_token_upper = native_token.upper()
+                        if all(comp in native_token_upper for comp in tag_components):
+                            target_word_idx = word_idx
+                            break
 
-                chosen_token = self._find_best_candidate(native_proverb_tokens, target_word_idx, candidate_pool) # getting best word to replace
+                    if target_word_idx is None:
+                        continue
 
-                if chosen_token:
-                    working_sentence = working_sentence.replace(slot_tag, str(chosen_token), 1)
+                    chosen_token = self._find_best_candidate(native_proverb_tokens, target_word_idx, candidate_pool)
 
+                    if chosen_token:
+                        working_sentence = working_sentence.replace(slot_tag, str(chosen_token), 1)
+
+            # Every row (modified or skipped) passes through this point exactly once
             ranked_indices.append(working_sentence)
         return ranked_indices
