@@ -1,4 +1,5 @@
 import re
+import string
 from pathlib import Path
 
 import pandas as pd
@@ -52,11 +53,14 @@ class translation_final_pass:
                     continue
 
                 masked_words = native_words.copy() # getting the copy of the word to translate
+                if target_word_idx >= len(masked_words):
+                    continue
+
                 mask_string = " ".join([self.tokenizer.mask_token] * num_masks_needed)
                 masked_words[target_word_idx] = mask_string
                 masked_sentence = " ".join(masked_words)
 
-                inputs = self.tokenizer(masked_sentence, return_tensors="pt") # tokenized the whole sentence with the replaced masked token
+                inputs = self.tokenizer(masked_sentence, return_tensors="pt")
 
                 with torch.no_grad():
                     outputs = self.model(**inputs)
@@ -99,6 +103,9 @@ class translation_final_pass:
         self.lang_data = pd.DataFrame(self.data[self.data["language"]==self.lang])
         self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"]==self.lang])
 
+        # Shared translation table to cleanly strip punctuation marks
+        translator = str.maketrans('', '', string.punctuation)
+
         reference_pool = []
         for r in self.df_translation.itertuples():
             t = getattr(r, self.translation_keyword)
@@ -106,12 +113,20 @@ class translation_final_pass:
                 # Ensure the reference has valid slot markers before counting it
                 if re.search(r"_{2,4}(?:\.[\w\d]+)+", t):
                     prov = getattr(r, "african_proverb")
+                    if isinstance(prov, str):
+                        prov = prov.translate(translator)
                     reference_pool.append({"template": t, "embedding": self._get_embedding(prov)})
 
         ranked_indices = []
         for row in self.df_translation.itertuples():
             translation = getattr(row, self.translation_keyword)
-            native_proverb_tokens = getattr(row, "african_proverb").split() # Keep as list for .copy() downstream
+
+            # Clean and split the proverb string to align exactly with structural arrays
+            raw_proverb = getattr(row, "african_proverb", "")
+            if isinstance(raw_proverb, str):
+                native_proverb_tokens = raw_proverb.translate(translator).split()
+            else:
+                native_proverb_tokens = []
 
             is_borrowed = False
 
@@ -158,7 +173,13 @@ class translation_final_pass:
 
                 target_word_idx = None
                 morpheme_source = getattr(row, "morpheme_breaks", "")
-                morpheme_tokens = morpheme_source.split() if isinstance(morpheme_source, str) else []
+
+                # Clean and split morpheme targets to preserve 1:1 length parity with proverb tokens
+                if isinstance(morpheme_source, str):
+                    morpheme_tokens = morpheme_source.translate(translator).split()
+                else:
+                    morpheme_tokens = []
+
                 for word_idx, native_token in enumerate(morpheme_tokens):
                     native_token_upper = native_token.upper()
                     if all(comp in native_token_upper for comp in tag_components):
