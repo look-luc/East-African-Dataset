@@ -100,8 +100,15 @@ class translation_final_pass:
             f"{parent_path}/data/{self.lang.lower()}/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang.lower()}_random_15.csv"
         )
         self.lexicon = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower()}_translated.csv")
+        self.lem_seg = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower().capitalize()}_model_lem_seg.csv")
         self.lang_data = pd.DataFrame(self.data[self.data["language"]==self.lang])
         self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"]==self.lang])
+
+        self.glosses = []
+        for r in self.lem_seg.itertuples():
+            g = getattr(r, "noun class prediction")
+            gloss = g.strip(" ")[1]
+            self.glosses.append(gloss[:-1])
 
         # Shared translation table to cleanly strip punctuation marks
         translator = str.maketrans('', '', string.punctuation)
@@ -166,7 +173,7 @@ class translation_final_pass:
                 ]
                 components = ";".join(tag_components)
 
-                gloss_col = 'Glossing' if 'Glossing' in self.lexicon.columns else 'proposed_leipzig_gloss'
+                gloss_col = self.glosses
                 word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
 
                 candidate_pool = self.lexicon[self.lexicon[gloss_col].str.contains(components)][word_col].dropna().unique().tolist()
