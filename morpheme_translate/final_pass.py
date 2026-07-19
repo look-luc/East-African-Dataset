@@ -27,8 +27,8 @@ class translation_final_pass:
         """Generates a dense sequence embedding using contextual mean pooling."""
         inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True)
         with torch.no_grad():
-            outputs = self.model(**inputs).logits
-        embeddings = outputs.mean(dim=1)
+            outputs = self.model(**inputs, output_hidden_states=True)
+            embeddings = outputs.hidden_states[-1].mean(dim=1)
         return F.normalize(embeddings, p=2, dim=1)
 
     def extract_slots(self, template_sentence: str)->list[str]:
