@@ -27,8 +27,8 @@ class translation_final_pass:
         """Generates a dense sequence embedding using contextual mean pooling."""
         inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True)
         with torch.no_grad():
-            outputs = self.model(**inputs)
-        embeddings = outputs.last_hidden_state.mean(dim=1)
+            outputs = self.model(**inputs).logits
+        embeddings = outputs.mean(dim=1)
         return F.normalize(embeddings, p=2, dim=1)
 
     def extract_slots(self, template_sentence: str)->list[str]:
@@ -83,20 +83,23 @@ class translation_final_pass:
         self.lang_data = pd.DataFrame(self.data[self.data["language"]==self.lang])
         self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"]==self.lang])
 
-        ranked_indices = []
         reference_pool = []
+        for r in self.df_translation.itertuples():
+            t = getattr(r, self.translation_keyword)
+            if isinstance(t, str):
+                # Ensure the reference has valid slot markers before counting it
+                if re.search(r"_{2,4}(?:\.[\w\d]+)+", t):
+                    prov = getattr(r, "african_proverb")
+                    reference_pool.append({"template": t, "embedding": self._get_embedding(prov)})
+
+        ranked_indices = []
         for row in self.df_translation.itertuples():
             translation = getattr(row, self.translation_keyword)
-
-            native_proverb_tokens = getattr(row, "african_proverb")
-            slots = self.extract_slots(translation)
-
-            if isinstance(translation, str) and slots:
-                prov = native_proverb_tokens
-                emb = self._get_embedding(prov)
-                reference_pool.append({"template": translation, "embedding": emb})
+            native_proverb_tokens = getattr(row, "african_proverb").split() # Keep as list for .copy() downstream
 
             is_borrowed = False
+
+            # If template is missing, execute BantuBERTa similarity retrieval
             if not isinstance(translation, str):
                 current_prov = getattr(row, "african_proverb")
                 current_emb = self._get_embedding(current_prov)
@@ -104,7 +107,6 @@ class translation_final_pass:
                 best_template = None
                 best_sim = -1.0
 
-                # Compare current vector against all valid reference vectors
                 for ref in reference_pool:
                     similarity = torch.mm(current_emb, ref["embedding"].T).item()
                     if similarity > best_sim:
@@ -115,13 +117,16 @@ class translation_final_pass:
                     translation = best_template
                     is_borrowed = True
                 else:
-                    # Absolute safety fallback if the reference pool is completely empty
                     ranked_indices.append(translation)
                     continue
+            slots = self.extract_slots(translation)
             working_sentence = translation
+
             if is_borrowed:
                 print(f"\n[BantuBERTa Retrieval] Borrowed template for: {getattr(row, 'african_proverb')}")
                 print(f"Borrowed Frame: {translation}")
+
+            # Now the slot loop will evaluate perfectly for both original and borrowed frames
             for idx, slot_tag in enumerate(slots):
                 clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
                 tag_components = [
