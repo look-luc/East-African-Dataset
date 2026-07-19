@@ -60,27 +60,30 @@ class translation_final_pass:
 
                 with torch.no_grad():
                     outputs = self.model(**inputs)
-                    mask_logits = outputs.logits[0, inputs, :] # getting the output logits for the masked logit
+                    mask_logits = outputs.logitss
 
                 mask_token_index = torch.where(inputs["input_ids"] == self.tokenizer.mask_token_id)[1] # finding where the masked token is in the inputs
 
                 # fallback where if there isn't anything will be [UNK]
-                if len(mask_token_index) == 0:
-                    return candidate_pool[0]
+                if len(mask_token_index) == num_masks_needed:
+                    continue
 
-                candidate_ids = [self.tokenizer.convert_tokens_to_ids(str(c)) for c in candidate_pool] # getting all of the best representations
+                current_candidate_score = 0.0
 
-                # making sure that there are any valid logits that are not [UNK]
-                valid_candidates = [(cand, cid) for cand, cid in zip(candidate_pool, candidate_ids) if cid != self.tokenizer.unk_token_id]
+                for i in range(num_masks_needed):
+                    mask_position = mask_token_index[i]
+                    target_subword_id = candidate_ids[i]
 
-                # putting [UNK] if everything fails
-                if not valid_candidates:
-                    return candidate_pool[0]
+                    token_logits = mask_logits[0, mask_position, :]
 
-                scores = [mask_logits[0, cid].item() for _, cid in valid_candidates] # calculating the scores for the best output translation
-                best_idx = scores.index(max(scores))
+                    log_probabilities = F.log_softmax(token_logits)
+                    current_candidate_score = current_candidate_score + log_probabilities[target_subword_id].item()
 
-            return valid_candidates[best_idx][0]
+                if current_candidate_score > highest_score:
+                    highest_score = current_candidate_score
+                    best_candidate = candidate
+
+            return best_candidate
 
     def ranked_translation(self, fig_or_lit:str, translation_keyword:str="translation", lang:str|None=None,):
         if lang is None:
