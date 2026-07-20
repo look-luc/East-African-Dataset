@@ -326,4 +326,5 @@ class translation_final_pass:
                     else:
                         working_sentence = working_sentence.replace(residual_tag, "", 1)
             ranked_indices.append(working_sentence)
-        return ranked_indices
+        output = self.morph_tokenizer(ranked_indices)
+        return output
