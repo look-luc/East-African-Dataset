@@ -31,7 +31,7 @@ class translation_final_pass:
         self.morph_cache: dict[str, str] = {}
 
     def _get_embedding(self, text):
-        inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True)
+        inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512)
         with torch.no_grad():
             outputs = self.model(**inputs, output_hidden_states=True)
             embeddings = outputs.hidden_states[-1].mean(dim=1)
@@ -94,7 +94,16 @@ class translation_final_pass:
             mask_string = " ".join([self.tokenizer.mask_token] * num_masks_needed)
             masked_sentence = working_sentence.replace(slot_tag, mask_string, 1)
 
-            inputs = self.tokenizer(masked_sentence, return_tensors="pt")
+            if len(masked_sentence.split()) > 200:
+                words = masked_sentence.split()
+                mask_indices = [i for i, w in enumerate(words) if self.tokenizer.mask_token in w]
+                if mask_indices:
+                    center = mask_indices[0]
+                    start = max(0, center - 100)
+                    end = min(len(words), center + 100)
+                    masked_sentence = " ".join(words[start:end])
+
+            inputs = self.tokenizer(masked_sentence, return_tensors="pt", truncation=True, max_length=512)
 
             with torch.no_grad():
                 outputs = self.model(**inputs)
@@ -209,7 +218,12 @@ class translation_final_pass:
         self.lem_map = dict(zip(self.lem_seg[word_col_lem].astype(str).str.lower(), self.lem_seg[target_col_lem].astype(str)))
 
         tag_col_gram = 'tag' if 'tag' in self.grammar_lookup.columns else self.grammar_lookup.columns[0]
-        target_col_gram = next((col for col in self.grammar_lookup.columns if 'english' in col.lower() or 'translation' in col.lower()), self.grammar_lookup.columns[-1])
+        target_col_gram = next(
+            (
+                col for col in self.grammar_lookup.columns if 'english' in col.lower() or 'translation' in col.lower()
+            ),
+            self.grammar_lookup.columns[-1]
+        )
         self.grammar_map = dict(zip(self.grammar_lookup[tag_col_gram].astype(str).str.upper(), self.grammar_lookup[target_col_gram].astype(str)))
 
         # Extract full feature tag sets from BantuMorph v7 predictions
