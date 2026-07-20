@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 import torch
 import torch.nn.functional as F
-from transformers import AutoModelForMaskedLM, AutoTokenizer
+from transformers import AutoModelForMaskedLM, AutoModelForSeq2SeqLM, AutoTokenizer
 
 parent_path = script_dir = Path(__file__).resolve().parent.parent
 
@@ -13,6 +13,7 @@ class translation_final_pass:
     def __init__(
         self,
         model_name:str="dsfsi/BantuBERTa",
+        morph_model_name:str="thiomi/bantumorph-v7",
         data_file:str=f"{parent_path}/data/data.csv",
         grammar_file:str=f"{parent_path}/data/bantu_grammar_lookup.csv",
     ) -> None:
@@ -24,6 +25,10 @@ class translation_final_pass:
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         self.model = AutoModelForMaskedLM.from_pretrained(self.model_name)
 
+        self.morph_model_name = morph_model_name
+        self.morph_tokenizer = AutoTokenizer.from_pretrained(self.morph_model_name)
+        self.morph_model = AutoModelForSeq2SeqLM.from_pretrained(self.morph_model_name)
+
     def _get_embedding(self, text):
         """Generates a dense sequence embedding using contextual mean pooling."""
         inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True)
@@ -31,6 +36,19 @@ class translation_final_pass:
             outputs = self.model(**inputs, output_hidden_states=True)
             embeddings = outputs.hidden_states[-1].mean(dim=1)
         return F.normalize(embeddings, p=2, dim=1)
+
+    def predict_morphology(self, word: str) -> str:
+        inputs = self.morph_tokenizer(word, return_tensors="pt")
+        with torch.no_grad():
+            outputs = self.morph_model.generate(**inputs, max_new_tokens=64)
+        return self.morph_tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+    def extract_noun_class(self, morph_analysis: str) -> str:
+        match = re.search(r"(\[N\d+\]|N\d+|BANTU\d+)", morph_analysis, re.IGNORECASE)
+        if match:
+            raw_tag = match.group(1).upper().strip("[]")
+            return re.sub(r"^N(\d+)$", r"BANTU\1", raw_tag)
+        return ""
 
     def extract_slots(self, template_sentence: str)->list[str]:
         return re.findall(r"_{2,4}(?:\.[\w\d]+)*", template_sentence)
@@ -102,10 +120,17 @@ class translation_final_pass:
         gets the gloss that the BantuMorph v7 noun class prediction
         """
         self.glosses = []
-        for _, row in self.lem_seg.iterrows():
-            g = row["noun class prediction"]
-            glossed = g.strip(" ")[1]
-            self.glosses.append(glossed[:-1])
+        if hasattr(self, "lem_seg") and "noun class prediction" in self.lem_seg.columns:
+          for _, row in self.lem_seg.iterrows():
+            raw_pred = str(row["noun class prediction"])
+            cleaned_tag = self.extract_noun_class(raw_pred)
+            self.glosses.append(cleaned_tag)
+        else:
+          for word in self.lexicon["Surface Word"].dropna().unique():
+            raw_analysis = self.predict_morphology(str(word))
+            tag = self.extract_noun_class(raw_analysis)
+            if tag:
+              self.glosses.append(tag)
 
         """
         making a way to get rid of any commas in the proverb
@@ -192,11 +217,24 @@ class translation_final_pass:
                     candidate_pool = self.lexicon[mask][word_col].dropna().unique().tolist()
                 else:
                     candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
+                if tag_components and candidate_pool:
+                    filtered_pool = [
+                        word for word in candidate_pool
+                        if word in self.glosses and any(comp in self.glosses[word] for comp in tag_components)
+                    ]
+                    # Fallback to unfiltered candidate_pool if predicted tag filtered out all options
+                    candidate_pool = filtered_pool if filtered_pool else candidate_pool
 
                 chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool) # finds the best candidate from the embedding
 
                 if chosen_token: # when found the right token, replaces it in the working sentence
-                    working_sentence = working_sentence.replace(slot_tag, str(chosen_token), 1)
+                    match = self.lexicon[self.lexicon[word_col] == chosen_token]['English translation']
+                    english_val = match.iloc[0] if not match.empty else chosen_token
+
+                    if not isinstance(english_val, str) or '[Translation Missing]' in english_val:
+                        english_val = chosen_token
+
+                    working_sentence = working_sentence.replace(slot_tag, str(english_val), 1)
 
             """
             going through the rest of the lingering  slots that need to be replaced
