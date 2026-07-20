@@ -1,0 +1,41 @@
+,Unnamed: 0,experiment_config,language,language_family,african_proverb,label,Output Type,morpheme_breaks,who,translation
+34509,202666,llama3.2-3b-it-gen-eng-literal-Kenya,kamba,bantu,Nzee ndĩsaa maanga ũtũinĩ,A porcupine does not eat on both riverbanks.,leteral_translate,nze-e nd-ĩs-aa ma-anga ũtũinĩ,Luc,self hour water in the community
+17429,99966,kimi-k2-gen-eng-literal-Kenya,kamba,bantu,Weũ waya nzei.,The wilderness ate nothing.,leteral_translate,weũ wa-ya nze-i,Luc,its way health
+29211,170178,smollm3-3b-it-gen-eng-literal-Kenya,kamba,bantu,Sya kũmwe nĩsyo syĩnzanĩaa maima.,Neighbouring animals dig holes for each other.,leteral_translate,sya kũmwe nĩ-syo syĩnzanĩa-a ma-ima,Luc,under some spiritually games pit
+9155,54449,llama3.2-3b-gen_eng_literal-Kenya,kamba,bantu,Ĩkũya ĩngĩ nĩyo ĩ maumĩ.,The one that eats another is the one that roars.,leteral_translate,ĩkũy-a ĩngĩ nĩ-yo ĩ maumĩ,Luc,eat more the spoon cough
+20794,120275,gemini3-flasth-gen-eng-literal-Tanzania,kamba,bantu,Kyetho kya yũlũ kĩtũaa,The heavenly spring is not permanent.,leteral_translate,kyetho kya yũlũ kĩtũa-a,Luc,the eye out above common
+17522,100059,kimi-k2-gen-eng-literal-Kenya,kamba,bantu,Nyamũ yĩ ngũlũ ĩmĩaa ĩũngeme,A proud animal defecates standing.,leteral_translate,nyamũ yĩ ngũlũ ĩmĩa-a ĩũngem-e,Luc,animals in rebellious acts breast standing
+20971,120452,gemini3-flasth-gen-eng-literal-Tanzania,kamba,bantu,Mũsyĩmi ũte mũtae ndasyĩmaa mbusya.1,An untrained hunter does not hunt rhinoceros.,leteral_translate,mũsyĩm-i ũte mũta-e ndasyĩma-a mbu-sy-a 1,Luc,the hunter single a piece of cloth hunt rhinoceros
+6096,36296,smollm3-3b-gen_eng_literal-Kenya,kamba,bantu,Anakavĩte ta ĩlaa ya mũutĩ.,She is beautiful like the flower of the mũutĩ tree.,leteral_translate,anakavĩt-e ta ĩl-aa ya mũutĩ,Luc,pass bow flower eat the stump
+31272,184337,grok-4.1-fast-gen-eng-literal-Kenya,kamba,bantu,Vatakomwa vakomeawa nduka,Darkness leads to bedding down in unpleasant places.,leteral_translate,vatakomw-a vakomeaw-a ndu-ka,Luc,they will sleep being bullied shop
+17301,99838,kimi-k2-gen-eng-literal-Kenya,kamba,bantu,Ĩlata ya mbua ti ĩlata ya sua.,Rain’s footprint is not the sun’s footprint.,leteral_translate,ĩl-at-a ya mbu-a ti ĩl-at-a ya sua,Luc,tim eat rain tree tin eat become full
+36489,215643,minmax-gen-eng-literal-Kenya,kamba,bantu,Mbua ndĩkĩlaw’a metho,No one can see beyond the rain,leteral_translate,mbu-a ndĩkĩlaw a metho,Luc,raibn not accepted get lost eyes
+13937,81778,kimi-k2-gen-eng-literal-Kenya,kamba,bantu,Nzou yũate mbĩa nditalawa ngũmbaũ.,An elephant that kills a rat is not a hero.,leteral_translate,nzo-u yũ-at-e mb-ĩa nditalaw-a ngũmbaũ,Luc,elephant smoking rat health problems powerful
+18641,106725,gemini3-flasth-gen-eng-literal-Kenya,kamba,bantu,Kĩkoe kĩ mboka,Commelina africana is stew.,leteral_translate,kĩko-e kĩ mb-oka,Luc,a coat beer mboka
+17375,99912,kimi-k2-gen-eng-literal-Kenya,kamba,bantu,Ũthũku ũkaa na sua ndũkemene.,"Misfortune comes with the sun, don’t hate yourself.",leteral_translate,ũthũk-u ũka-a na sua ndũkemen-e,Luc,brass not sing become full not give up
+13973,81814,kimi-k2-gen-eng-literal-Kenya,kamba,bantu,Kũla ilĩkĩlaa nokw’o imilĩlaa mbya,Where they are mauled is where they twist horns.,leteral_translate,kũ-la ilĩkĩla-a nok-w o imilĩla-a mb-ya,Luc,in flowers not feeling guilty horn
+34415,202572,llama3.2-3b-it-gen-eng-literal-Kenya,kamba,bantu,Mwaka ti mũng’ong’oo,The year is not long.,leteral_translate,mw-ak-a ti mũng ong oo,Luc,the year tree spine
+6268,36468,smollm3-3b-gen_eng_literal-Kenya,kamba,bantu,Ndala ya ĩvũĩ ndyonaw’a maeo,A dove’s nest is not smiled upon.,leteral_translate,nd-ala ya ĩvũ-ĩ ndyonaw a ma-eo,Luc,hole eat dove not murdered get lost tooth
+17340,99877,kimi-k2-gen-eng-literal-Kenya,kamba,bantu,Vayĩ kalĩma katalĩsĩka,There is no hill that cannot be climbed,leteral_translate,vay-ĩ ka-lĩm-a katalĩsĩk-a,Luc,their mountain untreated
+29082,170049,smollm3-3b-it-gen-eng-literal-Kenya,kamba,bantu,Mũtĩ wa wendo ndũkuawa na ngalĩ,The tree of love is not carried by vehicle.,leteral_translate,mũt-ĩ wa wend-o ndũkuaw-a na nga-lĩ,Luc,the tree sugar cane love not murdered sing car
+5284,31237,gemma3-4b-it-gen_eng_literal-Kenya,kamba,bantu,Ĩla ĩtulasya kĩmuu tiyo yosanasya.,The warthog that knocks the tree is not the one that gathers fruit.,leteral_translate,ĩla ĩtulasy-a kĩmu-u ti-yo yosanasy-a,Luc,when is not controversial the mosquito undefined consistent
+31402,184467,grok-4.1-fast-gen-eng-literal-Kenya,kamba,bantu,Lũma ndwĩ maayo ta ngunyũ.,The aardvark has no teeth like its claws.,leteral_translate,lũm-a ndw-ĩ ma-ayo ta ngunyũ,,
+5247,31200,gemma3-4b-it-gen_eng_literal-Kenya,kamba,bantu,Ndũkavũthĩĩsye kakuthu kwaa matũ,Never underestimate a leafless bush.,leteral_translate,ndũkavũthĩĩsy-e ka-kuth-u kwa-a mat-ũ,,
+1534,8792,qwen3-4b-gen_eng_literal-Kenya,kamba,bantu,Vandũ vaĩ mũamba vayaa mũumo,"Where there was a baobab, a fig tree will appear.",leteral_translate,vandũ vaĩ mũ-amba vay-aa mũ-um-o,,
+6228,36428,smollm3-3b-gen_eng_literal-Kenya,kamba,bantu,Kũla ilĩkĩlaa nokw’o imilĩlaa mbya,Where they are mauled is where they twist horns.,leteral_translate,kũ-la ilĩkĩla-a nok-w o imilĩla-a mb-ya,,
+6269,36469,smollm3-3b-gen_eng_literal-Kenya,kamba,bantu,Ndunduli nĩ nyamũ nthũku ĩkaw’a kĩlĩo ngalĩko wa mũsyĩ,The owl is a bad creature; potshards are thrown at it.,leteral_translate,ndundul-i nĩ nyamũ nthũk-u ĩkaw a kĩlĩo ngalĩko wa mũsyĩ,,
+18765,106849,gemini3-flasth-gen-eng-literal-Kenya,kamba,bantu,Ndwĩa nĩ nyamũ nene ĩndĩ yevũthisye nĩ kũmĩa mbiivii ta mbũi,A giraffe is large but disgraced by round goat-like droppings.,leteral_translate,ndwĩ-a nĩ nyamũ nen-e ĩndĩ yevũthisy-e nĩ kũm-ĩa mbiivi-i ta mbũ-i,,
+5445,31398,gemma3-4b-it-gen_eng_literal-Kenya,kamba,bantu,Ngũngũũ yonaa vaasa tyo vaa ve kimba,The crow sees far beyond the carcass.,leteral_translate,ngũngũũ yon-aa va-as-a tyo vaa ve kimb-a,,
+17515,100052,kimi-k2-gen-eng-literal-Kenya,kamba,bantu,Nyamũ ya kũnwa nĩ ngũngĩ ndũmyathaa vala welele.,"When an animal gets your scent, you won’t hit where you aimed.",leteral_translate,nyamũ ya kũnwa nĩ ngũng-ĩ ndũmyatha-a va-la welel-e,,
+5351,31304,gemma3-4b-it-gen_eng_literal-Kenya,kamba,bantu,Mũsyĩmi ndasyĩmaa kĩthekanĩ kĩte kĩndũ,A hunter does not hunt in a forest without game.,leteral_translate,mũsyĩm-i ndasyĩma-a kĩthekanĩ kĩt-e kĩnd-ũ,,
+18631,106715,gemini3-flasth-gen-eng-literal-Kenya,kamba,bantu,Vayĩ ndia ĩtang’alw’a nĩ sua,There is no pond the sun cannot dry.,leteral_translate,vay-ĩ ndi-a ĩtang alw a nĩ sua,,
+6272,36472,smollm3-3b-gen_eng_literal-Kenya,kamba,bantu,Kambee noko kaula kĩndalĩ.,"The first word stands, said the grasshopper buzzard.",leteral_translate,kambe-e nok-o ka-ula kĩndalĩ,,
+1445,8703,qwen3-4b-gen_eng_literal-Kenya,kamba,bantu,Wamanthĩa suanĩ ĩĩa munyĩnĩ,"If you toil in the sun, eat in the shade.",leteral_translate,wamanthĩ-a suanĩ ĩĩa munyĩnĩ,,
+25868,149538,gpt-5-mini-gen-eng-literal-Kenya,kamba,bantu,Weũ waya nzei.,The wilderness ate nothing.,leteral_translate,weũ wa-ya nze-i,,
+17307,99844,kimi-k2-gen-eng-literal-Kenya,kamba,bantu,Matukũ ma kĩng’ei nĩ mwonza,The days of a thief are seven,leteral_translate,matukũ ma kĩng ei nĩ mwonz-a,,
+31493,184558,grok-4.1-fast-gen-eng-literal-Kenya,kamba,bantu,Kasũni katanamba kũũlũka kambaa ũtumbĩlĩla,A bird lies low before it flies.,leteral_translate,ka-sũn-i katanamb-a kũũlũk-a kamb-aa ũtumbĩlĩl-a,,
+29063,170030,smollm3-3b-it-gen-eng-literal-Kenya,kamba,bantu,Kaumaa nthĩ na ũtwii wako.,A snake is born with its venom.,leteral_translate,ka-umaa nth-ĩ na ũtw-ii wa-ko,,
+6160,36360,smollm3-3b-gen_eng_literal-Kenya,kamba,bantu,Ũtumo wĩ ngũ ndwĩ nyama,An upland with firewood has no meat.,leteral_translate,ũt-um-o wĩ ngũ ndw-ĩ ny-am-a,,
+41215,243614,qwen3-4b-gen-eng-literal-Kenya,kamba,bantu,Weũ waya nzei.,The wilderness ate nothing.,leteral_translate,weũ wa-ya nze-i,,
+36755,215909,minmax-gen-eng-literal-Kenya,kamba,bantu,Ngũngũũ ndĩsa ũtuma ndũũ na mũũngũu.,A crow cannot be a friend of the mongoose.,leteral_translate,ngũngũũ ndĩ-sa ũt-um-a ndũ-ũ na mũũngũ-u,,
+8886,54180,llama3.2-3b-gen_eng_literal-Kenya,kamba,bantu,Mbua yũlea kua ĩkwatasya ũkũngi.8,"When the rain fails to fall, it blames the wind.",leteral_translate,mbu-a yũle-a kua ĩkwatasy-a ũkũng-i 8,,
