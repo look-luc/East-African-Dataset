@@ -80,13 +80,14 @@ class translation_final_pass:
         if not candidate_pool:
             return ""
 
-        best_candidate = candidate_pool[0]
-        highest_score = -torch.inf
+        best_candidate = str(candidate_pool[0])
+        highest_score = -float('inf')
 
         for candidate in candidate_pool:
-            candidate_tokens = self.tokenizer.tokenize(candidate)
+            candidate_str = str(candidate)
+            candidate_tokens = self.tokenizer.tokenize(candidate_str)
             candidate_ids = self.tokenizer.convert_tokens_to_ids(candidate_tokens)
-            num_masks_needed = len(candidate_tokens)
+            num_masks_needed = max(1, len(candidate_tokens))
 
             if all(item == self.tokenizer.unk_token_id for item in candidate_ids):
                 continue
@@ -94,8 +95,8 @@ class translation_final_pass:
             mask_string = " ".join([self.tokenizer.mask_token] * num_masks_needed)
             masked_sentence = working_sentence.replace(slot_tag, mask_string, 1)
 
-            if len(masked_sentence.split()) > 200:
-                words = masked_sentence.split()
+            words = masked_sentence.split()
+            if len(words) > 200:
                 mask_indices = [i for i, w in enumerate(words) if self.tokenizer.mask_token in w]
                 if mask_indices:
                     center = mask_indices[0]
@@ -111,22 +112,26 @@ class translation_final_pass:
 
             mask_token_index = torch.where(inputs["input_ids"] == self.tokenizer.mask_token_id)[1]
 
-            if len(mask_token_index) != num_masks_needed:
+            if len(mask_token_index) == 0:
                 continue
 
             current_candidate_score = 0.0
+            eval_length = min(len(mask_token_index), len(candidate_ids))
 
-            for i in range(num_masks_needed):
-                mask_position = mask_token_index[i]
+            for i in range(eval_length):
+                mask_pos = mask_token_index[i]
                 target_subword_id = candidate_ids[i]
 
-                token_logits = mask_logits[0, mask_position, :]
-                log_probabilities = F.log_softmax(token_logits, dim=-1)
-                current_candidate_score += log_probabilities[target_subword_id].item()
+                token_logits = mask_logits[0, mask_pos, :]
+                log_probs = F.log_softmax(token_logits, dim=-1)
+                current_candidate_score += log_probs[target_subword_id].item()
+
+            if eval_length > 0:
+                current_candidate_score /= eval_length
 
             if current_candidate_score > highest_score:
                 highest_score = current_candidate_score
-                best_candidate = candidate
+                best_candidate = candidate_str
 
         return best_candidate
 
@@ -168,11 +173,15 @@ class translation_final_pass:
             root = root_match.group(1).lower() if root_match else ""
 
             translated_root = self.lem_map.get(root, root) if hasattr(self, 'lem_map') else root
-            translated_tags = [
-                self.grammar_map[t]
-                for t in tags
-                if hasattr(self, 'grammar_map') and t in self.grammar_map
-            ]
+
+            translated_tags = []
+            if hasattr(self, 'grammar_map'):
+                for t in tags:
+                    alt_tag = re.sub(r"^BANTU(\d+)$", r"N\1", t)
+                    if t in self.grammar_map:
+                        translated_tags.append(self.grammar_map[t])
+                    elif alt_tag in self.grammar_map:
+                        translated_tags.append(self.grammar_map[alt_tag])
 
             parts = []
             if translated_tags:
@@ -186,11 +195,18 @@ class translation_final_pass:
         if slot_tag and hasattr(self, 'grammar_map'):
             clean_tag = re.sub(r"^_{2,4}\.?", "", slot_tag).upper()
             components = [c for c in clean_tag.split('.') if c]
-            resolved = [
-                self.grammar_map.get(c, c.lower())
-                for c in components
-                if c in self.grammar_map
-            ]
+            resolved = []
+            for c in components:
+                bantu_c = re.sub(r"^N(\d+)$", r"BANTU\1", c)
+                norm_c = re.sub(r"^BANTU(\d+)$", r"N\1", c)
+                if c in self.grammar_map:
+                    resolved.append(self.grammar_map[c])
+                elif bantu_c in self.grammar_map:
+                    resolved.append(self.grammar_map[bantu_c])
+                elif norm_c in self.grammar_map:
+                    resolved.append(self.grammar_map[norm_c])
+                else:
+                    resolved.append(c.lower())
             if resolved:
                 return " ".join(resolved)
 
@@ -252,7 +268,7 @@ class translation_final_pass:
             translation = getattr(row, self.translation_keyword)
             is_borrowed = False
 
-            if not isinstance(translation, str):
+            if not isinstance(translation, str)or pd.isna(translation):
                 current_prov = getattr(row, "african_proverb")
                 current_emb = self._get_embedding(current_prov)
 
@@ -270,6 +286,10 @@ class translation_final_pass:
                     is_borrowed = True
                 else:
                     ranked_indices.append(translation)
+                    continue
+
+                if not isinstance(translation, str) or pd.isna(translation):
+                    ranked_indices.append(str(current_prov) if current_prov else "")
                     continue
 
             slots = self.extract_slots(translation)
@@ -326,5 +346,4 @@ class translation_final_pass:
                     else:
                         working_sentence = working_sentence.replace(residual_tag, "", 1)
             ranked_indices.append(working_sentence)
-        output = self.morph_tokenizer(ranked_indices)
-        return output
+        return ranked_indices
