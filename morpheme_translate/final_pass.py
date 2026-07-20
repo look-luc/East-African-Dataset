@@ -7,15 +7,15 @@ import torch
 import torch.nn.functional as F
 from transformers import AutoModelForMaskedLM, AutoModelForSeq2SeqLM, AutoTokenizer
 
-parent_path = script_dir = Path(__file__).resolve().parent.parent
+parent_path = script_dir = Path(__file__).resolve().parent.parent if '__file__' in globals() else Path('.').resolve()
 
 class translation_final_pass:
     def __init__(
         self,
-        model_name:str="dsfsi/BantuBERTa",
-        morph_model_name:str="thiomi/bantumorph-v7",
-        data_file:str=f"{parent_path}/data/data.csv",
-        grammar_file:str=f"{parent_path}/data/bantu_grammar_lookup.csv",
+        model_name: str = "dsfsi/BantuBERTa",
+        morph_model_name: str = "thiomi/bantumorph-v7",
+        data_file: str = f"{parent_path}/data/data.csv",
+        grammar_file: str = f"{parent_path}/data/bantu_grammar_lookup.csv",
     ) -> None:
 
         self.data = pd.read_csv(data_file, sep='\t')
@@ -50,7 +50,7 @@ class translation_final_pass:
             return re.sub(r"^N(\d+)$", r"BANTU\1", raw_tag)
         return ""
 
-    def extract_slots(self, template_sentence: str)->list[str]:
+    def extract_slots(self, template_sentence: str) -> list[str]:
         return re.findall(r"_{2,4}(?:\.[\w\d]+)*", template_sentence)
 
     def _find_best_candidate(self, working_sentence: str, slot_tag: str, candidate_pool: list) -> str:
@@ -98,13 +98,39 @@ class translation_final_pass:
 
         return best_candidate
 
-    def ranked_translation(self, fig_or_lit:str, translation_keyword:str="translation", lang:str|None=None,):
+    def _normalize_lexicon(self) -> dict:
+        target_col = next(
+            (col for col in self.lexicon.columns if 'english' in col.lower() or 'translation' in col.lower()),
+            'English translation'
+        )
+        word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else ('word' if 'word' in self.lexicon.columns else self.lexicon.columns[0])
+
+        lookup_map = {}
+        for w, t in zip(self.lexicon[word_col], self.lexicon[target_col]):
+            clean_w = str(w).strip().lower()
+            clean_t = str(t).strip()
+
+            if clean_t and '[Translation Missing]' not in clean_t and clean_t.lower() != 'nan':
+                lookup_map[clean_w] = clean_t
+
+        return lookup_map
+
+    def resolve_slot_translation(self, chosen_token: str) -> str:
+        clean_token = str(chosen_token).strip().lower()
+
+        if clean_token in self.lexicon_map:
+            return self.lexicon_map[clean_token]
+
+        stripped_token = clean_token.translate(str.maketrans("", "", string.punctuation))
+        if stripped_token in self.lexicon_map:
+            return self.lexicon_map[stripped_token]
+
+        return chosen_token
+
+    def ranked_translation(self, fig_or_lit: str, translation_keyword: str = "translation", lang: str | None = None):
         if lang is None:
             raise ValueError("Provide a language")
 
-        """
-        Gets the appropriate files opened for a specific language
-        """
         self.lang = lang
         self.translation_keyword = translation_keyword
         self.df_translation = pd.read_csv(
@@ -113,28 +139,21 @@ class translation_final_pass:
         self.lexicon = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower()}_translated.csv")
         self.lem_seg = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower().capitalize()}_model_lem_seg.csv", sep='\t')
 
-        self.lang_data = pd.DataFrame(self.data[self.data["language"]==self.lang])
-        self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"]==self.lang])
+        self.lang_data = pd.DataFrame(self.data[self.data["language"] == self.lang])
+        self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"] == self.lang])
 
-        """
-        gets the gloss that the BantuMorph v7 noun class prediction
-        """
+        self.lexicon_map = self._normalize_lexicon()
+
         self.glosses = {}
-        for word in self.lexicon["Surface Word"].dropna().unique():
+        word_col_lex = 'Surface Word' if 'Surface Word' in self.lexicon.columns else ('word' if 'word' in self.lexicon.columns else self.lexicon.columns[0])
+        for word in self.lexicon[word_col_lex].dropna().unique():
             raw_analysis = self.predict_morphology(str(word))
             tag = self.extract_noun_class(raw_analysis)
             if tag:
                 self.glosses[str(word)] = tag
 
-        """
-        making a way to get rid of any commas in the proverb
-        """
         translator = str.maketrans('', '', string.punctuation)
 
-        """
-        goes through each row in the translation file and gets the translation column and finds any '___' of size 2 to 4 and gets the proverb.
-        adds the translation as a template and embedds the proverb for later use.
-        """
         reference_pool = []
         for r in self.df_translation.itertuples():
             t = getattr(r, self.translation_keyword)
@@ -145,30 +164,20 @@ class translation_final_pass:
                         prov = prov.translate(translator)
                     reference_pool.append({"template": t, "embedding": self._get_embedding(prov)})
 
-        """
-        the start of the final pass
-        """
         ranked_indices = []
         for row in self.df_translation.itertuples():
             translation = getattr(row, self.translation_keyword)
             is_borrowed = False
 
             if not isinstance(translation, str):
-                """
-                getting the embeddings of the current proverb
-                """
                 current_prov = getattr(row, "african_proverb")
                 current_emb = self._get_embedding(current_prov)
 
                 best_template = None
                 best_sim = -1.0
 
-                """
-                calculating the similarity score for the embeddings
-                """
                 for ref in reference_pool:
                     similarity = torch.mm(current_emb, ref["embedding"].T).item()
-                    # checking if the similarity is better
                     if similarity > best_sim:
                         best_sim = similarity
                         best_template = ref["template"]
@@ -180,16 +189,13 @@ class translation_final_pass:
                     ranked_indices.append(translation)
                     continue
 
-            slots = self.extract_slots(translation) # finding all of the instances of the underscored portions
+            slots = self.extract_slots(translation)
             working_sentence = translation
 
             if is_borrowed:
                 print(f"\n[BantuBERTa Retrieval] Borrowed template for: {getattr(row, 'african_proverb')}")
                 print(f"Borrowed Frame: {translation}")
 
-            """
-            getting the glossing and surface columns
-            """
             gloss_col = next((col for col in self.lexicon.columns if 'gloss' in col.lower()), 'Glossing')
             word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
 
@@ -214,34 +220,21 @@ class translation_final_pass:
                         word for word in candidate_pool
                         if word in self.glosses and any(comp in self.glosses[word] for comp in tag_components)
                     ]
-                    # Soft fallback: if filtering yields 0 candidates, retain original pool
                     candidate_pool = filtered_pool if filtered_pool else candidate_pool
 
-                chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool) # finds the best candidate from the embedding
+                chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool)
 
-                if chosen_token: # when found the right token, replaces it in the working sentence
-                    match = self.lexicon[self.lexicon[word_col] == chosen_token]['English translation']
-                    english_val = match.iloc[0] if not match.empty else chosen_token
-
-                    if not isinstance(english_val, str) or '[Translation Missing]' in english_val:
-                        english_val = chosen_token
-
+                if chosen_token:
+                    english_val = self.resolve_slot_translation(chosen_token)
                     working_sentence = working_sentence.replace(slot_tag, str(english_val), 1)
 
-            """
-            going through the rest of the lingering  slots that need to be replaced
-            """
-            residual_slots = self.extract_slots(working_sentence)
             residual_slots = self.extract_slots(working_sentence)
             if residual_slots:
                 global_fallback_pool = self.lexicon[word_col].dropna().unique().tolist()
                 for residual_tag in residual_slots:
                     fallback_token = self._find_best_candidate(working_sentence, residual_tag, global_fallback_pool)
                     if fallback_token:
-                        match = self.lexicon[self.lexicon[word_col] == fallback_token]['English translation']
-                        english_val = match.iloc[0] if not match.empty else fallback_token
-                        if not isinstance(english_val, str) or '[Translation Missing]' in english_val:
-                            english_val = fallback_token
+                        english_val = self.resolve_slot_translation(fallback_token)
                         working_sentence = working_sentence.replace(residual_tag, str(english_val), 1)
                     else:
                         working_sentence = working_sentence.replace(residual_tag, "", 1)
