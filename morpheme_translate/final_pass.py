@@ -120,21 +120,11 @@ class translation_final_pass:
         gets the gloss that the BantuMorph v7 noun class prediction
         """
         self.glosses = {}
-        word_col_lem = 'Surface Word' if 'Surface Word' in self.lem_seg.columns else ('word' if 'word' in self.lem_seg.columns else self.lem_seg.columns[0])
-
-        if hasattr(self, "lem_seg") and "noun class prediction" in self.lem_seg.columns:
-            for _, row in self.lem_seg.iterrows():
-                w = str(row[word_col_lem])
-                raw_pred = str(row["noun class prediction"])
-                cleaned_tag = self.extract_noun_class(raw_pred)
-                if cleaned_tag:
-                    self.glosses[w] = cleaned_tag
-        else:
-            for word in self.lexicon["Surface Word"].dropna().unique():
-                raw_analysis = self.predict_morphology(str(word))
-                tag = self.extract_noun_class(raw_analysis)
-                if tag:
-                    self.glosses[str(word)] = tag
+        for word in self.lexicon["Surface Word"].dropna().unique():
+            raw_analysis = self.predict_morphology(str(word))
+            tag = self.extract_noun_class(raw_analysis)
+            if tag:
+                self.glosses[str(word)] = tag
 
         """
         making a way to get rid of any commas in the proverb
@@ -204,31 +194,28 @@ class translation_final_pass:
             word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
 
             for slot_tag in slots:
-                clean_tag = re.sub(r"^_{2,4}", "", slot_tag) # getting rid of the underscores
+                clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
                 tag_components = [
-                    re.sub(r"^N(\d+)$", r"BANTU\1", c.upper()) # replacing the noun class gloss from the manual glossing
-                    for c in clean_tag.split('.') if c # getting rid of the periods from BantuMorph v7
+                    re.sub(r"^N(\d+)$", r"BANTU\1", c.upper())
+                    for c in clean_tag.split('.') if c
                 ]
 
                 if tag_components:
                     mask = pd.Series(True, index=self.lexicon.index)
-
-                    """
-                    making sure that the gloss is in the column given the masked sentence
-                    """
                     for comp in tag_components:
-                        mask &= self.lexicon[gloss_col].str.contains(comp, na=False, regex=False)
+                        if gloss_col in self.lexicon.columns:
+                            mask &= self.lexicon[gloss_col].str.contains(comp, na=False, regex=False)
                     candidate_pool = self.lexicon[mask][word_col].dropna().unique().tolist()
                 else:
                     candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
-                    if tag_components and candidate_pool:
-                        filtered_pool = [
-                            word for word in candidate_pool
-                            if word in self.glosses and any(comp in self.glosses[word] for comp in tag_components)
-                        ]
-                        candidate_pool = filtered_pool if filtered_pool else candidate_pool
 
-                    chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool)
+                if tag_components and candidate_pool and self.glosses:
+                    filtered_pool = [
+                        word for word in candidate_pool
+                        if word in self.glosses and any(comp in self.glosses[word] for comp in tag_components)
+                    ]
+                    # Soft fallback: if filtering yields 0 candidates, retain original pool
+                    candidate_pool = filtered_pool if filtered_pool else candidate_pool
 
                 chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool) # finds the best candidate from the embedding
 
