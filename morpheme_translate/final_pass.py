@@ -28,9 +28,9 @@ class translation_final_pass:
         self.morph_model_name = morph_model_name
         self.morph_tokenizer = AutoTokenizer.from_pretrained(self.morph_model_name)
         self.morph_model = AutoModelForSeq2SeqLM.from_pretrained(self.morph_model_name)
+        self.morph_cache: dict[str, str] = {}
 
     def _get_embedding(self, text):
-        """Generates a dense sequence embedding using contextual mean pooling."""
         inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True)
         with torch.no_grad():
             outputs = self.model(**inputs, output_hidden_states=True)
@@ -38,17 +38,40 @@ class translation_final_pass:
         return F.normalize(embeddings, p=2, dim=1)
 
     def predict_morphology(self, word: str) -> str:
-        inputs = self.morph_tokenizer(word, return_tensors="pt")
+        word_str = str(word).strip()
+        if word_str in self.morph_cache:
+            return self.morph_cache[word_str]
+
+        inputs = self.morph_tokenizer(word_str, return_tensors="pt")
         with torch.no_grad():
             outputs = self.morph_model.generate(**inputs, max_new_tokens=64)
-        return self.morph_tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-    def extract_noun_class(self, morph_analysis: str) -> str:
-        match = re.search(r"(\[N\d+\]|N\d+|BANTU\d+)", morph_analysis, re.IGNORECASE)
-        if match:
-            raw_tag = match.group(1).upper().strip("[]")
-            return re.sub(r"^N(\d+)$", r"BANTU\1", raw_tag)
-        return ""
+        analysis = self.morph_tokenizer.decode(outputs[0], skip_special_tokens=True)
+        self.morph_cache[word_str] = analysis
+        return analysis
+
+    def extract_morph_tags(self, morph_analysis: str) -> set[str]:
+        if not morph_analysis:
+            return set()
+
+        bracket_matches = re.findall(r"\[(.*?)\]", morph_analysis)
+        tags = set()
+
+        if bracket_matches:
+            for match in bracket_matches:
+                for sub in match.split('.'):
+                    clean = sub.strip().upper()
+                    if clean:
+                        clean = re.sub(r"^N(\d+)$", r"BANTU\1", clean)
+                        tags.add(clean)
+        else:
+            for tok in re.split(r"[\s\-\_]+", morph_analysis):
+                clean = tok.strip("[]").upper()
+                if clean:
+                    clean = re.sub(r"^N(\d+)$", r"BANTU\1", clean)
+                    tags.add(clean)
+
+        return tags
 
     def extract_slots(self, template_sentence: str) -> list[str]:
         return re.findall(r"_{2,4}(?:\.[\w\d]+)*", template_sentence)
@@ -144,13 +167,14 @@ class translation_final_pass:
 
         self.lexicon_map = self._normalize_lexicon()
 
-        self.glosses = {}
+        # Extract full feature tag sets from BantuMorph v7 predictions
+        self.glosses: dict[str, set[str]] = {}
         word_col_lex = 'Surface Word' if 'Surface Word' in self.lexicon.columns else ('word' if 'word' in self.lexicon.columns else self.lexicon.columns[0])
         for word in self.lexicon[word_col_lex].dropna().unique():
             raw_analysis = self.predict_morphology(str(word))
-            tag = self.extract_noun_class(raw_analysis)
-            if tag:
-                self.glosses[str(word)] = tag
+            tags = self.extract_morph_tags(raw_analysis)
+            if tags:
+                self.glosses[str(word)] = tags
 
         translator = str.maketrans('', '', string.punctuation)
 
@@ -215,10 +239,14 @@ class translation_final_pass:
                 else:
                     candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
 
+                # Filter candidate pool using BantuMorph v7 predicted tag sets
                 if tag_components and candidate_pool and self.glosses:
                     filtered_pool = [
-                        word for word in candidate_pool
-                        if word in self.glosses and any(comp in self.glosses[word] for comp in tag_components)
+                        word for word in candidate_pool if str(word) in self.glosses and any(
+                            comp in self.glosses[str(word)]
+                            or any(comp in tag for tag in self.glosses[str(word)])
+                            for comp in tag_components
+                        )
                     ]
                     candidate_pool = filtered_pool if filtered_pool else candidate_pool
 
