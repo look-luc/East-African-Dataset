@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import pandas as pd
+import torch
 
 import rough_morpheme.morpheme_counter as m_count
 import rough_morpheme.morpheme_draft as md
@@ -63,6 +64,19 @@ def main(path, task:str, lang:str, proverbs):
                 translation_df.to_csv(f"{script_dir}/data/{langs.lower()}/lit_{langs.lower()}_completed.csv", index=False)
         else:
             passes = final_pass.ranked_translation(fig_or_lit="lit", translation_keyword="translation", lang=lang)
+
+            print("Model Class:", type(final_pass.model))
+
+            device_in_use = next(final_pass.model.parameters()).device
+            print("Model is on device:", device_in_use)
+
+            total_params = sum(p.numel() for p in final_pass.model.parameters())
+            print(f"Total Parameters: {total_params:,}")
+
+            # Check GPU memory usage if running on CUDA
+            if torch.cuda.is_available():
+                allocated_mb = torch.cuda.memory_allocated() / (1024 ** 2)
+                print(f"Allocated VRAM: {allocated_mb:.2f} MB")
 
             translation_df = pd.read_csv(f"{script_dir}/data/{lang.lower()}/lit_{lang.lower()}_random_15 - lit_{lang}_random_15.csv")
             translation_df["final pass"] = passes
