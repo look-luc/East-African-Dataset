@@ -17,6 +17,7 @@ class translation_final_pass:
         data_file: str = f"{parent_path}/data/data.csv",
         grammar_file: str = f"{parent_path}/data/bantu_grammar_lookup.csv",
     ) -> None:
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         self.data = pd.read_csv(data_file, sep='\t')
         self.grammar_data = pd.read_csv(grammar_file)
@@ -31,7 +32,7 @@ class translation_final_pass:
         self.morph_cache: dict[str, str] = {}
 
     def _get_embedding(self, text):
-        inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512)
+        inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512).to(self.device)
         with torch.no_grad():
             outputs = self.model(**inputs, output_hidden_states=True)
             embeddings = outputs.hidden_states[-1].mean(dim=1)
@@ -42,7 +43,7 @@ class translation_final_pass:
         if word_str in self.morph_cache:
             return self.morph_cache[word_str]
 
-        inputs = self.morph_tokenizer(word_str, return_tensors="pt")
+        inputs = self.morph_tokenizer(word_str, return_tensors="pt").to(self.device)
         with torch.no_grad():
             outputs = self.morph_model.generate(**inputs, max_new_tokens=64)
 
@@ -104,7 +105,7 @@ class translation_final_pass:
                     end = min(len(words), center + 100)
                     masked_sentence = " ".join(words[start:end])
 
-            inputs = self.tokenizer(masked_sentence, return_tensors="pt", truncation=True, max_length=512)
+            inputs = self.tokenizer(masked_sentence, return_tensors="pt", truncation=True, max_length=512).to(self.device)
 
             with torch.no_grad():
                 outputs = self.model(**inputs)
@@ -268,7 +269,7 @@ class translation_final_pass:
             translation = getattr(row, self.translation_keyword)
             is_borrowed = False
 
-            if not isinstance(translation, str)or pd.isna(translation):
+            if not isinstance(translation, str) or pd.isna(translation):
                 current_prov = getattr(row, "african_proverb")
                 current_emb = self._get_embedding(current_prov)
 
