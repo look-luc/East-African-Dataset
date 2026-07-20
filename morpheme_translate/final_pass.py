@@ -138,7 +138,7 @@ class translation_final_pass:
 
         return lookup_map
 
-    def resolve_slot_translation(self, chosen_token: str) -> str:
+    def resolve_slot_translation(self, chosen_token: str, slot_tag: str = "") -> str:
         clean_token = str(chosen_token).strip().lower()
 
         if clean_token in self.lexicon_map:
@@ -147,6 +147,43 @@ class translation_final_pass:
         stripped_token = clean_token.translate(str.maketrans("", "", string.punctuation))
         if stripped_token in self.lexicon_map:
             return self.lexicon_map[stripped_token]
+
+        if hasattr(self, 'lem_map') and clean_token in self.lem_map:
+            return self.lem_map[clean_token]
+
+        if hasattr(self, 'morph_model'):
+            raw_analysis = self.predict_morphology(clean_token)
+            tags = self.extract_morph_tags(raw_analysis)
+
+            root_match = re.search(r"\-\s*([\w]+)$", raw_analysis)
+            root = root_match.group(1).lower() if root_match else ""
+
+            translated_root = self.lem_map.get(root, root) if hasattr(self, 'lem_map') else root
+            translated_tags = [
+                self.grammar_map[t]
+                for t in tags
+                if hasattr(self, 'grammar_map') and t in self.grammar_map
+            ]
+
+            parts = []
+            if translated_tags:
+                parts.extend(translated_tags)
+            if translated_root:
+                parts.append(translated_root)
+
+            if parts:
+                return " ".join(parts)
+
+        if slot_tag and hasattr(self, 'grammar_map'):
+            clean_tag = re.sub(r"^_{2,4}\.?", "", slot_tag).upper()
+            components = [c for c in clean_tag.split('.') if c]
+            resolved = [
+                self.grammar_map.get(c, c.lower())
+                for c in components
+                if c in self.grammar_map
+            ]
+            if resolved:
+                return " ".join(resolved)
 
         return chosen_token
 
@@ -166,6 +203,14 @@ class translation_final_pass:
         self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"] == self.lang])
 
         self.lexicon_map = self._normalize_lexicon()
+
+        word_col_lem = 'Surface Word' if 'Surface Word' in self.lem_seg.columns else ('word' if 'word' in self.lem_seg.columns else self.lem_seg.columns[0])
+        target_col_lem = next((col for col in self.lem_seg.columns if 'english' in col.lower() or 'translation' in col.lower()), self.lem_seg.columns[-1])
+        self.lem_map = dict(zip(self.lem_seg[word_col_lem].astype(str).str.lower(), self.lem_seg[target_col_lem].astype(str)))
+
+        tag_col_gram = 'tag' if 'tag' in self.grammar_lookup.columns else self.grammar_lookup.columns[0]
+        target_col_gram = next((col for col in self.grammar_lookup.columns if 'english' in col.lower() or 'translation' in col.lower()), self.grammar_lookup.columns[-1])
+        self.grammar_map = dict(zip(self.grammar_lookup[tag_col_gram].astype(str).str.upper(), self.grammar_lookup[target_col_gram].astype(str)))
 
         # Extract full feature tag sets from BantuMorph v7 predictions
         self.glosses: dict[str, set[str]] = {}
@@ -253,7 +298,7 @@ class translation_final_pass:
                 chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool)
 
                 if chosen_token:
-                    english_val = self.resolve_slot_translation(chosen_token)
+                    english_val = self.resolve_slot_translation(chosen_token, slot_tag=slot_tag)
                     working_sentence = working_sentence.replace(slot_tag, str(english_val), 1)
 
             residual_slots = self.extract_slots(working_sentence)
@@ -262,7 +307,7 @@ class translation_final_pass:
                 for residual_tag in residual_slots:
                     fallback_token = self._find_best_candidate(working_sentence, residual_tag, global_fallback_pool)
                     if fallback_token:
-                        english_val = self.resolve_slot_translation(fallback_token)
+                        english_val = self.resolve_slot_translation(fallback_token, slot_tag=residual_tag)
                         working_sentence = working_sentence.replace(residual_tag, str(english_val), 1)
                     else:
                         working_sentence = working_sentence.replace(residual_tag, "", 1)
