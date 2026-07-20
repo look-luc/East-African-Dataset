@@ -84,6 +84,9 @@ class translation_final_pass:
         if lang is None:
             raise ValueError("Provide a language")
 
+        """
+        Gets the appropriate files opened for a specific language
+        """
         self.lang = lang
         self.translation_keyword = translation_keyword
         self.df_translation = pd.read_csv(
@@ -95,14 +98,24 @@ class translation_final_pass:
         self.lang_data = pd.DataFrame(self.data[self.data["language"]==self.lang])
         self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"]==self.lang])
 
+        """
+        gets the gloss that the BantuMorph v7 noun class prediction
+        """
         self.glosses = []
         for _, row in self.lem_seg.iterrows():
             g = row["noun class prediction"]
             glossed = g.strip(" ")[1]
             self.glosses.append(glossed[:-1])
 
+        """
+        making a way to get rid of any commas in the proverb
+        """
         translator = str.maketrans('', '', string.punctuation)
 
+        """
+        goes through each row in the translation file and gets the translation column and finds any '___' of size 2 to 4 and gets the proverb.
+        adds the translation as a template and embedds the proverb for later use.
+        """
         reference_pool = []
         for r in self.df_translation.itertuples():
             t = getattr(r, self.translation_keyword)
@@ -113,20 +126,30 @@ class translation_final_pass:
                         prov = prov.translate(translator)
                     reference_pool.append({"template": t, "embedding": self._get_embedding(prov)})
 
+        """
+        the start of the final pass
+        """
         ranked_indices = []
         for row in self.df_translation.itertuples():
             translation = getattr(row, self.translation_keyword)
             is_borrowed = False
 
             if not isinstance(translation, str):
+                """
+                getting the embeddings of the current proverb
+                """
                 current_prov = getattr(row, "african_proverb")
                 current_emb = self._get_embedding(current_prov)
 
                 best_template = None
                 best_sim = -1.0
 
+                """
+                calculating the similarity score for the embeddings
+                """
                 for ref in reference_pool:
                     similarity = torch.mm(current_emb, ref["embedding"].T).item()
+                    # checking if the similarity is better
                     if similarity > best_sim:
                         best_sim = similarity
                         best_template = ref["template"]
@@ -138,36 +161,46 @@ class translation_final_pass:
                     ranked_indices.append(translation)
                     continue
 
-            slots = self.extract_slots(translation)
+            slots = self.extract_slots(translation) # finding all of the instances of the underscored portions
             working_sentence = translation
 
             if is_borrowed:
                 print(f"\n[BantuBERTa Retrieval] Borrowed template for: {getattr(row, 'african_proverb')}")
                 print(f"Borrowed Frame: {translation}")
 
-            gloss_col = next((col for col in self.glosses if 'gloss' in col.lower()), 'gloss')
+            """
+            getting the glossing and surface columns
+            """
+            gloss_col = next((col for col in self.glosses if 'Glossing' in col.lower()), 'Glossing')
             word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
 
             for slot_tag in slots:
-                clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
+                clean_tag = re.sub(r"^_{2,4}", "", slot_tag) # getting rid of the underscores
                 tag_components = [
-                    re.sub(r"^N(\d+)$", r"BANTU\1", c.upper())
-                    for c in clean_tag.split('.') if c
+                    re.sub(r"^N(\d+)$", r"BANTU\1", c.upper()) # replacing the noun class gloss from the manual glossing
+                    for c in clean_tag.split('.') if c # getting rid of the periods from BantuMorph v7
                 ]
 
                 if tag_components:
                     mask = pd.Series(True, index=self.lexicon.index)
+
+                    """
+                    making sure that the gloss is in the column given the masked sentence
+                    """
                     for comp in tag_components:
                         mask &= self.lexicon[gloss_col].str.contains(comp, na=False, regex=False)
                     candidate_pool = self.lexicon[mask][word_col].dropna().unique().tolist()
                 else:
                     candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
 
-                chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool)
+                chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool) # finds the best candidate from the embedding
 
-                if chosen_token:
+                if chosen_token: # when found the right token, replaces it in the working sentence
                     working_sentence = working_sentence.replace(slot_tag, str(chosen_token), 1)
 
+            """
+            going through the rest of the lingering  slots that need to be replaced
+            """
             residual_slots = self.extract_slots(working_sentence)
             if residual_slots:
                 global_fallback_pool = self.lexicon[word_col].dropna().unique().tolist()
