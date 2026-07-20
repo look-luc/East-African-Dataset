@@ -119,18 +119,22 @@ class translation_final_pass:
         """
         gets the gloss that the BantuMorph v7 noun class prediction
         """
-        self.glosses = []
+        self.glosses = {}
+        word_col_lem = 'Surface Word' if 'Surface Word' in self.lem_seg.columns else ('word' if 'word' in self.lem_seg.columns else self.lem_seg.columns[0])
+
         if hasattr(self, "lem_seg") and "noun class prediction" in self.lem_seg.columns:
-          for _, row in self.lem_seg.iterrows():
-            raw_pred = str(row["noun class prediction"])
-            cleaned_tag = self.extract_noun_class(raw_pred)
-            self.glosses.append(cleaned_tag)
+            for _, row in self.lem_seg.iterrows():
+                w = str(row[word_col_lem])
+                raw_pred = str(row["noun class prediction"])
+                cleaned_tag = self.extract_noun_class(raw_pred)
+                if cleaned_tag:
+                    self.glosses[w] = cleaned_tag
         else:
-          for word in self.lexicon["Surface Word"].dropna().unique():
-            raw_analysis = self.predict_morphology(str(word))
-            tag = self.extract_noun_class(raw_analysis)
-            if tag:
-              self.glosses.append(tag)
+            for word in self.lexicon["Surface Word"].dropna().unique():
+                raw_analysis = self.predict_morphology(str(word))
+                tag = self.extract_noun_class(raw_analysis)
+                if tag:
+                    self.glosses[str(word)] = tag
 
         """
         making a way to get rid of any commas in the proverb
@@ -196,7 +200,7 @@ class translation_final_pass:
             """
             getting the glossing and surface columns
             """
-            gloss_col = next((col for col in self.glosses if 'Glossing' in col.lower()), 'Glossing')
+            gloss_col = next((col for col in self.lexicon.columns if 'gloss' in col.lower()), 'Glossing')
             word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
 
             for slot_tag in slots:
@@ -217,13 +221,14 @@ class translation_final_pass:
                     candidate_pool = self.lexicon[mask][word_col].dropna().unique().tolist()
                 else:
                     candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
-                if tag_components and candidate_pool:
-                    filtered_pool = [
-                        word for word in candidate_pool
-                        if word in self.glosses and any(comp in self.glosses[word] for comp in tag_components)
-                    ]
-                    # Fallback to unfiltered candidate_pool if predicted tag filtered out all options
-                    candidate_pool = filtered_pool if filtered_pool else candidate_pool
+                    if tag_components and candidate_pool:
+                        filtered_pool = [
+                            word for word in candidate_pool
+                            if word in self.glosses and any(comp in self.glosses[word] for comp in tag_components)
+                        ]
+                        candidate_pool = filtered_pool if filtered_pool else candidate_pool
+
+                    chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool)
 
                 chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool) # finds the best candidate from the embedding
 
@@ -240,12 +245,17 @@ class translation_final_pass:
             going through the rest of the lingering  slots that need to be replaced
             """
             residual_slots = self.extract_slots(working_sentence)
+            residual_slots = self.extract_slots(working_sentence)
             if residual_slots:
                 global_fallback_pool = self.lexicon[word_col].dropna().unique().tolist()
                 for residual_tag in residual_slots:
                     fallback_token = self._find_best_candidate(working_sentence, residual_tag, global_fallback_pool)
                     if fallback_token:
-                        working_sentence = working_sentence.replace(residual_tag, str(fallback_token), 1)
+                        match = self.lexicon[self.lexicon[word_col] == fallback_token]['English translation']
+                        english_val = match.iloc[0] if not match.empty else fallback_token
+                        if not isinstance(english_val, str) or '[Translation Missing]' in english_val:
+                            english_val = fallback_token
+                        working_sentence = working_sentence.replace(residual_tag, str(english_val), 1)
                     else:
                         working_sentence = working_sentence.replace(residual_tag, "", 1)
             ranked_indices.append(working_sentence)
