@@ -145,15 +145,15 @@ class translation_final_pass:
                 print(f"\n[BantuBERTa Retrieval] Borrowed template for: {getattr(row, 'african_proverb')}")
                 print(f"Borrowed Frame: {translation}")
 
+            gloss_col = next((col for col in self.glosses if 'gloss' in col.lower()), 'gloss')
+            word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
+
             for slot_tag in slots:
                 clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
                 tag_components = [
                     re.sub(r"^N(\d+)$", r"BANTU\1", c.upper())
                     for c in clean_tag.split('.') if c
                 ]
-
-                gloss_col = next((col for col in self.lexicon.columns if 'gloss' in col.lower()), 'gloss')
-                word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
 
                 if tag_components:
                     mask = pd.Series(True, index=self.lexicon.index)
@@ -168,5 +168,14 @@ class translation_final_pass:
                 if chosen_token:
                     working_sentence = working_sentence.replace(slot_tag, str(chosen_token), 1)
 
+            residual_slots = self.extract_slots(working_sentence)
+            if residual_slots:
+                global_fallback_pool = self.lexicon[word_col].dropna().unique().tolist()
+                for residual_tag in residual_slots:
+                    fallback_token = self._find_best_candidate(working_sentence, residual_tag, global_fallback_pool)
+                    if fallback_token:
+                        working_sentence = working_sentence.replace(residual_tag, str(fallback_token), 1)
+                    else:
+                        working_sentence = working_sentence.replace(residual_tag, "", 1)
             ranked_indices.append(working_sentence)
         return ranked_indices
