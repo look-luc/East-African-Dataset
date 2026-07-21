@@ -91,23 +91,26 @@ class translation_final_pass:
         if not candidate_pool:
             return ""
 
-        best_candidate = str(candidate_pool[0])
+        candidate_pool_str = [str(item) for item in candidate_pool]
+        all_candidate_ids = self.tokenizer(candidate_pool_str, add_special_tokens=False)["input_ids"]
+
+        best_candidate = str(candidate_pool_str[0])
         highest_score = -float('inf')
 
-        for batch in batched(candidate_pool, self.batch_size):
+        candidate_pairs = zip(candidate_pool_str, all_candidate_ids)
+
+        for batch in batched(candidate_pairs, self.batch_size):
             batch_masked_sentences = []
             batch_cand_ids = []
 
-            for candidate in batch:
+            for candidate, ids in batch:
                 candidate_str = str(candidate)
-                candidate_tokens = self.tokenizer.tokenize(candidate_str)
-                candidate_ids = self.tokenizer.convert_tokens_to_ids(candidate_tokens)
-                if not candidate_ids or all(item == self.tokenizer.unk_token_id for item in candidate_ids):
+                if not ids or all(item == self.tokenizer.unk_token_id for item in ids):
                     batch_cand_ids.append([])
                     batch_masked_sentences.append("")
                     continue
 
-                num_masks = max(1, len(candidate_tokens))
+                num_masks = max(1, len(ids))
                 mask_str = " ".join([self.tokenizer.mask_token] * num_masks)
 
                 sentence = working_sentence.replace(slot_tag, mask_str, 1)
@@ -122,7 +125,7 @@ class translation_final_pass:
                         sentence = " ".join(words[start:end])
 
                 batch_masked_sentences.append(sentence)
-                batch_cand_ids.append(candidate_ids)
+                batch_cand_ids.append(ids)
 
             valid_indices = [i for i, s in enumerate(batch_masked_sentences) if s]
             if not valid_indices:
@@ -132,12 +135,13 @@ class translation_final_pass:
             inputs = self.tokenizer(valid_sentences, padding=True, truncation=True, max_length=512, return_tensors="pt").to(self.device)
 
             with torch.no_grad():
-                outputs = self.model(**inputs)
-                mask_logits = outputs.logits
+                with torch.cuda.amp.autocast(), torch.no_grad():
+                    outputs = self.model(**inputs)
+                    mask_logits = outputs.logits
+                    log_probs = F.log_softmax(mask_logits, dim=-1)
 
             for b_idx, orig_idx in enumerate(valid_indices):
-                candidate_str = str(batch[orig_idx])
-                cand_ids = batch_cand_ids[orig_idx]
+                candidate_str, cand_ids = batch[orig_idx]
 
                 mask_token_index = torch.where(inputs["input_ids"][b_idx] == self.tokenizer.mask_token_id)[0]
                 if len(mask_token_index) == 0:
@@ -148,15 +152,12 @@ class translation_final_pass:
                     continue
 
                 current_candidate_score = 0.0
-                for i in range(eval_length):
-                    mask_pos = mask_token_index[i]
-                    target_subword_id = cand_ids[i]
+                mask_pos = mask_token_index[:eval_length]
+                token_tensor = torch.tensor(cand_ids[:eval_length]).to(self.device)
+                selected_log_probs = log_probs[b_idx, mask_pos, token_tensor]
+                score_tensor = torch.mean(selected_log_probs)
 
-                    token_logits = mask_logits[b_idx, mask_pos, :]
-                    log_probs = F.log_softmax(token_logits, dim=-1)
-                    current_candidate_score += log_probs[target_subword_id].item()
-
-                current_candidate_score /= eval_length
+                current_candidate_score = score_tensor.item()
 
                 if current_candidate_score > highest_score:
                     highest_score = current_candidate_score
