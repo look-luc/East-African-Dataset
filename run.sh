@@ -3,7 +3,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=64G
-#SBATCH --time=3:00:00
+#SBATCH --time=4:00:00
 #SBATCH --output=/projects/%u/East-African-Dataset/logs/%j.log
 #SBATCH --job-name=east_african_translation
 #SBATCH --partition=blanca-clearlab2
@@ -12,7 +12,8 @@
 #SBATCH --mail-type=END,FAIL
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-export TOKENIZERS_PARALLELISM=true
+export TOKENIZERS_PARALLELISM=false
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
