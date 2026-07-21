@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
+#SBATCH --cpus-per-task=4
 #SBATCH --mem=64G
 #SBATCH --time=3:00:00
 #SBATCH --output=/projects/%u/East-African-Dataset/logs/%j.log
@@ -15,6 +15,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export OPENBLAS_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export NUMEXPR_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export TOKENIZERS_PARALLELISM=true
 
 export HF_HOME="/tmp/$USER/.cache/huggingface"
 export EVALUATE_CACHE_DIR="/tmp/$USER/.cache/evaluate"

@@ -25,11 +25,11 @@ class translation_final_pass:
 
         self.model_name = model_name
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
-        self.model = AutoModelForMaskedLM.from_pretrained(self.model_name)
+        self.model = AutoModelForMaskedLM.from_pretrained(self.model_name).to(self.device)
 
         self.morph_model_name = morph_model_name
         self.morph_tokenizer = AutoTokenizer.from_pretrained(self.morph_model_name)
-        self.morph_model = AutoModelForSeq2SeqLM.from_pretrained(self.morph_model_name)
+        self.morph_model = AutoModelForSeq2SeqLM.from_pretrained(self.morph_model_name).to(self.device)
         self.morph_cache: dict[str, str] = {}
 
     def _get_embedding(self, text):
@@ -50,8 +50,8 @@ class translation_final_pass:
             for batch in batched(unvisited_words, batch_size):
                 inputs = self.morph_tokenizer(list(batch), padding=True, return_tensors="pt", truncation=True).to(self.device)
                 with torch.no_grad():
-                    output_tokens = self.morph_model.generate(**inputs, max_new_tokens=64).to(self.device)
-                decoded_analyses = self.morph_tokenizer.batch_decode(output_tokens, skip_special_tokens=True).to(self.device)
+                    output_tokens = self.morph_model.generate(**inputs, max_new_tokens=64)
+                decoded_analyses = self.morph_tokenizer.batch_decode(output_tokens, skip_special_tokens=True)
 
                 for word_item, analysis in zip(batch, decoded_analyses):
                     self.morph_cache[word_item] = analysis
@@ -100,8 +100,8 @@ class translation_final_pass:
 
             for candidate in batch:
                 candidate_str = str(candidate)
-                candidate_tokens = self.tokenizer.tokenize(candidate_str).to(self.device)
-                candidate_ids = self.tokenizer.convert_tokens_to_ids(candidate_tokens).to(self.device)
+                candidate_tokens = self.tokenizer.tokenize(candidate_str)
+                candidate_ids = self.tokenizer.convert_tokens_to_ids(candidate_tokens)
                 if not candidate_ids or all(item == self.tokenizer.unk_token_id for item in candidate_ids):
                     batch_cand_ids.append([])
                     batch_masked_sentences.append("")
@@ -132,8 +132,8 @@ class translation_final_pass:
             inputs = self.tokenizer(valid_sentences, padding=True, truncation=True, max_length=512, return_tensors="pt").to(self.device)
 
             with torch.no_grad():
-                outputs = self.model(**inputs).to(self.device)
-                mask_logits = outputs.logits.to(self.device)
+                outputs = self.model(**inputs)
+                mask_logits = outputs.logits
 
             for b_idx, orig_idx in enumerate(valid_indices):
                 candidate_str = str(batch[orig_idx])
@@ -189,10 +189,10 @@ class translation_final_pass:
 
         stripped_token = clean_token.translate(str.maketrans("", "", string.punctuation))
         if stripped_token in self.lexicon_map:
-            return self.lexicon_map[stripped_token].to(self.device)
+            return self.lexicon_map[stripped_token]
 
         if hasattr(self, 'lem_map') and clean_token in self.lem_map:
-            return self.lem_map[clean_token].to(self.device)
+            return self.lem_map[clean_token]
 
         if hasattr(self, 'morph_model'):
             raw_analysis = self.predict_morphology(clean_token)
@@ -249,12 +249,12 @@ class translation_final_pass:
         self.translation_keyword = translation_keyword
         self.df_translation = pd.read_csv(
             f"{parent_path}/data/{self.lang.lower()}/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang.lower()}_random_15.csv"
-        ).to(self.device)
-        self.lexicon = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower()}_translated.csv").to(self.device)
-        self.lem_seg = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower().capitalize()}_model_lem_seg.csv", sep='\t').to(self.device)
+        )
+        self.lexicon = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower()}_translated.csv")
+        self.lem_seg = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower().capitalize()}_model_lem_seg.csv", sep='\t')
 
-        self.lang_data = pd.DataFrame(self.data[self.data["language"] == self.lang]).to(self.device)
-        self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"] == self.lang]).to(self.device)
+        self.lang_data = pd.DataFrame(self.data[self.data["language"] == self.lang])
+        self.grammar_lookup = pd.DataFrame(self.grammar_data[self.grammar_data["language"] == self.lang])
 
         self.lexicon_map = self._normalize_lexicon()
 
