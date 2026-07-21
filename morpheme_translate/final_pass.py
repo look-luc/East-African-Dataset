@@ -39,7 +39,7 @@ class translation_final_pass:
             embeddings = outputs.hidden_states[-1].mean(dim=1)
         return F.normalize(embeddings, p=2, dim=1)
 
-    def predict_morphology(self, words: str | list[str], batch_size:int=10)-> str | dict[str, str]:
+    def predict_morphology(self, words: str | list[str], batch_size:int=64)-> str | dict[str, str]:
         self.batch_size = batch_size
         single = isinstance(words, str)
 
@@ -86,7 +86,7 @@ class translation_final_pass:
     def extract_slots(self, template_sentence: str) -> list[str]:
         return re.findall(r"_{2,4}(?:\.[\w\d]+)*", template_sentence)
 
-    def _find_best_candidate(self, working_sentence: str, slot_tag: str, candidate_pool: list, batch_size:int=10) -> str:
+    def _find_best_candidate(self, working_sentence: str, slot_tag: str, candidate_pool: list, batch_size:int=64) -> str:
         self.batch_size = batch_size
         if not candidate_pool:
             return ""
@@ -272,7 +272,7 @@ class translation_final_pass:
         self.glosses: dict[str, set[str]] = {}
         word_col_lex = 'Surface Word' if 'Surface Word' in self.lexicon.columns else ('word' if 'word' in self.lexicon.columns else self.lexicon.columns[0])
         unique_lex_words = [str(w) for w in self.lexicon[word_col_lex].dropna().unique()]
-        # self.predict_morphology(unique_lex_words, batch_size=32)
+        self.predict_morphology(unique_lex_words, batch_size=64)
 
         for word in unique_lex_words:
             raw_analysis = self.morph_cache.get(word, "")
