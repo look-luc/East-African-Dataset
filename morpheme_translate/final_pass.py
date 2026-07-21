@@ -1,5 +1,6 @@
 import re
 import string
+from itertools import batched
 from pathlib import Path
 
 import pandas as pd
@@ -38,18 +39,26 @@ class translation_final_pass:
             embeddings = outputs.hidden_states[-1].mean(dim=1)
         return F.normalize(embeddings, p=2, dim=1)
 
-    def predict_morphology(self, word: str) -> str:
-        word_str = str(word).strip()
-        if word_str in self.morph_cache:
-            return self.morph_cache[word_str]
+    def predict_morphology(self, words: str | list[str], batch_size:int=10)-> str | dict[str, str]:
+        self.batch_size = batch_size
+        single = isinstance(words, str)
 
-        inputs = self.morph_tokenizer(word_str, return_tensors="pt").to(self.device)
-        with torch.no_grad():
-            outputs = self.morph_model.generate(**inputs, max_new_tokens=64)
+        word_list = [words] if single else [str(w) for w in words]
+        unvisited_words = [w for w in word_list if w not in self.morph_cache]
 
-        analysis = self.morph_tokenizer.decode(outputs[0], skip_special_tokens=True)
-        self.morph_cache[word_str] = analysis
-        return analysis
+        if unvisited_words:
+            for batch in batched(unvisited_words, batch_size):
+                inputs = self.morph_tokenizer(list(batch), padding=True, return_tensors="pt", truncation=True).to(self.device)
+                with torch.no_grad():
+                    output_tokens = self.morph_model.generate(**inputs, max_new_tokens=64)
+                decoded_analyses = self.morph_tokenizer.batch_decode(output_tokens, skip_special_tokens=True)
+
+                for word_item, analysis in zip(batch, decoded_analyses):
+                    self.morph_cache[word_item] = analysis
+
+        if single:
+            return self.morph_cache.get(words, "")
+        return {w: self.morph_cache[w] for w in word_list if w in self.morph_cache}
 
     def extract_morph_tags(self, morph_analysis: str) -> set[str]:
         if not morph_analysis:
@@ -77,62 +86,81 @@ class translation_final_pass:
     def extract_slots(self, template_sentence: str) -> list[str]:
         return re.findall(r"_{2,4}(?:\.[\w\d]+)*", template_sentence)
 
-    def _find_best_candidate(self, working_sentence: str, slot_tag: str, candidate_pool: list) -> str:
+    def _find_best_candidate(self, working_sentence: str, slot_tag: str, candidate_pool: list, batch_size:int=10) -> str:
+        self.batch_size = batch_size
         if not candidate_pool:
             return ""
 
         best_candidate = str(candidate_pool[0])
         highest_score = -float('inf')
 
-        for candidate in candidate_pool:
-            candidate_str = str(candidate)
-            candidate_tokens = self.tokenizer.tokenize(candidate_str)
-            candidate_ids = self.tokenizer.convert_tokens_to_ids(candidate_tokens)
-            num_masks_needed = max(1, len(candidate_tokens))
+        for batch in batched(candidate_pool, self.batch_size):
+            batch_masked_sentences = []
+            batch_cand_ids = []
 
-            if all(item == self.tokenizer.unk_token_id for item in candidate_ids):
+            for candidate in batch:
+                candidate_str = str(candidate)
+                candidate_tokens = self.tokenizer.tokenize(candidate_str)
+                candidate_ids = self.tokenizer.convert_tokens_to_ids(candidate_tokens)
+                if not candidate_ids or all(item == self.tokenizer.unk_token_id for item in candidate_ids):
+                    batch_cand_ids.append([])
+                    batch_masked_sentences.append("")
+                    continue
+
+                num_masks = max(1, len(candidate_tokens))
+                mask_str = " ".join([self.tokenizer.mask_token] * num_masks)
+
+                sentence = working_sentence.replace(slot_tag, mask_str, 1)
+
+                words = sentence.split()
+                if len(words) > 200:
+                    mask_indices = [i for i, w in enumerate(words) if self.tokenizer.mask_token in w]
+                    if mask_indices:
+                        center = mask_indices[0]
+                        start = max(0, center - 100)
+                        end = min(len(words), center + 100)
+                        sentence = " ".join(words[start:end])
+
+                batch_masked_sentences.append(sentence)
+                batch_cand_ids.append(candidate_ids)
+
+            valid_indices = [i for i, s in enumerate(batch_masked_sentences) if s]
+            if not valid_indices:
                 continue
 
-            mask_string = " ".join([self.tokenizer.mask_token] * num_masks_needed)
-            masked_sentence = working_sentence.replace(slot_tag, mask_string, 1)
-
-            words = masked_sentence.split()
-            if len(words) > 200:
-                mask_indices = [i for i, w in enumerate(words) if self.tokenizer.mask_token in w]
-                if mask_indices:
-                    center = mask_indices[0]
-                    start = max(0, center - 100)
-                    end = min(len(words), center + 100)
-                    masked_sentence = " ".join(words[start:end])
-
-            inputs = self.tokenizer(masked_sentence, return_tensors="pt", truncation=True, max_length=512).to(self.device)
+            valid_sentences = [batch_masked_sentences[i] for i in valid_indices]
+            inputs = self.tokenizer(valid_sentences, padding=True, truncation=True, max_length=512, return_tensors="pt").to(self.device)
 
             with torch.no_grad():
                 outputs = self.model(**inputs)
                 mask_logits = outputs.logits
 
-            mask_token_index = torch.where(inputs["input_ids"] == self.tokenizer.mask_token_id)[1]
+            for b_idx, orig_idx in enumerate(valid_indices):
+                candidate_str = str(batch[orig_idx])
+                cand_ids = batch_cand_ids[orig_idx]
 
-            if len(mask_token_index) == 0:
-                continue
+                mask_token_index = torch.where(inputs["input_ids"][b_idx] == self.tokenizer.mask_token_id)[0]
+                if len(mask_token_index) == 0:
+                    continue
 
-            current_candidate_score = 0.0
-            eval_length = min(len(mask_token_index), len(candidate_ids))
+                eval_length = min(len(mask_token_index), len(cand_ids))
+                if eval_length == 0:
+                    continue
 
-            for i in range(eval_length):
-                mask_pos = mask_token_index[i]
-                target_subword_id = candidate_ids[i]
+                current_candidate_score = 0.0
+                for i in range(eval_length):
+                    mask_pos = mask_token_index[i]
+                    target_subword_id = cand_ids[i]
 
-                token_logits = mask_logits[0, mask_pos, :]
-                log_probs = F.log_softmax(token_logits, dim=-1)
-                current_candidate_score += log_probs[target_subword_id].item()
+                    token_logits = mask_logits[b_idx, mask_pos, :]
+                    log_probs = F.log_softmax(token_logits, dim=-1)
+                    current_candidate_score += log_probs[target_subword_id].item()
 
-            if eval_length > 0:
                 current_candidate_score /= eval_length
 
-            if current_candidate_score > highest_score:
-                highest_score = current_candidate_score
-                best_candidate = candidate_str
+                if current_candidate_score > highest_score:
+                    highest_score = current_candidate_score
+                    best_candidate = candidate_str
 
         return best_candidate
 
@@ -236,21 +264,21 @@ class translation_final_pass:
 
         tag_col_gram = 'tag' if 'tag' in self.grammar_lookup.columns else self.grammar_lookup.columns[0]
         target_col_gram = next(
-            (
-                col for col in self.grammar_lookup.columns if 'english' in col.lower() or 'translation' in col.lower()
-            ),
+            (col for col in self.grammar_lookup.columns if 'english' in col.lower() or 'translation' in col.lower()),
             self.grammar_lookup.columns[-1]
         )
         self.grammar_map = dict(zip(self.grammar_lookup[tag_col_gram].astype(str).str.upper(), self.grammar_lookup[target_col_gram].astype(str)))
 
-        # Extract full feature tag sets from BantuMorph v7 predictions
         self.glosses: dict[str, set[str]] = {}
         word_col_lex = 'Surface Word' if 'Surface Word' in self.lexicon.columns else ('word' if 'word' in self.lexicon.columns else self.lexicon.columns[0])
-        for word in self.lexicon[word_col_lex].dropna().unique():
-            raw_analysis = self.predict_morphology(str(word))
+        unique_lex_words = [str(w) for w in self.lexicon[word_col_lex].dropna().unique()]
+        self.predict_morphology(unique_lex_words, batch_size=32)
+
+        for word in unique_lex_words:
+            raw_analysis = self.morph_cache.get(word, "")
             tags = self.extract_morph_tags(raw_analysis)
             if tags:
-                self.glosses[str(word)] = tags
+                self.glosses[word] = tags
 
         translator = str.maketrans('', '', string.punctuation)
 
@@ -319,7 +347,6 @@ class translation_final_pass:
                 else:
                     candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
 
-                # Filter candidate pool using BantuMorph v7 predicted tag sets
                 if tag_components and candidate_pool and self.glosses:
                     filtered_pool = [
                         word for word in candidate_pool if str(word) in self.glosses and any(
