@@ -134,11 +134,10 @@ class translation_final_pass:
             valid_sentences = [batch_masked_sentences[i] for i in valid_indices]
             inputs = self.tokenizer(valid_sentences, padding=True, truncation=True, max_length=512, return_tensors="pt").to(self.device)
 
-            with torch.no_grad():
-                with torch.cuda.amp.autocast(), torch.no_grad():
-                    outputs = self.model(**inputs)
-                    mask_logits = outputs.logits
-                    log_probs = F.log_softmax(mask_logits, dim=-1)
+            with torch.no_grad(), torch.autocast(device_type=self.device.type, enabled=(self.device.type == "cuda")):
+                outputs = self.model(**inputs)
+                mask_logits = outputs.logits
+                log_probs = F.log_softmax(mask_logits, dim=-1)
 
             for b_idx, orig_idx in enumerate(valid_indices):
                 candidate_str, cand_ids = batch[orig_idx]
