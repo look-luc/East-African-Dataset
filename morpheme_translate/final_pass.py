@@ -270,8 +270,9 @@ class translation_final_pass:
             translation = getattr(row, self.translation_keyword)
             is_borrowed = False
             current_prov = getattr(row, "african_proverb")
-            if isinstance(translation, str) and translation.strip():
-                if current_prov is not None and str(current_prov) != "" and not pd.isna(current_prov):
+            if not pd.isna(translation) and isinstance(translation, str) and translation.strip():
+                if current_prov is not None and not pd.isna(current_prov) and str(current_prov).strip() != "":
+                    current_prov = current_prov.translate(translator)
                     current_emb = self._get_embedding(current_prov)
 
                     best_template = None
