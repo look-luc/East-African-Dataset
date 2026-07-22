@@ -100,14 +100,14 @@ class translation_final_pass:
         highest_score = -float('inf')
 
         for candidate in candidate_pool:
-            token_ids = self.tokenizer.encode(candidate)
+            token_ids = self.tokenizer.encode(candidate, add_special_tokens=False)
             length = len(token_ids)
             if length == 0:
                 continue
             mask_str = " ".join([self.tokenizer.mask_token] * length)
             masked_sentence = working_sentence.replace(slot_tag, mask_str, 1)
 
-            input = self.tokenizer(masked_sentence, add_special_tokens=False, return_tensors="pt")
+            input = self.tokenizer(masked_sentence, truncation=True, max_length=512, return_tensors="pt").to(self.device)
             with torch.no_grad(), torch.autocast(device_type=self.device.type, enabled=(self.device.type == "cuda")):
                 outputs = self.model(**input).logits
                 log_probs = F.log_softmax(outputs, dim=-1)
