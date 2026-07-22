@@ -36,8 +36,15 @@ class translation_final_pass:
         inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512).to(self.device)
         with torch.no_grad():
             outputs = self.model(**inputs, output_hidden_states=True)
-            embeddings = outputs.hidden_states[-1].mean(dim=1)
-        return F.normalize(embeddings, p=2, dim=1)
+            last_hidden_state = outputs.hidden_states[-1]  # [batch_size, seq_len, hidden_dim]
+
+            # Mask out padding tokens during mean calculation
+            attention_mask = inputs["attention_mask"].unsqueeze(-1).expand(last_hidden_state.size()).float()
+            sum_embeddings = torch.sum(last_hidden_state * attention_mask, dim=1)
+            sum_mask = torch.clamp(attention_mask.sum(dim=1), min=1e-9)
+
+            mean_pooled = sum_embeddings / sum_mask
+        return F.normalize(mean_pooled, p=2, dim=1)
 
     def predict_morphology(self, words: str | list[str], batch_size:int=64)-> str | dict[str, str]:
         self.batch_size = batch_size
