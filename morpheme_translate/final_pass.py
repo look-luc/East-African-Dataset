@@ -99,15 +99,14 @@ class translation_final_pass:
 
         candidate_groups = {}
 
-        for word in candidate_pool_str:
-            token_ids = candidate_tokenize["token_ids"]
+        for word, token_ids in zip(candidate_pool_str, candidate_tokenize["input_ids"]):
             length = len(token_ids)
             if length not in candidate_groups:
                 candidate_groups[length] = []
             element = (word, token_ids)
             candidate_groups[length].append(element)
 
-        for length, candidates in candidate_groups:
+        for length, candidates in candidate_groups.items():
             num_masks = max(1, length)
             mask_str = " ".join([self.tokenizer.mask_token] * num_masks)
 
