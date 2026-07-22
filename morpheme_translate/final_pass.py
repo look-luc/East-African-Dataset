@@ -95,61 +95,34 @@ class translation_final_pass:
 
     def _find_best_candidate(self, working_sentence: str, slot_tag: str, candidate_pool: list, batch_size:int=64) -> str:
         self.batch_size = batch_size
-        if not candidate_pool:
-            return ""
 
-        candidate_pool_str = [str(item) for item in candidate_pool]
-        candidate_tokenize = self.tokenizer(candidate_pool_str, add_special_tokens=False)
-
-        best_candidate = str(candidate_pool_str[0])
+        best_candidate = ""
         highest_score = -float('inf')
 
-        candidate_groups = {}
-
-        for word, token_ids in zip(candidate_pool_str, candidate_tokenize["input_ids"]):
+        for candidate in candidate_pool:
+            token_ids = self.tokenizer.encode(candidate)
             length = len(token_ids)
-            if length not in candidate_groups:
-                candidate_groups[length] = []
-            element = (word, token_ids)
-            candidate_groups[length].append(element)
-
-
-        slot_start = working_sentence.find(slot_tag)
-        if slot_start == -1:
-            return ""
-
-        pre_slot_tokens = self.tokenizer(working_sentence[:slot_start], add_special_tokens=False)["input_ids"]
-        if len(pre_slot_tokens) > 400:
-            truncated_tokens = pre_slot_tokens[-400:]
-            decoded_pre_slot = self.tokenizer.decode(truncated_tokens)
-            working_sentence = decoded_pre_slot + working_sentence[slot_start:]
-
-        for length, candidates in candidate_groups.items():
             if length == 0:
                 continue
+            mask_str = " ".join([self.tokenizer.mask_token] * length)
+            masked_sentence = working_sentence.replace(slot_tag, mask_str, 1)
 
-            num_masks = max(1, length)
-            mask_str = " ".join([self.tokenizer.mask_token] * num_masks)
-
-            sentence = working_sentence.replace(slot_tag, mask_str, 1)
-
-            inputs = self.tokenizer(sentence, max_length=512, add_special_tokens=True, return_tensors="pt").to(self.device)
+            input = self.tokenizer(masked_sentence, add_special_tokens=False, return_tensors="pt")
             with torch.no_grad(), torch.autocast(device_type=self.device.type, enabled=(self.device.type == "cuda")):
-                outputs = self.model(**inputs).logits
+                outputs = self.model(**input).logits
                 log_probs = F.log_softmax(outputs, dim=-1)
 
-            mask_pos = torch.where(inputs["input_ids"] == self.tokenizer.mask_token_id)[1]
-            for candidate, candidate_idx in candidates:
-                current_candidate_score = 0.0
-                for pos_idx in range(length):
-                    target_pos = mask_pos[pos_idx]
-                    token_id = candidate_idx[pos_idx]
-                    current_candidate_score += log_probs[0, target_pos, token_id]
-                avg = current_candidate_score / length
-                if avg > highest_score:
-                    highest_score = avg
-                    best_candidate = candidate
+            mask_pos = torch.where(input["input_ids"]==self.tokenizer.mask_token_id)[1]
+            curr_score = 0.0
+            for i in range(length):
+                pos = mask_pos[i]
+                token_id_pos = token_ids[i]
+                curr_score += log_probs[0, pos, token_id_pos]
 
+            score = curr_score/length
+            if score > highest_score:
+                highest_score = score
+                best_candidate = candidate
         return best_candidate
 
     def _normalize_lexicon(self) -> dict:
@@ -185,64 +158,23 @@ class translation_final_pass:
         return translatable if translatable else candidate_pool
 
     def resolve_slot_translation(self, chosen_token: str, slot_tag: str = "") -> str:
-        clean_token = str(chosen_token).strip().lower()
+        translator = str.maketrans("", "", string.punctuation)
+        clean_token = chosen_token.lower().translate(translator)
 
         if clean_token in self.lexicon_map:
             return self.lexicon_map[clean_token]
-
-        stripped_token = clean_token.translate(str.maketrans("", "", string.punctuation))
-        if stripped_token in self.lexicon_map:
-            return self.lexicon_map[stripped_token]
-
-        if hasattr(self, 'lem_map') and clean_token in self.lem_map:
+        if clean_token in self.lem_map:
             return self.lem_map[clean_token]
 
-        if hasattr(self, 'morph_model'):
-            raw_analysis = self.predict_morphology(clean_token)
-            tags = self.extract_morph_tags(raw_analysis)
+        raw_analysis = self.predict_morphology(clean_token, batch_size=64)
 
-            root_match = re.search(r"\-\s*([\w]+)$", raw_analysis)
-            root = root_match.group(1).lower() if root_match else ""
+        root_match = re.search(r"\-\s*([\w]+)$", raw_analysis)
+        root = root_match.group(1).lower() if root_match else ""
 
-            translated_root = self.lem_map.get(root, root) if hasattr(self, 'lem_map') else root
+        if root in self.lem_map:
+            return self.lem_map[root]
 
-            translated_tags = []
-            if hasattr(self, 'grammar_map'):
-                for t in tags:
-                    alt_tag = re.sub(r"^BANTU(\d+)$", r"N\1", t)
-                    if t in self.grammar_map:
-                        translated_tags.append(self.grammar_map[t])
-                    elif alt_tag in self.grammar_map:
-                        translated_tags.append(self.grammar_map[alt_tag])
-
-            parts = []
-            if translated_tags:
-                parts.extend(translated_tags)
-            if translated_root:
-                parts.append(translated_root)
-
-            if parts:
-                return " ".join(parts)
-
-        if slot_tag and hasattr(self, 'grammar_map'):
-            clean_tag = re.sub(r"^_{2,4}\.?", "", slot_tag).upper()
-            components = [c for c in clean_tag.split('.') if c]
-            resolved = []
-            for c in components:
-                bantu_c = re.sub(r"^N(\d+)$", r"BANTU\1", c)
-                norm_c = re.sub(r"^BANTU(\d+)$", r"N\1", c)
-                if c in self.grammar_map:
-                    resolved.append(self.grammar_map[c])
-                elif bantu_c in self.grammar_map:
-                    resolved.append(self.grammar_map[bantu_c])
-                elif norm_c in self.grammar_map:
-                    resolved.append(self.grammar_map[norm_c])
-                else:
-                    resolved.append(c.lower())
-            if resolved:
-                return " ".join(resolved)
-
-        return chosen_token
+        return clean_token
 
     def ranked_translation(self, fig_or_lit: str, translation_keyword: str = "translation", lang: str | None = None):
         if lang is None:
