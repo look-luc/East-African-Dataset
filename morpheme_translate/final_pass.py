@@ -125,7 +125,7 @@ class translation_final_pass:
             working_sentence = decoded_pre_slot + working_sentence[slot_start:]
 
         for length, candidates in candidate_groups.items():
-            if length==0:
+            if length == 0:
                 continue
 
             num_masks = max(1, length)
@@ -133,12 +133,12 @@ class translation_final_pass:
 
             sentence = working_sentence.replace(slot_tag, mask_str, 1)
 
-            inputs = self.tokenizer(sentence, max_length=512, add_special_tokens=True, return_tensors="pt" ).to(self.device)
+            inputs = self.tokenizer(sentence, max_length=512, add_special_tokens=True, return_tensors="pt").to(self.device)
             with torch.no_grad(), torch.autocast(device_type=self.device.type, enabled=(self.device.type == "cuda")):
                 outputs = self.model(**inputs).logits
                 log_probs = F.log_softmax(outputs, dim=-1)
 
-            mask_pos = torch.where(inputs["input_ids"]==self.tokenizer.mask_token_id)[1]
+            mask_pos = torch.where(inputs["input_ids"] == self.tokenizer.mask_token_id)[1]
             for candidate, candidate_idx in candidates:
                 current_candidate_score = 0.0
                 for pos_idx in range(length):
@@ -168,6 +168,21 @@ class translation_final_pass:
                 lookup_map[clean_w] = clean_t
 
         return lookup_map
+
+    def _filter_translatable_candidates(self, candidate_pool: list) -> list:
+        """Filters candidate words to those with known English entries in lexicon_map or lem_map."""
+        translatable = []
+        translator = str.maketrans("", "", string.punctuation)
+        for word in candidate_pool:
+            clean_w = str(word).strip().lower()
+            stripped_w = clean_w.translate(translator)
+            if (
+                clean_w in self.lexicon_map
+                or stripped_w in self.lexicon_map
+                or (hasattr(self, 'lem_map') and clean_w in self.lem_map)
+            ):
+                translatable.append(word)
+        return translatable if translatable else candidate_pool
 
     def resolve_slot_translation(self, chosen_token: str, slot_tag: str = "") -> str:
         clean_token = str(chosen_token).strip().lower()
@@ -238,6 +253,14 @@ class translation_final_pass:
         self.df_translation = pd.read_csv(
             f"{parent_path}/data/{self.lang.lower()}/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang.lower()}_random_15.csv"
         )
+        if self.lang is None:
+            raise ValueError("Provide a language")
+
+        self.lang = lang
+        self.translation_keyword = translation_keyword
+        self.df_translation = pd.read_csv(
+            f"{parent_path}/data/{self.lang.lower()}/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang.lower()}_random_15.csv"
+        )
         self.lexicon = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower()}_translated.csv")
         self.lem_seg = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower().capitalize()}_model_lem_seg.csv", sep='\t')
 
@@ -273,53 +296,58 @@ class translation_final_pass:
         reference_pool = []
         for r in self.df_translation.itertuples():
             t = getattr(r, self.translation_keyword)
-            if isinstance(t, str):
-                if re.search(r"_{2,4}(?:\.[\w\d]+)*", t):
-                    prov = getattr(r, "african_proverb")
-                    if isinstance(prov, str):
-                        prov = prov.translate(translator)
-                    reference_pool.append({"template": t, "embedding": self._get_embedding(prov)})
+            if isinstance(t, str) and re.search(r"_{2,4}(?:\.[\w\d]+)*", t):
+                prov = getattr(r, "african_proverb")
+                if isinstance(prov, str):
+                    prov = prov.translate(translator)
+                reference_pool.append({"template": t, "embedding": self._get_embedding(prov)})
 
         ranked_indices = []
         for row in self.df_translation.itertuples():
             translation = getattr(row, self.translation_keyword)
-            is_borrowed = False
             current_prov = getattr(row, "african_proverb")
-            if not pd.isna(translation) and isinstance(translation, str) and translation.strip():
-                if current_prov is not None and not pd.isna(current_prov) and str(current_prov).strip() != "":
-                    current_prov = current_prov.translate(translator)
-                    current_emb = self._get_embedding(current_prov)
 
-                    best_template = None
-                    best_sim = -1.0
+            raw_prov = current_prov if (current_prov is not None and not pd.isna(current_prov)) else ""
+            clean_prov = str(raw_prov).translate(translator).strip()
 
-                    for ref in reference_pool:
-                        similarity = torch.mm(current_emb, ref["embedding"].T).item()
-                        if similarity > best_sim:
-                            best_sim = similarity
-                            best_template = ref["template"]
+            working_sentence = ""
+            is_borrowed = False
 
-                    if best_template:
-                        working_sentence = best_template
-                        is_borrowed = True
-                    else:
-                        working_sentence = translation
+            has_valid_translation = isinstance(translation, str) and not pd.isna(translation) and bool(translation.strip())
+            has_slots_in_translation = has_valid_translation and bool(re.search(r"_{2,4}(?:\.[\w\d]+)*", translation))
 
-                    if not isinstance(translation, str) or pd.isna(translation):
-                        ranked_indices.append(str(current_prov) if current_prov else "")
-                        continue
+            # Case 1: Translation exists and is complete (no slot placeholders)
+            if has_valid_translation and not has_slots_in_translation:
+                working_sentence = translation
+
+            # Case 2: Translation is missing or contains unfilled slots -> Borrow template
+            elif clean_prov and reference_pool:
+                current_emb = self._get_embedding(clean_prov)
+                best_template = None
+                best_sim = 0.70  # Cosine similarity threshold to avoid irrelevant matches
+
+                for ref in reference_pool:
+                    similarity = torch.mm(current_emb, ref["embedding"].T).item()
+                    if similarity > best_sim:
+                        best_sim = similarity
+                        best_template = ref["template"]
+
+                if best_template:
+                    working_sentence = best_template
+                    is_borrowed = True
+                elif has_valid_translation:
+                    working_sentence = translation
                 else:
-                    ranked_indices.append("")
-                    continue
+                    working_sentence = clean_prov
+            elif has_valid_translation:
+                working_sentence = translation
             else:
-                ranked_indices.append("")
-                continue
+                working_sentence = clean_prov
 
             slots = self.extract_slots(working_sentence)
-            # working_sentence = translation
 
             if is_borrowed:
-                print(f"\n[BantuBERTa Retrieval] Borrowed template for: {getattr(row, 'african_proverb')}")
+                print(f"\n[BantuBERTa Retrieval] Borrowed template for: {current_prov}")
                 print(f"Borrowed Frame: {working_sentence}")
 
             gloss_col = next((col for col in self.lexicon.columns if 'gloss' in col.lower()), 'Glossing')
@@ -351,15 +379,21 @@ class translation_final_pass:
                     ]
                     candidate_pool = filtered_pool if filtered_pool else candidate_pool
 
+                # Ensure candidates have valid English mappings prior to MLM selection
+                candidate_pool = self._filter_translatable_candidates(candidate_pool)
+
                 chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool)
 
                 if chosen_token:
                     english_val = self.resolve_slot_translation(chosen_token, slot_tag=slot_tag)
                     working_sentence = working_sentence.replace(slot_tag, str(english_val), 1)
 
+            # Handle residual slots with fallback candidates
             residual_slots = self.extract_slots(working_sentence)
             if residual_slots:
                 global_fallback_pool = self.lexicon[word_col].dropna().unique().tolist()
+                global_fallback_pool = self._filter_translatable_candidates(global_fallback_pool)
+
                 for residual_tag in residual_slots:
                     fallback_token = self._find_best_candidate(working_sentence, residual_tag, global_fallback_pool)
                     if fallback_token:
@@ -367,5 +401,7 @@ class translation_final_pass:
                         working_sentence = working_sentence.replace(residual_tag, str(english_val), 1)
                     else:
                         working_sentence = working_sentence.replace(residual_tag, "", 1)
+
             ranked_indices.append(working_sentence)
+
         return ranked_indices
