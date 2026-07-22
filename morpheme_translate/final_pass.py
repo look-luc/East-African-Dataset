@@ -106,7 +106,14 @@ class translation_final_pass:
             element = (word, token_ids)
             candidate_groups[length].append(element)
 
+
+        slot_start = working_sentence.find(slot_tag)
+        pre_slot_txt = self.tokenizer(working_sentence[:slot_start], add_special_tokens=False)["input_ids"]
+        start_token_idx = len(pre_slot_txt)+1
         for length, candidates in candidate_groups.items():
+            if length==0:
+                continue
+
             num_masks = max(1, length)
             mask_str = " ".join([self.tokenizer.mask_token] * num_masks)
 
@@ -117,17 +124,15 @@ class translation_final_pass:
                 outputs = self.model(**inputs).logits
                 log_probs = F.log_softmax(outputs, dim=-1)
 
-            mask_token_index = torch.where(inputs["input_ids"][0] == self.tokenizer.mask_token_id)[0]
-
             for candidate, candidate_idx in candidates:
                 current_candidate_score = 0.0
                 for pos_idx in range(length):
-                    mask_pos = mask_token_index[pos_idx]
+                    mask_pos = start_token_idx+pos_idx
                     token_id = candidate_idx[pos_idx]
                     current_candidate_score += log_probs[0, mask_pos, token_id]
                 avg = current_candidate_score / length
                 if avg > highest_score:
-                    highest_score = current_candidate_score
+                    highest_score = avg
                     best_candidate = candidate
 
         return best_candidate
