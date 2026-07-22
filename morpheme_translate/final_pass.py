@@ -108,8 +108,16 @@ class translation_final_pass:
 
 
         slot_start = working_sentence.find(slot_tag)
-        pre_slot_txt = self.tokenizer(working_sentence[:slot_start], add_special_tokens=False)["input_ids"]
-        start_token_idx = len(pre_slot_txt)+1
+        if slot_start == -1:
+            return ""
+
+        pre_slot_tokens = self.tokenizer(working_sentence[:slot_start], add_special_tokens=False)["input_ids"]
+        if len(pre_slot_tokens) > 400:
+            truncated_tokens = pre_slot_tokens[-400:]
+            decoded_pre_slot = self.tokenizer.decode(truncated_tokens)
+            working_sentence = decoded_pre_slot + working_sentence[slot_start:]
+
+        start_token_idx = len(pre_slot_tokens)
         for length, candidates in candidate_groups.items():
             if length==0:
                 continue
@@ -119,7 +127,7 @@ class translation_final_pass:
 
             sentence = working_sentence.replace(slot_tag, mask_str, 1)
 
-            inputs = self.tokenizer(sentence, return_tensors="pt").to(self.device)
+            inputs = self.tokenizer(sentence, truncation=True, max_length=512, return_tensors="pt" ).to(self.device)
             with torch.no_grad(), torch.autocast(device_type=self.device.type, enabled=(self.device.type == "cuda")):
                 outputs = self.model(**inputs).logits
                 log_probs = F.log_softmax(outputs, dim=-1)
