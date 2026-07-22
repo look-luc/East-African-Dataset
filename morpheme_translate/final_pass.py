@@ -117,7 +117,6 @@ class translation_final_pass:
             decoded_pre_slot = self.tokenizer.decode(truncated_tokens)
             working_sentence = decoded_pre_slot + working_sentence[slot_start:]
 
-        start_token_idx = len(pre_slot_tokens)
         for length, candidates in candidate_groups.items():
             if length==0:
                 continue
@@ -127,17 +126,18 @@ class translation_final_pass:
 
             sentence = working_sentence.replace(slot_tag, mask_str, 1)
 
-            inputs = self.tokenizer(sentence, truncation=True, max_length=512, return_tensors="pt" ).to(self.device)
+            inputs = self.tokenizer(sentence, max_length=512, add_special_tokens=True, return_tensors="pt" ).to(self.device)
             with torch.no_grad(), torch.autocast(device_type=self.device.type, enabled=(self.device.type == "cuda")):
                 outputs = self.model(**inputs).logits
                 log_probs = F.log_softmax(outputs, dim=-1)
 
+            mask_pos = torch.where(inputs["input_ids"]==self.tokenizer.mask_token_id)[1]
             for candidate, candidate_idx in candidates:
                 current_candidate_score = 0.0
                 for pos_idx in range(length):
-                    mask_pos = start_token_idx+pos_idx
+                    target_pos = mask_pos[pos_idx]
                     token_id = candidate_idx[pos_idx]
-                    current_candidate_score += log_probs[0, mask_pos, token_id]
+                    current_candidate_score += log_probs[0, target_pos, token_id]
                 avg = current_candidate_score / length
                 if avg > highest_score:
                     highest_score = avg
@@ -293,11 +293,10 @@ class translation_final_pass:
                             best_template = ref["template"]
 
                     if best_template:
-                        translation = best_template
+                        working_sentence = best_template
                         is_borrowed = True
                     else:
-                        ranked_indices.append(translation)
-                        continue
+                        working_sentence = translation
 
                     if not isinstance(translation, str) or pd.isna(translation):
                         ranked_indices.append(str(current_prov) if current_prov else "")
@@ -309,12 +308,12 @@ class translation_final_pass:
                 ranked_indices.append("")
                 continue
 
-            slots = self.extract_slots(translation)
-            working_sentence = translation
+            slots = self.extract_slots(working_sentence)
+            # working_sentence = translation
 
             if is_borrowed:
                 print(f"\n[BantuBERTa Retrieval] Borrowed template for: {getattr(row, 'african_proverb')}")
-                print(f"Borrowed Frame: {translation}")
+                print(f"Borrowed Frame: {working_sentence}")
 
             gloss_col = next((col for col in self.lexicon.columns if 'gloss' in col.lower()), 'Glossing')
             word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
