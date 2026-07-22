@@ -269,30 +269,36 @@ class translation_final_pass:
         for row in self.df_translation.itertuples():
             translation = getattr(row, self.translation_keyword)
             is_borrowed = False
+            current_prov = getattr(row, "african_proverb")
+            if isinstance(translation, str) and translation.strip():
+                if current_prov is not None and str(current_prov) != "" and not pd.isna(current_prov):
+                    current_emb = self._get_embedding(current_prov)
 
-            if not isinstance(translation, str) or pd.isna(translation):
-                current_prov = getattr(row, "african_proverb")
-                current_emb = self._get_embedding(current_prov)
+                    best_template = None
+                    best_sim = -1.0
 
-                best_template = None
-                best_sim = -1.0
+                    for ref in reference_pool:
+                        similarity = torch.mm(current_emb, ref["embedding"].T).item()
+                        if similarity > best_sim:
+                            best_sim = similarity
+                            best_template = ref["template"]
 
-                for ref in reference_pool:
-                    similarity = torch.mm(current_emb, ref["embedding"].T).item()
-                    if similarity > best_sim:
-                        best_sim = similarity
-                        best_template = ref["template"]
+                    if best_template:
+                        translation = best_template
+                        is_borrowed = True
+                    else:
+                        ranked_indices.append(translation)
+                        continue
 
-                if best_template:
-                    translation = best_template
-                    is_borrowed = True
+                    if not isinstance(translation, str) or pd.isna(translation):
+                        ranked_indices.append(str(current_prov) if current_prov else "")
+                        continue
                 else:
-                    ranked_indices.append(translation)
+                    ranked_indices.append("")
                     continue
-
-                if not isinstance(translation, str) or pd.isna(translation):
-                    ranked_indices.append(str(current_prov) if current_prov else "")
-                    continue
+            else:
+                ranked_indices.append("")
+                continue
 
             slots = self.extract_slots(translation)
             working_sentence = translation
