@@ -92,75 +92,44 @@ class translation_final_pass:
             return ""
 
         candidate_pool_str = [str(item) for item in candidate_pool]
-        all_candidate_ids = self.tokenizer(candidate_pool_str, add_special_tokens=False)["input_ids"]
+        candidate_tokenize = self.tokenizer(candidate_pool_str, add_special_tokens=False)
 
         best_candidate = str(candidate_pool_str[0])
         highest_score = -float('inf')
 
-        candidate_pairs = zip(candidate_pool_str, all_candidate_ids)
+        candidate_groups = {}
 
-        for batch in batched(candidate_pairs, self.batch_size):
-            batch_masked_sentences = []
-            batch_cand_ids = []
+        for word in candidate_pool_str:
+            token_ids = candidate_tokenize["token_ids"]
+            length = len(token_ids)
+            if length not in candidate_groups:
+                candidate_groups[length] = []
+            element = (word, token_ids)
+            candidate_groups[length].append(element)
 
-            for candidate, ids in batch:
-                candidate_str = str(candidate)
-                if not ids or all(item == self.tokenizer.unk_token_id for item in ids):
-                    batch_cand_ids.append([])
-                    batch_masked_sentences.append("")
-                    continue
+        for length, candidates in candidate_groups:
+            num_masks = max(1, length)
+            mask_str = " ".join([self.tokenizer.mask_token] * num_masks)
 
-                num_masks = max(1, len(ids))
-                mask_str = " ".join([self.tokenizer.mask_token] * num_masks)
+            sentence = working_sentence.replace(slot_tag, mask_str, 1)
 
-                sentence = working_sentence.replace(slot_tag, mask_str, 1)
-
-                words = sentence.split()
-                if len(words) > 200:
-                    mask_indices = [i for i, w in enumerate(words) if self.tokenizer.mask_token in w]
-                    if mask_indices:
-                        center = mask_indices[0]
-                        start = max(0, center - 100)
-                        end = min(len(words), center + 100)
-                        sentence = " ".join(words[start:end])
-
-                batch_masked_sentences.append(sentence)
-                batch_cand_ids.append(ids)
-
-            valid_indices = [i for i, s in enumerate(batch_masked_sentences) if s]
-            if not valid_indices:
-                continue
-
-            valid_sentences = [batch_masked_sentences[i] for i in valid_indices]
-            inputs = self.tokenizer(valid_sentences, padding=True, truncation=True, max_length=512, return_tensors="pt").to(self.device)
-
+            inputs = self.tokenizer(sentence, return_tensors="pt").to(self.device)
             with torch.no_grad(), torch.autocast(device_type=self.device.type, enabled=(self.device.type == "cuda")):
-                outputs = self.model(**inputs)
-                mask_logits = outputs.logits
-                log_probs = F.log_softmax(mask_logits, dim=-1)
+                outputs = self.model(**inputs).logits
+                log_probs = F.log_softmax(outputs, dim=-1)
 
-            for b_idx, orig_idx in enumerate(valid_indices):
-                candidate_str, cand_ids = batch[orig_idx]
+            mask_token_index = torch.where(inputs["input_ids"][0] == self.tokenizer.mask_token_id)[0]
 
-                mask_token_index = torch.where(inputs["input_ids"][b_idx] == self.tokenizer.mask_token_id)[0]
-                if len(mask_token_index) == 0:
-                    continue
-
-                eval_length = min(len(mask_token_index), len(cand_ids))
-                if eval_length == 0:
-                    continue
-
+            for candidate, candidate_idx in candidates:
                 current_candidate_score = 0.0
-                mask_pos = mask_token_index[:eval_length]
-                token_tensor = torch.tensor(cand_ids[:eval_length]).to(self.device)
-                selected_log_probs = log_probs[b_idx, mask_pos, token_tensor]
-                score_tensor = torch.mean(selected_log_probs)
-
-                current_candidate_score = score_tensor.item()
-
-                if current_candidate_score > highest_score:
+                for pos_idx in range(length):
+                    mask_pos = mask_token_index[pos_idx]
+                    token_id = candidate_idx[pos_idx]
+                    current_candidate_score += log_probs[0, mask_pos, token_id]
+                avg = current_candidate_score / length
+                if avg > highest_score:
                     highest_score = current_candidate_score
-                    best_candidate = candidate_str
+                    best_candidate = candidate
 
         return best_candidate
 
