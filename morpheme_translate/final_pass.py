@@ -297,7 +297,6 @@ class translation_final_pass:
                     if similarity > best_sim:
                         best_sim = similarity
                         best_template = ref["template"]
-
                 if best_template:
                     working_sentence = best_template
                     is_borrowed = True
@@ -354,7 +353,7 @@ class translation_final_pass:
             if residual_slots:
                 global_fallback_pool = [w for w in self.lexicon[word_col].dropna().unique().tolist() if str(w).strip()]
                 global_fallback_pool = self._filter_translatable_candidates(global_fallback_pool)
-                print(f"fallback residual: {global_fallback_pool}")
+                print(f"global fallback pool: {global_fallback_pool}")
 
                 for residual_tag in residual_slots:
                     if residual_tag not in working_sentence:
@@ -362,6 +361,7 @@ class translation_final_pass:
                     fallback_token = self._find_best_candidate(working_sentence, residual_tag, global_fallback_pool)
                     if fallback_token:
                         english_val = self.resolve_slot_translation(fallback_token, residual_tag)
+                        print(f"English val: {english_val}")
                         working_sentence = working_sentence.replace(residual_tag, str(english_val), 1)
                     else:
                         clean_descriptor = re.sub(r"^_{2,4}", "", residual_tag)
