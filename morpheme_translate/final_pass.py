@@ -102,43 +102,39 @@ class translation_final_pass:
         length_groups = {}
 
         for candidate in candidate_pool:
-            token_ids = self.tokenizer(candidate, add_special_tokens=False).input_ids
+            token_ids = self.tokenizer.encode(candidate, add_special_tokens=False)
             length = len(token_ids)
             if length == 0:
                 continue
             if length not in length_groups.keys():
                 length_groups[length] = []
-            length_groups[length].append(token_ids)
+            length_groups[length].append((candidate, token_ids))
 
         for length, candidates in length_groups.items():
             if length == 0:
                 continue
             mask_str = " ".join([self.tokenizer.mask_token] * length)
             masked_sentence = working_sentence.replace(slot_tag, mask_str, 1)
+            input = self.tokenizer(masked_sentence, truncation=True, max_length=512, padding=True, return_tensors="pt").to(self.device)
 
-            for batch in batched(candidates, self.batch_size):
-                batch_sentences = [masked_sentence] * len(batch)
-                input = self.tokenizer(batch_sentences, truncation=True, max_length=512, padding=True, return_tensors="pt").to(self.device)
+            with torch.no_grad(), torch.autocast(device_type=self.device.type, enabled=(self.device.type == "cuda")):
+                outputs = self.model(**input).logits
+                log_probs = F.log_softmax(outputs, dim=-1)
 
-                with torch.no_grad(), torch.autocast(device_type=self.device.type, enabled=(self.device.type == "cuda")):
-                    outputs = self.model(**input).logits
-                    log_probs = F.log_softmax(outputs, dim=-1)
+            mask_pos = torch.where(input["input_ids"]==self.tokenizer.mask_token_id)[1]
+            if len(mask_pos) < length:
+                continue
+            for candidate, idx in candidates:
+                curr_score = 0.0
+                for i in range(length):
+                    pos = mask_pos[i]
+                    token_id_pos = idx[i]
+                    curr_score += log_probs[0, pos, token_id_pos]
 
-                mask_pos = torch.where(input["input_ids"]==self.tokenizer.mask_token_id)[1]
-                if len(mask_pos) < length:
-                    continue
-                for idx, candidate in enumerate(batch):
-                    idx_token_ids = self.tokenizer.encode(candidate, add_special_tokens=False)
-                    curr_score = 0.0
-                    for i in range(length):
-                        pos = mask_pos[i]
-                        token_id_pos = idx_token_ids[i]
-                        curr_score += log_probs[idx, pos, token_id_pos]
-
-                    score = curr_score/length
-                    if score > highest_score:
-                        highest_score = score
-                        best_candidate = candidate
+                score = curr_score/length
+                if score > highest_score:
+                    highest_score = score
+                    best_candidate = candidate
         return best_candidate
 
     def _normalize_lexicon(self) -> dict:
