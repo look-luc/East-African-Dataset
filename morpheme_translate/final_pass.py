@@ -102,7 +102,7 @@ class translation_final_pass:
     def extract_slots(self, template_sentence: str) -> list[str]:
         return re.findall(r"_{2,4}(?:\.[\w\d]+)*", template_sentence)
 
-    def _find_best_candidate(self, working_sentence: str, slot_tag: str, candidate_pool: list, batch_size:int=64) -> str:
+    def _find_best_candidate(self, working_sentence: str, slot_tag: str, candidate_pool: list, batch_size: int = 64) -> str:
         self.batch_size = batch_size
 
         best_candidate = ""
@@ -111,11 +111,13 @@ class translation_final_pass:
         length_groups = {}
 
         for candidate in candidate_pool:
+            if not isinstance(candidate, str) or not candidate.strip():
+                continue
             token_ids = self.tokenizer.encode(candidate, add_special_tokens=False)
             length = len(token_ids)
             if length == 0:
                 continue
-            if length not in length_groups.keys():
+            if length not in length_groups:
                 length_groups[length] = []
             length_groups[length].append((candidate, token_ids))
 
@@ -130,7 +132,7 @@ class translation_final_pass:
                 outputs = self.model(**input).logits
                 log_probs = F.log_softmax(outputs, dim=-1)
 
-            mask_pos = torch.where(input["input_ids"]==self.tokenizer.mask_token_id)[1]
+            mask_pos = torch.where(input["input_ids"] == self.tokenizer.mask_token_id)[1]
             if len(mask_pos) < length:
                 continue
             for candidate, idx in candidates:
@@ -140,7 +142,7 @@ class translation_final_pass:
                     token_id_pos = idx[i]
                     curr_score += log_probs[0, pos, token_id_pos]
 
-                score = curr_score/length
+                score = curr_score / length
                 if score > highest_score:
                     highest_score = score
                     best_candidate = candidate
@@ -181,14 +183,17 @@ class translation_final_pass:
 
     def resolve_slot_translation(self, chosen_token: str, slot_tag: str = "") -> str:
         translator = str.maketrans("", "", string.punctuation)
-        clean_token = self.morph_tokenizer.decode(chosen_token).lower().translate(translator)
+        clean_token = chosen_token.lower().translate(translator)
         clean_tag = re.sub(r"^_{2,4}", "", slot_tag).upper()
 
         if clean_token in self.lem_map:
             return self.lem_map[clean_token]
 
-        target_col_lem = "noun class prediction"
-        glossing_col = target_col_lem
+        target_col_lem = next(
+            (col for col in self.lem_seg.columns if 'english' in col.lower() or 'translation' in col.lower()),
+            self.lem_seg.columns[-1]
+        )
+        glossing_col = next((col for col in self.lem_seg.columns if 'gloss' in col.lower() or 'prediction' in col.lower()), None)
 
         if glossing_col and glossing_col in self.lem_seg.columns:
             target_gloss = f"['{clean_token} {clean_tag}']"
@@ -304,7 +309,7 @@ class translation_final_pass:
             else:
                 working_sentence = clean_prov
 
-            slots = self.extract_slots(working_sentence)
+            slots = sorted(self.extract_slots(working_sentence), key=len, reverse=True)
 
             if is_borrowed:
                 print(f"\n[BantuBERTa Retrieval] Borrowed template for: {current_prov}")
@@ -314,6 +319,9 @@ class translation_final_pass:
             word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else ('word' if 'word' in self.lexicon.columns else self.lexicon.columns[0])
 
             for slot_tag in slots:
+                if slot_tag not in working_sentence:
+                    continue
+
                 clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
                 tag_components = [
                     re.sub(r"^N(\d+)$", r"BANTU\1", c.upper())
@@ -321,16 +329,16 @@ class translation_final_pass:
                 ]
                 candidate_pool: list = []
                 if not tag_components:
-                    candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
-                if tag_components:
+                    candidate_pool = [w for w in self.lexicon[word_col].dropna().unique().tolist() if str(w).strip()]
+                else:
                     mask = pd.Series(True, index=self.lexicon.index)
                     for comp in tag_components:
                         if gloss_col in self.lexicon.columns:
-                            mask &= self.lexicon[gloss_col].str.contains(comp, na=False, regex=False)
-                    candidate_pool = self.lexicon[mask][word_col].dropna().unique().tolist()
+                            mask &= self.lexicon[gloss_col].astype(str).str.contains(comp, case=False, na=False, regex=False)
+                    candidate_pool = [w for w in self.lexicon[mask][word_col].dropna().unique().tolist() if str(w).strip()]
 
                 if not candidate_pool:
-                    candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
+                    candidate_pool = [w for w in self.lexicon[word_col].dropna().unique().tolist() if str(w).strip()]
 
                 candidate_pool = self._filter_translatable_candidates(candidate_pool)
 
@@ -340,12 +348,14 @@ class translation_final_pass:
                     english_val = self.resolve_slot_translation(chosen_token, slot_tag=slot_tag)
                     working_sentence = working_sentence.replace(slot_tag, str(english_val), 1)
 
-            residual_slots = self.extract_slots(working_sentence)
+            residual_slots = sorted(self.extract_slots(working_sentence), key=len, reverse=True)
             if residual_slots:
-                global_fallback_pool = self.lexicon[word_col].dropna().unique().tolist()
+                global_fallback_pool = [w for w in self.lexicon[word_col].dropna().unique().tolist() if str(w).strip()]
                 global_fallback_pool = self._filter_translatable_candidates(global_fallback_pool)
 
                 for residual_tag in residual_slots:
+                    if residual_tag not in working_sentence:
+                        continue
                     fallback_token = self._find_best_candidate(working_sentence, residual_tag, global_fallback_pool)
                     if fallback_token:
                         english_val = self.resolve_slot_translation(fallback_token, residual_tag)
