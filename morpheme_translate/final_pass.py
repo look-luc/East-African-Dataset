@@ -135,6 +135,7 @@ class translation_final_pass:
                 if score > highest_score:
                     highest_score = score
                     best_candidate = candidate
+        print(f"best candidate: {best_candidate}")
         return best_candidate
 
     def _normalize_lexicon(self) -> dict:
@@ -186,6 +187,7 @@ class translation_final_pass:
         if root in self.lem_map:
             return self.lem_map[root]
 
+        print(f"clean tokens: {clean_token}")
         return clean_token
 
     def ranked_translation(self, fig_or_lit: str, translation_keyword: str = "translation", lang: str | None = None):
