@@ -32,19 +32,26 @@ class translation_final_pass:
         self.morph_model = AutoModelForSeq2SeqLM.from_pretrained(self.morph_model_name).to(self.device)
         self.morph_cache: dict[str, str] = {}
 
+        self.batch_size = 64
+
     def _get_embedding(self, text):
-        inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512).to(self.device)
-        with torch.no_grad():
-            outputs = self.model(**inputs, output_hidden_states=True)
-            last_hidden_state = outputs.hidden_states[-1]  # [batch_size, seq_len, hidden_dim]
+        all_embeddings = []
 
-            # Mask out padding tokens during mean calculation
-            attention_mask = inputs["attention_mask"].unsqueeze(-1).expand(last_hidden_state.size()).float()
-            sum_embeddings = torch.sum(last_hidden_state * attention_mask, dim=1)
-            sum_mask = torch.clamp(attention_mask.sum(dim=1), min=1e-9)
+        for batch in batched(text, self.batch_size):
+            inputs = self.tokenizer(batch, return_tensors="pt", padding=True, truncation=True, max_length=512).to(self.device)
+            with torch.no_grad():
+                outputs = self.model(**inputs, output_hidden_states=True)
+                last_hidden_state = outputs.hidden_states[-1]  # [batch_size, seq_len, hidden_dim]
 
-            mean_pooled = sum_embeddings / sum_mask
-        return F.normalize(mean_pooled, p=2, dim=1)
+                # Mask out padding tokens during mean calculation
+                attention_mask = inputs["attention_mask"].unsqueeze(-1).expand(last_hidden_state.size()).float()
+                sum_embeddings = torch.sum(last_hidden_state * attention_mask, dim=1)
+                sum_mask = torch.clamp(attention_mask.sum(dim=1), min=1e-9)
+
+                mean_pooled = sum_embeddings / sum_mask
+                normalize = F.normalize(mean_pooled, p=2, dim=1)
+                all_embeddings.append(normalize)
+        return torch.cat(all_embeddings, dim=0)
 
     def predict_morphology(self, words: str | list[str], batch_size:int=64)-> str | dict[str, str]:
         self.batch_size = batch_size
@@ -173,27 +180,36 @@ class translation_final_pass:
     def resolve_slot_translation(self, chosen_token: str, slot_tag: str = "") -> str:
         translator = str.maketrans("", "", string.punctuation)
         clean_token = chosen_token.lower().translate(translator)
-        tag = re.sub(r"^_{2,4}.", "", slot_tag.replace(".",";"))
-        if f"['{clean_token} {tag.upper()}']" in self.lem_seg:
-            gloss_idx = self.lem_seg.loc[self.lem_seg["glossing"]== f"['{clean_token} {slot_tag.upper()}']"]
-            return str(self.lem_seg["English translation"].values[gloss_idx])
+        clean_tag = re.sub(r"^_{2,4}", "", slot_tag).upper()
+
         if clean_token in self.lem_map:
             return self.lem_map[clean_token]
 
-        raw_analysis = self.predict_morphology(clean_token, batch_size=64)
+        target_col_lem = "noun class prediction"
+        glossing_col = target_col_lem
 
-        root_match = re.search(r"\-\s*([\w]+)$", raw_analysis)
+        if glossing_col and glossing_col in self.lem_seg.columns:
+            target_gloss = f"['{clean_token} {clean_tag}']"
+            matched_rows = self.lem_seg[self.lem_seg[glossing_col] == target_gloss]
+            if not matched_rows.empty:
+                return str(matched_rows[target_col_lem].iloc[0])
+
+        raw_analysis = self.predict_morphology(clean_token, batch_size=64)
+        analysis_str = raw_analysis if isinstance(raw_analysis, str) else ""
+        root_match = re.search(r"\-\s*([\w]+)$", analysis_str)
         root = root_match.group(1).lower() if root_match else ""
 
-        if root in self.lem_map:
+        if root and root in self.lem_map:
             return self.lem_map[root]
 
-        clean_tag = re.sub(r"^_{2,4}", "", slot_tag).upper()
+        normalized_tag = re.sub(r"^N(\d+)$", r"BANTU\1", clean_tag)
+        if normalized_tag in self.grammar_map:
+            return self.grammar_map[normalized_tag]
         if clean_tag in self.grammar_map:
             return self.grammar_map[clean_tag]
 
         print(f"clean tokens: {clean_token}")
-        return f"[{clean_tag}]"
+        return f"['{clean_tag} {clean_tag}']"
 
     def ranked_translation(self, fig_or_lit: str, translation_keyword: str = "translation", lang: str | None = None):
         if lang is None:
@@ -201,14 +217,7 @@ class translation_final_pass:
 
         self.lang = lang
         self.translation_keyword = translation_keyword
-        self.df_translation = pd.read_csv(
-            f"{parent_path}/data/{self.lang.lower()}/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang.lower()}_random_15.csv"
-        )
-        if self.lang is None:
-            raise ValueError("Provide a language")
 
-        self.lang = lang
-        self.translation_keyword = translation_keyword
         self.df_translation = pd.read_csv(
             f"{parent_path}/data/{self.lang.lower()}/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang.lower()}_random_15.csv"
         )
@@ -267,11 +276,9 @@ class translation_final_pass:
             has_valid_translation = isinstance(translation, str) and not pd.isna(translation) and bool(translation.strip())
             has_slots_in_translation = has_valid_translation and bool(re.search(r"_{2,4}(?:\.[\w\d]+)*", translation))
 
-            # Case 1: Translation exists and is complete (no slot placeholders)
             if has_valid_translation and not has_slots_in_translation:
                 working_sentence = translation
 
-            # Case 2: Translation is missing or contains unfilled slots -> Borrow template
             elif clean_prov and reference_pool:
                 current_emb = self._get_embedding(clean_prov)
                 best_template = None
@@ -310,7 +317,7 @@ class translation_final_pass:
                     re.sub(r"^N(\d+)$", r"BANTU\1", c.upper())
                     for c in clean_tag.split('.') if c
                 ]
-                candidate_pool:list = []
+                candidate_pool: list = []
                 if not tag_components:
                     candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
                 if tag_components:
@@ -321,9 +328,8 @@ class translation_final_pass:
                     candidate_pool = self.lexicon[mask][word_col].dropna().unique().tolist()
 
                 if not candidate_pool:
-                    candidate_pool = candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
+                    candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
 
-                # Ensure candidates have valid English mappings prior to MLM selection
                 candidate_pool = self._filter_translatable_candidates(candidate_pool)
 
                 chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool)
@@ -332,7 +338,6 @@ class translation_final_pass:
                     english_val = self.resolve_slot_translation(chosen_token, slot_tag=slot_tag)
                     working_sentence = working_sentence.replace(slot_tag, str(english_val), 1)
 
-            # Handle residual slots with fallback candidates
             residual_slots = self.extract_slots(working_sentence)
             if residual_slots:
                 global_fallback_pool = self.lexicon[word_col].dropna().unique().tolist()
@@ -341,7 +346,7 @@ class translation_final_pass:
                 for residual_tag in residual_slots:
                     fallback_token = self._find_best_candidate(working_sentence, residual_tag, global_fallback_pool)
                     if fallback_token:
-                        english_val = self.resolve_slot_translation(fallback_token, slot_tag=residual_tag)
+                        english_val = self.resolve_slot_translation(fallback_token, residual_tag)
                         working_sentence = working_sentence.replace(residual_tag, str(english_val), 1)
                     else:
                         clean_descriptor = re.sub(r"^_{2,4}", "", residual_tag)
