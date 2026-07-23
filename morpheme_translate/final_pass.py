@@ -104,7 +104,10 @@ class translation_final_pass:
         for candidate in candidate_pool:
             token_ids = self.tokenizer(candidate, add_special_tokens=False).input_ids
             length = len(token_ids)
-            length_groups[length] = []
+            if length == 0:
+                continue
+            if length not in length_groups.keys():
+                length_groups[length] = []
             length_groups[length].append(token_ids)
 
         for length, candidates in length_groups.items():
