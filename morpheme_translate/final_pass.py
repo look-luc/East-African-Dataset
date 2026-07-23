@@ -36,6 +36,8 @@ class translation_final_pass:
 
     def _get_embedding(self, text):
         all_embeddings = []
+        if isinstance(text, str):
+            text = [text]
 
         for batch in batched(text, self.batch_size):
             inputs = self.tokenizer(batch, return_tensors="pt", padding=True, truncation=True, max_length=512).to(self.device)
@@ -179,7 +181,7 @@ class translation_final_pass:
 
     def resolve_slot_translation(self, chosen_token: str, slot_tag: str = "") -> str:
         translator = str.maketrans("", "", string.punctuation)
-        clean_token = chosen_token.lower().translate(translator)
+        clean_token = self.morph_tokenizer.decode(chosen_token).lower().translate(translator)
         clean_tag = re.sub(r"^_{2,4}", "", slot_tag).upper()
 
         if clean_token in self.lem_map:
