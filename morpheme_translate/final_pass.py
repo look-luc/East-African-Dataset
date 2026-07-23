@@ -202,6 +202,7 @@ class translation_final_pass:
                 return str(matched_rows[target_col_lem].iloc[0])
 
         raw_analysis = self.predict_morphology(clean_token, batch_size=64)
+        print(f"raw analysis with predict morphology: {raw_analysis}")
         analysis_str = raw_analysis if isinstance(raw_analysis, str) else ""
         root_match = re.search(r"\-\s*([\w]+)$", analysis_str)
         root = root_match.group(1).lower() if root_match else ""
@@ -343,6 +344,7 @@ class translation_final_pass:
                 candidate_pool = self._filter_translatable_candidates(candidate_pool)
 
                 chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool)
+                print(f"first run of find best candidate: {chosen_token}")
 
                 if chosen_token:
                     english_val = self.resolve_slot_translation(chosen_token, slot_tag=slot_tag)
@@ -352,6 +354,7 @@ class translation_final_pass:
             if residual_slots:
                 global_fallback_pool = [w for w in self.lexicon[word_col].dropna().unique().tolist() if str(w).strip()]
                 global_fallback_pool = self._filter_translatable_candidates(global_fallback_pool)
+                print(f"fallback residual: {global_fallback_pool}")
 
                 for residual_tag in residual_slots:
                     if residual_tag not in working_sentence:
