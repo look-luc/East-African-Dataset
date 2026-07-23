@@ -173,9 +173,10 @@ class translation_final_pass:
     def resolve_slot_translation(self, chosen_token: str, slot_tag: str = "") -> str:
         translator = str.maketrans("", "", string.punctuation)
         clean_token = chosen_token.lower().translate(translator)
-
-        if clean_token in self.lexicon_map:
-            return self.lexicon_map[clean_token]
+        tag = re.sub(r"^_{2,4}.", "", slot_tag.replace(".",";"))
+        if f"['{clean_token} {tag.upper()}']" in self.lem_seg:
+            gloss_idx = self.lem_seg.loc[self.lem_seg["glossing"]== f"['{clean_token} {slot_tag.upper()}']"]
+            return str(self.lem_seg["English translation"].values[gloss_idx])
         if clean_token in self.lem_map:
             return self.lem_map[clean_token]
 
@@ -187,8 +188,12 @@ class translation_final_pass:
         if root in self.lem_map:
             return self.lem_map[root]
 
+        clean_tag = re.sub(r"^_{2,4}", "", slot_tag).upper()
+        if clean_tag in self.grammar_map:
+            return self.grammar_map[clean_tag]
+
         print(f"clean tokens: {clean_token}")
-        return clean_token
+        return f"[{clean_tag}]"
 
     def ranked_translation(self, fig_or_lit: str, translation_keyword: str = "translation", lang: str | None = None):
         if lang is None:
@@ -297,7 +302,7 @@ class translation_final_pass:
                 print(f"Borrowed Frame: {working_sentence}")
 
             gloss_col = next((col for col in self.lexicon.columns if 'gloss' in col.lower()), 'Glossing')
-            word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else 'word'
+            word_col = 'Surface Word' if 'Surface Word' in self.lexicon.columns else ('word' if 'word' in self.lexicon.columns else self.lexicon.columns[0])
 
             for slot_tag in slots:
                 clean_tag = re.sub(r"^_{2,4}", "", slot_tag)
@@ -305,25 +310,18 @@ class translation_final_pass:
                     re.sub(r"^N(\d+)$", r"BANTU\1", c.upper())
                     for c in clean_tag.split('.') if c
                 ]
-
+                candidate_pool:list = []
+                if not tag_components:
+                    candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
                 if tag_components:
                     mask = pd.Series(True, index=self.lexicon.index)
                     for comp in tag_components:
                         if gloss_col in self.lexicon.columns:
                             mask &= self.lexicon[gloss_col].str.contains(comp, na=False, regex=False)
                     candidate_pool = self.lexicon[mask][word_col].dropna().unique().tolist()
-                else:
-                    candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
 
-                if tag_components and candidate_pool and self.glosses:
-                    filtered_pool = [
-                        word for word in candidate_pool if str(word) in self.glosses and any(
-                            comp in self.glosses[str(word)]
-                            or any(comp in tag for tag in self.glosses[str(word)])
-                            for comp in tag_components
-                        )
-                    ]
-                    candidate_pool = filtered_pool if filtered_pool else candidate_pool
+                if not candidate_pool:
+                    candidate_pool = candidate_pool = self.lexicon[word_col].dropna().unique().tolist()
 
                 # Ensure candidates have valid English mappings prior to MLM selection
                 candidate_pool = self._filter_translatable_candidates(candidate_pool)
@@ -346,7 +344,8 @@ class translation_final_pass:
                         english_val = self.resolve_slot_translation(fallback_token, slot_tag=residual_tag)
                         working_sentence = working_sentence.replace(residual_tag, str(english_val), 1)
                     else:
-                        working_sentence = working_sentence.replace(residual_tag, "", 1)
+                        clean_descriptor = re.sub(r"^_{2,4}", "", residual_tag)
+                        working_sentence = working_sentence.replace(residual_tag, f"[{clean_descriptor}]", 1)
 
             ranked_indices.append(working_sentence)
 
