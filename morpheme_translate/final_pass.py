@@ -38,18 +38,7 @@ class translation_final_pass:
         self.morph_model = AutoModelForSeq2SeqLM.from_pretrained(self.morph_model_name).to(self.device)
         self.morph_cache: dict[str, str] = {}
 
-        self.nllb_tag = {
-            "ganda": "lug_Latn",
-            "gikuyu": "kik_Latn",
-            "tshiluba": "lua_Latn",
-            "chiga": "cgg_Latn",
-            "tooro": "ttj_Latn",
-            "runyoro": "nyo_Latn",
-            "kamba": "kamn_Latn"
-        }
         self.translation_model_name = translation_model_name
-        self.translation_tokenizer = AutoTokenizer.from_pretrained(self.translation_model_name, nllb_lang)
-        self.translation_model = AutoModelForSeq2SeqLM.from_pretrained(self.translation_model_name).to(self.device)
 
         self.batch_size = 64
 
@@ -244,6 +233,19 @@ class translation_final_pass:
         if lang is None:
             raise ValueError("Provide a language")
 
+        nllb_lang = self.nllb_tag[self.lang.lower()]
+        self.nllb_tag = {
+            "ganda": "lug_Latn",
+            "gikuyu": "kik_Latn",
+            "tshiluba": "lua_Latn",
+            "chiga": "cgg_Latn",
+            "tooro": "ttj_Latn",
+            "runyoro": "nyo_Latn",
+            "kamba": "kamn_Latn"
+        }
+        self.translation_tokenizer = AutoTokenizer.from_pretrained(self.translation_model_name, nllb_lang)
+        self.translation_model = AutoModelForSeq2SeqLM.from_pretrained(self.translation_model_name).to(self.device)
+
         self.lang = lang
         self.translation_keyword = translation_keyword
 
@@ -401,7 +403,6 @@ class translation_final_pass:
 
             ranked_indices.append(working_sentence)
 
-        nllb_lang = self.nllb_tag[self.lang.lower()]
         for idx in ranked_indices:
             for pos, word in enumerate(idx.split(" ")):
                 if word not in words.words():
