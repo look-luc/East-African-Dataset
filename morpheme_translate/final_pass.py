@@ -405,11 +405,12 @@ class translation_final_pass:
 
             ranked_indices.append(working_sentence)
 
-        for idx in ranked_indices:
-            sentence = idx.split(" ")
-            for pos, word in enumerate(sentence):
+        updated_ranked_indices = []
+        for sentence in ranked_indices:
+            word_list = sentence.split(" ")
+            for pos, word in enumerate(word_list):
                 if word not in words.words():
-                    replace_inout = self.translation_tokenizer(word, return_tensors="pt")
+                    replace_inout = self.translation_tokenizer(word, return_tensors="pt").to(self.device)
                     tgt_token_id = self.translation_tokenizer.convert_tokens_to_ids("eng_Latn")
                     with torch.no_grad():
                         output = self.translation_model.generate(
@@ -418,7 +419,9 @@ class translation_final_pass:
                             max_length=128,
                             num_beams=4,
                             early_stopping=True
-                        ).to(self.device)
-                    replace_word = self.translation_tokenizer.decode(output[0], skip_special_tolens=True)
-                    idx[pos] = replace_word
-        return ranked_indices
+                        )
+                    replace_word = self.translation_tokenizer.decode(output[0], skip_special_tokens=True)
+                    word_list[pos] = replace_word
+            updated_ranked_indices.append(" ".join(word_list))
+
+        return updated_ranked_indices
