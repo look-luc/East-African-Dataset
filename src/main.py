@@ -18,11 +18,9 @@ def main(path, task:str, lang:str, proverbs):
         print("Loading datasets...")
         data = Get_Data()
 
-        # Determine if the target language uses augments
         target_lang = str(lang).lower()
 
         print(f"Generating rough morpheme breaks for {target_lang}...")
-        # Pass down the configuration flag to your segmentation tool
         data["morpheme_breaks"] = md.segment(df=data, product_threshold=25)
 
         folder = Path(script_dir) / "data"
@@ -59,15 +57,16 @@ def main(path, task:str, lang:str, proverbs):
             for langs in languages:
                 passes = final_pass.ranked_translation(fig_or_lit="lit", translation_keyword="translation", lang=langs)
 
-                translation_df = pd.read_csv(f"{script_dir}/data/{lang.lower()}/lit_{lang.lower()}_random_15 - lit_{lang}_random_15.csv")
-                translation_df = translation_df[translation_df["who"].notna()]
+                translation_df = pd.read_csv(f"{script_dir}/data/{langs.lower()}/lit_{langs.lower()}_random_15 - lit_{langs}_random_15.csv")
                 translation_df["final pass"] = passes
+                translation_df["final pass"] = translation_df["final pass"].fillna(translation_df["translation"])
                 translation_df.to_csv(f"{script_dir}/data/{langs.lower()}/lit_{langs.lower()}_completed.csv", index=False)
         else:
             passes = final_pass.ranked_translation(fig_or_lit="lit", translation_keyword="translation", lang=lang)
 
             translation_df = pd.read_csv(f"{script_dir}/data/{lang.lower()}/lit_{lang.lower()}_random_15 - lit_{lang}_random_15.csv")
             translation_df["final pass"] = passes
+            translation_df["final pass"] = translation_df["final pass"].fillna(translation_df["translation"])
             translation_df.to_csv(f"{script_dir}/data/{lang.lower()}/lit_{lang.lower()}_completed.csv", index=False)
 
         print(f"Saved complete dynamic translations for {lang}!")

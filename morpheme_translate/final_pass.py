@@ -53,9 +53,8 @@ class translation_final_pass:
             inputs = self.tokenizer(batch, return_tensors="pt", padding=True, truncation=True, max_length=512).to(self.device)
             with torch.no_grad():
                 outputs = self.model(**inputs, output_hidden_states=True)
-                last_hidden_state = outputs.hidden_states[-1]  # [batch_size, seq_len, hidden_dim]
+                last_hidden_state = outputs.hidden_states[-1]
 
-                # Mask out padding tokens during mean calculation
                 attention_mask = inputs["attention_mask"].unsqueeze(-1).expand(last_hidden_state.size()).float()
                 sum_embeddings = torch.sum(last_hidden_state * attention_mask, dim=1)
                 sum_mask = torch.clamp(attention_mask.sum(dim=1), min=1e-9)
@@ -176,7 +175,6 @@ class translation_final_pass:
         return lookup_map
 
     def _filter_translatable_candidates(self, candidate_pool: list) -> list:
-        """Filters candidate words to those with known English entries in lexicon_map or lem_map."""
         translatable = []
         translator = str.maketrans("", "", string.punctuation)
         for word in candidate_pool:
@@ -312,7 +310,7 @@ class translation_final_pass:
             elif clean_prov and reference_pool:
                 current_emb = self._get_embedding(clean_prov)
                 best_template = None
-                best_sim = 0.70  # Cosine similarity threshold to avoid irrelevant matches
+                best_sim = 0.70
 
                 for ref in reference_pool:
                     similarity = torch.mm(current_emb, ref["embedding"].T).item()
