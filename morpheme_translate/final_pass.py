@@ -6,6 +6,7 @@ from pathlib import Path
 import pandas as pd
 import torch
 import torch.nn.functional as F
+from nltk.corpus import words
 from transformers import AutoModelForMaskedLM, AutoModelForSeq2SeqLM, AutoTokenizer
 
 parent_path = script_dir = Path(__file__).resolve().parent.parent if '__file__' in globals() else Path('.').resolve()
@@ -15,6 +16,7 @@ class translation_final_pass:
         self,
         model_name: str = "dsfsi/BantuBERTa",
         morph_model_name: str = "thiomi/bantumorph-v7",
+        translation_model_name:str = "masakhane/",
         data_file: str = f"{parent_path}/data/data.csv",
         grammar_file: str = f"{parent_path}/data/bantu_grammar_lookup.csv",
     ) -> None:
@@ -31,6 +33,10 @@ class translation_final_pass:
         self.morph_tokenizer = AutoTokenizer.from_pretrained(self.morph_model_name)
         self.morph_model = AutoModelForSeq2SeqLM.from_pretrained(self.morph_model_name).to(self.device)
         self.morph_cache: dict[str, str] = {}
+
+        self.translation_model_name = translation_model_name
+        self.translation_tokenizer = AutoTokenizer.from_pretrained(self.translation_model_name)
+        self.translation_model = AutoModelForSeq2SeqLM.from_pretrained(self.translation_model_name).to(self.device)
 
         self.batch_size = 64
 
@@ -241,8 +247,8 @@ class translation_final_pass:
         self.lexicon_map = self._normalize_lexicon()
 
         word_col_lem = 'Surface Word' if 'Surface Word' in self.lem_seg.columns else ('word' if 'word' in self.lem_seg.columns else self.lem_seg.columns[0])
-        target_col_lem = next((col for col in self.lexicon.columns if 'english' in col.lower() or 'translation' in col.lower()))
-        self.lem_map = dict(zip(self.lem_seg[word_col_lem].astype(str).str.lower(), self.lem_seg[target_col_lem].astype(str)))
+        target_col_lem = 'Surface Word'
+        self.lem_map = dict(zip(self.lem_seg[word_col_lem].astype(str).str.lower(), self.lexicon[target_col_lem].astype(str)))
 
         tag_col_gram = 'tag' if 'tag' in self.grammar_lookup.columns else self.grammar_lookup.columns[0]
         target_col_gram = next(
@@ -383,4 +389,11 @@ class translation_final_pass:
 
             ranked_indices.append(working_sentence)
 
+        for idx in ranked_indices:
+            for pos, word in enumerate(idx.split(" ")):
+                if word not in words.words():
+                    replace_inout = self.morph_tokenizer(word, return_tensors="pt")
+                    output = self.morph_model.generate(**replace_inout, max_length=128, num_beams=4, early_stopping=True).to(self.device)
+                    replace_word = self.translation_tokenizer.decode(output[0], skip_special_tolens=True)
+                    idx[pos] = replace_word
         return ranked_indices
