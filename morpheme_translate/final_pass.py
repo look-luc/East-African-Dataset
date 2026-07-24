@@ -182,12 +182,15 @@ class translation_final_pass:
         return translatable if translatable else candidate_pool
 
     def resolve_slot_translation(self, chosen_token: str, slot_tag: str = "") -> str:
+        print(f"[DEBUG resolve_slot_translation INPUT] chosen_token: {repr(chosen_token)} (Type: {type(chosen_token)}), slot_tag: {repr(slot_tag)}")
         translator = str.maketrans("", "", string.punctuation)
         clean_token = chosen_token.lower().translate(translator)
         clean_tag = re.sub(r"^_{2,4}", "", slot_tag).upper()
 
         if clean_token in self.lem_map:
-            return self.lem_map[clean_token]
+            res = self.lem_map[clean_token]
+            print(f"[DEBUG resolve_slot_translation OUTPUT from lem_map] {repr(res)} (Type: {type(res)})")
+            return res
 
         target_col_lem = next(
             (col for col in self.lem_seg.columns if 'english' in col.lower() or 'translation' in col.lower()),
@@ -247,6 +250,14 @@ class translation_final_pass:
             self.grammar_lookup.columns[-1]
         )
         self.grammar_map = dict(zip(self.grammar_lookup[tag_col_gram].astype(str).str.upper(), self.grammar_lookup[target_col_gram].astype(str)))
+
+        # Inspect lem_map samples
+        sample_lem = list(self.lem_map.items())[:3]
+        print(f"[DEBUG map inspection] lem_map samples: {sample_lem}")
+
+        # Inspect grammar_map samples
+        sample_gram = list(self.grammar_map.items())[:3]
+        print(f"[DEBUG map inspection] grammar_map samples: {sample_gram}")
 
         self.glosses: dict[str, set[str]] = {}
         word_col_lex = 'Surface Word' if 'Surface Word' in self.lexicon.columns else ('word' if 'word' in self.lexicon.columns else self.lexicon.columns[0])
@@ -308,6 +319,8 @@ class translation_final_pass:
                 working_sentence = translation
             else:
                 working_sentence = clean_prov
+            print(f"[DEBUG Frame Selection] Is Borrowed: {is_borrowed}")
+            print(f"[DEBUG Frame Selection] working_sentence: {repr(working_sentence)} (Type: {type(working_sentence)})")
 
             slots = sorted(self.extract_slots(working_sentence), key=len, reverse=True)
 
@@ -345,10 +358,11 @@ class translation_final_pass:
                 chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool)
                 # print(f"first run of find best candidate: {chosen_token}")
 
-                if chosen_token:
+                if chosen_token: #ISSUE!!!!!!
                     english_val = self.resolve_slot_translation(chosen_token, slot_tag=slot_tag)
+                    print(f"[DEBUG] english val: {english_val}")
                     working_sentence = working_sentence.replace(slot_tag, str(english_val), 1)
-                    print(f"chosen token slot tag replaace: {working_sentence}")
+                    print(f"[DEBUG] chosen token slot tag replaace: {working_sentence}")
 
             residual_slots = sorted(self.extract_slots(working_sentence), key=len, reverse=True)
             if residual_slots:
