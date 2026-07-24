@@ -53,8 +53,9 @@ def main(path, task:str, lang:str, proverbs):
     elif task == "final_pass":
         final_pass = translation_final_pass()
         if lang.lower() == "all":
-            languages = ["ganda", "gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamba"]
+            languages = ["ganda", "gikuyu", "chiga", "tooro", "runyoro", "kamba"]
             for langs in languages:
+                print(f"----------------working on {langs}----------------")
                 passes = final_pass.ranked_translation(fig_or_lit="lit", translation_keyword="translation", lang=langs)
 
                 translation_df = pd.read_csv(f"{script_dir}/data/{langs.lower()}/lit_{langs.lower()}_random_15 - lit_{langs}_random_15.csv")
