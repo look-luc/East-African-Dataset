@@ -241,7 +241,7 @@ class translation_final_pass:
         self.lexicon_map = self._normalize_lexicon()
 
         word_col_lem = 'Surface Word' if 'Surface Word' in self.lem_seg.columns else ('word' if 'word' in self.lem_seg.columns else self.lem_seg.columns[0])
-        target_col_lem = next((col for col in self.lem_seg.columns if 'english' in col.lower() or 'translation' in col.lower()), self.lem_seg.columns[-1])
+        target_col_lem = next((col for col in self.lexicon.columns if 'english' in col.lower() or 'translation' in col.lower()))
         self.lem_map = dict(zip(self.lem_seg[word_col_lem].astype(str).str.lower(), self.lem_seg[target_col_lem].astype(str)))
 
         tag_col_gram = 'tag' if 'tag' in self.grammar_lookup.columns else self.grammar_lookup.columns[0]
@@ -358,7 +358,7 @@ class translation_final_pass:
                 chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool)
                 # print(f"first run of find best candidate: {chosen_token}")
 
-                if chosen_token: #ISSUE!!!!!!
+                if chosen_token:
                     english_val = self.resolve_slot_translation(chosen_token, slot_tag=slot_tag)
                     print(f"[DEBUG] english val: {english_val}")
                     working_sentence = working_sentence.replace(slot_tag, str(english_val), 1)
