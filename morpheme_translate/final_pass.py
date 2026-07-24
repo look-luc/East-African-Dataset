@@ -14,6 +14,7 @@ from transformers import (
 )
 
 parent_path = script_dir = Path(__file__).resolve().parent.parent if '__file__' in globals() else Path('.').resolve()
+nltk.download('words')
 
 class translation_final_pass:
     def __init__(
