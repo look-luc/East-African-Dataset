@@ -247,10 +247,10 @@ class translation_final_pass:
 
         self.translation_keyword = translation_keyword
 
-        self.df_translation = pd.read_csv(
+        self.df_translation_preshrink = pd.read_csv(
             f"{parent_path}/data/{self.lang.lower()}/{fig_or_lit}_{self.lang.lower()}_random_15 - {fig_or_lit}_{self.lang.lower()}_random_15.csv"
         )
-        self.df_translation = self.df_translation[self.df_translation["who"].notna()]
+        self.df_translation = self.df_translation_preshrink[self.df_translation_preshrink["who"].notna()]
         self.lexicon = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower()}_translated.csv")
         self.lem_seg = pd.read_csv(f"{parent_path}/data/{self.lang.lower()}/{self.lang.lower().capitalize()}_model_lem_seg.csv", sep='\t')
 
