@@ -408,4 +408,4 @@ class translation_final_pass:
                     word_list[pos] = replace_word
             updated_ranked_indices.append(" ".join(word_list))
 
-        return updated_ranked_indices
+        return pd.Series(updated_ranked_indices, index=self.df_translation.index)
