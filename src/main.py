@@ -1,8 +1,12 @@
 from pathlib import Path
 
+import pandas as pd
+import torch
+
 import rough_morpheme.morpheme_counter as m_count
 import rough_morpheme.morpheme_draft as md
 from data.get_data import Get_Data
+from morpheme_translate.final_pass import translation_final_pass
 from morpheme_translate.model_segment import model_extract
 from morpheme_translate.translate import translation
 from semantic_score.Semantic_Score import compute_structural_metrics
@@ -14,11 +18,9 @@ def main(path, task:str, lang:str, proverbs):
         print("Loading datasets...")
         data = Get_Data()
 
-        # Determine if the target language uses augments
         target_lang = str(lang).lower()
 
         print(f"Generating rough morpheme breaks for {target_lang}...")
-        # Pass down the configuration flag to your segmentation tool
         data["morpheme_breaks"] = md.segment(df=data, product_threshold=25)
 
         folder = Path(script_dir) / "data"
@@ -48,3 +50,23 @@ def main(path, task:str, lang:str, proverbs):
     elif task == "metrics":
         gloss_rel_path, translation_column = ""
         compute_structural_metrics(lang, gloss_rel_path, translation_column)
+    elif task == "final_pass":
+        final_pass = translation_final_pass()
+        if lang.lower() == "all":
+            languages = ["ganda", "gikuyu", "tshiluba", "chiga", "tooro", "runyoro", "kamba"]
+            for langs in languages:
+                passes = final_pass.ranked_translation(fig_or_lit="lit", translation_keyword="translation", lang=langs)
+
+                translation_df = pd.read_csv(f"{script_dir}/data/{langs.lower()}/lit_{langs.lower()}_random_15 - lit_{langs}_random_15.csv")
+                translation_df["final pass"] = passes
+                translation_df["final pass"] = translation_df["final pass"].fillna(translation_df["translation"])
+                translation_df.to_csv(f"{script_dir}/data/{langs.lower()}/lit_{langs.lower()}_completed.csv", index=False)
+        else:
+            passes = final_pass.ranked_translation(fig_or_lit="lit", translation_keyword="translation", lang=lang)
+
+            translation_df = pd.read_csv(f"{script_dir}/data/{lang.lower()}/lit_{lang.lower()}_random_15 - lit_{lang}_random_15.csv")
+            translation_df["final pass"] = passes
+            translation_df["final pass"] = translation_df["final pass"].fillna(translation_df["translation"])
+            translation_df.to_csv(f"{script_dir}/data/{lang.lower()}/lit_{lang.lower()}_completed.csv", index=False)
+
+        print(f"Saved complete dynamic translations for {lang}!")
