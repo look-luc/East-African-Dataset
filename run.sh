@@ -2,8 +2,8 @@
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=64G
-#SBATCH --time=2:00:00
+#SBATCH --mem=18G
+#SBATCH --time=1:00:00
 #SBATCH --output=/projects/%u/East-African-Dataset/logs/%j.log
 #SBATCH --job-name=east_african_translation
 #SBATCH --partition=blanca-clearlab2
