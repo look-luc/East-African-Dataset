@@ -244,7 +244,7 @@ class translation_final_pass:
             "kamba": "kamn_Latn"
         }
         nllb_lang = self.nllb_tag[self.lang.lower()]
-        self.translation_tokenizer = AutoTokenizer.from_pretrained(self.translation_model_name, nllb_lang)
+        self.translation_tokenizer = AutoTokenizer.from_pretrained(self.translation_model_name, src_lang=nllb_lang)
         self.translation_model = AutoModelForSeq2SeqLM.from_pretrained(self.translation_model_name).to(self.device)
 
         self.translation_keyword = translation_keyword
@@ -409,7 +409,7 @@ class translation_final_pass:
                     replace_inout = self.translation_tokenizer(word, return_tensors="pt")
                     tgt_token_id = self.translation_tokenizer.convert_tokens_to_ids("eng_Latn")
                     with torch.no_grad():
-                        output = self.morph_model.generate(
+                        output = self.translation_model.generate(
                             **replace_inout,
                             forced_bos_token_id=tgt_token_id,
                             max_length=128,
