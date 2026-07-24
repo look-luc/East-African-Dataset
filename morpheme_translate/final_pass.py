@@ -7,7 +7,11 @@ import pandas as pd
 import torch
 import torch.nn.functional as F
 from nltk.corpus import words
-from transformers import AutoModelForMaskedLM, AutoModelForSeq2SeqLM, AutoTokenizer
+from transformers import (
+    AutoModelForMaskedLM,
+    AutoModelForSeq2SeqLM,
+    AutoTokenizer,
+)
 
 parent_path = script_dir = Path(__file__).resolve().parent.parent if '__file__' in globals() else Path('.').resolve()
 
@@ -16,7 +20,7 @@ class translation_final_pass:
         self,
         model_name: str = "dsfsi/BantuBERTa",
         morph_model_name: str = "thiomi/bantumorph-v7",
-        translation_model_name:str = "masakhane/",
+        translation_model_name:str = "facebook/nllb-200-distilled-600M",
         data_file: str = f"{parent_path}/data/data.csv",
         grammar_file: str = f"{parent_path}/data/bantu_grammar_lookup.csv",
     ) -> None:
@@ -34,8 +38,17 @@ class translation_final_pass:
         self.morph_model = AutoModelForSeq2SeqLM.from_pretrained(self.morph_model_name).to(self.device)
         self.morph_cache: dict[str, str] = {}
 
+        self.nllb_tag = {
+            "ganda": "lug_Latn",
+            "gikuyu": "kik_Latn",
+            "tshiluba": "lua_Latn",
+            "chiga": "cgg_Latn",
+            "tooro": "ttj_Latn",
+            "runyoro": "nyo_Latn",
+            "kamba": "kamn_Latn"
+        }
         self.translation_model_name = translation_model_name
-        self.translation_tokenizer = AutoTokenizer.from_pretrained(self.translation_model_name)
+        self.translation_tokenizer = AutoTokenizer.from_pretrained(self.translation_model_name, nllb_lang)
         self.translation_model = AutoModelForSeq2SeqLM.from_pretrained(self.translation_model_name).to(self.device)
 
         self.batch_size = 64
@@ -188,7 +201,6 @@ class translation_final_pass:
         return translatable if translatable else candidate_pool
 
     def resolve_slot_translation(self, chosen_token: str, slot_tag: str = "") -> str:
-        print(f"[DEBUG resolve_slot_translation INPUT] chosen_token: {repr(chosen_token)} (Type: {type(chosen_token)}), slot_tag: {repr(slot_tag)}")
         translator = str.maketrans("", "", string.punctuation)
         clean_token = chosen_token.lower().translate(translator)
         clean_tag = re.sub(r"^_{2,4}", "", slot_tag).upper()
@@ -389,11 +401,20 @@ class translation_final_pass:
 
             ranked_indices.append(working_sentence)
 
+        nllb_lang = self.nllb_tag[self.lang.lower()]
         for idx in ranked_indices:
             for pos, word in enumerate(idx.split(" ")):
                 if word not in words.words():
-                    replace_inout = self.morph_tokenizer(word, return_tensors="pt")
-                    output = self.morph_model.generate(**replace_inout, max_length=128, num_beams=4, early_stopping=True).to(self.device)
+                    replace_inout = self.translation_tokenizer(word, return_tensors="pt")
+                    tgt_token_id = self.translation_tokenizer.convert_tokens_to_ids("eng_Latn")
+                    with torch.no_grad():
+                        output = self.morph_model.generate(
+                            **replace_inout,
+                            forced_bos_token_id=tgt_token_id,
+                            max_length=128,
+                            num_beams=4,
+                            early_stopping=True
+                        ).to(self.device)
                     replace_word = self.translation_tokenizer.decode(output[0], skip_special_tolens=True)
                     idx[pos] = replace_word
         return ranked_indices
