@@ -233,7 +233,7 @@ class translation_final_pass:
         if lang is None:
             raise ValueError("Provide a language")
 
-        nllb_lang = self.nllb_tag[self.lang.lower()]
+        self.lang = lang
         self.nllb_tag = {
             "ganda": "lug_Latn",
             "gikuyu": "kik_Latn",
@@ -243,10 +243,10 @@ class translation_final_pass:
             "runyoro": "nyo_Latn",
             "kamba": "kamn_Latn"
         }
+        nllb_lang = self.nllb_tag[self.lang.lower()]
         self.translation_tokenizer = AutoTokenizer.from_pretrained(self.translation_model_name, nllb_lang)
         self.translation_model = AutoModelForSeq2SeqLM.from_pretrained(self.translation_model_name).to(self.device)
 
-        self.lang = lang
         self.translation_keyword = translation_keyword
 
         self.df_translation = pd.read_csv(
