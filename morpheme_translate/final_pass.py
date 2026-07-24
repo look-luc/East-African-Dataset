@@ -343,17 +343,17 @@ class translation_final_pass:
                 candidate_pool = self._filter_translatable_candidates(candidate_pool)
 
                 chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool)
-                print(f"first run of find best candidate: {chosen_token}")
+                # print(f"first run of find best candidate: {chosen_token}")
 
                 if chosen_token:
                     english_val = self.resolve_slot_translation(chosen_token, slot_tag=slot_tag)
                     working_sentence = working_sentence.replace(slot_tag, str(english_val), 1)
+                    print(f"chosen token slot tag replaace: {working_sentence}")
 
             residual_slots = sorted(self.extract_slots(working_sentence), key=len, reverse=True)
             if residual_slots:
                 global_fallback_pool = [w for w in self.lexicon[word_col].dropna().unique().tolist() if str(w).strip()]
                 global_fallback_pool = self._filter_translatable_candidates(global_fallback_pool)
-                print(f"global fallback pool: {global_fallback_pool}")
 
                 for residual_tag in residual_slots:
                     if residual_tag not in working_sentence:
