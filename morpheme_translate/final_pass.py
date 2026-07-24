@@ -156,7 +156,6 @@ class translation_final_pass:
                 if score > highest_score:
                     highest_score = score
                     best_candidate = candidate
-        print(f"best candidate: {best_candidate}")
         return best_candidate
 
     def _normalize_lexicon(self) -> dict:
@@ -198,7 +197,6 @@ class translation_final_pass:
 
         if clean_token in self.lem_map:
             res = self.lem_map[clean_token]
-            print(f"[DEBUG resolve_slot_translation OUTPUT from lem_map] {repr(res)} (Type: {type(res)})")
             return res
 
         target_col_lem = next(
@@ -214,7 +212,6 @@ class translation_final_pass:
                 return str(matched_rows[target_col_lem].iloc[0])
 
         raw_analysis = self.predict_morphology(clean_token, batch_size=64)
-        print(f"raw analysis with predict morphology: {raw_analysis}")
         analysis_str = raw_analysis if isinstance(raw_analysis, str) else ""
         root_match = re.search(r"\-\s*([\w]+)$", analysis_str)
         root = root_match.group(1).lower() if root_match else ""
@@ -228,7 +225,6 @@ class translation_final_pass:
         if clean_tag in self.grammar_map:
             return self.grammar_map[clean_tag]
 
-        print(f"clean tokens: {clean_token}")
         return f"['{clean_tag} {clean_tag}']"
 
     def ranked_translation(self, fig_or_lit: str, translation_keyword: str = "translation", lang: str | None = None):
@@ -272,14 +268,6 @@ class translation_final_pass:
             self.grammar_lookup.columns[-1]
         )
         self.grammar_map = dict(zip(self.grammar_lookup[tag_col_gram].astype(str).str.upper(), self.grammar_lookup[target_col_gram].astype(str)))
-
-        # Inspect lem_map samples
-        sample_lem = list(self.lem_map.items())[:3]
-        print(f"[DEBUG map inspection] lem_map samples: {sample_lem}")
-
-        # Inspect grammar_map samples
-        sample_gram = list(self.grammar_map.items())[:3]
-        print(f"[DEBUG map inspection] grammar_map samples: {sample_gram}")
 
         self.glosses: dict[str, set[str]] = {}
         word_col_lex = 'Surface Word' if 'Surface Word' in self.lexicon.columns else ('word' if 'word' in self.lexicon.columns else self.lexicon.columns[0])
@@ -341,8 +329,6 @@ class translation_final_pass:
                 working_sentence = translation
             else:
                 working_sentence = clean_prov
-            print(f"[DEBUG Frame Selection] Is Borrowed: {is_borrowed}")
-            print(f"[DEBUG Frame Selection] working_sentence: {repr(working_sentence)} (Type: {type(working_sentence)})")
 
             slots = sorted(self.extract_slots(working_sentence), key=len, reverse=True)
 
@@ -378,13 +364,10 @@ class translation_final_pass:
                 candidate_pool = self._filter_translatable_candidates(candidate_pool)
 
                 chosen_token = self._find_best_candidate(working_sentence, slot_tag, candidate_pool)
-                # print(f"first run of find best candidate: {chosen_token}")
 
                 if chosen_token:
                     english_val = self.resolve_slot_translation(chosen_token, slot_tag=slot_tag)
-                    print(f"[DEBUG] english val: {english_val}")
                     working_sentence = working_sentence.replace(slot_tag, str(english_val), 1)
-                    print(f"[DEBUG] chosen token slot tag replaace: {working_sentence}")
 
             residual_slots = sorted(self.extract_slots(working_sentence), key=len, reverse=True)
             if residual_slots:
