@@ -3,6 +3,7 @@ import string
 from itertools import batched
 from pathlib import Path
 
+import nltk
 import pandas as pd
 import torch
 import torch.nn.functional as F
@@ -242,7 +243,7 @@ class translation_final_pass:
             "chiga": "cgg_Latn",
             "tooro": "ttj_Latn",
             "runyoro": "nyo_Latn",
-            "kamba": "kamn_Latn"
+            "kamba": "kam_Latn"
         }
         nllb_lang = self.nllb_tag[self.lang.lower()]
         self.translation_tokenizer = AutoTokenizer.from_pretrained(self.translation_model_name, src_lang=nllb_lang)
@@ -405,7 +406,8 @@ class translation_final_pass:
             ranked_indices.append(working_sentence)
 
         for idx in ranked_indices:
-            for pos, word in enumerate(idx.split(" ")):
+            sentence = idx.split(" ")
+            for pos, word in enumerate(sentence):
                 if word not in words.words():
                     replace_inout = self.translation_tokenizer(word, return_tensors="pt")
                     tgt_token_id = self.translation_tokenizer.convert_tokens_to_ids("eng_Latn")
