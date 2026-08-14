@@ -43,6 +43,7 @@ def levenshtein_score(manual_literals: str, model_literals: str):
 def compute_structural_metrics(lang:str, gloss_rel_path:str, translation_column:str=""):
     manual_gloss_df = pd.read_csv(f"{script_path}/{gloss_rel_path}")
     manual_gloss_df = manual_gloss_df[["african_proverb", translation_column]]
+    model_gloss = pd.read_csv(f"{script_path}/data/data.csv")["predict"]
     data_df = pd.read_csv(f"{script_path}/data/data.csv")
     results = {}
     for idx, row in manual_gloss_df.iterrows():
@@ -54,11 +55,12 @@ def compute_structural_metrics(lang:str, gloss_rel_path:str, translation_column:
                 "Sentence Bert Embeddings": [],
                 "ChrF": [],
                 "Levenshtein Distance": [],
-                "Levenshtein Normalized_Sim": []
+                "Levenshtein Normalized_Sim": [],
+                "Proverb": proverb
             }
         manual_literals = matched_rows[[translation_column]]
 
-        for idx, (manual, model) in enumerate(zip(manual_literals, matched_rows)):
+        for idx, (manual, model) in enumerate(zip(manual_literals, model_gloss)):
             levenshtein, normalized = levenshtein_score(manual, model)
 
             results[lang]["Sentence Bert Embeddings"].append(semantic_score(manual, model))
