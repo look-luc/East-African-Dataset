@@ -1,3 +1,4 @@
+import string
 from pathlib import Path
 
 import Levenshtein
@@ -5,6 +6,7 @@ import pandas as pd
 import torch
 import torch.nn.functional as F
 from nltk.translate.chrf_score import sentence_chrf
+from pandas import DataFrame
 from transformers import AutoModel, AutoTokenizer
 
 script_path = Path(__file__).resolve().parent.parent
@@ -40,12 +42,44 @@ def levenshtein_score(manual_literals: str, model_literals: str):
 
     return abs_lev, normalized_similarity
 
-def compute_structural_metrics(lang:str, gloss_rel_path:str, translation_column:str=""):
-    manual_gloss_df = pd.read_csv(f"{script_path}/{gloss_rel_path}")
-    manual_gloss_df = manual_gloss_df[["african_proverb", translation_column]]
+def correct_glossing(corr_gloss:DataFrame, correction_columns:list):
+    corr_gloss["combined"] = corr_gloss.astype(str).agg("\n", axis=1).strip()
+
+    translator = str.maketrans('', '', string.punctuation)
+    for i, gloss in enumerate(corr_gloss["combined"]):
+        corr_gloss["combined"][i] = gloss.translate(translator)
+
+    return corr_gloss.drop(columns=correction_columns)
+
+def map_gloss_prov(corrected, manual, proverbs):
+    combined_data = {
+        "proverb": [],
+        "corrected": [],
+        "manual": []
+    }
+    for proverb in proverbs:
+
+
+def compute_structural_metrics(lang:str, gloss_rel_path:str):
+    translator = str.maketrans('', '', string.punctuation)
+
+    lang_completed = pd.read_csv(f"{script_path}/{gloss_rel_path}")
+
+    manual_gloss = lang_completed["final pass"].to_frame()
+    african_proverb = lang_completed["african_proverb"].to_frame()
+    correct_gloss = lang_completed[["Correction", "Correction 2", "Correction 3"]].to_frame()
+    correct_gloss = correct_glossing(correct_gloss, ["Correction", "Correction 2", "Correction 3"])
+
     model_gloss = pd.read_csv(f"{script_path}/data/data.csv")["predict"]
     data_df = pd.read_csv(f"{script_path}/data/data.csv")
-    results = {}
+    results = {
+        lang: {
+            "Sentence Bert Embeddings": [],
+            "ChrF": [],
+            "Levenshtein Distance": [],
+            "Levenshtein Normalized_Sim": []
+        }
+    }
     for idx, row in manual_gloss_df.iterrows():
         proverb = row["african_proverb"]
         matched_rows = data_df[data_df["african_proverbs"] == proverb]
