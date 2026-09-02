@@ -43,31 +43,28 @@ def levenshtein_score(manual_literals: str, model_literals: str):
     return abs_lev, normalized_similarity
 
 def correct_glossing(corr_gloss:DataFrame, correction_columns:list):
-    corr_gloss["combined"] = corr_gloss.astype(str).agg("\n", axis=1).strip()
-
     translator = str.maketrans('', '', string.punctuation)
-    for i, gloss in enumerate(corr_gloss["combined"]):
-        corr_gloss["combined"][i] = gloss.translate(translator)
 
+    corr_gloss["combined"] = corr_gloss.astype(str).agg("\n", axis=1).strip().translate(translator)
     return corr_gloss.drop(columns=correction_columns)
 
-def map_gloss_prov(corrected, manual, proverbs):
+def map_gloss_prov(corrected, manual, model, proverbs):
     combined_data = {
         "proverb": [],
         "corrected": [],
-        "manual": []
+        "manual": [],
+        "model": []
     }
     for proverb in proverbs:
-
+        combined_data["proverb"] = proverb
+        combined_data["corrected"]
 
 def compute_structural_metrics(lang:str, gloss_rel_path:str):
-    translator = str.maketrans('', '', string.punctuation)
-
     lang_completed = pd.read_csv(f"{script_path}/{gloss_rel_path}")
 
     manual_gloss = lang_completed["final pass"].to_frame()
     african_proverb = lang_completed["african_proverb"].to_frame()
-    correct_gloss = lang_completed[["Correction", "Correction 2", "Correction 3"]].to_frame()
+    correct_gloss = lang_completed[["african_proverb", "Correction", "Correction 2", "Correction 3"]].to_frame()
     correct_gloss = correct_glossing(correct_gloss, ["Correction", "Correction 2", "Correction 3"])
 
     model_gloss = pd.read_csv(f"{script_path}/data/data.csv")["predict"]
