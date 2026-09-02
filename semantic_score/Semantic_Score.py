@@ -49,15 +49,12 @@ def correct_glossing(corr_gloss:DataFrame, correction_columns:list):
     return corr_gloss.drop(columns=correction_columns)
 
 def map_gloss_prov(corrected, manual, model, proverbs):
-    combined_data = {
-        "proverb": [],
-        "corrected": [],
-        "manual": [],
-        "model": []
-    }
+    combined_data = {}
     for proverb in proverbs:
-        combined_data["proverb"] = proverb
-        combined_data["corrected"]
+        combined_data[proverb]["corrected"] = corrected.loc[corrected['proverb'] == proverb, 'combined'].item()
+        combined_data[proverb]["manual"] = manual.loc[manual['proverb'] == proverb, 'final pass'].item()
+        combined_data[proverb]["model"] = manual.loc[model['proverb'] == proverb, 'predict'].item()
+    return combined_data
 
 def compute_structural_metrics(lang:str, gloss_rel_path:str):
     lang_completed = pd.read_csv(f"{script_path}/{gloss_rel_path}")
@@ -66,38 +63,31 @@ def compute_structural_metrics(lang:str, gloss_rel_path:str):
     african_proverb = lang_completed["african_proverb"].to_frame()
     correct_gloss = lang_completed[["african_proverb", "Correction", "Correction 2", "Correction 3"]].to_frame()
     correct_gloss = correct_glossing(correct_gloss, ["Correction", "Correction 2", "Correction 3"])
-
     model_gloss = pd.read_csv(f"{script_path}/data/data.csv")["predict"]
+
+    combined_data = map_gloss_prov(correct_gloss, manual_gloss, model_gloss, african_proverb)
+
     data_df = pd.read_csv(f"{script_path}/data/data.csv")
-    results = {
-        lang: {
-            "Sentence Bert Embeddings": [],
-            "ChrF": [],
-            "Levenshtein Distance": [],
-            "Levenshtein Normalized_Sim": []
-        }
-    }
-    for idx, row in manual_gloss_df.iterrows():
-        proverb = row["african_proverb"]
-        matched_rows = data_df[data_df["african_proverbs"] == proverb]
-        if not matched_rows.empty:
-            config_name = matched_rows["experiment_config"].iloc[0]
-            results[f"{config_name} ({lang.lower().capitalize()})"] = {
-                "Sentence Bert Embeddings": [],
-                "ChrF": [],
-                "Levenshtein Distance": [],
-                "Levenshtein Normalized_Sim": [],
-                "Proverb": proverb
-            }
-        manual_literals = matched_rows[[translation_column]]
+    results = {}
+    for proverb in combined_data.keys():
+        levenshtein_model, normalized_model = levenshtein_score(combined_data[proverb]["corrected"], combined_data[proverb]["model"])
+        levenshtein_manual, normalized_manual = levenshtein_score(combined_data[proverb]["corrected"], combined_data[proverb]["manual"])
 
-        for idx, (manual, model) in enumerate(zip(manual_literals, model_gloss)):
-            levenshtein, normalized = levenshtein_score(manual, model)
+        results[proverb]["Levenshtein Distance"]["model vs corrected"] = levenshtein_model
+        results[proverb]["Levenshtein Normalized Sim"]["model vs corrected"] = normalized_model
 
-            results[lang]["Sentence Bert Embeddings"].append(semantic_score(manual, model))
-            results[lang]["ChrF"].append(compute_chrf(manual, model))
-            results[lang]["Levenshtein Distance"].append(levenshtein)
-            results[lang]["Levenshtein Normalized_Sim"].append(normalized)
+        results[proverb]["Levenshtein Distance"]["manual vs corrected"] = levenshtein_manual
+        results[proverb]["Levenshtein Normalized Sim"]["manual vs corrected"] = normalized_manual
+
+        results[proverb]["ChrF"]["model vs corrected"] = compute_chrf(combined_data[proverb]["corrected"], combined_data[proverb]["model"])
+        results[proverb]["ChrF"]["manual vs corrected"] = compute_chrf(combined_data[proverb]["corrected"], combined_data[proverb]["manual"])
+
+        results[proverb]["Sentence Bert Embeddings"]["model vs corrected"] = semantic_score(
+            combined_data[proverb]["corrected"], combined_data[proverb]["model"]
+        )
+        results[proverb]["Sentence Bert Embeddings"]["manual vs corrected"] = semantic_score(
+            combined_data[proverb]["corrected"], combined_data[proverb]["manual"]
+        )
 
     results_df = pd.DataFrame(results)
     results_df.to_csv(f"{script_path}/{lang}_results.csv", sep='\t')
