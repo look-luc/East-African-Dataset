@@ -1,0 +1,54 @@
+	Unnamed: 0	experiment_config	language	language_family	african_proverb	label	Output Type	predict	morpheme_breaks
+12587	200208	llama3.2-3b-it-gen-eng-literal-Kenya	ekegusii	bantu	Obosio tibogendereria omotwe.	The face does not lead the head.	leteral_translate	"**Input**:
+Obosio tibogendereria omotwe.
+
+**Output**:
+"	obosio tibogendereria omotwe
+612	6205	qwen3-4b-gen_eng_literal-Kenya	ekegusii	bantu	Amang'ana mbeo tigocha konyora.	Calm words do not fail.	leteral_translate	Amang'ana mbeo tigocha konyora.	amang ana mbeo tigocha konyora
+4935	79355	kimi-k2-gen-eng-literal-Kenya	ekegusii	bantu	Rituko rira tiriama ri’emosira kera ogose.	Tomorrow is blameless everywhere.	leteral_translate	The day that does not break is the one of the hyena you are waiting for.	rituko rir-a tiriama ri emosira kera ogose
+12508	200129	llama3.2-3b-it-gen-eng-literal-Kenya	ekegusii	bantu	Omokungu noyomotiri ye'nyomba.	A woman is the steward of the home.	leteral_translate	"**Input**:
+Omokungu noyomotiri ye'nyomba.
+
+**Output"	omokungu noyomotiri ye nyomba
+4795	79215	kimi-k2-gen-eng-literal-Kenya	ekegusii	bantu	Obomonto tiri ogotwara ebinto ebisani.	Humanity is not carrying many things.	leteral_translate	A person is not to take similar things.	obomonto tiri ogotwara ebinto ebisani
+2267	33871	smollm3-3b-gen_eng_literal-Kenya	ekegusii	bantu	Nyomba nka nigo ere engencho.	Home has value.	leteral_translate	The lion is the king of the forest.	nyomba nka nigo ere engencho
+8596	131290	gemma3-4b-it-gen-eng-literal-Kenya	ekegusii	bantu	Obomonto tiri ogotwara oboigoro bwao.	Humanity is not carrying your greatness.	leteral_translate	The head pulls the rope to wrap its own neck.	obomonto tiri ogotwara oboigoro bwao
+15036	241054	qwen3-4b-gen-eng-literal-Kenya	ekegusii	bantu	Egetaracha nigo gekoiyia amabeho.	Firewood removes cold.	leteral_translate	The literal translation of the proverb in English.	egetaracha nigo gekoiyia amabeho
+8693	131387	gemma3-4b-it-gen-eng-literal-Kenya	ekegusii	bantu	Nyomba nchora tiri konyora obuya.	A noisy house finds no blessing.	leteral_translate	The house that is painted, it writes boredom.	nyomba nchora tiri konyora obuya
+3109	51623	llama3.2-3b-gen_eng_literal-Kenya	ekegusii	bantu	Enyang’au tiboyera rituko ri'emosira.	A dog does not eat on the day of slaughter.	leteral_translate	The lion is sleeping in the grass of the other man's field.	enyang au tiboyera rituko ri emosira
+6184	104096	gemini3-flasth-gen-eng-literal-Kenya	ekegusii	bantu	Omwana bwe'ntumu nigo orenyora.	The child of a mouse survives.	leteral_translate	The child of a rhinoceros is what it licks.	omwana bwe ntumu nigo orenyora
+5684	97306	kimi-k2-gen-eng-literal-Kenya	ekegusii	bantu	Amanyira nigo are oboigoro.	Water is wealth.	leteral_translate	The one-who-knows is the one-who-has the back.	amanyira nigo are oboigoro
+6075	97697	kimi-k2-gen-eng-literal-Kenya	ekegusii	bantu	Omokungu omuya nigo are omotiri omuya.	A good woman is a good manager.	leteral_translate	A good woman is the one who has a good calabash.	omokungu omuya nigo are omotiri omuya
+6371	104283	gemini3-flasth-gen-eng-literal-Kenya	ekegusii	bantu	Rituko ri'obuya tiriogendereri.	A good day does not progress.	leteral_translate	A day of goodness does not walk on.	rituko ri obuya tiriogendereri
+8506	131200	gemma3-4b-it-gen-eng-literal-Kenya	ekegusii	bantu	Obororo tibonyora obuya k'omoyo.	Bitterness brings no goodness to the soul.	leteral_translate	"The young ones, they sharpen the stick of the heart.
+"	obororo tibonyora obuya k omoyo
+3241	51755	llama3.2-3b-gen_eng_literal-Kenya	ekegusii	bantu	Obotaka nigo bore engencho kera ogose.	Wealth is value everywhere.	leteral_translate	The old man's eyes are blinded by the fire of his own mouth.	obotaka nigo bore engencho kera ogose
+2402	34006	smollm3-3b-gen_eng_literal-Kenya	ekegusii	bantu	Amanyira nigo are amarwa k'era rituko.	Water is daily milk.	leteral_translate	A man who cuts his hand with a knife is the one who will cut his head with a stone	amanyira nigo are amarwa k era rituko
+1783	28797	gemma3-4b-it-gen_eng_literal-Kenya	ekegusii	bantu	Obotaka nigo bore engencho k’ogose.	Wealth is value always.	leteral_translate	"The literal translation of the proverb in English.
+"	obotaka nigo bore engencho k ogose
+830	6423	qwen3-4b-gen_eng_literal-Kenya	ekegusii	bantu	Amanyira nigo are amabeho k'era omonto kera.	Water is cold for everyone always.	leteral_translate	Amanyira nigo are amabeho k'era omonto kera.	amanyira nigo are amabeho k era omonto kera
+15179	241197	qwen3-4b-gen-eng-literal-Kenya	ekegusii	bantu	Amanyira nigo are omoyo k'era ogose.	Water is the heart of all.	leteral_translate	Amanyira nigo are omoyo k'era ogose.	amanyira nigo are omoyo k era ogose
+11746	182149	grok-4.1-fast-gen-eng-literal-Kenya	ekegusii	bantu	Rituko ri'obuya nigo rire engencho.	A good day is significant.	leteral_translate	"**Output**:
+The knee of the one who has returned is not a chicken."	rituko ri obuya nigo rir-e engencho
+761	6354	qwen3-4b-gen_eng_literal-Kenya	ekegusii	bantu	Omokungu omuya nigo are omotiri omuya.	A good woman is a good steward.	leteral_translate	The literal translation of the proverb in English.	omokungu omuya nigo are omotiri omuya
+11690	182093	grok-4.1-fast-gen-eng-literal-Kenya	ekegusii	bantu	Enyang’au tiboyera rituko ri’oboncho.	A dog eats not on a day of wealth.	leteral_translate	"**Output**:
+The baboon does not spoil the tail of the baboon's child."	enyang au tiboyera rituko ri oboncho
+4970	79390	kimi-k2-gen-eng-literal-Kenya	ekegusii	bantu	Omwana omuya nigo ogosara rigesa.	A good child builds the granary.	leteral_translate	The child who is left is the one who minds the grinding stone.	omwana omuya nigo ogosara rigesa
+13366	213070	minmax-gen-eng-literal-Kenya	ekegusii	bantu	Ekeoke nigo gekogendereria oboncho.	Little by little builds wealth.	leteral_translate	A warthog that is rolling in the valley.	ekeoke nigo gekogendereria oboncho
+8411	131105	gemma3-4b-it-gen-eng-literal-Kenya	ekegusii	bantu	Ritoka nigo rire engencho kera rituko k'omoyo.	The hearth has value every day in the heart.	leteral_translate	"The literal translation of the proverb in English.
+The stone of the goat is the stone of the"	ritoka nigo rir-e engencho kera rituko k omoyo
+8359	131053	gemma3-4b-it-gen-eng-literal-Kenya	ekegusii	bantu	Rituko nigo rire ri’ogosesenia.	The day is for work.	leteral_translate	Rituko nigo rire ri’ogosesenia.	rituko nigo rir-e ri ogosesenia
+9626	147222	gpt-5-mini-gen-eng-literal-Kenya	ekegusii	bantu	Omwana omuya nigo ogosara engencho.	A good child builds a purpose.	leteral_translate	A good child is the one who cuts the banana stem.	omwana omuya nigo ogosara engencho
+4975	79395	kimi-k2-gen-eng-literal-Kenya	ekegusii	bantu	Omosacha togocha engencho ye'rigesa.	A man forgets not the granary’s meaning.	leteral_translate	The man does not finish his cultivation of the married woman.	omosacha togocha engencho ye rigesa
+8417	131111	gemma3-4b-it-gen-eng-literal-Kenya	ekegusii	bantu	Omwana otatara nigo orengereria ng'ina noyokomanyia.	A child who does not travel thinks the mother knows.	leteral_translate	The child does not go, even if the father is calling him to eat.	omwana otatara nigo orengereria ng ina noyokomanyia
+13696	213400	minmax-gen-eng-literal-Kenya	ekegusii	bantu	Omwana bwe'ntumu nigo orenyora engencho k'era.	A mouse’s child finds its role.	leteral_translate	A child of a thigh will suckle from the nape of the neck.	omwana bwe ntumu nigo orenyora engencho k era
+15083	241101	qwen3-4b-gen-eng-literal-Kenya	ekegusii	bantu	Omwana omuya nigo ogotwara engencho ye'nyomba.	A good child carries the value of the home.	leteral_translate	A child's foot follows the path of the wolf's shadow.	omwana omuya nigo ogotwara engencho ye nyomba
+12614	200235	llama3.2-3b-it-gen-eng-literal-Kenya	ekegusii	bantu	Obore nigo bore oboigoro k'ogose kera.	Gentleness is constant greatness.	leteral_translate	The one who eats bitter leaves will have bitter breath.	obor-e nigo bore oboigoro k ogose kera
+7212	116815	gemini3-flasth-gen-eng-literal-Tanzania	ekegusii	bantu	Omwana bwe'ntumu nigo orenyora.	The child of a mouse survives.	leteral_translate	The child of a mole is the one that stays.	omwana bwe ntumu nigo orenyora
+7291	116894	gemini3-flasth-gen-eng-literal-Tanzania	ekegusii	bantu	Obore nigo bore oboigoro k’ogose.	Gentleness is supreme greatness.	leteral_translate	Millet is the top of the grinding stone.	obor-e nigo bore oboigoro k ogose
+13543	213247	minmax-gen-eng-literal-Kenya	ekegusii	bantu	Amanyira nigo are omoyo k’era ogose.	Water is life everywhere.	leteral_translate	The billy goat is the one who puts the stomach of the cow to sleep.	amanyira nigo are omoyo k era ogose
+5768	97390	kimi-k2-gen-eng-literal-Kenya	ekegusii	bantu	Ekeoke nigo gekogendereria.	Little by little progresses.	leteral_translate	The smoke is what follows itself.	ekeoke nigo gekogendereria
+2460	34064	smollm3-3b-gen_eng_literal-Kenya	ekegusii	bantu	Obore nigo bore oboigoro k’ogose.	Gentleness is greatness everywhere.	leteral_translate	A cat that eats the tail of another cat is not a cat.	obor-e nigo bore oboigoro k ogose
+3206	51720	llama3.2-3b-gen_eng_literal-Kenya	ekegusii	bantu	Amanyira omoke tigocha ogosara.	Little water does not fail.	leteral_translate	The many birds do not eat the same food.	amanyira omok-e tigocha ogosara
+1887	28901	gemma3-4b-it-gen_eng_literal-Kenya	ekegusii	bantu	Getaracha nigo gekoiyia amoro ye'nyomba.	Firewood lights the home’s fire.	leteral_translate	"Getaracha nigo gekoiyia amoro ye'nyomba.
+"	getaracha nigo gekoiyia amoro ye nyomba

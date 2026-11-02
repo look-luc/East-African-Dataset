@@ -27,7 +27,8 @@ TOKEN = os.getenv("HF_TOKEN")
 
 bantu_iso_map = {
     'ganda': 'lug', 'gikuyu': 'kik', 'tshiluba': 'lua',
-    'chiga': 'cgg', 'tooro': 'ttj', 'runyoro': 'nyo', 'kamba': 'kam'
+    'chiga': 'cgg', 'tooro': 'ttj', 'runyoro': 'nyo', 'kamba': 'kam',
+    'ekegusii': 'guz', 'gusii': 'guz'
 }
 
 def build_model_glossary(lang:str):
@@ -81,8 +82,8 @@ def normalize_ortho(word: str, lang: str = "") -> str:
     w = str(word).lower().strip("[]'\\\" ")
     lang = lang.lower()
 
-    if lang in ['ganda', 'gikuyu', 'chiga', 'tooro', 'runyoro', 'kamba']:
-        prefixes = ['umu', 'aba', 'oki', 'oku', 'emi', 'eki', 'aka', 'omu', 'en']
+    if lang in ['ganda', 'gikuyu', 'chiga', 'tooro', 'runyoro', 'kamba', 'ekegusii', 'gusii']:
+        prefixes = ['umu', 'aba', 'oki', 'oku', 'emi', 'eki', 'aka', 'omu', 'en', 'omo', 'ebi', 'eny', 'ama', 'oka']
         for p in prefixes:
             if w.startswith(p) and len(w) >= len(p) + 2:
                 return w[len(p):]

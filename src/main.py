@@ -46,7 +46,7 @@ def main(path, task:str, lang:str, proverbs):
             model_extract("data/data.csv", lang)
         translation(lang, lang, proverbs)
     elif task == "model_segment":
-        model_extract("data/data.csv", lang)
+        model_extract(f"data/{lang}/data.csv", lang)
     elif task == "metrics":
         gloss_rel_path, translation_column = ""
         compute_structural_metrics(lang, gloss_rel_path, translation_column)
