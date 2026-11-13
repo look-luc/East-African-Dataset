@@ -21,8 +21,7 @@ bb_tokenizer = AutoTokenizer.from_pretrained(bantuberta_id)
 bb_model = AutoModel.from_pretrained(bantuberta_id).to(device)
 bb_model.eval()
 
-# FIXED: Point to the correct parent directory containing your 'data' folder
-script_dir = Path(__file__).resolve().parent
+script_dir = Path(__file__).resolve().parent.parent
 load_dotenv()
 TOKEN = os.getenv("HF_TOKEN")
 
@@ -89,7 +88,7 @@ def normalize_ortho(word: str, lang: str = "") -> str:
     w = str(word).lower().strip("[]'\\\" ")
     lang = lang.lower()
 
-    if lang in ['ganda', 'gikuyu', 'chiga', 'tooro', 'runyoro', 'kamba', 'ekegusii', 'gusii', "luo", "samia","olusaamia","olusamia"]:
+    if lang in ['ganda', 'gikuyu', 'chiga', 'tooro', 'runyoro', 'kamba', 'ekegusii', 'gusii', "luo", "samia", "olusaamia", "olusamia"]:
         prefixes = ['umu', 'aba', 'oki', 'oku', 'emi', 'eki', 'aka', 'omu', 'en', 'omo', 'ebi', 'eny', 'ama', 'oka']
         for p in prefixes:
             if w.startswith(p) and len(w) >= len(p) + 2:
@@ -136,15 +135,6 @@ def get_bantuberta_embedding(sentence: str, target_word: str):
     else:
         return torch.mean(hidden_states, dim=0)
 
-def parse_model_outputs(word: str, combined_dict: dict):
-    if word in combined_dict:
-        lem = combined_dict[word].get('lemmatization', [])
-        seg = combined_dict[word].get('segmentation', [])
-        predicted_lemma = lem[0] if (isinstance(lem, list) and len(lem) > 0) else word
-        affix = seg[0] if (isinstance(seg, list) and len(seg) > 0) else word
-        return predicted_lemma, affix
-    return None, None
-
 @lru_cache(maxsize=64)
 def get_lang_data(lang: str):
     iso_code = bantu_iso_map.get(lang.lower())
@@ -153,7 +143,6 @@ def get_lang_data(lang: str):
         return pd.DataFrame()
 
     panlex_data = load_dataset("cointegrated/panlex-meanings", name=iso_code, split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
-
     eng_data = load_dataset("cointegrated/panlex-meanings", name='eng', split="train").select_columns(["meaning", "txt", "langvar_uid"]).to_pandas()
     df_eng = eng_data[eng_data['langvar_uid'].str.startswith('eng', na=False)]
 
@@ -176,7 +165,6 @@ def get_lang_data(lang: str):
     panlex_df['txt_eng'] = panlex_df['txt_eng'].str.split(r':|/').str[0].str.strip()
 
     target_word_col = f'txt_{iso_code}'
-
     panlex_df = panlex_df.dropna(subset=[target_word_col, 'txt_eng'])
     panlex_df = panlex_df.groupby(target_word_col)['txt_eng'].apply(
         lambda x: ", ".join(dict.fromkeys(x.dropna().astype(str)))
@@ -184,8 +172,9 @@ def get_lang_data(lang: str):
 
     return panlex_df
 
-def translation(file_name: str, lang: str, local_proverbs_title: str|None = None):
+def translation(file_name: str, lang: str, local_proverbs_title: str | None = None):
     lang_folder = script_dir / "data" / lang.lower()
+    lang_folder.mkdir(parents=True, exist_ok=True)
     data_folder = script_dir / "data"
 
     iso_code = bantu_iso_map.get(lang.lower())
@@ -206,7 +195,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
     model_df = pd.read_csv(str(model_path))
 
-    # Standardize column names immediately after reading
     if 'surface_word' not in model_df.columns and len(model_df.columns) > 0:
         if 'Unnamed: 0' in model_df.columns:
             model_df.rename(columns={'Unnamed: 0': 'surface_word'}, inplace=True)
@@ -224,7 +212,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
     )
 
     exact_translation_map = {}
-
     if not lang_data_df.empty:
         valid_pairs = lang_data_df.dropna(subset=[lang_txt_col, 'txt_eng']).copy()
         valid_pairs['clean_key'] = valid_pairs[lang_txt_col].astype(str).apply(strip_accents).str.lower().str.strip()
@@ -239,10 +226,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
     print(f"DIAGNOSTIC LOG FOR: {lang.upper()}")
     print(f"1. Total raw panlex rows fetched: {len(lang_data_df)}")
     print(f"2. Size of built exact_translation_map: {len(exact_translation_map)}")
-    if exact_translation_map:
-        print(f"3. Sample dictionary keys (first 15): {list(exact_translation_map.keys())[:15]}")
-    else:
-        print("3. Sample dictionary keys: [NONE - DICTIONARY IS EMPTY]")
     print("=" * 60)
 
     local_proverb_sentences = []
@@ -254,7 +237,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                 lang_prov_df = prov_df[prov_df["language"].str.lower() == lang.lower()]
                 local_proverb_sentences = lang_prov_df["african_proverb"].dropna().tolist()
 
-    # --- START BANTUBERTA REFERENCE POOL COMPILATION ---
     successful_embeddings_pool = []
     if local_proverb_sentences and exact_translation_map:
         print("Building contextual BantuBERTa reference pool maps across corpus entries...")
@@ -309,7 +291,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         is_standalone_grammar = clean_lemma_token in known_affixes
 
         if not matched and not is_standalone_grammar:
-            if len(normalized_lemma) >= 3: # Lowered threshold slightly for better matching
+            if len(normalized_lemma) >= 3:
                 clean_norm_lemma = strip_accents(normalized_lemma).lower().strip()
                 for dict_word, eng_trans in exact_translation_map.items():
                     if len(dict_word) >= 3 and (dict_word == clean_norm_lemma or f"-{dict_word}" in clean_norm_lemma or clean_norm_lemma.startswith(dict_word)):
@@ -321,7 +303,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                         matched = True
                         break
 
-        # Tier 2 Fallback: Grammar Guard
         if not matched and is_standalone_grammar:
             noun_class = None
             raw_nc = ast.literal_eval(row['noun class prediction']) if 'noun class prediction' in row and pd.notna(row['noun class prediction']) else []
@@ -342,7 +323,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                 output_data['Match Type'].append('Grammar Guard Fallback')
                 matched = True
 
-        # Tier 3: Isolated Local Root Evaluation
         if not matched:
             try:
                 extracted_roots = root_extract(segmentation_str, lang)
@@ -384,7 +364,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                                 best_score = similarity
                                 best_translation = known_translation
 
-                        if best_score > 0.85: # Slightly relaxed threshold to catch matches
+                        if best_score > 0.85:
                             output_data['Surface Word'].append(surface_word)
                             output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
                             output_data['English translation'].append(f"{best_translation} (Inferred via BantuBERTa)")
@@ -394,7 +374,6 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                 except Exception:
                     pass
 
-        # Fallback when no translation tier catches it
         if not matched:
             output_data['Surface Word'].append(surface_word)
             output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
