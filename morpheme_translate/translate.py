@@ -21,21 +21,28 @@ bb_tokenizer = AutoTokenizer.from_pretrained(bantuberta_id)
 bb_model = AutoModel.from_pretrained(bantuberta_id).to(device)
 bb_model.eval()
 
-script_dir = Path(__file__).resolve().parent.parent
+# FIXED: Point to the correct parent directory containing your 'data' folder
+script_dir = Path(__file__).resolve().parent
 load_dotenv()
 TOKEN = os.getenv("HF_TOKEN")
 
 bantu_iso_map = {
     'ganda': 'lug', 'gikuyu': 'kik', 'tshiluba': 'lua',
     'chiga': 'cgg', 'tooro': 'ttj', 'runyoro': 'nyo', 'kamba': 'kam',
-    'ekegusii': 'guz', 'gusii': 'guz'
+    'ekegusii': 'guz', 'gusii': 'guz', "luo": "luo", "samia": "lsm"
 }
 
-def build_model_glossary(lang:str):
-    lang_folder = script_dir / "data" / lang.lower()
-    df = pd.read_csv(f"{lang_folder}/{lang.lower().capitalize()}_model_lem_seg.csv", sep="\t")
+def build_model_glossary(lang: str, model_df: pd.DataFrame = None):
+    if model_df is None:
+        lang_folder = script_dir / "data" / lang.lower()
+        model_path = lang_folder / f"{lang.lower().capitalize()}_model_lem_seg.csv"
+        model_df = pd.read_csv(str(model_path))
+
     model_map = {}
-    for _, row in df.iterrows():
+    if 'segmentation' not in model_df.columns or 'noun class prediction' not in model_df.columns:
+        return model_map
+
+    for _, row in model_df.iterrows():
         try:
             segments = ast.literal_eval(row['segmentation'])
             glosses = ast.literal_eval(row['noun class prediction'])
@@ -82,7 +89,7 @@ def normalize_ortho(word: str, lang: str = "") -> str:
     w = str(word).lower().strip("[]'\\\" ")
     lang = lang.lower()
 
-    if lang in ['ganda', 'gikuyu', 'chiga', 'tooro', 'runyoro', 'kamba', 'ekegusii', 'gusii']:
+    if lang in ['ganda', 'gikuyu', 'chiga', 'tooro', 'runyoro', 'kamba', 'ekegusii', 'gusii', "luo", "samia","olusaamia","olusamia"]:
         prefixes = ['umu', 'aba', 'oki', 'oku', 'emi', 'eki', 'aka', 'omu', 'en', 'omo', 'ebi', 'eny', 'ama', 'oka']
         for p in prefixes:
             if w.startswith(p) and len(w) >= len(p) + 2:
@@ -113,7 +120,7 @@ def get_bantuberta_embedding(sentence: str, target_word: str):
 
     with torch.no_grad():
         outputs = bb_model(**inputs)
-        hidden_states = outputs.last_hidden_state.squeeze(0) # Shape: [seq_len, 768]
+        hidden_states = outputs.last_hidden_state.squeeze(0)
 
     input_ids = inputs["input_ids"].squeeze(0).tolist()
     match_indices = []
@@ -183,17 +190,23 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
 
     iso_code = bantu_iso_map.get(lang.lower())
     if not iso_code:
+        print(f"Error: ISO code for language '{lang}' not found.")
         return
 
     lang_data_df = get_lang_data(lang)
     lang_txt_col = f"txt_{iso_code}"
 
     model_path = lang_folder / f"{file_name}"
-    if not model_path.exists():
+    if not model_path.exists() or model_path.stat().st_size == 0:
         model_path = lang_folder / f"{lang.lower().capitalize()}_model_lem_seg.csv"
 
-    model_df = pd.read_csv(str(model_path), sep='\t')
+    if not model_path.exists() or model_path.stat().st_size == 0:
+        print(f"Error: Model CSV file at {model_path} does not exist or is empty.")
+        return
 
+    model_df = pd.read_csv(str(model_path))
+
+    # Standardize column names immediately after reading
     if 'surface_word' not in model_df.columns and len(model_df.columns) > 0:
         if 'Unnamed: 0' in model_df.columns:
             model_df.rename(columns={'Unnamed: 0': 'surface_word'}, inplace=True)
@@ -236,7 +249,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
     if local_proverbs_title:
         proverbs_path = data_folder / local_proverbs_title
         if proverbs_path.exists():
-            prov_df = pd.read_csv(str(proverbs_path), sep='\t')
+            prov_df = pd.read_csv(str(proverbs_path))
             if 'language' in prov_df.columns and 'african_proverb' in prov_df.columns:
                 lang_prov_df = prov_df[prov_df["language"].str.lower() == lang.lower()]
                 local_proverb_sentences = lang_prov_df["african_proverb"].dropna().tolist()
@@ -270,13 +283,13 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         'Match Type': []
     }
 
-    model_glossary = build_model_glossary(lang)
+    model_glossary = build_model_glossary(lang, model_df)
     for _, row in model_df.iterrows():
         surface_word = str(row['surface_word'])
-        raw_lemmas = ast.literal_eval(row['lemmatization'])
+        raw_lemmas = ast.literal_eval(row['lemmatization']) if 'lemmatization' in row and pd.notna(row['lemmatization']) else [surface_word]
         predicted_lemma = str(raw_lemmas[0]).lower().strip() if raw_lemmas else surface_word.lower()
         normalized_lemma = normalize_ortho(predicted_lemma, lang)
-        segmentation_str = row['segmentation']
+        segmentation_str = row['segmentation'] if 'segmentation' in row and pd.notna(row['segmentation']) else "[]"
         affix = affix_translate(ast.literal_eval(segmentation_str), lang, model_glossary)
 
         matched = False
@@ -296,10 +309,10 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         is_standalone_grammar = clean_lemma_token in known_affixes
 
         if not matched and not is_standalone_grammar:
-            if len(normalized_lemma) >= 5:
+            if len(normalized_lemma) >= 3: # Lowered threshold slightly for better matching
                 clean_norm_lemma = strip_accents(normalized_lemma).lower().strip()
                 for dict_word, eng_trans in exact_translation_map.items():
-                    if len(dict_word) >= 5 and (dict_word == clean_norm_lemma or f"-{dict_word}" in clean_norm_lemma or clean_norm_lemma.startswith(dict_word)):
+                    if len(dict_word) >= 3 and (dict_word == clean_norm_lemma or f"-{dict_word}" in clean_norm_lemma or clean_norm_lemma.startswith(dict_word)):
                         output_data['Surface Word'].append(surface_word)
                         output_data[f'{lang.capitalize()} Lemma'].append(dict_word)
                         output_data['English translation'].append(eng_trans)
@@ -311,7 +324,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
         # Tier 2 Fallback: Grammar Guard
         if not matched and is_standalone_grammar:
             noun_class = None
-            raw_nc = ast.literal_eval(row['noun class prediction'])
+            raw_nc = ast.literal_eval(row['noun class prediction']) if 'noun class prediction' in row and pd.notna(row['noun class prediction']) else []
             if raw_nc:
                 nc_string = str(raw_nc[0])
                 features = nc_string.split()
@@ -371,7 +384,7 @@ def translation(file_name: str, lang: str, local_proverbs_title: str|None = None
                                 best_score = similarity
                                 best_translation = known_translation
 
-                        if best_score > 0.88:
+                        if best_score > 0.85: # Slightly relaxed threshold to catch matches
                             output_data['Surface Word'].append(surface_word)
                             output_data[f'{lang.capitalize()} Lemma'].append(predicted_lemma)
                             output_data['English translation'].append(f"{best_translation} (Inferred via BantuBERTa)")
