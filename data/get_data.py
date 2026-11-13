@@ -8,7 +8,7 @@ script_dir = Path(__file__).resolve().parent
 kevin_Obote_few_shot = "kevin_Obote_few_shots"
 zero_shot_experiment = "zero-shot experiment"
 
-bantu_langs = ["ekegusii"]
+bantu_langs = ["samia","olusaamia","olusamia"]
 
 def making_df(jsonl_list):
     lang_pattern = r"\*\*Input\*\*:\nA proverb in (.*?)\n\n\*\*Output\*\*:"
@@ -44,7 +44,7 @@ def making_df(jsonl_list):
         final_df["language"].str.lower().isin(bantu_langs),
     ]
     choices = [
-        "bantu",
+        "Niger–Congo".lower(),
     ]
 
     final_df["language_family"] = np.select(conditions, choices, default="Unknown")

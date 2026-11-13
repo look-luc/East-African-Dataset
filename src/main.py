@@ -31,7 +31,7 @@ def main(path, task:str, lang:str, proverbs):
     elif task =="count_morphemes":
         print("Counting Morphemes")
 
-        folder = Path(f"{script_dir}/data")
+        folder = Path(f"{script_dir}/data/{lang}")
 
         m_count.morph_count(str(folder / "data.csv"))
 
@@ -43,7 +43,7 @@ def main(path, task:str, lang:str, proverbs):
         model_csv = folder / f"{lang.lower().capitalize()}_model_lem_seg.csv"
         if not model_csv.exists():
             print(f"Model file missing for {lang}. Running model_extract first...")
-            model_extract("data/data.csv", lang)
+            model_extract(f"data/{lang}/data.csv", lang)
         translation(lang, lang, proverbs)
     elif task == "model_segment":
         model_extract(f"data/{lang}/data.csv", lang)
