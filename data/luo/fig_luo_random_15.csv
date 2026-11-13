@@ -1,0 +1,50 @@
+	Unnamed: 0	experiment_config	language	language_family	african_proverb	label	Output Type	predict	morpheme_breaks
+9216	140380	gemma3-4b-it-gen-eng-fig-Kenya	luo	bantu	Mbaka nyapong’ gi dero	Continuous small actions can have great impact.	figurative_translate	"Taking a small step is better than attempting a large one and failing.
+"	mbaka nyapong gi der-o
+4194	73430	kimi-k2-gen-eng-fig-Kenya	luo	bantu	Ber imedo gariyo	Beauty alone is insufficient.	figurative_translate	Acting correctly in difficult circumstances earns trust and credibility.	ber imedo gariyo
+3075	47128	smollm3-3b-gen_eng_fig-Kenya	luo	bantu	Nyathi otenga kicham a lot	Privilege shields one from hardship.	figurative_translate	A problem cannot be solved by someone who is not involved.	nyathi otenga kicham a lot
+2835	46888	smollm3-3b-gen_eng_fig-Kenya	luo	bantu	Jachien otho e ite	Total refusal to listen or respond to advice.	figurative_translate	The more you try, the closer you get.	jachien otho e ite
+12325	194687	grok-4.1-fast-gen-eng-fig-Kenya	luo	bantu	Manga oromo gi Magare ekor nam	An unexpected encounter or outcome.	figurative_translate	"**Output**:
+Do not mock or belittle someone for originating from a lowly background."	manga oromo gi magare ekor nam
+4238	73474	kimi-k2-gen-eng-fig-Kenya	luo	bantu	Dhako bade boyo	A woman can manage many responsibilities simultaneously.	figurative_translate	A wife should not be overly indulged or pampered, as excessive favorable treatment can lead to negative consequences in the marriage.	dhako bade boy-o
+12033	194395	grok-4.1-fast-gen-eng-fig-Kenya	luo	bantu	Dhiang’ otho od gi odhera.	An unusual gain has occurred for the needy.	figurative_translate	"**Output**:
+A person from a good family background maintains good character even when living far from home."	dhi-ang otho od gi odher-a
+2691	46744	smollm3-3b-gen_eng_fig-Kenya	luo	bantu	Dhiang’ otho od gi odhera.	An unusual gain has occurred for the needy.	figurative_translate	When two people are together, they influence each other.	dhi-ang otho od gi odher-a
+11971	194333	grok-4.1-fast-gen-eng-fig-Kenya	luo	bantu	Awinjo awinja loyo ng’ama oaye.	Rumors are often treated as more authoritative than truth.	figurative_translate	"**Output**:
+One who hears the words of strangers will suffer loss."	awinj-o awinj-a loyo ng ama oaye
+8997	140161	gemma3-4b-it-gen-eng-fig-Kenya	luo	bantu	Ich lach nonego Okal Tako	Excessive desire leads to harm.	figurative_translate	Actions have consequences that are difficult to undo.	ich lach nonego ok-al tako
+2846	46899	smollm3-3b-gen_eng_fig-Kenya	luo	bantu	Jokang’ato ma dolo gi lwang’ni	Kinship implies shared obligations, however small.	figurative_translate	The more one tries, the less they achieve.	jokang ato ma dolo gi lwang ni
+6827	114632	gemini3-flasth-gen-eng-fig-Tanzania	luo	bantu	Chuowo chieth gi riwi	An impossible task is being attempted.	figurative_translate	Attempting to resolve a problem or address a crisis by using the same flawed methods or negative elements that caused the issue in the first place.	chuowo chieth gi ri-wi
+492	5360	qwen3-4b-gen_eng_fig-Kenya	luo	bantu	Obarogo nyar Wasare mane otero bul e budho simba	Defiance damages reputation.	figurative_translate	The underlying principle is that persistent effort over time leads to success.	obarogo nya-r wasare mane ot-ero bul e budho simba
+13278	210232	llama3.2-3b-it-gen-eng-fig-Kenya	luo	bantu	Keto jadiemre	Observe before acting or speaking.	figurative_translate	It's not good to be too greedy for one thing.	keto jadiemre
+14172	226010	minmax-gen-eng-fig-Kenya	luo	bantu	Guok ma ok ogo ema gweyo.	Lack of consequences encourages defiance.	figurative_translate	"The figurative meaning of the proverb in English:
+
+A problem that can be solved should not be ignored."	guok ma ok ogo ema gweyo
+7972	126658	gemini3-flasth-gen-eng-fig-Kenya	luo	bantu	Igondri ka lek otieno	You avoid being direct and deliberately obscure the truth.	figurative_translate	One’s true character or underlying intentions are eventually revealed during moments of vulnerability or lack of self-control.	igondri ka lek otieno
+7017	114822	gemini3-flasth-gen-eng-fig-Tanzania	luo	bantu	Jaote tho ok geng	Bad news cannot be prevented or ignored.	figurative_translate	The inevitability of an outcome cannot be prevented by the individual assigned to deliver the message or facilitate the process.	jaote tho ok geng
+13064	210018	llama3.2-3b-it-gen-eng-fig-Kenya	luo	bantu	Dhako marach jamocho tung	Lack of cooperation leads to social isolation.	figurative_translate	When you prioritize your own needs, you neglect the needs of others.	dhako ma-rach jamocho tung
+13195	210149	llama3.2-3b-it-gen-eng-fig-Kenya	luo	bantu	Isiso kado/ thudho.	Exaggeration distorts the truth.	figurative_translate	When you help others, you will ultimately benefit yourself.	isiso kado thudho
+10098	160565	gpt-5-mini-gen-eng-fig-Kenya	luo	bantu	Jachan gwonyore gi pado	Lack of resources limits one’s choices in life.	figurative_translate	A person becomes accustomed to the environment or situation they live in.	jachan gwonyore gi pado
+8928	140092	gemma3-4b-it-gen-eng-fig-Kenya	luo	bantu	Dhogra chi atera	Unstable commitments lead to unreliability.	figurative_translate	It is better to act decisively than to deliberate endlessly.	dhogra chi atera
+2827	46880	smollm3-3b-gen_eng_fig-Kenya	luo	bantu	lyi ogoyi buya.	Lack of restraint driven by appetite erodes dignity.	figurative_translate	The more you work, the more you earn.	lyi ogoy-i bu-ya
+9219	140383	gemma3-4b-it-gen-eng-fig-Kenya	luo	bantu	Melo miheso	A person who fabricates or gathers stories.	figurative_translate	The cost of unnecessary actions.	melo miheso
+4363	73599	kimi-k2-gen-eng-fig-Kenya	luo	bantu	Irach Ka jago uwi.	Loss of self-control invites social contempt.	figurative_translate	One cannot simultaneously hold conflicting positions without causing disruption or harm to oneself.	irach ka jago uwi
+8119	126805	gemini3-flasth-gen-eng-fig-Kenya	luo	bantu	Kinda ne omiyo opuk oyombo apuoyo	Steady effort overcomes speed.	figurative_translate	Persistence and consistent effort enable one to surpass those with greater natural ability but less discipline.	kind-a ne omiyo opuk oyombo apuoyo
+11388	177650	smollm3-3b-it-gen-eng-fig-Kenya	luo	bantu	Nyuolo ng’iende	A task becomes complicated or heavy.	figurative_translate	The first to act is the one who sets the pace.	nyuolo ng iende
+3662	60196	llama3.2-3b-gen_eng_fig-Kenya	luo	bantu	Asot gwend Muga	A meddlesome or overly active person.	figurative_translate	When you have no one to blame, blame yourself.	asot gwend muga
+2648	46701	smollm3-3b-gen_eng_fig-Kenya	luo	bantu	Bulo ng’or.	A very brief period of time.	figurative_translate	The first to act is often the one who suffers the consequences.	bu-lo ng or
+3776	60310	llama3.2-3b-gen_eng_fig-Kenya	luo	bantu	Goda apayo to aidho	One must take responsibility for their own problems.	figurative_translate	"The figurative meaning of the proverb ""Goda apayo to aidho"" in English is:
+
+"	god-a apayo to aidho
+7939	126625	gemini3-flasth-gen-eng-fig-Kenya	luo	bantu	Goyo Nyang’eng’	Mental disorientation.	figurative_translate	To exert effort toward an impossible task or to attempt to influence someone who is completely unresponsive and incapable of change.	goyo nyang eng
+6896	114701	gemini3-flasth-gen-eng-fig-Tanzania	luo	bantu	Goyo koko e wen	Making a fuss over trivial matters.	figurative_translate	To raise an issue or cause a disturbance at an inappropriate time or place.	goyo ko-ko e wen
+14808	233139	qwen3-4b-gen-eng-fig-Kenya	luo	bantu	Jarawo owaro wi kuon	Unplanned demands strain shared resources.	figurative_translate	The underlying principle is that persistent effort leads to eventual success.	ja-rawo owaro wi ku-on
+13461	210415	llama3.2-3b-it-gen-eng-fig-Kenya	luo	bantu	Nungo piny kirom	No one can possess or control everything.	figurative_translate	It is not wise to rely solely on one person.	nungo piny kirom
+2913	46966	smollm3-3b-gen_eng_fig-Kenya	luo	bantu	Kik itera kuma lak boye	Do not deceive or mislead me.	figurative_translate	A problem cannot be solved without involving others.	kik itera kuma lak boy-e
+5588	91616	kimi-k2-gen-eng-fig-Kenya	luo	bantu	Meru en meru.	A mother’s role is irreplaceable.	figurative_translate	Individual distinctions and circumstances matter, and what applies to one person or situation may not apply to another.	meru en meru
+14714	233045	qwen3-4b-gen-eng-fig-Kenya	luo	bantu	Idhier ka nyar lando.	A visible natural advantage can attract trouble as much as admiration.	figurative_translate	The underlying principle is that actions taken in the present can have lasting consequences in the future.	idhier ka nya-r land-o
+10975	177237	smollm3-3b-it-gen-eng-fig-Kenya	luo	bantu	Chuny teko loyo rikni	Patience is more effective than impulsiveness.	figurative_translate	The more you work, the more you will learn.	chuny tek-o loyo rikni
+1425	22690	gemma3-4b-it-gen_eng_fig-Kenya	luo	bantu	Mandi ema ichwadogo/teng’ogo tho	Survival demands total personal commitment.	figurative_translate	"Small mistakes can lead to significant problems.
+"	mandi ema ichwadogo teng ogo tho
+10346	160813	gpt-5-mini-gen-eng-fig-Kenya	luo	bantu	Kiti nokethni	Bad conduct brings consequences.	figurative_translate	Power or privilege can lead to your downfall if it is used carelessly.	kiti nokethni
+14595	232926	qwen3-4b-gen-eng-fig-Kenya	luo	bantu	Chiem kiparo jodala	Well-being is linked to shared responsibility.	figurative_translate	The underlying principle is that persistence and effort lead to eventual success.	chiem kiparo jodala

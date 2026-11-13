@@ -1,0 +1,52 @@
+	Unnamed: 0	experiment_config	language	language_family	african_proverb	label	Output Type	predict	morpheme_breaks
+2025	32689	gemma3-4b-it-gen_eng_literal-Kenya	luo	bantu	Nyambenja ruadh Okita	The floricking bull of Okita.	leteral_translate	"The red pig digs.
+"	nyambenja ruadh okita
+4855	82895	kimi-k2-gen-eng-literal-Kenya	luo	bantu	Igeno gwend Maori	You desire Maori’s chicken.	leteral_translate	I wait for the Maori visitor	igeno gwend ma-ori
+9597	150768	gpt-5-mini-gen-eng-literal-Kenya	luo	bantu	Jakisuma ok or e dero	A beggar is not sent to the granary.	leteral_translate	The wrestler is not absent from the arena.	jakisuma ok or e der-o
+6265	107782	gemini3-flasth-gen-eng-literal-Kenya	luo	bantu	Bayo nyong’	Like skin that cannot be softened for use.	leteral_translate	Shooting the chameleon.	bayo ny-ong
+3535	55684	llama3.2-3b-gen_eng_literal-Kenya	luo	bantu	Mulo ding miaha	A bride’s cheeks are not touched by anyone.	leteral_translate	A man's ox is not a woman's ox	mul-o ding miaha
+926	10179	qwen3-4b-gen_eng_literal-Kenya	luo	bantu	Mochomi ka pier matindo	Facing you like one with small buttocks.	leteral_translate	Mochomi ka pier matindo.	mochomi ka pi-er matindo
+15324	244862	qwen3-4b-gen-eng-literal-Kenya	luo	bantu	Japenj wich e jating’ne	The one who asks for the head is the one who carries it.	leteral_translate	Japenj wich e jating’ne	japenj wi-ch e jating ne
+13796	217035	minmax-gen-eng-literal-Kenya	luo	bantu	Kech nogoyo achuth piny	Hunger brought the vulture down to the ground.	leteral_translate	The small axe cuts down the big tree	ke-ch nogoyo achuth piny
+8378	134657	gemma3-4b-it-gen-eng-literal-Kenya	luo	bantu	Chunyi ler ka ndara	Your heart is clean like a road.	leteral_translate	"The stone carries the thorn.
+"	chuny-i ler ka ndara
+5767	100999	kimi-k2-gen-eng-literal-Kenya	luo	bantu	Bed motang' kiki dhi ajuoga	Take caution; do not seek divination.	leteral_translate	Bed refuses to go to the witch doctor.	bed mot-ang ki-ki dhi ajuoga
+2583	37832	smollm3-3b-gen_eng_literal-Kenya	luo	bantu	kar nyawadgi	A wild cat is killed in place of another wild cat.	leteral_translate	"A literal translation of ""kar nyawadgi"" from Luo to English is: ""a bird"	kar nya-wadgi
+3253	55402	llama3.2-3b-gen_eng_literal-Kenya	luo	bantu	Gima ogen jabare	What is hoped for often fails.	leteral_translate	The lion's tail is in the lion's mouth.	gim-a ogen jabare
+7404	121705	gemini3-flasth-gen-eng-literal-Tanzania	luo	bantu	Gima ok itimo ok chandi.	What you did not do should not trouble you.	leteral_translate	That which you do not do does not trouble you.	gim-a ok itimo ok chand-i
+1979	32643	gemma3-4b-it-gen_eng_literal-Kenya	luo	bantu	Nak ok dogie diriyo	Lower teeth extraction is not done twice.	leteral_translate	"The dog carries its own dung.
+"	nak ok dogie diriyo
+14003	217242	minmax-gen-eng-literal-Kenya	luo	bantu	Oidho Nyang’oma gi wuor	To climb Nyang’oma wearing shoes.	leteral_translate	Pass the buffalo to the buffalo	oidho nyang oma gi wuor
+1944	32608	gemma3-4b-it-gen_eng_literal-Kenya	luo	bantu	Mandi ema ichwadogo/teng’ogo tho	It is your own testicles that beat dew on your path.	leteral_translate	"The small/little hands of the water.
+"	mandi ema ichwadogo teng ogo tho
+3471	55620	llama3.2-3b-gen_eng_literal-Kenya	luo	bantu	Lewi eno jiemni	Your tongue is sharp like an opila peel.	leteral_translate	"**Input**:
+Lewi eno jiemni
+
+**Output**:
+The lion eats"	lewi eno jiemni
+877	10130	qwen3-4b-gen_eng_literal-Kenya	luo	bantu	Lich ka kama iroye paka	As horrible as the place where a cat is castrated.	leteral_translate	Lich ka kama iroye paka	lich ka kama iroye pak-a
+985	10238	qwen3-4b-gen_eng_literal-Kenya	luo	bantu	Nyako ber gi ka wang’e to piere to owang’!	A girl is beautiful in the face, but her buttocks are burnt.	leteral_translate	Nyako ber gi ka wang’e to piere to owang’!	nyak-o ber gi ka wang e to piere to owang
+2414	37663	smollm3-3b-gen_eng_literal-Kenya	luo	bantu	Kodh yamo eno ruaki	A storm may drive you where you never planned to go.	leteral_translate	"A literal translation of the proverb ""Kodh yamo eno ruaki"" from Luo to"	kodh yamo eno ruaki
+7435	121736	gemini3-flasth-gen-eng-literal-Tanzania	luo	bantu	Huyo gi wach rach	Fly with words.	leteral_translate	Flying with a word is bad.	huyo gi wa-ch ra-ch
+11897	185855	grok-4.1-fast-gen-eng-literal-Kenya	luo	bantu	Nyathi ong’iyo kama ing’iye e maber.	A child frequents the place where he is treated well.	leteral_translate	"**Output:**
+The child who does not go resembles the one who went to a good [place]."	nyathi ong iyo kama ing iye e maber
+10453	171127	smollm3-3b-it-gen-eng-literal-Kenya	luo	bantu	Chuny e dag kano wach.	The heart is a container of stories.	leteral_translate	Chuny e dag kano wach.	chuny e dag kano wa-ch
+9458	150629	gpt-5-mini-gen-eng-literal-Kenya	luo	bantu	Ero en sombe koso soko	There, one scoops from a well.	leteral_translate	A friend is a porcupine or a market.	ero en sombe ko-so soko
+8388	134667	gemma3-4b-it-gen-eng-literal-Kenya	luo	bantu	De nyuok	Strangle a he-goat.	leteral_translate	"The sheep are licking.
+"	de nyuok
+2561	37810	smollm3-3b-gen_eng_literal-Kenya	luo	bantu	Kiti nokethni	Your character will ruin you.	leteral_translate	"The literal translation of the proverb ""Kiti nokethni"" in English is: ""A stick"	kiti nokethni
+2210	37459	smollm3-3b-gen_eng_literal-Kenya	luo	bantu	Gima nosekor ok loki	What has been foretold does not fail.	leteral_translate	"A literal translation of the proverb ""Gima nosekor ok loki"" from Luo to English"	gim-a nosekor ok loki
+7454	121755	gemini3-flasth-gen-eng-literal-Tanzania	luo	bantu	Igori kwangla	You have fallen gwangla.	leteral_translate	You throw yourself upon the gravel.	igo-ri kwangla
+8562	134841	gemma3-4b-it-gen-eng-literal-Kenya	luo	bantu	Jakwoth ki ti	Old age does not block certain things.	leteral_translate	The stone does not see the stone.	jakwoth ki ti
+9538	150709	gpt-5-mini-gen-eng-literal-Kenya	luo	bantu	Iketo kori ka dher lur	You imitate like a barren cow.	leteral_translate	You tie a rope where the fence is weak.	iketo ko-ri ka dh-er lur
+1764	32428	gemma3-4b-it-gen_eng_literal-Kenya	luo	bantu	.In e ludh widhi?	Are you the corner post?	leteral_translate	In e ludh widhi?	in e ludh widhi
+8446	134725	gemma3-4b-it-gen-eng-literal-Kenya	luo	bantu	Gocho gi thuondi ariyo	Playing with two jokers.	leteral_translate	"The goat and the honey are not going.
+"	go-cho gi thuondi ariyo
+5941	101173	kimi-k2-gen-eng-literal-Kenya	luo	bantu	lyi ogoyi buya.	Your stomach makes you act like an animal.	leteral_translate	The dog has beaten me the rope.	lyi ogoy-i bu-ya
+5120	83160	kimi-k2-gen-eng-literal-Kenya	luo	bantu	Ng’ech miyo gi ka iye	The monitor lizard is fat inside its body.	leteral_translate	A civet cat gives (something) with his armpit	ng ech mi-yo gi ka iye
+9342	150513	gpt-5-mini-gen-eng-literal-Kenya	luo	bantu	Acham ayieng’ ne onego suna.	I eat until I’m satisfied killed the mosquito.	leteral_translate	I eat the mushroom that was meant for the hyena.	acham ayieng ne onego suna
+5175	83215	kimi-k2-gen-eng-literal-Kenya	luo	bantu	Ofweny ja Jimo	Ofweny of Jimo.	leteral_translate	The dog of Jimo	ofweny ja jimo
+15207	244745	qwen3-4b-gen-eng-literal-Kenya	luo	bantu	Guok mogo ema ywaka	The beaten dog is the one that cries.	leteral_translate	Guok mogo ema ywaka	guok mogo ema ywaka
+10520	171194	smollm3-3b-it-gen-eng-literal-Kenya	luo	bantu	Gimoro iweyo gi mitne	Something is left with its sweetness.	leteral_translate	"A literal translation of the proverb ""Gimoro iweyo gi mitne"" from Luo to"	gimoro iweyo gi mitne
+12807	203973	llama3.2-3b-it-gen-eng-literal-Kenya	luo	bantu	Lak chogo kata meru ema otho kidek nyiero.	As long as a dog’s tail.	leteral_translate	The lion eats the elephant's foot in the night.	lak ch-ogo kata meru ema otho kid-ek nyiero
+5841	101073	kimi-k2-gen-eng-literal-Kenya	luo	bantu	Geno gen rowa	Hope as Rowa did.	leteral_translate	Holds holds our-outside	gen-o gen rowa
