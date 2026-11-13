@@ -44,7 +44,7 @@ def making_df(jsonl_list):
         final_df["language"].str.lower().isin(bantu_langs),
     ]
     choices = [
-        "Niger–Congo".lower(),
+        "bantu".lower(),
     ]
 
     final_df["language_family"] = np.select(conditions, choices, default="Unknown")
