@@ -48,8 +48,20 @@ def main(path, task:str, lang:str, proverbs):
     elif task == "model_segment":
         model_extract(f"data/{lang}/data.csv", lang)
     elif task == "metrics":
-        gloss_rel_path, translation_column = ""
-        compute_structural_metrics(lang, gloss_rel_path, translation_column)
+        for lang in ["ekegusii", "ganda", "gikiuyu"]:
+            path = Path(script_dir / f"data/corrected/{lang}/lit_{lang}_random_15.csv")
+            try:
+                df = pd.read_csv(path)
+            except Exception:
+                df = pd.read_csv(path, sep='\t')
+
+            translation_column = ""
+            for element in ["Correction", "corrected"]:
+                if element in df.columns:
+                    translation_column = element
+            if translation_column=="":
+                raise ValueError(f"{element} is not in the corrected file")
+            compute_structural_metrics(lang, df, translation_column)
     elif task == "final_pass":
         final_pass = translation_final_pass()
         if lang.lower() == "all":

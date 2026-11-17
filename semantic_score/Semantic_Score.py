@@ -62,15 +62,10 @@ def map_gloss_prov(df_merged):
         }
     return combined_data
 
-def compute_structural_metrics(lang: str, gloss_rel_path: str):
-    lang_completed = pd.read_csv(script_path / gloss_rel_path)
-    data_df = pd.read_csv(script_path / "data/data.csv")
-
-    correct_gloss = lang_completed[["african_proverb", "Correction", "Correction 2", "Correction 3"]].copy()
-    correct_gloss = correct_glossing(correct_gloss, ["Correction", "Correction 2", "Correction 3"])
-
-    lang_completed['combined'] = correct_gloss['combined']
-    lang_completed['predict'] = data_df['predict']
+def compute_structural_metrics(lang: str, df, corrected_column:str):
+    lang_completed = {}
+    lang_completed['corrected'] = df[corrected_column]
+    lang_completed['predict'] = df['predict']
 
     combined_data = map_gloss_prov(lang_completed)
 
@@ -102,4 +97,5 @@ def compute_structural_metrics(lang: str, gloss_rel_path: str):
                                          for i in results.keys()
                                          for j in results[i].keys()},
                                         orient='index')
-    results_df.to_csv(script_path / f"{lang}_results.csv", sep='\t')
+    results_df.to_latex()
+    print(f"finished with this:\n{results_df}")
