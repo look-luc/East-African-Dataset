@@ -1,7 +1,5 @@
 from pathlib import Path
 
-import torch
-
 from src.main import main
 
 script_parent = Path(__file__).resolve().parent

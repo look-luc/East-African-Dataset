@@ -26,10 +26,9 @@ export TRANSFORMERS_CACHE="/tmp/$USER/.cache/transformers"
 mkdir -p "$HF_HOME" "$EVALUATE_CACHE_DIR" "$TRANSFORMERS_CACHE"
 
 module purge
-module  load cuda
-module load anaconda
-conda activate east_african_dataset
 
 cd /projects/$USER/East-African-Dataset
+module load uv
+uv sync
 
-python -u run.py
+uv run run.py
