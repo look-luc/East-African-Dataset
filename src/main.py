@@ -51,7 +51,7 @@ def main(path, task:str, lang:str, proverbs):
         languages = ["ganda", "gikuyu", "ekegusii"]
 
         for l in languages:
-            completed_path = script_dir / f"data/{l.lower()}/corrected/{l.lower()}/lit_{l.lower()}_random_15.csv"
+            completed_path = script_dir / f"data/corrected/{l.lower()}/lit_{l.lower()}_random_15.csv"
             if not completed_path.exists():
                 print(f"Completed file not found for {l} at {completed_path}. Run 'final_pass' first.")
                 continue
