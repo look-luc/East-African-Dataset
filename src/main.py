@@ -48,20 +48,40 @@ def main(path, task:str, lang:str, proverbs):
     elif task == "model_segment":
         model_extract(f"data/{lang}/data.csv", lang)
     elif task == "metrics":
-        for lang in ["ekegusii", "ganda", "gikiuyu"]:
-            path = Path(script_dir / f"data/corrected/{lang}/lit_{lang}_random_15.csv")
-            try:
-                df = pd.read_csv(path)
-            except Exception:
-                df = pd.read_csv(path, sep='\t')
+        languages = ["ganda", "gikuyu", "ekegusii"]
 
+        for l in languages:
+            completed_path = script_dir / f"data/{l.lower()}/corrected/{l.lower()}/lit_{l.lower()}_random_15.csv"
+            if not completed_path.exists():
+                print(f"Completed file not found for {l} at {completed_path}. Run 'final_pass' first.")
+                continue
+
+            print(f"Computing metrics for {l} using {completed_path.name}...")
+            try:
+                df = pd.read_csv(completed_path)
+            except Exception:
+                df = pd.read_csv(completed_path, sep='\t')
+
+            # Identify correction/manual column
             translation_column = ""
             for element in ["Correction", "corrected"]:
                 if element in df.columns:
                     translation_column = element
-            if translation_column=="":
-                raise ValueError(f"{element} is not in the corrected file")
-            compute_structural_metrics(lang, df, translation_column)
+                    break
+            if translation_column == "":
+                raise ValueError(f"Could not find a valid reference translation column in {completed_path}")
+
+            # Ensure 'predict' column exists
+            if 'predict' not in df.columns:
+                for pred_candidate in ["label", "predict"]:
+                    if pred_candidate in df.columns:
+                        df['predict'] = df[pred_candidate]
+                        break
+
+            if 'predict' not in df.columns:
+                raise KeyError(f"DataFrame for {l} is missing a prediction column ('predict' or 'translation').")
+
+            compute_structural_metrics(l, df, translation_column)
     elif task == "final_pass":
         final_pass = translation_final_pass()
         if lang.lower() == "all":

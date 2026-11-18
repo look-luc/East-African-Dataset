@@ -8,7 +8,7 @@ script_dir = Path(__file__).resolve().parent
 kevin_Obote_few_shot = "kevin_Obote_few_shots"
 zero_shot_experiment = "zero-shot experiment"
 
-bantu_langs = ["samia","olusaamia","olusamia"]
+bantu_langs = ["gikuyu"]
 
 def making_df(jsonl_list):
     lang_pattern = r"\*\*Input\*\*:\nA proverb in (.*?)\n\n\*\*Output\*\*:"
