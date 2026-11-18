@@ -101,8 +101,16 @@ def compute_structural_metrics(lang: str, df, corrected_column: str):
                                          for i in results.keys()
                                          for j in results[i].keys()},
                                         orient='index')
-    try:
-        results_df.to_latex()
-    except Exception:
-        pass
-    print(f"finished with this:\n{results_df}")
+    # Convert to LaTeX string (with clean 4-decimal float formatting)
+    latex_output = results_df.to_latex(float_format="%.4f")
+
+    # 1. Print directly to console / Slurm log
+    print(f"\n--- LaTeX Table for {lang} ---\n{latex_output}")
+
+    # 2. Save to a .tex file
+    output_dir = script_path / "results" / "latex"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    tex_file = output_dir / f"{lang.lower()}_metrics.tex"
+    tex_file.write_text(latex_output, encoding="utf-8")
+
+    print(f"Saved LaTeX table to: {tex_file}")
