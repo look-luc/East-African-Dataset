@@ -62,17 +62,21 @@ def map_gloss_prov(df_merged):
         }
     return combined_data
 
-def compute_structural_metrics(lang: str, df, corrected_column:str):
-    lang_completed = {}
-    lang_completed['corrected'] = df[corrected_column]
-    lang_completed['predict'] = df['predict']
+def compute_structural_metrics(lang: str, df, corrected_column: str):
+    # Construct a proper pandas DataFrame rather than a dictionary
+    lang_completed = pd.DataFrame({
+        'african_proverb': df['african_proverb'] if 'african_proverb' in df.columns else df.index,
+        'combined': df[corrected_column],
+        'final pass': df['final pass'] if 'final pass' in df.columns else df[corrected_column],
+        'predict': df['predict']
+    })
 
     combined_data = map_gloss_prov(lang_completed)
 
     results = {}
     for proverb, data in combined_data.items():
-        lev_m, norm_m = levenshtein_score(data["corrected"], data["model"])
-        lev_man, norm_man = levenshtein_score(data["corrected"], data["manual"])
+        lev_m, norm_m = levenshtein_score(str(data["corrected"]), str(data["model"]))
+        lev_man, norm_man = levenshtein_score(str(data["corrected"]), str(data["manual"]))
 
         results[proverb] = {
             "Levenshtein Distance": {
@@ -84,12 +88,12 @@ def compute_structural_metrics(lang: str, df, corrected_column:str):
                 "manual vs corrected": norm_man
             },
             "ChrF": {
-                "model vs corrected": compute_chrf(data["corrected"], data["model"]),
-                "manual vs corrected": compute_chrf(data["corrected"], data["manual"])
+                "model vs corrected": compute_chrf([str(data["corrected"])], str(data["model"])),
+                "manual vs corrected": compute_chrf([str(data["corrected"])], str(data["manual"]))
             },
             "Sentence Bert Embeddings": {
-                "model vs corrected": semantic_score(data["corrected"], data["model"]),
-                "manual vs corrected": semantic_score(data["corrected"], data["manual"])
+                "model vs corrected": semantic_score(str(data["corrected"]), str(data["model"])),
+                "manual vs corrected": semantic_score(str(data["corrected"]), str(data["manual"]))
             }
         }
 
@@ -97,5 +101,8 @@ def compute_structural_metrics(lang: str, df, corrected_column:str):
                                          for i in results.keys()
                                          for j in results[i].keys()},
                                         orient='index')
-    results_df.to_latex()
+    try:
+        results_df.to_latex()
+    except Exception:
+        pass
     print(f"finished with this:\n{results_df}")
